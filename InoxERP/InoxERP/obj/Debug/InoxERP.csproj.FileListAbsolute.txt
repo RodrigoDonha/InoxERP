@@ -1,0 +1,12 @@
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\bin\Debug\InoxERP.exe.config
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\bin\Debug\InoxERP.exe
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\bin\Debug\InoxERP.pdb
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\obj\Debug\InoxERP.csprojResolveAssemblyReference.cache
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\obj\Debug\InoxERP.UI_Windows_Forms.OrcamentosForm.resources
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\obj\Debug\InoxERP.Form1.resources
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\obj\Debug\InoxERP.Properties.Resources.resources
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\obj\Debug\InoxERP.csproj.GenerateResource.Cache
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\obj\Debug\InoxERP.csproj.CoreCompileInputs.cache
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\obj\Debug\InoxERP.exe
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\obj\Debug\InoxERP.pdb
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\obj\Debug\InoxERP.UI_Windows_Forms.ClientesForm.resources
