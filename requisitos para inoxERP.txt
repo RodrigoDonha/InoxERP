@@ -1,0 +1,41 @@
+requisitos relatorio
+
+entradas
+saidas
+
+
+extrato de trinta dias no caixa GERAL
+
+
+orcamento: 
+botao de arredondamento seguindo padroes atuais
+
+deixar clientes
+criar fornecedor
+
+colocar txt para clientes no orcamemnto
+
+tela de pecas com valor unitario
+
+BANCO DE DADOS
+FORNECEDOR:
+	NOME (VARCHAR 100)
+	CNPJ (VARCHAR)
+	INSCR. EST. (VARCHAR)
+	RESP. CONTATO (VARCHAR)
+	ENDEREÇO (VARCHAR)
+	NÚMERO (INT)
+	BAIRRO (VARCHAR)
+	COMPLEMENTO (VARCHAR)
+	CIDADE (VARCHAR)
+	ESTADO (VARCHAR)
+	CEP (VARCHAR)
+	TIPO ENDEREÇO (INT)
+	COMERCIAL1 (VARCHAR)
+	COMERCIAL2 (VARCHAR)
+	CELULAR1 (VARCHAR)
+	CELULAR2 (VARCHAR)
+	OPERADORA1 (VARCHAR)
+	OPERADORA2 (VARCHAR)
+	EMAIL (VARCHAR)
+	OBSERVAÇOES (VARCHAR)

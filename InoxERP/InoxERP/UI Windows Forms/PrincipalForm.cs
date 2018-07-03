@@ -37,5 +37,12 @@ namespace InoxERP
             //this.Hide();
             obj.Show();
         }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FornecedoresForm obj = new FornecedoresForm();
+            //this.Hide();
+            obj.Show();
+        }
     }
 }

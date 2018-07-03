@@ -1,6 +1,6 @@
 ﻿namespace InoxERP.UI_Windows_Forms
 {
-    partial class ClientesForm
+    partial class FornecedoresForm
     {
         /// <summary>
         /// Required designer variable.
@@ -88,7 +88,7 @@
             this.btSair.Location = new System.Drawing.Point(1377, 634);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(124, 31);
-            this.btSair.TabIndex = 34;
+            this.btSair.TabIndex = 41;
             this.btSair.Text = "Sair";
             this.btSair.UseVisualStyleBackColor = false;
             // 
@@ -100,7 +100,7 @@
             this.btCancelar.Location = new System.Drawing.Point(1244, 634);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(124, 31);
-            this.btCancelar.TabIndex = 33;
+            this.btCancelar.TabIndex = 40;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
             // 
@@ -112,7 +112,7 @@
             this.btGravar.Location = new System.Drawing.Point(1112, 634);
             this.btGravar.Name = "btGravar";
             this.btGravar.Size = new System.Drawing.Size(124, 31);
-            this.btGravar.TabIndex = 32;
+            this.btGravar.TabIndex = 39;
             this.btGravar.Text = "Gravar";
             this.btGravar.UseVisualStyleBackColor = false;
             // 
@@ -123,7 +123,7 @@
             this.gpbObservacoes.Location = new System.Drawing.Point(11, 499);
             this.gpbObservacoes.Name = "gpbObservacoes";
             this.gpbObservacoes.Size = new System.Drawing.Size(1500, 114);
-            this.gpbObservacoes.TabIndex = 31;
+            this.gpbObservacoes.TabIndex = 38;
             this.gpbObservacoes.TabStop = false;
             this.gpbObservacoes.Text = "Observações";
             // 
@@ -155,7 +155,7 @@
             this.gpbContatos.Location = new System.Drawing.Point(11, 345);
             this.gpbContatos.Name = "gpbContatos";
             this.gpbContatos.Size = new System.Drawing.Size(1500, 140);
-            this.gpbContatos.TabIndex = 30;
+            this.gpbContatos.TabIndex = 37;
             this.gpbContatos.TabStop = false;
             this.gpbContatos.Text = "Contatos";
             // 
@@ -249,9 +249,9 @@
             this.lbContatosResidencial.AutoSize = true;
             this.lbContatosResidencial.Location = new System.Drawing.Point(6, 39);
             this.lbContatosResidencial.Name = "lbContatosResidencial";
-            this.lbContatosResidencial.Size = new System.Drawing.Size(101, 20);
+            this.lbContatosResidencial.Size = new System.Drawing.Size(90, 20);
             this.lbContatosResidencial.TabIndex = 4;
-            this.lbContatosResidencial.Text = "Residencial:";
+            this.lbContatosResidencial.Text = "Comercial:";
             // 
             // lbContatosCelular1
             // 
@@ -294,7 +294,7 @@
             this.gpbEndereco.Location = new System.Drawing.Point(11, 160);
             this.gpbEndereco.Name = "gpbEndereco";
             this.gpbEndereco.Size = new System.Drawing.Size(1500, 172);
-            this.gpbEndereco.TabIndex = 29;
+            this.gpbEndereco.TabIndex = 36;
             this.gpbEndereco.TabStop = false;
             this.gpbEndereco.Text = "Endereço";
             // 
@@ -303,21 +303,21 @@
             this.rdbTipoEnderecoComercial.AutoSize = true;
             this.rdbTipoEnderecoComercial.Location = new System.Drawing.Point(1377, 134);
             this.rdbTipoEnderecoComercial.Name = "rdbTipoEnderecoComercial";
-            this.rdbTipoEnderecoComercial.Size = new System.Drawing.Size(106, 24);
+            this.rdbTipoEnderecoComercial.Size = new System.Drawing.Size(77, 24);
             this.rdbTipoEnderecoComercial.TabIndex = 24;
             this.rdbTipoEnderecoComercial.TabStop = true;
-            this.rdbTipoEnderecoComercial.Text = "Comercial";
+            this.rdbTipoEnderecoComercial.Text = "Matriz";
             this.rdbTipoEnderecoComercial.UseVisualStyleBackColor = true;
             // 
             // rdbTipoEnderecoResidencial
             // 
             this.rdbTipoEnderecoResidencial.AutoSize = true;
-            this.rdbTipoEnderecoResidencial.Location = new System.Drawing.Point(1251, 133);
+            this.rdbTipoEnderecoResidencial.Location = new System.Drawing.Point(1261, 133);
             this.rdbTipoEnderecoResidencial.Name = "rdbTipoEnderecoResidencial";
-            this.rdbTipoEnderecoResidencial.Size = new System.Drawing.Size(117, 24);
+            this.rdbTipoEnderecoResidencial.Size = new System.Drawing.Size(65, 24);
             this.rdbTipoEnderecoResidencial.TabIndex = 23;
             this.rdbTipoEnderecoResidencial.TabStop = true;
-            this.rdbTipoEnderecoResidencial.Text = "Residencial";
+            this.rdbTipoEnderecoResidencial.Text = "Filial";
             this.rdbTipoEnderecoResidencial.UseVisualStyleBackColor = true;
             // 
             // txbCEP
@@ -455,20 +455,20 @@
             this.gpbDadosPessoais.Location = new System.Drawing.Point(11, 18);
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
             this.gpbDadosPessoais.Size = new System.Drawing.Size(1500, 130);
-            this.gpbDadosPessoais.TabIndex = 28;
+            this.gpbDadosPessoais.TabIndex = 35;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "Dados Pessoais";
             // 
             // txtbDtNascito
             // 
-            this.txtbDtNascito.Location = new System.Drawing.Point(872, 78);
+            this.txtbDtNascito.Location = new System.Drawing.Point(962, 78);
             this.txtbDtNascito.Name = "txtbDtNascito";
             this.txtbDtNascito.Size = new System.Drawing.Size(183, 27);
             this.txtbDtNascito.TabIndex = 7;
             // 
             // txtbRG
             // 
-            this.txtbRG.Location = new System.Drawing.Point(522, 78);
+            this.txtbRG.Location = new System.Drawing.Point(556, 78);
             this.txtbRG.Name = "txtbRG";
             this.txtbRG.Size = new System.Drawing.Size(181, 27);
             this.txtbRG.TabIndex = 6;
@@ -510,20 +510,20 @@
             this.lbRG.AutoSize = true;
             this.lbRG.Location = new System.Drawing.Point(456, 81);
             this.lbRG.Name = "lbRG";
-            this.lbRG.Size = new System.Drawing.Size(47, 20);
+            this.lbRG.Size = new System.Drawing.Size(89, 20);
             this.lbRG.TabIndex = 2;
-            this.lbRG.Text = "R.G.:";
+            this.lbRG.Text = "Inscr. Est.:";
             // 
             // lbDtNascto
             // 
             this.lbDtNascto.AutoSize = true;
-            this.lbDtNascto.Location = new System.Drawing.Point(709, 81);
+            this.lbDtNascto.Location = new System.Drawing.Point(752, 81);
             this.lbDtNascto.Name = "lbDtNascto";
-            this.lbDtNascto.Size = new System.Drawing.Size(144, 20);
+            this.lbDtNascto.Size = new System.Drawing.Size(185, 20);
             this.lbDtNascto.TabIndex = 3;
-            this.lbDtNascto.Text = "Data Nascimento:";
+            this.lbDtNascto.Text = "Responsável (Contato):";
             // 
-            // ClientesForm
+            // FornecedoresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -535,8 +535,8 @@
             this.Controls.Add(this.gpbContatos);
             this.Controls.Add(this.gpbEndereco);
             this.Controls.Add(this.gpbDadosPessoais);
-            this.Name = "ClientesForm";
-            this.Text = "Clientes";
+            this.Name = "FornecedoresForm";
+            this.Text = "Fornecedores";
             this.gpbObservacoes.ResumeLayout(false);
             this.gpbObservacoes.PerformLayout();
             this.gpbContatos.ResumeLayout(false);

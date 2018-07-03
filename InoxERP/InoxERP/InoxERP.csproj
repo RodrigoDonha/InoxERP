@@ -51,6 +51,12 @@
     <Compile Include="UI Windows Forms\ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Windows Forms\FornecedoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Windows Forms\FornecedoresForm.Designer.cs">
+      <DependentUpon>FornecedoresForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Windows Forms\OrcamentosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="UI Windows Forms\ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Windows Forms\FornecedoresForm.resx">
+      <DependentUpon>FornecedoresForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Windows Forms\OrcamentosForm.resx">
       <DependentUpon>OrcamentosForm.cs</DependentUpon>

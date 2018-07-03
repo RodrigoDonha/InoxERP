@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InoxERP.UI_Windows_Forms
 {
-    public partial class ClientesForm : Form
+    public partial class FornecedoresForm : Form
     {
-        public ClientesForm()
+        public FornecedoresForm()
         {
             InitializeComponent();
         }
