@@ -23,3 +23,16 @@ C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.csproj
 C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.exe
 C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.pdb
 C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.UI_Windows_Forms.FornecedoresForm.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\bin\Debug\InoxERP.exe.config
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\bin\Debug\InoxERP.exe
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\bin\Debug\InoxERP.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.csprojResolveAssemblyReference.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.UI_Windows_Forms.ClientesForm.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.UI_Windows_Forms.FornecedoresForm.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.UI_Windows_Forms.OrcamentosForm.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.Form1.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.Properties.Resources.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.csproj.GenerateResource.Cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.csproj.CoreCompileInputs.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.exe
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\InoxERP\obj\Debug\InoxERP.pdb
