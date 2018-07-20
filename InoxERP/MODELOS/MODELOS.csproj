@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79D3227B-1674-4B11-AE88-A00CE1DCCD49}</ProjectGuid>
+    <ProjectGuid>{1A0B37D0-9985-448D-9665-7190CB07924F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>InoxERP</RootNamespace>
-    <AssemblyName>InoxERP</AssemblyName>
+    <RootNamespace>MODELOS</RootNamespace>
+    <AssemblyName>MODELOS</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

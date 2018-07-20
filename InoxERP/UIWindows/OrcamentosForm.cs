@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows;
 
 namespace InoxERP.UI_Windows_Forms
 {
@@ -31,6 +32,13 @@ namespace InoxERP.UI_Windows_Forms
         private void btCliente_Click(object sender, EventArgs e)
         {
             ClientesForm obj = new ClientesForm();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void btConsultar_Click(object sender, EventArgs e)
+        {
+            ConsultaValoresForm obj = new ConsultaValoresForm();
             //this.Hide();
             obj.Show();
         }

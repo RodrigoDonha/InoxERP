@@ -1,0 +1,14 @@
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\UIWindows.exe.config
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\UIWindows.exe
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\UIWindows.pdb
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.csprojAssemblyReference.cache
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.UI_Windows_Forms.ClientesForm.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.UI_Windows_Forms.FornecedoresForm.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.UI_Windows_Forms.OrcamentosForm.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Properties.Resources.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.csproj.GenerateResource.cache
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.exe
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.pdb
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.PrincipalForm.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.ConsultaValoresForm.resources

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79D3227B-1674-4B11-AE88-A00CE1DCCD49}</ProjectGuid>
+    <ProjectGuid>{CF73ACF0-6C33-48FD-B5A3-1FAB4281B8C9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>InoxERP</RootNamespace>
-    <AssemblyName>InoxERP</AssemblyName>
+    <RootNamespace>UIWindows</RootNamespace>
+    <AssemblyName>UIWindows</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,8 +45,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientesForm.Designer.cs">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaValoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaValoresForm.Designer.cs">
+      <DependentUpon>ConsultaValoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FornecedoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FornecedoresForm.Designer.cs">
+      <DependentUpon>FornecedoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrcamentosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrcamentosForm.Designer.cs">
+      <DependentUpon>OrcamentosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipalForm.Designer.cs">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClientesForm.resx">
+      <DependentUpon>ClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaValoresForm.resx">
+      <DependentUpon>ConsultaValoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FornecedoresForm.resx">
+      <DependentUpon>FornecedoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrcamentosForm.resx">
+      <DependentUpon>OrcamentosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalForm.resx">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

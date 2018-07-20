@@ -29,17 +29,15 @@
         private void InitializeComponent()
         {
             this.btCliente = new System.Windows.Forms.Button();
-            this.lbClienteJaCadastrado = new System.Windows.Forms.Label();
-            this.lbCodigoCliente = new System.Windows.Forms.Label();
-            this.lbNomeCliente = new System.Windows.Forms.Label();
             this.gpbCliente = new System.Windows.Forms.GroupBox();
-            this.lbExibeTelefone = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.lbTelefone = new System.Windows.Forms.Label();
-            this.lbExibeEndereco = new System.Windows.Forms.Label();
             this.lbEndereco = new System.Windows.Forms.Label();
-            this.lbExibeNomeCliente = new System.Windows.Forms.Label();
-            this.lbExibeCodCliente = new System.Windows.Forms.Label();
+            this.lbNomeCliente = new System.Windows.Forms.Label();
             this.bpbProdutos_Servicos = new System.Windows.Forms.GroupBox();
+            this.btConsultar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.lbValorTotal = new System.Windows.Forms.Label();
@@ -93,7 +91,7 @@
             // btCliente
             // 
             this.btCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCliente.Location = new System.Drawing.Point(232, 26);
+            this.btCliente.Location = new System.Drawing.Point(90, 28);
             this.btCliente.Name = "btCliente";
             this.btCliente.Size = new System.Drawing.Size(162, 32);
             this.btCliente.TabIndex = 1;
@@ -101,127 +99,80 @@
             this.btCliente.UseVisualStyleBackColor = true;
             this.btCliente.Click += new System.EventHandler(this.btCliente_Click);
             // 
-            // lbClienteJaCadastrado
-            // 
-            this.lbClienteJaCadastrado.AutoSize = true;
-            this.lbClienteJaCadastrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClienteJaCadastrado.Location = new System.Drawing.Point(6, 32);
-            this.lbClienteJaCadastrado.Name = "lbClienteJaCadastrado";
-            this.lbClienteJaCadastrado.Size = new System.Drawing.Size(155, 20);
-            this.lbClienteJaCadastrado.TabIndex = 1;
-            this.lbClienteJaCadastrado.Text = "Selecione o cliente:";
-            this.lbClienteJaCadastrado.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lbCodigoCliente
-            // 
-            this.lbCodigoCliente.AutoSize = true;
-            this.lbCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodigoCliente.Location = new System.Drawing.Point(6, 83);
-            this.lbCodigoCliente.Name = "lbCodigoCliente";
-            this.lbCodigoCliente.Size = new System.Drawing.Size(66, 20);
-            this.lbCodigoCliente.TabIndex = 2;
-            this.lbCodigoCliente.Text = "Código:";
-            this.lbCodigoCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lbNomeCliente
-            // 
-            this.lbNomeCliente.AutoSize = true;
-            this.lbNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNomeCliente.Location = new System.Drawing.Point(243, 83);
-            this.lbNomeCliente.Name = "lbNomeCliente";
-            this.lbNomeCliente.Size = new System.Drawing.Size(58, 20);
-            this.lbNomeCliente.TabIndex = 3;
-            this.lbNomeCliente.Text = "Nome:";
-            this.lbNomeCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // gpbCliente
             // 
-            this.gpbCliente.Controls.Add(this.lbExibeTelefone);
+            this.gpbCliente.Controls.Add(this.textBox2);
+            this.gpbCliente.Controls.Add(this.textBox4);
+            this.gpbCliente.Controls.Add(this.textBox3);
             this.gpbCliente.Controls.Add(this.lbTelefone);
-            this.gpbCliente.Controls.Add(this.lbExibeEndereco);
             this.gpbCliente.Controls.Add(this.lbEndereco);
-            this.gpbCliente.Controls.Add(this.lbExibeNomeCliente);
-            this.gpbCliente.Controls.Add(this.lbExibeCodCliente);
-            this.gpbCliente.Controls.Add(this.lbClienteJaCadastrado);
             this.gpbCliente.Controls.Add(this.btCliente);
             this.gpbCliente.Controls.Add(this.lbNomeCliente);
-            this.gpbCliente.Controls.Add(this.lbCodigoCliente);
             this.gpbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbCliente.Location = new System.Drawing.Point(12, 23);
+            this.gpbCliente.Location = new System.Drawing.Point(12, 6);
             this.gpbCliente.Name = "gpbCliente";
-            this.gpbCliente.Size = new System.Drawing.Size(1132, 147);
+            this.gpbCliente.Size = new System.Drawing.Size(760, 209);
             this.gpbCliente.TabIndex = 1;
             this.gpbCliente.TabStop = false;
             this.gpbCliente.Text = "Cliente";
             // 
-            // lbExibeTelefone
+            // textBox2
             // 
-            this.lbExibeTelefone.AutoSize = true;
-            this.lbExibeTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbExibeTelefone.Location = new System.Drawing.Point(838, 83);
-            this.lbExibeTelefone.Name = "lbExibeTelefone";
-            this.lbExibeTelefone.Size = new System.Drawing.Size(278, 20);
-            this.lbExibeTelefone.TabIndex = 10;
-            this.lbExibeTelefone.Text = "Aqui vai Exibir o Telefone do Cliente";
-            this.lbExibeTelefone.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.textBox2.Location = new System.Drawing.Point(90, 114);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(653, 30);
+            this.textBox2.TabIndex = 14;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(90, 155);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(271, 30);
+            this.textBox4.TabIndex = 13;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(90, 73);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(653, 30);
+            this.textBox3.TabIndex = 12;
             // 
             // lbTelefone
             // 
             this.lbTelefone.AutoSize = true;
             this.lbTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTelefone.Location = new System.Drawing.Point(754, 83);
+            this.lbTelefone.Location = new System.Drawing.Point(6, 161);
             this.lbTelefone.Name = "lbTelefone";
             this.lbTelefone.Size = new System.Drawing.Size(78, 20);
             this.lbTelefone.TabIndex = 9;
             this.lbTelefone.Text = "Telefone:";
             this.lbTelefone.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lbExibeEndereco
-            // 
-            this.lbExibeEndereco.AutoSize = true;
-            this.lbExibeEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbExibeEndereco.Location = new System.Drawing.Point(97, 115);
-            this.lbExibeEndereco.Name = "lbExibeEndereco";
-            this.lbExibeEndereco.Size = new System.Drawing.Size(285, 20);
-            this.lbExibeEndereco.TabIndex = 7;
-            this.lbExibeEndereco.Text = "Aqui vai Exibir o Endereço do Cliente";
-            this.lbExibeEndereco.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // lbEndereco
             // 
             this.lbEndereco.AutoSize = true;
             this.lbEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndereco.Location = new System.Drawing.Point(6, 115);
+            this.lbEndereco.Location = new System.Drawing.Point(6, 118);
             this.lbEndereco.Name = "lbEndereco";
             this.lbEndereco.Size = new System.Drawing.Size(85, 20);
             this.lbEndereco.TabIndex = 8;
             this.lbEndereco.Text = "Endereço:";
             this.lbEndereco.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lbExibeNomeCliente
+            // lbNomeCliente
             // 
-            this.lbExibeNomeCliente.AutoSize = true;
-            this.lbExibeNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbExibeNomeCliente.Location = new System.Drawing.Point(307, 83);
-            this.lbExibeNomeCliente.Name = "lbExibeNomeCliente";
-            this.lbExibeNomeCliente.Size = new System.Drawing.Size(258, 20);
-            this.lbExibeNomeCliente.TabIndex = 6;
-            this.lbExibeNomeCliente.Text = "Aqui vai Exibir o Nome do Cliente";
-            this.lbExibeNomeCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lbExibeCodCliente
-            // 
-            this.lbExibeCodCliente.AutoSize = true;
-            this.lbExibeCodCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbExibeCodCliente.Location = new System.Drawing.Point(78, 83);
-            this.lbExibeCodCliente.Name = "lbExibeCodCliente";
-            this.lbExibeCodCliente.Size = new System.Drawing.Size(139, 20);
-            this.lbExibeCodCliente.TabIndex = 5;
-            this.lbExibeCodCliente.Text = "Aqui vai o Código";
-            this.lbExibeCodCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbNomeCliente.AutoSize = true;
+            this.lbNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeCliente.Location = new System.Drawing.Point(6, 79);
+            this.lbNomeCliente.Name = "lbNomeCliente";
+            this.lbNomeCliente.Size = new System.Drawing.Size(58, 20);
+            this.lbNomeCliente.TabIndex = 3;
+            this.lbNomeCliente.Text = "Nome:";
+            this.lbNomeCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // bpbProdutos_Servicos
             // 
+            this.bpbProdutos_Servicos.Controls.Add(this.btConsultar);
             this.bpbProdutos_Servicos.Controls.Add(this.dataGridView1);
             this.bpbProdutos_Servicos.Controls.Add(this.btAdicionar);
             this.bpbProdutos_Servicos.Controls.Add(this.lbValorTotal);
@@ -233,12 +184,23 @@
             this.bpbProdutos_Servicos.Controls.Add(this.mktbQuantidade);
             this.bpbProdutos_Servicos.Controls.Add(this.lbQuantidade);
             this.bpbProdutos_Servicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bpbProdutos_Servicos.Location = new System.Drawing.Point(12, 176);
+            this.bpbProdutos_Servicos.Location = new System.Drawing.Point(12, 216);
             this.bpbProdutos_Servicos.Name = "bpbProdutos_Servicos";
-            this.bpbProdutos_Servicos.Size = new System.Drawing.Size(1132, 475);
+            this.bpbProdutos_Servicos.Size = new System.Drawing.Size(760, 475);
             this.bpbProdutos_Servicos.TabIndex = 2;
             this.bpbProdutos_Servicos.TabStop = false;
             this.bpbProdutos_Servicos.Text = "Produtos / Serviços";
+            // 
+            // btConsultar
+            // 
+            this.btConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btConsultar.Location = new System.Drawing.Point(624, 21);
+            this.btConsultar.Name = "btConsultar";
+            this.btConsultar.Size = new System.Drawing.Size(119, 33);
+            this.btConsultar.TabIndex = 19;
+            this.btConsultar.Text = "Consultar";
+            this.btConsultar.UseVisualStyleBackColor = true;
+            this.btConsultar.Click += new System.EventHandler(this.btConsultar_Click);
             // 
             // dataGridView1
             // 
@@ -246,15 +208,15 @@
             this.dataGridView1.Location = new System.Drawing.Point(10, 113);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1063, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(733, 346);
             this.dataGridView1.TabIndex = 18;
             // 
             // btAdicionar
             // 
             this.btAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdicionar.Location = new System.Drawing.Point(960, 52);
+            this.btAdicionar.Location = new System.Drawing.Point(624, 61);
             this.btAdicionar.Name = "btAdicionar";
-            this.btAdicionar.Size = new System.Drawing.Size(113, 40);
+            this.btAdicionar.Size = new System.Drawing.Size(119, 33);
             this.btAdicionar.TabIndex = 6;
             this.btAdicionar.Text = "Adicionar";
             this.btAdicionar.UseVisualStyleBackColor = true;
@@ -263,7 +225,7 @@
             // 
             this.lbValorTotal.AutoSize = true;
             this.lbValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbValorTotal.Location = new System.Drawing.Point(838, 39);
+            this.lbValorTotal.Location = new System.Drawing.Point(515, 39);
             this.lbValorTotal.Name = "lbValorTotal";
             this.lbValorTotal.Size = new System.Drawing.Size(90, 20);
             this.lbValorTotal.TabIndex = 17;
@@ -272,14 +234,14 @@
             // 
             // tbValorTotal
             // 
-            this.tbValorTotal.Location = new System.Drawing.Point(841, 62);
+            this.tbValorTotal.Location = new System.Drawing.Point(518, 62);
             this.tbValorTotal.Name = "tbValorTotal";
             this.tbValorTotal.Size = new System.Drawing.Size(100, 30);
             this.tbValorTotal.TabIndex = 5;
             // 
             // tbValorUnitario
             // 
-            this.tbValorUnitario.Location = new System.Drawing.Point(717, 62);
+            this.tbValorUnitario.Location = new System.Drawing.Point(405, 62);
             this.tbValorUnitario.Name = "tbValorUnitario";
             this.tbValorUnitario.Size = new System.Drawing.Size(107, 30);
             this.tbValorUnitario.TabIndex = 4;
@@ -288,7 +250,7 @@
             // 
             this.lbValorUnitario.AutoSize = true;
             this.lbValorUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbValorUnitario.Location = new System.Drawing.Point(713, 39);
+            this.lbValorUnitario.Location = new System.Drawing.Point(401, 39);
             this.lbValorUnitario.Name = "lbValorUnitario";
             this.lbValorUnitario.Size = new System.Drawing.Size(111, 20);
             this.lbValorUnitario.TabIndex = 14;
@@ -299,7 +261,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(96, 39);
+            this.label1.Location = new System.Drawing.Point(79, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 13;
@@ -308,9 +270,9 @@
             // 
             // tbDescricao
             // 
-            this.tbDescricao.Location = new System.Drawing.Point(100, 62);
+            this.tbDescricao.Location = new System.Drawing.Point(83, 62);
             this.tbDescricao.Name = "tbDescricao";
-            this.tbDescricao.Size = new System.Drawing.Size(596, 30);
+            this.tbDescricao.Size = new System.Drawing.Size(316, 30);
             this.tbDescricao.TabIndex = 3;
             // 
             // mktbQuantidade
@@ -350,7 +312,7 @@
             this.gpbFormaPagto.Controls.Add(this.tbPorcentDescAVista);
             this.gpbFormaPagto.Controls.Add(this.lbAVista);
             this.gpbFormaPagto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbFormaPagto.Location = new System.Drawing.Point(1166, 23);
+            this.gpbFormaPagto.Location = new System.Drawing.Point(782, 6);
             this.gpbFormaPagto.Name = "gpbFormaPagto";
             this.gpbFormaPagto.Size = new System.Drawing.Size(724, 209);
             this.gpbFormaPagto.TabIndex = 3;
@@ -511,7 +473,7 @@
             this.gpbEntrega.Controls.Add(this.tbPrevDiasExec);
             this.gpbEntrega.Controls.Add(this.lbPrevisaoExecServ);
             this.gpbEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbEntrega.Location = new System.Drawing.Point(1166, 249);
+            this.gpbEntrega.Location = new System.Drawing.Point(782, 216);
             this.gpbEntrega.Name = "gpbEntrega";
             this.gpbEntrega.Size = new System.Drawing.Size(724, 200);
             this.gpbEntrega.TabIndex = 4;
@@ -625,7 +587,7 @@
             this.btCancelarOrcamento.BackColor = System.Drawing.Color.Red;
             this.btCancelarOrcamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancelarOrcamento.ForeColor = System.Drawing.Color.White;
-            this.btCancelarOrcamento.Location = new System.Drawing.Point(54, 121);
+            this.btCancelarOrcamento.Location = new System.Drawing.Point(54, 165);
             this.btCancelarOrcamento.Name = "btCancelarOrcamento";
             this.btCancelarOrcamento.Size = new System.Drawing.Size(162, 32);
             this.btCancelarOrcamento.TabIndex = 15;
@@ -637,7 +599,7 @@
             this.btGravarOrcamento.BackColor = System.Drawing.Color.Green;
             this.btGravarOrcamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGravarOrcamento.ForeColor = System.Drawing.Color.White;
-            this.btGravarOrcamento.Location = new System.Drawing.Point(271, 121);
+            this.btGravarOrcamento.Location = new System.Drawing.Point(271, 165);
             this.btGravarOrcamento.Name = "btGravarOrcamento";
             this.btGravarOrcamento.Size = new System.Drawing.Size(162, 32);
             this.btGravarOrcamento.TabIndex = 16;
@@ -647,7 +609,7 @@
             // btSairOrcamento
             // 
             this.btSairOrcamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSairOrcamento.Location = new System.Drawing.Point(492, 121);
+            this.btSairOrcamento.Location = new System.Drawing.Point(492, 165);
             this.btSairOrcamento.Name = "btSairOrcamento";
             this.btSairOrcamento.Size = new System.Drawing.Size(162, 32);
             this.btSairOrcamento.TabIndex = 17;
@@ -662,9 +624,9 @@
             this.gpbPrazosFinalizacao.Controls.Add(this.btGravarOrcamento);
             this.gpbPrazosFinalizacao.Controls.Add(this.btCancelarOrcamento);
             this.gpbPrazosFinalizacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbPrazosFinalizacao.Location = new System.Drawing.Point(1166, 464);
+            this.gpbPrazosFinalizacao.Location = new System.Drawing.Point(782, 417);
             this.gpbPrazosFinalizacao.Name = "gpbPrazosFinalizacao";
-            this.gpbPrazosFinalizacao.Size = new System.Drawing.Size(724, 187);
+            this.gpbPrazosFinalizacao.Size = new System.Drawing.Size(724, 275);
             this.gpbPrazosFinalizacao.TabIndex = 5;
             this.gpbPrazosFinalizacao.TabStop = false;
             this.gpbPrazosFinalizacao.Text = "Prazos e Finalização";
@@ -675,7 +637,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1924, 675);
+            this.ClientSize = new System.Drawing.Size(1521, 712);
             this.Controls.Add(this.gpbPrazosFinalizacao);
             this.Controls.Add(this.gpbEntrega);
             this.Controls.Add(this.gpbFormaPagto);
@@ -702,15 +664,7 @@
         #endregion
 
         private System.Windows.Forms.Button btCliente;
-        private System.Windows.Forms.Label lbClienteJaCadastrado;
-        private System.Windows.Forms.Label lbCodigoCliente;
-        private System.Windows.Forms.Label lbNomeCliente;
         private System.Windows.Forms.GroupBox gpbCliente;
-        private System.Windows.Forms.Label lbExibeNomeCliente;
-        private System.Windows.Forms.Label lbExibeCodCliente;
-        private System.Windows.Forms.Label lbExibeTelefone;
-        private System.Windows.Forms.Label lbTelefone;
-        private System.Windows.Forms.Label lbExibeEndereco;
         private System.Windows.Forms.Label lbEndereco;
         private System.Windows.Forms.GroupBox bpbProdutos_Servicos;
         private System.Windows.Forms.MaskedTextBox mktbQuantidade;
@@ -755,5 +709,11 @@
         private System.Windows.Forms.Label lbExibeValorTotalParcelado;
         private System.Windows.Forms.Label lbValorTotalParcelado;
         private System.Windows.Forms.Label lbExibeValorPorParcela;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label lbTelefone;
+        private System.Windows.Forms.Label lbNomeCliente;
+        private System.Windows.Forms.Button btConsultar;
     }
 }

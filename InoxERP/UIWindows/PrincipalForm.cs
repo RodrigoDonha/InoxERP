@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InoxERP.UI_Windows_Forms;
+using UIWindows;
 
 namespace InoxERP
 {
-    public partial class Form1 : Form
+    public partial class PrincipalForm : Form
     {
 
-        public Form1()
+        public PrincipalForm()
         {
             InitializeComponent();
         }
@@ -41,6 +42,13 @@ namespace InoxERP
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FornecedoresForm obj = new FornecedoresForm();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaValoresForm obj = new ConsultaValoresForm();
             //this.Hide();
             obj.Show();
         }
