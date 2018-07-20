@@ -45,6 +45,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaixaChequesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaixaChequesForm.Designer.cs">
+      <DependentUpon>CaixaChequesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaixaEntradasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaixaEntradasForm.Designer.cs">
+      <DependentUpon>CaixaEntradasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaixaGeralForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaixaGeralForm.Designer.cs">
+      <DependentUpon>CaixaGeralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaixaSaidasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaixaSaidasForm.Designer.cs">
+      <DependentUpon>CaixaSaidasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +101,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CaixaChequesForm.resx">
+      <DependentUpon>CaixaChequesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaixaEntradasForm.resx">
+      <DependentUpon>CaixaEntradasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaixaGeralForm.resx">
+      <DependentUpon>CaixaGeralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaixaSaidasForm.resx">
+      <DependentUpon>CaixaSaidasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </EmbeddedResource>

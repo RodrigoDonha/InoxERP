@@ -52,5 +52,33 @@ namespace InoxERP
             //this.Hide();
             obj.Show();
         }
+        
+        private void geralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CaixaGeralForm obj = new CaixaGeralForm();
+            //this.Hide();
+            obj.Show();
+        }
+        
+        private void entradasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CaixaEntradasForm obj = new CaixaEntradasForm();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void saídasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CaixaSaidasForm obj = new CaixaSaidasForm();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void chequesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CaixaChequesForm obj = new CaixaChequesForm();
+            //this.Hide();
+            obj.Show();
+        }
     }
 }
