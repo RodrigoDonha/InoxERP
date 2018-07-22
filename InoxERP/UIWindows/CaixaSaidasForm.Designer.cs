@@ -28,183 +28,183 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblExibirCodigo = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.lblDebitos = new System.Windows.Forms.Label();
+            this.btnIncluir = new System.Windows.Forms.Button();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtReferenteA = new System.Windows.Forms.TextBox();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.grdSaidas = new System.Windows.Forms.DataGridView();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblReferenteA = new System.Windows.Forms.Label();
+            this.lblSaidas = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSaidas)).BeginInit();
             this.SuspendLayout();
             // 
-            // label7
+            // lblExibirCodigo
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(104, 52);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 17);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "0000 ";
+            this.lblExibirCodigo.AutoSize = true;
+            this.lblExibirCodigo.Location = new System.Drawing.Point(104, 52);
+            this.lblExibirCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExibirCodigo.Name = "lblExibirCodigo";
+            this.lblExibirCodigo.Size = new System.Drawing.Size(50, 20);
+            this.lblExibirCodigo.TabIndex = 27;
+            this.lblExibirCodigo.Text = "0000 ";
             // 
-            // label6
+            // lblCodigo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 52);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 17);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Código: ";
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(21, 52);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(71, 20);
+            this.lblCodigo.TabIndex = 26;
+            this.lblCodigo.Text = "Código: ";
             // 
-            // button3
+            // btnExcluir
             // 
-            this.button3.Location = new System.Drawing.Point(391, 165);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Excluir";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnExcluir.Location = new System.Drawing.Point(391, 165);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(100, 28);
+            this.btnExcluir.TabIndex = 25;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAlterar
             // 
-            this.button2.Location = new System.Drawing.Point(209, 165);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Alterar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAlterar.Location = new System.Drawing.Point(209, 165);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(100, 28);
+            this.btnAlterar.TabIndex = 24;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // lblDebitos
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(431, 52);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 17);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Débitos";
+            this.lblDebitos.AutoSize = true;
+            this.lblDebitos.Location = new System.Drawing.Point(431, 52);
+            this.lblDebitos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDebitos.Name = "lblDebitos";
+            this.lblDebitos.Size = new System.Drawing.Size(67, 20);
+            this.lblDebitos.TabIndex = 23;
+            this.lblDebitos.Text = "Débitos";
             // 
-            // button1
+            // btnIncluir
             // 
-            this.button1.Location = new System.Drawing.Point(25, 165);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Incluir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIncluir.Location = new System.Drawing.Point(25, 165);
+            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(100, 28);
+            this.btnIncluir.TabIndex = 22;
+            this.btnIncluir.Text = "Incluir";
+            this.btnIncluir.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtValor
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 86);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 23);
-            this.textBox2.TabIndex = 21;
+            this.txtValor.Location = new System.Drawing.Point(108, 86);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(132, 26);
+            this.txtValor.TabIndex = 21;
             // 
-            // textBox1
+            // txtReferenteA
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 118);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(381, 23);
-            this.textBox1.TabIndex = 20;
+            this.txtReferenteA.Location = new System.Drawing.Point(108, 118);
+            this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferenteA.Name = "txtReferenteA";
+            this.txtReferenteA.Size = new System.Drawing.Size(381, 26);
+            this.txtReferenteA.TabIndex = 20;
             // 
-            // dateTimePicker1
+            // dtpData
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(367, 84);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(123, 23);
-            this.dateTimePicker1.TabIndex = 19;
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(367, 84);
+            this.dtpData.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(123, 26);
+            this.dtpData.TabIndex = 19;
             // 
-            // dataGridView1
+            // grdSaidas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 210);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(469, 185);
-            this.dataGridView1.TabIndex = 18;
+            this.grdSaidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdSaidas.Location = new System.Drawing.Point(21, 210);
+            this.grdSaidas.Margin = new System.Windows.Forms.Padding(4);
+            this.grdSaidas.Name = "grdSaidas";
+            this.grdSaidas.Size = new System.Drawing.Size(469, 185);
+            this.grdSaidas.TabIndex = 18;
             // 
-            // label4
+            // lblValor
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 91);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Valor: ";
+            this.lblValor.AutoSize = true;
+            this.lblValor.Location = new System.Drawing.Point(21, 91);
+            this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(58, 20);
+            this.lblValor.TabIndex = 17;
+            this.lblValor.Text = "Valor: ";
             // 
-            // label3
+            // lblData
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(311, 91);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Data: ";
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(311, 91);
+            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(55, 20);
+            this.lblData.TabIndex = 16;
+            this.lblData.Text = "Data: ";
             // 
-            // label2
+            // lblReferenteA
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 122);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Referente a: ";
+            this.lblReferenteA.AutoSize = true;
+            this.lblReferenteA.Location = new System.Drawing.Point(21, 122);
+            this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReferenteA.Name = "lblReferenteA";
+            this.lblReferenteA.Size = new System.Drawing.Size(106, 20);
+            this.lblReferenteA.TabIndex = 15;
+            this.lblReferenteA.Text = "Referente a: ";
             // 
-            // label1
+            // lblSaidas
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(204, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 24);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Saídas";
+            this.lblSaidas.AutoSize = true;
+            this.lblSaidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaidas.Location = new System.Drawing.Point(204, 11);
+            this.lblSaidas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSaidas.Name = "lblSaidas";
+            this.lblSaidas.Size = new System.Drawing.Size(87, 29);
+            this.lblSaidas.TabIndex = 14;
+            this.lblSaidas.Text = "Saídas";
             // 
             // CaixaSaidasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 407);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblExibirCodigo);
+            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.lblDebitos);
+            this.Controls.Add(this.btnIncluir);
+            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.txtReferenteA);
+            this.Controls.Add(this.dtpData);
+            this.Controls.Add(this.grdSaidas);
+            this.Controls.Add(this.lblValor);
+            this.Controls.Add(this.lblData);
+            this.Controls.Add(this.lblReferenteA);
+            this.Controls.Add(this.lblSaidas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CaixaSaidasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa Saídas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSaidas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,19 +212,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblExibirCodigo;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Label lblDebitos;
+        private System.Windows.Forms.Button btnIncluir;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtReferenteA;
+        private System.Windows.Forms.DateTimePicker dtpData;
+        private System.Windows.Forms.DataGridView grdSaidas;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblReferenteA;
+        private System.Windows.Forms.Label lblSaidas;
     }
 }

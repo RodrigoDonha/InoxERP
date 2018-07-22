@@ -28,127 +28,138 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtReferenteA = new System.Windows.Forms.TextBox();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
+            this.grdExtratoGeral = new System.Windows.Forms.DataGridView();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblReferenteA = new System.Windows.Forms.Label();
+            this.lblExtratoGeral = new System.Windows.Forms.Label();
+            this.lblSaldoFinal = new System.Windows.Forms.Label();
+            this.lblExibeSaldoFinal = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.grdExtratoGeral)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox2
+            // txtValor
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(109, 63);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 23);
-            this.textBox2.TabIndex = 21;
+            this.txtValor.Enabled = false;
+            this.txtValor.Location = new System.Drawing.Point(109, 63);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(132, 26);
+            this.txtValor.TabIndex = 21;
             // 
-            // textBox1
+            // txtReferenteA
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(109, 95);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(381, 23);
-            this.textBox1.TabIndex = 20;
+            this.txtReferenteA.Enabled = false;
+            this.txtReferenteA.Location = new System.Drawing.Point(109, 95);
+            this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferenteA.Name = "txtReferenteA";
+            this.txtReferenteA.Size = new System.Drawing.Size(381, 26);
+            this.txtReferenteA.TabIndex = 20;
             // 
-            // dateTimePicker1
+            // dtpData
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(368, 60);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(123, 23);
-            this.dateTimePicker1.TabIndex = 19;
+            this.dtpData.Enabled = false;
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(368, 60);
+            this.dtpData.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(123, 26);
+            this.dtpData.TabIndex = 19;
             // 
-            // dataGridView1
+            // grdExtratoGeral
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 128);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(469, 233);
-            this.dataGridView1.TabIndex = 18;
+            this.grdExtratoGeral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdExtratoGeral.Location = new System.Drawing.Point(23, 128);
+            this.grdExtratoGeral.Margin = new System.Windows.Forms.Padding(4);
+            this.grdExtratoGeral.Name = "grdExtratoGeral";
+            this.grdExtratoGeral.Size = new System.Drawing.Size(469, 233);
+            this.grdExtratoGeral.TabIndex = 18;
             // 
-            // label4
+            // lblValor
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 68);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Valor: ";
+            this.lblValor.AutoSize = true;
+            this.lblValor.Location = new System.Drawing.Point(23, 68);
+            this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(58, 20);
+            this.lblValor.TabIndex = 17;
+            this.lblValor.Text = "Valor: ";
             // 
-            // label3
+            // lblData
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(312, 68);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Data: ";
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(312, 68);
+            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(55, 20);
+            this.lblData.TabIndex = 16;
+            this.lblData.Text = "Data: ";
             // 
-            // label2
+            // lblReferenteA
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 98);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 17);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Referente a: ";
+            this.lblReferenteA.AutoSize = true;
+            this.lblReferenteA.Location = new System.Drawing.Point(23, 98);
+            this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReferenteA.Name = "lblReferenteA";
+            this.lblReferenteA.Size = new System.Drawing.Size(106, 20);
+            this.lblReferenteA.TabIndex = 15;
+            this.lblReferenteA.Text = "Referente a: ";
             // 
-            // label1
+            // lblExtratoGeral
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(179, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 24);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Extrato Geral";
+            this.lblExtratoGeral.AutoSize = true;
+            this.lblExtratoGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExtratoGeral.Location = new System.Drawing.Point(179, 11);
+            this.lblExtratoGeral.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExtratoGeral.Name = "lblExtratoGeral";
+            this.lblExtratoGeral.Size = new System.Drawing.Size(152, 29);
+            this.lblExtratoGeral.TabIndex = 14;
+            this.lblExtratoGeral.Text = "Extrato Geral";
             // 
-            // label5
+            // lblSaldoFinal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(179, 370);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 24);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Saldo Final:";
+            this.lblSaldoFinal.AutoSize = true;
+            this.lblSaldoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoFinal.Location = new System.Drawing.Point(179, 370);
+            this.lblSaldoFinal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSaldoFinal.Name = "lblSaldoFinal";
+            this.lblSaldoFinal.Size = new System.Drawing.Size(141, 29);
+            this.lblSaldoFinal.TabIndex = 22;
+            this.lblSaldoFinal.Text = "Saldo Final:";
+            // 
+            // lblExibeSaldoFinal
+            // 
+            this.lblExibeSaldoFinal.AutoSize = true;
+            this.lblExibeSaldoFinal.Location = new System.Drawing.Point(327, 377);
+            this.lblExibeSaldoFinal.Name = "lblExibeSaldoFinal";
+            this.lblExibeSaldoFinal.Size = new System.Drawing.Size(136, 20);
+            this.lblExibeSaldoFinal.TabIndex = 23;
+            this.lblExibeSaldoFinal.Text = "Exibir Saldo Aqui";
             // 
             // CaixaGeralForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 407);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblExibeSaldoFinal);
+            this.Controls.Add(this.lblSaldoFinal);
+            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.txtReferenteA);
+            this.Controls.Add(this.dtpData);
+            this.Controls.Add(this.grdExtratoGeral);
+            this.Controls.Add(this.lblValor);
+            this.Controls.Add(this.lblData);
+            this.Controls.Add(this.lblReferenteA);
+            this.Controls.Add(this.lblExtratoGeral);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CaixaGeralForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa Geral";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdExtratoGeral)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,14 +167,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtReferenteA;
+        private System.Windows.Forms.DateTimePicker dtpData;
+        private System.Windows.Forms.DataGridView grdExtratoGeral;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lblReferenteA;
+        private System.Windows.Forms.Label lblExtratoGeral;
+        private System.Windows.Forms.Label lblSaldoFinal;
+        private System.Windows.Forms.Label lblExibeSaldoFinal;
     }
 }

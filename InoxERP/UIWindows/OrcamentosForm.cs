@@ -16,7 +16,7 @@ namespace InoxERP.UI_Windows_Forms
         public OrcamentosForm()
         {
             InitializeComponent();
-            btCliente.Focus();
+            btnCliente.Focus();
         }
 
         private void OrcamentosForm_Load(object sender, EventArgs e)

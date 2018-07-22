@@ -16,7 +16,7 @@ namespace UIWindows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InoxERP.PrincipalForm());
+            Application.Run(new AcessoUsuarioForm());
         }
     }
 }

@@ -30,3 +30,8 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.csproj.
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.exe
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.CaixaChequesForm.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.AcessoUsuarioForm.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.CaixaChequesForm.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.CaixaEntradasForm.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.CaixaGeralForm.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.CaixaSaidasForm.resources

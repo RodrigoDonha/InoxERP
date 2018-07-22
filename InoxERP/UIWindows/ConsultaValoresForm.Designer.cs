@@ -28,201 +28,201 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gpbConsultaValores = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lbObservacao = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbValorTotal = new System.Windows.Forms.Label();
-            this.lbValorUnitario = new System.Windows.Forms.Label();
-            this.lbMedidas = new System.Windows.Forms.Label();
-            this.lbPeca = new System.Windows.Forms.Label();
-            this.gpbConsultarValores = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.grpConsultaValores = new System.Windows.Forms.GroupBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.lblObservacao = new System.Windows.Forms.Label();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.txtObservacao = new System.Windows.Forms.TextBox();
+            this.btnGravar = new System.Windows.Forms.Button();
+            this.txtValorTotal = new System.Windows.Forms.TextBox();
+            this.txtValorUnitario = new System.Windows.Forms.TextBox();
+            this.txtMedidas = new System.Windows.Forms.TextBox();
+            this.txtPeca = new System.Windows.Forms.TextBox();
+            this.lblValorTotal = new System.Windows.Forms.Label();
+            this.lblValorUnitario = new System.Windows.Forms.Label();
+            this.lblMedidas = new System.Windows.Forms.Label();
+            this.lblPeca = new System.Windows.Forms.Label();
+            this.grpConsultarValores = new System.Windows.Forms.GroupBox();
+            this.grdConsultaPecas = new System.Windows.Forms.DataGridView();
+            this.txtConsultaPeca = new System.Windows.Forms.TextBox();
+            this.lblConsultaPeca = new System.Windows.Forms.Label();
             this.tbcConsultaValores = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gpbConsultaValores.SuspendLayout();
-            this.gpbConsultarValores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grpConsultaValores.SuspendLayout();
+            this.grpConsultarValores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).BeginInit();
             this.tbcConsultaValores.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gpbConsultaValores
+            // grpConsultaValores
             // 
-            this.gpbConsultaValores.Controls.Add(this.button3);
-            this.gpbConsultaValores.Controls.Add(this.lbObservacao);
-            this.gpbConsultaValores.Controls.Add(this.button2);
-            this.gpbConsultaValores.Controls.Add(this.textBox5);
-            this.gpbConsultaValores.Controls.Add(this.button1);
-            this.gpbConsultaValores.Controls.Add(this.textBox4);
-            this.gpbConsultaValores.Controls.Add(this.textBox3);
-            this.gpbConsultaValores.Controls.Add(this.textBox2);
-            this.gpbConsultaValores.Controls.Add(this.textBox1);
-            this.gpbConsultaValores.Controls.Add(this.lbValorTotal);
-            this.gpbConsultaValores.Controls.Add(this.lbValorUnitario);
-            this.gpbConsultaValores.Controls.Add(this.lbMedidas);
-            this.gpbConsultaValores.Controls.Add(this.lbPeca);
-            this.gpbConsultaValores.Location = new System.Drawing.Point(6, 6);
-            this.gpbConsultaValores.Name = "gpbConsultaValores";
-            this.gpbConsultaValores.Size = new System.Drawing.Size(527, 430);
-            this.gpbConsultaValores.TabIndex = 0;
-            this.gpbConsultaValores.TabStop = false;
-            this.gpbConsultaValores.Text = "Cadastro de Valores";
+            this.grpConsultaValores.Controls.Add(this.btnExcluir);
+            this.grpConsultaValores.Controls.Add(this.lblObservacao);
+            this.grpConsultaValores.Controls.Add(this.btnAlterar);
+            this.grpConsultaValores.Controls.Add(this.txtObservacao);
+            this.grpConsultaValores.Controls.Add(this.btnGravar);
+            this.grpConsultaValores.Controls.Add(this.txtValorTotal);
+            this.grpConsultaValores.Controls.Add(this.txtValorUnitario);
+            this.grpConsultaValores.Controls.Add(this.txtMedidas);
+            this.grpConsultaValores.Controls.Add(this.txtPeca);
+            this.grpConsultaValores.Controls.Add(this.lblValorTotal);
+            this.grpConsultaValores.Controls.Add(this.lblValorUnitario);
+            this.grpConsultaValores.Controls.Add(this.lblMedidas);
+            this.grpConsultaValores.Controls.Add(this.lblPeca);
+            this.grpConsultaValores.Location = new System.Drawing.Point(6, 6);
+            this.grpConsultaValores.Name = "grpConsultaValores";
+            this.grpConsultaValores.Size = new System.Drawing.Size(527, 430);
+            this.grpConsultaValores.TabIndex = 0;
+            this.grpConsultaValores.TabStop = false;
+            this.grpConsultaValores.Text = "Cadastro de Valores";
             // 
-            // button3
+            // btnExcluir
             // 
-            this.button3.Location = new System.Drawing.Point(372, 333);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 30);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Excluir";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnExcluir.Location = new System.Drawing.Point(372, 330);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(73, 30);
+            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // lbObservacao
+            // lblObservacao
             // 
-            this.lbObservacao.AutoSize = true;
-            this.lbObservacao.Location = new System.Drawing.Point(6, 147);
-            this.lbObservacao.Name = "lbObservacao";
-            this.lbObservacao.Size = new System.Drawing.Size(89, 17);
-            this.lbObservacao.TabIndex = 9;
-            this.lbObservacao.Text = "Observação:";
+            this.lblObservacao.AutoSize = true;
+            this.lblObservacao.Location = new System.Drawing.Point(6, 147);
+            this.lblObservacao.Name = "lblObservacao";
+            this.lblObservacao.Size = new System.Drawing.Size(89, 17);
+            this.lblObservacao.TabIndex = 9;
+            this.lblObservacao.Text = "Observação:";
             // 
-            // button2
+            // btnAlterar
             // 
-            this.button2.Location = new System.Drawing.Point(222, 333);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 30);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Alterar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAlterar.Location = new System.Drawing.Point(222, 330);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(73, 30);
+            this.btnAlterar.TabIndex = 2;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtObservacao
             // 
-            this.textBox5.Location = new System.Drawing.Point(9, 171);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(480, 81);
-            this.textBox5.TabIndex = 8;
+            this.txtObservacao.Location = new System.Drawing.Point(9, 171);
+            this.txtObservacao.Multiline = true;
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.Size = new System.Drawing.Size(480, 81);
+            this.txtObservacao.TabIndex = 8;
             // 
-            // button1
+            // btnGravar
             // 
-            this.button1.Location = new System.Drawing.Point(65, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Gravar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGravar.Location = new System.Drawing.Point(65, 330);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(75, 30);
+            this.btnGravar.TabIndex = 1;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtValorTotal
             // 
-            this.textBox4.Location = new System.Drawing.Point(364, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 22);
-            this.textBox4.TabIndex = 7;
+            this.txtValorTotal.Location = new System.Drawing.Point(364, 107);
+            this.txtValorTotal.Name = "txtValorTotal";
+            this.txtValorTotal.Size = new System.Drawing.Size(125, 22);
+            this.txtValorTotal.TabIndex = 7;
             // 
-            // textBox3
+            // txtValorUnitario
             // 
-            this.textBox3.Location = new System.Drawing.Point(112, 107);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 22);
-            this.textBox3.TabIndex = 6;
+            this.txtValorUnitario.Location = new System.Drawing.Point(112, 107);
+            this.txtValorUnitario.Name = "txtValorUnitario";
+            this.txtValorUnitario.Size = new System.Drawing.Size(125, 22);
+            this.txtValorUnitario.TabIndex = 6;
             // 
-            // textBox2
+            // txtMedidas
             // 
-            this.textBox2.Location = new System.Drawing.Point(112, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(377, 22);
-            this.textBox2.TabIndex = 5;
+            this.txtMedidas.Location = new System.Drawing.Point(112, 68);
+            this.txtMedidas.Name = "txtMedidas";
+            this.txtMedidas.Size = new System.Drawing.Size(377, 22);
+            this.txtMedidas.TabIndex = 5;
             // 
-            // textBox1
+            // txtPeca
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(377, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtPeca.Location = new System.Drawing.Point(112, 30);
+            this.txtPeca.Name = "txtPeca";
+            this.txtPeca.Size = new System.Drawing.Size(377, 22);
+            this.txtPeca.TabIndex = 4;
             // 
-            // lbValorTotal
+            // lblValorTotal
             // 
-            this.lbValorTotal.AutoSize = true;
-            this.lbValorTotal.Location = new System.Drawing.Point(258, 110);
-            this.lbValorTotal.Name = "lbValorTotal";
-            this.lbValorTotal.Size = new System.Drawing.Size(81, 17);
-            this.lbValorTotal.TabIndex = 3;
-            this.lbValorTotal.Text = "Valor Total:";
+            this.lblValorTotal.AutoSize = true;
+            this.lblValorTotal.Location = new System.Drawing.Point(258, 110);
+            this.lblValorTotal.Name = "lblValorTotal";
+            this.lblValorTotal.Size = new System.Drawing.Size(81, 17);
+            this.lblValorTotal.TabIndex = 3;
+            this.lblValorTotal.Text = "Valor Total:";
             // 
-            // lbValorUnitario
+            // lblValorUnitario
             // 
-            this.lbValorUnitario.AutoSize = true;
-            this.lbValorUnitario.Location = new System.Drawing.Point(6, 110);
-            this.lbValorUnitario.Name = "lbValorUnitario";
-            this.lbValorUnitario.Size = new System.Drawing.Size(98, 17);
-            this.lbValorUnitario.TabIndex = 2;
-            this.lbValorUnitario.Text = "Valor Unitário:";
+            this.lblValorUnitario.AutoSize = true;
+            this.lblValorUnitario.Location = new System.Drawing.Point(6, 110);
+            this.lblValorUnitario.Name = "lblValorUnitario";
+            this.lblValorUnitario.Size = new System.Drawing.Size(98, 17);
+            this.lblValorUnitario.TabIndex = 2;
+            this.lblValorUnitario.Text = "Valor Unitário:";
             // 
-            // lbMedidas
+            // lblMedidas
             // 
-            this.lbMedidas.AutoSize = true;
-            this.lbMedidas.Location = new System.Drawing.Point(6, 71);
-            this.lbMedidas.Name = "lbMedidas";
-            this.lbMedidas.Size = new System.Drawing.Size(65, 17);
-            this.lbMedidas.TabIndex = 1;
-            this.lbMedidas.Text = "Medidas:";
+            this.lblMedidas.AutoSize = true;
+            this.lblMedidas.Location = new System.Drawing.Point(6, 71);
+            this.lblMedidas.Name = "lblMedidas";
+            this.lblMedidas.Size = new System.Drawing.Size(65, 17);
+            this.lblMedidas.TabIndex = 1;
+            this.lblMedidas.Text = "Medidas:";
             // 
-            // lbPeca
+            // lblPeca
             // 
-            this.lbPeca.AutoSize = true;
-            this.lbPeca.Location = new System.Drawing.Point(6, 33);
-            this.lbPeca.Name = "lbPeca";
-            this.lbPeca.Size = new System.Drawing.Size(44, 17);
-            this.lbPeca.TabIndex = 0;
-            this.lbPeca.Text = "Peça:";
+            this.lblPeca.AutoSize = true;
+            this.lblPeca.Location = new System.Drawing.Point(6, 33);
+            this.lblPeca.Name = "lblPeca";
+            this.lblPeca.Size = new System.Drawing.Size(44, 17);
+            this.lblPeca.TabIndex = 0;
+            this.lblPeca.Text = "Peça:";
             // 
-            // gpbConsultarValores
+            // grpConsultarValores
             // 
-            this.gpbConsultarValores.Controls.Add(this.dataGridView1);
-            this.gpbConsultarValores.Controls.Add(this.textBox6);
-            this.gpbConsultarValores.Controls.Add(this.label1);
-            this.gpbConsultarValores.Location = new System.Drawing.Point(6, 6);
-            this.gpbConsultarValores.Name = "gpbConsultarValores";
-            this.gpbConsultarValores.Size = new System.Drawing.Size(533, 430);
-            this.gpbConsultarValores.TabIndex = 1;
-            this.gpbConsultarValores.TabStop = false;
-            this.gpbConsultarValores.Text = "Consultar Valores";
+            this.grpConsultarValores.Controls.Add(this.grdConsultaPecas);
+            this.grpConsultarValores.Controls.Add(this.txtConsultaPeca);
+            this.grpConsultarValores.Controls.Add(this.lblConsultaPeca);
+            this.grpConsultarValores.Location = new System.Drawing.Point(6, 6);
+            this.grpConsultarValores.Name = "grpConsultarValores";
+            this.grpConsultarValores.Size = new System.Drawing.Size(533, 430);
+            this.grpConsultarValores.TabIndex = 1;
+            this.grpConsultarValores.TabStop = false;
+            this.grpConsultarValores.Text = "Consultar Valores";
             // 
-            // dataGridView1
+            // grdConsultaPecas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(518, 355);
-            this.dataGridView1.TabIndex = 7;
+            this.grdConsultaPecas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdConsultaPecas.Location = new System.Drawing.Point(9, 69);
+            this.grdConsultaPecas.Name = "grdConsultaPecas";
+            this.grdConsultaPecas.RowTemplate.Height = 24;
+            this.grdConsultaPecas.Size = new System.Drawing.Size(518, 355);
+            this.grdConsultaPecas.TabIndex = 7;
             // 
-            // textBox6
+            // txtConsultaPeca
             // 
-            this.textBox6.Location = new System.Drawing.Point(56, 30);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(471, 22);
-            this.textBox6.TabIndex = 6;
+            this.txtConsultaPeca.Location = new System.Drawing.Point(56, 30);
+            this.txtConsultaPeca.Name = "txtConsultaPeca";
+            this.txtConsultaPeca.Size = new System.Drawing.Size(471, 22);
+            this.txtConsultaPeca.TabIndex = 6;
             // 
-            // label1
+            // lblConsultaPeca
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Peça:";
+            this.lblConsultaPeca.AutoSize = true;
+            this.lblConsultaPeca.Location = new System.Drawing.Point(6, 33);
+            this.lblConsultaPeca.Name = "lblConsultaPeca";
+            this.lblConsultaPeca.Size = new System.Drawing.Size(44, 17);
+            this.lblConsultaPeca.TabIndex = 5;
+            this.lblConsultaPeca.Text = "Peça:";
             // 
             // tbcConsultaValores
             // 
@@ -236,7 +236,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.gpbConsultaValores);
+            this.tabPage1.Controls.Add(this.grpConsultaValores);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -247,7 +247,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.gpbConsultarValores);
+            this.tabPage2.Controls.Add(this.grpConsultarValores);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -264,11 +264,11 @@
             this.Controls.Add(this.tbcConsultaValores);
             this.Name = "ConsultaValoresForm";
             this.Text = "Consulta de Produtos e Valores";
-            this.gpbConsultaValores.ResumeLayout(false);
-            this.gpbConsultaValores.PerformLayout();
-            this.gpbConsultarValores.ResumeLayout(false);
-            this.gpbConsultarValores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.grpConsultaValores.ResumeLayout(false);
+            this.grpConsultaValores.PerformLayout();
+            this.grpConsultarValores.ResumeLayout(false);
+            this.grpConsultarValores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).EndInit();
             this.tbcConsultaValores.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -278,24 +278,24 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gpbConsultaValores;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbValorTotal;
-        private System.Windows.Forms.Label lbValorUnitario;
-        private System.Windows.Forms.Label lbMedidas;
-        private System.Windows.Forms.Label lbPeca;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label lbObservacao;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.GroupBox gpbConsultarValores;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox grpConsultaValores;
+        private System.Windows.Forms.TextBox txtValorTotal;
+        private System.Windows.Forms.TextBox txtValorUnitario;
+        private System.Windows.Forms.TextBox txtMedidas;
+        private System.Windows.Forms.TextBox txtPeca;
+        private System.Windows.Forms.Label lblValorTotal;
+        private System.Windows.Forms.Label lblValorUnitario;
+        private System.Windows.Forms.Label lblMedidas;
+        private System.Windows.Forms.Label lblPeca;
+        private System.Windows.Forms.Button btnGravar;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Label lblObservacao;
+        private System.Windows.Forms.TextBox txtObservacao;
+        private System.Windows.Forms.GroupBox grpConsultarValores;
+        private System.Windows.Forms.DataGridView grdConsultaPecas;
+        private System.Windows.Forms.TextBox txtConsultaPeca;
+        private System.Windows.Forms.Label lblConsultaPeca;
         private System.Windows.Forms.TabControl tbcConsultaValores;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;

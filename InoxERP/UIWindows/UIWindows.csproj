@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessoUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcessoUsuarioForm.Designer.cs">
+      <DependentUpon>AcessoUsuarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CaixaChequesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AcessoUsuarioForm.resx">
+      <DependentUpon>AcessoUsuarioForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CaixaChequesForm.resx">
       <DependentUpon>CaixaChequesForm.cs</DependentUpon>
     </EmbeddedResource>
