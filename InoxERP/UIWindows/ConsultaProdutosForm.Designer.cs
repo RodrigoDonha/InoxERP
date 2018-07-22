@@ -1,6 +1,6 @@
 ﻿namespace UIWindows
 {
-    partial class ConsultaValoresForm
+    partial class ConsultaProdutosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grpConsultaValores = new System.Windows.Forms.GroupBox();
+            this.grpCadastroProdutos = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.lblObservacao = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -42,42 +42,42 @@
             this.lblValorUnitario = new System.Windows.Forms.Label();
             this.lblMedidas = new System.Windows.Forms.Label();
             this.lblPeca = new System.Windows.Forms.Label();
-            this.grpConsultarValores = new System.Windows.Forms.GroupBox();
+            this.grpConsultarProdutos = new System.Windows.Forms.GroupBox();
             this.grdConsultaPecas = new System.Windows.Forms.DataGridView();
             this.txtConsultaPeca = new System.Windows.Forms.TextBox();
             this.lblConsultaPeca = new System.Windows.Forms.Label();
             this.tbcConsultaValores = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.grpConsultaValores.SuspendLayout();
-            this.grpConsultarValores.SuspendLayout();
+            this.grpCadastroProdutos.SuspendLayout();
+            this.grpConsultarProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).BeginInit();
             this.tbcConsultaValores.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grpConsultaValores
+            // grpCadastroProdutos
             // 
-            this.grpConsultaValores.Controls.Add(this.btnExcluir);
-            this.grpConsultaValores.Controls.Add(this.lblObservacao);
-            this.grpConsultaValores.Controls.Add(this.btnAlterar);
-            this.grpConsultaValores.Controls.Add(this.txtObservacao);
-            this.grpConsultaValores.Controls.Add(this.btnGravar);
-            this.grpConsultaValores.Controls.Add(this.txtValorTotal);
-            this.grpConsultaValores.Controls.Add(this.txtValorUnitario);
-            this.grpConsultaValores.Controls.Add(this.txtMedidas);
-            this.grpConsultaValores.Controls.Add(this.txtPeca);
-            this.grpConsultaValores.Controls.Add(this.lblValorTotal);
-            this.grpConsultaValores.Controls.Add(this.lblValorUnitario);
-            this.grpConsultaValores.Controls.Add(this.lblMedidas);
-            this.grpConsultaValores.Controls.Add(this.lblPeca);
-            this.grpConsultaValores.Location = new System.Drawing.Point(6, 6);
-            this.grpConsultaValores.Name = "grpConsultaValores";
-            this.grpConsultaValores.Size = new System.Drawing.Size(527, 430);
-            this.grpConsultaValores.TabIndex = 0;
-            this.grpConsultaValores.TabStop = false;
-            this.grpConsultaValores.Text = "Cadastro de Valores";
+            this.grpCadastroProdutos.Controls.Add(this.btnExcluir);
+            this.grpCadastroProdutos.Controls.Add(this.lblObservacao);
+            this.grpCadastroProdutos.Controls.Add(this.btnAlterar);
+            this.grpCadastroProdutos.Controls.Add(this.txtObservacao);
+            this.grpCadastroProdutos.Controls.Add(this.btnGravar);
+            this.grpCadastroProdutos.Controls.Add(this.txtValorTotal);
+            this.grpCadastroProdutos.Controls.Add(this.txtValorUnitario);
+            this.grpCadastroProdutos.Controls.Add(this.txtMedidas);
+            this.grpCadastroProdutos.Controls.Add(this.txtPeca);
+            this.grpCadastroProdutos.Controls.Add(this.lblValorTotal);
+            this.grpCadastroProdutos.Controls.Add(this.lblValorUnitario);
+            this.grpCadastroProdutos.Controls.Add(this.lblMedidas);
+            this.grpCadastroProdutos.Controls.Add(this.lblPeca);
+            this.grpCadastroProdutos.Location = new System.Drawing.Point(6, 6);
+            this.grpCadastroProdutos.Name = "grpCadastroProdutos";
+            this.grpCadastroProdutos.Size = new System.Drawing.Size(527, 430);
+            this.grpCadastroProdutos.TabIndex = 0;
+            this.grpCadastroProdutos.TabStop = false;
+            this.grpCadastroProdutos.Text = "Cadastro de Produtos";
             // 
             // btnExcluir
             // 
@@ -187,17 +187,17 @@
             this.lblPeca.TabIndex = 0;
             this.lblPeca.Text = "Peça:";
             // 
-            // grpConsultarValores
+            // grpConsultarProdutos
             // 
-            this.grpConsultarValores.Controls.Add(this.grdConsultaPecas);
-            this.grpConsultarValores.Controls.Add(this.txtConsultaPeca);
-            this.grpConsultarValores.Controls.Add(this.lblConsultaPeca);
-            this.grpConsultarValores.Location = new System.Drawing.Point(6, 6);
-            this.grpConsultarValores.Name = "grpConsultarValores";
-            this.grpConsultarValores.Size = new System.Drawing.Size(533, 430);
-            this.grpConsultarValores.TabIndex = 1;
-            this.grpConsultarValores.TabStop = false;
-            this.grpConsultarValores.Text = "Consultar Valores";
+            this.grpConsultarProdutos.Controls.Add(this.grdConsultaPecas);
+            this.grpConsultarProdutos.Controls.Add(this.txtConsultaPeca);
+            this.grpConsultarProdutos.Controls.Add(this.lblConsultaPeca);
+            this.grpConsultarProdutos.Location = new System.Drawing.Point(6, 6);
+            this.grpConsultarProdutos.Name = "grpConsultarProdutos";
+            this.grpConsultarProdutos.Size = new System.Drawing.Size(533, 430);
+            this.grpConsultarProdutos.TabIndex = 1;
+            this.grpConsultarProdutos.TabStop = false;
+            this.grpConsultarProdutos.Text = "Consultar Produtos";
             // 
             // grdConsultaPecas
             // 
@@ -228,7 +228,7 @@
             // 
             this.tbcConsultaValores.Controls.Add(this.tabPage1);
             this.tbcConsultaValores.Controls.Add(this.tabPage2);
-            this.tbcConsultaValores.Location = new System.Drawing.Point(3, 12);
+            this.tbcConsultaValores.Location = new System.Drawing.Point(6, 7);
             this.tbcConsultaValores.Name = "tbcConsultaValores";
             this.tbcConsultaValores.SelectedIndex = 0;
             this.tbcConsultaValores.Size = new System.Drawing.Size(553, 471);
@@ -236,7 +236,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.grpConsultaValores);
+            this.tabPage1.Controls.Add(this.grpCadastroProdutos);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -247,7 +247,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.grpConsultarValores);
+            this.tabPage2.Controls.Add(this.grpConsultarProdutos);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -263,11 +263,11 @@
             this.ClientSize = new System.Drawing.Size(561, 486);
             this.Controls.Add(this.tbcConsultaValores);
             this.Name = "ConsultaValoresForm";
-            this.Text = "Consulta de Produtos e Valores";
-            this.grpConsultaValores.ResumeLayout(false);
-            this.grpConsultaValores.PerformLayout();
-            this.grpConsultarValores.ResumeLayout(false);
-            this.grpConsultarValores.PerformLayout();
+            this.Text = "Cadastro e Consulta de Produtos";
+            this.grpCadastroProdutos.ResumeLayout(false);
+            this.grpCadastroProdutos.PerformLayout();
+            this.grpConsultarProdutos.ResumeLayout(false);
+            this.grpConsultarProdutos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).EndInit();
             this.tbcConsultaValores.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -278,7 +278,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grpConsultaValores;
+        private System.Windows.Forms.GroupBox grpCadastroProdutos;
         private System.Windows.Forms.TextBox txtValorTotal;
         private System.Windows.Forms.TextBox txtValorUnitario;
         private System.Windows.Forms.TextBox txtMedidas;
@@ -292,7 +292,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.TextBox txtObservacao;
-        private System.Windows.Forms.GroupBox grpConsultarValores;
+        private System.Windows.Forms.GroupBox grpConsultarProdutos;
         private System.Windows.Forms.DataGridView grdConsultaPecas;
         private System.Windows.Forms.TextBox txtConsultaPeca;
         private System.Windows.Forms.Label lblConsultaPeca;

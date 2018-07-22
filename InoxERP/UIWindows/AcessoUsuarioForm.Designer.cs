@@ -32,8 +32,8 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.grpUsuario = new System.Windows.Forms.GroupBox();
-            this.grpSenha = new System.Windows.Forms.GroupBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.grpSenha = new System.Windows.Forms.GroupBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.grpUsuario.SuspendLayout();
             this.grpSenha.SuspendLayout();
@@ -46,7 +46,7 @@
             this.btnAcessar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAcessar.Location = new System.Drawing.Point(63, 284);
             this.btnAcessar.Name = "btnAcessar";
-            this.btnAcessar.Size = new System.Drawing.Size(75, 30);
+            this.btnAcessar.Size = new System.Drawing.Size(80, 30);
             this.btnAcessar.TabIndex = 4;
             this.btnAcessar.Text = "Acessar";
             this.btnAcessar.UseVisualStyleBackColor = false;
@@ -59,7 +59,7 @@
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLimpar.Location = new System.Drawing.Point(197, 284);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(75, 30);
+            this.btnLimpar.Size = new System.Drawing.Size(80, 30);
             this.btnLimpar.TabIndex = 5;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
@@ -72,7 +72,7 @@
             this.btnFechar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnFechar.Location = new System.Drawing.Point(333, 284);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(75, 30);
+            this.btnFechar.Size = new System.Drawing.Size(80, 30);
             this.btnFechar.TabIndex = 6;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = false;
@@ -88,6 +88,15 @@
             this.grpUsuario.TabStop = false;
             this.grpUsuario.Text = "Usuário";
             // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(19, 39);
+            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(307, 36);
+            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
+            // 
             // grpSenha
             // 
             this.grpSenha.Controls.Add(this.txtSenha);
@@ -97,15 +106,6 @@
             this.grpSenha.TabIndex = 2;
             this.grpSenha.TabStop = false;
             this.grpSenha.Text = "Senha";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(19, 39);
-            this.txtUsuario.Multiline = true;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(307, 36);
-            this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtSenha
             // 

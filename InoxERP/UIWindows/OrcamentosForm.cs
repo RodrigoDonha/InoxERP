@@ -38,9 +38,8 @@ namespace InoxERP.UI_Windows_Forms
 
         private void btConsultar_Click(object sender, EventArgs e)
         {
-            ConsultaValoresForm obj = new ConsultaValoresForm();
-            //this.Hide();
-            obj.Show();
+            SelecaoTelasConsultaForm selecao = new SelecaoTelasConsultaForm();
+            selecao.Show();
         }
     }
 }

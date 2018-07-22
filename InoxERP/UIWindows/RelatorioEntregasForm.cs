@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UIWindows
 {
-    public partial class ConsultaValoresForm : Form
+    public partial class RelatorioEntregasForm : Form
     {
-        public ConsultaValoresForm()
+        public RelatorioEntregasForm()
         {
             InitializeComponent();
         }

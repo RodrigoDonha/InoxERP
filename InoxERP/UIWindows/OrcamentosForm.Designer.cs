@@ -78,8 +78,9 @@
             this.dtpDataValidadeOrcamento = new System.Windows.Forms.DateTimePicker();
             this.btnCancelarOrcamento = new System.Windows.Forms.Button();
             this.btnGravarOrcamento = new System.Windows.Forms.Button();
-            this.btnSairOrcamento = new System.Windows.Forms.Button();
+            this.btnAprovar = new System.Windows.Forms.Button();
             this.grpPrazosFinalizacao = new System.Windows.Forms.GroupBox();
+            this.btnSair = new System.Windows.Forms.Button();
             this.grpCliente.SuspendLayout();
             this.grpProdutos_Servicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdItens)).BeginInit();
@@ -587,7 +588,7 @@
             this.btnCancelarOrcamento.BackColor = System.Drawing.Color.Red;
             this.btnCancelarOrcamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarOrcamento.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarOrcamento.Location = new System.Drawing.Point(54, 165);
+            this.btnCancelarOrcamento.Location = new System.Drawing.Point(477, 165);
             this.btnCancelarOrcamento.Name = "btnCancelarOrcamento";
             this.btnCancelarOrcamento.Size = new System.Drawing.Size(162, 32);
             this.btnCancelarOrcamento.TabIndex = 15;
@@ -599,27 +600,30 @@
             this.btnGravarOrcamento.BackColor = System.Drawing.Color.Green;
             this.btnGravarOrcamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGravarOrcamento.ForeColor = System.Drawing.Color.White;
-            this.btnGravarOrcamento.Location = new System.Drawing.Point(271, 165);
+            this.btnGravarOrcamento.Location = new System.Drawing.Point(70, 165);
             this.btnGravarOrcamento.Name = "btnGravarOrcamento";
             this.btnGravarOrcamento.Size = new System.Drawing.Size(162, 32);
             this.btnGravarOrcamento.TabIndex = 16;
             this.btnGravarOrcamento.Text = "Gravar";
             this.btnGravarOrcamento.UseVisualStyleBackColor = false;
             // 
-            // btnSairOrcamento
+            // btnAprovar
             // 
-            this.btnSairOrcamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSairOrcamento.Location = new System.Drawing.Point(492, 165);
-            this.btnSairOrcamento.Name = "btnSairOrcamento";
-            this.btnSairOrcamento.Size = new System.Drawing.Size(162, 32);
-            this.btnSairOrcamento.TabIndex = 17;
-            this.btnSairOrcamento.Text = "Sair";
-            this.btnSairOrcamento.UseVisualStyleBackColor = true;
+            this.btnAprovar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAprovar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAprovar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAprovar.Location = new System.Drawing.Point(271, 165);
+            this.btnAprovar.Name = "btnAprovar";
+            this.btnAprovar.Size = new System.Drawing.Size(162, 32);
+            this.btnAprovar.TabIndex = 17;
+            this.btnAprovar.Text = "Aprovar";
+            this.btnAprovar.UseVisualStyleBackColor = false;
             // 
             // grpPrazosFinalizacao
             // 
+            this.grpPrazosFinalizacao.Controls.Add(this.btnSair);
             this.grpPrazosFinalizacao.Controls.Add(this.lblValidadeOrcamento);
-            this.grpPrazosFinalizacao.Controls.Add(this.btnSairOrcamento);
+            this.grpPrazosFinalizacao.Controls.Add(this.btnAprovar);
             this.grpPrazosFinalizacao.Controls.Add(this.dtpDataValidadeOrcamento);
             this.grpPrazosFinalizacao.Controls.Add(this.btnGravarOrcamento);
             this.grpPrazosFinalizacao.Controls.Add(this.btnCancelarOrcamento);
@@ -630,6 +634,16 @@
             this.grpPrazosFinalizacao.TabIndex = 5;
             this.grpPrazosFinalizacao.TabStop = false;
             this.grpPrazosFinalizacao.Text = "Prazos e Finalização";
+            // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(556, 237);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(162, 32);
+            this.btnSair.TabIndex = 18;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
             // 
             // OrcamentosForm
             // 
@@ -704,7 +718,7 @@
         private System.Windows.Forms.DateTimePicker dtpDataValidadeOrcamento;
         private System.Windows.Forms.Button btnCancelarOrcamento;
         private System.Windows.Forms.Button btnGravarOrcamento;
-        private System.Windows.Forms.Button btnSairOrcamento;
+        private System.Windows.Forms.Button btnAprovar;
         private System.Windows.Forms.GroupBox grpPrazosFinalizacao;
         private System.Windows.Forms.Label lblExibeValorTotalParcelado;
         private System.Windows.Forms.Label lblValorTotalParcelado;
@@ -715,5 +729,6 @@
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Button btnSair;
     }
 }

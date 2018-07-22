@@ -81,11 +81,41 @@
     <Compile Include="ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaValoresForm.cs">
+    <Compile Include="ConsultaOrcamentoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaValoresForm.Designer.cs">
-      <DependentUpon>ConsultaValoresForm.cs</DependentUpon>
+    <Compile Include="ConsultaOrcamentoForm.Designer.cs">
+      <DependentUpon>ConsultaOrcamentoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaOrdemServicoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaOrdemServicoForm.Designer.cs">
+      <DependentUpon>ConsultaOrdemServicoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaServicosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaServicosForm.Designer.cs">
+      <DependentUpon>ConsultaServicosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaProdutosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaProdutosForm.Designer.cs">
+      <DependentUpon>ConsultaProdutosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntregasAndamentoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntregasAndamentoForm.Designer.cs">
+      <DependentUpon>EntregasAndamentoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntregasFinalizadasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntregasFinalizadasForm.Designer.cs">
+      <DependentUpon>EntregasFinalizadasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FornecedoresForm.cs">
       <SubType>Form</SubType>
@@ -99,6 +129,12 @@
     <Compile Include="OrcamentosForm.Designer.cs">
       <DependentUpon>OrcamentosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrdemServicoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdemServicoForm.Designer.cs">
+      <DependentUpon>OrdemServicoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +143,48 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelatorioCaixaChequeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioCaixaChequeForm.Designer.cs">
+      <DependentUpon>RelatorioCaixaChequeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioCaixaDinheiroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioCaixaDinheiroForm.Designer.cs">
+      <DependentUpon>RelatorioCaixaDinheiroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioCaixaGeralForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioCaixaGeralForm.Designer.cs">
+      <DependentUpon>RelatorioCaixaGeralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatorioEntregasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatorioEntregasForm.Designer.cs">
+      <DependentUpon>RelatorioEntregasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatoriosOrcamentosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatoriosOrcamentosForm.Designer.cs">
+      <DependentUpon>RelatoriosOrcamentosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelatoriosOrdemServicoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelatoriosOrdemServicoForm.Designer.cs">
+      <DependentUpon>RelatoriosOrdemServicoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelecaoTelasConsultaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelecaoTelasConsultaForm.Designer.cs">
+      <DependentUpon>SelecaoTelasConsultaForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AcessoUsuarioForm.resx">
       <DependentUpon>AcessoUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,14 +203,32 @@
     <EmbeddedResource Include="ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultaValoresForm.resx">
-      <DependentUpon>ConsultaValoresForm.cs</DependentUpon>
+    <EmbeddedResource Include="ConsultaOrcamentoForm.resx">
+      <DependentUpon>ConsultaOrcamentoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaOrdemServicoForm.resx">
+      <DependentUpon>ConsultaOrdemServicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaServicosForm.resx">
+      <DependentUpon>ConsultaServicosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaProdutosForm.resx">
+      <DependentUpon>ConsultaProdutosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntregasAndamentoForm.resx">
+      <DependentUpon>EntregasAndamentoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntregasFinalizadasForm.resx">
+      <DependentUpon>EntregasFinalizadasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FornecedoresForm.resx">
       <DependentUpon>FornecedoresForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrcamentosForm.resx">
       <DependentUpon>OrcamentosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdemServicoForm.resx">
+      <DependentUpon>OrdemServicoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
@@ -146,6 +242,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RelatorioCaixaChequeForm.resx">
+      <DependentUpon>RelatorioCaixaChequeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioCaixaDinheiroForm.resx">
+      <DependentUpon>RelatorioCaixaDinheiroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioCaixaGeralForm.resx">
+      <DependentUpon>RelatorioCaixaGeralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatorioEntregasForm.resx">
+      <DependentUpon>RelatorioEntregasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatoriosOrcamentosForm.resx">
+      <DependentUpon>RelatoriosOrcamentosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelatoriosOrdemServicoForm.resx">
+      <DependentUpon>RelatoriosOrdemServicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecaoTelasConsultaForm.resx">
+      <DependentUpon>SelecaoTelasConsultaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

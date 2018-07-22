@@ -48,7 +48,7 @@ namespace InoxERP
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultaValoresForm obj = new ConsultaValoresForm();
+            ConsultaProdutosForm obj = new ConsultaProdutosForm();
             //this.Hide();
             obj.Show();
         }
@@ -79,6 +79,72 @@ namespace InoxERP
             CaixaChequesForm obj = new CaixaChequesForm();
             //this.Hide();
             obj.Show();
+        }
+
+        private void tipConsultaOrcamento_Click(object sender, EventArgs e)
+        {
+            ConsultaOrcamentoForm consulta = new ConsultaOrcamentoForm();
+            consulta.Show();
+
+        }
+
+        private void tipConsultaOS_Click(object sender, EventArgs e)
+        {
+            ConsultaOrdemServicoForm consulta = new ConsultaOrdemServicoForm();
+            consulta.Show();
+        }
+
+        private void tipEmAndamento_Click(object sender, EventArgs e)
+        {
+            EntregasAndamentoForm andamento = new EntregasAndamentoForm();
+            andamento.Show();
+        }
+
+        private void tipEntregasFinalizadas_Click(object sender, EventArgs e)
+        {
+            EntregasFinalizadasForm finalizadas = new EntregasFinalizadasForm();
+            finalizadas.Show();
+        }
+
+        private void PrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void orçamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatoriosOrcamentosForm orcamentos = new RelatoriosOrcamentosForm();
+            orcamentos.Show();
+        }
+
+        private void ordensDeServiçoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatoriosOrdemServicoForm os = new RelatoriosOrdemServicoForm();
+            os.Show();
+        }
+
+        private void entregasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatorioEntregasForm entregas = new RelatorioEntregasForm();
+            entregas.Show();
+        }
+
+        private void recebidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatorioCaixaChequeForm cheque = new RelatorioCaixaChequeForm();
+            cheque.Show();
+        }
+
+        private void recebíveisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RelatorioCaixaDinheiroForm dinheiro = new RelatorioCaixaDinheiroForm();
+            dinheiro.Show();
+        }
+
+        private void geralToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            RelatorioCaixaGeralForm geral = new RelatorioCaixaGeralForm();
+            geral.Show();
         }
     }
 }
