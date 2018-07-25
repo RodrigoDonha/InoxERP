@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Conexao\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -185,6 +189,12 @@
     <Compile Include="SelecaoTelasConsultaForm.Designer.cs">
       <DependentUpon>SelecaoTelasConsultaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosForm.Designer.cs">
+      <DependentUpon>UsuariosForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AcessoUsuarioForm.resx">
       <DependentUpon>AcessoUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,6 +273,9 @@
     <EmbeddedResource Include="SelecaoTelasConsultaForm.resx">
       <DependentUpon>SelecaoTelasConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosForm.resx">
+      <DependentUpon>UsuariosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -275,6 +288,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{1002e4ef-a22d-48f0-bf25-4a92ada296cc}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{0f9ee8f3-7cdd-4e4d-a110-5b74592e3218}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelos\Modelos.csproj">
+      <Project>{23591fd4-0598-48b4-9030-ab46f765d92e}</Project>
+      <Name>Modelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

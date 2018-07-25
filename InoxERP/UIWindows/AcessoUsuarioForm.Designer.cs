@@ -95,7 +95,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(307, 36);
             this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
+            
             // 
             // grpSenha
             // 
@@ -114,6 +114,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(307, 36);
             this.txtSenha.TabIndex = 3;
+            
             // 
             // AcessoUsuarioForm
             // 

@@ -14,12 +14,18 @@ namespace InoxERP
 {
     public partial class PrincipalForm : Form
     {
+        private int TipoDeUsuario { get; set; }//MANDA P CA
+        private string UsuarioLogado { get; set; }//MANDA P CA
 
-        public PrincipalForm()
+        //Funções
+
+        public PrincipalForm(int tipo, string usuario)
         {
+            this.TipoDeUsuario = tipo;
+            this.UsuarioLogado = usuario;
             InitializeComponent();
         }
-
+        
         private void orçamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -145,6 +151,12 @@ namespace InoxERP
         {
             RelatorioCaixaGeralForm geral = new RelatorioCaixaGeralForm();
             geral.Show();
+        }
+
+        private void tipUsuariosCadastro_Click(object sender, EventArgs e)
+        {
+            UsuariosForm usuarios = new UsuariosForm();
+            usuarios.Show();
         }
     }
 }
