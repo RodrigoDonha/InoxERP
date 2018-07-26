@@ -19,7 +19,7 @@ namespace UIWindows
     {
 
         public bool logado = false;
-        public int tipo = 1;
+        public string tipo = "";
         public string nome = "";
 
         public AcessoUsuarioForm()

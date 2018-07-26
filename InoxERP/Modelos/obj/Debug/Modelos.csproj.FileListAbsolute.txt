@@ -4,3 +4,9 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\Modelos\obj\Debug\Modelos.cspr
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\Modelos\obj\Debug\Modelos.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\Modelos\obj\Debug\Modelos.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\Modelos\obj\Debug\Modelos.dll
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\Modelos\obj\Debug\Modelos.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\Modelos\bin\Debug\Modelos.dll
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\Modelos\bin\Debug\Modelos.pdb

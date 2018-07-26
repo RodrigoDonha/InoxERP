@@ -8,15 +8,15 @@ namespace InoxERP.Modelos
 {
     public class UsuariosInformation
     {
-        private int idLogin;
+        private int cod;
         private string usuario;
         private string senha;
-        private int tipo;
+        private string tipo;
 
-        public int IdLogin
+        public int Cod
         {
-            get { return idLogin; }
-            set { idLogin = value; }
+            get { return cod; }
+            set { cod = value; }
         }
 
         public string Usuario
@@ -31,10 +31,17 @@ namespace InoxERP.Modelos
             set { senha = value; }
         }
 
-        public int Tipo
+        public string Tipo
         {
             get { return tipo; }
             set { tipo = value; }
         }
+
+        //public enum type
+        //{
+        //    Master,
+        //    Administrador,
+        //    Usuario
+        //} 
     }
 }

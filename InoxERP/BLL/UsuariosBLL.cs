@@ -17,12 +17,19 @@ namespace InoxERP.BLL
             //O usuário é obrigatório
             if (usuarios.Usuario.Trim().Length == 0)
             {
-                throw new Exception("A Placa é obrigatória");
+                throw new Exception("O NOME do Usuário é obrigatório");
             }
+
             //A senha é obrigatória
-            if (usuarios.Senha.Equals(0))
+            if (usuarios.Senha.Trim().Length == 0)
             {
-                throw new Exception("A Valor da Hora é obrigatório");
+                throw new Exception("A SENHA do Usuário é obrigatória");
+            }
+
+            //A tipo é obrigatório
+            if (usuarios.Tipo.Trim().Length == 0)
+            {
+                throw new Exception("A TIPO do Usuário é obrigatório");
             }
 
             //Se tudo está Ok, chama a rotina de inserção.

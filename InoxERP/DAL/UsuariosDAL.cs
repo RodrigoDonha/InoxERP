@@ -1,10 +1,6 @@
 ﻿using System;
 using InoxERP.Modelos;
 using System.Data;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 
@@ -28,7 +24,7 @@ namespace InoxERP.DAL
                 cmd.Parameters.AddWithValue("@senha", usuarios.Senha);
                 cmd.Parameters.AddWithValue("@tipo", usuarios.Tipo);
                 cn.Open();
-                usuarios.IdLogin = Convert.ToInt32(cmd.ExecuteScalar());
+                usuarios.Cod = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (MySqlException ex)
             {
@@ -53,8 +49,8 @@ namespace InoxERP.DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update usuarios set usuario = @usuario, senha = @senha, tipo = @tipo where idLogin = @idLogin; ";
-                cmd.Parameters.AddWithValue("@idLogin", usuarios.IdLogin);
+                cmd.CommandText = "update usuarios set usuario = @usuario, senha = @senha, tipo = @tipo where cod = @cod; ";
+                cmd.Parameters.AddWithValue("@idLogin", usuarios.Cod);
                 cmd.Parameters.AddWithValue("@usuario", usuarios.Usuario);
                 cmd.Parameters.AddWithValue("@senha", usuarios.Senha);
                 cmd.Parameters.AddWithValue("@tipo", usuarios.Tipo);
@@ -74,7 +70,7 @@ namespace InoxERP.DAL
                 cn.Close();
             }
         }
-        public void Excluir(int idLogin)
+        public void Excluir(int cod)
         {
             //conexao
             MySqlConnection cn = new MySqlConnection();
@@ -84,13 +80,13 @@ namespace InoxERP.DAL
                 //command
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "delete from usuarios where idLogin = " + idLogin;
+                cmd.CommandText = "delete from usuarios where idLogin = " + cod;
                 cn.Open();
                 int resultado = cmd.ExecuteNonQuery();
                 if (resultado != 1)
                 {
                     throw new Exception("Não foi possível excluir o Usuario " +
-                    idLogin);
+                    cod);
                 }
             }
             catch (MySqlException ex)
@@ -106,39 +102,11 @@ namespace InoxERP.DAL
                 cn.Close();
             }
         }
-        public DataTable ExecutarConsulta(CommandType cmd, string select)
-        {
-            try
-            {
-                MySqlConnection cn = new MySqlConnection(Dados.StringDeConexao);
-                cn.Open();
-                MySqlCommand Sqlcmd = cn.CreateCommand();
-                Sqlcmd.CommandType = cmd;
-                Sqlcmd.CommandText = select;
-
-                foreach (MySqlParameter sqlParameter in sqlParameterCollection)
-                {
-                    Sqlcmd.Parameters.Add(new MySqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
-                }
-                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter(Sqlcmd);
-
-                DataTable dataTable = new DataTable();
-
-                sqlDataAdapter.Fill(dataTable);
-
-                return dataTable;
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
+       
         public DataTable Listagem()
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select idLogin as Codigo, usuario as Usuario, senha as Senha, tipo as Tipo from usuarios where tipo != 0", Dados.StringDeConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select cod as Codigo, usuario as Usuario, senha as Senha, tipo as Tipo from usuarios where tipo != 0", Dados.StringDeConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -150,39 +118,30 @@ namespace InoxERP.DAL
                 UsuariosList userList = new UsuariosList();
                 string user = usuario.Usuario;
                 string senha = usuario.Senha;
-                string query = "SELECT * FROM usuarios WHERE usuario = @usuario AND senha = @senha";
 
-                AdicionarParametros("@usuario", user);
-                AdicionarParametros("@senha", senha);
+                DataTable tabela = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM tb_usuarios WHERE usuario = '" + user + "' AND senha = '" + senha + "'", Dados.StringDeConexao);
+                da.Fill(tabela);
 
-                DataTable tableUser = new DataTable();
-
-                tableUser = ExecutarConsulta(CommandType.Text, query);
-
-                foreach (DataRow linha in tableUser.Rows)
+                foreach (DataRow linha in tabela.Rows)
                 {
                     UsuariosInformation u = new UsuariosInformation();
-                    u.IdLogin = Convert.ToInt32(linha["idLogin"]);
+                    u.Cod = Convert.ToInt32(linha["cod"]);
                     u.Usuario = Convert.ToString(linha["usuario"]);
                     u.Senha = Convert.ToString(linha["senha"]);
-                    u.Tipo = Convert.ToInt32(linha["tipo"]);
+                    u.Tipo = Convert.ToString(linha["tipo"]);
 
                     userList.Add(u);
                 }
                 return userList;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Erro ao Conectar no Banco de Dados");
+                throw new Exception(ex.Message);
             }
         }
 
-        private MySqlParameterCollection sqlParameterCollection = new MySqlCommand().Parameters;
-
-        public void AdicionarParametros(string nomeParametro, object valorParametro)
-        {
-            sqlParameterCollection.Add(new MySqlParameter(nomeParametro, valorParametro));
-        }
+       
     }
 }
 

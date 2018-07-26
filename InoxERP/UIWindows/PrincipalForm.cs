@@ -14,12 +14,12 @@ namespace InoxERP
 {
     public partial class PrincipalForm : Form
     {
-        private int TipoDeUsuario { get; set; }//MANDA P CA
+        private string TipoDeUsuario { get; set; }//MANDA P CA
         private string UsuarioLogado { get; set; }//MANDA P CA
 
         //Funções
 
-        public PrincipalForm(int tipo, string usuario)
+        public PrincipalForm(string tipo, string usuario)
         {
             this.TipoDeUsuario = tipo;
             this.UsuarioLogado = usuario;

@@ -10,3 +10,16 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\BLL\obj\Debug\BLL.csproj.CoreC
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\BLL\obj\Debug\BLL.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\BLL\obj\Debug\BLL.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\obj\Debug\BLL.dll
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\obj\Debug\BLL.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\bin\Debug\BLL.dll
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\bin\Debug\BLL.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\bin\Debug\DAL.dll
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\bin\Debug\Modelos.dll
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\bin\Debug\MySql.Data.dll
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\bin\Debug\DAL.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\bin\Debug\Modelos.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\BLL\bin\Debug\MySql.Data.xml

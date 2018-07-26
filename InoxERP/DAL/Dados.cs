@@ -15,7 +15,7 @@ namespace InoxERP.DAL
         {
             get
             {
-                return "server=localhost;port=3307;User Id=root;database=inoxerp;password=usbw";
+                return "server=localhost;port=3307;User Id=root;database=inoxerp;password=usbw;SslMode=none";
             }
         }
 
