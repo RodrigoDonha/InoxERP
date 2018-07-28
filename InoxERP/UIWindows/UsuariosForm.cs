@@ -25,7 +25,7 @@ namespace UIWindows
         {
             UsuariosBLL obj = new UsuariosBLL();
             UsuariosDGV.DataSource = obj.Listagem();
-            UsuariosDGV.Columns[2].Visible = false;
+            //UsuariosDGV.Columns[2].Visible = false;            
         }
 
         private int VerificaTipoUsuario()
@@ -39,63 +39,38 @@ namespace UIWindows
             return tipo;
         }
 
-        //private void btIncluir_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        UsuariosInformation usuario = new UsuariosInformation();
-        //        usuario.Usuario = txtUsuario.Text;
-        //        usuario.Senha = txtSenha.Text;
-        //        if (VerificaTipoUsuario() == 0)
-        //            MessageBox.Show("Informe um Tipo de Usuário!!!");
-        //        else
-        //        {
-        //            usuario.Tipo = VerificaTipoUsuario();
-        //            UsuariosBLL obj = new UsuariosBLL();
+        private void btAlterar_Click(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                MessageBox.Show("Um Usuário precisa ser selecionado para alteração.");
+            }
+            else
+                try
+                {
+                    UsuariosInformation usuario = new UsuariosInformation();
+                    usuario.Cod = Convert.ToInt32(txtIdLogin.Text);
+                    usuario.Usuario = txtUsuario.Text;
+                    usuario.Senha = txtSenha.Text;
+                    usuario.Tipo = cbxTipo.Text;
+                    //usuario.Tipo = VerificaTipoUsuario();
 
-        //            obj.Incluir(usuario);
-        //            MessageBox.Show("O Usuário foi incluído com sucesso!");
-        //            tbIdLogin.Text = Convert.ToString(usuario.IdLogin);
-        //            Limpar();
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Erro: " + ex.Message);
-        //    }
-        //    AtualizaUsuarios();
-        //}
 
-        //private void btAlterar_Click(object sender, EventArgs e)
-        //{
-        //    if (txtUsuario.Text == "")
-        //    {
-        //        MessageBox.Show("Um Usuário precisa ser selecionado para alteração.");
-        //    }
-        //    else
-        //        try
-        //        {
-        //            UsuariosInformation usuario = new UsuariosInformation();
-        //            usuario.Cod = Convert.ToInt32(tbIdLogin.Text);
-        //            usuario.Usuario = txtUsuario.Text;
-        //            usuario.Senha = txtSenha.Text;
-        //            usuario.Tipo = VerificaTipoUsuario();
-
-        //            UsuariosBLL obj = new UsuariosBLL();
-        //            obj.Alterar(usuario);
-        //            MessageBox.Show("O Usuário foi atualizado com sucesso!");
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Erro: " + ex.Message);
-        //        }
-        //    AtualizaUsuarios();
-        //    Limpar();
-        //}
+                    UsuariosBLL obj = new UsuariosBLL();
+                    obj.Alterar(usuario);
+                    MessageBox.Show("O Usuário foi atualizado com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+            AtualizaUsuarios();
+            Limpar();
+        }
 
         private void Limpar()
         {
-            tbIdLogin.Text = "";
+            txtIdLogin.Text = "";
             txtUsuario.Text = "";
             txtSenha.Text = "";
             cbxTipo.Text = "";
@@ -107,14 +82,14 @@ namespace UIWindows
 
         private void btExcluir_Click(object sender, EventArgs e)
         {
-            if (tbIdLogin.Text.Length == 0)
+            if (txtIdLogin.Text.Length == 0)
             {
                 MessageBox.Show("Um usuario deve ser selecionado antes da exclusão.");
             }
             else
                 try
                 {
-                    int codigo = Convert.ToInt32(tbIdLogin.Text);
+                    int codigo = Convert.ToInt32(txtIdLogin.Text);
                     UsuariosBLL obj = new UsuariosBLL();
                     obj.Excluir(codigo);
                     AtualizaUsuarios();
@@ -140,21 +115,20 @@ namespace UIWindows
             }
             else
             {
-                tbIdLogin.Text = Convert.ToString(UsuariosDGV[0, UsuariosDGV.CurrentRow.Index].Value.ToString());
+                txtIdLogin.Text = Convert.ToString(UsuariosDGV[0, UsuariosDGV.CurrentRow.Index].Value.ToString());
                 txtUsuario.Text = UsuariosDGV[1, UsuariosDGV.CurrentRow.Index].Value.ToString();
                 txtSenha.Text = UsuariosDGV[2, UsuariosDGV.CurrentRow.Index].Value.ToString();
-                int tipo = Convert.ToInt32(UsuariosDGV[3, UsuariosDGV.CurrentRow.Index].Value.ToString());
-                if (tipo == 1)
-                    cbxTipo.Text = "Administrador";
-                else
-                    cbxTipo.Text = "Usuário";
+                String tipo = Convert.ToString(UsuariosDGV[3, UsuariosDGV.CurrentRow.Index].Value.ToString());
+                cbxTipo.Text = tipo.ToString();
             }
         }
 
-        private void UsuariosCadForm_Load(object sender, EventArgs e)
+        private void UsuariosForm_Load(object sender, EventArgs e)
         {
             AtualizaUsuarios();
+            Limpar();
             txtUsuario.Focus();
+
         }
 
         private void UsuariosCadForm_KeyUp(object sender, KeyEventArgs e)

@@ -19,7 +19,7 @@ namespace InoxERP.DAL
                 //command
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "insert into usuarios(usuario,senha,tipo) values (@usuario, @senha, @tipo);";
+                cmd.CommandText = "insert into tb_usuarios(usuario,senha,tipo) values (@usuario, @senha, @tipo);";
                 cmd.Parameters.AddWithValue("@usuario", usuarios.Usuario);
                 cmd.Parameters.AddWithValue("@senha", usuarios.Senha);
                 cmd.Parameters.AddWithValue("@tipo", usuarios.Tipo);
@@ -48,9 +48,9 @@ namespace InoxERP.DAL
                 cn.ConnectionString = Dados.StringDeConexao;
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update usuarios set usuario = @usuario, senha = @senha, tipo = @tipo where cod = @cod; ";
-                cmd.Parameters.AddWithValue("@idLogin", usuarios.Cod);
+                //cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update tb_usuarios set usuario = @usuario, senha = @senha, tipo = @tipo where cod = @cod;";
+                cmd.Parameters.AddWithValue("@cod", usuarios.Cod);
                 cmd.Parameters.AddWithValue("@usuario", usuarios.Usuario);
                 cmd.Parameters.AddWithValue("@senha", usuarios.Senha);
                 cmd.Parameters.AddWithValue("@tipo", usuarios.Tipo);
@@ -80,7 +80,7 @@ namespace InoxERP.DAL
                 //command
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "delete from usuarios where idLogin = " + cod;
+                cmd.CommandText = "delete from tb_usuarios where cod = " + cod;
                 cn.Open();
                 int resultado = cmd.ExecuteNonQuery();
                 if (resultado != 1)
@@ -106,7 +106,7 @@ namespace InoxERP.DAL
         public DataTable Listagem()
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select cod as Codigo, usuario as Usuario, senha as Senha, tipo as Tipo from usuarios where tipo != 0", Dados.StringDeConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select cod as Codigo, usuario as Usuario, senha as Senha, tipo as Tipo from tb_usuarios where cod > 2", Dados.StringDeConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -139,9 +139,6 @@ namespace InoxERP.DAL
             {
                 throw new Exception(ex.Message);
             }
-        }
-
-       
+        }       
     }
 }
-

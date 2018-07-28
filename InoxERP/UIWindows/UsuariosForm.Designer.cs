@@ -41,7 +41,7 @@
             this.btIncluir = new System.Windows.Forms.Button();
             this.btlimpar = new System.Windows.Forms.Button();
             this.lbIdLogin = new System.Windows.Forms.Label();
-            this.tbIdLogin = new System.Windows.Forms.TextBox();
+            this.txtIdLogin = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lbSenha = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.cbxTipo.Location = new System.Drawing.Point(352, 118);
             this.cbxTipo.Margin = new System.Windows.Forms.Padding(4);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(160, 25);
+            this.cbxTipo.Size = new System.Drawing.Size(160, 28);
             this.cbxTipo.TabIndex = 23;
             this.cbxTipo.Text = "Usuário";
             // 
@@ -69,7 +69,7 @@
             this.lblTipo.Location = new System.Drawing.Point(299, 122);
             this.lblTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(44, 17);
+            this.lblTipo.Size = new System.Drawing.Size(51, 20);
             this.lblTipo.TabIndex = 19;
             this.lblTipo.Text = "Tipo: ";
             // 
@@ -77,12 +77,7 @@
             // 
             this.UsuariosDGV.AllowUserToAddRows = false;
             this.UsuariosDGV.AllowUserToDeleteRows = false;
-            this.UsuariosDGV.AllowUserToResizeColumns = false;
-            this.UsuariosDGV.AllowUserToResizeRows = false;
-            this.UsuariosDGV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.UsuariosDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.UsuariosDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.UsuariosDGV.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -120,6 +115,7 @@
             this.UsuariosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UsuariosDGV.Size = new System.Drawing.Size(544, 165);
             this.UsuariosDGV.TabIndex = 29;
+            this.UsuariosDGV.Click += new System.EventHandler(this.UsuariosDGV_Click);
             // 
             // btAtualizar
             // 
@@ -133,6 +129,7 @@
             this.btAtualizar.Text = "Atualizar";
             this.btAtualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btAtualizar.UseVisualStyleBackColor = true;
+            this.btAtualizar.Click += new System.EventHandler(this.btAtualizar_Click);
             // 
             // btExcluir
             // 
@@ -145,6 +142,7 @@
             this.btExcluir.Text = "Excluir";
             this.btExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btExcluir.UseVisualStyleBackColor = true;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btAlterar
             // 
@@ -157,6 +155,7 @@
             this.btAlterar.Text = "Alterar";
             this.btAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btAlterar.UseVisualStyleBackColor = true;
+            this.btAlterar.Click += new System.EventHandler(this.btAlterar_Click);
             // 
             // btIncluir
             // 
@@ -182,6 +181,7 @@
             this.btlimpar.Text = "Limpar";
             this.btlimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btlimpar.UseVisualStyleBackColor = true;
+            this.btlimpar.Click += new System.EventHandler(this.btlimpar_Click);
             // 
             // lbIdLogin
             // 
@@ -189,19 +189,19 @@
             this.lbIdLogin.Location = new System.Drawing.Point(35, 66);
             this.lbIdLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbIdLogin.Name = "lbIdLogin";
-            this.lbIdLogin.Size = new System.Drawing.Size(60, 17);
+            this.lbIdLogin.Size = new System.Drawing.Size(71, 20);
             this.lbIdLogin.TabIndex = 16;
             this.lbIdLogin.Text = "Código: ";
             // 
-            // tbIdLogin
+            // txtIdLogin
             // 
-            this.tbIdLogin.Enabled = false;
-            this.tbIdLogin.Location = new System.Drawing.Point(140, 63);
-            this.tbIdLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.tbIdLogin.Name = "tbIdLogin";
-            this.tbIdLogin.ReadOnly = true;
-            this.tbIdLogin.Size = new System.Drawing.Size(92, 23);
-            this.tbIdLogin.TabIndex = 20;
+            this.txtIdLogin.Enabled = false;
+            this.txtIdLogin.Location = new System.Drawing.Point(140, 63);
+            this.txtIdLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdLogin.Name = "txtIdLogin";
+            this.txtIdLogin.ReadOnly = true;
+            this.txtIdLogin.Size = new System.Drawing.Size(92, 27);
+            this.txtIdLogin.TabIndex = 20;
             // 
             // txtSenha
             // 
@@ -209,7 +209,7 @@
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.MaxLength = 20;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(135, 23);
+            this.txtSenha.Size = new System.Drawing.Size(135, 27);
             this.txtSenha.TabIndex = 22;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -219,7 +219,7 @@
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(135, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(135, 27);
             this.txtUsuario.TabIndex = 21;
             // 
             // lbSenha
@@ -228,7 +228,7 @@
             this.lbSenha.Location = new System.Drawing.Point(35, 140);
             this.lbSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(57, 17);
+            this.lbSenha.Size = new System.Drawing.Size(66, 20);
             this.lbSenha.TabIndex = 18;
             this.lbSenha.Text = "Senha: ";
             // 
@@ -238,7 +238,7 @@
             this.lbUsuario.Location = new System.Drawing.Point(31, 103);
             this.lbUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(65, 17);
+            this.lbUsuario.Size = new System.Drawing.Size(77, 20);
             this.lbUsuario.TabIndex = 17;
             this.lbUsuario.Text = "Usuario: ";
             // 
@@ -248,13 +248,13 @@
             this.lbTitulo.Location = new System.Drawing.Point(227, 20);
             this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(145, 17);
+            this.lbTitulo.Size = new System.Drawing.Size(172, 20);
             this.lbTitulo.TabIndex = 15;
             this.lbTitulo.Text = "Cadastro de Usuarios";
             // 
             // UsuariosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 408);
             this.Controls.Add(this.cbxTipo);
@@ -266,7 +266,7 @@
             this.Controls.Add(this.btIncluir);
             this.Controls.Add(this.btlimpar);
             this.Controls.Add(this.lbIdLogin);
-            this.Controls.Add(this.tbIdLogin);
+            this.Controls.Add(this.txtIdLogin);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lbSenha);
@@ -276,6 +276,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsuariosForm";
             this.Text = "Cadastro e Consulta de Usuários";
+            this.Load += new System.EventHandler(this.UsuariosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -293,7 +294,7 @@
         private System.Windows.Forms.Button btIncluir;
         private System.Windows.Forms.Button btlimpar;
         private System.Windows.Forms.Label lbIdLogin;
-        private System.Windows.Forms.TextBox tbIdLogin;
+        private System.Windows.Forms.TextBox txtIdLogin;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lbSenha;

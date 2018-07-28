@@ -82,3 +82,5 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\DAL.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\Modelos.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.csproj.CopyComplete
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.exe.config
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\Google.Protobuf.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.exe.config

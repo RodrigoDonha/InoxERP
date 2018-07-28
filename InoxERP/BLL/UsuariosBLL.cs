@@ -15,26 +15,39 @@ namespace InoxERP.BLL
         public void Incluir(UsuariosInformation usuarios)
         {
             //O usuário é obrigatório
-            if (usuarios.Usuario.Trim().Length == 0)
+            if (usuarios.Usuario == "")
             {
-                throw new Exception("O NOME do Usuário é obrigatório");
+                MessageBox.Show("O NOME do Usuário é obrigatório");
+                return;
             }
 
             //A senha é obrigatória
             if (usuarios.Senha.Trim().Length == 0)
             {
-                throw new Exception("A SENHA do Usuário é obrigatória");
+                MessageBox.Show("A SENHA do Usuário é obrigatória");
+                return;
             }
 
             //A tipo é obrigatório
             if (usuarios.Tipo.Trim().Length == 0)
             {
-                throw new Exception("A TIPO do Usuário é obrigatório");
+                MessageBox.Show("O TIPO do Usuário é obrigatório");
+                return;
+            } 
+            else if(usuarios.Tipo == "Administrador" || usuarios.Tipo == "Usuário")
+            {
+                //Se tudo está Ok, chama a rotina de inserção.
+                UsuariosDAL obj = new UsuariosDAL();
+                obj.Incluir(usuarios);
+                return;
             }
-
-            //Se tudo está Ok, chama a rotina de inserção.
-            UsuariosDAL obj = new UsuariosDAL();
-            obj.Incluir(usuarios);
+            else
+            {
+                MessageBox.Show("O Tipo deve ser Administrador ou Usuário, selecione uma das duas opções por favor");
+                return;
+            }
+            
+            
         }
         public void Alterar(UsuariosInformation usuarios)
         {

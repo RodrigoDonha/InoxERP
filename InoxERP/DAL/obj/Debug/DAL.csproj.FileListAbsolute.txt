@@ -1,7 +1,6 @@
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\DAL.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\DAL.pdb
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\Modelos.dll
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\MySql.Data.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\Modelos.pdb
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
@@ -19,3 +18,4 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\MySql.Data.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\Modelos.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\MySql.Data.xml
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\MySql.Data.xml
