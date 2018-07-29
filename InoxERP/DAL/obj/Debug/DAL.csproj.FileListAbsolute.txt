@@ -18,4 +18,3 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\MySql.Data.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\Modelos.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\MySql.Data.xml
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\MySql.Data.xml

@@ -45,15 +45,15 @@ namespace InoxERP.BLL
             {
                 MessageBox.Show("O Tipo deve ser Administrador ou Usuário, selecione uma das duas opções por favor");
                 return;
-            }
-            
-            
+            }            
         }
+
         public void Alterar(UsuariosInformation usuarios)
         {
             UsuariosDAL obj = new UsuariosDAL();
             obj.Alterar(usuarios);
         }
+
         public void Excluir(int idLogin)
         {
             if (idLogin < 1)
@@ -69,6 +69,7 @@ namespace InoxERP.BLL
             else
                 MessageBox.Show("Exclusão Cancelada");
         }
+
         public DataTable Listagem()
         {
             UsuariosDAL obj = new UsuariosDAL();

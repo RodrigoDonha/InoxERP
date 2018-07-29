@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InoxERP.BLL;
+using InoxERP.Modelos;
 using InoxERP.UI_Windows_Forms;
 using UIWindows;
 
@@ -28,7 +30,9 @@ namespace InoxERP
         
         private void orçamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //PermissoesList List = new PermissoesList();
+            //PermissaoUsuarioBLL permissao = new PermissaoUsuarioBLL();
+            //List = permissao.Permissao(TipoDeUsuario);
         }
 
         private void inclusãoToolStripMenuItem_Click(object sender, EventArgs e)

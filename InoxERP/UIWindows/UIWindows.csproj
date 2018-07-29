@@ -139,6 +139,12 @@
     <Compile Include="OrdemServicoForm.Designer.cs">
       <DependentUpon>OrdemServicoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PermissoesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PermissoesForm.Designer.cs">
+      <DependentUpon>PermissoesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrincipalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrdemServicoForm.resx">
       <DependentUpon>OrdemServicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PermissoesForm.resx">
+      <DependentUpon>PermissoesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
