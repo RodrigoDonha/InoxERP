@@ -59,7 +59,7 @@
             this.cbxTipo.Location = new System.Drawing.Point(352, 118);
             this.cbxTipo.Margin = new System.Windows.Forms.Padding(4);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(160, 28);
+            this.cbxTipo.Size = new System.Drawing.Size(160, 25);
             this.cbxTipo.TabIndex = 23;
             this.cbxTipo.Text = "Usuário";
             // 
@@ -69,7 +69,7 @@
             this.lblTipo.Location = new System.Drawing.Point(299, 122);
             this.lblTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(51, 20);
+            this.lblTipo.Size = new System.Drawing.Size(44, 17);
             this.lblTipo.TabIndex = 19;
             this.lblTipo.Text = "Tipo: ";
             // 
@@ -189,7 +189,7 @@
             this.lbIdLogin.Location = new System.Drawing.Point(35, 66);
             this.lbIdLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbIdLogin.Name = "lbIdLogin";
-            this.lbIdLogin.Size = new System.Drawing.Size(71, 20);
+            this.lbIdLogin.Size = new System.Drawing.Size(60, 17);
             this.lbIdLogin.TabIndex = 16;
             this.lbIdLogin.Text = "Código: ";
             // 
@@ -200,7 +200,7 @@
             this.txtIdLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdLogin.Name = "txtIdLogin";
             this.txtIdLogin.ReadOnly = true;
-            this.txtIdLogin.Size = new System.Drawing.Size(92, 27);
+            this.txtIdLogin.Size = new System.Drawing.Size(92, 23);
             this.txtIdLogin.TabIndex = 20;
             // 
             // txtSenha
@@ -209,7 +209,7 @@
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.MaxLength = 20;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(135, 27);
+            this.txtSenha.Size = new System.Drawing.Size(135, 23);
             this.txtSenha.TabIndex = 22;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -219,7 +219,7 @@
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(135, 27);
+            this.txtUsuario.Size = new System.Drawing.Size(135, 23);
             this.txtUsuario.TabIndex = 21;
             // 
             // lbSenha
@@ -228,7 +228,7 @@
             this.lbSenha.Location = new System.Drawing.Point(35, 140);
             this.lbSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(66, 20);
+            this.lbSenha.Size = new System.Drawing.Size(57, 17);
             this.lbSenha.TabIndex = 18;
             this.lbSenha.Text = "Senha: ";
             // 
@@ -238,7 +238,7 @@
             this.lbUsuario.Location = new System.Drawing.Point(31, 103);
             this.lbUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(77, 20);
+            this.lbUsuario.Size = new System.Drawing.Size(65, 17);
             this.lbUsuario.TabIndex = 17;
             this.lbUsuario.Text = "Usuario: ";
             // 
@@ -248,13 +248,13 @@
             this.lbTitulo.Location = new System.Drawing.Point(227, 20);
             this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(172, 20);
+            this.lbTitulo.Size = new System.Drawing.Size(145, 17);
             this.lbTitulo.TabIndex = 15;
             this.lbTitulo.Text = "Cadastro de Usuarios";
             // 
             // UsuariosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 408);
             this.Controls.Add(this.cbxTipo);
@@ -275,6 +275,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsuariosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro e Consulta de Usuários";
             this.Load += new System.EventHandler(this.UsuariosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).EndInit();

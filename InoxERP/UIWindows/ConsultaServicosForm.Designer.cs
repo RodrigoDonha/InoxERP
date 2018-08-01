@@ -61,7 +61,8 @@
             // 
             this.tbcConsultaValores.Controls.Add(this.tabPage1);
             this.tbcConsultaValores.Controls.Add(this.tabPage2);
-            this.tbcConsultaValores.Location = new System.Drawing.Point(6, 7);
+            this.tbcConsultaValores.Location = new System.Drawing.Point(5, 7);
+            this.tbcConsultaValores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbcConsultaValores.Name = "tbcConsultaValores";
             this.tbcConsultaValores.SelectedIndex = 0;
             this.tbcConsultaValores.Size = new System.Drawing.Size(553, 471);
@@ -71,8 +72,9 @@
             // 
             this.tabPage1.Controls.Add(this.grpConsultaValores);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Size = new System.Drawing.Size(545, 442);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
@@ -93,8 +95,10 @@
             this.grpConsultaValores.Controls.Add(this.lblValorUnitario);
             this.grpConsultaValores.Controls.Add(this.lblMedidas);
             this.grpConsultaValores.Controls.Add(this.lblPeca);
-            this.grpConsultaValores.Location = new System.Drawing.Point(6, 6);
+            this.grpConsultaValores.Location = new System.Drawing.Point(5, 6);
+            this.grpConsultaValores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpConsultaValores.Name = "grpConsultaValores";
+            this.grpConsultaValores.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpConsultaValores.Size = new System.Drawing.Size(527, 430);
             this.grpConsultaValores.TabIndex = 0;
             this.grpConsultaValores.TabStop = false;
@@ -103,6 +107,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Location = new System.Drawing.Point(372, 330);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(73, 30);
             this.btnExcluir.TabIndex = 3;
@@ -112,7 +117,7 @@
             // lblObservacao
             // 
             this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(6, 147);
+            this.lblObservacao.Location = new System.Drawing.Point(5, 146);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(89, 17);
             this.lblObservacao.TabIndex = 9;
@@ -120,7 +125,8 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(222, 330);
+            this.btnAlterar.Location = new System.Drawing.Point(221, 330);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(73, 30);
             this.btnAlterar.TabIndex = 2;
@@ -130,14 +136,16 @@
             // txtObservacao
             // 
             this.txtObservacao.Location = new System.Drawing.Point(9, 171);
+            this.txtObservacao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(480, 81);
+            this.txtObservacao.Size = new System.Drawing.Size(480, 82);
             this.txtObservacao.TabIndex = 8;
             // 
             // btnGravar
             // 
             this.btnGravar.Location = new System.Drawing.Point(65, 330);
+            this.btnGravar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(75, 30);
             this.btnGravar.TabIndex = 1;
@@ -147,35 +155,39 @@
             // txtValorTotal
             // 
             this.txtValorTotal.Location = new System.Drawing.Point(364, 107);
+            this.txtValorTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtValorTotal.Name = "txtValorTotal";
-            this.txtValorTotal.Size = new System.Drawing.Size(125, 22);
+            this.txtValorTotal.Size = new System.Drawing.Size(125, 23);
             this.txtValorTotal.TabIndex = 7;
             // 
             // txtValorUnitario
             // 
             this.txtValorUnitario.Location = new System.Drawing.Point(112, 107);
+            this.txtValorUnitario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtValorUnitario.Name = "txtValorUnitario";
-            this.txtValorUnitario.Size = new System.Drawing.Size(125, 22);
+            this.txtValorUnitario.Size = new System.Drawing.Size(125, 23);
             this.txtValorUnitario.TabIndex = 6;
             // 
             // txtHoras
             // 
             this.txtHoras.Location = new System.Drawing.Point(112, 68);
+            this.txtHoras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHoras.Name = "txtHoras";
-            this.txtHoras.Size = new System.Drawing.Size(377, 22);
+            this.txtHoras.Size = new System.Drawing.Size(377, 23);
             this.txtHoras.TabIndex = 5;
             // 
             // txtServico
             // 
             this.txtServico.Location = new System.Drawing.Point(112, 30);
+            this.txtServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtServico.Name = "txtServico";
-            this.txtServico.Size = new System.Drawing.Size(377, 22);
+            this.txtServico.Size = new System.Drawing.Size(377, 23);
             this.txtServico.TabIndex = 4;
             // 
             // lblValorTotal
             // 
             this.lblValorTotal.AutoSize = true;
-            this.lblValorTotal.Location = new System.Drawing.Point(258, 110);
+            this.lblValorTotal.Location = new System.Drawing.Point(259, 110);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(81, 17);
             this.lblValorTotal.TabIndex = 3;
@@ -184,7 +196,7 @@
             // lblValorUnitario
             // 
             this.lblValorUnitario.AutoSize = true;
-            this.lblValorUnitario.Location = new System.Drawing.Point(6, 110);
+            this.lblValorUnitario.Location = new System.Drawing.Point(5, 110);
             this.lblValorUnitario.Name = "lblValorUnitario";
             this.lblValorUnitario.Size = new System.Drawing.Size(98, 17);
             this.lblValorUnitario.TabIndex = 2;
@@ -193,7 +205,7 @@
             // lblMedidas
             // 
             this.lblMedidas.AutoSize = true;
-            this.lblMedidas.Location = new System.Drawing.Point(6, 71);
+            this.lblMedidas.Location = new System.Drawing.Point(5, 71);
             this.lblMedidas.Name = "lblMedidas";
             this.lblMedidas.Size = new System.Drawing.Size(50, 17);
             this.lblMedidas.TabIndex = 1;
@@ -202,7 +214,7 @@
             // lblPeca
             // 
             this.lblPeca.AutoSize = true;
-            this.lblPeca.Location = new System.Drawing.Point(6, 33);
+            this.lblPeca.Location = new System.Drawing.Point(5, 33);
             this.lblPeca.Name = "lblPeca";
             this.lblPeca.Size = new System.Drawing.Size(59, 17);
             this.lblPeca.TabIndex = 0;
@@ -211,10 +223,11 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.grpConsultarValores);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(545, 442);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(545, 445);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -224,8 +237,10 @@
             this.grpConsultarValores.Controls.Add(this.grdConsultaPecas);
             this.grpConsultarValores.Controls.Add(this.txtConsultaPeca);
             this.grpConsultarValores.Controls.Add(this.lblConsultaPeca);
-            this.grpConsultarValores.Location = new System.Drawing.Point(6, 6);
+            this.grpConsultarValores.Location = new System.Drawing.Point(5, 6);
+            this.grpConsultarValores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpConsultarValores.Name = "grpConsultarValores";
+            this.grpConsultarValores.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpConsultarValores.Size = new System.Drawing.Size(533, 430);
             this.grpConsultarValores.TabIndex = 1;
             this.grpConsultarValores.TabStop = false;
@@ -235,22 +250,24 @@
             // 
             this.grdConsultaPecas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdConsultaPecas.Location = new System.Drawing.Point(9, 69);
+            this.grdConsultaPecas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdConsultaPecas.Name = "grdConsultaPecas";
             this.grdConsultaPecas.RowTemplate.Height = 24;
-            this.grdConsultaPecas.Size = new System.Drawing.Size(518, 355);
+            this.grdConsultaPecas.Size = new System.Drawing.Size(517, 354);
             this.grdConsultaPecas.TabIndex = 7;
             // 
             // txtConsultaPeca
             // 
             this.txtConsultaPeca.Location = new System.Drawing.Point(71, 30);
+            this.txtConsultaPeca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConsultaPeca.Name = "txtConsultaPeca";
-            this.txtConsultaPeca.Size = new System.Drawing.Size(456, 22);
+            this.txtConsultaPeca.Size = new System.Drawing.Size(456, 23);
             this.txtConsultaPeca.TabIndex = 6;
             // 
             // lblConsultaPeca
             // 
             this.lblConsultaPeca.AutoSize = true;
-            this.lblConsultaPeca.Location = new System.Drawing.Point(6, 33);
+            this.lblConsultaPeca.Location = new System.Drawing.Point(5, 33);
             this.lblConsultaPeca.Name = "lblConsultaPeca";
             this.lblConsultaPeca.Size = new System.Drawing.Size(59, 17);
             this.lblConsultaPeca.TabIndex = 5;
@@ -262,7 +279,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 486);
             this.Controls.Add(this.tbcConsultaValores);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ConsultaServicosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro e Consulta de Servicos";
             this.tbcConsultaValores.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

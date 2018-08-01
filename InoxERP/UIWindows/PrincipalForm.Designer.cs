@@ -72,7 +72,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(678, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(678, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "mnuPrincipal";
             // 
@@ -82,22 +82,22 @@
             this.tipInclusao,
             this.tipConsultaOrcamento});
             this.tipOrcamento.Name = "tipOrcamento";
-            this.tipOrcamento.Size = new System.Drawing.Size(101, 24);
+            this.tipOrcamento.Size = new System.Drawing.Size(84, 20);
             this.tipOrcamento.Text = "Orçamentos";
             this.tipOrcamento.Click += new System.EventHandler(this.orçamentoToolStripMenuItem_Click);
             // 
             // tipInclusao
             // 
             this.tipInclusao.Name = "tipInclusao";
-            this.tipInclusao.Size = new System.Drawing.Size(139, 26);
+            this.tipInclusao.Size = new System.Drawing.Size(180, 22);
             this.tipInclusao.Text = "Inclusão";
             this.tipInclusao.Click += new System.EventHandler(this.inclusãoToolStripMenuItem_Click);
             // 
             // tipConsultaOrcamento
             // 
             this.tipConsultaOrcamento.Name = "tipConsultaOrcamento";
-            this.tipConsultaOrcamento.Size = new System.Drawing.Size(139, 26);
-            this.tipConsultaOrcamento.Text = "consulta";
+            this.tipConsultaOrcamento.Size = new System.Drawing.Size(180, 22);
+            this.tipConsultaOrcamento.Text = "Consulta";
             this.tipConsultaOrcamento.Click += new System.EventHandler(this.tipConsultaOrcamento_Click);
             // 
             // tipOrdemServico
@@ -105,13 +105,13 @@
             this.tipOrdemServico.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tipConsultaOS});
             this.tipOrdemServico.Name = "tipOrdemServico";
-            this.tipOrdemServico.Size = new System.Drawing.Size(141, 24);
+            this.tipOrdemServico.Size = new System.Drawing.Size(114, 20);
             this.tipOrdemServico.Text = "Ordens de Serviço";
             // 
             // tipConsultaOS
             // 
             this.tipConsultaOS.Name = "tipConsultaOS";
-            this.tipConsultaOS.Size = new System.Drawing.Size(141, 26);
+            this.tipConsultaOS.Size = new System.Drawing.Size(121, 22);
             this.tipConsultaOS.Text = "Consulta";
             this.tipConsultaOS.Click += new System.EventHandler(this.tipConsultaOS_Click);
             // 
@@ -121,20 +121,20 @@
             this.tipEmAndamento,
             this.tipEntregasFinalizadas});
             this.tipEntregas.Name = "tipEntregas";
-            this.tipEntregas.Size = new System.Drawing.Size(78, 24);
+            this.tipEntregas.Size = new System.Drawing.Size(64, 20);
             this.tipEntregas.Text = "Entregas";
             // 
             // tipEmAndamento
             // 
             this.tipEmAndamento.Name = "tipEmAndamento";
-            this.tipEmAndamento.Size = new System.Drawing.Size(162, 26);
+            this.tipEmAndamento.Size = new System.Drawing.Size(137, 22);
             this.tipEmAndamento.Text = "Andamento";
             this.tipEmAndamento.Click += new System.EventHandler(this.tipEmAndamento_Click);
             // 
             // tipEntregasFinalizadas
             // 
             this.tipEntregasFinalizadas.Name = "tipEntregasFinalizadas";
-            this.tipEntregasFinalizadas.Size = new System.Drawing.Size(162, 26);
+            this.tipEntregasFinalizadas.Size = new System.Drawing.Size(137, 22);
             this.tipEntregasFinalizadas.Text = "Finalizadas";
             this.tipEntregasFinalizadas.Click += new System.EventHandler(this.tipEntregasFinalizadas_Click);
             // 
@@ -146,34 +146,34 @@
             this.tipSaidaCaixa,
             this.tipGeralCaixa});
             this.tipCaixa.Name = "tipCaixa";
-            this.tipCaixa.Size = new System.Drawing.Size(57, 24);
+            this.tipCaixa.Size = new System.Drawing.Size(47, 20);
             this.tipCaixa.Text = "Caixa";
             // 
             // tipChequesCaixa
             // 
             this.tipChequesCaixa.Name = "tipChequesCaixa";
-            this.tipChequesCaixa.Size = new System.Drawing.Size(141, 26);
+            this.tipChequesCaixa.Size = new System.Drawing.Size(120, 22);
             this.tipChequesCaixa.Text = "Cheques";
             this.tipChequesCaixa.Click += new System.EventHandler(this.chequesToolStripMenuItem_Click);
             // 
             // tipEntradaCaixa
             // 
             this.tipEntradaCaixa.Name = "tipEntradaCaixa";
-            this.tipEntradaCaixa.Size = new System.Drawing.Size(141, 26);
+            this.tipEntradaCaixa.Size = new System.Drawing.Size(120, 22);
             this.tipEntradaCaixa.Text = "Entradas";
             this.tipEntradaCaixa.Click += new System.EventHandler(this.entradasToolStripMenuItem1_Click);
             // 
             // tipSaidaCaixa
             // 
             this.tipSaidaCaixa.Name = "tipSaidaCaixa";
-            this.tipSaidaCaixa.Size = new System.Drawing.Size(141, 26);
+            this.tipSaidaCaixa.Size = new System.Drawing.Size(120, 22);
             this.tipSaidaCaixa.Text = "Saídas";
             this.tipSaidaCaixa.Click += new System.EventHandler(this.saídasToolStripMenuItem1_Click);
             // 
             // tipGeralCaixa
             // 
             this.tipGeralCaixa.Name = "tipGeralCaixa";
-            this.tipGeralCaixa.Size = new System.Drawing.Size(141, 26);
+            this.tipGeralCaixa.Size = new System.Drawing.Size(120, 22);
             this.tipGeralCaixa.Text = "Geral";
             this.tipGeralCaixa.Click += new System.EventHandler(this.geralToolStripMenuItem_Click);
             // 
@@ -185,27 +185,27 @@
             this.entregasToolStripMenuItem,
             this.aReceberToolStripMenuItem});
             this.tipRelatorios.Name = "tipRelatorios";
-            this.tipRelatorios.Size = new System.Drawing.Size(88, 24);
+            this.tipRelatorios.Size = new System.Drawing.Size(71, 20);
             this.tipRelatorios.Text = "Relatórios";
             // 
             // orçamentosToolStripMenuItem
             // 
             this.orçamentosToolStripMenuItem.Name = "orçamentosToolStripMenuItem";
-            this.orçamentosToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.orçamentosToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.orçamentosToolStripMenuItem.Text = "Orçamentos";
             this.orçamentosToolStripMenuItem.Click += new System.EventHandler(this.orçamentosToolStripMenuItem_Click);
             // 
             // ordensDeServiçoToolStripMenuItem
             // 
             this.ordensDeServiçoToolStripMenuItem.Name = "ordensDeServiçoToolStripMenuItem";
-            this.ordensDeServiçoToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.ordensDeServiçoToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.ordensDeServiçoToolStripMenuItem.Text = "Ordens de Serviço";
             this.ordensDeServiçoToolStripMenuItem.Click += new System.EventHandler(this.ordensDeServiçoToolStripMenuItem_Click);
             // 
             // entregasToolStripMenuItem
             // 
             this.entregasToolStripMenuItem.Name = "entregasToolStripMenuItem";
-            this.entregasToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.entregasToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.entregasToolStripMenuItem.Text = "Entregas";
             this.entregasToolStripMenuItem.Click += new System.EventHandler(this.entregasToolStripMenuItem_Click);
             // 
@@ -216,27 +216,27 @@
             this.recebíveisToolStripMenuItem,
             this.geralToolStripMenuItem});
             this.aReceberToolStripMenuItem.Name = "aReceberToolStripMenuItem";
-            this.aReceberToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.aReceberToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.aReceberToolStripMenuItem.Text = "Caixa";
             // 
             // recebidosToolStripMenuItem
             // 
             this.recebidosToolStripMenuItem.Name = "recebidosToolStripMenuItem";
-            this.recebidosToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.recebidosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.recebidosToolStripMenuItem.Text = "Cheque";
             this.recebidosToolStripMenuItem.Click += new System.EventHandler(this.recebidosToolStripMenuItem_Click);
             // 
             // recebíveisToolStripMenuItem
             // 
             this.recebíveisToolStripMenuItem.Name = "recebíveisToolStripMenuItem";
-            this.recebíveisToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.recebíveisToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.recebíveisToolStripMenuItem.Text = "Dinheiro";
             this.recebíveisToolStripMenuItem.Click += new System.EventHandler(this.recebíveisToolStripMenuItem_Click);
             // 
             // geralToolStripMenuItem
             // 
             this.geralToolStripMenuItem.Name = "geralToolStripMenuItem";
-            this.geralToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
+            this.geralToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.geralToolStripMenuItem.Text = "Geral";
             this.geralToolStripMenuItem.Click += new System.EventHandler(this.geralToolStripMenuItem_Click_1);
             // 
@@ -249,46 +249,46 @@
             this.tipServicosCadastro,
             this.tipUsuariosCadastro});
             this.tipCadastro.Name = "tipCadastro";
-            this.tipCadastro.Size = new System.Drawing.Size(80, 24);
+            this.tipCadastro.Size = new System.Drawing.Size(66, 20);
             this.tipCadastro.Text = "Cadastro";
             // 
             // tipClientesCadastro
             // 
             this.tipClientesCadastro.Name = "tipClientesCadastro";
-            this.tipClientesCadastro.Size = new System.Drawing.Size(216, 26);
+            this.tipClientesCadastro.Size = new System.Drawing.Size(145, 22);
             this.tipClientesCadastro.Text = "Clientes";
             this.tipClientesCadastro.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // tipFornecedoresCadastro
             // 
             this.tipFornecedoresCadastro.Name = "tipFornecedoresCadastro";
-            this.tipFornecedoresCadastro.Size = new System.Drawing.Size(216, 26);
+            this.tipFornecedoresCadastro.Size = new System.Drawing.Size(145, 22);
             this.tipFornecedoresCadastro.Text = "Fornecedores";
             this.tipFornecedoresCadastro.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
             // tipProdutos
             // 
             this.tipProdutos.Name = "tipProdutos";
-            this.tipProdutos.Size = new System.Drawing.Size(216, 26);
+            this.tipProdutos.Size = new System.Drawing.Size(145, 22);
             this.tipProdutos.Text = "Produtos";
             this.tipProdutos.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // tipServicosCadastro
             // 
             this.tipServicosCadastro.Name = "tipServicosCadastro";
-            this.tipServicosCadastro.Size = new System.Drawing.Size(216, 26);
+            this.tipServicosCadastro.Size = new System.Drawing.Size(145, 22);
             this.tipServicosCadastro.Text = "Serviços";
             // 
             // tipUsuariosCadastro
             // 
             this.tipUsuariosCadastro.Name = "tipUsuariosCadastro";
-            this.tipUsuariosCadastro.Size = new System.Drawing.Size(216, 26);
+            this.tipUsuariosCadastro.Size = new System.Drawing.Size(145, 22);
             this.tipUsuariosCadastro.Text = "Usuários";
             this.tipUsuariosCadastro.Click += new System.EventHandler(this.tipUsuariosCadastro_Click);
             // 
             // PrincipalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 437);
             this.Controls.Add(this.menuStrip1);

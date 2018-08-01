@@ -44,7 +44,8 @@
             // 
             // btnGerar
             // 
-            this.btnGerar.Location = new System.Drawing.Point(478, 147);
+            this.btnGerar.Location = new System.Drawing.Point(477, 146);
+            this.btnGerar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGerar.Name = "btnGerar";
             this.btnGerar.Size = new System.Drawing.Size(80, 30);
             this.btnGerar.TabIndex = 7;
@@ -53,15 +54,16 @@
             // 
             // dtpFim
             // 
-            this.dtpFim.Location = new System.Drawing.Point(58, 79);
+            this.dtpFim.Location = new System.Drawing.Point(59, 79);
+            this.dtpFim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFim.Name = "dtpFim";
-            this.dtpFim.Size = new System.Drawing.Size(303, 22);
+            this.dtpFim.Size = new System.Drawing.Size(303, 23);
             this.dtpFim.TabIndex = 2;
             // 
             // lblAte
             // 
             this.lblAte.AutoSize = true;
-            this.lblAte.Location = new System.Drawing.Point(6, 81);
+            this.lblAte.Location = new System.Drawing.Point(5, 81);
             this.lblAte.Name = "lblAte";
             this.lblAte.Size = new System.Drawing.Size(33, 17);
             this.lblAte.TabIndex = 4;
@@ -69,9 +71,10 @@
             // 
             // dtpInicio
             // 
-            this.dtpInicio.Location = new System.Drawing.Point(58, 37);
+            this.dtpInicio.Location = new System.Drawing.Point(59, 37);
+            this.dtpInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(303, 22);
+            this.dtpInicio.Size = new System.Drawing.Size(303, 23);
             this.dtpInicio.TabIndex = 1;
             // 
             // grpPeriodo
@@ -81,7 +84,9 @@
             this.grpPeriodo.Controls.Add(this.lblDe);
             this.grpPeriodo.Controls.Add(this.dtpInicio);
             this.grpPeriodo.Location = new System.Drawing.Point(172, 12);
+            this.grpPeriodo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpPeriodo.Name = "grpPeriodo";
+            this.grpPeriodo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpPeriodo.Size = new System.Drawing.Size(385, 129);
             this.grpPeriodo.TabIndex = 8;
             this.grpPeriodo.TabStop = false;
@@ -90,7 +95,7 @@
             // lblDe
             // 
             this.lblDe.AutoSize = true;
-            this.lblDe.Location = new System.Drawing.Point(6, 38);
+            this.lblDe.Location = new System.Drawing.Point(5, 38);
             this.lblDe.Name = "lblDe";
             this.lblDe.Size = new System.Drawing.Size(30, 17);
             this.lblDe.TabIndex = 3;
@@ -102,7 +107,9 @@
             this.grpTipo.Controls.Add(this.radAprovados);
             this.grpTipo.Controls.Add(this.radEmAberto);
             this.grpTipo.Location = new System.Drawing.Point(12, 12);
+            this.grpTipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpTipo.Name = "grpTipo";
+            this.grpTipo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpTipo.Size = new System.Drawing.Size(149, 129);
             this.grpTipo.TabIndex = 9;
             this.grpTipo.TabStop = false;
@@ -112,8 +119,9 @@
             // 
             this.radGeral.AutoSize = true;
             this.radGeral.Location = new System.Drawing.Point(25, 34);
+            this.radGeral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radGeral.Name = "radGeral";
-            this.radGeral.Size = new System.Drawing.Size(64, 21);
+            this.radGeral.Size = new System.Drawing.Size(61, 21);
             this.radGeral.TabIndex = 2;
             this.radGeral.TabStop = true;
             this.radGeral.Text = "Geral";
@@ -123,8 +131,9 @@
             // 
             this.radAprovados.AutoSize = true;
             this.radAprovados.Location = new System.Drawing.Point(25, 89);
+            this.radAprovados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radAprovados.Name = "radAprovados";
-            this.radAprovados.Size = new System.Drawing.Size(97, 21);
+            this.radAprovados.Size = new System.Drawing.Size(94, 21);
             this.radAprovados.TabIndex = 1;
             this.radAprovados.TabStop = true;
             this.radAprovados.Text = "Aprovados";
@@ -133,9 +142,10 @@
             // radEmAberto
             // 
             this.radEmAberto.AutoSize = true;
-            this.radEmAberto.Location = new System.Drawing.Point(25, 61);
+            this.radEmAberto.Location = new System.Drawing.Point(25, 62);
+            this.radEmAberto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radEmAberto.Name = "radEmAberto";
-            this.radEmAberto.Size = new System.Drawing.Size(95, 21);
+            this.radEmAberto.Size = new System.Drawing.Size(92, 21);
             this.radEmAberto.TabIndex = 0;
             this.radEmAberto.TabStop = true;
             this.radEmAberto.Text = "Em Aberto";
@@ -149,7 +159,10 @@
             this.Controls.Add(this.btnGerar);
             this.Controls.Add(this.grpPeriodo);
             this.Controls.Add(this.grpTipo);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RelatoriosOrcamentosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatorios de Orçamentos";
             this.grpPeriodo.ResumeLayout(false);
             this.grpPeriodo.PerformLayout();

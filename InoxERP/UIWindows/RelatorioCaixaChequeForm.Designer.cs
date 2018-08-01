@@ -35,18 +35,19 @@
             this.grpPeriodo = new System.Windows.Forms.GroupBox();
             this.lblDe = new System.Windows.Forms.Label();
             this.grpTipo = new System.Windows.Forms.GroupBox();
+            this.radSaidas = new System.Windows.Forms.RadioButton();
+            this.radEntradas = new System.Windows.Forms.RadioButton();
             this.radGeral = new System.Windows.Forms.RadioButton();
             this.radAReceber = new System.Windows.Forms.RadioButton();
             this.radRecebidos = new System.Windows.Forms.RadioButton();
-            this.radEntradas = new System.Windows.Forms.RadioButton();
-            this.radSaidas = new System.Windows.Forms.RadioButton();
             this.grpPeriodo.SuspendLayout();
             this.grpTipo.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGerar
             // 
-            this.btnGerar.Location = new System.Drawing.Point(478, 216);
+            this.btnGerar.Location = new System.Drawing.Point(477, 217);
+            this.btnGerar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGerar.Name = "btnGerar";
             this.btnGerar.Size = new System.Drawing.Size(80, 30);
             this.btnGerar.TabIndex = 7;
@@ -55,15 +56,16 @@
             // 
             // dtpFim
             // 
-            this.dtpFim.Location = new System.Drawing.Point(58, 117);
+            this.dtpFim.Location = new System.Drawing.Point(59, 117);
+            this.dtpFim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFim.Name = "dtpFim";
-            this.dtpFim.Size = new System.Drawing.Size(303, 22);
+            this.dtpFim.Size = new System.Drawing.Size(303, 23);
             this.dtpFim.TabIndex = 2;
             // 
             // lblAte
             // 
             this.lblAte.AutoSize = true;
-            this.lblAte.Location = new System.Drawing.Point(6, 119);
+            this.lblAte.Location = new System.Drawing.Point(5, 119);
             this.lblAte.Name = "lblAte";
             this.lblAte.Size = new System.Drawing.Size(33, 17);
             this.lblAte.TabIndex = 4;
@@ -71,9 +73,10 @@
             // 
             // dtpInicio
             // 
-            this.dtpInicio.Location = new System.Drawing.Point(58, 62);
+            this.dtpInicio.Location = new System.Drawing.Point(59, 62);
+            this.dtpInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(303, 22);
+            this.dtpInicio.Size = new System.Drawing.Size(303, 23);
             this.dtpInicio.TabIndex = 1;
             // 
             // grpPeriodo
@@ -83,8 +86,10 @@
             this.grpPeriodo.Controls.Add(this.lblDe);
             this.grpPeriodo.Controls.Add(this.dtpInicio);
             this.grpPeriodo.Location = new System.Drawing.Point(172, 12);
+            this.grpPeriodo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpPeriodo.Name = "grpPeriodo";
-            this.grpPeriodo.Size = new System.Drawing.Size(385, 195);
+            this.grpPeriodo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpPeriodo.Size = new System.Drawing.Size(385, 194);
             this.grpPeriodo.TabIndex = 8;
             this.grpPeriodo.TabStop = false;
             this.grpPeriodo.Text = "Período";
@@ -92,7 +97,7 @@
             // lblDe
             // 
             this.lblDe.AutoSize = true;
-            this.lblDe.Location = new System.Drawing.Point(6, 63);
+            this.lblDe.Location = new System.Drawing.Point(5, 63);
             this.lblDe.Name = "lblDe";
             this.lblDe.Size = new System.Drawing.Size(30, 17);
             this.lblDe.TabIndex = 3;
@@ -106,18 +111,45 @@
             this.grpTipo.Controls.Add(this.radAReceber);
             this.grpTipo.Controls.Add(this.radRecebidos);
             this.grpTipo.Location = new System.Drawing.Point(12, 12);
+            this.grpTipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpTipo.Name = "grpTipo";
-            this.grpTipo.Size = new System.Drawing.Size(149, 195);
+            this.grpTipo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpTipo.Size = new System.Drawing.Size(149, 194);
             this.grpTipo.TabIndex = 9;
             this.grpTipo.TabStop = false;
             this.grpTipo.Text = "Tipo";
+            // 
+            // radSaidas
+            // 
+            this.radSaidas.AutoSize = true;
+            this.radSaidas.Location = new System.Drawing.Point(25, 62);
+            this.radSaidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radSaidas.Name = "radSaidas";
+            this.radSaidas.Size = new System.Drawing.Size(69, 21);
+            this.radSaidas.TabIndex = 4;
+            this.radSaidas.TabStop = true;
+            this.radSaidas.Text = "Saídas";
+            this.radSaidas.UseVisualStyleBackColor = true;
+            // 
+            // radEntradas
+            // 
+            this.radEntradas.AutoSize = true;
+            this.radEntradas.Location = new System.Drawing.Point(25, 89);
+            this.radEntradas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radEntradas.Name = "radEntradas";
+            this.radEntradas.Size = new System.Drawing.Size(83, 21);
+            this.radEntradas.TabIndex = 3;
+            this.radEntradas.TabStop = true;
+            this.radEntradas.Text = "Entradas";
+            this.radEntradas.UseVisualStyleBackColor = true;
             // 
             // radGeral
             // 
             this.radGeral.AutoSize = true;
             this.radGeral.Location = new System.Drawing.Point(25, 34);
+            this.radGeral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radGeral.Name = "radGeral";
-            this.radGeral.Size = new System.Drawing.Size(64, 21);
+            this.radGeral.Size = new System.Drawing.Size(61, 21);
             this.radGeral.TabIndex = 2;
             this.radGeral.TabStop = true;
             this.radGeral.Text = "Geral";
@@ -127,8 +159,9 @@
             // 
             this.radAReceber.AutoSize = true;
             this.radAReceber.Location = new System.Drawing.Point(25, 143);
+            this.radAReceber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radAReceber.Name = "radAReceber";
-            this.radAReceber.Size = new System.Drawing.Size(96, 21);
+            this.radAReceber.Size = new System.Drawing.Size(93, 21);
             this.radAReceber.TabIndex = 1;
             this.radAReceber.TabStop = true;
             this.radAReceber.Text = "A Receber";
@@ -137,35 +170,14 @@
             // radRecebidos
             // 
             this.radRecebidos.AutoSize = true;
-            this.radRecebidos.Location = new System.Drawing.Point(25, 115);
+            this.radRecebidos.Location = new System.Drawing.Point(25, 114);
+            this.radRecebidos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radRecebidos.Name = "radRecebidos";
-            this.radRecebidos.Size = new System.Drawing.Size(96, 21);
+            this.radRecebidos.Size = new System.Drawing.Size(93, 21);
             this.radRecebidos.TabIndex = 0;
             this.radRecebidos.TabStop = true;
             this.radRecebidos.Text = "Recebidos";
             this.radRecebidos.UseVisualStyleBackColor = true;
-            // 
-            // radEntradas
-            // 
-            this.radEntradas.AutoSize = true;
-            this.radEntradas.Location = new System.Drawing.Point(25, 88);
-            this.radEntradas.Name = "radEntradas";
-            this.radEntradas.Size = new System.Drawing.Size(86, 21);
-            this.radEntradas.TabIndex = 3;
-            this.radEntradas.TabStop = true;
-            this.radEntradas.Text = "Entradas";
-            this.radEntradas.UseVisualStyleBackColor = true;
-            // 
-            // radSaidas
-            // 
-            this.radSaidas.AutoSize = true;
-            this.radSaidas.Location = new System.Drawing.Point(25, 61);
-            this.radSaidas.Name = "radSaidas";
-            this.radSaidas.Size = new System.Drawing.Size(72, 21);
-            this.radSaidas.TabIndex = 4;
-            this.radSaidas.TabStop = true;
-            this.radSaidas.Text = "Saídas";
-            this.radSaidas.UseVisualStyleBackColor = true;
             // 
             // RelatorioCaixaChequeForm
             // 
@@ -175,7 +187,10 @@
             this.Controls.Add(this.btnGerar);
             this.Controls.Add(this.grpPeriodo);
             this.Controls.Add(this.grpTipo);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RelatorioCaixaChequeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatorio de Caixa - Cheque";
             this.grpPeriodo.ResumeLayout(false);
             this.grpPeriodo.PerformLayout();

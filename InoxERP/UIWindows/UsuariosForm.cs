@@ -25,7 +25,7 @@ namespace UIWindows
         {
             UsuariosBLL obj = new UsuariosBLL();
             UsuariosDGV.DataSource = obj.Listagem();
-            //UsuariosDGV.Columns[2].Visible = false;            
+            UsuariosDGV.Columns[2].Visible = false;            
         }
 
         private int VerificaTipoUsuario()
