@@ -162,5 +162,11 @@ namespace InoxERP
             UsuariosForm usuarios = new UsuariosForm();
             usuarios.Show();
         }
+
+        private void tipServicosCadastro_Click(object sender, EventArgs e)
+        {
+            ConsultaServicosForm servicos = new ConsultaServicosForm();
+            servicos.Show();
+        }
     }
 }
