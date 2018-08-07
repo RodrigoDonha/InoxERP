@@ -41,7 +41,7 @@
             this.radCPF_CNPJ = new System.Windows.Forms.RadioButton();
             this.radNome = new System.Windows.Forms.RadioButton();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.btnEntrada = new System.Windows.Forms.Button();
+            this.btnGerarContrato = new System.Windows.Forms.Button();
             this.grpOrdemServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdOrdemServico)).BeginInit();
             this.grpPesquisa.SuspendLayout();
@@ -190,22 +190,22 @@
             this.lblTipo.TabIndex = 0;
             this.lblTipo.Text = "Tipo:";
             // 
-            // btnEntrada
+            // btnGerarContrato
             // 
-            this.btnEntrada.Location = new System.Drawing.Point(569, 406);
-            this.btnEntrada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEntrada.Name = "btnEntrada";
-            this.btnEntrada.Size = new System.Drawing.Size(157, 30);
-            this.btnEntrada.TabIndex = 12;
-            this.btnEntrada.Text = "Pgto Entrada";
-            this.btnEntrada.UseVisualStyleBackColor = true;
+            this.btnGerarContrato.Location = new System.Drawing.Point(569, 406);
+            this.btnGerarContrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGerarContrato.Name = "btnGerarContrato";
+            this.btnGerarContrato.Size = new System.Drawing.Size(157, 30);
+            this.btnGerarContrato.TabIndex = 12;
+            this.btnGerarContrato.Text = "Gerar Contrato";
+            this.btnGerarContrato.UseVisualStyleBackColor = true;
             // 
             // ConsultaOrdemServicoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnEntrada);
+            this.Controls.Add(this.btnGerarContrato);
             this.Controls.Add(this.btnFinlizar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
@@ -240,6 +240,6 @@
         private System.Windows.Forms.RadioButton radCPF_CNPJ;
         private System.Windows.Forms.RadioButton radNome;
         private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.Button btnEntrada;
+        private System.Windows.Forms.Button btnGerarContrato;
     }
 }

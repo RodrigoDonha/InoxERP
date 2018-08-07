@@ -36,11 +36,10 @@
             this.btnGravar = new System.Windows.Forms.Button();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
             this.txtValorUnitario = new System.Windows.Forms.TextBox();
-            this.txtMedidas = new System.Windows.Forms.TextBox();
             this.txtPeca = new System.Windows.Forms.TextBox();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.lblValorUnitario = new System.Windows.Forms.Label();
-            this.lblMedidas = new System.Windows.Forms.Label();
+            this.lblQuantidade = new System.Windows.Forms.Label();
             this.lblPeca = new System.Windows.Forms.Label();
             this.grpConsultarProdutos = new System.Windows.Forms.GroupBox();
             this.grdConsultaPecas = new System.Windows.Forms.DataGridView();
@@ -49,16 +48,25 @@
             this.tbcConsultaValores = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.radUN = new System.Windows.Forms.RadioButton();
+            this.radMT = new System.Windows.Forms.RadioButton();
+            this.radKG = new System.Windows.Forms.RadioButton();
             this.grpCadastroProdutos.SuspendLayout();
             this.grpConsultarProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).BeginInit();
             this.tbcConsultaValores.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             this.SuspendLayout();
             // 
             // grpCadastroProdutos
             // 
+            this.grpCadastroProdutos.Controls.Add(this.radKG);
+            this.grpCadastroProdutos.Controls.Add(this.radMT);
+            this.grpCadastroProdutos.Controls.Add(this.radUN);
+            this.grpCadastroProdutos.Controls.Add(this.nudQuantidade);
             this.grpCadastroProdutos.Controls.Add(this.btnExcluir);
             this.grpCadastroProdutos.Controls.Add(this.lblObservacao);
             this.grpCadastroProdutos.Controls.Add(this.btnAlterar);
@@ -66,11 +74,10 @@
             this.grpCadastroProdutos.Controls.Add(this.btnGravar);
             this.grpCadastroProdutos.Controls.Add(this.txtValorTotal);
             this.grpCadastroProdutos.Controls.Add(this.txtValorUnitario);
-            this.grpCadastroProdutos.Controls.Add(this.txtMedidas);
             this.grpCadastroProdutos.Controls.Add(this.txtPeca);
             this.grpCadastroProdutos.Controls.Add(this.lblValorTotal);
             this.grpCadastroProdutos.Controls.Add(this.lblValorUnitario);
-            this.grpCadastroProdutos.Controls.Add(this.lblMedidas);
+            this.grpCadastroProdutos.Controls.Add(this.lblQuantidade);
             this.grpCadastroProdutos.Controls.Add(this.lblPeca);
             this.grpCadastroProdutos.Location = new System.Drawing.Point(5, 6);
             this.grpCadastroProdutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -145,14 +152,6 @@
             this.txtValorUnitario.Size = new System.Drawing.Size(125, 23);
             this.txtValorUnitario.TabIndex = 6;
             // 
-            // txtMedidas
-            // 
-            this.txtMedidas.Location = new System.Drawing.Point(112, 68);
-            this.txtMedidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMedidas.Name = "txtMedidas";
-            this.txtMedidas.Size = new System.Drawing.Size(377, 23);
-            this.txtMedidas.TabIndex = 5;
-            // 
             // txtPeca
             // 
             this.txtPeca.Location = new System.Drawing.Point(112, 30);
@@ -179,14 +178,14 @@
             this.lblValorUnitario.TabIndex = 2;
             this.lblValorUnitario.Text = "Valor Unitário:";
             // 
-            // lblMedidas
+            // lblQuantidade
             // 
-            this.lblMedidas.AutoSize = true;
-            this.lblMedidas.Location = new System.Drawing.Point(5, 71);
-            this.lblMedidas.Name = "lblMedidas";
-            this.lblMedidas.Size = new System.Drawing.Size(65, 17);
-            this.lblMedidas.TabIndex = 1;
-            this.lblMedidas.Text = "Medidas:";
+            this.lblQuantidade.AutoSize = true;
+            this.lblQuantidade.Location = new System.Drawing.Point(5, 71);
+            this.lblQuantidade.Name = "lblQuantidade";
+            this.lblQuantidade.Size = new System.Drawing.Size(86, 17);
+            this.lblQuantidade.TabIndex = 1;
+            this.lblQuantidade.Text = "Quantidade:";
             // 
             // lblPeca
             // 
@@ -264,14 +263,54 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.grpConsultarProdutos);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(545, 445);
+            this.tabPage2.Size = new System.Drawing.Size(545, 442);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // nudQuantidade
+            // 
+            this.nudQuantidade.Location = new System.Drawing.Point(112, 69);
+            this.nudQuantidade.Name = "nudQuantidade";
+            this.nudQuantidade.Size = new System.Drawing.Size(120, 23);
+            this.nudQuantidade.TabIndex = 10;
+            // 
+            // radUN
+            // 
+            this.radUN.AutoSize = true;
+            this.radUN.Location = new System.Drawing.Point(262, 69);
+            this.radUN.Name = "radUN";
+            this.radUN.Size = new System.Drawing.Size(46, 21);
+            this.radUN.TabIndex = 11;
+            this.radUN.TabStop = true;
+            this.radUN.Text = "UN";
+            this.radUN.UseVisualStyleBackColor = true;
+            // 
+            // radMT
+            // 
+            this.radMT.AutoSize = true;
+            this.radMT.Location = new System.Drawing.Point(355, 69);
+            this.radMT.Name = "radMT";
+            this.radMT.Size = new System.Drawing.Size(46, 21);
+            this.radMT.TabIndex = 12;
+            this.radMT.TabStop = true;
+            this.radMT.Text = "MT";
+            this.radMT.UseVisualStyleBackColor = true;
+            // 
+            // radKG
+            // 
+            this.radKG.AutoSize = true;
+            this.radKG.Location = new System.Drawing.Point(443, 69);
+            this.radKG.Name = "radKG";
+            this.radKG.Size = new System.Drawing.Size(46, 21);
+            this.radKG.TabIndex = 13;
+            this.radKG.TabStop = true;
+            this.radKG.Text = "KG";
+            this.radKG.UseVisualStyleBackColor = true;
             // 
             // ConsultaProdutosForm
             // 
@@ -292,6 +331,7 @@
             this.tbcConsultaValores.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,11 +341,10 @@
         private System.Windows.Forms.GroupBox grpCadastroProdutos;
         private System.Windows.Forms.TextBox txtValorTotal;
         private System.Windows.Forms.TextBox txtValorUnitario;
-        private System.Windows.Forms.TextBox txtMedidas;
         private System.Windows.Forms.TextBox txtPeca;
         private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.Label lblValorUnitario;
-        private System.Windows.Forms.Label lblMedidas;
+        private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.Label lblPeca;
         private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Button btnAlterar;
@@ -319,5 +358,9 @@
         private System.Windows.Forms.TabControl tbcConsultaValores;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.RadioButton radKG;
+        private System.Windows.Forms.RadioButton radMT;
+        private System.Windows.Forms.RadioButton radUN;
+        private System.Windows.Forms.NumericUpDown nudQuantidade;
     }
 }

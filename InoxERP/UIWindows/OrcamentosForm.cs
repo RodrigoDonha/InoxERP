@@ -16,7 +16,7 @@ namespace InoxERP.UI_Windows_Forms
         public OrcamentosForm()
         {
             InitializeComponent();
-            btnCliente.Focus();
+            btnProcurar.Focus();
         }
 
         private void OrcamentosForm_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace InoxERP.UI_Windows_Forms
 
         private void btCliente_Click(object sender, EventArgs e)
         {
-            ClientesForm obj = new ClientesForm();
+            ConsultaClientesForm obj = new ConsultaClientesForm();
             //this.Hide();
             obj.Show();
         }

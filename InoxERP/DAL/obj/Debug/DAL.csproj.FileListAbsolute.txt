@@ -14,7 +14,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\obj\Debug\DAL.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\DAL.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\DAL.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\Modelos.dll
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\MySql.Data.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\Modelos.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\DAL\bin\Debug\MySql.Data.xml

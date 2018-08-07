@@ -51,7 +51,7 @@
             this.lblExibirCodigo.Location = new System.Drawing.Point(104, 52);
             this.lblExibirCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExibirCodigo.Name = "lblExibirCodigo";
-            this.lblExibirCodigo.Size = new System.Drawing.Size(50, 20);
+            this.lblExibirCodigo.Size = new System.Drawing.Size(44, 17);
             this.lblExibirCodigo.TabIndex = 27;
             this.lblExibirCodigo.Text = "0000 ";
             // 
@@ -61,7 +61,7 @@
             this.lblCodigo.Location = new System.Drawing.Point(21, 52);
             this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(71, 20);
+            this.lblCodigo.Size = new System.Drawing.Size(60, 17);
             this.lblCodigo.TabIndex = 26;
             this.lblCodigo.Text = "Código: ";
             // 
@@ -91,7 +91,7 @@
             this.lblDebitos.Location = new System.Drawing.Point(431, 52);
             this.lblDebitos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDebitos.Name = "lblDebitos";
-            this.lblDebitos.Size = new System.Drawing.Size(67, 20);
+            this.lblDebitos.Size = new System.Drawing.Size(56, 17);
             this.lblDebitos.TabIndex = 23;
             this.lblDebitos.Text = "Débitos";
             // 
@@ -110,7 +110,7 @@
             this.txtValor.Location = new System.Drawing.Point(108, 86);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(132, 26);
+            this.txtValor.Size = new System.Drawing.Size(132, 23);
             this.txtValor.TabIndex = 21;
             // 
             // txtReferenteA
@@ -118,7 +118,7 @@
             this.txtReferenteA.Location = new System.Drawing.Point(108, 118);
             this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
             this.txtReferenteA.Name = "txtReferenteA";
-            this.txtReferenteA.Size = new System.Drawing.Size(381, 26);
+            this.txtReferenteA.Size = new System.Drawing.Size(381, 23);
             this.txtReferenteA.TabIndex = 20;
             // 
             // dtpData
@@ -127,7 +127,7 @@
             this.dtpData.Location = new System.Drawing.Point(367, 84);
             this.dtpData.Margin = new System.Windows.Forms.Padding(4);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(123, 26);
+            this.dtpData.Size = new System.Drawing.Size(123, 23);
             this.dtpData.TabIndex = 19;
             // 
             // grdSaidas
@@ -145,7 +145,7 @@
             this.lblValor.Location = new System.Drawing.Point(21, 91);
             this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(58, 20);
+            this.lblValor.Size = new System.Drawing.Size(49, 17);
             this.lblValor.TabIndex = 17;
             this.lblValor.Text = "Valor: ";
             // 
@@ -155,7 +155,7 @@
             this.lblData.Location = new System.Drawing.Point(311, 91);
             this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(55, 20);
+            this.lblData.Size = new System.Drawing.Size(46, 17);
             this.lblData.TabIndex = 16;
             this.lblData.Text = "Data: ";
             // 
@@ -165,24 +165,24 @@
             this.lblReferenteA.Location = new System.Drawing.Point(21, 122);
             this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReferenteA.Name = "lblReferenteA";
-            this.lblReferenteA.Size = new System.Drawing.Size(106, 20);
+            this.lblReferenteA.Size = new System.Drawing.Size(91, 17);
             this.lblReferenteA.TabIndex = 15;
             this.lblReferenteA.Text = "Referente a: ";
             // 
             // lblSaidas
             // 
             this.lblSaidas.AutoSize = true;
-            this.lblSaidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaidas.Location = new System.Drawing.Point(204, 11);
+            this.lblSaidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaidas.Location = new System.Drawing.Point(223, 9);
             this.lblSaidas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSaidas.Name = "lblSaidas";
-            this.lblSaidas.Size = new System.Drawing.Size(87, 29);
+            this.lblSaidas.Size = new System.Drawing.Size(72, 24);
             this.lblSaidas.TabIndex = 14;
             this.lblSaidas.Text = "Saídas";
             // 
             // CaixaSaidasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 407);
             this.Controls.Add(this.lblExibirCodigo);
