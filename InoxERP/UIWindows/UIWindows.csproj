@@ -109,6 +109,18 @@
     <Compile Include="ConsultaProdutosForm.Designer.cs">
       <DependentUpon>ConsultaProdutosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContasaPagarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContasaPagarForm.Designer.cs">
+      <DependentUpon>ContasaPagarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContasaReceberForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContasaReceberForm.Designer.cs">
+      <DependentUpon>ContasaReceberForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntregasAndamentoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +242,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaProdutosForm.resx">
       <DependentUpon>ConsultaProdutosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContasaPagarForm.resx">
+      <DependentUpon>ContasaPagarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContasaReceberForm.resx">
+      <DependentUpon>ContasaReceberForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EntregasAndamentoForm.resx">
       <DependentUpon>EntregasAndamentoForm.cs</DependentUpon>

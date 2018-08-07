@@ -168,5 +168,26 @@ namespace InoxERP
             ConsultaServicosForm servicos = new ConsultaServicosForm();
             servicos.Show();
         }
+
+        private void chequesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            CaixaChequesForm obj = new CaixaChequesForm();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void aPagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ContasaPagarForm obj = new ContasaPagarForm();
+            //this.Hide();
+            obj.Show();
+        }
+
+        private void aReceberToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ContasaReceberForm obj = new ContasaReceberForm();
+            //this.Hide();
+            obj.Show();
+        }
     }
 }
