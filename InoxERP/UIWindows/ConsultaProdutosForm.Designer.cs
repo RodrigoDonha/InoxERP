@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.grpCadastroProdutos = new System.Windows.Forms.GroupBox();
+            this.radKG = new System.Windows.Forms.RadioButton();
+            this.radMT = new System.Windows.Forms.RadioButton();
+            this.radUN = new System.Windows.Forms.RadioButton();
+            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.lblObservacao = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -41,24 +45,21 @@
             this.lblValorUnitario = new System.Windows.Forms.Label();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.lblPeca = new System.Windows.Forms.Label();
-            this.grpConsultarProdutos = new System.Windows.Forms.GroupBox();
-            this.grdConsultaPecas = new System.Windows.Forms.DataGridView();
-            this.txtConsultaPeca = new System.Windows.Forms.TextBox();
-            this.lblConsultaPeca = new System.Windows.Forms.Label();
             this.tbcConsultaValores = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
-            this.radUN = new System.Windows.Forms.RadioButton();
-            this.radMT = new System.Windows.Forms.RadioButton();
-            this.radKG = new System.Windows.Forms.RadioButton();
+            this.lblConsultaPeca = new System.Windows.Forms.Label();
+            this.txtConsultaPeca = new System.Windows.Forms.TextBox();
+            this.grdConsultaPecas = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.grpConsultarProdutos = new System.Windows.Forms.GroupBox();
             this.grpCadastroProdutos.SuspendLayout();
-            this.grpConsultarProdutos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             this.tbcConsultaValores.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).BeginInit();
+            this.grpConsultarProdutos.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpCadastroProdutos
@@ -87,6 +88,46 @@
             this.grpCadastroProdutos.TabIndex = 0;
             this.grpCadastroProdutos.TabStop = false;
             this.grpCadastroProdutos.Text = "Cadastro de Produtos";
+            // 
+            // radKG
+            // 
+            this.radKG.AutoSize = true;
+            this.radKG.Location = new System.Drawing.Point(443, 69);
+            this.radKG.Name = "radKG";
+            this.radKG.Size = new System.Drawing.Size(46, 21);
+            this.radKG.TabIndex = 13;
+            this.radKG.TabStop = true;
+            this.radKG.Text = "KG";
+            this.radKG.UseVisualStyleBackColor = true;
+            // 
+            // radMT
+            // 
+            this.radMT.AutoSize = true;
+            this.radMT.Location = new System.Drawing.Point(355, 69);
+            this.radMT.Name = "radMT";
+            this.radMT.Size = new System.Drawing.Size(46, 21);
+            this.radMT.TabIndex = 12;
+            this.radMT.TabStop = true;
+            this.radMT.Text = "MT";
+            this.radMT.UseVisualStyleBackColor = true;
+            // 
+            // radUN
+            // 
+            this.radUN.AutoSize = true;
+            this.radUN.Location = new System.Drawing.Point(262, 69);
+            this.radUN.Name = "radUN";
+            this.radUN.Size = new System.Drawing.Size(46, 21);
+            this.radUN.TabIndex = 11;
+            this.radUN.TabStop = true;
+            this.radUN.Text = "UN";
+            this.radUN.UseVisualStyleBackColor = true;
+            // 
+            // nudQuantidade
+            // 
+            this.nudQuantidade.Location = new System.Drawing.Point(112, 69);
+            this.nudQuantidade.Name = "nudQuantidade";
+            this.nudQuantidade.Size = new System.Drawing.Size(120, 23);
+            this.nudQuantidade.TabIndex = 10;
             // 
             // btnExcluir
             // 
@@ -196,56 +237,15 @@
             this.lblPeca.TabIndex = 0;
             this.lblPeca.Text = "Peça:";
             // 
-            // grpConsultarProdutos
-            // 
-            this.grpConsultarProdutos.Controls.Add(this.grdConsultaPecas);
-            this.grpConsultarProdutos.Controls.Add(this.txtConsultaPeca);
-            this.grpConsultarProdutos.Controls.Add(this.lblConsultaPeca);
-            this.grpConsultarProdutos.Location = new System.Drawing.Point(5, 6);
-            this.grpConsultarProdutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpConsultarProdutos.Name = "grpConsultarProdutos";
-            this.grpConsultarProdutos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpConsultarProdutos.Size = new System.Drawing.Size(533, 430);
-            this.grpConsultarProdutos.TabIndex = 1;
-            this.grpConsultarProdutos.TabStop = false;
-            this.grpConsultarProdutos.Text = "Consultar Produtos";
-            // 
-            // grdConsultaPecas
-            // 
-            this.grdConsultaPecas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdConsultaPecas.Location = new System.Drawing.Point(9, 69);
-            this.grdConsultaPecas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grdConsultaPecas.Name = "grdConsultaPecas";
-            this.grdConsultaPecas.RowTemplate.Height = 24;
-            this.grdConsultaPecas.Size = new System.Drawing.Size(517, 354);
-            this.grdConsultaPecas.TabIndex = 7;
-            // 
-            // txtConsultaPeca
-            // 
-            this.txtConsultaPeca.Location = new System.Drawing.Point(56, 30);
-            this.txtConsultaPeca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtConsultaPeca.Name = "txtConsultaPeca";
-            this.txtConsultaPeca.Size = new System.Drawing.Size(471, 23);
-            this.txtConsultaPeca.TabIndex = 6;
-            // 
-            // lblConsultaPeca
-            // 
-            this.lblConsultaPeca.AutoSize = true;
-            this.lblConsultaPeca.Location = new System.Drawing.Point(5, 33);
-            this.lblConsultaPeca.Name = "lblConsultaPeca";
-            this.lblConsultaPeca.Size = new System.Drawing.Size(44, 17);
-            this.lblConsultaPeca.TabIndex = 5;
-            this.lblConsultaPeca.Text = "Peça:";
-            // 
             // tbcConsultaValores
             // 
-            this.tbcConsultaValores.Controls.Add(this.tabPage1);
             this.tbcConsultaValores.Controls.Add(this.tabPage2);
+            this.tbcConsultaValores.Controls.Add(this.tabPage1);
             this.tbcConsultaValores.Location = new System.Drawing.Point(5, 7);
             this.tbcConsultaValores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbcConsultaValores.Name = "tbcConsultaValores";
             this.tbcConsultaValores.SelectedIndex = 0;
-            this.tbcConsultaValores.Size = new System.Drawing.Size(553, 471);
+            this.tbcConsultaValores.Size = new System.Drawing.Size(553, 466);
             this.tbcConsultaValores.TabIndex = 2;
             // 
             // tabPage1
@@ -267,56 +267,67 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(545, 442);
+            this.tabPage2.Size = new System.Drawing.Size(545, 437);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // nudQuantidade
+            // lblConsultaPeca
             // 
-            this.nudQuantidade.Location = new System.Drawing.Point(112, 69);
-            this.nudQuantidade.Name = "nudQuantidade";
-            this.nudQuantidade.Size = new System.Drawing.Size(120, 23);
-            this.nudQuantidade.TabIndex = 10;
+            this.lblConsultaPeca.AutoSize = true;
+            this.lblConsultaPeca.Location = new System.Drawing.Point(5, 33);
+            this.lblConsultaPeca.Name = "lblConsultaPeca";
+            this.lblConsultaPeca.Size = new System.Drawing.Size(44, 17);
+            this.lblConsultaPeca.TabIndex = 5;
+            this.lblConsultaPeca.Text = "Peça:";
             // 
-            // radUN
+            // txtConsultaPeca
             // 
-            this.radUN.AutoSize = true;
-            this.radUN.Location = new System.Drawing.Point(262, 69);
-            this.radUN.Name = "radUN";
-            this.radUN.Size = new System.Drawing.Size(46, 21);
-            this.radUN.TabIndex = 11;
-            this.radUN.TabStop = true;
-            this.radUN.Text = "UN";
-            this.radUN.UseVisualStyleBackColor = true;
+            this.txtConsultaPeca.Location = new System.Drawing.Point(56, 30);
+            this.txtConsultaPeca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsultaPeca.Name = "txtConsultaPeca";
+            this.txtConsultaPeca.Size = new System.Drawing.Size(389, 23);
+            this.txtConsultaPeca.TabIndex = 6;
             // 
-            // radMT
+            // grdConsultaPecas
             // 
-            this.radMT.AutoSize = true;
-            this.radMT.Location = new System.Drawing.Point(355, 69);
-            this.radMT.Name = "radMT";
-            this.radMT.Size = new System.Drawing.Size(46, 21);
-            this.radMT.TabIndex = 12;
-            this.radMT.TabStop = true;
-            this.radMT.Text = "MT";
-            this.radMT.UseVisualStyleBackColor = true;
+            this.grdConsultaPecas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdConsultaPecas.Location = new System.Drawing.Point(9, 69);
+            this.grdConsultaPecas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grdConsultaPecas.Name = "grdConsultaPecas";
+            this.grdConsultaPecas.RowTemplate.Height = 24;
+            this.grdConsultaPecas.Size = new System.Drawing.Size(517, 354);
+            this.grdConsultaPecas.TabIndex = 7;
             // 
-            // radKG
+            // btnBuscar
             // 
-            this.radKG.AutoSize = true;
-            this.radKG.Location = new System.Drawing.Point(443, 69);
-            this.radKG.Name = "radKG";
-            this.radKG.Size = new System.Drawing.Size(46, 21);
-            this.radKG.TabIndex = 13;
-            this.radKG.TabStop = true;
-            this.radKG.Text = "KG";
-            this.radKG.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(451, 25);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 32);
+            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // grpConsultarProdutos
+            // 
+            this.grpConsultarProdutos.Controls.Add(this.btnBuscar);
+            this.grpConsultarProdutos.Controls.Add(this.grdConsultaPecas);
+            this.grpConsultarProdutos.Controls.Add(this.txtConsultaPeca);
+            this.grpConsultarProdutos.Controls.Add(this.lblConsultaPeca);
+            this.grpConsultarProdutos.Location = new System.Drawing.Point(5, 6);
+            this.grpConsultarProdutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpConsultarProdutos.Name = "grpConsultarProdutos";
+            this.grpConsultarProdutos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpConsultarProdutos.Size = new System.Drawing.Size(533, 435);
+            this.grpConsultarProdutos.TabIndex = 1;
+            this.grpConsultarProdutos.TabStop = false;
+            this.grpConsultarProdutos.Text = "Consultar Produtos";
             // 
             // ConsultaProdutosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 486);
+            this.ClientSize = new System.Drawing.Size(561, 484);
             this.Controls.Add(this.tbcConsultaValores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -325,13 +336,13 @@
             this.Text = "Cadastro e Consulta de Produtos";
             this.grpCadastroProdutos.ResumeLayout(false);
             this.grpCadastroProdutos.PerformLayout();
-            this.grpConsultarProdutos.ResumeLayout(false);
-            this.grpConsultarProdutos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
             this.tbcConsultaValores.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).EndInit();
+            this.grpConsultarProdutos.ResumeLayout(false);
+            this.grpConsultarProdutos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -351,10 +362,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label lblObservacao;
         private System.Windows.Forms.TextBox txtObservacao;
-        private System.Windows.Forms.GroupBox grpConsultarProdutos;
-        private System.Windows.Forms.DataGridView grdConsultaPecas;
-        private System.Windows.Forms.TextBox txtConsultaPeca;
-        private System.Windows.Forms.Label lblConsultaPeca;
         private System.Windows.Forms.TabControl tbcConsultaValores;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -362,5 +369,10 @@
         private System.Windows.Forms.RadioButton radMT;
         private System.Windows.Forms.RadioButton radUN;
         private System.Windows.Forms.NumericUpDown nudQuantidade;
+        private System.Windows.Forms.GroupBox grpConsultarProdutos;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridView grdConsultaPecas;
+        private System.Windows.Forms.TextBox txtConsultaPeca;
+        private System.Windows.Forms.Label lblConsultaPeca;
     }
 }

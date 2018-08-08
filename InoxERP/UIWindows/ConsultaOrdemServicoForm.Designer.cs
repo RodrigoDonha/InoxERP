@@ -199,6 +199,7 @@
             this.btnGerarContrato.TabIndex = 12;
             this.btnGerarContrato.Text = "Gerar Contrato";
             this.btnGerarContrato.UseVisualStyleBackColor = true;
+            this.btnGerarContrato.Click += new System.EventHandler(this.btnGerarContrato_Click);
             // 
             // ConsultaOrdemServicoForm
             // 

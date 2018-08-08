@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnSelescionar = new System.Windows.Forms.Button();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.grpOrdemServico = new System.Windows.Forms.GroupBox();
@@ -57,16 +57,16 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // btnSelescionar
+            // btnSelecionar
             // 
-            this.btnSelescionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelescionar.Location = new System.Drawing.Point(12, 406);
-            this.btnSelescionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSelescionar.Name = "btnSelescionar";
-            this.btnSelescionar.Size = new System.Drawing.Size(160, 30);
-            this.btnSelescionar.TabIndex = 18;
-            this.btnSelescionar.Text = "Selecionar";
-            this.btnSelescionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar.Location = new System.Drawing.Point(12, 406);
+            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(160, 30);
+            this.btnSelecionar.TabIndex = 18;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
@@ -187,7 +187,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 444);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.btnSelescionar);
+            this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.grpOrdemServico);
@@ -207,7 +207,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnSelescionar;
+        private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.GroupBox grpOrdemServico;

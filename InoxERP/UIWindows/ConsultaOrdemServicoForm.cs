@@ -22,5 +22,10 @@ namespace UIWindows
             OrdemServicoForm os = new OrdemServicoForm();
             os.Show();
         }
+
+        private void btnGerarContrato_Click(object sender, EventArgs e)
+        {
+            new ContratoForm().Show();
+        }
     }
 }

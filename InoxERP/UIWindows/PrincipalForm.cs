@@ -44,14 +44,14 @@ namespace InoxERP
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClientesForm obj = new ClientesForm();
+            ConsultaClientesForm obj = new ConsultaClientesForm();
             //this.Hide();
             obj.Show();
         }
 
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FornecedoresForm obj = new FornecedoresForm();
+            ConsultaFornecedoresForm obj = new ConsultaFornecedoresForm();
             //this.Hide();
             obj.Show();
         }
@@ -188,6 +188,11 @@ namespace InoxERP
             ContasaReceberForm obj = new ContasaReceberForm();
             //this.Hide();
             obj.Show();
+        }
+
+        private void contratosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConsultaContratosForm().Show();
         }
     }
 }

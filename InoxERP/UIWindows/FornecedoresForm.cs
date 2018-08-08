@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows;
 
 namespace InoxERP.UI_Windows_Forms
 {
@@ -15,6 +16,20 @@ namespace InoxERP.UI_Windows_Forms
         public FornecedoresForm()
         {
             InitializeComponent();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Dispose(true);
+            new ConsultaFornecedoresForm().Show();
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose(true);
+            new ConsultaFornecedoresForm().Show();
+
         }
     }
 }

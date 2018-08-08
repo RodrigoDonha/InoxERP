@@ -91,6 +91,18 @@
     <Compile Include="ConsultaClientesForm.Designer.cs">
       <DependentUpon>ConsultaClientesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaContratosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaContratosForm.Designer.cs">
+      <DependentUpon>ConsultaContratosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaFornecedoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaFornecedoresForm.Designer.cs">
+      <DependentUpon>ConsultaFornecedoresForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaOrcamentoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,12 @@
     </Compile>
     <Compile Include="ContasaReceberForm.Designer.cs">
       <DependentUpon>ContasaReceberForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContratoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContratoForm.Designer.cs">
+      <DependentUpon>ContratoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EntregasAndamentoForm.cs">
       <SubType>Form</SubType>
@@ -240,6 +258,12 @@
     <EmbeddedResource Include="ConsultaClientesForm.resx">
       <DependentUpon>ConsultaClientesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaContratosForm.resx">
+      <DependentUpon>ConsultaContratosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaFornecedoresForm.resx">
+      <DependentUpon>ConsultaFornecedoresForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaOrcamentoForm.resx">
       <DependentUpon>ConsultaOrcamentoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContasaReceberForm.resx">
       <DependentUpon>ContasaReceberForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContratoForm.resx">
+      <DependentUpon>ContratoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EntregasAndamentoForm.resx">
       <DependentUpon>EntregasAndamentoForm.cs</DependentUpon>
@@ -287,6 +314,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RelatorioCaixaChequeForm.resx">
       <DependentUpon>RelatorioCaixaChequeForm.cs</DependentUpon>
@@ -338,6 +366,9 @@
       <Project>{23591fd4-0598-48b4-9030-ab46f765d92e}</Project>
       <Name>Modelos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
