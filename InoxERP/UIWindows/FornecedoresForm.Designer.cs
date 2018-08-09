@@ -63,18 +63,18 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblCPF_CNPJ = new System.Windows.Forms.Label();
             this.grpDadosBancarios = new System.Windows.Forms.GroupBox();
-            this.txtBanco = new System.Windows.Forms.TextBox();
-            this.lblBanco = new System.Windows.Forms.Label();
-            this.txtAgencia = new System.Windows.Forms.TextBox();
-            this.lblAgencia = new System.Windows.Forms.Label();
-            this.txtConta = new System.Windows.Forms.TextBox();
-            this.lblConta = new System.Windows.Forms.Label();
             this.txtCompraMinima = new System.Windows.Forms.TextBox();
             this.lblCompraMinima = new System.Windows.Forms.Label();
             this.txtFavorecido = new System.Windows.Forms.TextBox();
             this.lblFavorecido = new System.Windows.Forms.Label();
             this.txtCpfCnpj = new System.Windows.Forms.TextBox();
             this.lblCpfCnpj = new System.Windows.Forms.Label();
+            this.txtConta = new System.Windows.Forms.TextBox();
+            this.lblConta = new System.Windows.Forms.Label();
+            this.txtBanco = new System.Windows.Forms.TextBox();
+            this.lblBanco = new System.Windows.Forms.Label();
+            this.txtAgencia = new System.Windows.Forms.TextBox();
+            this.lblAgencia = new System.Windows.Forms.Label();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -169,7 +169,7 @@
             this.txtContatosCelular1.Location = new System.Drawing.Point(156, 79);
             this.txtContatosCelular1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContatosCelular1.Name = "txtContatosCelular1";
-            this.txtContatosCelular1.Size = new System.Drawing.Size(252, 23);
+            this.txtContatosCelular1.Size = new System.Drawing.Size(252, 27);
             this.txtContatosCelular1.TabIndex = 27;
             // 
             // lblContatosCelular1
@@ -177,7 +177,7 @@
             this.lblContatosCelular1.AutoSize = true;
             this.lblContatosCelular1.Location = new System.Drawing.Point(5, 81);
             this.lblContatosCelular1.Name = "lblContatosCelular1";
-            this.lblContatosCelular1.Size = new System.Drawing.Size(56, 17);
+            this.lblContatosCelular1.Size = new System.Drawing.Size(67, 20);
             this.lblContatosCelular1.TabIndex = 26;
             this.lblContatosCelular1.Text = "Celular:";
             // 
@@ -186,7 +186,7 @@
             this.txtContatosEmail.Location = new System.Drawing.Point(571, 26);
             this.txtContatosEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContatosEmail.Name = "txtContatosEmail";
-            this.txtContatosEmail.Size = new System.Drawing.Size(485, 23);
+            this.txtContatosEmail.Size = new System.Drawing.Size(485, 27);
             this.txtContatosEmail.TabIndex = 25;
             // 
             // txtContatosCelular2
@@ -194,7 +194,7 @@
             this.txtContatosCelular2.Location = new System.Drawing.Point(571, 78);
             this.txtContatosCelular2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContatosCelular2.Name = "txtContatosCelular2";
-            this.txtContatosCelular2.Size = new System.Drawing.Size(257, 23);
+            this.txtContatosCelular2.Size = new System.Drawing.Size(257, 27);
             this.txtContatosCelular2.TabIndex = 20;
             // 
             // txtContatosResidencial
@@ -202,7 +202,7 @@
             this.txtContatosResidencial.Location = new System.Drawing.Point(156, 26);
             this.txtContatosResidencial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContatosResidencial.Name = "txtContatosResidencial";
-            this.txtContatosResidencial.Size = new System.Drawing.Size(252, 23);
+            this.txtContatosResidencial.Size = new System.Drawing.Size(252, 27);
             this.txtContatosResidencial.TabIndex = 19;
             // 
             // lblContatosEmail
@@ -210,7 +210,7 @@
             this.lblContatosEmail.AutoSize = true;
             this.lblContatosEmail.Location = new System.Drawing.Point(441, 29);
             this.lblContatosEmail.Name = "lblContatosEmail";
-            this.lblContatosEmail.Size = new System.Drawing.Size(51, 17);
+            this.lblContatosEmail.Size = new System.Drawing.Size(62, 20);
             this.lblContatosEmail.TabIndex = 17;
             this.lblContatosEmail.Text = "E-Mail:";
             // 
@@ -219,16 +219,16 @@
             this.lblContatosResidencial.AutoSize = true;
             this.lblContatosResidencial.Location = new System.Drawing.Point(5, 29);
             this.lblContatosResidencial.Name = "lblContatosResidencial";
-            this.lblContatosResidencial.Size = new System.Drawing.Size(77, 17);
+            this.lblContatosResidencial.Size = new System.Drawing.Size(94, 20);
             this.lblContatosResidencial.TabIndex = 4;
-            this.lblContatosResidencial.Text = "Res./Com.:";
+            this.lblContatosResidencial.Text = "Comercial.:";
             // 
             // lblContatosCelular2
             // 
             this.lblContatosCelular2.AutoSize = true;
             this.lblContatosCelular2.Location = new System.Drawing.Point(441, 84);
             this.lblContatosCelular2.Name = "lblContatosCelular2";
-            this.lblContatosCelular2.Size = new System.Drawing.Size(56, 17);
+            this.lblContatosCelular2.Size = new System.Drawing.Size(67, 20);
             this.lblContatosCelular2.TabIndex = 5;
             this.lblContatosCelular2.Text = "Celular:";
             // 
@@ -263,7 +263,7 @@
             this.txtCEP.Location = new System.Drawing.Point(871, 98);
             this.txtCEP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(185, 23);
+            this.txtCEP.Size = new System.Drawing.Size(185, 27);
             this.txtCEP.TabIndex = 22;
             // 
             // txtEstado
@@ -271,7 +271,7 @@
             this.txtEstado.Location = new System.Drawing.Point(740, 98);
             this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(69, 23);
+            this.txtEstado.Size = new System.Drawing.Size(69, 27);
             this.txtEstado.TabIndex = 21;
             // 
             // txtCidade
@@ -279,7 +279,7 @@
             this.txtCidade.Location = new System.Drawing.Point(156, 98);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(495, 23);
+            this.txtCidade.Size = new System.Drawing.Size(495, 27);
             this.txtCidade.TabIndex = 20;
             // 
             // txtComplemento
@@ -287,7 +287,7 @@
             this.txtComplemento.Location = new System.Drawing.Point(807, 61);
             this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(249, 23);
+            this.txtComplemento.Size = new System.Drawing.Size(249, 27);
             this.txtComplemento.TabIndex = 19;
             // 
             // txtBairro
@@ -295,7 +295,7 @@
             this.txtBairro.Location = new System.Drawing.Point(345, 61);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(305, 23);
+            this.txtBairro.Size = new System.Drawing.Size(305, 27);
             this.txtBairro.TabIndex = 18;
             // 
             // txtNumEndereco
@@ -303,7 +303,7 @@
             this.txtNumEndereco.Location = new System.Drawing.Point(156, 60);
             this.txtNumEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumEndereco.Name = "txtNumEndereco";
-            this.txtNumEndereco.Size = new System.Drawing.Size(97, 23);
+            this.txtNumEndereco.Size = new System.Drawing.Size(97, 27);
             this.txtNumEndereco.TabIndex = 17;
             // 
             // txtEndereco
@@ -311,7 +311,7 @@
             this.txtEndereco.Location = new System.Drawing.Point(156, 24);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(900, 23);
+            this.txtEndereco.Size = new System.Drawing.Size(900, 27);
             this.txtEndereco.TabIndex = 8;
             // 
             // lblComplemento
@@ -319,7 +319,7 @@
             this.lblComplemento.AutoSize = true;
             this.lblComplemento.Location = new System.Drawing.Point(668, 63);
             this.lblComplemento.Name = "lblComplemento";
-            this.lblComplemento.Size = new System.Drawing.Size(98, 17);
+            this.lblComplemento.Size = new System.Drawing.Size(117, 20);
             this.lblComplemento.TabIndex = 16;
             this.lblComplemento.Text = "Complemento:";
             // 
@@ -328,7 +328,7 @@
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Location = new System.Drawing.Point(5, 26);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(73, 17);
+            this.lblEndereco.Size = new System.Drawing.Size(85, 20);
             this.lblEndereco.TabIndex = 7;
             this.lblEndereco.Text = "Endereço:";
             // 
@@ -337,7 +337,7 @@
             this.lblNumEndereco.AutoSize = true;
             this.lblNumEndereco.Location = new System.Drawing.Point(8, 64);
             this.lblNumEndereco.Name = "lblNumEndereco";
-            this.lblNumEndereco.Size = new System.Drawing.Size(27, 17);
+            this.lblNumEndereco.Size = new System.Drawing.Size(32, 20);
             this.lblNumEndereco.TabIndex = 8;
             this.lblNumEndereco.Text = "Nº:";
             // 
@@ -346,7 +346,7 @@
             this.lblCEP.AutoSize = true;
             this.lblCEP.Location = new System.Drawing.Point(820, 101);
             this.lblCEP.Name = "lblCEP";
-            this.lblCEP.Size = new System.Drawing.Size(39, 17);
+            this.lblCEP.Size = new System.Drawing.Size(48, 20);
             this.lblCEP.TabIndex = 12;
             this.lblCEP.Text = "CEP:";
             // 
@@ -355,7 +355,7 @@
             this.lblBairro.AutoSize = true;
             this.lblBairro.Location = new System.Drawing.Point(267, 63);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(50, 17);
+            this.lblBairro.Size = new System.Drawing.Size(60, 20);
             this.lblBairro.TabIndex = 9;
             this.lblBairro.Text = "Bairro:";
             // 
@@ -364,7 +364,7 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Location = new System.Drawing.Point(668, 102);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(56, 17);
+            this.lblEstado.Size = new System.Drawing.Size(66, 20);
             this.lblEstado.TabIndex = 11;
             this.lblEstado.Text = "Estado:";
             // 
@@ -373,7 +373,7 @@
             this.lblCidade.AutoSize = true;
             this.lblCidade.Location = new System.Drawing.Point(5, 101);
             this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(56, 17);
+            this.lblCidade.Size = new System.Drawing.Size(66, 20);
             this.lblCidade.TabIndex = 10;
             this.lblCidade.Text = "Cidade:";
             // 
@@ -398,7 +398,7 @@
             this.txtCPF_CNPJ.Location = new System.Drawing.Point(156, 67);
             this.txtCPF_CNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCPF_CNPJ.Name = "txtCPF_CNPJ";
-            this.txtCPF_CNPJ.Size = new System.Drawing.Size(295, 23);
+            this.txtCPF_CNPJ.Size = new System.Drawing.Size(295, 27);
             this.txtCPF_CNPJ.TabIndex = 5;
             // 
             // txtNome
@@ -406,7 +406,7 @@
             this.txtNome.Location = new System.Drawing.Point(156, 23);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(900, 23);
+            this.txtNome.Size = new System.Drawing.Size(900, 27);
             this.txtNome.TabIndex = 4;
             // 
             // lblNome
@@ -414,7 +414,7 @@
             this.lblNome.AutoSize = true;
             this.lblNome.Location = new System.Drawing.Point(5, 30);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(110, 17);
+            this.lblNome.Size = new System.Drawing.Size(131, 20);
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome completo:";
             // 
@@ -423,7 +423,7 @@
             this.lblCPF_CNPJ.AutoSize = true;
             this.lblCPF_CNPJ.Location = new System.Drawing.Point(5, 70);
             this.lblCPF_CNPJ.Name = "lblCPF_CNPJ";
-            this.lblCPF_CNPJ.Size = new System.Drawing.Size(113, 17);
+            this.lblCPF_CNPJ.Size = new System.Drawing.Size(134, 20);
             this.lblCPF_CNPJ.TabIndex = 1;
             this.lblCPF_CNPJ.Text = "C.P.F. / C.N.P.J.:";
             // 
@@ -451,63 +451,12 @@
             this.grpDadosBancarios.TabStop = false;
             this.grpDadosBancarios.Text = "Dados Bancários";
             // 
-            // txtBanco
-            // 
-            this.txtBanco.Location = new System.Drawing.Point(156, 26);
-            this.txtBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBanco.Name = "txtBanco";
-            this.txtBanco.Size = new System.Drawing.Size(252, 23);
-            this.txtBanco.TabIndex = 31;
-            // 
-            // lblBanco
-            // 
-            this.lblBanco.AutoSize = true;
-            this.lblBanco.Location = new System.Drawing.Point(8, 29);
-            this.lblBanco.Name = "lblBanco";
-            this.lblBanco.Size = new System.Drawing.Size(52, 17);
-            this.lblBanco.TabIndex = 30;
-            this.lblBanco.Text = "Banco:";
-            // 
-            // txtAgencia
-            // 
-            this.txtAgencia.Location = new System.Drawing.Point(156, 59);
-            this.txtAgencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtAgencia.Name = "txtAgencia";
-            this.txtAgencia.Size = new System.Drawing.Size(252, 23);
-            this.txtAgencia.TabIndex = 29;
-            // 
-            // lblAgencia
-            // 
-            this.lblAgencia.AutoSize = true;
-            this.lblAgencia.Location = new System.Drawing.Point(8, 62);
-            this.lblAgencia.Name = "lblAgencia";
-            this.lblAgencia.Size = new System.Drawing.Size(63, 17);
-            this.lblAgencia.TabIndex = 28;
-            this.lblAgencia.Text = "Agência:";
-            // 
-            // txtConta
-            // 
-            this.txtConta.Location = new System.Drawing.Point(156, 97);
-            this.txtConta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtConta.Name = "txtConta";
-            this.txtConta.Size = new System.Drawing.Size(252, 23);
-            this.txtConta.TabIndex = 33;
-            // 
-            // lblConta
-            // 
-            this.lblConta.AutoSize = true;
-            this.lblConta.Location = new System.Drawing.Point(8, 100);
-            this.lblConta.Name = "lblConta";
-            this.lblConta.Size = new System.Drawing.Size(49, 17);
-            this.lblConta.TabIndex = 32;
-            this.lblConta.Text = "Conta:";
-            // 
             // txtCompraMinima
             // 
             this.txtCompraMinima.Location = new System.Drawing.Point(571, 97);
             this.txtCompraMinima.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCompraMinima.Name = "txtCompraMinima";
-            this.txtCompraMinima.Size = new System.Drawing.Size(252, 23);
+            this.txtCompraMinima.Size = new System.Drawing.Size(252, 27);
             this.txtCompraMinima.TabIndex = 39;
             // 
             // lblCompraMinima
@@ -516,7 +465,7 @@
             this.lblCompraMinima.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompraMinima.Location = new System.Drawing.Point(441, 100);
             this.lblCompraMinima.Name = "lblCompraMinima";
-            this.lblCompraMinima.Size = new System.Drawing.Size(123, 17);
+            this.lblCompraMinima.Size = new System.Drawing.Size(146, 20);
             this.lblCompraMinima.TabIndex = 38;
             this.lblCompraMinima.Text = "Compra Mínima:";
             // 
@@ -525,7 +474,7 @@
             this.txtFavorecido.Location = new System.Drawing.Point(571, 26);
             this.txtFavorecido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFavorecido.Name = "txtFavorecido";
-            this.txtFavorecido.Size = new System.Drawing.Size(485, 23);
+            this.txtFavorecido.Size = new System.Drawing.Size(485, 27);
             this.txtFavorecido.TabIndex = 37;
             // 
             // lblFavorecido
@@ -533,7 +482,7 @@
             this.lblFavorecido.AutoSize = true;
             this.lblFavorecido.Location = new System.Drawing.Point(441, 29);
             this.lblFavorecido.Name = "lblFavorecido";
-            this.lblFavorecido.Size = new System.Drawing.Size(86, 17);
+            this.lblFavorecido.Size = new System.Drawing.Size(101, 20);
             this.lblFavorecido.TabIndex = 36;
             this.lblFavorecido.Text = "Favorecido: ";
             // 
@@ -542,7 +491,7 @@
             this.txtCpfCnpj.Location = new System.Drawing.Point(571, 59);
             this.txtCpfCnpj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCpfCnpj.Name = "txtCpfCnpj";
-            this.txtCpfCnpj.Size = new System.Drawing.Size(252, 23);
+            this.txtCpfCnpj.Size = new System.Drawing.Size(252, 27);
             this.txtCpfCnpj.TabIndex = 35;
             // 
             // lblCpfCnpj
@@ -550,13 +499,64 @@
             this.lblCpfCnpj.AutoSize = true;
             this.lblCpfCnpj.Location = new System.Drawing.Point(441, 62);
             this.lblCpfCnpj.Name = "lblCpfCnpj";
-            this.lblCpfCnpj.Size = new System.Drawing.Size(77, 17);
+            this.lblCpfCnpj.Size = new System.Drawing.Size(96, 20);
             this.lblCpfCnpj.TabIndex = 34;
             this.lblCpfCnpj.Text = "CPF/CNPJ:";
             // 
+            // txtConta
+            // 
+            this.txtConta.Location = new System.Drawing.Point(156, 97);
+            this.txtConta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConta.Name = "txtConta";
+            this.txtConta.Size = new System.Drawing.Size(252, 27);
+            this.txtConta.TabIndex = 33;
+            // 
+            // lblConta
+            // 
+            this.lblConta.AutoSize = true;
+            this.lblConta.Location = new System.Drawing.Point(8, 100);
+            this.lblConta.Name = "lblConta";
+            this.lblConta.Size = new System.Drawing.Size(58, 20);
+            this.lblConta.TabIndex = 32;
+            this.lblConta.Text = "Conta:";
+            // 
+            // txtBanco
+            // 
+            this.txtBanco.Location = new System.Drawing.Point(156, 26);
+            this.txtBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBanco.Name = "txtBanco";
+            this.txtBanco.Size = new System.Drawing.Size(252, 27);
+            this.txtBanco.TabIndex = 31;
+            // 
+            // lblBanco
+            // 
+            this.lblBanco.AutoSize = true;
+            this.lblBanco.Location = new System.Drawing.Point(8, 29);
+            this.lblBanco.Name = "lblBanco";
+            this.lblBanco.Size = new System.Drawing.Size(62, 20);
+            this.lblBanco.TabIndex = 30;
+            this.lblBanco.Text = "Banco:";
+            // 
+            // txtAgencia
+            // 
+            this.txtAgencia.Location = new System.Drawing.Point(156, 59);
+            this.txtAgencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAgencia.Name = "txtAgencia";
+            this.txtAgencia.Size = new System.Drawing.Size(252, 27);
+            this.txtAgencia.TabIndex = 29;
+            // 
+            // lblAgencia
+            // 
+            this.lblAgencia.AutoSize = true;
+            this.lblAgencia.Location = new System.Drawing.Point(8, 62);
+            this.lblAgencia.Name = "lblAgencia";
+            this.lblAgencia.Size = new System.Drawing.Size(74, 20);
+            this.lblAgencia.TabIndex = 28;
+            this.lblAgencia.Text = "Agência:";
+            // 
             // FornecedoresForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 646);
             this.Controls.Add(this.grpDadosBancarios);
