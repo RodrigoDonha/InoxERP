@@ -42,6 +42,9 @@
             this.lblEndereco = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.grpProdutos_Servicos = new System.Windows.Forms.GroupBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.grdItens = new System.Windows.Forms.DataGridView();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -51,9 +54,9 @@
             this.lblValorUnitario = new System.Windows.Forms.Label();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.mkdQuantidade = new System.Windows.Forms.MaskedTextBox();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.grpFormaPagto = new System.Windows.Forms.GroupBox();
+            this.nudParcelas = new System.Windows.Forms.NumericUpDown();
             this.chkCombinar = new System.Windows.Forms.CheckBox();
             this.lblExibeValorTotalParcelado = new System.Windows.Forms.Label();
             this.lblValorTotalParcelado = new System.Windows.Forms.Label();
@@ -64,13 +67,13 @@
             this.txtPorcentJuros = new System.Windows.Forms.TextBox();
             this.chkJuros = new System.Windows.Forms.CheckBox();
             this.lblContinuaParcelamento = new System.Windows.Forms.Label();
-            this.txtParacelamento = new System.Windows.Forms.TextBox();
             this.lblParcelamento = new System.Windows.Forms.Label();
             this.lblExibeValorAVista = new System.Windows.Forms.Label();
             this.lblValorAVista = new System.Windows.Forms.Label();
             this.txtPorcentDescAVista = new System.Windows.Forms.TextBox();
             this.lblAVista = new System.Windows.Forms.Label();
             this.grpEntrega = new System.Windows.Forms.GroupBox();
+            this.nudDias = new System.Windows.Forms.NumericUpDown();
             this.dtpDataPrevistaEntrega = new System.Windows.Forms.DateTimePicker();
             this.lblDataPrevistaInicio = new System.Windows.Forms.Label();
             this.dtpDataPrevistaInicioServico = new System.Windows.Forms.DateTimePicker();
@@ -78,7 +81,6 @@
             this.lblDataPrevistaEntrega = new System.Windows.Forms.Label();
             this.lblDiasPrevistosParaExecucao = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtPrevDiasExec = new System.Windows.Forms.TextBox();
             this.lblPrevisaoExecServ = new System.Windows.Forms.Label();
             this.lblValidadeOrcamento = new System.Windows.Forms.Label();
             this.dtpDataValidadeOrcamento = new System.Windows.Forms.DateTimePicker();
@@ -95,7 +97,9 @@
             this.grpProdutos_Servicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdItens)).BeginInit();
             this.grpFormaPagto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
             this.grpEntrega.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDias)).BeginInit();
             this.grpPrazosFinalizacao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAnos)).BeginInit();
             this.SuspendLayout();
@@ -141,7 +145,7 @@
             this.txtCargo.Location = new System.Drawing.Point(359, 126);
             this.txtCargo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(200, 26);
+            this.txtCargo.Size = new System.Drawing.Size(195, 26);
             this.txtCargo.TabIndex = 19;
             // 
             // lblCargo
@@ -190,26 +194,26 @@
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(68, 93);
+            this.txtEndereco.Location = new System.Drawing.Point(76, 93);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(2);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(491, 26);
+            this.txtEndereco.Size = new System.Drawing.Size(478, 26);
             this.txtEndereco.TabIndex = 14;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(68, 126);
+            this.txtTelefone.Location = new System.Drawing.Point(76, 126);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(207, 26);
+            this.txtTelefone.Size = new System.Drawing.Size(199, 26);
             this.txtTelefone.TabIndex = 13;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(68, 59);
+            this.txtNome.Location = new System.Drawing.Point(76, 59);
             this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(491, 26);
+            this.txtNome.Size = new System.Drawing.Size(478, 26);
             this.txtNome.TabIndex = 12;
             // 
             // lblTelefone
@@ -250,6 +254,9 @@
             // 
             // grpProdutos_Servicos
             // 
+            this.grpProdutos_Servicos.Controls.Add(this.txtQuantidade);
+            this.grpProdutos_Servicos.Controls.Add(this.lblValor);
+            this.grpProdutos_Servicos.Controls.Add(this.lblSubTotal);
             this.grpProdutos_Servicos.Controls.Add(this.btnConsultar);
             this.grpProdutos_Servicos.Controls.Add(this.grdItens);
             this.grpProdutos_Servicos.Controls.Add(this.btnAdicionar);
@@ -259,7 +266,6 @@
             this.grpProdutos_Servicos.Controls.Add(this.lblValorUnitario);
             this.grpProdutos_Servicos.Controls.Add(this.lblDescricao);
             this.grpProdutos_Servicos.Controls.Add(this.txtDescricao);
-            this.grpProdutos_Servicos.Controls.Add(this.mkdQuantidade);
             this.grpProdutos_Servicos.Controls.Add(this.lblQuantidade);
             this.grpProdutos_Servicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpProdutos_Servicos.Location = new System.Drawing.Point(9, 176);
@@ -270,6 +276,38 @@
             this.grpProdutos_Servicos.TabIndex = 2;
             this.grpProdutos_Servicos.TabStop = false;
             this.grpProdutos_Servicos.Text = "Produtos / Serviços";
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(8, 50);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(50, 26);
+            this.txtQuantidade.TabIndex = 22;
+            // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(495, 359);
+            this.lblValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(59, 20);
+            this.lblValor.TabIndex = 21;
+            this.lblValor.Text = "00000";
+            this.lblValor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblSubTotal
+            // 
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.Location = new System.Drawing.Point(372, 359);
+            this.lblSubTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(97, 20);
+            this.lblSubTotal.TabIndex = 20;
+            this.lblSubTotal.Text = "Sub-Total: ";
+            this.lblSubTotal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnConsultar
             // 
@@ -290,7 +328,7 @@
             this.grdItens.Margin = new System.Windows.Forms.Padding(2);
             this.grdItens.Name = "grdItens";
             this.grdItens.RowTemplate.Height = 24;
-            this.grdItens.Size = new System.Drawing.Size(550, 281);
+            this.grdItens.Size = new System.Drawing.Size(546, 262);
             this.grdItens.TabIndex = 18;
             // 
             // btnAdicionar
@@ -308,7 +346,7 @@
             // 
             this.lblValorTotal.AutoSize = true;
             this.lblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorTotal.Location = new System.Drawing.Point(386, 32);
+            this.lblValorTotal.Location = new System.Drawing.Point(388, 32);
             this.lblValorTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(77, 17);
@@ -336,7 +374,7 @@
             // 
             this.lblValorUnitario.AutoSize = true;
             this.lblValorUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorUnitario.Location = new System.Drawing.Point(301, 32);
+            this.lblValorUnitario.Location = new System.Drawing.Point(298, 32);
             this.lblValorUnitario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorUnitario.Name = "lblValorUnitario";
             this.lblValorUnitario.Size = new System.Drawing.Size(94, 17);
@@ -348,7 +386,7 @@
             // 
             this.lblDescricao.AutoSize = true;
             this.lblDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricao.Location = new System.Drawing.Point(59, 32);
+            this.lblDescricao.Location = new System.Drawing.Point(138, 32);
             this.lblDescricao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(71, 17);
@@ -364,20 +402,11 @@
             this.txtDescricao.Size = new System.Drawing.Size(238, 26);
             this.txtDescricao.TabIndex = 3;
             // 
-            // mkdQuantidade
-            // 
-            this.mkdQuantidade.Location = new System.Drawing.Point(7, 50);
-            this.mkdQuantidade.Margin = new System.Windows.Forms.Padding(2);
-            this.mkdQuantidade.Mask = "00,00";
-            this.mkdQuantidade.Name = "mkdQuantidade";
-            this.mkdQuantidade.Size = new System.Drawing.Size(53, 26);
-            this.mkdQuantidade.TabIndex = 2;
-            // 
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
             this.lblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantidade.Location = new System.Drawing.Point(4, 32);
+            this.lblQuantidade.Location = new System.Drawing.Point(9, 31);
             this.lblQuantidade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(51, 17);
@@ -387,6 +416,7 @@
             // 
             // grpFormaPagto
             // 
+            this.grpFormaPagto.Controls.Add(this.nudParcelas);
             this.grpFormaPagto.Controls.Add(this.chkCombinar);
             this.grpFormaPagto.Controls.Add(this.lblExibeValorTotalParcelado);
             this.grpFormaPagto.Controls.Add(this.lblValorTotalParcelado);
@@ -397,7 +427,6 @@
             this.grpFormaPagto.Controls.Add(this.txtPorcentJuros);
             this.grpFormaPagto.Controls.Add(this.chkJuros);
             this.grpFormaPagto.Controls.Add(this.lblContinuaParcelamento);
-            this.grpFormaPagto.Controls.Add(this.txtParacelamento);
             this.grpFormaPagto.Controls.Add(this.lblParcelamento);
             this.grpFormaPagto.Controls.Add(this.lblExibeValorAVista);
             this.grpFormaPagto.Controls.Add(this.lblValorAVista);
@@ -412,6 +441,13 @@
             this.grpFormaPagto.TabIndex = 3;
             this.grpFormaPagto.TabStop = false;
             this.grpFormaPagto.Text = "Forma de Pagamento";
+            // 
+            // nudParcelas
+            // 
+            this.nudParcelas.Location = new System.Drawing.Point(156, 92);
+            this.nudParcelas.Name = "nudParcelas";
+            this.nudParcelas.Size = new System.Drawing.Size(76, 26);
+            this.nudParcelas.TabIndex = 16;
             // 
             // chkCombinar
             // 
@@ -453,9 +489,9 @@
             this.lblExibeValorPorParcela.Location = new System.Drawing.Point(404, 131);
             this.lblExibeValorPorParcela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExibeValorPorParcela.Name = "lblExibeValorPorParcela";
-            this.lblExibeValorPorParcela.Size = new System.Drawing.Size(192, 17);
+            this.lblExibeValorPorParcela.Size = new System.Drawing.Size(56, 17);
             this.lblExibeValorPorParcela.TabIndex = 12;
-            this.lblExibeValorPorParcela.Text = "Aqui exibe o valor da Parcela";
+            this.lblExibeValorPorParcela.Text = "000000";
             // 
             // lbExibeValorParcelado
             // 
@@ -521,14 +557,6 @@
             this.lblContinuaParcelamento.TabIndex = 6;
             this.lblContinuaParcelamento.Text = "vezes";
             // 
-            // txtParacelamento
-            // 
-            this.txtParacelamento.Location = new System.Drawing.Point(155, 91);
-            this.txtParacelamento.Margin = new System.Windows.Forms.Padding(2);
-            this.txtParacelamento.Name = "txtParacelamento";
-            this.txtParacelamento.Size = new System.Drawing.Size(76, 26);
-            this.txtParacelamento.TabIndex = 8;
-            // 
             // lblParcelamento
             // 
             this.lblParcelamento.AutoSize = true;
@@ -547,9 +575,9 @@
             this.lblExibeValorAVista.Location = new System.Drawing.Point(329, 61);
             this.lblExibeValorAVista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExibeValorAVista.Name = "lblExibeValorAVista";
-            this.lblExibeValorAVista.Size = new System.Drawing.Size(168, 17);
+            this.lblExibeValorAVista.Size = new System.Drawing.Size(56, 17);
             this.lblExibeValorAVista.TabIndex = 3;
-            this.lblExibeValorAVista.Text = "Aqui exibe o valor Á Vista";
+            this.lblExibeValorAVista.Text = "000000";
             // 
             // lblValorAVista
             // 
@@ -583,6 +611,7 @@
             // 
             // grpEntrega
             // 
+            this.grpEntrega.Controls.Add(this.nudDias);
             this.grpEntrega.Controls.Add(this.dtpDataPrevistaEntrega);
             this.grpEntrega.Controls.Add(this.lblDataPrevistaInicio);
             this.grpEntrega.Controls.Add(this.dtpDataPrevistaInicioServico);
@@ -590,7 +619,6 @@
             this.grpEntrega.Controls.Add(this.lblDataPrevistaEntrega);
             this.grpEntrega.Controls.Add(this.lblDiasPrevistosParaExecucao);
             this.grpEntrega.Controls.Add(this.label8);
-            this.grpEntrega.Controls.Add(this.txtPrevDiasExec);
             this.grpEntrega.Controls.Add(this.lblPrevisaoExecServ);
             this.grpEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpEntrega.Location = new System.Drawing.Point(586, 203);
@@ -601,6 +629,13 @@
             this.grpEntrega.TabIndex = 4;
             this.grpEntrega.TabStop = false;
             this.grpEntrega.Text = "Entrega";
+            // 
+            // nudDias
+            // 
+            this.nudDias.Location = new System.Drawing.Point(158, 24);
+            this.nudDias.Name = "nudDias";
+            this.nudDias.Size = new System.Drawing.Size(76, 26);
+            this.nudDias.TabIndex = 17;
             // 
             // dtpDataPrevistaEntrega
             // 
@@ -615,7 +650,7 @@
             // 
             this.lblDataPrevistaInicio.AutoSize = true;
             this.lblDataPrevistaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataPrevistaInicio.Location = new System.Drawing.Point(13, 71);
+            this.lblDataPrevistaInicio.Location = new System.Drawing.Point(8, 72);
             this.lblDataPrevistaInicio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDataPrevistaInicio.Name = "lblDataPrevistaInicio";
             this.lblDataPrevistaInicio.Size = new System.Drawing.Size(123, 17);
@@ -647,7 +682,7 @@
             // 
             this.lblDataPrevistaEntrega.AutoSize = true;
             this.lblDataPrevistaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataPrevistaEntrega.Location = new System.Drawing.Point(13, 111);
+            this.lblDataPrevistaEntrega.Location = new System.Drawing.Point(10, 111);
             this.lblDataPrevistaEntrega.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDataPrevistaEntrega.Name = "lblDataPrevistaEntrega";
             this.lblDataPrevistaEntrega.Size = new System.Drawing.Size(141, 17);
@@ -658,7 +693,7 @@
             // 
             this.lblDiasPrevistosParaExecucao.AutoSize = true;
             this.lblDiasPrevistosParaExecucao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiasPrevistosParaExecucao.Location = new System.Drawing.Point(242, 35);
+            this.lblDiasPrevistosParaExecucao.Location = new System.Drawing.Point(242, 33);
             this.lblDiasPrevistosParaExecucao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiasPrevistosParaExecucao.Name = "lblDiasPrevistosParaExecucao";
             this.lblDiasPrevistosParaExecucao.Size = new System.Drawing.Size(38, 17);
@@ -675,20 +710,11 @@
             this.label8.Size = new System.Drawing.Size(0, 17);
             this.label8.TabIndex = 2;
             // 
-            // txtPrevDiasExec
-            // 
-            this.txtPrevDiasExec.Location = new System.Drawing.Point(158, 27);
-            this.txtPrevDiasExec.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPrevDiasExec.Name = "txtPrevDiasExec";
-            this.txtPrevDiasExec.Size = new System.Drawing.Size(72, 26);
-            this.txtPrevDiasExec.TabIndex = 11;
-            this.txtPrevDiasExec.TextChanged += new System.EventHandler(this.tbPrevDiasExec_TextChanged);
-            // 
             // lblPrevisaoExecServ
             // 
             this.lblPrevisaoExecServ.AutoSize = true;
             this.lblPrevisaoExecServ.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrevisaoExecServ.Location = new System.Drawing.Point(13, 32);
+            this.lblPrevisaoExecServ.Location = new System.Drawing.Point(8, 33);
             this.lblPrevisaoExecServ.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrevisaoExecServ.Name = "lblPrevisaoExecServ";
             this.lblPrevisaoExecServ.Size = new System.Drawing.Size(151, 17);
@@ -699,7 +725,7 @@
             // 
             this.lblValidadeOrcamento.AutoSize = true;
             this.lblValidadeOrcamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValidadeOrcamento.Location = new System.Drawing.Point(10, 75);
+            this.lblValidadeOrcamento.Location = new System.Drawing.Point(8, 71);
             this.lblValidadeOrcamento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValidadeOrcamento.Name = "lblValidadeOrcamento";
             this.lblValidadeOrcamento.Size = new System.Drawing.Size(147, 17);
@@ -709,7 +735,7 @@
             // dtpDataValidadeOrcamento
             // 
             this.dtpDataValidadeOrcamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDataValidadeOrcamento.Location = new System.Drawing.Point(158, 70);
+            this.dtpDataValidadeOrcamento.Location = new System.Drawing.Point(158, 66);
             this.dtpDataValidadeOrcamento.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataValidadeOrcamento.Name = "dtpDataValidadeOrcamento";
             this.dtpDataValidadeOrcamento.Size = new System.Drawing.Size(276, 23);
@@ -778,9 +804,9 @@
             // 
             // rtfObservacoes
             // 
-            this.rtfObservacoes.Location = new System.Drawing.Point(158, 112);
+            this.rtfObservacoes.Location = new System.Drawing.Point(106, 101);
             this.rtfObservacoes.Name = "rtfObservacoes";
-            this.rtfObservacoes.Size = new System.Drawing.Size(362, 53);
+            this.rtfObservacoes.Size = new System.Drawing.Size(414, 64);
             this.rtfObservacoes.TabIndex = 22;
             this.rtfObservacoes.Text = "";
             // 
@@ -788,7 +814,7 @@
             // 
             this.lblObservacoes.AutoSize = true;
             this.lblObservacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservacoes.Location = new System.Drawing.Point(13, 112);
+            this.lblObservacoes.Location = new System.Drawing.Point(10, 101);
             this.lblObservacoes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblObservacoes.Name = "lblObservacoes";
             this.lblObservacoes.Size = new System.Drawing.Size(100, 17);
@@ -797,7 +823,7 @@
             // 
             // nudAnos
             // 
-            this.nudAnos.Location = new System.Drawing.Point(160, 26);
+            this.nudAnos.Location = new System.Drawing.Point(160, 31);
             this.nudAnos.Name = "nudAnos";
             this.nudAnos.Size = new System.Drawing.Size(77, 26);
             this.nudAnos.TabIndex = 21;
@@ -806,7 +832,7 @@
             // 
             this.lblAnos.AutoSize = true;
             this.lblAnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnos.Location = new System.Drawing.Point(242, 30);
+            this.lblAnos.Location = new System.Drawing.Point(242, 35);
             this.lblAnos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnos.Name = "lblAnos";
             this.lblAnos.Size = new System.Drawing.Size(40, 17);
@@ -817,7 +843,7 @@
             // 
             this.lblTempoGarantia.AutoSize = true;
             this.lblTempoGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTempoGarantia.Location = new System.Drawing.Point(10, 30);
+            this.lblTempoGarantia.Location = new System.Drawing.Point(8, 35);
             this.lblTempoGarantia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTempoGarantia.Name = "lblTempoGarantia";
             this.lblTempoGarantia.Size = new System.Drawing.Size(139, 17);
@@ -848,8 +874,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdItens)).EndInit();
             this.grpFormaPagto.ResumeLayout(false);
             this.grpFormaPagto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).EndInit();
             this.grpEntrega.ResumeLayout(false);
             this.grpEntrega.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDias)).EndInit();
             this.grpPrazosFinalizacao.ResumeLayout(false);
             this.grpPrazosFinalizacao.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAnos)).EndInit();
@@ -863,7 +891,6 @@
         private System.Windows.Forms.GroupBox grpCliente;
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.GroupBox grpProdutos_Servicos;
-        private System.Windows.Forms.MaskedTextBox mkdQuantidade;
         private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.Label lblValorUnitario;
         private System.Windows.Forms.Label lblDescricao;
@@ -876,7 +903,6 @@
         private System.Windows.Forms.GroupBox grpFormaPagto;
         private System.Windows.Forms.CheckBox chkJuros;
         private System.Windows.Forms.Label lblContinuaParcelamento;
-        private System.Windows.Forms.TextBox txtParacelamento;
         private System.Windows.Forms.Label lblParcelamento;
         private System.Windows.Forms.Label lblExibeValorAVista;
         private System.Windows.Forms.Label lblValorAVista;
@@ -891,7 +917,6 @@
         private System.Windows.Forms.Label lblDataPrevistaEntrega;
         private System.Windows.Forms.Label lblDiasPrevistosParaExecucao;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPrevDiasExec;
         private System.Windows.Forms.Label lblPrevisaoExecServ;
         private System.Windows.Forms.Label lblDataPrevistaInicio;
         private System.Windows.Forms.DateTimePicker dtpDataPrevistaInicioServico;
@@ -922,5 +947,10 @@
         private System.Windows.Forms.RadioButton radIndustrial;
         private System.Windows.Forms.RadioButton radResidencial;
         private System.Windows.Forms.RadioButton radComercial;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label lblSubTotal;
+        private System.Windows.Forms.NumericUpDown nudParcelas;
+        private System.Windows.Forms.NumericUpDown nudDias;
+        private System.Windows.Forms.TextBox txtQuantidade;
     }
 }

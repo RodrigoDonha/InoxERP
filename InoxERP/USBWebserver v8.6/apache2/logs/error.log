@@ -1,5 +1,6 @@
-[Wed Aug 08 22:59:59.237967 2018] [mpm_winnt:notice] [pid 12328:tid 692] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Wed Aug 08 22:59:59.239177 2018] [mpm_winnt:notice] [pid 12328:tid 692] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Wed Aug 08 22:59:59.239177 2018] [core:notice] [pid 12328:tid 692] AH00094: Command line: 'C:\\Users\\Rodrigo\\Documents\\GitHub\\InoxERP\\InoxERP\\USBWebserver v8.6/apache2/bin/httpd_usbwv8.exe -d C:/Users/Rodrigo/Documents/GitHub/InoxERP/InoxERP/USBWebserver v8.6/apache2'
-[Wed Aug 08 22:59:59.248401 2018] [mpm_winnt:notice] [pid 12328:tid 692] AH00418: Parent: Created child process 8508
-[Wed Aug 08 23:00:00.035978 2018] [mpm_winnt:notice] [pid 8508:tid 856] AH00354: Child: Starting 64 worker threads.
+[Thu Aug 09 13:43:06.532727 2018] [mpm_winnt:notice] [pid 8392:tid 772] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Thu Aug 09 13:43:06.532727 2018] [mpm_winnt:notice] [pid 8392:tid 772] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Thu Aug 09 13:43:06.532727 2018] [core:notice] [pid 8392:tid 772] AH00094: Command line: 'D:\\Jefter\\Documents\\GitHub\\InoxERP\\InoxERP\\USBWebserver v8.6/apache2/bin/httpd_usbwv8.exe -d D:/Jefter/Documents/GitHub/InoxERP/InoxERP/USBWebserver v8.6/apache2'
+[Thu Aug 09 13:43:06.535720 2018] [mpm_winnt:notice] [pid 8392:tid 772] AH00418: Parent: Created child process 17748
+[Thu Aug 09 13:43:07.532055 2018] [mpm_winnt:notice] [pid 17748:tid 796] AH00354: Child: Starting 64 worker threads.
+[Thu Aug 09 14:43:51.199833 2018] [:error] [pid 17748:tid 1312] [client 192.168.0.102:55314] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in D:\\Jefter\\Documents\\GitHub\\InoxERP\\InoxERP\\USBWebserver v8.6\\root\\index.php on line 47

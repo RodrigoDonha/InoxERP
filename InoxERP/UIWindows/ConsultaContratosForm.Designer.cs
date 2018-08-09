@@ -179,6 +179,7 @@
             this.Controls.Add(this.grpOrdemServico);
             this.Controls.Add(this.grpPesquisa);
             this.Name = "ConsultaContratosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaContratosForm";
             this.grpOrdemServico.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblExibeCodigo = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
@@ -46,33 +44,20 @@
             this.nudParcelas = new System.Windows.Forms.NumericUpDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblNumeroCheque = new System.Windows.Forms.Label();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.txtCodCliente = new System.Windows.Forms.TextBox();
+            this.lblCodCliente = new System.Windows.Forms.Label();
+            this.txtOS = new System.Windows.Forms.TextBox();
+            this.lblOS = new System.Windows.Forms.Label();
+            this.lblExibeCodigo = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblExibeCodigo
-            // 
-            this.lblExibeCodigo.AutoSize = true;
-            this.lblExibeCodigo.Location = new System.Drawing.Point(104, 52);
-            this.lblExibeCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblExibeCodigo.Name = "lblExibeCodigo";
-            this.lblExibeCodigo.Size = new System.Drawing.Size(44, 17);
-            this.lblExibeCodigo.TabIndex = 26;
-            this.lblExibeCodigo.Text = "0000 ";
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(21, 52);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(60, 17);
-            this.lblCodigo.TabIndex = 25;
-            this.lblCodigo.Text = "Código: ";
-            // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(390, 194);
+            this.btnExcluir.Location = new System.Drawing.Point(382, 223);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 28);
@@ -82,7 +67,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(208, 194);
+            this.btnAlterar.Location = new System.Drawing.Point(200, 223);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 28);
@@ -92,7 +77,7 @@
             // 
             // btnIncluir
             // 
-            this.btnIncluir.Location = new System.Drawing.Point(24, 194);
+            this.btnIncluir.Location = new System.Drawing.Point(13, 223);
             this.btnIncluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(100, 28);
@@ -102,7 +87,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(108, 86);
+            this.txtValor.Location = new System.Drawing.Point(100, 115);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(132, 23);
@@ -110,7 +95,7 @@
             // 
             // txtOrcamento
             // 
-            this.txtOrcamento.Location = new System.Drawing.Point(108, 118);
+            this.txtOrcamento.Location = new System.Drawing.Point(100, 147);
             this.txtOrcamento.Margin = new System.Windows.Forms.Padding(4);
             this.txtOrcamento.Name = "txtOrcamento";
             this.txtOrcamento.Size = new System.Drawing.Size(132, 23);
@@ -119,7 +104,7 @@
             // dtpData
             // 
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(371, 90);
+            this.dtpData.Location = new System.Drawing.Point(363, 119);
             this.dtpData.Margin = new System.Windows.Forms.Padding(4);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(119, 23);
@@ -128,7 +113,7 @@
             // grdCheques
             // 
             this.grdCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCheques.Location = new System.Drawing.Point(21, 239);
+            this.grdCheques.Location = new System.Drawing.Point(13, 266);
             this.grdCheques.Margin = new System.Windows.Forms.Padding(4);
             this.grdCheques.Name = "grdCheques";
             this.grdCheques.Size = new System.Drawing.Size(469, 156);
@@ -137,7 +122,7 @@
             // lblVecto
             // 
             this.lblVecto.AutoSize = true;
-            this.lblVecto.Location = new System.Drawing.Point(290, 89);
+            this.lblVecto.Location = new System.Drawing.Point(282, 118);
             this.lblVecto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVecto.Name = "lblVecto";
             this.lblVecto.Size = new System.Drawing.Size(52, 17);
@@ -147,7 +132,7 @@
             // lblOrcamento
             // 
             this.lblOrcamento.AutoSize = true;
-            this.lblOrcamento.Location = new System.Drawing.Point(21, 122);
+            this.lblOrcamento.Location = new System.Drawing.Point(13, 151);
             this.lblOrcamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOrcamento.Name = "lblOrcamento";
             this.lblOrcamento.Size = new System.Drawing.Size(86, 17);
@@ -158,7 +143,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(215, 18);
+            this.label1.Location = new System.Drawing.Point(207, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 24);
@@ -168,7 +153,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(21, 90);
+            this.lblValor.Location = new System.Drawing.Point(13, 118);
             this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(49, 17);
@@ -177,7 +162,7 @@
             // 
             // btnBaixar
             // 
-            this.btnBaixar.Location = new System.Drawing.Point(209, 403);
+            this.btnBaixar.Location = new System.Drawing.Point(201, 430);
             this.btnBaixar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBaixar.Name = "btnBaixar";
             this.btnBaixar.Size = new System.Drawing.Size(100, 28);
@@ -188,7 +173,7 @@
             // lblParcelas
             // 
             this.lblParcelas.AutoSize = true;
-            this.lblParcelas.Location = new System.Drawing.Point(290, 122);
+            this.lblParcelas.Location = new System.Drawing.Point(282, 151);
             this.lblParcelas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblParcelas.Name = "lblParcelas";
             this.lblParcelas.Size = new System.Drawing.Size(71, 17);
@@ -197,14 +182,14 @@
             // 
             // nudParcelas
             // 
-            this.nudParcelas.Location = new System.Drawing.Point(370, 120);
+            this.nudParcelas.Location = new System.Drawing.Point(362, 149);
             this.nudParcelas.Name = "nudParcelas";
             this.nudParcelas.Size = new System.Drawing.Size(120, 23);
             this.nudParcelas.TabIndex = 33;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 152);
+            this.textBox1.Location = new System.Drawing.Point(100, 181);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(382, 23);
@@ -213,26 +198,97 @@
             // lblNumeroCheque
             // 
             this.lblNumeroCheque.AutoSize = true;
-            this.lblNumeroCheque.Location = new System.Drawing.Point(21, 156);
+            this.lblNumeroCheque.Location = new System.Drawing.Point(13, 184);
             this.lblNumeroCheque.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumeroCheque.Name = "lblNumeroCheque";
             this.lblNumeroCheque.Size = new System.Drawing.Size(84, 17);
             this.lblNumeroCheque.TabIndex = 34;
             this.lblNumeroCheque.Text = "Nº Cheque: ";
             // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Location = new System.Drawing.Point(384, 75);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscarCliente.TabIndex = 42;
+            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            // 
+            // txtCodCliente
+            // 
+            this.txtCodCliente.Location = new System.Drawing.Point(301, 78);
+            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodCliente.Name = "txtCodCliente";
+            this.txtCodCliente.Size = new System.Drawing.Size(73, 23);
+            this.txtCodCliente.TabIndex = 41;
+            // 
+            // lblCodCliente
+            // 
+            this.lblCodCliente.AutoSize = true;
+            this.lblCodCliente.Location = new System.Drawing.Point(197, 81);
+            this.lblCodCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodCliente.Name = "lblCodCliente";
+            this.lblCodCliente.Size = new System.Drawing.Size(92, 17);
+            this.lblCodCliente.TabIndex = 40;
+            this.lblCodCliente.Text = "Cod. Cliente: ";
+            // 
+            // txtOS
+            // 
+            this.txtOS.Location = new System.Drawing.Point(100, 78);
+            this.txtOS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOS.Name = "txtOS";
+            this.txtOS.Size = new System.Drawing.Size(73, 23);
+            this.txtOS.TabIndex = 39;
+            // 
+            // lblOS
+            // 
+            this.lblOS.AutoSize = true;
+            this.lblOS.Location = new System.Drawing.Point(13, 80);
+            this.lblOS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOS.Name = "lblOS";
+            this.lblOS.Size = new System.Drawing.Size(40, 17);
+            this.lblOS.TabIndex = 38;
+            this.lblOS.Text = "O.S.:";
+            // 
+            // lblExibeCodigo
+            // 
+            this.lblExibeCodigo.AutoSize = true;
+            this.lblExibeCodigo.Location = new System.Drawing.Point(97, 48);
+            this.lblExibeCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExibeCodigo.Name = "lblExibeCodigo";
+            this.lblExibeCodigo.Size = new System.Drawing.Size(44, 17);
+            this.lblExibeCodigo.TabIndex = 37;
+            this.lblExibeCodigo.Text = "0000 ";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(13, 47);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(60, 17);
+            this.lblCodigo.TabIndex = 36;
+            this.lblCodigo.Text = "Código: ";
+            // 
             // CaixaChequesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 442);
+            this.ClientSize = new System.Drawing.Size(499, 471);
+            this.Controls.Add(this.btnBuscarCliente);
+            this.Controls.Add(this.txtCodCliente);
+            this.Controls.Add(this.lblCodCliente);
+            this.Controls.Add(this.txtOS);
+            this.Controls.Add(this.lblOS);
+            this.Controls.Add(this.lblExibeCodigo);
+            this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblNumeroCheque);
             this.Controls.Add(this.nudParcelas);
             this.Controls.Add(this.lblParcelas);
             this.Controls.Add(this.btnBaixar);
             this.Controls.Add(this.lblValor);
-            this.Controls.Add(this.lblExibeCodigo);
-            this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
@@ -256,9 +312,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblExibeCodigo;
-        private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIncluir;
@@ -275,5 +328,12 @@
         private System.Windows.Forms.NumericUpDown nudParcelas;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblNumeroCheque;
+        private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.TextBox txtCodCliente;
+        private System.Windows.Forms.Label lblCodCliente;
+        private System.Windows.Forms.TextBox txtOS;
+        private System.Windows.Forms.Label lblOS;
+        private System.Windows.Forms.Label lblExibeCodigo;
+        private System.Windows.Forms.Label lblCodigo;
     }
 }

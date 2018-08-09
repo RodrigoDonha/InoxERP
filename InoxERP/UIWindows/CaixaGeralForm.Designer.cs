@@ -47,7 +47,7 @@
             this.txtValor.Location = new System.Drawing.Point(109, 63);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(132, 26);
+            this.txtValor.Size = new System.Drawing.Size(132, 23);
             this.txtValor.TabIndex = 21;
             // 
             // txtReferenteA
@@ -56,7 +56,7 @@
             this.txtReferenteA.Location = new System.Drawing.Point(109, 95);
             this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
             this.txtReferenteA.Name = "txtReferenteA";
-            this.txtReferenteA.Size = new System.Drawing.Size(381, 26);
+            this.txtReferenteA.Size = new System.Drawing.Size(381, 23);
             this.txtReferenteA.TabIndex = 20;
             // 
             // dtpData
@@ -66,7 +66,7 @@
             this.dtpData.Location = new System.Drawing.Point(368, 60);
             this.dtpData.Margin = new System.Windows.Forms.Padding(4);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(123, 26);
+            this.dtpData.Size = new System.Drawing.Size(123, 23);
             this.dtpData.TabIndex = 19;
             // 
             // grdExtratoGeral
@@ -84,7 +84,7 @@
             this.lblValor.Location = new System.Drawing.Point(23, 68);
             this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(58, 20);
+            this.lblValor.Size = new System.Drawing.Size(49, 17);
             this.lblValor.TabIndex = 17;
             this.lblValor.Text = "Valor: ";
             // 
@@ -94,7 +94,7 @@
             this.lblData.Location = new System.Drawing.Point(312, 68);
             this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(55, 20);
+            this.lblData.Size = new System.Drawing.Size(46, 17);
             this.lblData.TabIndex = 16;
             this.lblData.Text = "Data: ";
             // 
@@ -104,7 +104,7 @@
             this.lblReferenteA.Location = new System.Drawing.Point(23, 98);
             this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReferenteA.Name = "lblReferenteA";
-            this.lblReferenteA.Size = new System.Drawing.Size(106, 20);
+            this.lblReferenteA.Size = new System.Drawing.Size(91, 17);
             this.lblReferenteA.TabIndex = 15;
             this.lblReferenteA.Text = "Referente a: ";
             // 
@@ -115,7 +115,7 @@
             this.lblExtratoGeral.Location = new System.Drawing.Point(179, 11);
             this.lblExtratoGeral.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExtratoGeral.Name = "lblExtratoGeral";
-            this.lblExtratoGeral.Size = new System.Drawing.Size(152, 29);
+            this.lblExtratoGeral.Size = new System.Drawing.Size(118, 24);
             this.lblExtratoGeral.TabIndex = 14;
             this.lblExtratoGeral.Text = "Extrato Geral";
             // 
@@ -123,25 +123,25 @@
             // 
             this.lblSaldoFinal.AutoSize = true;
             this.lblSaldoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaldoFinal.Location = new System.Drawing.Point(179, 370);
+            this.lblSaldoFinal.Location = new System.Drawing.Point(179, 374);
             this.lblSaldoFinal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSaldoFinal.Name = "lblSaldoFinal";
-            this.lblSaldoFinal.Size = new System.Drawing.Size(141, 29);
+            this.lblSaldoFinal.Size = new System.Drawing.Size(63, 24);
             this.lblSaldoFinal.TabIndex = 22;
-            this.lblSaldoFinal.Text = "Saldo Final:";
+            this.lblSaldoFinal.Text = "Saldo:";
             // 
             // lblExibeSaldoFinal
             // 
             this.lblExibeSaldoFinal.AutoSize = true;
-            this.lblExibeSaldoFinal.Location = new System.Drawing.Point(327, 377);
+            this.lblExibeSaldoFinal.Location = new System.Drawing.Point(249, 380);
             this.lblExibeSaldoFinal.Name = "lblExibeSaldoFinal";
-            this.lblExibeSaldoFinal.Size = new System.Drawing.Size(136, 20);
+            this.lblExibeSaldoFinal.Size = new System.Drawing.Size(114, 17);
             this.lblExibeSaldoFinal.TabIndex = 23;
             this.lblExibeSaldoFinal.Text = "Exibir Saldo Aqui";
             // 
             // CaixaGeralForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(512, 407);
             this.Controls.Add(this.lblExibeSaldoFinal);

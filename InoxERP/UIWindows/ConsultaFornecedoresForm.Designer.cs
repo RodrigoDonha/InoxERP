@@ -193,6 +193,7 @@
             this.Controls.Add(this.grpOrdemServico);
             this.Controls.Add(this.grpPesquisa);
             this.Name = "ConsultaFornecedoresForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Fornecedores";
             this.grpOrdemServico.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();
