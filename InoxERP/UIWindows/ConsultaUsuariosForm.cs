@@ -14,9 +14,9 @@ using InoxERP.Modelos;
 
 namespace UIWindows
 {
-    public partial class UsuariosForm : Form
+    public partial class ConsultaUsuariosForm : Form
     {
-        public UsuariosForm()
+        public ConsultaUsuariosForm()
         {
             InitializeComponent();
         }

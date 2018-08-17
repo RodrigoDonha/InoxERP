@@ -32,7 +32,7 @@
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.grpOrdemServico = new System.Windows.Forms.GroupBox();
+            this.grpClientes = new System.Windows.Forms.GroupBox();
             this.grdClientes = new System.Windows.Forms.DataGridView();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -40,7 +40,7 @@
             this.radCPF_CNPJ = new System.Windows.Forms.RadioButton();
             this.radNome = new System.Windows.Forms.RadioButton();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.grpOrdemServico.SuspendLayout();
+            this.grpClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
             this.grpPesquisa.SuspendLayout();
             this.SuspendLayout();
@@ -90,18 +90,18 @@
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
-            // grpOrdemServico
+            // grpClientes
             // 
-            this.grpOrdemServico.Controls.Add(this.grdClientes);
-            this.grpOrdemServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpOrdemServico.Location = new System.Drawing.Point(12, 95);
-            this.grpOrdemServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpOrdemServico.Name = "grpOrdemServico";
-            this.grpOrdemServico.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpOrdemServico.Size = new System.Drawing.Size(776, 290);
-            this.grpOrdemServico.TabIndex = 14;
-            this.grpOrdemServico.TabStop = false;
-            this.grpOrdemServico.Text = "Clientes";
+            this.grpClientes.Controls.Add(this.grdClientes);
+            this.grpClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpClientes.Location = new System.Drawing.Point(12, 95);
+            this.grpClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpClientes.Name = "grpClientes";
+            this.grpClientes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpClientes.Size = new System.Drawing.Size(776, 290);
+            this.grpClientes.TabIndex = 14;
+            this.grpClientes.TabStop = false;
+            this.grpClientes.Text = "Clientes";
             // 
             // grdClientes
             // 
@@ -190,13 +190,13 @@
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.grpOrdemServico);
+            this.Controls.Add(this.grpClientes);
             this.Controls.Add(this.grpPesquisa);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ConsultaClientesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Clientes";
-            this.grpOrdemServico.ResumeLayout(false);
+            this.grpClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
@@ -210,7 +210,7 @@
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.GroupBox grpOrdemServico;
+        private System.Windows.Forms.GroupBox grpClientes;
         private System.Windows.Forms.DataGridView grdClientes;
         private System.Windows.Forms.GroupBox grpPesquisa;
         private System.Windows.Forms.Button btnPesquisar;

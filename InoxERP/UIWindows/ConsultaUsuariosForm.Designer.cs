@@ -1,6 +1,6 @@
 ﻿namespace UIWindows
 {
-    partial class UsuariosForm
+    partial class ConsultaUsuariosForm
     {
         /// <summary>
         /// Required designer variable.

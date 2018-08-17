@@ -71,7 +71,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Relator
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.RelatoriosOrcamentosForm.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.RelatoriosOrdemServicoForm.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.SelecaoTelasConsultaForm.resources
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.UsuariosForm.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\BLL.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\DAL.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\Modelos.dll
@@ -91,3 +90,4 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Consult
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.ConsultaFornecedoresForm.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.ContratoForm.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.ConsultaContratosForm.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.ConsultaUsuariosForm.resources

@@ -32,16 +32,16 @@
             this.btnSelescionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.grpOrdemServico = new System.Windows.Forms.GroupBox();
-            this.grdClientes = new System.Windows.Forms.DataGridView();
+            this.grpFornecedor = new System.Windows.Forms.GroupBox();
+            this.grdFornecedores = new System.Windows.Forms.DataGridView();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.radCPF_CNPJ = new System.Windows.Forms.RadioButton();
             this.radNome = new System.Windows.Forms.RadioButton();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.grpOrdemServico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
+            this.grpFornecedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdFornecedores)).BeginInit();
             this.grpPesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,28 +90,28 @@
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
-            // grpOrdemServico
+            // grpFornecedor
             // 
-            this.grpOrdemServico.Controls.Add(this.grdClientes);
-            this.grpOrdemServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpOrdemServico.Location = new System.Drawing.Point(12, 95);
-            this.grpOrdemServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpOrdemServico.Name = "grpOrdemServico";
-            this.grpOrdemServico.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpOrdemServico.Size = new System.Drawing.Size(776, 290);
-            this.grpOrdemServico.TabIndex = 21;
-            this.grpOrdemServico.TabStop = false;
-            this.grpOrdemServico.Text = "Clientes";
+            this.grpFornecedor.Controls.Add(this.grdFornecedores);
+            this.grpFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpFornecedor.Location = new System.Drawing.Point(12, 95);
+            this.grpFornecedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpFornecedor.Name = "grpFornecedor";
+            this.grpFornecedor.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpFornecedor.Size = new System.Drawing.Size(776, 290);
+            this.grpFornecedor.TabIndex = 21;
+            this.grpFornecedor.TabStop = false;
+            this.grpFornecedor.Text = "Fornecedores";
             // 
-            // grdClientes
+            // grdFornecedores
             // 
-            this.grdClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdClientes.Location = new System.Drawing.Point(11, 21);
-            this.grdClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grdClientes.Name = "grdClientes";
-            this.grdClientes.RowTemplate.Height = 24;
-            this.grdClientes.Size = new System.Drawing.Size(755, 257);
-            this.grdClientes.TabIndex = 0;
+            this.grdFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdFornecedores.Location = new System.Drawing.Point(11, 21);
+            this.grdFornecedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grdFornecedores.Name = "grdFornecedores";
+            this.grdFornecedores.RowTemplate.Height = 24;
+            this.grdFornecedores.Size = new System.Drawing.Size(755, 257);
+            this.grdFornecedores.TabIndex = 0;
             // 
             // grpPesquisa
             // 
@@ -190,13 +190,13 @@
             this.Controls.Add(this.btnSelescionar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.grpOrdemServico);
+            this.Controls.Add(this.grpFornecedor);
             this.Controls.Add(this.grpPesquisa);
             this.Name = "ConsultaFornecedoresForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Fornecedores";
-            this.grpOrdemServico.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();
+            this.grpFornecedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdFornecedores)).EndInit();
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
             this.ResumeLayout(false);
@@ -209,8 +209,8 @@
         private System.Windows.Forms.Button btnSelescionar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.GroupBox grpOrdemServico;
-        private System.Windows.Forms.DataGridView grdClientes;
+        private System.Windows.Forms.GroupBox grpFornecedor;
+        private System.Windows.Forms.DataGridView grdFornecedores;
         private System.Windows.Forms.GroupBox grpPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisa;

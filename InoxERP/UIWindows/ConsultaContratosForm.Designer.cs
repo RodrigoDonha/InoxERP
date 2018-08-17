@@ -31,16 +31,16 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.grpOrdemServico = new System.Windows.Forms.GroupBox();
-            this.grdClientes = new System.Windows.Forms.DataGridView();
+            this.grpContratos = new System.Windows.Forms.GroupBox();
+            this.grdContratos = new System.Windows.Forms.DataGridView();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.radCPF_CNPJ = new System.Windows.Forms.RadioButton();
             this.radNome = new System.Windows.Forms.RadioButton();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.grpOrdemServico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
+            this.grpContratos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdContratos)).BeginInit();
             this.grpPesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,28 +77,28 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // grpOrdemServico
+            // grpContratos
             // 
-            this.grpOrdemServico.Controls.Add(this.grdClientes);
-            this.grpOrdemServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpOrdemServico.Location = new System.Drawing.Point(12, 95);
-            this.grpOrdemServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpOrdemServico.Name = "grpOrdemServico";
-            this.grpOrdemServico.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpOrdemServico.Size = new System.Drawing.Size(776, 290);
-            this.grpOrdemServico.TabIndex = 21;
-            this.grpOrdemServico.TabStop = false;
-            this.grpOrdemServico.Text = "Contratos";
+            this.grpContratos.Controls.Add(this.grdContratos);
+            this.grpContratos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpContratos.Location = new System.Drawing.Point(12, 95);
+            this.grpContratos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpContratos.Name = "grpContratos";
+            this.grpContratos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpContratos.Size = new System.Drawing.Size(776, 290);
+            this.grpContratos.TabIndex = 21;
+            this.grpContratos.TabStop = false;
+            this.grpContratos.Text = "Contratos";
             // 
-            // grdClientes
+            // grdContratos
             // 
-            this.grdClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdClientes.Location = new System.Drawing.Point(11, 21);
-            this.grdClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grdClientes.Name = "grdClientes";
-            this.grdClientes.RowTemplate.Height = 24;
-            this.grdClientes.Size = new System.Drawing.Size(755, 257);
-            this.grdClientes.TabIndex = 0;
+            this.grdContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdContratos.Location = new System.Drawing.Point(11, 21);
+            this.grdContratos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grdContratos.Name = "grdContratos";
+            this.grdContratos.RowTemplate.Height = 24;
+            this.grdContratos.Size = new System.Drawing.Size(755, 257);
+            this.grdContratos.TabIndex = 0;
             // 
             // grpPesquisa
             // 
@@ -176,13 +176,13 @@
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.grpOrdemServico);
+            this.Controls.Add(this.grpContratos);
             this.Controls.Add(this.grpPesquisa);
             this.Name = "ConsultaContratosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ConsultaContratosForm";
-            this.grpOrdemServico.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();
+            this.Text = "Consulta de Contratos";
+            this.grpContratos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdContratos)).EndInit();
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
             this.ResumeLayout(false);
@@ -194,8 +194,8 @@
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnVisualizar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.GroupBox grpOrdemServico;
-        private System.Windows.Forms.DataGridView grdClientes;
+        private System.Windows.Forms.GroupBox grpContratos;
+        private System.Windows.Forms.DataGridView grdContratos;
         private System.Windows.Forms.GroupBox grpPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisa;

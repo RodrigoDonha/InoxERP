@@ -159,7 +159,7 @@ namespace InoxERP
 
         private void tipUsuariosCadastro_Click(object sender, EventArgs e)
         {
-            UsuariosForm usuarios = new UsuariosForm();
+            ConsultaUsuariosForm usuarios = new ConsultaUsuariosForm();
             usuarios.Show();
         }
 
@@ -193,6 +193,121 @@ namespace InoxERP
         private void contratosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new ConsultaContratosForm().Show();
+        }
+
+        private void picClient_Click(object sender, EventArgs e)
+        {
+            new ConsultaClientesForm().Show();
+        }
+
+        private void picFornecedor_Click(object sender, EventArgs e)
+        {
+            new ConsultaFornecedoresForm().Show();
+        }
+
+        private void picProdutos_Click(object sender, EventArgs e)
+        {
+            new ConsultaProdutosForm().Show();
+        }
+
+        private void picServicos_Click(object sender, EventArgs e)
+        {
+            new ConsultaServicosForm().Show();
+        }
+
+        private void picUsuarios_Click(object sender, EventArgs e)
+        {
+            new ConsultaUsuariosForm().Show();
+        }
+
+        private void picInclusao_Click(object sender, EventArgs e)
+        {
+            new OrcamentosForm().Show();
+        }
+
+        private void picConsulta_Click(object sender, EventArgs e)
+        {
+            new ConsultaOrcamentoForm().Show();
+        }
+
+        private void picOrdemServico_Click(object sender, EventArgs e)
+        {
+            new ConsultaOrdemServicoForm().Show();
+        }
+
+        private void picContratos_Click(object sender, EventArgs e)
+        {
+            new ConsultaContratosForm().Show();
+        }
+
+        private void picAndamento_Click(object sender, EventArgs e)
+        {
+            new EntregasAndamentoForm().Show();
+        }
+
+        private void picFinalizadas_Click(object sender, EventArgs e)
+        {
+            new EntregasFinalizadasForm().Show();
+        }
+        
+        private void picaReceber_Click(object sender, EventArgs e)
+        {
+            new ContasaReceberForm().Show();
+        }
+
+        private void picaPagar_Click(object sender, EventArgs e)
+        {
+            new ContasaPagarForm().Show();
+
+        }
+        private void picCheques_Click(object sender, EventArgs e)
+        {
+            new CaixaChequesForm().Show();
+        }
+
+        private void picEntradas_Click(object sender, EventArgs e)
+        {
+            new CaixaEntradasForm().Show();
+        }
+
+        private void picSaidas_Click(object sender, EventArgs e)
+        {
+            new CaixaSaidasForm().Show();
+        }
+
+        private void picGeral_Click(object sender, EventArgs e)
+        {
+            new CaixaGeralForm().Show();
+        }
+
+        private void picRelOrcamentos_Click(object sender, EventArgs e)
+        {
+            new RelatoriosOrcamentosForm().Show();
+        }
+
+        private void picRelOS_Click(object sender, EventArgs e)
+        {
+            new RelatoriosOrdemServicoForm().Show();
+        }
+
+        private void picRelEntregas_Click(object sender, EventArgs e)
+        {
+            new RelatorioEntregasForm().Show();
+        }
+
+        private void picRelDinheiro_Click(object sender, EventArgs e)
+        {
+            new RelatorioCaixaDinheiroForm().Show();
+        }
+
+        private void picRelCheques_Click(object sender, EventArgs e)
+        {
+            new RelatorioCaixaChequeForm().Show();
+        }
+
+        private void picRelCaixaGeral_Click(object sender, EventArgs e)
+        {
+            new RelatorioCaixaGeralForm().Show();
         }
     }
 }

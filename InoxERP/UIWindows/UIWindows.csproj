@@ -231,11 +231,11 @@
     <Compile Include="SelecaoTelasConsultaForm.Designer.cs">
       <DependentUpon>SelecaoTelasConsultaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsuariosForm.cs">
+    <Compile Include="ConsultaUsuariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsuariosForm.Designer.cs">
-      <DependentUpon>UsuariosForm.cs</DependentUpon>
+    <Compile Include="ConsultaUsuariosForm.Designer.cs">
+      <DependentUpon>ConsultaUsuariosForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AcessoUsuarioForm.resx">
       <DependentUpon>AcessoUsuarioForm.cs</DependentUpon>
@@ -337,8 +337,8 @@
     <EmbeddedResource Include="SelecaoTelasConsultaForm.resx">
       <DependentUpon>SelecaoTelasConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsuariosForm.resx">
-      <DependentUpon>UsuariosForm.cs</DependentUpon>
+    <EmbeddedResource Include="ConsultaUsuariosForm.resx">
+      <DependentUpon>ConsultaUsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -369,6 +369,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Client.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Client1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Client2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Client.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Provider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hand Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Budget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Budget1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Budget Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Following.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Finished.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cheque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cheque1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contract1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\General.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Out Money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enter Money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\General1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report General.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report OS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report Money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delivery.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
