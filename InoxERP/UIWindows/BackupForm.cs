@@ -23,9 +23,11 @@ namespace UIWindows
             var r = MessageBox.Show("Confirma Backup ???", "Backup do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             if (r == DialogResult.Yes)
             {
+                string destino = "";
                 if (txtDestino.Text == "")
-                    txtDestino.Text = "Backup";
-                string destino = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\" + txtDestino.Text;
+                    destino = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\Backup"; // se não preencher o campo de destino, automaticamente salva os arquivos de
+                else                                                                                      //--> backup dentro dos Documentos do usuários criando um pasta chamada 'Backup'
+                    destino = txtDestino.Text; // salva os arquivos de backup dentro da pasta informada pelo usuário.
 
                 DirectoryCopy(txtLocal.Text, destino, true);
             }

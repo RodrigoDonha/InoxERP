@@ -37,10 +37,8 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.grpEntregas = new System.Windows.Forms.GroupBox();
             this.grdEntregas = new System.Windows.Forms.DataGridView();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
+            this.btnRetornar = new System.Windows.Forms.Button();
             this.grpPesquisa.SuspendLayout();
             this.grpEntregas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEntregas)).BeginInit();
@@ -65,7 +63,7 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(684, 23);
+            this.btnPesquisar.Location = new System.Drawing.Point(681, 23);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(85, 30);
@@ -75,7 +73,7 @@
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(347, 27);
+            this.txtPesquisa.Location = new System.Drawing.Point(344, 27);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(331, 23);
@@ -84,7 +82,7 @@
             // radData
             // 
             this.radData.AutoSize = true;
-            this.radData.Location = new System.Drawing.Point(281, 28);
+            this.radData.Location = new System.Drawing.Point(278, 28);
             this.radData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radData.Name = "radData";
             this.radData.Size = new System.Drawing.Size(56, 21);
@@ -148,57 +146,35 @@
             this.grdEntregas.Size = new System.Drawing.Size(755, 257);
             this.grdEntregas.TabIndex = 0;
             // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.Location = new System.Drawing.Point(155, 402);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(80, 30);
-            this.btnFinalizar.TabIndex = 17;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(527, 402);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(80, 30);
-            this.btnExcluir.TabIndex = 16;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(403, 402);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(80, 30);
-            this.btnAlterar.TabIndex = 15;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(277, 402);
+            this.btnAbrir.Location = new System.Drawing.Point(23, 402);
             this.btnAbrir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(80, 30);
-            this.btnAbrir.TabIndex = 14;
-            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.Size = new System.Drawing.Size(150, 30);
+            this.btnAbrir.TabIndex = 9;
+            this.btnAbrir.Text = "Abrir / Alterar";
             this.btnAbrir.UseVisualStyleBackColor = true;
+            // 
+            // btnRetornar
+            // 
+            this.btnRetornar.Location = new System.Drawing.Point(628, 402);
+            this.btnRetornar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRetornar.Name = "btnRetornar";
+            this.btnRetornar.Size = new System.Drawing.Size(150, 30);
+            this.btnRetornar.TabIndex = 18;
+            this.btnRetornar.Text = "Retornar a Campo";
+            this.btnRetornar.UseVisualStyleBackColor = true;
             // 
             // EntregasFinalizadasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRetornar);
+            this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.grpPesquisa);
             this.Controls.Add(this.grpEntregas);
-            this.Controls.Add(this.btnFinalizar);
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnAbrir);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EntregasFinalizadasForm";
@@ -223,9 +199,7 @@
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.GroupBox grpEntregas;
         private System.Windows.Forms.DataGridView grdEntregas;
-        private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnAbrir;
+        private System.Windows.Forms.Button btnRetornar;
     }
 }

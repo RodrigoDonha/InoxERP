@@ -38,9 +38,8 @@
             this.grpEntregas = new System.Windows.Forms.GroupBox();
             this.grdEntregas = new System.Windows.Forms.DataGridView();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnAbrirAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnAbrir = new System.Windows.Forms.Button();
             this.grpPesquisa.SuspendLayout();
             this.grpEntregas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEntregas)).BeginInit();
@@ -150,55 +149,44 @@
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(155, 402);
+            this.btnFinalizar.Location = new System.Drawing.Point(658, 399);
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(80, 30);
+            this.btnFinalizar.Size = new System.Drawing.Size(120, 30);
             this.btnFinalizar.TabIndex = 11;
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
+            // btnAbrirAlterar
+            // 
+            this.btnAbrirAlterar.Location = new System.Drawing.Point(23, 399);
+            this.btnAbrirAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAbrirAlterar.Name = "btnAbrirAlterar";
+            this.btnAbrirAlterar.Size = new System.Drawing.Size(120, 30);
+            this.btnAbrirAlterar.TabIndex = 12;
+            this.btnAbrirAlterar.Text = "Abrir / Alterar";
+            this.btnAbrirAlterar.UseVisualStyleBackColor = true;
+            // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(527, 402);
+            this.btnExcluir.Location = new System.Drawing.Point(337, 399);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(80, 30);
-            this.btnExcluir.TabIndex = 10;
+            this.btnExcluir.Size = new System.Drawing.Size(120, 30);
+            this.btnExcluir.TabIndex = 17;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(403, 402);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(80, 30);
-            this.btnAlterar.TabIndex = 9;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            // 
-            // btnAbrir
-            // 
-            this.btnAbrir.Location = new System.Drawing.Point(277, 402);
-            this.btnAbrir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(80, 30);
-            this.btnAbrir.TabIndex = 8;
-            this.btnAbrir.Text = "Abrir";
-            this.btnAbrir.UseVisualStyleBackColor = true;
             // 
             // EntregasAndamentoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnAbrirAlterar);
             this.Controls.Add(this.grpPesquisa);
             this.Controls.Add(this.grpEntregas);
             this.Controls.Add(this.btnFinalizar);
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnAbrir);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EntregasAndamentoForm";
@@ -224,8 +212,7 @@
         private System.Windows.Forms.GroupBox grpEntregas;
         private System.Windows.Forms.DataGridView grdEntregas;
         private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Button btnAbrirAlterar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnAbrir;
     }
 }
