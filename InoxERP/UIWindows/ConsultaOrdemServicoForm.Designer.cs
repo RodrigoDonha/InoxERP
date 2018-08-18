@@ -30,7 +30,6 @@
         {
             this.btnFinlizar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.grpOrdemServico = new System.Windows.Forms.GroupBox();
             this.grdOrdemServico = new System.Windows.Forms.DataGridView();
@@ -49,42 +48,32 @@
             // 
             // btnFinlizar
             // 
-            this.btnFinlizar.Location = new System.Drawing.Point(73, 406);
+            this.btnFinlizar.Location = new System.Drawing.Point(454, 406);
             this.btnFinlizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinlizar.Name = "btnFinlizar";
-            this.btnFinlizar.Size = new System.Drawing.Size(80, 30);
+            this.btnFinlizar.Size = new System.Drawing.Size(120, 30);
             this.btnFinlizar.TabIndex = 11;
             this.btnFinlizar.Text = "Finalizar";
             this.btnFinlizar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(445, 406);
+            this.btnExcluir.Location = new System.Drawing.Point(241, 406);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(80, 30);
+            this.btnExcluir.Size = new System.Drawing.Size(120, 30);
             this.btnExcluir.TabIndex = 10;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(323, 406);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(80, 30);
-            this.btnAlterar.TabIndex = 9;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(197, 406);
+            this.btnAbrir.Location = new System.Drawing.Point(23, 406);
             this.btnAbrir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(80, 30);
+            this.btnAbrir.Size = new System.Drawing.Size(120, 30);
             this.btnAbrir.TabIndex = 8;
-            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.Text = "Abrir / Alterar";
             this.btnAbrir.UseVisualStyleBackColor = true;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
@@ -192,10 +181,10 @@
             // 
             // btnGerarContrato
             // 
-            this.btnGerarContrato.Location = new System.Drawing.Point(569, 406);
+            this.btnGerarContrato.Location = new System.Drawing.Point(658, 406);
             this.btnGerarContrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGerarContrato.Name = "btnGerarContrato";
-            this.btnGerarContrato.Size = new System.Drawing.Size(157, 30);
+            this.btnGerarContrato.Size = new System.Drawing.Size(120, 30);
             this.btnGerarContrato.TabIndex = 12;
             this.btnGerarContrato.Text = "Gerar Contrato";
             this.btnGerarContrato.UseVisualStyleBackColor = true;
@@ -209,7 +198,6 @@
             this.Controls.Add(this.btnGerarContrato);
             this.Controls.Add(this.btnFinlizar);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.grpOrdemServico);
             this.Controls.Add(this.grpPesquisa);
@@ -230,7 +218,6 @@
 
         private System.Windows.Forms.Button btnFinlizar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnAbrir;
         private System.Windows.Forms.GroupBox grpOrdemServico;
         private System.Windows.Forms.DataGridView grdOrdemServico;

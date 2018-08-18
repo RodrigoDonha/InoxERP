@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using InoxERP.BLL;
 using InoxERP.Modelos;
 using InoxERP.UI_Windows_Forms;
@@ -16,8 +19,8 @@ namespace InoxERP
 {
     public partial class PrincipalForm : Form
     {
-        private string TipoDeUsuario { get; set; }//MANDA P CA
-        private string UsuarioLogado { get; set; }//MANDA P CA
+        private string TipoDeUsuario { get; set; } //MANDA P CA
+        private string UsuarioLogado { get; set; } //MANDA P CA
 
         //Funções
 
@@ -27,7 +30,7 @@ namespace InoxERP
             this.UsuarioLogado = usuario;
             InitializeComponent();
         }
-        
+
         private void orçamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //PermissoesList List = new PermissoesList();
@@ -62,14 +65,14 @@ namespace InoxERP
             //this.Hide();
             obj.Show();
         }
-        
+
         private void geralToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CaixaGeralForm obj = new CaixaGeralForm();
             //this.Hide();
             obj.Show();
         }
-        
+
         private void entradasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             CaixaEntradasForm obj = new CaixaEntradasForm();
@@ -249,7 +252,7 @@ namespace InoxERP
         {
             new EntregasFinalizadasForm().Show();
         }
-        
+
         private void picaReceber_Click(object sender, EventArgs e)
         {
             new ContasaReceberForm().Show();
@@ -260,6 +263,7 @@ namespace InoxERP
             new ContasaPagarForm().Show();
 
         }
+
         private void picCheques_Click(object sender, EventArgs e)
         {
             new CaixaChequesForm().Show();
@@ -309,5 +313,13 @@ namespace InoxERP
         {
             new RelatorioCaixaGeralForm().Show();
         }
+
+        private void picBackup_Click_1(object sender, EventArgs e)
+        {
+            new BackupForm().Show();
+
+        }
     }
 }
+    
+

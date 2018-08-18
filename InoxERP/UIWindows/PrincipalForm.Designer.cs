@@ -57,8 +57,8 @@
             this.ordensDeServiçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entregasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recebidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recebíveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recebidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.geralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblServicos = new System.Windows.Forms.Label();
             this.lblProdutos = new System.Windows.Forms.Label();
@@ -66,60 +66,79 @@
             this.lblClientes = new System.Windows.Forms.Label();
             this.lblUsuarios = new System.Windows.Forms.Label();
             this.gpbCadastros = new System.Windows.Forms.GroupBox();
-            this.gpbOrcamentos = new System.Windows.Forms.GroupBox();
-            this.lblInclusao = new System.Windows.Forms.Label();
-            this.lblConsulta = new System.Windows.Forms.Label();
-            this.gpbOSContratos = new System.Windows.Forms.GroupBox();
-            this.lblConsultaOS = new System.Windows.Forms.Label();
-            this.lblContratos = new System.Windows.Forms.Label();
-            this.gpbEntregas = new System.Windows.Forms.GroupBox();
-            this.lblAndamento = new System.Windows.Forms.Label();
-            this.lblFinalizadas = new System.Windows.Forms.Label();
-            this.gpbContas = new System.Windows.Forms.GroupBox();
-            this.lblaReceber = new System.Windows.Forms.Label();
-            this.lblaPagar = new System.Windows.Forms.Label();
-            this.lblCheques = new System.Windows.Forms.Label();
-            this.gpbCaixa = new System.Windows.Forms.GroupBox();
-            this.lblGeral = new System.Windows.Forms.Label();
-            this.lblEntradas = new System.Windows.Forms.Label();
-            this.lblSaidas = new System.Windows.Forms.Label();
-            this.gpbRelatorios = new System.Windows.Forms.GroupBox();
-            this.lblRelOrcamentos = new System.Windows.Forms.Label();
-            this.lblRelOS = new System.Windows.Forms.Label();
-            this.lblRelEntregas = new System.Windows.Forms.Label();
-            this.lblRelCaixaGeral = new System.Windows.Forms.Label();
-            this.lblRelCheques = new System.Windows.Forms.Label();
-            this.lblRelDinheiro = new System.Windows.Forms.Label();
-            this.picRelCaixaGeral = new System.Windows.Forms.PictureBox();
-            this.picRelDinheiro = new System.Windows.Forms.PictureBox();
-            this.picRelCheques = new System.Windows.Forms.PictureBox();
-            this.picRelEntregas = new System.Windows.Forms.PictureBox();
-            this.picRelOrcamentos = new System.Windows.Forms.PictureBox();
-            this.picRelOS = new System.Windows.Forms.PictureBox();
-            this.picGeral = new System.Windows.Forms.PictureBox();
-            this.picEntradas = new System.Windows.Forms.PictureBox();
-            this.picSaidas = new System.Windows.Forms.PictureBox();
-            this.picCheques = new System.Windows.Forms.PictureBox();
-            this.picaReceber = new System.Windows.Forms.PictureBox();
-            this.picaPagar = new System.Windows.Forms.PictureBox();
-            this.picAndamento = new System.Windows.Forms.PictureBox();
-            this.picFinalizadas = new System.Windows.Forms.PictureBox();
-            this.picOrdemServico = new System.Windows.Forms.PictureBox();
-            this.picContratos = new System.Windows.Forms.PictureBox();
-            this.picInclusao = new System.Windows.Forms.PictureBox();
-            this.picConsulta = new System.Windows.Forms.PictureBox();
             this.picClient = new System.Windows.Forms.PictureBox();
             this.picUsuarios = new System.Windows.Forms.PictureBox();
             this.picFornecedor = new System.Windows.Forms.PictureBox();
             this.picServicos = new System.Windows.Forms.PictureBox();
             this.picProdutos = new System.Windows.Forms.PictureBox();
+            this.gpbOrcamentos = new System.Windows.Forms.GroupBox();
+            this.picInclusao = new System.Windows.Forms.PictureBox();
+            this.lblInclusao = new System.Windows.Forms.Label();
+            this.picConsulta = new System.Windows.Forms.PictureBox();
+            this.lblConsulta = new System.Windows.Forms.Label();
+            this.gpbOSContratos = new System.Windows.Forms.GroupBox();
+            this.picOrdemServico = new System.Windows.Forms.PictureBox();
+            this.lblConsultaOS = new System.Windows.Forms.Label();
+            this.picContratos = new System.Windows.Forms.PictureBox();
+            this.lblContratos = new System.Windows.Forms.Label();
+            this.gpbEntregas = new System.Windows.Forms.GroupBox();
+            this.picAndamento = new System.Windows.Forms.PictureBox();
+            this.lblAndamento = new System.Windows.Forms.Label();
+            this.picFinalizadas = new System.Windows.Forms.PictureBox();
+            this.lblFinalizadas = new System.Windows.Forms.Label();
+            this.gpbContas = new System.Windows.Forms.GroupBox();
+            this.picCheques = new System.Windows.Forms.PictureBox();
+            this.lblCheques = new System.Windows.Forms.Label();
+            this.picaReceber = new System.Windows.Forms.PictureBox();
+            this.lblaReceber = new System.Windows.Forms.Label();
+            this.picaPagar = new System.Windows.Forms.PictureBox();
+            this.lblaPagar = new System.Windows.Forms.Label();
+            this.gpbCaixa = new System.Windows.Forms.GroupBox();
+            this.picGeral = new System.Windows.Forms.PictureBox();
+            this.lblGeral = new System.Windows.Forms.Label();
+            this.picEntradas = new System.Windows.Forms.PictureBox();
+            this.lblEntradas = new System.Windows.Forms.Label();
+            this.picSaidas = new System.Windows.Forms.PictureBox();
+            this.lblSaidas = new System.Windows.Forms.Label();
+            this.gpbRelatorios = new System.Windows.Forms.GroupBox();
+            this.lblRelCaixaGeral = new System.Windows.Forms.Label();
+            this.lblRelCheques = new System.Windows.Forms.Label();
+            this.picRelCaixaGeral = new System.Windows.Forms.PictureBox();
+            this.picRelDinheiro = new System.Windows.Forms.PictureBox();
+            this.lblRelDinheiro = new System.Windows.Forms.Label();
+            this.picRelCheques = new System.Windows.Forms.PictureBox();
+            this.lblRelEntregas = new System.Windows.Forms.Label();
+            this.lblRelOS = new System.Windows.Forms.Label();
+            this.picRelEntregas = new System.Windows.Forms.PictureBox();
+            this.picRelOrcamentos = new System.Windows.Forms.PictureBox();
+            this.lblRelOrcamentos = new System.Windows.Forms.Label();
+            this.picRelOS = new System.Windows.Forms.PictureBox();
+            this.lblBackup = new System.Windows.Forms.Label();
+            this.picBackup = new System.Windows.Forms.PictureBox();
             this.mnsMenu.SuspendLayout();
             this.gpbCadastros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFornecedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picServicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProdutos)).BeginInit();
             this.gpbOrcamentos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picInclusao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picConsulta)).BeginInit();
             this.gpbOSContratos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrdemServico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContratos)).BeginInit();
             this.gpbEntregas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAndamento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFinalizadas)).BeginInit();
             this.gpbContas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCheques)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picaReceber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picaPagar)).BeginInit();
             this.gpbCaixa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGeral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEntradas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaidas)).BeginInit();
             this.gpbRelatorios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRelCaixaGeral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelDinheiro)).BeginInit();
@@ -127,23 +146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRelEntregas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelOrcamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGeral)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEntradas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaidas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCheques)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picaReceber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picaPagar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAndamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFinalizadas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOrdemServico)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picContratos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInclusao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picConsulta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFornecedor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picServicos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProdutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackup)).BeginInit();
             this.SuspendLayout();
             // 
             // mnsMenu
@@ -385,19 +388,19 @@
             this.aReceberToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.aReceberToolStripMenuItem.Text = "Caixa";
             // 
-            // recebidosToolStripMenuItem
-            // 
-            this.recebidosToolStripMenuItem.Name = "recebidosToolStripMenuItem";
-            this.recebidosToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-            this.recebidosToolStripMenuItem.Text = "Cheque";
-            this.recebidosToolStripMenuItem.Click += new System.EventHandler(this.recebidosToolStripMenuItem_Click);
-            // 
             // recebíveisToolStripMenuItem
             // 
             this.recebíveisToolStripMenuItem.Name = "recebíveisToolStripMenuItem";
             this.recebíveisToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
             this.recebíveisToolStripMenuItem.Text = "Dinheiro";
             this.recebíveisToolStripMenuItem.Click += new System.EventHandler(this.recebíveisToolStripMenuItem_Click);
+            // 
+            // recebidosToolStripMenuItem
+            // 
+            this.recebidosToolStripMenuItem.Name = "recebidosToolStripMenuItem";
+            this.recebidosToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.recebidosToolStripMenuItem.Text = "Cheque";
+            this.recebidosToolStripMenuItem.Click += new System.EventHandler(this.recebidosToolStripMenuItem_Click);
             // 
             // geralToolStripMenuItem
             // 
@@ -471,462 +474,6 @@
             this.gpbCadastros.TabStop = false;
             this.gpbCadastros.Text = "Cadastros";
             // 
-            // gpbOrcamentos
-            // 
-            this.gpbOrcamentos.Controls.Add(this.picInclusao);
-            this.gpbOrcamentos.Controls.Add(this.lblInclusao);
-            this.gpbOrcamentos.Controls.Add(this.picConsulta);
-            this.gpbOrcamentos.Controls.Add(this.lblConsulta);
-            this.gpbOrcamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbOrcamentos.Location = new System.Drawing.Point(130, 49);
-            this.gpbOrcamentos.Name = "gpbOrcamentos";
-            this.gpbOrcamentos.Size = new System.Drawing.Size(112, 185);
-            this.gpbOrcamentos.TabIndex = 13;
-            this.gpbOrcamentos.TabStop = false;
-            this.gpbOrcamentos.Text = "Orcamentos";
-            // 
-            // lblInclusao
-            // 
-            this.lblInclusao.AutoSize = true;
-            this.lblInclusao.Location = new System.Drawing.Point(21, 78);
-            this.lblInclusao.Name = "lblInclusao";
-            this.lblInclusao.Size = new System.Drawing.Size(69, 20);
-            this.lblInclusao.TabIndex = 10;
-            this.lblInclusao.Text = "Inclusão";
-            // 
-            // lblConsulta
-            // 
-            this.lblConsulta.AutoSize = true;
-            this.lblConsulta.Location = new System.Drawing.Point(18, 154);
-            this.lblConsulta.Name = "lblConsulta";
-            this.lblConsulta.Size = new System.Drawing.Size(80, 20);
-            this.lblConsulta.TabIndex = 8;
-            this.lblConsulta.Text = "Consultas";
-            // 
-            // gpbOSContratos
-            // 
-            this.gpbOSContratos.Controls.Add(this.picOrdemServico);
-            this.gpbOSContratos.Controls.Add(this.lblConsultaOS);
-            this.gpbOSContratos.Controls.Add(this.picContratos);
-            this.gpbOSContratos.Controls.Add(this.lblContratos);
-            this.gpbOSContratos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbOSContratos.Location = new System.Drawing.Point(248, 49);
-            this.gpbOSContratos.Name = "gpbOSContratos";
-            this.gpbOSContratos.Size = new System.Drawing.Size(130, 185);
-            this.gpbOSContratos.TabIndex = 14;
-            this.gpbOSContratos.TabStop = false;
-            this.gpbOSContratos.Text = "O.S./Contratos";
-            // 
-            // lblConsultaOS
-            // 
-            this.lblConsultaOS.AutoSize = true;
-            this.lblConsultaOS.Location = new System.Drawing.Point(26, 78);
-            this.lblConsultaOS.Name = "lblConsultaOS";
-            this.lblConsultaOS.Size = new System.Drawing.Size(80, 20);
-            this.lblConsultaOS.TabIndex = 10;
-            this.lblConsultaOS.Text = "Consultas";
-            // 
-            // lblContratos
-            // 
-            this.lblContratos.AutoSize = true;
-            this.lblContratos.Location = new System.Drawing.Point(26, 154);
-            this.lblContratos.Name = "lblContratos";
-            this.lblContratos.Size = new System.Drawing.Size(79, 20);
-            this.lblContratos.TabIndex = 8;
-            this.lblContratos.Text = "Contratos";
-            // 
-            // gpbEntregas
-            // 
-            this.gpbEntregas.Controls.Add(this.picAndamento);
-            this.gpbEntregas.Controls.Add(this.lblAndamento);
-            this.gpbEntregas.Controls.Add(this.picFinalizadas);
-            this.gpbEntregas.Controls.Add(this.lblFinalizadas);
-            this.gpbEntregas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbEntregas.Location = new System.Drawing.Point(384, 49);
-            this.gpbEntregas.Name = "gpbEntregas";
-            this.gpbEntregas.Size = new System.Drawing.Size(112, 185);
-            this.gpbEntregas.TabIndex = 14;
-            this.gpbEntregas.TabStop = false;
-            this.gpbEntregas.Text = "Entregas";
-            // 
-            // lblAndamento
-            // 
-            this.lblAndamento.AutoSize = true;
-            this.lblAndamento.Location = new System.Drawing.Point(11, 78);
-            this.lblAndamento.Name = "lblAndamento";
-            this.lblAndamento.Size = new System.Drawing.Size(92, 20);
-            this.lblAndamento.TabIndex = 10;
-            this.lblAndamento.Text = "Andamento";
-            // 
-            // lblFinalizadas
-            // 
-            this.lblFinalizadas.AutoSize = true;
-            this.lblFinalizadas.Location = new System.Drawing.Point(12, 154);
-            this.lblFinalizadas.Name = "lblFinalizadas";
-            this.lblFinalizadas.Size = new System.Drawing.Size(89, 20);
-            this.lblFinalizadas.TabIndex = 8;
-            this.lblFinalizadas.Text = "Finalizadas";
-            // 
-            // gpbContas
-            // 
-            this.gpbContas.Controls.Add(this.picCheques);
-            this.gpbContas.Controls.Add(this.lblCheques);
-            this.gpbContas.Controls.Add(this.picaReceber);
-            this.gpbContas.Controls.Add(this.lblaReceber);
-            this.gpbContas.Controls.Add(this.picaPagar);
-            this.gpbContas.Controls.Add(this.lblaPagar);
-            this.gpbContas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbContas.Location = new System.Drawing.Point(502, 49);
-            this.gpbContas.Name = "gpbContas";
-            this.gpbContas.Size = new System.Drawing.Size(112, 255);
-            this.gpbContas.TabIndex = 15;
-            this.gpbContas.TabStop = false;
-            this.gpbContas.Text = "Contas";
-            // 
-            // lblaReceber
-            // 
-            this.lblaReceber.AutoSize = true;
-            this.lblaReceber.Location = new System.Drawing.Point(15, 78);
-            this.lblaReceber.Name = "lblaReceber";
-            this.lblaReceber.Size = new System.Drawing.Size(85, 20);
-            this.lblaReceber.TabIndex = 10;
-            this.lblaReceber.Text = "A Receber";
-            // 
-            // lblaPagar
-            // 
-            this.lblaPagar.AutoSize = true;
-            this.lblaPagar.Location = new System.Drawing.Point(24, 154);
-            this.lblaPagar.Name = "lblaPagar";
-            this.lblaPagar.Size = new System.Drawing.Size(66, 20);
-            this.lblaPagar.TabIndex = 8;
-            this.lblaPagar.Text = "A Pagar";
-            // 
-            // lblCheques
-            // 
-            this.lblCheques.AutoSize = true;
-            this.lblCheques.Location = new System.Drawing.Point(21, 230);
-            this.lblCheques.Name = "lblCheques";
-            this.lblCheques.Size = new System.Drawing.Size(73, 20);
-            this.lblCheques.TabIndex = 11;
-            this.lblCheques.Text = "Cheques";
-            // 
-            // gpbCaixa
-            // 
-            this.gpbCaixa.Controls.Add(this.picGeral);
-            this.gpbCaixa.Controls.Add(this.lblGeral);
-            this.gpbCaixa.Controls.Add(this.picEntradas);
-            this.gpbCaixa.Controls.Add(this.lblEntradas);
-            this.gpbCaixa.Controls.Add(this.picSaidas);
-            this.gpbCaixa.Controls.Add(this.lblSaidas);
-            this.gpbCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbCaixa.Location = new System.Drawing.Point(620, 49);
-            this.gpbCaixa.Name = "gpbCaixa";
-            this.gpbCaixa.Size = new System.Drawing.Size(112, 255);
-            this.gpbCaixa.TabIndex = 16;
-            this.gpbCaixa.TabStop = false;
-            this.gpbCaixa.Text = "Caixa";
-            // 
-            // lblGeral
-            // 
-            this.lblGeral.AutoSize = true;
-            this.lblGeral.Location = new System.Drawing.Point(34, 230);
-            this.lblGeral.Name = "lblGeral";
-            this.lblGeral.Size = new System.Drawing.Size(48, 20);
-            this.lblGeral.TabIndex = 11;
-            this.lblGeral.Text = "Geral";
-            // 
-            // lblEntradas
-            // 
-            this.lblEntradas.AutoSize = true;
-            this.lblEntradas.Location = new System.Drawing.Point(20, 78);
-            this.lblEntradas.Name = "lblEntradas";
-            this.lblEntradas.Size = new System.Drawing.Size(74, 20);
-            this.lblEntradas.TabIndex = 10;
-            this.lblEntradas.Text = "Entradas";
-            // 
-            // lblSaidas
-            // 
-            this.lblSaidas.AutoSize = true;
-            this.lblSaidas.Location = new System.Drawing.Point(27, 154);
-            this.lblSaidas.Name = "lblSaidas";
-            this.lblSaidas.Size = new System.Drawing.Size(58, 20);
-            this.lblSaidas.TabIndex = 8;
-            this.lblSaidas.Text = "Saídas";
-            // 
-            // gpbRelatorios
-            // 
-            this.gpbRelatorios.Controls.Add(this.lblRelCaixaGeral);
-            this.gpbRelatorios.Controls.Add(this.lblRelCheques);
-            this.gpbRelatorios.Controls.Add(this.picRelCaixaGeral);
-            this.gpbRelatorios.Controls.Add(this.picRelDinheiro);
-            this.gpbRelatorios.Controls.Add(this.lblRelDinheiro);
-            this.gpbRelatorios.Controls.Add(this.picRelCheques);
-            this.gpbRelatorios.Controls.Add(this.lblRelEntregas);
-            this.gpbRelatorios.Controls.Add(this.lblRelOS);
-            this.gpbRelatorios.Controls.Add(this.picRelEntregas);
-            this.gpbRelatorios.Controls.Add(this.picRelOrcamentos);
-            this.gpbRelatorios.Controls.Add(this.lblRelOrcamentos);
-            this.gpbRelatorios.Controls.Add(this.picRelOS);
-            this.gpbRelatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbRelatorios.Location = new System.Drawing.Point(738, 49);
-            this.gpbRelatorios.Name = "gpbRelatorios";
-            this.gpbRelatorios.Size = new System.Drawing.Size(218, 255);
-            this.gpbRelatorios.TabIndex = 14;
-            this.gpbRelatorios.TabStop = false;
-            this.gpbRelatorios.Text = "Relatórios";
-            // 
-            // lblRelOrcamentos
-            // 
-            this.lblRelOrcamentos.AutoSize = true;
-            this.lblRelOrcamentos.Location = new System.Drawing.Point(7, 78);
-            this.lblRelOrcamentos.Name = "lblRelOrcamentos";
-            this.lblRelOrcamentos.Size = new System.Drawing.Size(96, 20);
-            this.lblRelOrcamentos.TabIndex = 10;
-            this.lblRelOrcamentos.Text = "Orçamentos";
-            // 
-            // lblRelOS
-            // 
-            this.lblRelOS.AutoSize = true;
-            this.lblRelOS.Location = new System.Drawing.Point(13, 154);
-            this.lblRelOS.Name = "lblRelOS";
-            this.lblRelOS.Size = new System.Drawing.Size(89, 20);
-            this.lblRelOS.TabIndex = 12;
-            this.lblRelOS.Text = "O. Serviços";
-            // 
-            // lblRelEntregas
-            // 
-            this.lblRelEntregas.AutoSize = true;
-            this.lblRelEntregas.Location = new System.Drawing.Point(20, 230);
-            this.lblRelEntregas.Name = "lblRelEntregas";
-            this.lblRelEntregas.Size = new System.Drawing.Size(74, 20);
-            this.lblRelEntregas.TabIndex = 13;
-            this.lblRelEntregas.Text = "Entregas";
-            // 
-            // lblRelCaixaGeral
-            // 
-            this.lblRelCaixaGeral.AutoSize = true;
-            this.lblRelCaixaGeral.Location = new System.Drawing.Point(117, 230);
-            this.lblRelCaixaGeral.Name = "lblRelCaixaGeral";
-            this.lblRelCaixaGeral.Size = new System.Drawing.Size(91, 20);
-            this.lblRelCaixaGeral.TabIndex = 19;
-            this.lblRelCaixaGeral.Text = "Caixa Geral";
-            // 
-            // lblRelCheques
-            // 
-            this.lblRelCheques.AutoSize = true;
-            this.lblRelCheques.Location = new System.Drawing.Point(127, 154);
-            this.lblRelCheques.Name = "lblRelCheques";
-            this.lblRelCheques.Size = new System.Drawing.Size(73, 20);
-            this.lblRelCheques.TabIndex = 18;
-            this.lblRelCheques.Text = "Cheques";
-            // 
-            // lblRelDinheiro
-            // 
-            this.lblRelDinheiro.AutoSize = true;
-            this.lblRelDinheiro.Location = new System.Drawing.Point(128, 78);
-            this.lblRelDinheiro.Name = "lblRelDinheiro";
-            this.lblRelDinheiro.Size = new System.Drawing.Size(68, 20);
-            this.lblRelDinheiro.TabIndex = 16;
-            this.lblRelDinheiro.Text = "Dinheiro";
-            // 
-            // picRelCaixaGeral
-            // 
-            this.picRelCaixaGeral.Image = global::UIWindows.Properties.Resources.Report_General;
-            this.picRelCaixaGeral.Location = new System.Drawing.Point(112, 177);
-            this.picRelCaixaGeral.Name = "picRelCaixaGeral";
-            this.picRelCaixaGeral.Size = new System.Drawing.Size(100, 50);
-            this.picRelCaixaGeral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRelCaixaGeral.TabIndex = 17;
-            this.picRelCaixaGeral.TabStop = false;
-            this.picRelCaixaGeral.Click += new System.EventHandler(this.picRelCaixaGeral_Click);
-            // 
-            // picRelDinheiro
-            // 
-            this.picRelDinheiro.Image = global::UIWindows.Properties.Resources.Report_Money;
-            this.picRelDinheiro.Location = new System.Drawing.Point(112, 25);
-            this.picRelDinheiro.Name = "picRelDinheiro";
-            this.picRelDinheiro.Size = new System.Drawing.Size(100, 50);
-            this.picRelDinheiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRelDinheiro.TabIndex = 14;
-            this.picRelDinheiro.TabStop = false;
-            this.picRelDinheiro.Click += new System.EventHandler(this.picRelDinheiro_Click);
-            // 
-            // picRelCheques
-            // 
-            this.picRelCheques.Image = global::UIWindows.Properties.Resources.Budget_Search;
-            this.picRelCheques.Location = new System.Drawing.Point(112, 101);
-            this.picRelCheques.Name = "picRelCheques";
-            this.picRelCheques.Size = new System.Drawing.Size(100, 50);
-            this.picRelCheques.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRelCheques.TabIndex = 15;
-            this.picRelCheques.TabStop = false;
-            this.picRelCheques.Click += new System.EventHandler(this.picRelCheques_Click);
-            // 
-            // picRelEntregas
-            // 
-            this.picRelEntregas.Image = global::UIWindows.Properties.Resources.Delivery;
-            this.picRelEntregas.Location = new System.Drawing.Point(6, 177);
-            this.picRelEntregas.Name = "picRelEntregas";
-            this.picRelEntregas.Size = new System.Drawing.Size(100, 50);
-            this.picRelEntregas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRelEntregas.TabIndex = 11;
-            this.picRelEntregas.TabStop = false;
-            this.picRelEntregas.Click += new System.EventHandler(this.picRelEntregas_Click);
-            // 
-            // picRelOrcamentos
-            // 
-            this.picRelOrcamentos.Image = global::UIWindows.Properties.Resources.Budget1;
-            this.picRelOrcamentos.Location = new System.Drawing.Point(6, 25);
-            this.picRelOrcamentos.Name = "picRelOrcamentos";
-            this.picRelOrcamentos.Size = new System.Drawing.Size(100, 50);
-            this.picRelOrcamentos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRelOrcamentos.TabIndex = 1;
-            this.picRelOrcamentos.TabStop = false;
-            this.picRelOrcamentos.Click += new System.EventHandler(this.picRelOrcamentos_Click);
-            // 
-            // picRelOS
-            // 
-            this.picRelOS.Image = global::UIWindows.Properties.Resources.Report_OS;
-            this.picRelOS.Location = new System.Drawing.Point(6, 101);
-            this.picRelOS.Name = "picRelOS";
-            this.picRelOS.Size = new System.Drawing.Size(100, 50);
-            this.picRelOS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRelOS.TabIndex = 9;
-            this.picRelOS.TabStop = false;
-            this.picRelOS.Click += new System.EventHandler(this.picRelOS_Click);
-            // 
-            // picGeral
-            // 
-            this.picGeral.Image = global::UIWindows.Properties.Resources.General1;
-            this.picGeral.Location = new System.Drawing.Point(6, 177);
-            this.picGeral.Name = "picGeral";
-            this.picGeral.Size = new System.Drawing.Size(100, 50);
-            this.picGeral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picGeral.TabIndex = 12;
-            this.picGeral.TabStop = false;
-            this.picGeral.Click += new System.EventHandler(this.picGeral_Click);
-            // 
-            // picEntradas
-            // 
-            this.picEntradas.Image = global::UIWindows.Properties.Resources.Enter_Money;
-            this.picEntradas.Location = new System.Drawing.Point(6, 25);
-            this.picEntradas.Name = "picEntradas";
-            this.picEntradas.Size = new System.Drawing.Size(100, 50);
-            this.picEntradas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picEntradas.TabIndex = 1;
-            this.picEntradas.TabStop = false;
-            this.picEntradas.Click += new System.EventHandler(this.picEntradas_Click);
-            // 
-            // picSaidas
-            // 
-            this.picSaidas.Image = global::UIWindows.Properties.Resources.Out_Money;
-            this.picSaidas.Location = new System.Drawing.Point(6, 101);
-            this.picSaidas.Name = "picSaidas";
-            this.picSaidas.Size = new System.Drawing.Size(100, 50);
-            this.picSaidas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picSaidas.TabIndex = 9;
-            this.picSaidas.TabStop = false;
-            this.picSaidas.Click += new System.EventHandler(this.picSaidas_Click);
-            // 
-            // picCheques
-            // 
-            this.picCheques.Image = global::UIWindows.Properties.Resources.Cheque1;
-            this.picCheques.Location = new System.Drawing.Point(6, 177);
-            this.picCheques.Name = "picCheques";
-            this.picCheques.Size = new System.Drawing.Size(100, 50);
-            this.picCheques.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCheques.TabIndex = 12;
-            this.picCheques.TabStop = false;
-            this.picCheques.Click += new System.EventHandler(this.picCheques_Click);
-            // 
-            // picaReceber
-            // 
-            this.picaReceber.Image = global::UIWindows.Properties.Resources.Receive;
-            this.picaReceber.Location = new System.Drawing.Point(6, 25);
-            this.picaReceber.Name = "picaReceber";
-            this.picaReceber.Size = new System.Drawing.Size(100, 50);
-            this.picaReceber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picaReceber.TabIndex = 1;
-            this.picaReceber.TabStop = false;
-            this.picaReceber.Click += new System.EventHandler(this.picaReceber_Click);
-            // 
-            // picaPagar
-            // 
-            this.picaPagar.Image = global::UIWindows.Properties.Resources.pay;
-            this.picaPagar.Location = new System.Drawing.Point(6, 101);
-            this.picaPagar.Name = "picaPagar";
-            this.picaPagar.Size = new System.Drawing.Size(100, 50);
-            this.picaPagar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picaPagar.TabIndex = 9;
-            this.picaPagar.TabStop = false;
-            this.picaPagar.Click += new System.EventHandler(this.picaPagar_Click);
-            // 
-            // picAndamento
-            // 
-            this.picAndamento.Image = global::UIWindows.Properties.Resources.Following;
-            this.picAndamento.Location = new System.Drawing.Point(6, 25);
-            this.picAndamento.Name = "picAndamento";
-            this.picAndamento.Size = new System.Drawing.Size(100, 50);
-            this.picAndamento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAndamento.TabIndex = 1;
-            this.picAndamento.TabStop = false;
-            this.picAndamento.Click += new System.EventHandler(this.picAndamento_Click);
-            // 
-            // picFinalizadas
-            // 
-            this.picFinalizadas.Image = global::UIWindows.Properties.Resources.Finished;
-            this.picFinalizadas.Location = new System.Drawing.Point(6, 101);
-            this.picFinalizadas.Name = "picFinalizadas";
-            this.picFinalizadas.Size = new System.Drawing.Size(100, 50);
-            this.picFinalizadas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picFinalizadas.TabIndex = 9;
-            this.picFinalizadas.TabStop = false;
-            this.picFinalizadas.Click += new System.EventHandler(this.picFinalizadas_Click);
-            // 
-            // picOrdemServico
-            // 
-            this.picOrdemServico.Image = global::UIWindows.Properties.Resources.Budget_Search;
-            this.picOrdemServico.Location = new System.Drawing.Point(15, 25);
-            this.picOrdemServico.Name = "picOrdemServico";
-            this.picOrdemServico.Size = new System.Drawing.Size(100, 50);
-            this.picOrdemServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picOrdemServico.TabIndex = 1;
-            this.picOrdemServico.TabStop = false;
-            this.picOrdemServico.Click += new System.EventHandler(this.picOrdemServico_Click);
-            // 
-            // picContratos
-            // 
-            this.picContratos.Image = global::UIWindows.Properties.Resources.Contract1;
-            this.picContratos.Location = new System.Drawing.Point(14, 101);
-            this.picContratos.Name = "picContratos";
-            this.picContratos.Size = new System.Drawing.Size(100, 50);
-            this.picContratos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picContratos.TabIndex = 9;
-            this.picContratos.TabStop = false;
-            this.picContratos.Click += new System.EventHandler(this.picContratos_Click);
-            // 
-            // picInclusao
-            // 
-            this.picInclusao.Image = global::UIWindows.Properties.Resources.Budget1;
-            this.picInclusao.Location = new System.Drawing.Point(6, 25);
-            this.picInclusao.Name = "picInclusao";
-            this.picInclusao.Size = new System.Drawing.Size(100, 50);
-            this.picInclusao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picInclusao.TabIndex = 1;
-            this.picInclusao.TabStop = false;
-            this.picInclusao.Click += new System.EventHandler(this.picInclusao_Click);
-            // 
-            // picConsulta
-            // 
-            this.picConsulta.Image = global::UIWindows.Properties.Resources.Budget_Search;
-            this.picConsulta.Location = new System.Drawing.Point(6, 101);
-            this.picConsulta.Name = "picConsulta";
-            this.picConsulta.Size = new System.Drawing.Size(100, 50);
-            this.picConsulta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picConsulta.TabIndex = 9;
-            this.picConsulta.TabStop = false;
-            this.picConsulta.Click += new System.EventHandler(this.picConsulta_Click);
-            // 
             // picClient
             // 
             this.picClient.Image = global::UIWindows.Properties.Resources.Client3;
@@ -982,11 +529,489 @@
             this.picProdutos.TabStop = false;
             this.picProdutos.Click += new System.EventHandler(this.picProdutos_Click);
             // 
+            // gpbOrcamentos
+            // 
+            this.gpbOrcamentos.Controls.Add(this.picInclusao);
+            this.gpbOrcamentos.Controls.Add(this.lblInclusao);
+            this.gpbOrcamentos.Controls.Add(this.picConsulta);
+            this.gpbOrcamentos.Controls.Add(this.lblConsulta);
+            this.gpbOrcamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbOrcamentos.Location = new System.Drawing.Point(130, 49);
+            this.gpbOrcamentos.Name = "gpbOrcamentos";
+            this.gpbOrcamentos.Size = new System.Drawing.Size(112, 185);
+            this.gpbOrcamentos.TabIndex = 13;
+            this.gpbOrcamentos.TabStop = false;
+            this.gpbOrcamentos.Text = "Orcamentos";
+            // 
+            // picInclusao
+            // 
+            this.picInclusao.Image = global::UIWindows.Properties.Resources.Budget1;
+            this.picInclusao.Location = new System.Drawing.Point(6, 25);
+            this.picInclusao.Name = "picInclusao";
+            this.picInclusao.Size = new System.Drawing.Size(100, 50);
+            this.picInclusao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picInclusao.TabIndex = 1;
+            this.picInclusao.TabStop = false;
+            this.picInclusao.Click += new System.EventHandler(this.picInclusao_Click);
+            // 
+            // lblInclusao
+            // 
+            this.lblInclusao.AutoSize = true;
+            this.lblInclusao.Location = new System.Drawing.Point(21, 78);
+            this.lblInclusao.Name = "lblInclusao";
+            this.lblInclusao.Size = new System.Drawing.Size(69, 20);
+            this.lblInclusao.TabIndex = 10;
+            this.lblInclusao.Text = "Inclusão";
+            // 
+            // picConsulta
+            // 
+            this.picConsulta.Image = global::UIWindows.Properties.Resources.Budget_Search;
+            this.picConsulta.Location = new System.Drawing.Point(6, 101);
+            this.picConsulta.Name = "picConsulta";
+            this.picConsulta.Size = new System.Drawing.Size(100, 50);
+            this.picConsulta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picConsulta.TabIndex = 9;
+            this.picConsulta.TabStop = false;
+            this.picConsulta.Click += new System.EventHandler(this.picConsulta_Click);
+            // 
+            // lblConsulta
+            // 
+            this.lblConsulta.AutoSize = true;
+            this.lblConsulta.Location = new System.Drawing.Point(18, 154);
+            this.lblConsulta.Name = "lblConsulta";
+            this.lblConsulta.Size = new System.Drawing.Size(80, 20);
+            this.lblConsulta.TabIndex = 8;
+            this.lblConsulta.Text = "Consultas";
+            // 
+            // gpbOSContratos
+            // 
+            this.gpbOSContratos.Controls.Add(this.picOrdemServico);
+            this.gpbOSContratos.Controls.Add(this.lblConsultaOS);
+            this.gpbOSContratos.Controls.Add(this.picContratos);
+            this.gpbOSContratos.Controls.Add(this.lblContratos);
+            this.gpbOSContratos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbOSContratos.Location = new System.Drawing.Point(248, 49);
+            this.gpbOSContratos.Name = "gpbOSContratos";
+            this.gpbOSContratos.Size = new System.Drawing.Size(130, 185);
+            this.gpbOSContratos.TabIndex = 14;
+            this.gpbOSContratos.TabStop = false;
+            this.gpbOSContratos.Text = "O.S./Contratos";
+            // 
+            // picOrdemServico
+            // 
+            this.picOrdemServico.Image = global::UIWindows.Properties.Resources.Budget_Search;
+            this.picOrdemServico.Location = new System.Drawing.Point(15, 25);
+            this.picOrdemServico.Name = "picOrdemServico";
+            this.picOrdemServico.Size = new System.Drawing.Size(100, 50);
+            this.picOrdemServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOrdemServico.TabIndex = 1;
+            this.picOrdemServico.TabStop = false;
+            this.picOrdemServico.Click += new System.EventHandler(this.picOrdemServico_Click);
+            // 
+            // lblConsultaOS
+            // 
+            this.lblConsultaOS.AutoSize = true;
+            this.lblConsultaOS.Location = new System.Drawing.Point(26, 78);
+            this.lblConsultaOS.Name = "lblConsultaOS";
+            this.lblConsultaOS.Size = new System.Drawing.Size(80, 20);
+            this.lblConsultaOS.TabIndex = 10;
+            this.lblConsultaOS.Text = "Consultas";
+            // 
+            // picContratos
+            // 
+            this.picContratos.Image = global::UIWindows.Properties.Resources.Contract1;
+            this.picContratos.Location = new System.Drawing.Point(14, 101);
+            this.picContratos.Name = "picContratos";
+            this.picContratos.Size = new System.Drawing.Size(100, 50);
+            this.picContratos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picContratos.TabIndex = 9;
+            this.picContratos.TabStop = false;
+            this.picContratos.Click += new System.EventHandler(this.picContratos_Click);
+            // 
+            // lblContratos
+            // 
+            this.lblContratos.AutoSize = true;
+            this.lblContratos.Location = new System.Drawing.Point(26, 154);
+            this.lblContratos.Name = "lblContratos";
+            this.lblContratos.Size = new System.Drawing.Size(79, 20);
+            this.lblContratos.TabIndex = 8;
+            this.lblContratos.Text = "Contratos";
+            // 
+            // gpbEntregas
+            // 
+            this.gpbEntregas.Controls.Add(this.picAndamento);
+            this.gpbEntregas.Controls.Add(this.lblAndamento);
+            this.gpbEntregas.Controls.Add(this.picFinalizadas);
+            this.gpbEntregas.Controls.Add(this.lblFinalizadas);
+            this.gpbEntregas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbEntregas.Location = new System.Drawing.Point(384, 49);
+            this.gpbEntregas.Name = "gpbEntregas";
+            this.gpbEntregas.Size = new System.Drawing.Size(112, 185);
+            this.gpbEntregas.TabIndex = 14;
+            this.gpbEntregas.TabStop = false;
+            this.gpbEntregas.Text = "Entregas";
+            // 
+            // picAndamento
+            // 
+            this.picAndamento.Image = global::UIWindows.Properties.Resources.Following;
+            this.picAndamento.Location = new System.Drawing.Point(6, 25);
+            this.picAndamento.Name = "picAndamento";
+            this.picAndamento.Size = new System.Drawing.Size(100, 50);
+            this.picAndamento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAndamento.TabIndex = 1;
+            this.picAndamento.TabStop = false;
+            this.picAndamento.Click += new System.EventHandler(this.picAndamento_Click);
+            // 
+            // lblAndamento
+            // 
+            this.lblAndamento.AutoSize = true;
+            this.lblAndamento.Location = new System.Drawing.Point(11, 78);
+            this.lblAndamento.Name = "lblAndamento";
+            this.lblAndamento.Size = new System.Drawing.Size(92, 20);
+            this.lblAndamento.TabIndex = 10;
+            this.lblAndamento.Text = "Andamento";
+            // 
+            // picFinalizadas
+            // 
+            this.picFinalizadas.Image = global::UIWindows.Properties.Resources.Finished;
+            this.picFinalizadas.Location = new System.Drawing.Point(6, 101);
+            this.picFinalizadas.Name = "picFinalizadas";
+            this.picFinalizadas.Size = new System.Drawing.Size(100, 50);
+            this.picFinalizadas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFinalizadas.TabIndex = 9;
+            this.picFinalizadas.TabStop = false;
+            this.picFinalizadas.Click += new System.EventHandler(this.picFinalizadas_Click);
+            // 
+            // lblFinalizadas
+            // 
+            this.lblFinalizadas.AutoSize = true;
+            this.lblFinalizadas.Location = new System.Drawing.Point(12, 154);
+            this.lblFinalizadas.Name = "lblFinalizadas";
+            this.lblFinalizadas.Size = new System.Drawing.Size(89, 20);
+            this.lblFinalizadas.TabIndex = 8;
+            this.lblFinalizadas.Text = "Finalizadas";
+            // 
+            // gpbContas
+            // 
+            this.gpbContas.Controls.Add(this.picCheques);
+            this.gpbContas.Controls.Add(this.lblCheques);
+            this.gpbContas.Controls.Add(this.picaReceber);
+            this.gpbContas.Controls.Add(this.lblaReceber);
+            this.gpbContas.Controls.Add(this.picaPagar);
+            this.gpbContas.Controls.Add(this.lblaPagar);
+            this.gpbContas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbContas.Location = new System.Drawing.Point(502, 49);
+            this.gpbContas.Name = "gpbContas";
+            this.gpbContas.Size = new System.Drawing.Size(112, 255);
+            this.gpbContas.TabIndex = 15;
+            this.gpbContas.TabStop = false;
+            this.gpbContas.Text = "Contas";
+            // 
+            // picCheques
+            // 
+            this.picCheques.Image = global::UIWindows.Properties.Resources.Cheque1;
+            this.picCheques.Location = new System.Drawing.Point(6, 177);
+            this.picCheques.Name = "picCheques";
+            this.picCheques.Size = new System.Drawing.Size(100, 50);
+            this.picCheques.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCheques.TabIndex = 12;
+            this.picCheques.TabStop = false;
+            this.picCheques.Click += new System.EventHandler(this.picCheques_Click);
+            // 
+            // lblCheques
+            // 
+            this.lblCheques.AutoSize = true;
+            this.lblCheques.Location = new System.Drawing.Point(21, 230);
+            this.lblCheques.Name = "lblCheques";
+            this.lblCheques.Size = new System.Drawing.Size(73, 20);
+            this.lblCheques.TabIndex = 11;
+            this.lblCheques.Text = "Cheques";
+            // 
+            // picaReceber
+            // 
+            this.picaReceber.Image = global::UIWindows.Properties.Resources.Receive;
+            this.picaReceber.Location = new System.Drawing.Point(6, 25);
+            this.picaReceber.Name = "picaReceber";
+            this.picaReceber.Size = new System.Drawing.Size(100, 50);
+            this.picaReceber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picaReceber.TabIndex = 1;
+            this.picaReceber.TabStop = false;
+            this.picaReceber.Click += new System.EventHandler(this.picaReceber_Click);
+            // 
+            // lblaReceber
+            // 
+            this.lblaReceber.AutoSize = true;
+            this.lblaReceber.Location = new System.Drawing.Point(15, 78);
+            this.lblaReceber.Name = "lblaReceber";
+            this.lblaReceber.Size = new System.Drawing.Size(85, 20);
+            this.lblaReceber.TabIndex = 10;
+            this.lblaReceber.Text = "A Receber";
+            // 
+            // picaPagar
+            // 
+            this.picaPagar.Image = global::UIWindows.Properties.Resources.pay;
+            this.picaPagar.Location = new System.Drawing.Point(6, 101);
+            this.picaPagar.Name = "picaPagar";
+            this.picaPagar.Size = new System.Drawing.Size(100, 50);
+            this.picaPagar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picaPagar.TabIndex = 9;
+            this.picaPagar.TabStop = false;
+            this.picaPagar.Click += new System.EventHandler(this.picaPagar_Click);
+            // 
+            // lblaPagar
+            // 
+            this.lblaPagar.AutoSize = true;
+            this.lblaPagar.Location = new System.Drawing.Point(24, 154);
+            this.lblaPagar.Name = "lblaPagar";
+            this.lblaPagar.Size = new System.Drawing.Size(66, 20);
+            this.lblaPagar.TabIndex = 8;
+            this.lblaPagar.Text = "A Pagar";
+            // 
+            // gpbCaixa
+            // 
+            this.gpbCaixa.Controls.Add(this.picGeral);
+            this.gpbCaixa.Controls.Add(this.lblGeral);
+            this.gpbCaixa.Controls.Add(this.picEntradas);
+            this.gpbCaixa.Controls.Add(this.lblEntradas);
+            this.gpbCaixa.Controls.Add(this.picSaidas);
+            this.gpbCaixa.Controls.Add(this.lblSaidas);
+            this.gpbCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbCaixa.Location = new System.Drawing.Point(620, 49);
+            this.gpbCaixa.Name = "gpbCaixa";
+            this.gpbCaixa.Size = new System.Drawing.Size(112, 255);
+            this.gpbCaixa.TabIndex = 16;
+            this.gpbCaixa.TabStop = false;
+            this.gpbCaixa.Text = "Caixa";
+            // 
+            // picGeral
+            // 
+            this.picGeral.Image = global::UIWindows.Properties.Resources.General1;
+            this.picGeral.Location = new System.Drawing.Point(6, 177);
+            this.picGeral.Name = "picGeral";
+            this.picGeral.Size = new System.Drawing.Size(100, 50);
+            this.picGeral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGeral.TabIndex = 12;
+            this.picGeral.TabStop = false;
+            this.picGeral.Click += new System.EventHandler(this.picGeral_Click);
+            // 
+            // lblGeral
+            // 
+            this.lblGeral.AutoSize = true;
+            this.lblGeral.Location = new System.Drawing.Point(34, 230);
+            this.lblGeral.Name = "lblGeral";
+            this.lblGeral.Size = new System.Drawing.Size(48, 20);
+            this.lblGeral.TabIndex = 11;
+            this.lblGeral.Text = "Geral";
+            // 
+            // picEntradas
+            // 
+            this.picEntradas.Image = global::UIWindows.Properties.Resources.Enter_Money;
+            this.picEntradas.Location = new System.Drawing.Point(6, 25);
+            this.picEntradas.Name = "picEntradas";
+            this.picEntradas.Size = new System.Drawing.Size(100, 50);
+            this.picEntradas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEntradas.TabIndex = 1;
+            this.picEntradas.TabStop = false;
+            this.picEntradas.Click += new System.EventHandler(this.picEntradas_Click);
+            // 
+            // lblEntradas
+            // 
+            this.lblEntradas.AutoSize = true;
+            this.lblEntradas.Location = new System.Drawing.Point(20, 78);
+            this.lblEntradas.Name = "lblEntradas";
+            this.lblEntradas.Size = new System.Drawing.Size(74, 20);
+            this.lblEntradas.TabIndex = 10;
+            this.lblEntradas.Text = "Entradas";
+            // 
+            // picSaidas
+            // 
+            this.picSaidas.Image = global::UIWindows.Properties.Resources.Out_Money;
+            this.picSaidas.Location = new System.Drawing.Point(6, 101);
+            this.picSaidas.Name = "picSaidas";
+            this.picSaidas.Size = new System.Drawing.Size(100, 50);
+            this.picSaidas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSaidas.TabIndex = 9;
+            this.picSaidas.TabStop = false;
+            this.picSaidas.Click += new System.EventHandler(this.picSaidas_Click);
+            // 
+            // lblSaidas
+            // 
+            this.lblSaidas.AutoSize = true;
+            this.lblSaidas.Location = new System.Drawing.Point(27, 154);
+            this.lblSaidas.Name = "lblSaidas";
+            this.lblSaidas.Size = new System.Drawing.Size(58, 20);
+            this.lblSaidas.TabIndex = 8;
+            this.lblSaidas.Text = "Saídas";
+            // 
+            // gpbRelatorios
+            // 
+            this.gpbRelatorios.Controls.Add(this.lblRelCaixaGeral);
+            this.gpbRelatorios.Controls.Add(this.lblRelCheques);
+            this.gpbRelatorios.Controls.Add(this.picRelCaixaGeral);
+            this.gpbRelatorios.Controls.Add(this.picRelDinheiro);
+            this.gpbRelatorios.Controls.Add(this.lblRelDinheiro);
+            this.gpbRelatorios.Controls.Add(this.picRelCheques);
+            this.gpbRelatorios.Controls.Add(this.lblRelEntregas);
+            this.gpbRelatorios.Controls.Add(this.lblRelOS);
+            this.gpbRelatorios.Controls.Add(this.picRelEntregas);
+            this.gpbRelatorios.Controls.Add(this.picRelOrcamentos);
+            this.gpbRelatorios.Controls.Add(this.lblRelOrcamentos);
+            this.gpbRelatorios.Controls.Add(this.picRelOS);
+            this.gpbRelatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbRelatorios.Location = new System.Drawing.Point(738, 49);
+            this.gpbRelatorios.Name = "gpbRelatorios";
+            this.gpbRelatorios.Size = new System.Drawing.Size(218, 255);
+            this.gpbRelatorios.TabIndex = 14;
+            this.gpbRelatorios.TabStop = false;
+            this.gpbRelatorios.Text = "Relatórios";
+            // 
+            // lblRelCaixaGeral
+            // 
+            this.lblRelCaixaGeral.AutoSize = true;
+            this.lblRelCaixaGeral.Location = new System.Drawing.Point(117, 230);
+            this.lblRelCaixaGeral.Name = "lblRelCaixaGeral";
+            this.lblRelCaixaGeral.Size = new System.Drawing.Size(91, 20);
+            this.lblRelCaixaGeral.TabIndex = 19;
+            this.lblRelCaixaGeral.Text = "Caixa Geral";
+            // 
+            // lblRelCheques
+            // 
+            this.lblRelCheques.AutoSize = true;
+            this.lblRelCheques.Location = new System.Drawing.Point(127, 154);
+            this.lblRelCheques.Name = "lblRelCheques";
+            this.lblRelCheques.Size = new System.Drawing.Size(73, 20);
+            this.lblRelCheques.TabIndex = 18;
+            this.lblRelCheques.Text = "Cheques";
+            // 
+            // picRelCaixaGeral
+            // 
+            this.picRelCaixaGeral.Image = global::UIWindows.Properties.Resources.Report_General;
+            this.picRelCaixaGeral.Location = new System.Drawing.Point(112, 177);
+            this.picRelCaixaGeral.Name = "picRelCaixaGeral";
+            this.picRelCaixaGeral.Size = new System.Drawing.Size(100, 50);
+            this.picRelCaixaGeral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRelCaixaGeral.TabIndex = 17;
+            this.picRelCaixaGeral.TabStop = false;
+            this.picRelCaixaGeral.Click += new System.EventHandler(this.picRelCaixaGeral_Click);
+            // 
+            // picRelDinheiro
+            // 
+            this.picRelDinheiro.Image = global::UIWindows.Properties.Resources.Report_Money;
+            this.picRelDinheiro.Location = new System.Drawing.Point(112, 25);
+            this.picRelDinheiro.Name = "picRelDinheiro";
+            this.picRelDinheiro.Size = new System.Drawing.Size(100, 50);
+            this.picRelDinheiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRelDinheiro.TabIndex = 14;
+            this.picRelDinheiro.TabStop = false;
+            this.picRelDinheiro.Click += new System.EventHandler(this.picRelDinheiro_Click);
+            // 
+            // lblRelDinheiro
+            // 
+            this.lblRelDinheiro.AutoSize = true;
+            this.lblRelDinheiro.Location = new System.Drawing.Point(128, 78);
+            this.lblRelDinheiro.Name = "lblRelDinheiro";
+            this.lblRelDinheiro.Size = new System.Drawing.Size(68, 20);
+            this.lblRelDinheiro.TabIndex = 16;
+            this.lblRelDinheiro.Text = "Dinheiro";
+            // 
+            // picRelCheques
+            // 
+            this.picRelCheques.Image = global::UIWindows.Properties.Resources.Budget_Search;
+            this.picRelCheques.Location = new System.Drawing.Point(112, 101);
+            this.picRelCheques.Name = "picRelCheques";
+            this.picRelCheques.Size = new System.Drawing.Size(100, 50);
+            this.picRelCheques.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRelCheques.TabIndex = 15;
+            this.picRelCheques.TabStop = false;
+            this.picRelCheques.Click += new System.EventHandler(this.picRelCheques_Click);
+            // 
+            // lblRelEntregas
+            // 
+            this.lblRelEntregas.AutoSize = true;
+            this.lblRelEntregas.Location = new System.Drawing.Point(20, 230);
+            this.lblRelEntregas.Name = "lblRelEntregas";
+            this.lblRelEntregas.Size = new System.Drawing.Size(74, 20);
+            this.lblRelEntregas.TabIndex = 13;
+            this.lblRelEntregas.Text = "Entregas";
+            // 
+            // lblRelOS
+            // 
+            this.lblRelOS.AutoSize = true;
+            this.lblRelOS.Location = new System.Drawing.Point(13, 154);
+            this.lblRelOS.Name = "lblRelOS";
+            this.lblRelOS.Size = new System.Drawing.Size(89, 20);
+            this.lblRelOS.TabIndex = 12;
+            this.lblRelOS.Text = "O. Serviços";
+            // 
+            // picRelEntregas
+            // 
+            this.picRelEntregas.Image = global::UIWindows.Properties.Resources.Delivery;
+            this.picRelEntregas.Location = new System.Drawing.Point(6, 177);
+            this.picRelEntregas.Name = "picRelEntregas";
+            this.picRelEntregas.Size = new System.Drawing.Size(100, 50);
+            this.picRelEntregas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRelEntregas.TabIndex = 11;
+            this.picRelEntregas.TabStop = false;
+            this.picRelEntregas.Click += new System.EventHandler(this.picRelEntregas_Click);
+            // 
+            // picRelOrcamentos
+            // 
+            this.picRelOrcamentos.Image = global::UIWindows.Properties.Resources.Budget1;
+            this.picRelOrcamentos.Location = new System.Drawing.Point(6, 25);
+            this.picRelOrcamentos.Name = "picRelOrcamentos";
+            this.picRelOrcamentos.Size = new System.Drawing.Size(100, 50);
+            this.picRelOrcamentos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRelOrcamentos.TabIndex = 1;
+            this.picRelOrcamentos.TabStop = false;
+            this.picRelOrcamentos.Click += new System.EventHandler(this.picRelOrcamentos_Click);
+            // 
+            // lblRelOrcamentos
+            // 
+            this.lblRelOrcamentos.AutoSize = true;
+            this.lblRelOrcamentos.Location = new System.Drawing.Point(7, 78);
+            this.lblRelOrcamentos.Name = "lblRelOrcamentos";
+            this.lblRelOrcamentos.Size = new System.Drawing.Size(96, 20);
+            this.lblRelOrcamentos.TabIndex = 10;
+            this.lblRelOrcamentos.Text = "Orçamentos";
+            // 
+            // picRelOS
+            // 
+            this.picRelOS.Image = global::UIWindows.Properties.Resources.Report_OS;
+            this.picRelOS.Location = new System.Drawing.Point(6, 101);
+            this.picRelOS.Name = "picRelOS";
+            this.picRelOS.Size = new System.Drawing.Size(100, 50);
+            this.picRelOS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRelOS.TabIndex = 9;
+            this.picRelOS.TabStop = false;
+            this.picRelOS.Click += new System.EventHandler(this.picRelOS_Click);
+            // 
+            // lblBackup
+            // 
+            this.lblBackup.AutoSize = true;
+            this.lblBackup.Location = new System.Drawing.Point(873, 431);
+            this.lblBackup.Name = "lblBackup";
+            this.lblBackup.Size = new System.Drawing.Size(63, 20);
+            this.lblBackup.TabIndex = 21;
+            this.lblBackup.Text = "Backup";
+            // 
+            // picBackup
+            // 
+            this.picBackup.Image = global::UIWindows.Properties.Resources.Backup;
+            this.picBackup.Location = new System.Drawing.Point(850, 378);
+            this.picBackup.Name = "picBackup";
+            this.picBackup.Size = new System.Drawing.Size(100, 50);
+            this.picBackup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBackup.TabIndex = 20;
+            this.picBackup.TabStop = false;
+            this.picBackup.Click += new System.EventHandler(this.picBackup_Click_1);
+            // 
             // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 474);
+            this.Controls.Add(this.lblBackup);
+            this.Controls.Add(this.picBackup);
             this.Controls.Add(this.gpbRelatorios);
             this.Controls.Add(this.gpbCaixa);
             this.Controls.Add(this.gpbContas);
@@ -1006,16 +1031,33 @@
             this.mnsMenu.PerformLayout();
             this.gpbCadastros.ResumeLayout(false);
             this.gpbCadastros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picClient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFornecedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picServicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProdutos)).EndInit();
             this.gpbOrcamentos.ResumeLayout(false);
             this.gpbOrcamentos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picInclusao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picConsulta)).EndInit();
             this.gpbOSContratos.ResumeLayout(false);
             this.gpbOSContratos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrdemServico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContratos)).EndInit();
             this.gpbEntregas.ResumeLayout(false);
             this.gpbEntregas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picAndamento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFinalizadas)).EndInit();
             this.gpbContas.ResumeLayout(false);
             this.gpbContas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCheques)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picaReceber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picaPagar)).EndInit();
             this.gpbCaixa.ResumeLayout(false);
             this.gpbCaixa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGeral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEntradas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSaidas)).EndInit();
             this.gpbRelatorios.ResumeLayout(false);
             this.gpbRelatorios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRelCaixaGeral)).EndInit();
@@ -1024,23 +1066,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRelEntregas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelOrcamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGeral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picEntradas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSaidas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCheques)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picaReceber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picaPagar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAndamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFinalizadas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picOrdemServico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picContratos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInclusao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picConsulta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picClient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picFornecedor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picServicos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProdutos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1133,6 +1159,8 @@
         private System.Windows.Forms.PictureBox picRelDinheiro;
         private System.Windows.Forms.Label lblRelDinheiro;
         private System.Windows.Forms.PictureBox picRelCheques;
+        private System.Windows.Forms.Label lblBackup;
+        private System.Windows.Forms.PictureBox picBackup;
     }
 }
 

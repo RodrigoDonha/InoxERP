@@ -1,6 +1,5 @@
-[Fri Aug 17 13:23:43.313536 2018] [mpm_winnt:notice] [pid 14676:tid 784] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Fri Aug 17 13:23:43.313536 2018] [mpm_winnt:notice] [pid 14676:tid 784] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Fri Aug 17 13:23:43.313536 2018] [core:notice] [pid 14676:tid 784] AH00094: Command line: 'D:\\Jefter\\Documents\\GitHub\\InoxERP\\InoxERP\\USBWebserver v8.6/apache2/bin/httpd_usbwv8.exe -d D:/Jefter/Documents/GitHub/InoxERP/InoxERP/USBWebserver v8.6/apache2'
-[Fri Aug 17 13:23:43.355426 2018] [mpm_winnt:notice] [pid 14676:tid 784] AH00418: Parent: Created child process 5396
-[Fri Aug 17 13:23:44.330846 2018] [mpm_winnt:notice] [pid 5396:tid 792] AH00354: Child: Starting 64 worker threads.
-[Fri Aug 17 15:27:04.717430 2018] [:error] [pid 5396:tid 1344] [client 192.168.0.107:59571] PHP Warning:  phpinfo(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in D:\\Jefter\\Documents\\GitHub\\InoxERP\\InoxERP\\USBWebserver v8.6\\root\\index.php on line 47
+[Sat Aug 18 01:58:47.510051 2018] [mpm_winnt:notice] [pid 18236:tid 180] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Sat Aug 18 01:58:47.511049 2018] [mpm_winnt:notice] [pid 18236:tid 180] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Sat Aug 18 01:58:47.511049 2018] [core:notice] [pid 18236:tid 180] AH00094: Command line: 'D:\\Jefter\\Documents\\GitHub\\InoxERP\\InoxERP\\USBWebserver v8.6/apache2/bin/httpd_usbwv8.exe -d D:/Jefter/Documents/GitHub/InoxERP/InoxERP/USBWebserver v8.6/apache2'
+[Sat Aug 18 01:58:47.513076 2018] [mpm_winnt:notice] [pid 18236:tid 180] AH00418: Parent: Created child process 11428
+[Sat Aug 18 01:58:48.636037 2018] [mpm_winnt:notice] [pid 11428:tid 792] AH00354: Child: Starting 64 worker threads.
