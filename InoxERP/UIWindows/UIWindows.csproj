@@ -97,6 +97,12 @@
     <Compile Include="ConsultaClientesForm.Designer.cs">
       <DependentUpon>ConsultaClientesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaContasAPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaContasAPagar.Designer.cs">
+      <DependentUpon>ConsultaContasAPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaContratosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaClientesForm.resx">
       <DependentUpon>ConsultaClientesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaContasAPagar.resx">
+      <DependentUpon>ConsultaContasAPagar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaContratosForm.resx">
       <DependentUpon>ConsultaContratosForm.cs</DependentUpon>
