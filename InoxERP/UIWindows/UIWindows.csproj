@@ -91,17 +91,23 @@
     <Compile Include="ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultaChequesBaixadosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultaChequesBaixadosForm.Designer.cs">
+      <DependentUpon>ConsultaChequesBaixadosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultaClientesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultaClientesForm.Designer.cs">
       <DependentUpon>ConsultaClientesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultaContasAPagar.cs">
+    <Compile Include="ConsultaContasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultaContasAPagar.Designer.cs">
-      <DependentUpon>ConsultaContasAPagar.cs</DependentUpon>
+    <Compile Include="ConsultaContasForm.Designer.cs">
+      <DependentUpon>ConsultaContasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsultaContratosForm.cs">
       <SubType>Form</SubType>
@@ -270,11 +276,14 @@
     <EmbeddedResource Include="ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaChequesBaixadosForm.resx">
+      <DependentUpon>ConsultaChequesBaixadosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultaClientesForm.resx">
       <DependentUpon>ConsultaClientesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultaContasAPagar.resx">
-      <DependentUpon>ConsultaContasAPagar.cs</DependentUpon>
+    <EmbeddedResource Include="ConsultaContasForm.resx">
+      <DependentUpon>ConsultaContasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultaContratosForm.resx">
       <DependentUpon>ConsultaContratosForm.cs</DependentUpon>

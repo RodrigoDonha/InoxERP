@@ -319,6 +319,26 @@ namespace InoxERP
             new BackupForm().Show();
 
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            new CaixaChequesForm().Show();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            new CaixaChequesForm().Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            new ConsultaChequesBaixadosForm().Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            new ConsultaContasForm().Show();
+        }
     }
 }
     
