@@ -1,5 +1,5 @@
-[Thu Aug 23 21:14:31.622774 2018] [mpm_winnt:notice] [pid 12880:tid 808] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
-[Thu Aug 23 21:14:31.622774 2018] [mpm_winnt:notice] [pid 12880:tid 808] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
-[Thu Aug 23 21:14:31.622774 2018] [core:notice] [pid 12880:tid 808] AH00094: Command line: 'C:\\Users\\Rodrigo\\Documents\\GitHub\\InoxERP\\InoxERP\\USBWebserver v8.6/apache2/bin/httpd_usbwv8.exe -d C:/Users/Rodrigo/Documents/GitHub/InoxERP/InoxERP/USBWebserver v8.6/apache2'
-[Thu Aug 23 21:14:31.637734 2018] [mpm_winnt:notice] [pid 12880:tid 808] AH00418: Parent: Created child process 5960
-[Thu Aug 23 21:14:32.173302 2018] [mpm_winnt:notice] [pid 5960:tid 860] AH00354: Child: Starting 64 worker threads.
+[Mon Aug 27 23:10:46.642879 2018] [mpm_winnt:notice] [pid 2632:tid 808] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Mon Aug 27 23:10:46.642879 2018] [mpm_winnt:notice] [pid 2632:tid 808] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Mon Aug 27 23:10:46.642879 2018] [core:notice] [pid 2632:tid 808] AH00094: Command line: 'C:\\Users\\Rodrigo\\Documents\\GitHub\\InoxERP\\InoxERP\\USBWebserver v8.6/apache2/bin/httpd_usbwv8.exe -d C:/Users/Rodrigo/Documents/GitHub/InoxERP/InoxERP/USBWebserver v8.6/apache2'
+[Mon Aug 27 23:10:46.646518 2018] [mpm_winnt:notice] [pid 2632:tid 808] AH00418: Parent: Created child process 11996
+[Mon Aug 27 23:10:47.484745 2018] [mpm_winnt:notice] [pid 11996:tid 636] AH00354: Child: Starting 64 worker threads.
