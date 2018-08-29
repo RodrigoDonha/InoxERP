@@ -481,7 +481,7 @@
             // 
             // picClient
             // 
-            this.picClient.Image = global::UIWindows.Properties.Resources.Client3;
+            this.picClient.Image = global::InoxERP.Core.Properties.Resources.Client3;
             this.picClient.Location = new System.Drawing.Point(6, 25);
             this.picClient.Name = "picClient";
             this.picClient.Size = new System.Drawing.Size(100, 50);
@@ -492,7 +492,7 @@
             // 
             // picUsuarios
             // 
-            this.picUsuarios.Image = global::UIWindows.Properties.Resources.User;
+            this.picUsuarios.Image = global::InoxERP.Core.Properties.Resources.User;
             this.picUsuarios.Location = new System.Drawing.Point(6, 329);
             this.picUsuarios.Name = "picUsuarios";
             this.picUsuarios.Size = new System.Drawing.Size(100, 50);
@@ -503,7 +503,7 @@
             // 
             // picFornecedor
             // 
-            this.picFornecedor.Image = global::UIWindows.Properties.Resources.Provider;
+            this.picFornecedor.Image = global::InoxERP.Core.Properties.Resources.Provider;
             this.picFornecedor.Location = new System.Drawing.Point(6, 101);
             this.picFornecedor.Name = "picFornecedor";
             this.picFornecedor.Size = new System.Drawing.Size(100, 50);
@@ -514,7 +514,7 @@
             // 
             // picServicos
             // 
-            this.picServicos.Image = global::UIWindows.Properties.Resources.Hand_Over;
+            this.picServicos.Image = global::InoxERP.Core.Properties.Resources.Hand_Over;
             this.picServicos.Location = new System.Drawing.Point(6, 253);
             this.picServicos.Name = "picServicos";
             this.picServicos.Size = new System.Drawing.Size(100, 50);
@@ -525,7 +525,7 @@
             // 
             // picProdutos
             // 
-            this.picProdutos.Image = global::UIWindows.Properties.Resources.Products;
+            this.picProdutos.Image = global::InoxERP.Core.Properties.Resources.Products;
             this.picProdutos.Location = new System.Drawing.Point(6, 177);
             this.picProdutos.Name = "picProdutos";
             this.picProdutos.Size = new System.Drawing.Size(100, 50);
@@ -550,7 +550,7 @@
             // 
             // picInclusao
             // 
-            this.picInclusao.Image = global::UIWindows.Properties.Resources.Budget1;
+            this.picInclusao.Image = global::InoxERP.Core.Properties.Resources.Budget1;
             this.picInclusao.Location = new System.Drawing.Point(6, 25);
             this.picInclusao.Name = "picInclusao";
             this.picInclusao.Size = new System.Drawing.Size(100, 50);
@@ -570,7 +570,7 @@
             // 
             // picConsulta
             // 
-            this.picConsulta.Image = global::UIWindows.Properties.Resources.Budget_Search;
+            this.picConsulta.Image = global::InoxERP.Core.Properties.Resources.Budget_Search;
             this.picConsulta.Location = new System.Drawing.Point(6, 101);
             this.picConsulta.Name = "picConsulta";
             this.picConsulta.Size = new System.Drawing.Size(100, 50);
@@ -604,7 +604,7 @@
             // 
             // picOrdemServico
             // 
-            this.picOrdemServico.Image = global::UIWindows.Properties.Resources.Budget_Search;
+            this.picOrdemServico.Image = global::InoxERP.Core.Properties.Resources.Budget_Search;
             this.picOrdemServico.Location = new System.Drawing.Point(15, 25);
             this.picOrdemServico.Name = "picOrdemServico";
             this.picOrdemServico.Size = new System.Drawing.Size(100, 50);
@@ -624,7 +624,7 @@
             // 
             // picContratos
             // 
-            this.picContratos.Image = global::UIWindows.Properties.Resources.Contract1;
+            this.picContratos.Image = global::InoxERP.Core.Properties.Resources.Contract1;
             this.picContratos.Location = new System.Drawing.Point(14, 101);
             this.picContratos.Name = "picContratos";
             this.picContratos.Size = new System.Drawing.Size(100, 50);
@@ -658,7 +658,7 @@
             // 
             // picAndamento
             // 
-            this.picAndamento.Image = global::UIWindows.Properties.Resources.Following;
+            this.picAndamento.Image = global::InoxERP.Core.Properties.Resources.Following;
             this.picAndamento.Location = new System.Drawing.Point(6, 25);
             this.picAndamento.Name = "picAndamento";
             this.picAndamento.Size = new System.Drawing.Size(100, 50);
@@ -678,7 +678,7 @@
             // 
             // picFinalizadas
             // 
-            this.picFinalizadas.Image = global::UIWindows.Properties.Resources.Finished;
+            this.picFinalizadas.Image = global::InoxERP.Core.Properties.Resources.Finished;
             this.picFinalizadas.Location = new System.Drawing.Point(6, 101);
             this.picFinalizadas.Name = "picFinalizadas";
             this.picFinalizadas.Size = new System.Drawing.Size(100, 50);
@@ -716,7 +716,7 @@
             // 
             // picConsultaContas
             // 
-            this.picConsultaContas.Image = global::UIWindows.Properties.Resources.Budget_Search;
+            this.picConsultaContas.Image = global::InoxERP.Core.Properties.Resources.Budget_Search;
             this.picConsultaContas.Location = new System.Drawing.Point(6, 260);
             this.picConsultaContas.Name = "picConsultaContas";
             this.picConsultaContas.Size = new System.Drawing.Size(100, 50);
@@ -736,7 +736,7 @@
             // 
             // picaReceber
             // 
-            this.picaReceber.Image = global::UIWindows.Properties.Resources.Receive;
+            this.picaReceber.Image = global::InoxERP.Core.Properties.Resources.Receive;
             this.picaReceber.Location = new System.Drawing.Point(6, 25);
             this.picaReceber.Name = "picaReceber";
             this.picaReceber.Size = new System.Drawing.Size(100, 50);
@@ -756,7 +756,7 @@
             // 
             // picaPagar
             // 
-            this.picaPagar.Image = global::UIWindows.Properties.Resources.pay;
+            this.picaPagar.Image = global::InoxERP.Core.Properties.Resources.pay;
             this.picaPagar.Location = new System.Drawing.Point(6, 101);
             this.picaPagar.Name = "picaPagar";
             this.picaPagar.Size = new System.Drawing.Size(100, 50);
@@ -792,7 +792,7 @@
             // 
             // picGeral
             // 
-            this.picGeral.Image = global::UIWindows.Properties.Resources.General1;
+            this.picGeral.Image = global::InoxERP.Core.Properties.Resources.General1;
             this.picGeral.Location = new System.Drawing.Point(6, 177);
             this.picGeral.Name = "picGeral";
             this.picGeral.Size = new System.Drawing.Size(100, 50);
@@ -812,7 +812,7 @@
             // 
             // picEntradas
             // 
-            this.picEntradas.Image = global::UIWindows.Properties.Resources.Enter_Money;
+            this.picEntradas.Image = global::InoxERP.Core.Properties.Resources.Enter_Money;
             this.picEntradas.Location = new System.Drawing.Point(6, 25);
             this.picEntradas.Name = "picEntradas";
             this.picEntradas.Size = new System.Drawing.Size(100, 50);
@@ -832,7 +832,7 @@
             // 
             // picSaidas
             // 
-            this.picSaidas.Image = global::UIWindows.Properties.Resources.Out_Money;
+            this.picSaidas.Image = global::InoxERP.Core.Properties.Resources.Out_Money;
             this.picSaidas.Location = new System.Drawing.Point(6, 101);
             this.picSaidas.Name = "picSaidas";
             this.picSaidas.Size = new System.Drawing.Size(100, 50);
@@ -892,7 +892,7 @@
             // 
             // picRelCaixaGeral
             // 
-            this.picRelCaixaGeral.Image = global::UIWindows.Properties.Resources.Report_General;
+            this.picRelCaixaGeral.Image = global::InoxERP.Core.Properties.Resources.Report_General;
             this.picRelCaixaGeral.Location = new System.Drawing.Point(112, 177);
             this.picRelCaixaGeral.Name = "picRelCaixaGeral";
             this.picRelCaixaGeral.Size = new System.Drawing.Size(100, 50);
@@ -903,7 +903,7 @@
             // 
             // picRelDinheiro
             // 
-            this.picRelDinheiro.Image = global::UIWindows.Properties.Resources.Report_Money;
+            this.picRelDinheiro.Image = global::InoxERP.Core.Properties.Resources.Report_Money;
             this.picRelDinheiro.Location = new System.Drawing.Point(112, 25);
             this.picRelDinheiro.Name = "picRelDinheiro";
             this.picRelDinheiro.Size = new System.Drawing.Size(100, 50);
@@ -923,7 +923,7 @@
             // 
             // picRelCheques
             // 
-            this.picRelCheques.Image = global::UIWindows.Properties.Resources.Budget_Search;
+            this.picRelCheques.Image = global::InoxERP.Core.Properties.Resources.Budget_Search;
             this.picRelCheques.Location = new System.Drawing.Point(112, 101);
             this.picRelCheques.Name = "picRelCheques";
             this.picRelCheques.Size = new System.Drawing.Size(100, 50);
@@ -952,7 +952,7 @@
             // 
             // picRelEntregas
             // 
-            this.picRelEntregas.Image = global::UIWindows.Properties.Resources.Delivery;
+            this.picRelEntregas.Image = global::InoxERP.Core.Properties.Resources.Delivery;
             this.picRelEntregas.Location = new System.Drawing.Point(6, 177);
             this.picRelEntregas.Name = "picRelEntregas";
             this.picRelEntregas.Size = new System.Drawing.Size(100, 50);
@@ -963,7 +963,7 @@
             // 
             // picRelOrcamentos
             // 
-            this.picRelOrcamentos.Image = global::UIWindows.Properties.Resources.Budget1;
+            this.picRelOrcamentos.Image = global::InoxERP.Core.Properties.Resources.Budget1;
             this.picRelOrcamentos.Location = new System.Drawing.Point(6, 25);
             this.picRelOrcamentos.Name = "picRelOrcamentos";
             this.picRelOrcamentos.Size = new System.Drawing.Size(100, 50);
@@ -983,7 +983,7 @@
             // 
             // picRelOS
             // 
-            this.picRelOS.Image = global::UIWindows.Properties.Resources.Report_OS;
+            this.picRelOS.Image = global::InoxERP.Core.Properties.Resources.Report_OS;
             this.picRelOS.Location = new System.Drawing.Point(6, 101);
             this.picRelOS.Name = "picRelOS";
             this.picRelOS.Size = new System.Drawing.Size(100, 50);
@@ -1003,7 +1003,7 @@
             // 
             // picBackup
             // 
-            this.picBackup.Image = global::UIWindows.Properties.Resources.Backup;
+            this.picBackup.Image = global::InoxERP.Core.Properties.Resources.Backup;
             this.picBackup.Location = new System.Drawing.Point(850, 378);
             this.picBackup.Name = "picBackup";
             this.picBackup.Size = new System.Drawing.Size(100, 50);
@@ -1014,7 +1014,7 @@
             // 
             // picCheque
             // 
-            this.picCheque.Image = global::UIWindows.Properties.Resources.Cheque1;
+            this.picCheque.Image = global::InoxERP.Core.Properties.Resources.Cheque1;
             this.picCheque.Location = new System.Drawing.Point(6, 180);
             this.picCheque.Name = "picCheque";
             this.picCheque.Size = new System.Drawing.Size(100, 50);
