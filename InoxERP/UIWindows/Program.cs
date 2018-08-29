@@ -16,11 +16,11 @@ namespace UIWindows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            AcessoUsuarioForm openUser = new AcessoUsuarioForm();
+            frmSignIn openUser = new frmSignIn();
             openUser.ShowDialog();
 
             if (openUser.logado)
-            Application.Run(new InoxERP.PrincipalForm(openUser.tipo, openUser.nome));
+            Application.Run(new InoxERP.frmMain(openUser.tipo, openUser.nome));
 
             //DateTime dataAtual = DateTime.Now;
             //DateTime dataExpira = Convert.ToDateTime("17/03/2018");

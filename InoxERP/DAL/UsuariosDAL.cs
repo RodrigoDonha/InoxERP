@@ -107,7 +107,7 @@ namespace InoxERP.DAL
         {
             DataTable tabela = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter("select cod as Codigo, usuario as Usuario, senha as Senha, tipo as Tipo from tb_usuarios where cod > 2", Dados.StringDeConexao);
-            da.Fill(tabela);
+            //da.Fill(tabela);
             return tabela;
         }
                 
