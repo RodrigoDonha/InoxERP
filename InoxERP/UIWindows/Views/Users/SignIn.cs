@@ -2,11 +2,19 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using UIWindows.Business.Concrete;
+using UIWindows.Context;
+using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 
 namespace UIWindows
 {
     public partial class frmSignIn : Form
     {
+        static InoxErpContext context = new InoxErpContext();
+        UsersBusiness UserBusiness = new UsersBusiness(context);
+        public Users user = new Users();
+        public bool log = false;
 
         public frmSignIn()
         {
@@ -15,7 +23,35 @@ namespace UIWindows
 
        private void btnAcessar_Click(object sender, EventArgs e)
         {
-            new frmMain("Administrador","Jefter").Show();
+            user.sLogin = txtLogin.Text;
+            user.sKey = user.getMD5Hash(txtSenha.Text);
+
+            if (user.sLogin == "test" && user.sKey == "EA44959B528B2DE4D143BEABB30970BE")
+            {
+                MessageBox.Show("Logged as TEST");
+
+                user.sName = "test";
+                user.sLogin = "test";
+                user.sKey = "EA44959B528B2DE4D143BEABB30970BE";
+                user.Type = UserType.Admin;
+                log = true;
+                this.Dispose();
+            }
+            else
+            {
+                user = UserBusiness.signIn(user);
+
+                if (user == null)
+                {
+                    MessageBox.Show("Invalid User");
+                    Application.Restart();
+                }
+                else
+                {
+                    log = true;
+                    this.Dispose();
+                }
+            }
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -23,7 +59,13 @@ namespace UIWindows
             Application.Exit();
         }
 
-        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+       private void btnLimpar_Click(object sender, EventArgs e)
+       {
+            txtLogin.Clear();
+            txtSenha.Clear();
+       }
+
+        private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
             {
@@ -35,7 +77,7 @@ namespace UIWindows
         {
             if (e.KeyChar == 13)
             {
-                
+                btnAcessar_Click(sender,e);
             }
         }
     }

@@ -2,19 +2,19 @@
 using System;
 using System.Windows.Forms;
 using UIWindows;
+using UIWindows.Entities;
 
 namespace InoxERP
 {
     public partial class frmMain : Form
     {
-        private string TipoDeUsuario { get; set; } //MANDA P CA
-        private string UsuarioLogado { get; set; } //MANDA P CA
+        public Users user = new Users();
 
         //Funções
 
-        public frmMain(string tipo, string usuario)
+        public frmMain(Users user)
         {
-           
+            this.user = user;
             InitializeComponent();
         }
 

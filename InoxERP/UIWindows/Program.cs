@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InoxERP;
 
 namespace UIWindows
 {
@@ -21,9 +22,9 @@ namespace UIWindows
 
             LoginValidation.ShowDialog();
 
-            //if (LoginValidation.log)
-            //    Application.Run(new frmMain(LoginValidation.user));
-            
+            if (LoginValidation.log)
+                Application.Run(new frmMain(LoginValidation.user));
+
         }
     }
 }
