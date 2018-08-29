@@ -7,7 +7,7 @@
     <ProjectGuid>{CF73ACF0-6C33-48FD-B5A3-1FAB4281B8C9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>UIWindows</RootNamespace>
-    <AssemblyName>UIWindows</AssemblyName>
+    <AssemblyName>InoxER</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -56,7 +56,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Abstract\IBusiness.cs" />
+    <Compile Include="Business\Abstract\IUserBusiness.cs" />
+    <Compile Include="Business\Concrete\BaseBusiness.cs" />
+    <Compile Include="Business\Concrete\UsersBusiness.cs" />
+    <Compile Include="Context\InoxErpContext.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Enum\UserType.cs" />
+    <Compile Include="Entities\Users.cs" />
     <Compile Include="Views\Users\SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -459,10 +466,7 @@
     <None Include="Resources\Backup.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Business\" />
-    <Folder Include="Context\" />
     <Folder Include="DTO\" />
-    <Folder Include="Entities\Enum\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
