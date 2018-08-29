@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using InoxERP.UI_Windows_Forms;
+using System;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using InoxERP.BLL;
-using InoxERP.Modelos;
-using InoxERP.UI_Windows_Forms;
 using UIWindows;
 
 namespace InoxERP
@@ -26,16 +14,13 @@ namespace InoxERP
 
         public frmMain(string tipo, string usuario)
         {
-            this.TipoDeUsuario = tipo;
-            this.UsuarioLogado = usuario;
+           
             InitializeComponent();
         }
 
         private void orçamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //PermissoesList List = new PermissoesList();
-            //PermissaoUsuarioBLL permissao = new PermissaoUsuarioBLL();
-            //List = permissao.Permissao(TipoDeUsuario);
+           
         }
 
         private void inclusãoToolStripMenuItem_Click(object sender, EventArgs e)

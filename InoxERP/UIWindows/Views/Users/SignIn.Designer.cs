@@ -32,7 +32,7 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.grpUsuario = new System.Windows.Forms.GroupBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
             this.grpSenha = new System.Windows.Forms.GroupBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.grpUsuario.SuspendLayout();
@@ -65,7 +65,6 @@
             this.btnLimpar.TabIndex = 5;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnFechar
             // 
@@ -83,7 +82,7 @@
             // 
             // grpUsuario
             // 
-            this.grpUsuario.Controls.Add(this.txtUsuario);
+            this.grpUsuario.Controls.Add(this.txtLogin);
             this.grpUsuario.Location = new System.Drawing.Point(63, 50);
             this.grpUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpUsuario.Name = "grpUsuario";
@@ -93,16 +92,16 @@
             this.grpUsuario.TabStop = false;
             this.grpUsuario.Text = "Usuário";
             // 
-            // txtUsuario
+            // txtLogin
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(19, 39);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsuario.Multiline = true;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(307, 36);
-            this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Text = "rodrigo";
-            this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLogin.Location = new System.Drawing.Point(19, 39);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLogin.Multiline = true;
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(307, 36);
+            this.txtLogin.TabIndex = 1;
+            this.txtLogin.Text = "test";
+            this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // grpSenha
             // 
@@ -125,7 +124,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(307, 36);
             this.txtSenha.TabIndex = 3;
-            this.txtSenha.Text = "1234";
+            this.txtSenha.Text = "___JR@2018***";
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmSignIn
@@ -143,7 +142,6 @@
             this.Name = "frmSignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acesso ao Usuário";
-            this.Load += new System.EventHandler(this.AcessoUsuarioForm_Load);
             this.grpUsuario.ResumeLayout(false);
             this.grpUsuario.PerformLayout();
             this.grpSenha.ResumeLayout(false);
@@ -158,7 +156,7 @@
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.GroupBox grpUsuario;
-        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.GroupBox grpSenha;
         private System.Windows.Forms.TextBox txtSenha;
     }

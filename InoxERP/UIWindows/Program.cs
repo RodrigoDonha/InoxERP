@@ -16,30 +16,14 @@ namespace UIWindows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            frmSignIn openUser = new frmSignIn();
-            openUser.ShowDialog();
 
-            if (openUser.logado)
-            Application.Run(new InoxERP.frmMain(openUser.tipo, openUser.nome));
+            frmSignIn LoginValidation = new frmSignIn();
 
-            //DateTime dataAtual = DateTime.Now;
-            //DateTime dataExpira = Convert.ToDateTime("17/03/2018");
+            LoginValidation.ShowDialog();
 
-            //if (openUser.logado)
-            //{
-            //    if (dataAtual.Date <= dataExpira)
-            //        Application.Run(new MainForm(openUser.tipo, openUser.nome));
-            //    else
-            //        if (openUser.tipo == 0)
-            //        Application.Run(new MainForm(openUser.tipo, openUser.nome));
-            //    else
-            //    {
-            //        MessageBox.Show("Sua licensa expirou em " + dataExpira);
-            //        Application.Exit();
-            //    }
-            //}
-
-
+            //if (LoginValidation.log)
+            //    Application.Run(new frmMain(LoginValidation.user));
+            
         }
     }
 }

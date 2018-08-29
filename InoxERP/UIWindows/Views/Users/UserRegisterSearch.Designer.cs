@@ -114,7 +114,6 @@
             this.UsuariosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UsuariosDGV.Size = new System.Drawing.Size(370, 165);
             this.UsuariosDGV.TabIndex = 29;
-            this.UsuariosDGV.Click += new System.EventHandler(this.UsuariosDGV_Click);
             // 
             // btExcluir
             // 
@@ -266,7 +265,6 @@
             this.Name = "frmUserRegisterSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro e Consulta de Usuários";
-            this.Load += new System.EventHandler(this.UsuariosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UsuariosDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
