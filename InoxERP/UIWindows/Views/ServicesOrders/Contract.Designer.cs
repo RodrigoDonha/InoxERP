@@ -87,7 +87,7 @@
             // 
             // picLogo
             // 
-            this.picLogo.Image = global::InoxERP.Core.Properties.Resources.logo;
+            this.picLogo.Image = global::UIWindows.Properties.Resources.logo;
             this.picLogo.Location = new System.Drawing.Point(184, 13);
             this.picLogo.Margin = new System.Windows.Forms.Padding(4);
             this.picLogo.Name = "picLogo";
