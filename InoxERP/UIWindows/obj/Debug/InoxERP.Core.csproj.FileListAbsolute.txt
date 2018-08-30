@@ -1,4 +1,11 @@
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.csprojAssemblyReference.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxER.exe.config
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxER.exe
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxER.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\EntityFramework.dll
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\EntityFramework.SqlServer.dll
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\EntityFramework.xml
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\EntityFramework.SqlServer.xml
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csprojAssemblyReference.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmSignIn.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmBackup.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmAccountsCheque.resources
@@ -32,5 +39,8 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmRepo
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmReportServicesOrder.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmSelectViewSearch.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmUserRegisterSearch.resources
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.csproj.GenerateResource.cache
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.csproj.CoreCompileInputs.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csproj.GenerateResource.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csproj.CoreCompileInputs.cache
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csproj.CopyComplete
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.exe
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.pdb

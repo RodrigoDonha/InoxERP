@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using UIWindows;
 using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 
 namespace InoxERP
 {
@@ -10,7 +11,6 @@ namespace InoxERP
     {
         public Users user = new Users();
 
-        //Funções
 
         public frmMain(Users user)
         {
@@ -18,164 +18,55 @@ namespace InoxERP
             InitializeComponent();
         }
 
-        private void orçamentoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
 
-        private void inclusãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmBudgetsRegister obj = new frmBudgetsRegister();
-            //this.Hide();
-            obj.Show();
-        }
+        //SCREENS
 
+        //MENUS REGISTER
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmClientsSearch obj = new frmClientsSearch();
-            //this.Hide();
-            obj.Show();
+            new frmClientsSearch().Show();
         }
 
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProviderSearch obj = new frmProviderSearch();
-            //this.Hide();
-            obj.Show();
+           new frmProviderSearch().Show();
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProductsRegisterSearch obj = new frmProductsRegisterSearch();
-            //this.Hide();
-            obj.Show();
-        }
-
-        private void geralToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCashGeneral obj = new frmCashGeneral();
-            //this.Hide();
-            obj.Show();
-        }
-
-        private void entradasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmCashEntry obj = new frmCashEntry();
-            //this.Hide();
-            obj.Show();
-        }
-
-        private void saídasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmCashOut obj = new frmCashOut();
-            //this.Hide();
-            obj.Show();
-        }
-
-        private void chequesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAccountsCheque obj = new frmAccountsCheque();
-            //this.Hide();
-            obj.Show();
-        }
-
-        private void tipConsultaOrcamento_Click(object sender, EventArgs e)
-        {
-            frmBudgetSearch consulta = new frmBudgetSearch();
-            consulta.Show();
-
-        }
-
-        private void tipConsultaOS_Click(object sender, EventArgs e)
-        {
-            frmServiceOrderSearch consulta = new frmServiceOrderSearch();
-            consulta.Show();
-        }
-
-        private void tipEmAndamento_Click(object sender, EventArgs e)
-        {
-            frmDeliveryFollowing andamento = new frmDeliveryFollowing();
-            andamento.Show();
-        }
-
-        private void tipEntregasFinalizadas_Click(object sender, EventArgs e)
-        {
-            frmDeliveryFinished finalizadas = new frmDeliveryFinished();
-            finalizadas.Show();
-        }
-
-        private void PrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void orçamentosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmReportBudgets orcamentos = new frmReportBudgets();
-            orcamentos.Show();
-        }
-
-        private void ordensDeServiçoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmReportServicesOrder os = new frmReportServicesOrder();
-            os.Show();
-        }
-
-        private void entregasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmReportDelivery entregas = new frmReportDelivery();
-            entregas.Show();
-        }
-
-        private void recebidosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmReportCashCheque cheque = new frmReportCashCheque();
-            cheque.Show();
-        }
-
-        private void recebíveisToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmReportCashMoney dinheiro = new frmReportCashMoney();
-            dinheiro.Show();
-        }
-
-        private void geralToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            frmReportCashGeneral geral = new frmReportCashGeneral();
-            geral.Show();
-        }
-
-        private void tipUsuariosCadastro_Click(object sender, EventArgs e)
-        {
-            frmUserRegisterSearch usuarios = new frmUserRegisterSearch();
-            usuarios.Show();
+            new frmProductsRegisterSearch().Show();
         }
 
         private void tipServicosCadastro_Click(object sender, EventArgs e)
         {
-            frmServicesRegisterSearch servicos = new frmServicesRegisterSearch();
-            servicos.Show();
+            new frmServicesRegisterSearch().Show();
         }
 
-        private void chequesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void tipUsuariosCadastro_Click(object sender, EventArgs e)
         {
-            frmAccountsCheque obj = new frmAccountsCheque();
-            //this.Hide();
-            obj.Show();
+            if (user.Type == UserType.Admin)
+                new frmUserRegisterSearch(user).Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
-        private void aPagarToolStripMenuItem_Click(object sender, EventArgs e)
+
+        //MENU BUDGET
+        private void inclusãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAccountsToPay obj = new frmAccountsToPay();
-            //this.Hide();
-            obj.Show();
+            new frmBudgetsRegister().Show();
         }
 
-        private void aReceberToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void tipConsultaOrcamento_Click(object sender, EventArgs e)
         {
-            frmAccountsToReceive obj = new frmAccountsToReceive();
-            //this.Hide();
-            obj.Show();
+            new frmBudgetSearch().Show();
+        }
+
+
+        //MENU SERVICE ORDERS
+        private void tipConsultaOS_Click(object sender, EventArgs e)
+        {
+            new frmServiceOrderSearch().Show();
         }
 
         private void contratosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -183,6 +74,100 @@ namespace InoxERP
             new frmContractSearch().Show();
         }
 
+
+        //MENU DELIVERYS
+        private void tipEmAndamento_Click(object sender, EventArgs e)
+        {
+            new frmDeliveryFollowing().Show();
+        }
+
+        private void tipEntregasFinalizadas_Click(object sender, EventArgs e)
+        {
+            new frmDeliveryFinished().Show();
+        }
+        
+
+        //MENU ACCOUNTS
+        private void aPagarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAccountsToPay().Show();
+        }
+
+        private void aReceberToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new frmAccountsToReceive().Show();
+        }
+
+       private void chequesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            new frmAccountsCheque().Show();
+        }
+
+        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAccountsSearch().Show();
+        }
+
+
+        //MENU CASH
+        private void entradasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new frmCashEntry().Show();
+        }
+
+        private void saídasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new frmCashOut().Show();
+        }
+
+        private void tipGeralCaixa_Click(object sender, EventArgs e)
+        {
+            new frmCashGeneral().Show();
+        }
+
+
+        //MENU REPORTS
+        private void orçamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReportBudgets().Show();
+        }
+
+        private void ordensDeServiçoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReportServicesOrder().Show();
+        }
+
+        private void entregasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReportDelivery().Show();
+        }
+
+        //menu reports ABA CASH
+        private void dinheiroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReportCashMoney().Show();
+
+        }
+
+        private void chequeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReportCashCheque().Show();
+
+        }
+        
+        private void geralToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            new frmReportCashGeneral().Show();
+        }
+        
+
+        private void PrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
+        //PIC REGISTER
         private void picClient_Click(object sender, EventArgs e)
         {
             new frmClientsSearch().Show();
@@ -205,9 +190,14 @@ namespace InoxERP
 
         private void picUsuarios_Click(object sender, EventArgs e)
         {
-            new frmUserRegisterSearch().Show();
+            if (user.Type == UserType.Admin)
+                new frmUserRegisterSearch(user).Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
+
+        //PIC BUDGET
         private void picInclusao_Click(object sender, EventArgs e)
         {
             new frmBudgetsRegister().Show();
@@ -218,6 +208,9 @@ namespace InoxERP
             new frmBudgetSearch().Show();
         }
 
+
+
+        //PIC SERVICES ORDERS
         private void picOrdemServico_Click(object sender, EventArgs e)
         {
             new frmServiceOrderSearch().Show();
@@ -228,6 +221,8 @@ namespace InoxERP
             new frmContractSearch().Show();
         }
 
+
+        //PIC DELIVERYS
         private void picAndamento_Click(object sender, EventArgs e)
         {
             new frmDeliveryFollowing().Show();
@@ -238,6 +233,8 @@ namespace InoxERP
             new frmDeliveryFinished().Show();
         }
 
+
+        //PIC ACCOUNTS
         private void picaReceber_Click(object sender, EventArgs e)
         {
             new frmAccountsToReceive().Show();
@@ -249,11 +246,18 @@ namespace InoxERP
 
         }
 
-        private void picCheques_Click(object sender, EventArgs e)
+        private void picCheque_Click(object sender, EventArgs e)
         {
             new frmAccountsCheque().Show();
         }
 
+        private void picConsultaContas_Click(object sender, EventArgs e)
+        {
+            new frmAccountsSearch().Show();
+        }
+
+
+        //PIC CASH
         private void picEntradas_Click(object sender, EventArgs e)
         {
             new frmCashEntry().Show();
@@ -269,6 +273,8 @@ namespace InoxERP
             new frmCashGeneral().Show();
         }
 
+
+        //PIC REPORTS
         private void picRelOrcamentos_Click(object sender, EventArgs e)
         {
             new frmReportBudgets().Show();
@@ -284,6 +290,8 @@ namespace InoxERP
             new frmReportDelivery().Show();
         }
 
+
+        //pic reports ABA CASH
         private void picRelDinheiro_Click(object sender, EventArgs e)
         {
             new frmReportCashMoney().Show();
@@ -299,25 +307,12 @@ namespace InoxERP
             new frmReportCashGeneral().Show();
         }
 
+
+        //PIC BACKUP
         private void picBackup_Click_1(object sender, EventArgs e)
         {
             new frmBackup().Show();
 
-        }
-        
-        private void picCheque_Click(object sender, EventArgs e)
-        {
-            new frmAccountsCheque().Show();
-        }
-
-        private void picConsultaContas_Click(object sender, EventArgs e)
-        {
-            new frmAccountsSearch().Show();
-        }
-
-        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new frmAccountsSearch().Show();
         }
     }
 }

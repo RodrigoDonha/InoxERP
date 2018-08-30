@@ -23,6 +23,9 @@ namespace UIWindows
             LoginValidation.ShowDialog();
 
             if (LoginValidation.log)
+                if(LoginValidation.user.sName == "test")
+                    Application.Run(new frmUserRegisterSearch(LoginValidation.user));
+            else
                 Application.Run(new frmMain(LoginValidation.user));
 
         }

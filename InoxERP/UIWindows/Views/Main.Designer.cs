@@ -48,6 +48,7 @@
             this.aReceberToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aPagarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chequesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipCaixa = new System.Windows.Forms.ToolStripMenuItem();
             this.tipEntradaCaixa = new System.Windows.Forms.ToolStripMenuItem();
             this.tipSaidaCaixa = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +58,8 @@
             this.ordensDeServiçoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entregasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recebíveisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recebidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dinheiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chequeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.geralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblServicos = new System.Windows.Forms.Label();
             this.lblProdutos = new System.Windows.Forms.Label();
@@ -87,6 +88,8 @@
             this.picFinalizadas = new System.Windows.Forms.PictureBox();
             this.lblFinalizadas = new System.Windows.Forms.Label();
             this.gpbContas = new System.Windows.Forms.GroupBox();
+            this.picCheque = new System.Windows.Forms.PictureBox();
+            this.lblCheques = new System.Windows.Forms.Label();
             this.picConsultaContas = new System.Windows.Forms.PictureBox();
             this.lblConsultaContas = new System.Windows.Forms.Label();
             this.picaReceber = new System.Windows.Forms.PictureBox();
@@ -115,9 +118,6 @@
             this.picRelOS = new System.Windows.Forms.PictureBox();
             this.lblBackup = new System.Windows.Forms.Label();
             this.picBackup = new System.Windows.Forms.PictureBox();
-            this.picCheque = new System.Windows.Forms.PictureBox();
-            this.lblCheques = new System.Windows.Forms.Label();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMenu.SuspendLayout();
             this.gpbCadastros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClient)).BeginInit();
@@ -135,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAndamento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFinalizadas)).BeginInit();
             this.gpbContas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCheque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picConsultaContas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picaReceber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picaPagar)).BeginInit();
@@ -150,7 +151,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRelOrcamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBackup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCheque)).BeginInit();
             this.SuspendLayout();
             // 
             // mnsMenu
@@ -226,7 +226,6 @@
             this.tipOrcamento.Name = "tipOrcamento";
             this.tipOrcamento.Size = new System.Drawing.Size(107, 25);
             this.tipOrcamento.Text = "Orçamentos";
-            this.tipOrcamento.Click += new System.EventHandler(this.orçamentoToolStripMenuItem_Click);
             // 
             // tipInclusao
             // 
@@ -302,23 +301,30 @@
             // aReceberToolStripMenuItem1
             // 
             this.aReceberToolStripMenuItem1.Name = "aReceberToolStripMenuItem1";
-            this.aReceberToolStripMenuItem1.Size = new System.Drawing.Size(150, 26);
+            this.aReceberToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.aReceberToolStripMenuItem1.Text = "A Receber";
             this.aReceberToolStripMenuItem1.Click += new System.EventHandler(this.aReceberToolStripMenuItem1_Click);
             // 
             // aPagarToolStripMenuItem
             // 
             this.aPagarToolStripMenuItem.Name = "aPagarToolStripMenuItem";
-            this.aPagarToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.aPagarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.aPagarToolStripMenuItem.Text = "A Pagar";
             this.aPagarToolStripMenuItem.Click += new System.EventHandler(this.aPagarToolStripMenuItem_Click);
             // 
             // chequesToolStripMenuItem
             // 
             this.chequesToolStripMenuItem.Name = "chequesToolStripMenuItem";
-            this.chequesToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.chequesToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.chequesToolStripMenuItem.Text = "Cheques";
             this.chequesToolStripMenuItem.Click += new System.EventHandler(this.chequesToolStripMenuItem_Click_1);
+            // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            this.consultasToolStripMenuItem.Click += new System.EventHandler(this.consultasToolStripMenuItem_Click);
             // 
             // tipCaixa
             // 
@@ -333,23 +339,23 @@
             // tipEntradaCaixa
             // 
             this.tipEntradaCaixa.Name = "tipEntradaCaixa";
-            this.tipEntradaCaixa.Size = new System.Drawing.Size(140, 26);
+            this.tipEntradaCaixa.Size = new System.Drawing.Size(180, 26);
             this.tipEntradaCaixa.Text = "Entradas";
             this.tipEntradaCaixa.Click += new System.EventHandler(this.entradasToolStripMenuItem1_Click);
             // 
             // tipSaidaCaixa
             // 
             this.tipSaidaCaixa.Name = "tipSaidaCaixa";
-            this.tipSaidaCaixa.Size = new System.Drawing.Size(140, 26);
+            this.tipSaidaCaixa.Size = new System.Drawing.Size(180, 26);
             this.tipSaidaCaixa.Text = "Saídas";
             this.tipSaidaCaixa.Click += new System.EventHandler(this.saídasToolStripMenuItem1_Click);
             // 
             // tipGeralCaixa
             // 
             this.tipGeralCaixa.Name = "tipGeralCaixa";
-            this.tipGeralCaixa.Size = new System.Drawing.Size(140, 26);
+            this.tipGeralCaixa.Size = new System.Drawing.Size(180, 26);
             this.tipGeralCaixa.Text = "Geral";
-            this.tipGeralCaixa.Click += new System.EventHandler(this.geralToolStripMenuItem_Click);
+            this.tipGeralCaixa.Click += new System.EventHandler(this.tipGeralCaixa_Click);
             // 
             // tipRelatorios
             // 
@@ -386,31 +392,31 @@
             // aReceberToolStripMenuItem
             // 
             this.aReceberToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recebíveisToolStripMenuItem,
-            this.recebidosToolStripMenuItem,
+            this.dinheiroToolStripMenuItem,
+            this.chequeToolStripMenuItem,
             this.geralToolStripMenuItem});
             this.aReceberToolStripMenuItem.Name = "aReceberToolStripMenuItem";
             this.aReceberToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.aReceberToolStripMenuItem.Text = "Caixa";
             // 
-            // recebíveisToolStripMenuItem
+            // dinheiroToolStripMenuItem
             // 
-            this.recebíveisToolStripMenuItem.Name = "recebíveisToolStripMenuItem";
-            this.recebíveisToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-            this.recebíveisToolStripMenuItem.Text = "Dinheiro";
-            this.recebíveisToolStripMenuItem.Click += new System.EventHandler(this.recebíveisToolStripMenuItem_Click);
+            this.dinheiroToolStripMenuItem.Name = "dinheiroToolStripMenuItem";
+            this.dinheiroToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.dinheiroToolStripMenuItem.Text = "Dinheiro";
+            this.dinheiroToolStripMenuItem.Click += new System.EventHandler(this.dinheiroToolStripMenuItem_Click);
             // 
-            // recebidosToolStripMenuItem
+            // chequeToolStripMenuItem
             // 
-            this.recebidosToolStripMenuItem.Name = "recebidosToolStripMenuItem";
-            this.recebidosToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
-            this.recebidosToolStripMenuItem.Text = "Cheque";
-            this.recebidosToolStripMenuItem.Click += new System.EventHandler(this.recebidosToolStripMenuItem_Click);
+            this.chequeToolStripMenuItem.Name = "chequeToolStripMenuItem";
+            this.chequeToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.chequeToolStripMenuItem.Text = "Cheque";
+            this.chequeToolStripMenuItem.Click += new System.EventHandler(this.chequeToolStripMenuItem_Click);
             // 
             // geralToolStripMenuItem
             // 
             this.geralToolStripMenuItem.Name = "geralToolStripMenuItem";
-            this.geralToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
+            this.geralToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.geralToolStripMenuItem.Text = "Geral";
             this.geralToolStripMenuItem.Click += new System.EventHandler(this.geralToolStripMenuItem_Click_1);
             // 
@@ -714,6 +720,26 @@
             this.gpbContas.TabStop = false;
             this.gpbContas.Text = "Contas";
             // 
+            // picCheque
+            // 
+            this.picCheque.Image = global::UIWindows.Properties.Resources.Cheque1;
+            this.picCheque.Location = new System.Drawing.Point(6, 180);
+            this.picCheque.Name = "picCheque";
+            this.picCheque.Size = new System.Drawing.Size(100, 50);
+            this.picCheque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCheque.TabIndex = 25;
+            this.picCheque.TabStop = false;
+            this.picCheque.Click += new System.EventHandler(this.picCheque_Click);
+            // 
+            // lblCheques
+            // 
+            this.lblCheques.AutoSize = true;
+            this.lblCheques.Location = new System.Drawing.Point(18, 233);
+            this.lblCheques.Name = "lblCheques";
+            this.lblCheques.Size = new System.Drawing.Size(73, 20);
+            this.lblCheques.TabIndex = 24;
+            this.lblCheques.Text = "Cheques";
+            // 
             // picConsultaContas
             // 
             this.picConsultaContas.Image = global::UIWindows.Properties.Resources.Budget_Search;
@@ -1012,33 +1038,6 @@
             this.picBackup.TabStop = false;
             this.picBackup.Click += new System.EventHandler(this.picBackup_Click_1);
             // 
-            // picCheque
-            // 
-            this.picCheque.Image = global::UIWindows.Properties.Resources.Cheque1;
-            this.picCheque.Location = new System.Drawing.Point(6, 180);
-            this.picCheque.Name = "picCheque";
-            this.picCheque.Size = new System.Drawing.Size(100, 50);
-            this.picCheque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCheque.TabIndex = 25;
-            this.picCheque.TabStop = false;
-            this.picCheque.Click += new System.EventHandler(this.picCheque_Click);
-            // 
-            // lblCheques
-            // 
-            this.lblCheques.AutoSize = true;
-            this.lblCheques.Location = new System.Drawing.Point(18, 233);
-            this.lblCheques.Name = "lblCheques";
-            this.lblCheques.Size = new System.Drawing.Size(73, 20);
-            this.lblCheques.TabIndex = 24;
-            this.lblCheques.Text = "Cheques";
-            // 
-            // consultasToolStripMenuItem
-            // 
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.consultasToolStripMenuItem.Text = "Consultas";
-            this.consultasToolStripMenuItem.Click += new System.EventHandler(this.consultasToolStripMenuItem_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1084,6 +1083,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFinalizadas)).EndInit();
             this.gpbContas.ResumeLayout(false);
             this.gpbContas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCheque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picConsultaContas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picaReceber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picaPagar)).EndInit();
@@ -1101,7 +1101,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picRelOrcamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBackup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCheque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1133,8 +1132,8 @@
         private System.Windows.Forms.ToolStripMenuItem ordensDeServiçoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entregasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aReceberToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem recebidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem recebíveisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chequeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dinheiroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem geralToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aPagarToolStripMenuItem;

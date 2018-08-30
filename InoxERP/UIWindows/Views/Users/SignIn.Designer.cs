@@ -95,11 +95,10 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(19, 39);
+            this.txtLogin.Location = new System.Drawing.Point(19, 47);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtLogin.Multiline = true;
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(307, 36);
+            this.txtLogin.Size = new System.Drawing.Size(307, 23);
             this.txtLogin.TabIndex = 1;
             this.txtLogin.Text = "test";
             this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -119,12 +118,11 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(19, 32);
+            this.txtSenha.Location = new System.Drawing.Point(19, 42);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtSenha.Multiline = true;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(307, 36);
+            this.txtSenha.Size = new System.Drawing.Size(307, 23);
             this.txtSenha.TabIndex = 3;
             this.txtSenha.Text = "___JR@2018***";
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

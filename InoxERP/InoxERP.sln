@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIWindows", "UIWindows\UIWindows.csproj", "{CF73ACF0-6C33-48FD-B5A3-1FAB4281B8C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InoxErp.Core", "UIWindows\InoxErp.Core.csproj", "{CF73ACF0-6C33-48FD-B5A3-1FAB4281B8C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
