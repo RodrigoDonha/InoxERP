@@ -62,6 +62,9 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.lblCPF_CNPJ = new System.Windows.Forms.Label();
+            this.radIndustrial = new System.Windows.Forms.RadioButton();
+            this.radResidencial = new System.Windows.Forms.RadioButton();
+            this.radComercial = new System.Windows.Forms.RadioButton();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -363,6 +366,9 @@
             // 
             // grpDadosPessoais
             // 
+            this.grpDadosPessoais.Controls.Add(this.radIndustrial);
+            this.grpDadosPessoais.Controls.Add(this.radResidencial);
+            this.grpDadosPessoais.Controls.Add(this.radComercial);
             this.grpDadosPessoais.Controls.Add(this.txtCPF_CNPJ);
             this.grpDadosPessoais.Controls.Add(this.txtNome);
             this.grpDadosPessoais.Controls.Add(this.lblNomeCompleto);
@@ -410,6 +416,38 @@
             this.lblCPF_CNPJ.Size = new System.Drawing.Size(113, 17);
             this.lblCPF_CNPJ.TabIndex = 1;
             this.lblCPF_CNPJ.Text = "C.P.F. / C.N.P.J.:";
+            // 
+            // radIndustrial
+            // 
+            this.radIndustrial.AutoSize = true;
+            this.radIndustrial.Location = new System.Drawing.Point(792, 79);
+            this.radIndustrial.Name = "radIndustrial";
+            this.radIndustrial.Size = new System.Drawing.Size(83, 21);
+            this.radIndustrial.TabIndex = 20;
+            this.radIndustrial.Text = "Industrial";
+            this.radIndustrial.UseVisualStyleBackColor = true;
+            // 
+            // radResidencial
+            // 
+            this.radResidencial.AutoSize = true;
+            this.radResidencial.Location = new System.Drawing.Point(648, 79);
+            this.radResidencial.Name = "radResidencial";
+            this.radResidencial.Size = new System.Drawing.Size(99, 21);
+            this.radResidencial.TabIndex = 19;
+            this.radResidencial.Text = "Residêncial";
+            this.radResidencial.UseVisualStyleBackColor = true;
+            // 
+            // radComercial
+            // 
+            this.radComercial.AutoSize = true;
+            this.radComercial.Checked = true;
+            this.radComercial.Location = new System.Drawing.Point(513, 79);
+            this.radComercial.Name = "radComercial";
+            this.radComercial.Size = new System.Drawing.Size(88, 21);
+            this.radComercial.TabIndex = 18;
+            this.radComercial.TabStop = true;
+            this.radComercial.Text = "Comercial";
+            this.radComercial.UseVisualStyleBackColor = true;
             // 
             // frmClientsRegister
             // 
@@ -476,5 +514,8 @@
         private System.Windows.Forms.Label lblCPF_CNPJ;
         private System.Windows.Forms.TextBox txtContatosCelular1;
         private System.Windows.Forms.Label lblContatosCelular1;
+        private System.Windows.Forms.RadioButton radIndustrial;
+        private System.Windows.Forms.RadioButton radResidencial;
+        private System.Windows.Forms.RadioButton radComercial;
     }
 }

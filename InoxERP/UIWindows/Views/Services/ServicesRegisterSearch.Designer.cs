@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.grpConsultarValores = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.grdConsultaPecas = new System.Windows.Forms.DataGridView();
-            this.txtConsultaPeca = new System.Windows.Forms.TextBox();
-            this.lblConsultaPeca = new System.Windows.Forms.Label();
+            this.dgvConsultaPecas = new System.Windows.Forms.DataGridView();
+            this.txtConsultaServico = new System.Windows.Forms.TextBox();
+            this.lblServico = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grpConsultaValores = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -48,12 +49,23 @@
             this.lblMedidas = new System.Windows.Forms.Label();
             this.lblPeca = new System.Windows.Forms.Label();
             this.tbcConsultaValores = new System.Windows.Forms.TabControl();
+            this.lblID = new System.Windows.Forms.Label();
+            this.inoxErpDBDataSet1 = new UIWindows.InoxErpDBDataSet1();
+            this.tbservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_servicesTableAdapter = new UIWindows.InoxErpDBDataSet1TableAdapters.tb_servicesTableAdapter();
+            this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sObservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2.SuspendLayout();
             this.grpConsultarValores.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaPecas)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.grpConsultaValores.SuspendLayout();
             this.tbcConsultaValores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbservicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -71,9 +83,9 @@
             // grpConsultarValores
             // 
             this.grpConsultarValores.Controls.Add(this.btnBuscar);
-            this.grpConsultarValores.Controls.Add(this.grdConsultaPecas);
-            this.grpConsultarValores.Controls.Add(this.txtConsultaPeca);
-            this.grpConsultarValores.Controls.Add(this.lblConsultaPeca);
+            this.grpConsultarValores.Controls.Add(this.dgvConsultaPecas);
+            this.grpConsultarValores.Controls.Add(this.txtConsultaServico);
+            this.grpConsultarValores.Controls.Add(this.lblServico);
             this.grpConsultarValores.Location = new System.Drawing.Point(5, 6);
             this.grpConsultarValores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpConsultarValores.Name = "grpConsultarValores";
@@ -92,32 +104,41 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // grdConsultaPecas
+            // dgvConsultaPecas
             // 
-            this.grdConsultaPecas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdConsultaPecas.Location = new System.Drawing.Point(9, 69);
-            this.grdConsultaPecas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grdConsultaPecas.Name = "grdConsultaPecas";
-            this.grdConsultaPecas.RowTemplate.Height = 24;
-            this.grdConsultaPecas.Size = new System.Drawing.Size(472, 354);
-            this.grdConsultaPecas.TabIndex = 7;
+            this.dgvConsultaPecas.AutoGenerateColumns = false;
+            this.dgvConsultaPecas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultaPecas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sIDDataGridViewTextBoxColumn,
+            this.sDescriptionDataGridViewTextBoxColumn,
+            this.sTimeDataGridViewTextBoxColumn,
+            this.dTotalDataGridViewTextBoxColumn,
+            this.sObservationDataGridViewTextBoxColumn});
+            this.dgvConsultaPecas.DataSource = this.tbservicesBindingSource;
+            this.dgvConsultaPecas.Location = new System.Drawing.Point(9, 69);
+            this.dgvConsultaPecas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvConsultaPecas.Name = "dgvConsultaPecas";
+            this.dgvConsultaPecas.RowTemplate.Height = 24;
+            this.dgvConsultaPecas.Size = new System.Drawing.Size(472, 354);
+            this.dgvConsultaPecas.TabIndex = 7;
+            this.dgvConsultaPecas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaPecas_CellDoubleClick);
             // 
-            // txtConsultaPeca
+            // txtConsultaServico
             // 
-            this.txtConsultaPeca.Location = new System.Drawing.Point(71, 30);
-            this.txtConsultaPeca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtConsultaPeca.Name = "txtConsultaPeca";
-            this.txtConsultaPeca.Size = new System.Drawing.Size(329, 23);
-            this.txtConsultaPeca.TabIndex = 6;
+            this.txtConsultaServico.Location = new System.Drawing.Point(71, 30);
+            this.txtConsultaServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsultaServico.Name = "txtConsultaServico";
+            this.txtConsultaServico.Size = new System.Drawing.Size(329, 23);
+            this.txtConsultaServico.TabIndex = 6;
             // 
-            // lblConsultaPeca
+            // lblServico
             // 
-            this.lblConsultaPeca.AutoSize = true;
-            this.lblConsultaPeca.Location = new System.Drawing.Point(5, 33);
-            this.lblConsultaPeca.Name = "lblConsultaPeca";
-            this.lblConsultaPeca.Size = new System.Drawing.Size(59, 17);
-            this.lblConsultaPeca.TabIndex = 5;
-            this.lblConsultaPeca.Text = "Serviço:";
+            this.lblServico.AutoSize = true;
+            this.lblServico.Location = new System.Drawing.Point(5, 33);
+            this.lblServico.Name = "lblServico";
+            this.lblServico.Size = new System.Drawing.Size(59, 17);
+            this.lblServico.TabIndex = 5;
+            this.lblServico.Text = "Serviço:";
             // 
             // tabPage1
             // 
@@ -126,13 +147,14 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(513, 437);
+            this.tabPage1.Size = new System.Drawing.Size(506, 437);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // grpConsultaValores
             // 
+            this.grpConsultaValores.Controls.Add(this.lblID);
             this.grpConsultaValores.Controls.Add(this.btnExcluir);
             this.grpConsultaValores.Controls.Add(this.lblObservacao);
             this.grpConsultaValores.Controls.Add(this.btnAlterar);
@@ -162,6 +184,7 @@
             this.btnExcluir.TabIndex = 3;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
             // lblObservacao
             // 
@@ -181,6 +204,7 @@
             this.btnAlterar.TabIndex = 2;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // txtObservacao
             // 
@@ -200,6 +224,7 @@
             this.btnGravar.TabIndex = 1;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = true;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // txtValorTotal
             // 
@@ -263,6 +288,61 @@
             this.tbcConsultaValores.Size = new System.Drawing.Size(514, 466);
             this.tbcConsultaValores.TabIndex = 3;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(8, 254);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 17);
+            this.lblID.TabIndex = 10;
+            this.lblID.Visible = false;
+            // 
+            // inoxErpDBDataSet1
+            // 
+            this.inoxErpDBDataSet1.DataSetName = "InoxErpDBDataSet1";
+            this.inoxErpDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbservicesBindingSource
+            // 
+            this.tbservicesBindingSource.DataMember = "tb_services";
+            this.tbservicesBindingSource.DataSource = this.inoxErpDBDataSet1;
+            // 
+            // tb_servicesTableAdapter
+            // 
+            this.tb_servicesTableAdapter.ClearBeforeFill = true;
+            // 
+            // sIDDataGridViewTextBoxColumn
+            // 
+            this.sIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
+            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
+            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
+            this.sIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sDescriptionDataGridViewTextBoxColumn
+            // 
+            this.sDescriptionDataGridViewTextBoxColumn.DataPropertyName = "sDescription";
+            this.sDescriptionDataGridViewTextBoxColumn.HeaderText = "sDescription";
+            this.sDescriptionDataGridViewTextBoxColumn.Name = "sDescriptionDataGridViewTextBoxColumn";
+            // 
+            // sTimeDataGridViewTextBoxColumn
+            // 
+            this.sTimeDataGridViewTextBoxColumn.DataPropertyName = "sTime";
+            this.sTimeDataGridViewTextBoxColumn.HeaderText = "sTime";
+            this.sTimeDataGridViewTextBoxColumn.Name = "sTimeDataGridViewTextBoxColumn";
+            // 
+            // dTotalDataGridViewTextBoxColumn
+            // 
+            this.dTotalDataGridViewTextBoxColumn.DataPropertyName = "dTotal";
+            this.dTotalDataGridViewTextBoxColumn.HeaderText = "dTotal";
+            this.dTotalDataGridViewTextBoxColumn.Name = "dTotalDataGridViewTextBoxColumn";
+            // 
+            // sObservationDataGridViewTextBoxColumn
+            // 
+            this.sObservationDataGridViewTextBoxColumn.DataPropertyName = "sObservation";
+            this.sObservationDataGridViewTextBoxColumn.HeaderText = "sObservation";
+            this.sObservationDataGridViewTextBoxColumn.Name = "sObservationDataGridViewTextBoxColumn";
+            // 
             // frmServicesRegisterSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -274,14 +354,17 @@
             this.Name = "frmServicesRegisterSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro e Consulta de Servicos";
+            this.Load += new System.EventHandler(this.frmServicesRegisterSearch_Load);
             this.tabPage2.ResumeLayout(false);
             this.grpConsultarValores.ResumeLayout(false);
             this.grpConsultarValores.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaPecas)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.grpConsultaValores.ResumeLayout(false);
             this.grpConsultaValores.PerformLayout();
             this.tbcConsultaValores.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbservicesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,9 +372,9 @@
         #endregion
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox grpConsultarValores;
-        private System.Windows.Forms.DataGridView grdConsultaPecas;
-        private System.Windows.Forms.TextBox txtConsultaPeca;
-        private System.Windows.Forms.Label lblConsultaPeca;
+        private System.Windows.Forms.DataGridView dgvConsultaPecas;
+        private System.Windows.Forms.TextBox txtConsultaServico;
+        private System.Windows.Forms.Label lblServico;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox grpConsultaValores;
         private System.Windows.Forms.Button btnExcluir;
@@ -307,5 +390,14 @@
         private System.Windows.Forms.Label lblPeca;
         private System.Windows.Forms.TabControl tbcConsultaValores;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblID;
+        private InoxErpDBDataSet1 inoxErpDBDataSet1;
+        private System.Windows.Forms.BindingSource tbservicesBindingSource;
+        private InoxErpDBDataSet1TableAdapters.tb_servicesTableAdapter tb_servicesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDescriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dTotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sObservationDataGridViewTextBoxColumn;
     }
 }

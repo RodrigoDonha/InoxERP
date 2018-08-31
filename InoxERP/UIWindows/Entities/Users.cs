@@ -27,12 +27,12 @@ namespace UIWindows.Entities
         [Range(1, 2, ErrorMessage = "Tipo é obrigatório")]
         public UserType Type { get; set; }
 
-        //ForengKeys Project <- Users
-        //[ForeignKey("sProjectsID")]
-        //public Projects Projects { get; set; }
+        //ForengKeys 
 
-        //public string sProjectsID { get; set; }
+        //public string sPermitionsID { get; set; }
 
+
+        //Convet password to MD5 Criptography
         public string getMD5Hash(string input)
         {
             System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();

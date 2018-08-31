@@ -53,17 +53,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Abstract\IBusiness.cs" />
+    <Compile Include="Business\Abstract\IServicesBusiness.cs" />
     <Compile Include="Business\Abstract\IUserBusiness.cs" />
     <Compile Include="Business\Concrete\BaseBusiness.cs" />
+    <Compile Include="Business\Concrete\ServicesBusiness.cs" />
     <Compile Include="Business\Concrete\UsersBusiness.cs" />
     <Compile Include="Context\InoxErpContext.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Budgets_OS.cs" />
+    <Compile Include="Entities\Clients.cs" />
+    <Compile Include="Entities\Contracts.cs" />
+    <Compile Include="Entities\Enum\ClientType.cs" />
+    <Compile Include="Entities\Enum\Estate.cs" />
+    <Compile Include="Entities\Enum\UnityType.cs" />
     <Compile Include="Entities\Enum\UserType.cs" />
+    <Compile Include="Entities\Items.cs" />
+    <Compile Include="Entities\Permitions.cs" />
+    <Compile Include="Entities\Products.cs" />
+    <Compile Include="Entities\Services.cs" />
     <Compile Include="Entities\Users.cs" />
     <Compile Include="InoxErpDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>InoxErpDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InoxErpDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InoxErpDBDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Views\Users\SignIn.cs">
       <SubType>Form</SubType>
@@ -375,6 +392,17 @@
     </None>
     <None Include="InoxErpDBDataSet.xss">
       <DependentUpon>InoxErpDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InoxErpDBDataSet1.xsc">
+      <DependentUpon>InoxErpDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="InoxErpDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InoxErpDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InoxErpDBDataSet1.xss">
+      <DependentUpon>InoxErpDBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

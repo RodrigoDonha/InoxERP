@@ -17,11 +17,25 @@ namespace UIWindows.Context
         //create tables
         public DbSet<Users> Users { get; set; }
 
+        public DbSet<Budgets_OS> Budgets_OS { get; set; }
+
+        public DbSet<Clients> Clients { get; set; }
+
+        public DbSet<Items> Items { get; set; }
+
+        public DbSet<Products> Products { get; set; }
+
+        public DbSet<Services> Services { get; set; }
+
+        public DbSet<Permitions> Permitions { get; set; }
+
+        public DbSet<Contracts> Contracts { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<InoxErpContext>(new CreateDatabaseIfNotExists<InoxErpContext>());
-            //Database.SetInitializer<CalculoHorasContext>(new DropCreateDatabaseIfModelChanges<CalculoHorasContext>());
-
+            //Database.SetInitializer<InoxErpContext>(new CreateDatabaseIfNotExists<InoxErpContext>());
+            Database.SetInitializer<InoxErpContext>(new DropCreateDatabaseIfModelChanges<InoxErpContext>());
         }
     }
 }

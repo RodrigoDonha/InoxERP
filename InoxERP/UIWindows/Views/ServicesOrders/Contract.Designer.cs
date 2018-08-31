@@ -45,7 +45,6 @@
             this.lblCepC = new System.Windows.Forms.Label();
             this.txtCidadeC = new System.Windows.Forms.TextBox();
             this.lblCidadeC = new System.Windows.Forms.Label();
-            this.txtEstadoC = new System.Windows.Forms.TextBox();
             this.lblEstadoC = new System.Windows.Forms.Label();
             this.lblContratado = new System.Windows.Forms.Label();
             this.txtEstadoE = new System.Windows.Forms.TextBox();
@@ -81,6 +80,7 @@
             this.lblPpte = new System.Windows.Forms.Label();
             this.dtpDataAtual = new System.Windows.Forms.DateTimePicker();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.cbxEstate = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutosServicos)).BeginInit();
             this.SuspendLayout();
@@ -250,14 +250,6 @@
             this.lblCidadeC.Size = new System.Drawing.Size(52, 16);
             this.lblCidadeC.TabIndex = 15;
             this.lblCidadeC.Text = "Cidade";
-            // 
-            // txtEstadoC
-            // 
-            this.txtEstadoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstadoC.Location = new System.Drawing.Point(363, 269);
-            this.txtEstadoC.Name = "txtEstadoC";
-            this.txtEstadoC.Size = new System.Drawing.Size(124, 22);
-            this.txtEstadoC.TabIndex = 18;
             // 
             // lblEstadoC
             // 
@@ -614,12 +606,21 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
+            // cbxEstate
+            // 
+            this.cbxEstate.FormattingEnabled = true;
+            this.cbxEstate.Location = new System.Drawing.Point(357, 271);
+            this.cbxEstate.Name = "cbxEstate";
+            this.cbxEstate.Size = new System.Drawing.Size(130, 24);
+            this.cbxEstate.TabIndex = 53;
+            // 
             // frmContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(814, 606);
+            this.Controls.Add(this.cbxEstate);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.dtpDataAtual);
             this.Controls.Add(this.lblPpte);
@@ -654,7 +655,6 @@
             this.Controls.Add(this.lblCnpjE);
             this.Controls.Add(this.lblNomeE);
             this.Controls.Add(this.lblContratado);
-            this.Controls.Add(this.txtEstadoC);
             this.Controls.Add(this.lblEstadoC);
             this.Controls.Add(this.txtCidadeC);
             this.Controls.Add(this.lblCidadeC);
@@ -704,7 +704,6 @@
         private System.Windows.Forms.Label lblCepC;
         private System.Windows.Forms.TextBox txtCidadeC;
         private System.Windows.Forms.Label lblCidadeC;
-        private System.Windows.Forms.TextBox txtEstadoC;
         private System.Windows.Forms.Label lblEstadoC;
         private System.Windows.Forms.Label lblContratado;
         private System.Windows.Forms.TextBox txtEstadoE;
@@ -740,5 +739,6 @@
         private System.Windows.Forms.Label lblPpte;
         private System.Windows.Forms.DateTimePicker dtpDataAtual;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.ComboBox cbxEstate;
     }
 }
