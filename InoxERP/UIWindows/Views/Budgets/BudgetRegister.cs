@@ -41,5 +41,15 @@ namespace InoxERP.UI_Windows_Forms
             frmSelectViewSearch selecao = new frmSelectViewSearch();
             selecao.Show();
         }
+
+        private void btnPeca_Click(object sender, EventArgs e)
+        {
+            new frmProductsRegisterSearch().Show();
+        }
+
+        private void btnServico_Click(object sender, EventArgs e)
+        {
+            new frmServicesRegisterSearch().Show();
+        }
     }
 }
