@@ -59,6 +59,8 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.grpFormaPagto = new System.Windows.Forms.GroupBox();
+            this.chkDinheiro = new System.Windows.Forms.CheckBox();
+            this.chkCheque = new System.Windows.Forms.CheckBox();
             this.nudParcelas = new System.Windows.Forms.NumericUpDown();
             this.chkCombinar = new System.Windows.Forms.CheckBox();
             this.lblExibeValorTotalParcelado = new System.Windows.Forms.Label();
@@ -457,6 +459,8 @@
             // 
             // grpFormaPagto
             // 
+            this.grpFormaPagto.Controls.Add(this.chkDinheiro);
+            this.grpFormaPagto.Controls.Add(this.chkCheque);
             this.grpFormaPagto.Controls.Add(this.nudParcelas);
             this.grpFormaPagto.Controls.Add(this.chkCombinar);
             this.grpFormaPagto.Controls.Add(this.lblExibeValorTotalParcelado);
@@ -482,6 +486,26 @@
             this.grpFormaPagto.TabIndex = 3;
             this.grpFormaPagto.TabStop = false;
             this.grpFormaPagto.Text = "Forma de Pagamento";
+            // 
+            // chkDinheiro
+            // 
+            this.chkDinheiro.AutoSize = true;
+            this.chkDinheiro.Location = new System.Drawing.Point(270, 23);
+            this.chkDinheiro.Name = "chkDinheiro";
+            this.chkDinheiro.Size = new System.Drawing.Size(95, 24);
+            this.chkDinheiro.TabIndex = 18;
+            this.chkDinheiro.Text = "Dinheiro";
+            this.chkDinheiro.UseVisualStyleBackColor = true;
+            // 
+            // chkCheque
+            // 
+            this.chkCheque.AutoSize = true;
+            this.chkCheque.Location = new System.Drawing.Point(155, 23);
+            this.chkCheque.Name = "chkCheque";
+            this.chkCheque.Size = new System.Drawing.Size(90, 24);
+            this.chkCheque.TabIndex = 17;
+            this.chkCheque.Text = "Cheque";
+            this.chkCheque.UseVisualStyleBackColor = true;
             // 
             // nudParcelas
             // 
@@ -807,6 +831,7 @@
             this.btnGravarOrcamento.TabIndex = 16;
             this.btnGravarOrcamento.Text = "Gravar";
             this.btnGravarOrcamento.UseVisualStyleBackColor = false;
+            this.btnGravarOrcamento.Click += new System.EventHandler(this.btnGravarOrcamento_Click);
             // 
             // btnAprovar
             // 
@@ -996,5 +1021,7 @@
         private System.Windows.Forms.Label lblConsultar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnServico;
+        private System.Windows.Forms.CheckBox chkDinheiro;
+        private System.Windows.Forms.CheckBox chkCheque;
     }
 }
