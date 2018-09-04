@@ -9,9 +9,6 @@ namespace UIWindows.Business.Abstract
 {
     public interface IBudget_OSBusiness : IBusiness<Budgets_OS>
     {
-        // não sei o que implementar aqui
-        Budgets_OS signIn(Budgets_OS bud);
-
-        Users ValidateLoginEqual(Users user);
+       
     }
 }

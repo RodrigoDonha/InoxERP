@@ -573,7 +573,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>InoxErpDBDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\InoxErpDBDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\InoxErpDBDataSet.xsd</rd:SchemaPath>
         <rd:TableName>tb_users</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

@@ -14,16 +14,6 @@ namespace UIWindows.Business.Concrete
         {
             context = contextParam;
         }
-
-        // alterar daqui para baixo
-        public Users ValidateLoginEqual(Users user)
-        {
-            return context.Users.FirstOrDefault(u => u.sLogin == user.sLogin);
-        }
-
-        public Users signIn(Users user)
-        {
-            return context.Users.FirstOrDefault(u => u.sLogin == user.sLogin && u.sKey == user.sKey);
-        }
+        
     }
 }

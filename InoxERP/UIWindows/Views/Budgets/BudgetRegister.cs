@@ -34,19 +34,6 @@ namespace InoxERP.UI_Windows_Forms
 
         }
 
-        private void btCliente_Click(object sender, EventArgs e)
-        {
-            frmClientsSearch obj = new frmClientsSearch();
-            //this.Hide();
-            obj.Show();
-        }
-
-        private void btConsultar_Click(object sender, EventArgs e)
-        {
-            frmSelectViewSearch selecao = new frmSelectViewSearch();
-            selecao.Show();
-        }
-
         private void btnPeca_Click(object sender, EventArgs e)
         {
             new frmProductsRegisterSearch().Show();
@@ -60,50 +47,138 @@ namespace InoxERP.UI_Windows_Forms
         //validators CAMPS
         public bool validationCamps()
         {
-            // ver se essa condição com OU funfa certinho
-            if (radComercial.Text.Length.Equals(0) || radResidencial.Text.Length.Equals(0) || radIndustrial.Text.Length.Equals(0))
-            {
-                radComercial.Focus();
-                return false;
-            }
-
             if (txtNome.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe um nome para o cliente ***");
                 txtNome.Focus();
                 return false;
             }
 
             if (txtEndereco.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe um endereço para o cliente ***");
                 txtEndereco.Focus();
                 return false;
             }
 
             if (txtTelefone.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe um telefone para o cliente ***");
                 txtTelefone.Focus();
                 return false;
             }
 
             if (txtCargo.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe um cargo para o cliente ***");
                 txtCargo.Focus();
                 return false;
             }
 
-            // verificar se funfa assim
-            //if (grdItens.Text.Length.Equals(0))
-            //{
-            //    txtCargo.Focus();
-            //    return false;
-            //}
+            int compare = dgvItens.Rows.Count; // conta linhas da tabela
+            if (compare == 0)
+            {
+                MessageBox.Show("Nenhum Item adicionado ao orçamento ***");
+                txtQuantidade.Focus();
+                return false;
+            }
+
+            if (!chkCombinar.Checked && !chkCheque.Checked && !chkDinheiro.Checked)
+            {
+                MessageBox.Show("Informe a forma de pagamento ***");
+                chkCombinar.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool validatorAdd()
+        {
+            if (txtQuantidade.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe a quantidade ***");
+                txtQuantidade.Focus();
+                return false;
+            }
+
+            if (txtDescricao.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe a descrição do produto ***");
+                txtDescricao.Focus();
+                return false;
+            }
+
+            if (txtValorUnitario.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe o Valor Unitário ***");
+                txtValorUnitario.Focus();
+                return false;
+            }
 
             return true;
         }
 
         private void btnGravarOrcamento_Click(object sender, EventArgs e)
         {
+            if (!validationCamps())
+                MessageBox.Show("erro");
+        }
 
+        private void btnProcurar_Click(object sender, EventArgs e)
+        {
+            new frmClientsSearch().Show();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            if (!validatorAdd())
+                MessageBox.Show("erro");
+            else
+            {
+                decimal total = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValorUnitario.Text);
+                dgvItens.Rows.Add(txtQuantidade.Text, txtDescricao.Text, txtValorUnitario.Text, Convert.ToString(total));
+            }
+        }
+
+        //validator Calc values
+        public void valueTotal()
+        {
+            if (txtValorUnitario.Text.Length.Equals(0))
+            {
+                txtValorTotal.Text = "0";
+                txtValorUnitario.Text = "0";
+            }
+            if (txtQuantidade.Text.Length.Equals(0))
+            {
+                txtQuantidade.Text = "0";
+            }
+            else
+            {
+                decimal total = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValorUnitario.Text);
+                txtValorTotal.Text = Convert.ToString(total);
+            }
+        }
+        
+        private void txtValorUnitario_TextChanged(object sender, EventArgs e)
+        {
+            valueTotal();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            var row = dgvItens.SelectedRows;
+            //dgvItens.Rows.Remove();
+        }
+
+        private void txtQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            valueTotal();
+        }
+
+        private void txtQuantidade_TextChanged_1(object sender, EventArgs e)
+        {
+            valueTotal();
         }
     }    
 }

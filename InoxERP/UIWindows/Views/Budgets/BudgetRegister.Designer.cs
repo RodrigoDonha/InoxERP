@@ -49,7 +49,11 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.btnPeca = new System.Windows.Forms.Button();
-            this.grdItens = new System.Windows.Forms.DataGridView();
+            this.dgvItens = new System.Windows.Forms.DataGridView();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitary_value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
@@ -100,7 +104,7 @@
             this.lblTempoGarantia = new System.Windows.Forms.Label();
             this.grpCliente.SuspendLayout();
             this.grpProdutos_Servicos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdItens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.grpFormaPagto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
             this.grpEntrega.SuspendLayout();
@@ -119,7 +123,7 @@
             this.btnProcurar.TabIndex = 1;
             this.btnProcurar.Text = "Procurar";
             this.btnProcurar.UseVisualStyleBackColor = true;
-            this.btnProcurar.Click += new System.EventHandler(this.btCliente_Click);
+            this.btnProcurar.Click += new System.EventHandler(this.btnProcurar_Click);
             // 
             // grpCliente
             // 
@@ -266,7 +270,7 @@
             this.grpProdutos_Servicos.Controls.Add(this.lblValor);
             this.grpProdutos_Servicos.Controls.Add(this.lblSubTotal);
             this.grpProdutos_Servicos.Controls.Add(this.btnPeca);
-            this.grpProdutos_Servicos.Controls.Add(this.grdItens);
+            this.grpProdutos_Servicos.Controls.Add(this.dgvItens);
             this.grpProdutos_Servicos.Controls.Add(this.btnAdicionar);
             this.grpProdutos_Servicos.Controls.Add(this.lblValorTotal);
             this.grpProdutos_Servicos.Controls.Add(this.txtValorTotal);
@@ -295,6 +299,7 @@
             this.btnExcluir.TabIndex = 25;
             this.btnExcluir.Text = "Excluir Item";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnServico
             // 
@@ -327,6 +332,7 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(50, 26);
             this.txtQuantidade.TabIndex = 22;
+            this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged_1);
             // 
             // lblValor
             // 
@@ -364,15 +370,53 @@
             this.btnPeca.UseVisualStyleBackColor = true;
             this.btnPeca.Click += new System.EventHandler(this.btnPeca_Click);
             // 
-            // grdItens
+            // dgvItens
             // 
-            this.grdItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdItens.Location = new System.Drawing.Point(8, 99);
-            this.grdItens.Margin = new System.Windows.Forms.Padding(2);
-            this.grdItens.Name = "grdItens";
-            this.grdItens.RowTemplate.Height = 24;
-            this.grdItens.Size = new System.Drawing.Size(546, 255);
-            this.grdItens.TabIndex = 18;
+            this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.amount,
+            this.description,
+            this.unitary_value,
+            this.total_value});
+            this.dgvItens.Location = new System.Drawing.Point(8, 99);
+            this.dgvItens.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvItens.MultiSelect = false;
+            this.dgvItens.Name = "dgvItens";
+            this.dgvItens.ReadOnly = true;
+            this.dgvItens.RowTemplate.Height = 24;
+            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItens.Size = new System.Drawing.Size(546, 255);
+            this.dgvItens.TabIndex = 18;
+            // 
+            // amount
+            // 
+            this.amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.amount.HeaderText = "Quantidade";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.HeaderText = "Descrição";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.Width = 114;
+            // 
+            // unitary_value
+            // 
+            this.unitary_value.HeaderText = "Valor UN";
+            this.unitary_value.Name = "unitary_value";
+            this.unitary_value.ReadOnly = true;
+            this.unitary_value.Width = 106;
+            // 
+            // total_value
+            // 
+            this.total_value.HeaderText = "Total";
+            this.total_value.Name = "total_value";
+            this.total_value.ReadOnly = true;
+            this.total_value.Width = 74;
             // 
             // btnAdicionar
             // 
@@ -384,6 +428,7 @@
             this.btnAdicionar.TabIndex = 6;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // lblValorTotal
             // 
@@ -399,6 +444,7 @@
             // 
             // txtValorTotal
             // 
+            this.txtValorTotal.Enabled = false;
             this.txtValorTotal.Location = new System.Drawing.Point(389, 67);
             this.txtValorTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtValorTotal.Name = "txtValorTotal";
@@ -412,6 +458,7 @@
             this.txtValorUnitario.Name = "txtValorUnitario";
             this.txtValorUnitario.Size = new System.Drawing.Size(81, 26);
             this.txtValorUnitario.TabIndex = 4;
+            this.txtValorUnitario.TextChanged += new System.EventHandler(this.txtValorUnitario_TextChanged);
             // 
             // lblValorUnitario
             // 
@@ -937,7 +984,7 @@
             this.grpCliente.PerformLayout();
             this.grpProdutos_Servicos.ResumeLayout(false);
             this.grpProdutos_Servicos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdItens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.grpFormaPagto.ResumeLayout(false);
             this.grpFormaPagto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).EndInit();
@@ -965,7 +1012,7 @@
         private System.Windows.Forms.TextBox txtValorTotal;
         private System.Windows.Forms.TextBox txtValorUnitario;
         private System.Windows.Forms.Button btnAdicionar;
-        private System.Windows.Forms.DataGridView grdItens;
+        private System.Windows.Forms.DataGridView dgvItens;
         private System.Windows.Forms.GroupBox grpFormaPagto;
         private System.Windows.Forms.CheckBox chkJuros;
         private System.Windows.Forms.Label lblContinuaParcelamento;
@@ -1023,5 +1070,9 @@
         private System.Windows.Forms.Button btnServico;
         private System.Windows.Forms.CheckBox chkDinheiro;
         private System.Windows.Forms.CheckBox chkCheque;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitary_value;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_value;
     }
 }

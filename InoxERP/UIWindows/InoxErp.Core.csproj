@@ -306,7 +306,7 @@
     <Compile Include="Views\Users\UserRegisterSearch.Designer.cs">
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Business\Concrete\rptAllUsers.rdlc" />
+    <EmbeddedResource Include="Business\Reports\rptAllUsers.rdlc" />
     <EmbeddedResource Include="Views\Reports\ReportUsers.resx">
       <DependentUpon>ReportUsers.cs</DependentUpon>
     </EmbeddedResource>
