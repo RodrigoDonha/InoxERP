@@ -46,7 +46,7 @@
             this.btnServico = new System.Windows.Forms.Button();
             this.lblConsultar = new System.Windows.Forms.Label();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
-            this.lblValor = new System.Windows.Forms.Label();
+            this.lblSubTotalValor = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.btnPeca = new System.Windows.Forms.Button();
             this.dgvItens = new System.Windows.Forms.DataGridView();
@@ -155,7 +155,7 @@
             this.txtCargo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(195, 26);
-            this.txtCargo.TabIndex = 19;
+            this.txtCargo.TabIndex = 8;
             // 
             // lblCargo
             // 
@@ -175,7 +175,7 @@
             this.radIndustrial.Location = new System.Drawing.Point(452, 24);
             this.radIndustrial.Name = "radIndustrial";
             this.radIndustrial.Size = new System.Drawing.Size(102, 24);
-            this.radIndustrial.TabIndex = 17;
+            this.radIndustrial.TabIndex = 4;
             this.radIndustrial.Text = "Industrial";
             this.radIndustrial.UseVisualStyleBackColor = true;
             // 
@@ -185,7 +185,7 @@
             this.radResidencial.Location = new System.Drawing.Point(304, 25);
             this.radResidencial.Name = "radResidencial";
             this.radResidencial.Size = new System.Drawing.Size(120, 24);
-            this.radResidencial.TabIndex = 16;
+            this.radResidencial.TabIndex = 3;
             this.radResidencial.Text = "Residêncial";
             this.radResidencial.UseVisualStyleBackColor = true;
             // 
@@ -196,7 +196,7 @@
             this.radComercial.Location = new System.Drawing.Point(169, 25);
             this.radComercial.Name = "radComercial";
             this.radComercial.Size = new System.Drawing.Size(106, 24);
-            this.radComercial.TabIndex = 15;
+            this.radComercial.TabIndex = 2;
             this.radComercial.TabStop = true;
             this.radComercial.Text = "Comercial";
             this.radComercial.UseVisualStyleBackColor = true;
@@ -207,7 +207,7 @@
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(2);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(478, 26);
-            this.txtEndereco.TabIndex = 14;
+            this.txtEndereco.TabIndex = 6;
             // 
             // txtTelefone
             // 
@@ -215,7 +215,7 @@
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(199, 26);
-            this.txtTelefone.TabIndex = 13;
+            this.txtTelefone.TabIndex = 7;
             // 
             // txtNome
             // 
@@ -223,7 +223,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(2);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(478, 26);
-            this.txtNome.TabIndex = 12;
+            this.txtNome.TabIndex = 5;
             // 
             // lblTelefone
             // 
@@ -267,7 +267,7 @@
             this.grpProdutos_Servicos.Controls.Add(this.btnServico);
             this.grpProdutos_Servicos.Controls.Add(this.lblConsultar);
             this.grpProdutos_Servicos.Controls.Add(this.txtQuantidade);
-            this.grpProdutos_Servicos.Controls.Add(this.lblValor);
+            this.grpProdutos_Servicos.Controls.Add(this.lblSubTotalValor);
             this.grpProdutos_Servicos.Controls.Add(this.lblSubTotal);
             this.grpProdutos_Servicos.Controls.Add(this.btnPeca);
             this.grpProdutos_Servicos.Controls.Add(this.dgvItens);
@@ -296,7 +296,7 @@
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(104, 25);
-            this.btnExcluir.TabIndex = 25;
+            this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir Item";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -308,7 +308,7 @@
             this.btnServico.Margin = new System.Windows.Forms.Padding(2);
             this.btnServico.Name = "btnServico";
             this.btnServico.Size = new System.Drawing.Size(70, 26);
-            this.btnServico.TabIndex = 24;
+            this.btnServico.TabIndex = 16;
             this.btnServico.Text = "Serviços";
             this.btnServico.UseVisualStyleBackColor = true;
             this.btnServico.Click += new System.EventHandler(this.btnServico_Click);
@@ -331,20 +331,20 @@
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(2);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(50, 26);
-            this.txtQuantidade.TabIndex = 22;
+            this.txtQuantidade.TabIndex = 9;
             this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged_1);
             // 
-            // lblValor
+            // lblSubTotalValor
             // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(495, 359);
-            this.lblValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(59, 20);
-            this.lblValor.TabIndex = 21;
-            this.lblValor.Text = "00000";
-            this.lblValor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblSubTotalValor.AutoSize = true;
+            this.lblSubTotalValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotalValor.Location = new System.Drawing.Point(495, 359);
+            this.lblSubTotalValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubTotalValor.Name = "lblSubTotalValor";
+            this.lblSubTotalValor.Size = new System.Drawing.Size(59, 20);
+            this.lblSubTotalValor.TabIndex = 21;
+            this.lblSubTotalValor.Text = "00000";
+            this.lblSubTotalValor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblSubTotal
             // 
@@ -365,7 +365,7 @@
             this.btnPeca.Margin = new System.Windows.Forms.Padding(2);
             this.btnPeca.Name = "btnPeca";
             this.btnPeca.Size = new System.Drawing.Size(70, 25);
-            this.btnPeca.TabIndex = 19;
+            this.btnPeca.TabIndex = 15;
             this.btnPeca.Text = "Peças";
             this.btnPeca.UseVisualStyleBackColor = true;
             this.btnPeca.Click += new System.EventHandler(this.btnPeca_Click);
@@ -425,7 +425,7 @@
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(85, 26);
-            this.btnAdicionar.TabIndex = 6;
+            this.btnAdicionar.TabIndex = 13;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
@@ -449,7 +449,7 @@
             this.txtValorTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtValorTotal.Name = "txtValorTotal";
             this.txtValorTotal.Size = new System.Drawing.Size(76, 26);
-            this.txtValorTotal.TabIndex = 5;
+            this.txtValorTotal.TabIndex = 12;
             // 
             // txtValorUnitario
             // 
@@ -457,7 +457,7 @@
             this.txtValorUnitario.Margin = new System.Windows.Forms.Padding(2);
             this.txtValorUnitario.Name = "txtValorUnitario";
             this.txtValorUnitario.Size = new System.Drawing.Size(81, 26);
-            this.txtValorUnitario.TabIndex = 4;
+            this.txtValorUnitario.TabIndex = 11;
             this.txtValorUnitario.TextChanged += new System.EventHandler(this.txtValorUnitario_TextChanged);
             // 
             // lblValorUnitario
@@ -490,7 +490,7 @@
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(238, 26);
-            this.txtDescricao.TabIndex = 3;
+            this.txtDescricao.TabIndex = 10;
             // 
             // lblQuantidade
             // 
@@ -540,7 +540,7 @@
             this.chkDinheiro.Location = new System.Drawing.Point(270, 23);
             this.chkDinheiro.Name = "chkDinheiro";
             this.chkDinheiro.Size = new System.Drawing.Size(95, 24);
-            this.chkDinheiro.TabIndex = 18;
+            this.chkDinheiro.TabIndex = 19;
             this.chkDinheiro.Text = "Dinheiro";
             this.chkDinheiro.UseVisualStyleBackColor = true;
             // 
@@ -550,7 +550,7 @@
             this.chkCheque.Location = new System.Drawing.Point(155, 23);
             this.chkCheque.Name = "chkCheque";
             this.chkCheque.Size = new System.Drawing.Size(90, 24);
-            this.chkCheque.TabIndex = 17;
+            this.chkCheque.TabIndex = 18;
             this.chkCheque.Text = "Cheque";
             this.chkCheque.UseVisualStyleBackColor = true;
             // 
@@ -559,7 +559,7 @@
             this.nudParcelas.Location = new System.Drawing.Point(156, 92);
             this.nudParcelas.Name = "nudParcelas";
             this.nudParcelas.Size = new System.Drawing.Size(76, 26);
-            this.nudParcelas.TabIndex = 16;
+            this.nudParcelas.TabIndex = 21;
             // 
             // chkCombinar
             // 
@@ -568,7 +568,7 @@
             this.chkCombinar.Location = new System.Drawing.Point(13, 25);
             this.chkCombinar.Name = "chkCombinar";
             this.chkCombinar.Size = new System.Drawing.Size(121, 24);
-            this.chkCombinar.TabIndex = 15;
+            this.chkCombinar.TabIndex = 17;
             this.chkCombinar.Text = "A Combinar";
             this.chkCombinar.UseVisualStyleBackColor = true;
             // 
@@ -644,7 +644,7 @@
             this.txtPorcentJuros.Margin = new System.Windows.Forms.Padding(2);
             this.txtPorcentJuros.Name = "txtPorcentJuros";
             this.txtPorcentJuros.Size = new System.Drawing.Size(76, 26);
-            this.txtPorcentJuros.TabIndex = 10;
+            this.txtPorcentJuros.TabIndex = 23;
             // 
             // chkJuros
             // 
@@ -654,7 +654,7 @@
             this.chkJuros.Margin = new System.Windows.Forms.Padding(2);
             this.chkJuros.Name = "chkJuros";
             this.chkJuros.Size = new System.Drawing.Size(112, 21);
-            this.chkJuros.TabIndex = 9;
+            this.chkJuros.TabIndex = 22;
             this.chkJuros.Text = "com júros de:";
             this.chkJuros.UseVisualStyleBackColor = true;
             // 
@@ -708,7 +708,7 @@
             this.txtPorcentDescAVista.Margin = new System.Windows.Forms.Padding(2);
             this.txtPorcentDescAVista.Name = "txtPorcentDescAVista";
             this.txtPorcentDescAVista.Size = new System.Drawing.Size(76, 26);
-            this.txtPorcentDescAVista.TabIndex = 7;
+            this.txtPorcentDescAVista.TabIndex = 20;
             // 
             // lblAVista
             // 
@@ -747,7 +747,7 @@
             this.nudDias.Location = new System.Drawing.Point(158, 24);
             this.nudDias.Name = "nudDias";
             this.nudDias.Size = new System.Drawing.Size(76, 26);
-            this.nudDias.TabIndex = 17;
+            this.nudDias.TabIndex = 24;
             // 
             // dtpDataPrevistaEntrega
             // 
@@ -756,7 +756,7 @@
             this.dtpDataPrevistaEntrega.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataPrevistaEntrega.Name = "dtpDataPrevistaEntrega";
             this.dtpDataPrevistaEntrega.Size = new System.Drawing.Size(276, 23);
-            this.dtpDataPrevistaEntrega.TabIndex = 12;
+            this.dtpDataPrevistaEntrega.TabIndex = 25;
             // 
             // lblDataPrevistaInicio
             // 
@@ -777,7 +777,7 @@
             this.dtpDataPrevistaInicioServico.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataPrevistaInicioServico.Name = "dtpDataPrevistaInicioServico";
             this.dtpDataPrevistaInicioServico.Size = new System.Drawing.Size(276, 23);
-            this.dtpDataPrevistaInicioServico.TabIndex = 13;
+            this.dtpDataPrevistaInicioServico.TabIndex = 26;
             // 
             // label5
             // 
@@ -851,7 +851,7 @@
             this.dtpDataValidadeOrcamento.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataValidadeOrcamento.Name = "dtpDataValidadeOrcamento";
             this.dtpDataValidadeOrcamento.Size = new System.Drawing.Size(276, 23);
-            this.dtpDataValidadeOrcamento.TabIndex = 14;
+            this.dtpDataValidadeOrcamento.TabIndex = 28;
             // 
             // btnCancelarOrcamento
             // 
@@ -862,7 +862,7 @@
             this.btnCancelarOrcamento.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelarOrcamento.Name = "btnCancelarOrcamento";
             this.btnCancelarOrcamento.Size = new System.Drawing.Size(122, 26);
-            this.btnCancelarOrcamento.TabIndex = 15;
+            this.btnCancelarOrcamento.TabIndex = 32;
             this.btnCancelarOrcamento.Text = "Cancelar";
             this.btnCancelarOrcamento.UseVisualStyleBackColor = false;
             // 
@@ -875,7 +875,7 @@
             this.btnGravarOrcamento.Margin = new System.Windows.Forms.Padding(2);
             this.btnGravarOrcamento.Name = "btnGravarOrcamento";
             this.btnGravarOrcamento.Size = new System.Drawing.Size(122, 26);
-            this.btnGravarOrcamento.TabIndex = 16;
+            this.btnGravarOrcamento.TabIndex = 30;
             this.btnGravarOrcamento.Text = "Gravar";
             this.btnGravarOrcamento.UseVisualStyleBackColor = false;
             this.btnGravarOrcamento.Click += new System.EventHandler(this.btnGravarOrcamento_Click);
@@ -889,7 +889,7 @@
             this.btnAprovar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAprovar.Name = "btnAprovar";
             this.btnAprovar.Size = new System.Drawing.Size(122, 26);
-            this.btnAprovar.TabIndex = 17;
+            this.btnAprovar.TabIndex = 31;
             this.btnAprovar.Text = "Aprovar";
             this.btnAprovar.UseVisualStyleBackColor = false;
             // 
@@ -920,7 +920,7 @@
             this.rtfObservacoes.Location = new System.Drawing.Point(106, 101);
             this.rtfObservacoes.Name = "rtfObservacoes";
             this.rtfObservacoes.Size = new System.Drawing.Size(414, 64);
-            this.rtfObservacoes.TabIndex = 22;
+            this.rtfObservacoes.TabIndex = 29;
             this.rtfObservacoes.Text = "";
             // 
             // lblObservacoes
@@ -939,7 +939,7 @@
             this.nudAnos.Location = new System.Drawing.Point(160, 31);
             this.nudAnos.Name = "nudAnos";
             this.nudAnos.Size = new System.Drawing.Size(77, 26);
-            this.nudAnos.TabIndex = 21;
+            this.nudAnos.TabIndex = 27;
             // 
             // lblAnos
             // 
@@ -1060,7 +1060,7 @@
         private System.Windows.Forms.RadioButton radIndustrial;
         private System.Windows.Forms.RadioButton radResidencial;
         private System.Windows.Forms.RadioButton radComercial;
-        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label lblSubTotalValor;
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.NumericUpDown nudParcelas;
         private System.Windows.Forms.NumericUpDown nudDias;

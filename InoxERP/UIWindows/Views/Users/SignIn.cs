@@ -24,7 +24,7 @@ namespace UIWindows
        private void btnAcessar_Click(object sender, EventArgs e)
         {
             user.sLogin = txtLogin.Text;
-            user.sKey = user.getMD5Hash(txtSenha.Text);
+            user.sKey = user.getMD5Hash(txtSenha.Text); // ____JR@2018***
 
             if (user.sLogin == "test" && user.sKey == "EA44959B528B2DE4D143BEABB30970BE")
             {

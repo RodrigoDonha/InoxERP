@@ -17,6 +17,7 @@ namespace InoxERP.UI_Windows_Forms
         Users userLog = new Users();
         Users user = new Users();
 
+        private decimal subTotal = 0;
 
         public frmBudgetsRegister()
         {
@@ -130,6 +131,7 @@ namespace InoxERP.UI_Windows_Forms
             new frmClientsSearch().Show();
         }
 
+        //INSERT ITEM
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             if (!validatorAdd())
@@ -137,13 +139,49 @@ namespace InoxERP.UI_Windows_Forms
             else
             {
                 decimal total = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValorUnitario.Text);
-                dgvItens.Rows.Add(txtQuantidade.Text, txtDescricao.Text, txtValorUnitario.Text, Convert.ToString(total));
+                if (total == 0)
+                { }
+                else
+                {
+                    dgvItens.Rows.Add(txtQuantidade.Text, txtDescricao.Text, txtValorUnitario.Text, Convert.ToString(total));
+                    subTotal = subTotal + total;
+                    lblSubTotalValor.Text = Convert.ToString(subTotal);
+                    txtQuantidade.Focus();
+                }
+            }
+        }
+
+        //DELETE ITEM
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            int compare = dgvItens.Rows.Count; // conta linhas da tabela
+            if (compare == 0)
+            { }
+            else
+            {
+                var row = dgvItens.SelectedRows[0].Index;
+                subTotal = subTotal - Convert.ToDecimal(dgvItens[3, row].Value.ToString());
+                lblSubTotalValor.Text = Convert.ToString(subTotal);
+                dgvItens.Rows.RemoveAt(row);
+                txtQuantidade.Focus();
             }
         }
 
         //validator Calc values
         public void valueTotal()
         {
+            int i;
+            decimal d;
+            if (!int.TryParse(txtQuantidade.Text, out i))
+            {
+                MessageBox.Show("Somente Números");
+                txtQuantidade.Text = "0";
+            }
+            if (!decimal.TryParse(txtValorUnitario.Text, out d))
+            {
+                MessageBox.Show("Somente Números");
+                txtValorUnitario.Text = "0";
+            }
             if (txtValorUnitario.Text.Length.Equals(0))
             {
                 txtValorTotal.Text = "0";
@@ -164,18 +202,7 @@ namespace InoxERP.UI_Windows_Forms
         {
             valueTotal();
         }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            var row = dgvItens.SelectedRows;
-            //dgvItens.Rows.Remove();
-        }
-
-        private void txtQuantidade_TextChanged(object sender, EventArgs e)
-        {
-            valueTotal();
-        }
-
+        
         private void txtQuantidade_TextChanged_1(object sender, EventArgs e)
         {
             valueTotal();
