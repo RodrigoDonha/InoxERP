@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using UIWindows;
 using UIWindows.Entities;
 using UIWindows.Entities.Enum;
+using UIWindows.Views.Reports;
 
 namespace InoxERP
 {
@@ -313,6 +314,12 @@ namespace InoxERP
         {
             new frmBackup().Show();
 
+        }
+
+        // CALL FORM REPORT USERS IN MENU
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmReportUsers().Show();
         }
     }
 }
