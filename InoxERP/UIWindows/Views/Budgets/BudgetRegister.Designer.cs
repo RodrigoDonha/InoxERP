@@ -332,6 +332,7 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(50, 26);
             this.txtQuantidade.TabIndex = 9;
+            this.txtQuantidade.Tag = "";
             this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged_1);
             // 
             // lblSubTotalValor
@@ -450,6 +451,8 @@
             this.txtValorTotal.Name = "txtValorTotal";
             this.txtValorTotal.Size = new System.Drawing.Size(76, 26);
             this.txtValorTotal.TabIndex = 12;
+            this.txtValorTotal.Tag = "";
+            this.txtValorTotal.Text = "0";
             // 
             // txtValorUnitario
             // 
@@ -458,6 +461,8 @@
             this.txtValorUnitario.Name = "txtValorUnitario";
             this.txtValorUnitario.Size = new System.Drawing.Size(81, 26);
             this.txtValorUnitario.TabIndex = 11;
+            this.txtValorUnitario.Tag = "";
+            this.txtValorUnitario.Text = "0";
             this.txtValorUnitario.TextChanged += new System.EventHandler(this.txtValorUnitario_TextChanged);
             // 
             // lblValorUnitario
@@ -491,6 +496,7 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(238, 26);
             this.txtDescricao.TabIndex = 10;
+            this.txtDescricao.Tag = "";
             // 
             // lblQuantidade
             // 
@@ -865,6 +871,7 @@
             this.btnCancelarOrcamento.TabIndex = 32;
             this.btnCancelarOrcamento.Text = "Cancelar";
             this.btnCancelarOrcamento.UseVisualStyleBackColor = false;
+            this.btnCancelarOrcamento.Click += new System.EventHandler(this.btnCancelarOrcamento_Click);
             // 
             // btnGravarOrcamento
             // 
@@ -979,7 +986,6 @@
             this.Name = "frmBudgetsRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orçamentos";
-            this.Load += new System.EventHandler(this.OrcamentosForm_Load);
             this.grpCliente.ResumeLayout(false);
             this.grpCliente.PerformLayout();
             this.grpProdutos_Servicos.ResumeLayout(false);
