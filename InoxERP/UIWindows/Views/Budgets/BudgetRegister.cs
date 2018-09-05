@@ -35,15 +35,34 @@ namespace InoxERP.UI_Windows_Forms
             {
                 decimal total = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValorUnitario.Text);
                 if (total == 0)
-                { }
+                {
+                    MessageBox.Show("Quantidade do Produto/Serviço deve ser maior que Zero");
+                }
                 else
                 {
                     dgvItens.Rows.Add(txtQuantidade.Text, txtDescricao.Text, txtValorUnitario.Text, Convert.ToString(total));
                     subTotal = subTotal + total;
                     lblSubTotalValor.Text = Convert.ToString(subTotal);
+                    clearItensLine();
                     txtQuantidade.Focus();
                 }
             }
+        }
+
+        public void clearItensLine()
+        {
+            txtQuantidade.Text = "0";
+            txtDescricao.Text = " ";
+            txtValorUnitario.Text = "0";
+            txtValorTotal.Text = "0";
+        }
+
+        public void selectedItem()
+        {
+            txtQuantidade.Text = dgvItens[0, dgvItens.CurrentRow.Index].Value.ToString();
+            txtDescricao.Text = dgvItens[1, dgvItens.CurrentRow.Index].Value.ToString();
+            txtValorUnitario.Text = dgvItens[2, dgvItens.CurrentRow.Index].Value.ToString();
+            txtValorTotal.Text = dgvItens[3, dgvItens.CurrentRow.Index].Value.ToString();
         }
 
         //DELETE ITEM ON dgvItens
@@ -173,7 +192,6 @@ namespace InoxERP.UI_Windows_Forms
             }
         }
 
-
         // CALLS
 
         // CALLS VIEW PRODUCTS
@@ -210,6 +228,12 @@ namespace InoxERP.UI_Windows_Forms
         private void btnCancelarOrcamento_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        // WHEN CLICK DVGITENS LINE WITH MOUSE BUTTON RIGHT
+        private void dgvItens_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedItem();
         }
     }    
 }
