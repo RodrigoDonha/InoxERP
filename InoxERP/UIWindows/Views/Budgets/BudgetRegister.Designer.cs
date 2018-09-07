@@ -83,9 +83,9 @@
             this.lblAVista = new System.Windows.Forms.Label();
             this.grpEntrega = new System.Windows.Forms.GroupBox();
             this.nudDias = new System.Windows.Forms.NumericUpDown();
-            this.dtpDataPrevistaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataPrevistaInicio = new System.Windows.Forms.DateTimePicker();
             this.lblDataPrevistaInicio = new System.Windows.Forms.Label();
-            this.dtpDataPrevistaInicioServico = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataPrevistaEntrega = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDataPrevistaEntrega = new System.Windows.Forms.Label();
             this.lblDiasPrevistosParaExecucao = new System.Windows.Forms.Label();
@@ -102,6 +102,8 @@
             this.nudAnos = new System.Windows.Forms.NumericUpDown();
             this.lblAnos = new System.Windows.Forms.Label();
             this.lblTempoGarantia = new System.Windows.Forms.Label();
+            this.lblTotalGeralValor = new System.Windows.Forms.Label();
+            this.lblTotalGeral = new System.Windows.Forms.Label();
             this.grpCliente.SuspendLayout();
             this.grpProdutos_Servicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -346,6 +348,7 @@
             this.lblSubTotalValor.TabIndex = 21;
             this.lblSubTotalValor.Text = "00000";
             this.lblSubTotalValor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblSubTotalValor.TextChanged += new System.EventHandler(this.lblSubTotalValor_TextChanged);
             // 
             // lblSubTotal
             // 
@@ -374,6 +377,7 @@
             // dgvItens
             // 
             this.dgvItens.AllowUserToAddRows = false;
+            this.dgvItens.AllowUserToDeleteRows = false;
             this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -387,27 +391,31 @@
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowTemplate.Height = 24;
+            this.dgvItens.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(546, 255);
             this.dgvItens.TabIndex = 18;
-            this.dgvItens.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellContentClick);
+            this.dgvItens.TabStop = false;
+            this.dgvItens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellClick);
             // 
             // amount
             // 
-            this.amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.amount.HeaderText = "Quantidade";
             this.amount.Name = "amount";
             this.amount.ReadOnly = true;
+            this.amount.Width = 127;
             // 
             // description
             // 
+            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.description.HeaderText = "Descrição";
             this.description.Name = "description";
             this.description.ReadOnly = true;
-            this.description.Width = 114;
             // 
             // unitary_value
             // 
+            this.unitary_value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.unitary_value.HeaderText = "Valor UN";
             this.unitary_value.Name = "unitary_value";
             this.unitary_value.ReadOnly = true;
@@ -415,6 +423,7 @@
             // 
             // total_value
             // 
+            this.total_value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.total_value.HeaderText = "Total";
             this.total_value.Name = "total_value";
             this.total_value.ReadOnly = true;
@@ -564,9 +573,20 @@
             // nudParcelas
             // 
             this.nudParcelas.Location = new System.Drawing.Point(156, 92);
+            this.nudParcelas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudParcelas.Name = "nudParcelas";
             this.nudParcelas.Size = new System.Drawing.Size(76, 26);
             this.nudParcelas.TabIndex = 21;
+            this.nudParcelas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudParcelas.ValueChanged += new System.EventHandler(this.nudParcelas_ValueChanged);
             // 
             // chkCombinar
             // 
@@ -578,6 +598,7 @@
             this.chkCombinar.TabIndex = 17;
             this.chkCombinar.Text = "A Combinar";
             this.chkCombinar.UseVisualStyleBackColor = true;
+            this.chkCombinar.CheckedChanged += new System.EventHandler(this.chkCombinar_CheckedChanged);
             // 
             // lblExibeValorTotalParcelado
             // 
@@ -647,11 +668,13 @@
             // 
             // txtPorcentJuros
             // 
+            this.txtPorcentJuros.Enabled = false;
             this.txtPorcentJuros.Location = new System.Drawing.Point(156, 126);
             this.txtPorcentJuros.Margin = new System.Windows.Forms.Padding(2);
             this.txtPorcentJuros.Name = "txtPorcentJuros";
             this.txtPorcentJuros.Size = new System.Drawing.Size(76, 26);
             this.txtPorcentJuros.TabIndex = 23;
+            this.txtPorcentJuros.TextChanged += new System.EventHandler(this.txtPorcentJuros_TextChanged);
             // 
             // chkJuros
             // 
@@ -664,6 +687,7 @@
             this.chkJuros.TabIndex = 22;
             this.chkJuros.Text = "com júros de:";
             this.chkJuros.UseVisualStyleBackColor = true;
+            this.chkJuros.CheckedChanged += new System.EventHandler(this.chkJuros_CheckedChanged);
             // 
             // lblContinuaParcelamento
             // 
@@ -691,7 +715,7 @@
             // 
             this.lblExibeValorAVista.AutoSize = true;
             this.lblExibeValorAVista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExibeValorAVista.Location = new System.Drawing.Point(329, 61);
+            this.lblExibeValorAVista.Location = new System.Drawing.Point(334, 61);
             this.lblExibeValorAVista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExibeValorAVista.Name = "lblExibeValorAVista";
             this.lblExibeValorAVista.Size = new System.Drawing.Size(56, 17);
@@ -702,7 +726,7 @@
             // 
             this.lblValorAVista.AutoSize = true;
             this.lblValorAVista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorAVista.Location = new System.Drawing.Point(237, 61);
+            this.lblValorAVista.Location = new System.Drawing.Point(242, 61);
             this.lblValorAVista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorAVista.Name = "lblValorAVista";
             this.lblValorAVista.Size = new System.Drawing.Size(93, 17);
@@ -716,6 +740,7 @@
             this.txtPorcentDescAVista.Name = "txtPorcentDescAVista";
             this.txtPorcentDescAVista.Size = new System.Drawing.Size(76, 26);
             this.txtPorcentDescAVista.TabIndex = 20;
+            this.txtPorcentDescAVista.TextChanged += new System.EventHandler(this.txtPorcentDescAVista_TextChanged);
             // 
             // lblAVista
             // 
@@ -731,9 +756,9 @@
             // grpEntrega
             // 
             this.grpEntrega.Controls.Add(this.nudDias);
-            this.grpEntrega.Controls.Add(this.dtpDataPrevistaEntrega);
+            this.grpEntrega.Controls.Add(this.dtpDataPrevistaInicio);
             this.grpEntrega.Controls.Add(this.lblDataPrevistaInicio);
-            this.grpEntrega.Controls.Add(this.dtpDataPrevistaInicioServico);
+            this.grpEntrega.Controls.Add(this.dtpDataPrevistaEntrega);
             this.grpEntrega.Controls.Add(this.label5);
             this.grpEntrega.Controls.Add(this.lblDataPrevistaEntrega);
             this.grpEntrega.Controls.Add(this.lblDiasPrevistosParaExecucao);
@@ -752,18 +777,30 @@
             // nudDias
             // 
             this.nudDias.Location = new System.Drawing.Point(158, 24);
+            this.nudDias.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudDias.Name = "nudDias";
             this.nudDias.Size = new System.Drawing.Size(76, 26);
             this.nudDias.TabIndex = 24;
+            this.nudDias.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudDias.ValueChanged += new System.EventHandler(this.nudDias_ValueChanged);
             // 
-            // dtpDataPrevistaEntrega
+            // dtpDataPrevistaInicio
             // 
-            this.dtpDataPrevistaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDataPrevistaEntrega.Location = new System.Drawing.Point(158, 67);
-            this.dtpDataPrevistaEntrega.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpDataPrevistaEntrega.Name = "dtpDataPrevistaEntrega";
-            this.dtpDataPrevistaEntrega.Size = new System.Drawing.Size(276, 23);
-            this.dtpDataPrevistaEntrega.TabIndex = 25;
+            this.dtpDataPrevistaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataPrevistaInicio.Location = new System.Drawing.Point(158, 67);
+            this.dtpDataPrevistaInicio.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDataPrevistaInicio.Name = "dtpDataPrevistaInicio";
+            this.dtpDataPrevistaInicio.Size = new System.Drawing.Size(276, 23);
+            this.dtpDataPrevistaInicio.TabIndex = 25;
+            this.dtpDataPrevistaInicio.ValueChanged += new System.EventHandler(this.dtpDataPrevistaInicio_ValueChanged);
             // 
             // lblDataPrevistaInicio
             // 
@@ -776,15 +813,16 @@
             this.lblDataPrevistaInicio.TabIndex = 13;
             this.lblDataPrevistaInicio.Text = "Previsão de inicio:";
             // 
-            // dtpDataPrevistaInicioServico
+            // dtpDataPrevistaEntrega
             // 
-            this.dtpDataPrevistaInicioServico.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDataPrevistaInicioServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDataPrevistaInicioServico.Location = new System.Drawing.Point(158, 106);
-            this.dtpDataPrevistaInicioServico.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpDataPrevistaInicioServico.Name = "dtpDataPrevistaInicioServico";
-            this.dtpDataPrevistaInicioServico.Size = new System.Drawing.Size(276, 23);
-            this.dtpDataPrevistaInicioServico.TabIndex = 26;
+            this.dtpDataPrevistaEntrega.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataPrevistaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataPrevistaEntrega.Location = new System.Drawing.Point(158, 106);
+            this.dtpDataPrevistaEntrega.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDataPrevistaEntrega.Name = "dtpDataPrevistaEntrega";
+            this.dtpDataPrevistaEntrega.Size = new System.Drawing.Size(276, 23);
+            this.dtpDataPrevistaEntrega.TabIndex = 26;
+            this.dtpDataPrevistaEntrega.ValueChanged += new System.EventHandler(this.dtpDataPrevistaEntrega_ValueChanged);
             // 
             // label5
             // 
@@ -903,6 +941,8 @@
             // 
             // grpPrazosFinalizacao
             // 
+            this.grpPrazosFinalizacao.Controls.Add(this.lblTotalGeralValor);
+            this.grpPrazosFinalizacao.Controls.Add(this.lblTotalGeral);
             this.grpPrazosFinalizacao.Controls.Add(this.rtfObservacoes);
             this.grpPrazosFinalizacao.Controls.Add(this.lblObservacoes);
             this.grpPrazosFinalizacao.Controls.Add(this.nudAnos);
@@ -945,9 +985,19 @@
             // nudAnos
             // 
             this.nudAnos.Location = new System.Drawing.Point(160, 31);
+            this.nudAnos.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudAnos.Name = "nudAnos";
             this.nudAnos.Size = new System.Drawing.Size(77, 26);
             this.nudAnos.TabIndex = 27;
+            this.nudAnos.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblAnos
             // 
@@ -970,6 +1020,28 @@
             this.lblTempoGarantia.Size = new System.Drawing.Size(139, 17);
             this.lblTempoGarantia.TabIndex = 19;
             this.lblTempoGarantia.Text = "Tempo de Garantia: ";
+            // 
+            // lblTotalGeralValor
+            // 
+            this.lblTotalGeralValor.AutoSize = true;
+            this.lblTotalGeralValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGeralValor.Location = new System.Drawing.Point(438, 35);
+            this.lblTotalGeralValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalGeralValor.Name = "lblTotalGeralValor";
+            this.lblTotalGeralValor.Size = new System.Drawing.Size(56, 17);
+            this.lblTotalGeralValor.TabIndex = 34;
+            this.lblTotalGeralValor.Text = "000000";
+            // 
+            // lblTotalGeral
+            // 
+            this.lblTotalGeral.AutoSize = true;
+            this.lblTotalGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGeral.Location = new System.Drawing.Point(334, 35);
+            this.lblTotalGeral.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalGeral.Name = "lblTotalGeral";
+            this.lblTotalGeral.Size = new System.Drawing.Size(100, 17);
+            this.lblTotalGeral.TabIndex = 33;
+            this.lblTotalGeral.Text = "Total Geral: ";
             // 
             // frmBudgetsRegister
             // 
@@ -1039,8 +1111,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblPrevisaoExecServ;
         private System.Windows.Forms.Label lblDataPrevistaInicio;
-        private System.Windows.Forms.DateTimePicker dtpDataPrevistaInicioServico;
         private System.Windows.Forms.DateTimePicker dtpDataPrevistaEntrega;
+        private System.Windows.Forms.DateTimePicker dtpDataPrevistaInicio;
         private System.Windows.Forms.Label lblValidadeOrcamento;
         private System.Windows.Forms.DateTimePicker dtpDataValidadeOrcamento;
         private System.Windows.Forms.Button btnCancelarOrcamento;
@@ -1081,5 +1153,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitary_value;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_value;
+        private System.Windows.Forms.Label lblTotalGeralValor;
+        private System.Windows.Forms.Label lblTotalGeral;
     }
 }

@@ -49,6 +49,7 @@ namespace UIWindows
             }
         }
 
+        //UPDATE
         private void btAlterar_Click(object sender, EventArgs e)
         {
             if (!validationCamps())
@@ -71,6 +72,7 @@ namespace UIWindows
             }
         }
 
+        //DELETE
         private void btExcluir_Click(object sender, EventArgs e)
         {
             if (lblID.Text.Equals(""))
