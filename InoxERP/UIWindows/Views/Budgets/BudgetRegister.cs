@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Windows.Forms;
 using UIWindows;
 using UIWindows.Business.Concrete;
@@ -23,16 +24,19 @@ namespace InoxERP.UI_Windows_Forms
         private void btnGravarOrcamento_Click(object sender, EventArgs e)
         {
             if (!validationCamps())
-            { }
-            else if(messageYesNo("Save") == DialogResult.Yes)
-            { }
+            {
+            }
+            else if (messageYesNo("Save") == DialogResult.Yes)
+            {
+            }
         }
 
         //INSERT ITEM ON dgvItens
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (!validatorAdd())// verifica se os campo de adicionar estão preenchidos
-            { }
+            if (!validatorAdd()) // verifica se os campo de adicionar estão preenchidos
+            {
+            }
             else if (checkEqualsItems()) // verifica se o produto/serviço a ser inserido já esta na gridview 
             {
                 decimal total = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValorUnitario.Text);
@@ -42,7 +46,8 @@ namespace InoxERP.UI_Windows_Forms
                 }
                 else
                 {
-                    dgvItens.Rows.Add(txtQuantidade.Text, txtDescricao.Text, txtValorUnitario.Text, Convert.ToString(total));
+                    dgvItens.Rows.Add(txtQuantidade.Text, txtDescricao.Text, txtValorUnitario.Text,
+                        Convert.ToString(total));
                     subTotal = subTotal + total;
                     lblSubTotalValor.Text = Convert.ToString(subTotal);
                     clearItensLine();
@@ -50,13 +55,14 @@ namespace InoxERP.UI_Windows_Forms
                 }
             }
         }
-        
+
         //DELETE ITEM ON dgvItens
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             int compare = dgvItens.Rows.Count; // conta linhas da tabela
             if (compare == 0)
-            { }
+            {
+            }
             else
             {
                 var row = dgvItens.SelectedRows[0].Index;
@@ -64,6 +70,8 @@ namespace InoxERP.UI_Windows_Forms
                 lblSubTotalValor.Text = Convert.ToString(subTotal);
                 dgvItens.Rows.RemoveAt(row);
                 txtQuantidade.Focus();
+                if(compare.Equals(1))
+                    clearCampsPayment();
             }
         }
 
@@ -87,12 +95,12 @@ namespace InoxERP.UI_Windows_Forms
         // CLEAN CAMPS OF ADD ITEMS
         public void clearItensLine()
         {
-            txtQuantidade.Text = "0";
+            txtQuantidade.Text = "";
             txtDescricao.Text = "";
-            txtValorUnitario.Text = "0";
+            txtValorUnitario.Text = "";
             txtValorTotal.Text = "0";
         }
-
+        
         // WHEN CLICK DVGITENS LINE
         private void dgvItens_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -117,28 +125,28 @@ namespace InoxERP.UI_Windows_Forms
         {
             if (txtNome.Text.Length.Equals(0))
             {
-                MessageBox.Show("Informe um nome para o cliente ***");
+                MessageBox.Show("Informe um NOME para o cliente");
                 txtNome.Focus();
                 return false;
             }
 
             if (txtEndereco.Text.Length.Equals(0))
             {
-                MessageBox.Show("Informe um endereço para o cliente ***");
+                MessageBox.Show("Informe um ENDEREÇO para o cliente");
                 txtEndereco.Focus();
                 return false;
             }
 
             if (txtTelefone.Text.Length.Equals(0))
             {
-                MessageBox.Show("Informe um telefone para o cliente ***");
+                MessageBox.Show("Informe um TELEFONE para o cliente");
                 txtTelefone.Focus();
                 return false;
             }
 
             if (txtCargo.Text.Length.Equals(0))
             {
-                MessageBox.Show("Informe um cargo para o cliente ***");
+                MessageBox.Show("Informe um CARGO para o cliente");
                 txtCargo.Focus();
                 return false;
             }
@@ -146,14 +154,14 @@ namespace InoxERP.UI_Windows_Forms
             int compare = dgvItens.Rows.Count; 
             if (compare == 0)
             {
-                MessageBox.Show("Nenhum Item adicionado ao orçamento ***");
+                MessageBox.Show("Nenhum Item Adicionado ao Orçamento");
                 txtQuantidade.Focus();
                 return false;
             }
 
             if (!chkCombinar.Checked && !chkCheque.Checked && !chkDinheiro.Checked)
             {
-                MessageBox.Show("Informe a forma de pagamento ***");
+                MessageBox.Show("Informe a FORMA de pagamento");
                 chkCombinar.Focus();
                 return false;
             }
@@ -166,21 +174,21 @@ namespace InoxERP.UI_Windows_Forms
         {
             if (txtQuantidade.Text.Length.Equals(0))
             {
-                MessageBox.Show("Informe a quantidade ***");
+                MessageBox.Show("Informe a quantidade");
                 txtQuantidade.Focus();
                 return false;
             }
 
             if (txtDescricao.Text.Length.Equals(0))
             {
-                MessageBox.Show("Informe a descrição do produto ***");
+                MessageBox.Show("Informe a descrição do Produto/Serviço");
                 txtDescricao.Focus();
                 return false;
             }
 
             if (txtValorUnitario.Text.Length.Equals(0))
             {
-                MessageBox.Show("Informe o Valor Unitário ***");
+                MessageBox.Show("Informe o Valor Unitário");
                 txtValorUnitario.Focus();
                 return false;
             }
@@ -196,24 +204,36 @@ namespace InoxERP.UI_Windows_Forms
 
             if (!int.TryParse(txtQuantidade.Text, out i)) // validator of numbers
             {
-                MessageBox.Show("Somente Números");
-                txtQuantidade.Text = "0";
+                if (txtQuantidade.Text == "")
+                { }
+                else
+                {
+                    MessageBox.Show("Somente Números");
+                    txtQuantidade.Focus();
+                    txtQuantidade.Text = "";
+                }
             }
             if (!decimal.TryParse(txtValorUnitario.Text, out d)) // validator of numbers
             {
-                MessageBox.Show("Somente Números");
-                txtValorUnitario.Text = "0";
-            }
-            if (txtValorUnitario.Text.Length.Equals(0))
-            {
-                txtValorTotal.Text = "0";
-                txtValorUnitario.Text = "0";
-            }
+                if(txtValorUnitario.Text == "")
+                { }
+                else
+                {
+                    MessageBox.Show("Somente Números");
+                    txtValorUnitario.Focus();
+                    txtValorUnitario.Text = "";
+                }
+            }else
             if (txtQuantidade.Text.Length.Equals(0))
             {
-                txtQuantidade.Text = "0";
-            }
-            else
+                txtQuantidade.Text = "";
+            }else
+            if (txtValorUnitario.Text.Length.Equals(0))
+            {
+                txtValorUnitario.Text = "";
+                txtValorTotal.Text = "0";
+                
+            }else
             {
                 decimal total = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValorUnitario.Text);
                 txtValorTotal.Text = Convert.ToString(total);
@@ -243,41 +263,36 @@ namespace InoxERP.UI_Windows_Forms
         // CALLS VIEW PRODUCTS
         private void btnPeca_Click(object sender, EventArgs e)
         {
-            new frmProductsRegisterSearch().Show();
+            //new frmProductsRegisterSearch().Show();
         }
 
         // CALLS VIEW SERVICES
         private void btnServico_Click(object sender, EventArgs e)
         {
-            new frmServicesRegisterSearch().Show();
+            //new frmServicesRegisterSearch().Show();
         }
 
         // CALL VIEW CLIENTS
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            new frmClientsSearch().Show();
+            //new frmClientsSearch().Show();
         }
 
-        // CALL FUNCTION VALUETOTAL() WHERE CAMP IS CHANGED
-        private void txtValorUnitario_TextChanged(object sender, EventArgs e)
-        {
-            if (txtQuantidade.Text != "")
-                valueTotal();
-        }
-
-        // CALL FUNCTION VALUETOTAL() WHERE CAMP IS CHANGED
+        
+        // CALL FUNCTION VALUETOTAL() WHERE CAMP QUANTIDADE IS CHANGED
         private void txtQuantidade_TextChanged_1(object sender, EventArgs e)
         {
             if(txtQuantidade.Text != "")
                 valueTotal();
         }
         
-        // CLOSE FORM
-        private void btnCancelarOrcamento_Click(object sender, EventArgs e)
+        // CALL FUNCTION VALUETOTAL() WHERE CAMP VALOR UNITARIO IS CHANGED
+        private void txtValorUnitario_TextChanged(object sender, EventArgs e)
         {
-            if (messageYesNo("Cancel") == DialogResult.Yes)
-                this.Dispose();
+            if (txtValorUnitario.Text != "")
+                valueTotal();
         }
+
 
 
         //STATES OF OBJECTS
@@ -287,17 +302,30 @@ namespace InoxERP.UI_Windows_Forms
         {
             if (chkCombinar.Checked)
             {
-                txtPorcentDescAVista.Enabled = false;
-                nudParcelas.Enabled = false;
                 chkJuros.CheckState = CheckState.Unchecked;
-                chkJuros.Enabled = false;
-                txtPorcentJuros.Enabled = false;
+                if (txtPorcentDescAVista.Enabled.Equals(true))
+                    txtPorcentDescAVista.Enabled = false;
+                //if(nudParcelas.Enabled.Equals(true))
+                    nudParcelas.Enabled = false;
+                //if(chkJuros.Enabled.Equals(true))
+                    chkJuros.Enabled = false;
+                if(txtPorcentJuros.Enabled.Equals(true))
+                    txtPorcentJuros.Enabled = false;
+                clearCampsPayment();
+                chkCheque.Enabled = false;
+                chkDinheiro.Enabled = false;
             }
             else
             {
-                txtPorcentDescAVista.Enabled = true;
-                nudParcelas.Enabled = true;
+                if (lblSubTotalValor.Text != "0")
+                {
+                    txtPorcentDescAVista.Enabled = true;
+                    nudParcelas.Enabled = true;
+                }
                 chkJuros.Enabled = true;
+                chkCheque.Enabled = true;
+                chkDinheiro.Enabled = true;
+
                 if (chkJuros.Checked)
                     txtPorcentJuros.Enabled = true;
             }
@@ -315,13 +343,9 @@ namespace InoxERP.UI_Windows_Forms
             {
                 txtPorcentJuros.Enabled = false;
                 txtPorcentDescAVista.Enabled = true;
+                clearCampsPayment();
             }
 
-        }
-
-        private void nudParcelas_ValueChanged(object sender, EventArgs e)
-        {
-            calcValueRate();
         }
         
         // WHEN NUM OF DAYS IS CHANGED
@@ -373,50 +397,107 @@ namespace InoxERP.UI_Windows_Forms
 
                 lblExibeValorAVista.Text = Convert.ToString(descValue);
                 lblTotalGeralValor.Text = lblExibeValorAVista.Text;
+                nudParcelas.Enabled = false;
                 chkJuros.Enabled = false;
             }
             else
             {
                 lblExibeValorAVista.Text = lblSubTotalValor.Text;
                 lblTotalGeralValor.Text = lblSubTotalValor.Text;
-                chkJuros.Enabled = true;
+                if (!chkCombinar.Checked.Equals(true))
+                {
+                    nudParcelas.Enabled = true;
+                    chkJuros.Enabled = true;
+                }
             }
 
+        }
+
+        //WHEN NUDPARCELAS IS CHANGED
+        private void nudParcelas_ValueChanged(object sender, EventArgs e)
+        {
+            calcValueRate();
+        }
+
+        //WHEN PORCENTJUROS IS CHANGED
+        private void txtPorcentJuros_TextChanged(object sender, EventArgs e)
+        {
+            calcValueRate();
+        }
+
+        // CLEAN CAMPS OF PAYMENTS
+        public void clearCampsPayment()
+        {
+            txtPorcentDescAVista.Clear();
+            lblValorPorParcela.Text = "0";
+            lblValorJuros.Text = "0";
+            lblExibeValorTotalParcelado.Text = "0";
+            nudParcelas.Value = 1;
+            txtPorcentJuros.Clear();
+            lblTotalGeralValor.Text = lblSubTotalValor.Text;
         }
 
         //SET TOTAL GENERAL
         private void lblSubTotalValor_TextChanged(object sender, EventArgs e)
         {
+            if (lblSubTotalValor.Text != "0")
+            {
+                txtPorcentDescAVista.Enabled = true;
+                lblExibeValorAVista.Text = lblSubTotalValor.Text;
+                nudParcelas.Enabled = true;
+                chkJuros.Enabled = true;
+                chkCombinar.Enabled = true;
+                chkCheque.Enabled = true;
+                chkDinheiro.Enabled = true;
+
+            }
+            else
+            {
+                txtPorcentDescAVista.Enabled = false;
+                lblExibeValorAVista.Text = "0";
+                nudParcelas.Enabled = false;
+                chkJuros.Enabled = false;
+                chkCombinar.Enabled = false;
+                chkCheque.Enabled = false;
+                chkDinheiro.Enabled = false;
+            }
             lblTotalGeralValor.Text = lblSubTotalValor.Text;
         }
 
-        public void calcValueRate() //arrumar esta função
+        //SET VALUE OF RATE
+        public void calcValueRate() // see with lucas
         {
             if (!lblSubTotalValor.Text.Length.Equals(0) && !txtPorcentJuros.Text.Length.Equals(0) && !nudParcelas.Value.Equals(0))
             {
                 decimal percentByTimes = 0;
-                var valueTimes = Convert.ToDecimal(lblSubTotalValor.Text) /
-                                 Convert.ToDecimal(nudParcelas.Value);
 
-                if(!nudParcelas.Value.Equals(1))
-                    percentByTimes = Convert.ToDecimal(txtPorcentJuros.Text) / 100 * Convert.ToDecimal(nudParcelas.Value);
+                if (!nudParcelas.Value.Equals(1))
+                    percentByTimes = Convert.ToDecimal(txtPorcentJuros.Text) / 100;// * Convert.ToDecimal(nudParcelas.Value);
 
-                var valueRatePerTimes = valueTimes + percentByTimes * valueTimes;
+                var valueOfInstallmentTimes = Math.Round(Convert.ToDecimal(lblSubTotalValor.Text) / Convert.ToDecimal(nudParcelas.Value),2);
+                var valueRate = Math.Round(percentByTimes * valueOfInstallmentTimes, 2);
+                var valueRatePerTimes = Math.Round(valueOfInstallmentTimes + valueRate, 2);
+                var valueTotalWithRate = Math.Round(valueRatePerTimes * Convert.ToDecimal(nudParcelas.Value));
 
-                lblExibeValorPorParcela.Text = Convert.ToString(Math.Round(valueRatePerTimes, 2));
-                lblTotalGeralValor.Text = Convert.ToString(valueRatePerTimes *
-                                           Convert.ToDecimal(nudParcelas.Value));
+                lblValorPorParcela.Text = Convert.ToString(valueRatePerTimes);
+
+                lblValorJuros.Text = Convert.ToString(valueRate * Convert.ToDecimal(nudParcelas.Value));
+
+                lblExibeValorTotalParcelado.Text = Convert.ToString(valueTotalWithRate);
+
+                lblTotalGeralValor.Text = lblExibeValorTotalParcelado.Text;
             }
             else
             {
-                lblExibeValorPorParcela.Text = "0";
-                lblTotalGeralValor.Text = lblSubTotalValor.Text;
+                clearCampsPayment();
             }
         }
 
-        private void txtPorcentJuros_TextChanged(object sender, EventArgs e)
+        // CLOSE FORM
+        private void btnCancelarOrcamento_Click(object sender, EventArgs e)
         {
-            calcValueRate();
+            if (messageYesNo("Cancel") == DialogResult.Yes)
+                this.Dispose();
         }
     }    
 }

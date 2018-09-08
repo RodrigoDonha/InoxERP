@@ -63,15 +63,17 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.grpFormaPagto = new System.Windows.Forms.GroupBox();
+            this.lblValorJuros = new System.Windows.Forms.Label();
+            this.lblJuros = new System.Windows.Forms.Label();
             this.chkDinheiro = new System.Windows.Forms.CheckBox();
             this.chkCheque = new System.Windows.Forms.CheckBox();
             this.nudParcelas = new System.Windows.Forms.NumericUpDown();
             this.chkCombinar = new System.Windows.Forms.CheckBox();
             this.lblExibeValorTotalParcelado = new System.Windows.Forms.Label();
             this.lblValorTotalParcelado = new System.Windows.Forms.Label();
-            this.lblExibeValorPorParcela = new System.Windows.Forms.Label();
+            this.lblValorPorParcela = new System.Windows.Forms.Label();
             this.lbExibeValorParcelado = new System.Windows.Forms.Label();
-            this.lblValorParcelado = new System.Windows.Forms.Label();
+            this.lblParcela = new System.Windows.Forms.Label();
             this.lblContinuaJuros = new System.Windows.Forms.Label();
             this.txtPorcentJuros = new System.Windows.Forms.TextBox();
             this.chkJuros = new System.Windows.Forms.CheckBox();
@@ -97,13 +99,13 @@
             this.btnGravarOrcamento = new System.Windows.Forms.Button();
             this.btnAprovar = new System.Windows.Forms.Button();
             this.grpPrazosFinalizacao = new System.Windows.Forms.GroupBox();
+            this.lblTotalGeralValor = new System.Windows.Forms.Label();
+            this.lblTotalGeral = new System.Windows.Forms.Label();
             this.rtfObservacoes = new System.Windows.Forms.RichTextBox();
             this.lblObservacoes = new System.Windows.Forms.Label();
             this.nudAnos = new System.Windows.Forms.NumericUpDown();
             this.lblAnos = new System.Windows.Forms.Label();
             this.lblTempoGarantia = new System.Windows.Forms.Label();
-            this.lblTotalGeralValor = new System.Windows.Forms.Label();
-            this.lblTotalGeral = new System.Windows.Forms.Label();
             this.grpCliente.SuspendLayout();
             this.grpProdutos_Servicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -344,9 +346,9 @@
             this.lblSubTotalValor.Location = new System.Drawing.Point(495, 359);
             this.lblSubTotalValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubTotalValor.Name = "lblSubTotalValor";
-            this.lblSubTotalValor.Size = new System.Drawing.Size(59, 20);
+            this.lblSubTotalValor.Size = new System.Drawing.Size(19, 20);
             this.lblSubTotalValor.TabIndex = 21;
-            this.lblSubTotalValor.Text = "00000";
+            this.lblSubTotalValor.Text = "0";
             this.lblSubTotalValor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblSubTotalValor.TextChanged += new System.EventHandler(this.lblSubTotalValor_TextChanged);
             // 
@@ -472,7 +474,6 @@
             this.txtValorUnitario.Size = new System.Drawing.Size(81, 26);
             this.txtValorUnitario.TabIndex = 11;
             this.txtValorUnitario.Tag = "";
-            this.txtValorUnitario.Text = "0";
             this.txtValorUnitario.TextChanged += new System.EventHandler(this.txtValorUnitario_TextChanged);
             // 
             // lblValorUnitario
@@ -522,15 +523,17 @@
             // 
             // grpFormaPagto
             // 
+            this.grpFormaPagto.Controls.Add(this.lblValorJuros);
+            this.grpFormaPagto.Controls.Add(this.lblJuros);
             this.grpFormaPagto.Controls.Add(this.chkDinheiro);
             this.grpFormaPagto.Controls.Add(this.chkCheque);
             this.grpFormaPagto.Controls.Add(this.nudParcelas);
             this.grpFormaPagto.Controls.Add(this.chkCombinar);
             this.grpFormaPagto.Controls.Add(this.lblExibeValorTotalParcelado);
             this.grpFormaPagto.Controls.Add(this.lblValorTotalParcelado);
-            this.grpFormaPagto.Controls.Add(this.lblExibeValorPorParcela);
+            this.grpFormaPagto.Controls.Add(this.lblValorPorParcela);
             this.grpFormaPagto.Controls.Add(this.lbExibeValorParcelado);
-            this.grpFormaPagto.Controls.Add(this.lblValorParcelado);
+            this.grpFormaPagto.Controls.Add(this.lblParcela);
             this.grpFormaPagto.Controls.Add(this.lblContinuaJuros);
             this.grpFormaPagto.Controls.Add(this.txtPorcentJuros);
             this.grpFormaPagto.Controls.Add(this.chkJuros);
@@ -549,6 +552,28 @@
             this.grpFormaPagto.TabIndex = 3;
             this.grpFormaPagto.TabStop = false;
             this.grpFormaPagto.Text = "Forma de Pagamento";
+            // 
+            // lblValorJuros
+            // 
+            this.lblValorJuros.AutoSize = true;
+            this.lblValorJuros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorJuros.Location = new System.Drawing.Point(412, 131);
+            this.lblValorJuros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblValorJuros.Name = "lblValorJuros";
+            this.lblValorJuros.Size = new System.Drawing.Size(16, 17);
+            this.lblValorJuros.TabIndex = 25;
+            this.lblValorJuros.Text = "0";
+            // 
+            // lblJuros
+            // 
+            this.lblJuros.AutoSize = true;
+            this.lblJuros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJuros.Location = new System.Drawing.Point(299, 131);
+            this.lblJuros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblJuros.Name = "lblJuros";
+            this.lblJuros.Size = new System.Drawing.Size(104, 17);
+            this.lblJuros.TabIndex = 24;
+            this.lblJuros.Text = "Valor do Juros:";
             // 
             // chkDinheiro
             // 
@@ -572,6 +597,7 @@
             // 
             // nudParcelas
             // 
+            this.nudParcelas.Enabled = false;
             this.nudParcelas.Location = new System.Drawing.Point(156, 92);
             this.nudParcelas.Minimum = new decimal(new int[] {
             1,
@@ -607,9 +633,9 @@
             this.lblExibeValorTotalParcelado.Location = new System.Drawing.Point(155, 165);
             this.lblExibeValorTotalParcelado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExibeValorTotalParcelado.Name = "lblExibeValorTotalParcelado";
-            this.lblExibeValorTotalParcelado.Size = new System.Drawing.Size(224, 17);
+            this.lblExibeValorTotalParcelado.Size = new System.Drawing.Size(16, 17);
             this.lblExibeValorTotalParcelado.TabIndex = 14;
-            this.lblExibeValorTotalParcelado.Text = "Aqui exibe o valor Total Parcelado";
+            this.lblExibeValorTotalParcelado.Text = "0";
             // 
             // lblValorTotalParcelado
             // 
@@ -622,16 +648,16 @@
             this.lblValorTotalParcelado.TabIndex = 13;
             this.lblValorTotalParcelado.Text = "Valor Total Parcelado:";
             // 
-            // lblExibeValorPorParcela
+            // lblValorPorParcela
             // 
-            this.lblExibeValorPorParcela.AutoSize = true;
-            this.lblExibeValorPorParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExibeValorPorParcela.Location = new System.Drawing.Point(404, 131);
-            this.lblExibeValorPorParcela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblExibeValorPorParcela.Name = "lblExibeValorPorParcela";
-            this.lblExibeValorPorParcela.Size = new System.Drawing.Size(56, 17);
-            this.lblExibeValorPorParcela.TabIndex = 12;
-            this.lblExibeValorPorParcela.Text = "000000";
+            this.lblValorPorParcela.AutoSize = true;
+            this.lblValorPorParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorPorParcela.Location = new System.Drawing.Point(412, 96);
+            this.lblValorPorParcela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblValorPorParcela.Name = "lblValorPorParcela";
+            this.lblValorPorParcela.Size = new System.Drawing.Size(16, 17);
+            this.lblValorPorParcela.TabIndex = 12;
+            this.lblValorPorParcela.Text = "0";
             // 
             // lbExibeValorParcelado
             // 
@@ -644,16 +670,16 @@
             this.lbExibeValorParcelado.TabIndex = 11;
             this.lbExibeValorParcelado.Text = "Aqui exibe o valor Parcelado";
             // 
-            // lblValorParcelado
+            // lblParcela
             // 
-            this.lblValorParcelado.AutoSize = true;
-            this.lblValorParcelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorParcelado.Location = new System.Drawing.Point(291, 131);
-            this.lblValorParcelado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblValorParcelado.Name = "lblValorParcelado";
-            this.lblValorParcelado.Size = new System.Drawing.Size(117, 17);
-            this.lblValorParcelado.TabIndex = 10;
-            this.lblValorParcelado.Text = "Valor da Parcela:";
+            this.lblParcela.AutoSize = true;
+            this.lblParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParcela.Location = new System.Drawing.Point(299, 96);
+            this.lblParcela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblParcela.Name = "lblParcela";
+            this.lblParcela.Size = new System.Drawing.Size(117, 17);
+            this.lblParcela.TabIndex = 10;
+            this.lblParcela.Text = "Valor da Parcela:";
             // 
             // lblContinuaJuros
             // 
@@ -679,6 +705,7 @@
             // chkJuros
             // 
             this.chkJuros.AutoSize = true;
+            this.chkJuros.Enabled = false;
             this.chkJuros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkJuros.Location = new System.Drawing.Point(13, 131);
             this.chkJuros.Margin = new System.Windows.Forms.Padding(2);
@@ -718,9 +745,9 @@
             this.lblExibeValorAVista.Location = new System.Drawing.Point(334, 61);
             this.lblExibeValorAVista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExibeValorAVista.Name = "lblExibeValorAVista";
-            this.lblExibeValorAVista.Size = new System.Drawing.Size(56, 17);
+            this.lblExibeValorAVista.Size = new System.Drawing.Size(16, 17);
             this.lblExibeValorAVista.TabIndex = 3;
-            this.lblExibeValorAVista.Text = "000000";
+            this.lblExibeValorAVista.Text = "0";
             // 
             // lblValorAVista
             // 
@@ -735,6 +762,7 @@
             // 
             // txtPorcentDescAVista
             // 
+            this.txtPorcentDescAVista.Enabled = false;
             this.txtPorcentDescAVista.Location = new System.Drawing.Point(155, 56);
             this.txtPorcentDescAVista.Margin = new System.Windows.Forms.Padding(2);
             this.txtPorcentDescAVista.Name = "txtPorcentDescAVista";
@@ -963,6 +991,28 @@
             this.grpPrazosFinalizacao.TabStop = false;
             this.grpPrazosFinalizacao.Text = "Prazos e Finalização";
             // 
+            // lblTotalGeralValor
+            // 
+            this.lblTotalGeralValor.AutoSize = true;
+            this.lblTotalGeralValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGeralValor.Location = new System.Drawing.Point(438, 35);
+            this.lblTotalGeralValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalGeralValor.Name = "lblTotalGeralValor";
+            this.lblTotalGeralValor.Size = new System.Drawing.Size(16, 17);
+            this.lblTotalGeralValor.TabIndex = 34;
+            this.lblTotalGeralValor.Text = "0";
+            // 
+            // lblTotalGeral
+            // 
+            this.lblTotalGeral.AutoSize = true;
+            this.lblTotalGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalGeral.Location = new System.Drawing.Point(334, 35);
+            this.lblTotalGeral.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalGeral.Name = "lblTotalGeral";
+            this.lblTotalGeral.Size = new System.Drawing.Size(100, 17);
+            this.lblTotalGeral.TabIndex = 33;
+            this.lblTotalGeral.Text = "Total Geral: ";
+            // 
             // rtfObservacoes
             // 
             this.rtfObservacoes.Location = new System.Drawing.Point(106, 101);
@@ -1020,28 +1070,6 @@
             this.lblTempoGarantia.Size = new System.Drawing.Size(139, 17);
             this.lblTempoGarantia.TabIndex = 19;
             this.lblTempoGarantia.Text = "Tempo de Garantia: ";
-            // 
-            // lblTotalGeralValor
-            // 
-            this.lblTotalGeralValor.AutoSize = true;
-            this.lblTotalGeralValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGeralValor.Location = new System.Drawing.Point(438, 35);
-            this.lblTotalGeralValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotalGeralValor.Name = "lblTotalGeralValor";
-            this.lblTotalGeralValor.Size = new System.Drawing.Size(56, 17);
-            this.lblTotalGeralValor.TabIndex = 34;
-            this.lblTotalGeralValor.Text = "000000";
-            // 
-            // lblTotalGeral
-            // 
-            this.lblTotalGeral.AutoSize = true;
-            this.lblTotalGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGeral.Location = new System.Drawing.Point(334, 35);
-            this.lblTotalGeral.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTotalGeral.Name = "lblTotalGeral";
-            this.lblTotalGeral.Size = new System.Drawing.Size(100, 17);
-            this.lblTotalGeral.TabIndex = 33;
-            this.lblTotalGeral.Text = "Total Geral: ";
             // 
             // frmBudgetsRegister
             // 
@@ -1101,7 +1129,7 @@
         private System.Windows.Forms.TextBox txtPorcentDescAVista;
         private System.Windows.Forms.Label lblAVista;
         private System.Windows.Forms.Label lbExibeValorParcelado;
-        private System.Windows.Forms.Label lblValorParcelado;
+        private System.Windows.Forms.Label lblParcela;
         private System.Windows.Forms.Label lblContinuaJuros;
         private System.Windows.Forms.TextBox txtPorcentJuros;
         private System.Windows.Forms.GroupBox grpEntrega;
@@ -1121,7 +1149,7 @@
         private System.Windows.Forms.GroupBox grpPrazosFinalizacao;
         private System.Windows.Forms.Label lblExibeValorTotalParcelado;
         private System.Windows.Forms.Label lblValorTotalParcelado;
-        private System.Windows.Forms.Label lblExibeValorPorParcela;
+        private System.Windows.Forms.Label lblValorPorParcela;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.TextBox txtNome;
@@ -1155,5 +1183,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn total_value;
         private System.Windows.Forms.Label lblTotalGeralValor;
         private System.Windows.Forms.Label lblTotalGeral;
+        private System.Windows.Forms.Label lblValorJuros;
+        private System.Windows.Forms.Label lblJuros;
     }
 }
