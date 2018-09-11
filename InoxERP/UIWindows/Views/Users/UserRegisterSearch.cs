@@ -42,6 +42,8 @@ namespace UIWindows
                         obj.Insert(user);
                         afterAction();
                         MessageBox.Show("Salvo");
+                        if (userLog.sName == "test")
+                            Dispose();
                     }
                 }
                 else

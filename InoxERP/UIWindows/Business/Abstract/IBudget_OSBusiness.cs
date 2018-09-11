@@ -9,6 +9,8 @@ namespace UIWindows.Business.Abstract
 {
     public interface IBudget_OSBusiness : IBusiness<Budgets_OS>
     {
-       
+        Budgets_OS returnByName(string name);
     }
+
+    
 }

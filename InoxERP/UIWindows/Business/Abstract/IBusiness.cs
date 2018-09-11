@@ -19,6 +19,6 @@ namespace UIWindows.Business.Abstract
 
         T ReturnByID(string id);
 
-        IQueryable<T> ReteurnAll();
+        IQueryable<T> ReturnAll();
     }
 }

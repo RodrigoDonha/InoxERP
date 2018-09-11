@@ -46,8 +46,8 @@ namespace UIWindows.Business.Concrete
         {
             return Search.FirstOrDefault(c => c.sID == id);
         }
-
-        public virtual IQueryable<T> ReteurnAll()
+        
+        public virtual IQueryable<T> ReturnAll()
         {
             return Search;
         }

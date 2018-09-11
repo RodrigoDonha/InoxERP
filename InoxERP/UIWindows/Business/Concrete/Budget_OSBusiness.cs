@@ -14,6 +14,10 @@ namespace UIWindows.Business.Concrete
         {
             context = contextParam;
         }
-        
+
+        public Budgets_OS returnByName(string name)
+        {
+            return context.Budgets_OS.FirstOrDefault(r=>r.sName == name);
+        }
     }
 }

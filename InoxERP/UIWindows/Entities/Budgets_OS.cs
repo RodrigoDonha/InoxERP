@@ -16,6 +16,9 @@ namespace UIWindows.Entities
         [Range(1,3, ErrorMessage = "Tipo é obrigatório")]
         public ClientType ClientType { get; set; }
 
+        [Required(ErrorMessage = "Data é obrigatória")]
+        public DateTime dtDate { get; set; }
+
         [StringLength(100)]
         [Required(ErrorMessage = "Nome é obrigatório")]
         public string sName { get; set; }
@@ -60,6 +63,9 @@ namespace UIWindows.Entities
 
         [StringLength(300)]
         public string sObservation { get; set; }
+        
+        [Required(ErrorMessage = "Total é obrigatório")]
+        public decimal dTotal { get; set; }
 
         public bool bServiceOrderApproved { get; set; }
 

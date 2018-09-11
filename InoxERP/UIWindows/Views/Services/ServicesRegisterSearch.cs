@@ -32,16 +32,17 @@ namespace UIWindows
             else
             {
                 services.sID = Guid.NewGuid().ToString();
+                
                 services.sDescription = txtServico.Text;
                 services.sTime = Convert.ToDouble(txtHoras.Text);
                 services.dTotal = Convert.ToDecimal(txtValorTotal.Text);
                 services.sObservation = txtObservacao.Text;
 
-                if (messageYesNo() == DialogResult.Yes)
+                if (messageYesNo("insert") == DialogResult.Yes)
                  {
-                    obj.Insert(services);
-                    afterAction();
-                    MessageBox.Show("Salvo");
+                     obj.Insert(services);
+                     afterAction();
+                     MessageBox.Show("Salvo");
                  }
             }
         }
@@ -61,11 +62,12 @@ namespace UIWindows
                 services.dTotal = Convert.ToDecimal(txtValorTotal.Text);
                 services.sObservation = txtObservacao.Text;
 
-                if (messageYesNo() == DialogResult.Yes)
+                if (messageYesNo("update") == DialogResult.Yes)
                 {
                     obj.Update(services);
                     afterAction();
                     MessageBox.Show("Atualizado");
+                    tbcConsultaValores.SelectedTab = Consulta;
                 }
             }
         }
@@ -76,16 +78,15 @@ namespace UIWindows
         {
             if (lblID.Text.Equals(""))
                 MessageBox.Show("Selecione um Usuario Primeiro");
-            else if (messageYesNo() == DialogResult.Yes)
+            else if (messageYesNo("delete") == DialogResult.Yes)
             {
                 obj.Delete(lblID.Text);
                 afterAction();
                 MessageBox.Show("Excluído");
+                tbcConsultaValores.SelectedTab = Consulta;
             }
         }
        
-
-
         public void afterAction()
         {
             fillDataSet();
@@ -120,9 +121,19 @@ namespace UIWindows
         }
 
         //validator DIALOG
-        public DialogResult messageYesNo()
+        public DialogResult messageYesNo(string type)
         {
-            return MessageBox.Show("Você tem Certeza destas Informações ???", "Serviços", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            switch (type)
+            {
+                case "insert":
+                    return MessageBox.Show("Confirma a inclusão ?", "Salvar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "update":
+                    return MessageBox.Show("Confirma a atualização ?", "Atualizar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "delete":
+                    return MessageBox.Show("Confirma a Exclusão ?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            }
+
+            return DialogResult.No;
         }
 
 
@@ -159,8 +170,7 @@ namespace UIWindows
             { }
             else
             {
-                TabControl tab = new TabControl();
-                tab.SelectedTab = Cadastro; //aki
+                tbcConsultaValores.SelectedTab = Cadastro; // muda tab
                 txtServico.Focus();
                 cleanCamps();
                 lblID.Text = dgvConsultaPecas[0, dgvConsultaPecas.CurrentRow.Index].Value.ToString();

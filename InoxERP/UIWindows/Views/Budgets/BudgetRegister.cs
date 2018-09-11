@@ -30,6 +30,7 @@ namespace InoxERP.UI_Windows_Forms
                 if (messageYesNo("Save") == DialogResult.Yes)
                 {
                     budget.sID = Guid.NewGuid().ToString(); 
+                    budget.dtDate = DateTime.Now;
                     budget.ClientType = clientType();
                     budget.sName = txtNome.Text;
                     budget.sAdress = txtEndereco.Text;
@@ -47,6 +48,7 @@ namespace InoxERP.UI_Windows_Forms
                     budget.iWarrantyTime = Convert.ToInt32(nudAnos.Value);
                     budget.dtBudgetExpirationDate = dtpDataValidadeOrcamento.Value;
                     budget.sObservation = rtfObservacoes.Text;
+                    budget.dTotal = Convert.ToDecimal(lblTotalGeralValor.Text);
 
                     //properts dont fill for default, needs to change to null
 
@@ -60,6 +62,7 @@ namespace InoxERP.UI_Windows_Forms
 
                     MessageBox.Show("Orçamento Salvo com Suceço !!!");
                     //colocar impressao aqui
+                    //limpar a tela toda
                 }
             }
             else

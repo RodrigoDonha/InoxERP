@@ -105,6 +105,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InoxErpDBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InoxErpDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\Reports\ReportUsers.cs">
       <SubType>Form</SubType>
@@ -437,6 +442,17 @@
     </None>
     <None Include="InoxErpDBDataSet1.xss">
       <DependentUpon>InoxErpDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="InoxErpDBDataSet2.xsc">
+      <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="InoxErpDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InoxErpDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InoxErpDBDataSet2.xss">
+      <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
