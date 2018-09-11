@@ -294,11 +294,11 @@
     <Compile Include="Views\Reports\ReportServicesOrder.Designer.cs">
       <DependentUpon>ReportServicesOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Budgets\SelectViewSearch.cs">
+    <Compile Include="Views\Budgets\TwoPaymentForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Budgets\SelectViewSearch.Designer.cs">
-      <DependentUpon>SelectViewSearch.cs</DependentUpon>
+    <Compile Include="Views\Budgets\TwoPaymentForms.Designer.cs">
+      <DependentUpon>TwoPaymentForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Users\UserRegisterSearch.cs">
       <SubType>Form</SubType>
@@ -410,8 +410,8 @@
     <EmbeddedResource Include="Views\Reports\ReportServicesOrder.resx">
       <DependentUpon>ReportServicesOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Budgets\SelectViewSearch.resx">
-      <DependentUpon>SelectViewSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Budgets\TwoPaymentForms.resx">
+      <DependentUpon>TwoPaymentForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Users\UserRegisterSearch.resx">
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>

@@ -50,10 +50,10 @@
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.btnPeca = new System.Windows.Forms.Button();
             this.dgvItens = new System.Windows.Forms.DataGridView();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitary_value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
@@ -383,10 +383,10 @@
             this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.amount,
-            this.description,
-            this.unitary_value,
-            this.total_value});
+            this.dAmount,
+            this.sDescription,
+            this.dPrice,
+            this.dTotal});
             this.dgvItens.Location = new System.Drawing.Point(8, 99);
             this.dgvItens.Margin = new System.Windows.Forms.Padding(2);
             this.dgvItens.MultiSelect = false;
@@ -400,36 +400,36 @@
             this.dgvItens.TabStop = false;
             this.dgvItens.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItens_CellClick);
             // 
-            // amount
+            // dAmount
             // 
-            this.amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.amount.HeaderText = "Quantidade";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            this.amount.Width = 127;
+            this.dAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dAmount.HeaderText = "Quantidade";
+            this.dAmount.Name = "dAmount";
+            this.dAmount.ReadOnly = true;
+            this.dAmount.Width = 127;
             // 
-            // description
+            // sDescription
             // 
-            this.description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.description.HeaderText = "Descrição";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
+            this.sDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sDescription.HeaderText = "Descrição";
+            this.sDescription.Name = "sDescription";
+            this.sDescription.ReadOnly = true;
             // 
-            // unitary_value
+            // dPrice
             // 
-            this.unitary_value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.unitary_value.HeaderText = "Valor UN";
-            this.unitary_value.Name = "unitary_value";
-            this.unitary_value.ReadOnly = true;
-            this.unitary_value.Width = 106;
+            this.dPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dPrice.HeaderText = "Valor UN";
+            this.dPrice.Name = "dPrice";
+            this.dPrice.ReadOnly = true;
+            this.dPrice.Width = 106;
             // 
-            // total_value
+            // dTotal
             // 
-            this.total_value.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.total_value.HeaderText = "Total";
-            this.total_value.Name = "total_value";
-            this.total_value.ReadOnly = true;
-            this.total_value.Width = 74;
+            this.dTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dTotal.HeaderText = "Total";
+            this.dTotal.Name = "dTotal";
+            this.dTotal.ReadOnly = true;
+            this.dTotal.Width = 74;
             // 
             // btnAdicionar
             // 
@@ -700,6 +700,7 @@
             this.txtPorcentJuros.Name = "txtPorcentJuros";
             this.txtPorcentJuros.Size = new System.Drawing.Size(76, 26);
             this.txtPorcentJuros.TabIndex = 23;
+            this.txtPorcentJuros.Text = "0";
             this.txtPorcentJuros.TextChanged += new System.EventHandler(this.txtPorcentJuros_TextChanged);
             // 
             // chkJuros
@@ -768,6 +769,7 @@
             this.txtPorcentDescAVista.Name = "txtPorcentDescAVista";
             this.txtPorcentDescAVista.Size = new System.Drawing.Size(76, 26);
             this.txtPorcentDescAVista.TabIndex = 20;
+            this.txtPorcentDescAVista.Text = "0";
             this.txtPorcentDescAVista.TextChanged += new System.EventHandler(this.txtPorcentDescAVista_TextChanged);
             // 
             // lblAVista
@@ -1177,13 +1179,13 @@
         private System.Windows.Forms.Button btnServico;
         private System.Windows.Forms.CheckBox chkDinheiro;
         private System.Windows.Forms.CheckBox chkCheque;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitary_value;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_value;
         private System.Windows.Forms.Label lblTotalGeralValor;
         private System.Windows.Forms.Label lblTotalGeral;
         private System.Windows.Forms.Label lblValorJuros;
         private System.Windows.Forms.Label lblJuros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dTotal;
     }
 }

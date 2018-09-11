@@ -34,7 +34,7 @@ namespace UIWindows.Entities
         
         public bool bPaymentToMatch { get; set; }
 
-        public double dPercentDiscount { get; set; }
+        public decimal dPercentDiscount { get; set; }
 
         //[Required(ErrorMessage = "Quantidade Parcelamento é obrigatória")]
         public int iPaymentInstallments { get; set; }
@@ -74,7 +74,7 @@ namespace UIWindows.Entities
         
         //ForengKeys				
 
-        //public string sClientsID { get; set; }
+        public virtual ICollection<Items> Items { get; set; }
         //public string sContractsID { get; set; }
 
     }

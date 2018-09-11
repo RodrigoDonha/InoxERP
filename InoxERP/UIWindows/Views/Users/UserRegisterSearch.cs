@@ -171,7 +171,8 @@ namespace UIWindows
         private void frmUserRegisterSearch_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'inoxErpDBDataSet.tb_users' table. You can move, or remove it, as needed.
-            fillDataSet();
+            if(userLog.sName != "test")
+                fillDataSet();
         }
         
         //overrid FILL DATASET

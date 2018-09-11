@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UIWindows
 {
-    public partial class frmSelectViewSearch : Form
+    public partial class frmTwoPaymentForms : Form
     {
-        public frmSelectViewSearch()
+        public frmTwoPaymentForms()
         {
             InitializeComponent();
         }

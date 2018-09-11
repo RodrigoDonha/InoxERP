@@ -31,6 +31,7 @@ namespace UIWindows
                 MessageBox.Show("Por Favor preencha as informações Corretamente");
             else
             {
+                services.sID = Guid.NewGuid().ToString();
                 services.sDescription = txtServico.Text;
                 services.sTime = Convert.ToDouble(txtHoras.Text);
                 services.dTotal = Convert.ToDecimal(txtValorTotal.Text);
@@ -153,12 +154,14 @@ namespace UIWindows
         //FILL INFORMATION CAMPS
         private void dgvConsultaPecas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtServico.Focus();
             int compare = dgvConsultaPecas.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (compare == 0)
             { }
             else
             {
+                TabControl tab = new TabControl();
+                tab.SelectedTab = Cadastro; //aki
+                txtServico.Focus();
                 cleanCamps();
                 lblID.Text = dgvConsultaPecas[0, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 txtServico.Text = dgvConsultaPecas[1, dgvConsultaPecas.CurrentRow.Index].Value.ToString();

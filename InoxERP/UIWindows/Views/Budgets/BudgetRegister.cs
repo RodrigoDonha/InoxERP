@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Windows.Forms;
 using UIWindows;
@@ -12,6 +13,7 @@ namespace InoxERP.UI_Windows_Forms
     public partial class frmBudgetsRegister : Form
     {
         static InoxErpContext ctx = new InoxErpContext();
+        Budgets_OS budget = new Budgets_OS();
         private decimal subTotal = 0;
 
         public frmBudgetsRegister()
@@ -23,12 +25,118 @@ namespace InoxERP.UI_Windows_Forms
         //INSERT
         private void btnGravarOrcamento_Click(object sender, EventArgs e)
         {
-            if (!validationCamps())
+            if (validationCamps())
             {
+                if (messageYesNo("Save") == DialogResult.Yes)
+                {
+                    budget.sID = Guid.NewGuid().ToString(); 
+                    budget.ClientType = clientType();
+                    budget.sName = txtNome.Text;
+                    budget.sAdress = txtEndereco.Text;
+                    budget.sTelephone = txtTelefone.Text;
+                    budget.sOccupation = txtCargo.Text;
+                    fillItemsOnBudgets_OS();
+                    budget.bPaymentToMatch = paymentForm("combine");
+                    budget.dPercentDiscount = Convert.ToDecimal(txtPorcentDescAVista.Text);
+                    budget.iPaymentInstallments = Convert.ToInt32(nudParcelas.Value);
+                    budget.bInterestRate = paymentForm("rate");
+                    budget.dWithInterest = Convert.ToDecimal(txtPorcentJuros.Text);
+                    budget.iPrevisionOfExecute = Convert.ToInt32(nudDias.Value);
+                    budget.dtStartPrevision = dtpDataPrevistaInicio.Value;
+                    budget.dtFinalPrevision = dtpDataPrevistaEntrega.Value;
+                    budget.iWarrantyTime = Convert.ToInt32(nudAnos.Value);
+                    budget.dtBudgetExpirationDate = dtpDataValidadeOrcamento.Value;
+                    budget.sObservation = rtfObservacoes.Text;
+
+                    //properts dont fill for default, needs to change to null
+
+                    budget.bServiceOrderApproved = false;
+                    budget.bRegisterFinished = false;
+                    budget.dtDateServiceOrderApproved = DateTime.Now;
+                    budget.dtDateRegisterFinished = DateTime.Now;
+
+                    ctx.Budgets_OS.Add(budget);
+                    ctx.SaveChanges();
+
+                    MessageBox.Show("Orçamento Salvo com Suceço !!!");
+                    //colocar impressao aqui
+                }
             }
-            else if (messageYesNo("Save") == DialogResult.Yes)
+            else
+                MessageBox.Show("Orçamento não foi Salvo");
+
+        }
+
+        public bool paymentForm(string form)
+        {
+            if (chkCheque.Checked && chkDinheiro.Checked)
+                form = "2forms";
+
+            switch (form)
             {
+                case "combine":
+                    if (chkCombinar.Checked)
+                        return true;
+                    else return false;
+                case "cheque":
+                    if (chkCheque.Checked)
+                        return true;
+                    else return false;
+                case "money":
+                    if (chkDinheiro.Checked)
+                        return true;
+                    else return false;
+                case "rate":
+                    if(chkJuros.Checked)
+                        return true;
+                    else return false;
+                    
+                //case "2forms":
+                //    return new frmTwoPaymentForms().Show();
             }
+            return false;
+        }
+
+        // fill Collection<items> on Budgets_OS
+        private void fillItemsOnBudgets_OS()
+        {
+            budget.Items = new List<Items>();
+
+            foreach (DataGridViewRow line in dgvItens.Rows)
+            {
+                budget.Items.Add(
+                    new Items
+                    {
+                        sID = Guid.NewGuid().ToString(),
+                        dAmount = Convert.ToDouble(line.Cells["dAmount"].Value),
+                        sDescription = line.Cells["sDescription"].Value.ToString(),
+                        dPrice = Convert.ToDecimal(line.Cells["dPrice"].Value),
+                        dTotal = Convert.ToDecimal(line.Cells["dTotal"].Value)
+                    });
+            }
+        }
+
+        //validator string Replace
+        public decimal stringReplacePoint(object replace)
+        {
+            string d = replace.ToString();
+
+            d.Replace(".", ",");
+
+            return Convert.ToDecimal(d);
+        }
+
+        //validator ClientType
+        public ClientType clientType()
+        {
+            if (radComercial.Checked)
+                return ClientType.Commerce;
+            if (radIndustrial.Checked)
+                return ClientType.Industrial;
+            if (radResidencial.Checked)
+                return ClientType.Residential;
+
+            return 0;
         }
 
         //INSERT ITEM ON dgvItens
@@ -39,14 +147,14 @@ namespace InoxERP.UI_Windows_Forms
             }
             else if (checkEqualsItems()) // verifica se o produto/serviço a ser inserido já esta na gridview 
             {
-                decimal total = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValorUnitario.Text);
+                decimal total = Convert.ToDecimal(txtQuantidade.Text.Replace(".", ",")) * Convert.ToDecimal(txtValorUnitario.Text.Replace(".", ","));
                 if (total == 0)
                 {
                     MessageBox.Show("Quantidade do Produto/Serviço deve ser maior que Zero");
                 }
                 else
                 {
-                    dgvItens.Rows.Add(txtQuantidade.Text, txtDescricao.Text, txtValorUnitario.Text,
+                    dgvItens.Rows.Add(txtQuantidade.Text, txtDescricao.Text, txtValorUnitario.Text.Replace(".", ","),
                         Convert.ToString(total));
                     subTotal = subTotal + total;
                     lblSubTotalValor.Text = Convert.ToString(subTotal);
@@ -75,6 +183,7 @@ namespace InoxERP.UI_Windows_Forms
             }
         }
 
+
         //FUNCTIONS OF DATA GRID VIEW ITEMS
 
         // SEARCH FOR EQUALS ITEMS
@@ -82,7 +191,7 @@ namespace InoxERP.UI_Windows_Forms
         {
             foreach (DataGridViewRow line in dgvItens.Rows)
             {
-                if (line.Cells["description"].Value.Equals(txtDescricao.Text))
+                if (line.Cells["sDescription"].Value.Equals(txtDescricao.Text))
                     if (messageYesNo("Add") == DialogResult.Yes)
                         return true;
                     else
@@ -115,8 +224,7 @@ namespace InoxERP.UI_Windows_Forms
             txtValorUnitario.Text = dgvItens[2, dgvItens.CurrentRow.Index].Value.ToString();
             txtValorTotal.Text = dgvItens[3, dgvItens.CurrentRow.Index].Value.ToString();
         }
-
-
+        
 
         // VALIDATORS
 
@@ -208,7 +316,6 @@ namespace InoxERP.UI_Windows_Forms
                 { }
                 else
                 {
-                    MessageBox.Show("Somente Números");
                     txtQuantidade.Focus();
                     txtQuantidade.Text = "";
                 }
@@ -219,7 +326,6 @@ namespace InoxERP.UI_Windows_Forms
                 { }
                 else
                 {
-                    MessageBox.Show("Somente Números");
                     txtValorUnitario.Focus();
                     txtValorUnitario.Text = "";
                 }
@@ -235,7 +341,8 @@ namespace InoxERP.UI_Windows_Forms
                 
             }else
             {
-                decimal total = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValorUnitario.Text);
+                //decimal total = stringReplacePoint(Convert.ToDecimal(txtQuantidade.Text.Replace(",","."))) * stringReplacePoint(Convert.ToDecimal(txtValorUnitario.Text.Replace(",",".")));
+                decimal total = Convert.ToDecimal(txtQuantidade.Text.Replace(".",",")) * Convert.ToDecimal(txtValorUnitario.Text.Replace(".",","));
                 txtValorTotal.Text = Convert.ToString(total);
             }
         }
@@ -255,7 +362,6 @@ namespace InoxERP.UI_Windows_Forms
 
             return DialogResult.No;
         }
-
 
 
         // CALLS
@@ -293,8 +399,7 @@ namespace InoxERP.UI_Windows_Forms
                 valueTotal();
         }
 
-
-
+        
         //STATES OF OBJECTS
 
         // WHEN PAYMENT FORM IS CHANGED BY TO COMBINE
@@ -305,10 +410,8 @@ namespace InoxERP.UI_Windows_Forms
                 chkJuros.CheckState = CheckState.Unchecked;
                 if (txtPorcentDescAVista.Enabled.Equals(true))
                     txtPorcentDescAVista.Enabled = false;
-                //if(nudParcelas.Enabled.Equals(true))
-                    nudParcelas.Enabled = false;
-                //if(chkJuros.Enabled.Equals(true))
-                    chkJuros.Enabled = false;
+                nudParcelas.Enabled = false;
+                chkJuros.Enabled = false;
                 if(txtPorcentJuros.Enabled.Equals(true))
                     txtPorcentJuros.Enabled = false;
                 clearCampsPayment();
@@ -387,7 +490,6 @@ namespace InoxERP.UI_Windows_Forms
                 dtpDataPrevistaEntrega.Value = dtpDataPrevistaInicio.Value; // senao ele ignora a data anterior e coloca a data atual
         }
 
-
         //WHEN SET DESCONT TO VALUE
         private void txtPorcentDescAVista_TextChanged(object sender, EventArgs e)
         {
@@ -428,14 +530,17 @@ namespace InoxERP.UI_Windows_Forms
         // CLEAN CAMPS OF PAYMENTS
         public void clearCampsPayment()
         {
-            txtPorcentDescAVista.Clear();
+            txtPorcentDescAVista.Text = "0";
             lblValorPorParcela.Text = "0";
             lblValorJuros.Text = "0";
             lblExibeValorTotalParcelado.Text = "0";
             nudParcelas.Value = 1;
-            txtPorcentJuros.Clear();
+            txtPorcentJuros.Text = "0";
             lblTotalGeralValor.Text = lblSubTotalValor.Text;
         }
+        
+        
+        // SETS
 
         //SET TOTAL GENERAL
         private void lblSubTotalValor_TextChanged(object sender, EventArgs e)
@@ -465,14 +570,14 @@ namespace InoxERP.UI_Windows_Forms
         }
 
         //SET VALUE OF RATE
-        public void calcValueRate() // see with lucas
+        public void calcValueRate()
         {
             if (!lblSubTotalValor.Text.Length.Equals(0) && !txtPorcentJuros.Text.Length.Equals(0) && !nudParcelas.Value.Equals(0))
             {
                 decimal percentByTimes = 0;
 
                 if (!nudParcelas.Value.Equals(1))
-                    percentByTimes = Convert.ToDecimal(txtPorcentJuros.Text) / 100;// * Convert.ToDecimal(nudParcelas.Value);
+                    percentByTimes = Convert.ToDecimal(txtPorcentJuros.Text) / 100;
 
                 var valueOfInstallmentTimes = Math.Round(Convert.ToDecimal(lblSubTotalValor.Text) / Convert.ToDecimal(nudParcelas.Value),2);
                 var valueRate = Math.Round(percentByTimes * valueOfInstallmentTimes, 2);
@@ -492,6 +597,7 @@ namespace InoxERP.UI_Windows_Forms
                 clearCampsPayment();
             }
         }
+
 
         // CLOSE FORM
         private void btnCancelarOrcamento_Click(object sender, EventArgs e)
