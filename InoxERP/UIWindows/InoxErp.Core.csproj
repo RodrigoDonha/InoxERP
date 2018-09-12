@@ -82,6 +82,11 @@
     <Compile Include="Business\Concrete\ServicesBusiness.cs" />
     <Compile Include="Business\Concrete\UsersBusiness.cs" />
     <Compile Include="Context\InoxErpContext.cs" />
+    <Compile Include="DataSetBudgetItems.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBudgetItems.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Budgets_OS.cs" />
     <Compile Include="Entities\Clients.cs" />
@@ -111,6 +116,12 @@
       <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Views\Budgets\PrintBudgets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Budgets\PrintBudgets.Designer.cs">
+      <DependentUpon>PrintBudgets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\ReportUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +323,10 @@
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Business\Reports\rptAllUsers.rdlc" />
+    <EmbeddedResource Include="Business\Reports\rptBudgetPrint.rdlc" />
+    <EmbeddedResource Include="Views\Budgets\PrintBudgets.resx">
+      <DependentUpon>PrintBudgets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportUsers.resx">
       <DependentUpon>ReportUsers.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,6 +436,17 @@
     <EmbeddedResource Include="Views\Users\UserRegisterSearch.resx">
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetBudgetItems.xsc">
+      <DependentUpon>DataSetBudgetItems.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBudgetItems.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBudgetItems.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetBudgetItems.xss">
+      <DependentUpon>DataSetBudgetItems.xsd</DependentUpon>
+    </None>
     <None Include="InoxErpDBDataSet.xsc">
       <DependentUpon>InoxErpDBDataSet.xsd</DependentUpon>
     </None>

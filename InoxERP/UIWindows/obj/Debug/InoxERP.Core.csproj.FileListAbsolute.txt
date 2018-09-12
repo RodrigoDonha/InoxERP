@@ -96,7 +96,6 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmReportDelivery.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmReportBudgets.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmReportServicesOrder.resources
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmSelectViewSearch.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmUserRegisterSearch.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csproj.GenerateResource.cache
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csproj.CoreCompileInputs.cache
@@ -250,3 +249,5 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.cspr
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.exe
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmTwoPaymentForms.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Budgets.frmPrintBudgets.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmTwoPaymentForms.resources
