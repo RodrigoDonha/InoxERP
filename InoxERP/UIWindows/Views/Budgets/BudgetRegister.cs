@@ -14,11 +14,16 @@ namespace InoxERP.UI_Windows_Forms
     {
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS budget = new Budgets_OS();
-        private decimal subTotal = 0;
+        Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+        ItemsBusiness items = new ItemsBusiness(ctx);
 
-        public frmBudgetsRegister()
+        private decimal subTotal = 0;
+        string getID;
+
+        public frmBudgetsRegister(String Id)
         {
             InitializeComponent();
+            getID = Id;
             btnProcurar.Focus();
         }
 
@@ -611,5 +616,36 @@ namespace InoxERP.UI_Windows_Forms
             if (messageYesNo("Cancel") == DialogResult.Yes)
                 this.Dispose();
         }
+
+        public void BudgetData()
+        {
+            // brings the data of the budget recorded in the database
+            budget = obj.ReturnByID(getID);
+
+            if (budget.ClientType == ClientType.Residential)
+            {
+                radResidencial.Checked = true;
+            } else if (budget.ClientType == ClientType.Industrial)
+            {
+                radIndustrial.Checked = true;
+            }else if (budget.ClientType == ClientType.Comercial)
+            {
+                radComercial.Checked = true;
+            }
+
+            txtNome.Text = budget.sName.ToString();
+            txtEndereco.Text = budget.sAdress.ToString();
+            txtTelefone.Text = budget.sTelephone.ToString();
+            txtCargo.Text = budget.sOccupation.ToString();
+
+            // colocar linha de busca dos itens aqui
+            // var search = from p in ctx.Items where p.Budgets_OS_sID.StartsWith(getID) select p;
+
+            
+
+
+
+        }
     }    
+
 }

@@ -24,6 +24,7 @@ namespace UIWindows
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS searchBudget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+        
         String getId;
 
         public frmBudgetSearch()
@@ -91,6 +92,7 @@ namespace UIWindows
 
         }
 
+        // call screen print budget
         private void btnPrint_Click(object sender, EventArgs e)
         {            
             if(getId == null)
@@ -99,20 +101,43 @@ namespace UIWindows
             }
             else
             {
-                //new frmPrintBudgets(getId).Show();
-                new Print(getId).Show();
+                new BudgetPrint(getId).Show();
             }
         }
 
         private void dgvBudgets_Click(object sender, EventArgs e)
         {
             getId = "";
-            getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());            
+            if (dgvOrcamentos.CurrentRow != null)
+            {
+                getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
+            }
         }
 
         private void dgvOrcamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            if (getId == null)
+            {
+                MessageBox.Show("Selecione um orçmento na lista acima.");
+            }
+            else
+            {
+                new BudgetPrint(getId).Show();
+            }
         }
     }
 }

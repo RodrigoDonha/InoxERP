@@ -211,7 +211,6 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\ru\Microso
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csprojAssemblyReference.cache
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Budgets.frmPrintBudgets.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Reports.frmReportUsers.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmSignIn.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmBackup.resources
@@ -251,4 +250,4 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Co
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csproj.CopyComplete
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.exe
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.pdb
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Budgets.Print.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Budgets.BudgetPrint.resources

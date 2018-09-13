@@ -426,6 +426,7 @@
             this.btnAbrir.TabIndex = 2;
             this.btnAbrir.Text = "Abrir";
             this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // btnAlterar
             // 
@@ -436,6 +437,7 @@
             this.btnAlterar.TabIndex = 3;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 

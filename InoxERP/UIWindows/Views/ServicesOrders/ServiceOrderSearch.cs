@@ -20,7 +20,7 @@ namespace UIWindows
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
-            new frmBudgetsRegister().Show();
+            new frmBudgetsRegister(null).Show();
         }
 
         private void btnGerarContrato_Click(object sender, EventArgs e)

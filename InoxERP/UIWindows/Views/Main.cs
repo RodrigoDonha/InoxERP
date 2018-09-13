@@ -55,7 +55,7 @@ namespace InoxERP
         //MENU BUDGET
         private void inclusãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmBudgetsRegister().Show();
+            new frmBudgetsRegister(null).Show();
         }
 
         private void tipConsultaOrcamento_Click(object sender, EventArgs e)
@@ -201,7 +201,7 @@ namespace InoxERP
         //PIC BUDGET
         private void picInclusao_Click(object sender, EventArgs e)
         {
-            new frmBudgetsRegister().Show();
+            new frmBudgetsRegister(null).Show();
         }
 
         private void picConsulta_Click(object sender, EventArgs e)
