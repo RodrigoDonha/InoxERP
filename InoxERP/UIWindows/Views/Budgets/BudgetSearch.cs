@@ -8,10 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WebForms;
+using Microsoft.Reporting.WinForms;
 using Microsoft.ReportingServices.Diagnostics.Internal;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Views.Budgets;
 using DataSet = System.Data.DataSet;
 
 namespace UIWindows
@@ -21,6 +24,7 @@ namespace UIWindows
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS searchBudget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+        String getId;
 
         public frmBudgetSearch()
         {
@@ -33,7 +37,6 @@ namespace UIWindows
             this.tb_itemsTableAdapter.Fill(this.inoxErpDBDataSet2.tb_items);
             // TODO: This line of code loads data into the 'inoxErpDBDataSet2.tb_budgets_os' table. You can move, or remove it, as needed.
             this.tb_budgets_osTableAdapter.Fill(this.inoxErpDBDataSet2.tb_budgets_os);
-
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -46,7 +49,6 @@ namespace UIWindows
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
@@ -75,13 +77,9 @@ namespace UIWindows
             //var search = from p in ctx.Budgets_OS where p.sName.Equals(txtPesquisa.Text) select p;
             //var search = from p in ctx.Budgets_OS select p.sName.Equals(txtPesquisa.Text);
 
-
-
             var search = from p in ctx.Budgets_OS where p.sName.StartsWith(txtPesquisa.Text) select p;
 
             dgvOrcamentos.DataSource = search.ToList();
-
-
         }
 
         public void searchByCPF_CNPJ()
@@ -89,6 +87,30 @@ namespace UIWindows
 
         }
         public void searchByDate()
+        {
+
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {            
+            if(getId == null)
+            {
+                MessageBox.Show("Selecione um orçmento na lista acima.");
+            }
+            else
+            {
+                //new frmPrintBudgets(getId).Show();
+                new Print(getId).Show();
+            }
+        }
+
+        private void dgvBudgets_Click(object sender, EventArgs e)
+        {
+            getId = "";
+            getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());            
+        }
+
+        private void dgvOrcamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

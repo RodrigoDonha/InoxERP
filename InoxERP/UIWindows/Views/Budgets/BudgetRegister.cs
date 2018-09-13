@@ -60,9 +60,12 @@ namespace InoxERP.UI_Windows_Forms
                     ctx.Budgets_OS.Add(budget);
                     ctx.SaveChanges();
 
-                    MessageBox.Show("Orçamento Salvo com Suceço !!!");
+                    MessageBox.Show("Orçamento Salvo com Susseço !!!");
+
                     //colocar impressao aqui
+
                     //limpar a tela toda
+                    this.Close();
                 }
             }
             else
@@ -133,7 +136,7 @@ namespace InoxERP.UI_Windows_Forms
         public ClientType clientType()
         {
             if (radComercial.Checked)
-                return ClientType.Commerce;
+                return ClientType.Comercial;
             if (radIndustrial.Checked)
                 return ClientType.Industrial;
             if (radResidencial.Checked)

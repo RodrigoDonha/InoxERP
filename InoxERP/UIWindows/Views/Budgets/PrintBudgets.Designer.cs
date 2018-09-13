@@ -28,25 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rptBudgetPrint = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.BudgetsPrint = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // rptBudgetPrint
+            // BudgetsPrint
             // 
-            this.rptBudgetPrint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rptBudgetPrint.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.rptBudgetPrint.rdlc";
-            this.rptBudgetPrint.Location = new System.Drawing.Point(0, 0);
-            this.rptBudgetPrint.Name = "rptBudgetPrint";
-            this.rptBudgetPrint.ServerReport.BearerToken = null;
-            this.rptBudgetPrint.Size = new System.Drawing.Size(800, 770);
-            this.rptBudgetPrint.TabIndex = 0;
+            this.BudgetsPrint.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.rptBudgetPrint.rdlc";
+            this.BudgetsPrint.Location = new System.Drawing.Point(12, 12);
+            this.BudgetsPrint.Name = "BudgetsPrint";
+            this.BudgetsPrint.ServerReport.BearerToken = null;
+            this.BudgetsPrint.Size = new System.Drawing.Size(751, 746);
+            this.BudgetsPrint.TabIndex = 0;
             // 
             // frmPrintBudgets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 770);
-            this.Controls.Add(this.rptBudgetPrint);
+            this.ClientSize = new System.Drawing.Size(777, 770);
+            this.Controls.Add(this.BudgetsPrint);
             this.Name = "frmPrintBudgets";
             this.Text = "Impressão do Orçamento";
             this.Load += new System.EventHandler(this.frmPrintBudgets_Load);
@@ -56,6 +55,6 @@
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rptBudgetPrint;
+        private Microsoft.Reporting.WinForms.ReportViewer BudgetsPrint;
     }
 }

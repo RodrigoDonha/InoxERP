@@ -220,6 +220,8 @@
             this.dgvOrcamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrcamentos.Size = new System.Drawing.Size(755, 257);
             this.dgvOrcamentos.TabIndex = 0;
+            this.dgvOrcamentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrcamentos_CellContentClick);
+            this.dgvOrcamentos.Click += new System.EventHandler(this.dgvBudgets_Click);
             // 
             // sID
             // 
@@ -510,6 +512,7 @@
             this.btnPrint.TabIndex = 7;
             this.btnPrint.Text = "Imprimir";
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // frmBudgetSearch
             // 

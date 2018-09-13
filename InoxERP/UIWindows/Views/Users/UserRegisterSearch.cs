@@ -216,8 +216,6 @@ namespace UIWindows
         {
             var t = dgvUsuarios[4, dgvUsuarios.CurrentRow.Index].Value.ToString();
             cbxTipo.Text = t == "1" ? "Administrador" : "Básico";
-        }
-
-        
+        }        
     }
 }

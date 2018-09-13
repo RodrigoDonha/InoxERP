@@ -8,7 +8,7 @@ namespace UIWindows.Entities.Enum
 {
     public enum ClientType
     {
-        Commerce = 1,
+        Comercial = 1,
         Residential = 2,
         Industrial = 3
     }
