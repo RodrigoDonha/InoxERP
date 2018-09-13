@@ -109,6 +109,7 @@
     <Compile Include="Entities\Contracts.cs" />
     <Compile Include="Entities\Enum\ClientType.cs" />
     <Compile Include="Entities\Enum\Estate.cs" />
+    <Compile Include="Entities\Enum\PaymentMethods.cs" />
     <Compile Include="Entities\Enum\UnityType.cs" />
     <Compile Include="Entities\Enum\UserType.cs" />
     <Compile Include="Entities\Items.cs" />

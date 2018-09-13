@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Linq;
 using System.Windows.Forms;
 using UIWindows;
 using UIWindows.Business.Concrete;
@@ -42,6 +43,7 @@ namespace InoxERP.UI_Windows_Forms
                     budget.sTelephone = txtTelefone.Text;
                     budget.sOccupation = txtCargo.Text;
                     fillItemsOnBudgets_OS();
+                    budget.PaymentMethods = paymentMethods();
                     budget.bPaymentToMatch = paymentForm("combine");
                     budget.dPercentDiscount = Convert.ToDecimal(txtPorcentDescAVista.Text);
                     budget.iPaymentInstallments = Convert.ToInt32(nudParcelas.Value);
@@ -62,6 +64,14 @@ namespace InoxERP.UI_Windows_Forms
                     budget.dtDateServiceOrderApproved = DateTime.Now;
                     budget.dtDateRegisterFinished = DateTime.Now;
 
+                    //Incrementa o Cod do orçamento para ser usado na view
+
+                    var cod = obj.Search.Max(b=>b.iCod); //busca ultimo cod inserido no banco
+
+                    if (cod.ToString().Equals(""))
+                        cod = 0;
+                    budget.iCod = cod + 1;
+                    
                     ctx.Budgets_OS.Add(budget);
                     ctx.SaveChanges();
 
@@ -69,8 +79,7 @@ namespace InoxERP.UI_Windows_Forms
 
                     //colocar impressao aqui
 
-                    //limpar a tela toda
-                    this.Close();
+                    cleanScreen();
                 }
             }
             else
@@ -78,6 +87,26 @@ namespace InoxERP.UI_Windows_Forms
 
         }
 
+        // fill Collection<items> on Budgets_OS
+        private void fillItemsOnBudgets_OS()
+        {
+            budget.Items = new List<Items>();
+
+            foreach (DataGridViewRow line in dgvItens.Rows)
+            {
+                budget.Items.Add(
+                    new Items
+                    {
+                        sID = Guid.NewGuid().ToString(),
+                        dAmount = Convert.ToDouble(line.Cells["dAmount"].Value),
+                        sDescription = line.Cells["sDescription"].Value.ToString(),
+                        dPrice = Convert.ToDecimal(line.Cells["dPrice"].Value),
+                        dTotal = Convert.ToDecimal(line.Cells["dTotal"].Value)
+                    });
+            }
+        }
+
+        //CHECK if payment is Checked
         public bool paymentForm(string form)
         {
             if (chkCheque.Checked && chkDinheiro.Checked)
@@ -108,36 +137,23 @@ namespace InoxERP.UI_Windows_Forms
             return false;
         }
 
-        // fill Collection<items> on Budgets_OS
-        private void fillItemsOnBudgets_OS()
+        
+        //RETURN paymentMethods
+        public PaymentMethods paymentMethods()
         {
-            budget.Items = new List<Items>();
+            if (chkCombinar.Checked)
+                return PaymentMethods.toMatch;
+            if (chkCheque.Checked)
+                return PaymentMethods.cheque;
+            if (chkDinheiro.Checked)
+                return PaymentMethods.money;
+            if (chkCheque.Checked && chkDinheiro.Checked)
+                return PaymentMethods.chequeMoney;
 
-            foreach (DataGridViewRow line in dgvItens.Rows)
-            {
-                budget.Items.Add(
-                    new Items
-                    {
-                        sID = Guid.NewGuid().ToString(),
-                        dAmount = Convert.ToDouble(line.Cells["dAmount"].Value),
-                        sDescription = line.Cells["sDescription"].Value.ToString(),
-                        dPrice = Convert.ToDecimal(line.Cells["dPrice"].Value),
-                        dTotal = Convert.ToDecimal(line.Cells["dTotal"].Value)
-                    });
-            }
+            return 0;
         }
 
-        //validator string Replace
-        public decimal stringReplacePoint(object replace)
-        {
-            string d = replace.ToString();
-
-            d.Replace(".", ",");
-
-            return Convert.ToDecimal(d);
-        }
-
-        //validator ClientType
+        //RETURN ClientType
         public ClientType clientType()
         {
             if (radComercial.Checked)
@@ -165,7 +181,7 @@ namespace InoxERP.UI_Windows_Forms
                 }
                 else
                 {
-                    dgvItens.Rows.Add(txtQuantidade.Text, txtDescricao.Text, txtValorUnitario.Text.Replace(".", ","),
+                    dgvItens.Rows.Add(txtQuantidade.Text.Replace(".", ","), txtDescricao.Text, txtValorUnitario.Text.Replace(".", ","),
                         Convert.ToString(total));
                     subTotal = subTotal + total;
                     lblSubTotalValor.Text = Convert.ToString(subTotal);
@@ -212,15 +228,6 @@ namespace InoxERP.UI_Windows_Forms
             return true;
         }
 
-        // CLEAN CAMPS OF ADD ITEMS
-        public void clearItensLine()
-        {
-            txtQuantidade.Text = "";
-            txtDescricao.Text = "";
-            txtValorUnitario.Text = "";
-            txtValorTotal.Text = "0";
-        }
-        
         // WHEN CLICK DVGITENS LINE
         private void dgvItens_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -318,10 +325,10 @@ namespace InoxERP.UI_Windows_Forms
         //validator Calc values
         public void valueTotal()
         {
-            int i;
+            decimal i;
             decimal d;
 
-            if (!int.TryParse(txtQuantidade.Text, out i)) // validator of numbers
+            if (!decimal.TryParse(txtQuantidade.Text, out i)) // validator of numbers
             {
                 if (txtQuantidade.Text == "")
                 { }
@@ -372,6 +379,16 @@ namespace InoxERP.UI_Windows_Forms
             }
 
             return DialogResult.No;
+        }
+
+        //validator string Replace
+        public decimal stringReplacePoint(object replace)
+        {
+            string d = replace.ToString();
+
+            d.Replace(".", ",");
+
+            return Convert.ToDecimal(d);
         }
 
 
@@ -538,6 +555,19 @@ namespace InoxERP.UI_Windows_Forms
             calcValueRate();
         }
 
+
+        //CLEANS
+
+
+        // CLEAN CAMPS OF ADD ITEMS
+        public void clearItensLine()
+        {
+            txtQuantidade.Text = "";
+            txtDescricao.Text = "";
+            txtValorUnitario.Text = "";
+            txtValorTotal.Text = "0";
+        }
+
         // CLEAN CAMPS OF PAYMENTS
         public void clearCampsPayment()
         {
@@ -549,8 +579,43 @@ namespace InoxERP.UI_Windows_Forms
             txtPorcentJuros.Text = "0";
             lblTotalGeralValor.Text = lblSubTotalValor.Text;
         }
-        
-        
+
+        // CLEAN ALL DATA OF VIEW
+        public void cleanScreen()
+        {
+            //CLIENT
+            radComercial.Checked = true;
+            txtNome.Clear();
+            txtEndereco.Clear();
+            txtTelefone.Clear();
+            txtCargo.Clear();
+            //DGVITEMS
+            txtQuantidade.Text = "";
+            txtDescricao.Text = "";
+            txtValorUnitario.Text = "";
+            txtValorTotal.Text = "0";
+            lblSubTotalValor.Text = "0";
+            dgvItens.Rows.Clear();
+            //PAYMENTS
+            chkCombinar.Checked = false;
+            chkCheque.Checked = false;
+            chkDinheiro.Checked = false;
+            txtPorcentDescAVista.Text = "0";
+            lblExibeValorAVista.Text = "0";
+            nudParcelas.Value = 1;
+            lblValorPorParcela.Text = "0";
+            chkJuros.Checked = false;
+            txtPorcentJuros.Text = "0";
+            lblValorJuros.Text = "0";
+            lblExibeValorTotalParcelado.Text = "0";
+            //DELIVERY
+            nudDias.Value = 1;
+            //WARRANTY
+            nudAnos.Value = 1;
+            rtfObservacoes.Clear();
+            lblTotalGeralValor.Text = "0";
+        }
+
         // SETS
 
         //SET TOTAL GENERAL

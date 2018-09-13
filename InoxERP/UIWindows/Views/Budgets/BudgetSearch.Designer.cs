@@ -69,8 +69,6 @@
             this.btnAprovar = new System.Windows.Forms.Button();
             this.fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tb_budgets_osTableAdapter = new UIWindows.InoxErpDBDataSet2TableAdapters.tb_budgets_osTableAdapter();
             this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_itemsTableAdapter = new UIWindows.InoxErpDBDataSet2TableAdapters.tb_itemsTableAdapter();
@@ -83,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -469,24 +466,6 @@
             this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
             this.tbbudgetsosBindingSource.DataSource = this.inoxErpDBDataSet2;
             // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(800, 25);
-            this.fillByToolStrip.TabIndex = 6;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
             // tb_budgets_osTableAdapter
             // 
             this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
@@ -522,7 +501,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.btnAprovar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
@@ -543,12 +521,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -575,8 +550,6 @@
         private System.Windows.Forms.BindingSource tbbudgetsosBindingSource2;
         private System.Windows.Forms.BindingSource fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource;
         private System.Windows.Forms.BindingSource tbbudgetsosBindingSource1;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn sID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn sName;

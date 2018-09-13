@@ -62,22 +62,9 @@ namespace UIWindows
                 searchByDate();
         }
 
+        // SEARCH BY NAME CLIENT
         public void searchByName() //nao esta funcionando
         {
-            //dgvOrcamentos.DataSource = obj.returnByName(txtPesquisa.Text);
-
-            //SqlDataAdapter da = new SqlDataAdapter();
-
-            //DataSet dt = obj.returnByName(txtPesquisa.Text);
-            //var o = obj.returnByName(txtPesquisa.Text);
-
-            //DataTable table = new DataTable();
-
-            //da.Fill(table);
-
-            //var search = from p in ctx.Budgets_OS where p.sName.Equals(txtPesquisa.Text) select p;
-            //var search = from p in ctx.Budgets_OS select p.sName.Equals(txtPesquisa.Text);
-
             var search = from p in ctx.Budgets_OS where p.sName.StartsWith(txtPesquisa.Text) select p;
 
             dgvOrcamentos.DataSource = search.ToList();
@@ -101,7 +88,7 @@ namespace UIWindows
             }
             else
             {
-                new BudgetPrint(getId).Show();
+                //new BudgetPrint(getId).Show();
             }
         }
 
@@ -136,7 +123,7 @@ namespace UIWindows
             }
             else
             {
-                new BudgetPrint(getId).Show();
+                //new BudgetPrint(getId).Show();
             }
         }
     }

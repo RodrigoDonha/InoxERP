@@ -13,6 +13,9 @@ namespace UIWindows.Entities
     [Table("tb_budgets_os")]
     public class Budgets_OS : BaseEntity
     {
+        [Required(ErrorMessage = "Codigo para o Orçamento e obrigatório")]
+        public int iCod { get; set; }
+
         [Range(1,3, ErrorMessage = "Tipo é obrigatório")]
         public ClientType ClientType { get; set; }
 
@@ -34,7 +37,10 @@ namespace UIWindows.Entities
         [StringLength(100)]
         //[Required(ErrorMessage = "Cargo é obrigatório")]
         public string sOccupation { get; set; }
-        
+
+        [Range(1, 4, ErrorMessage = "Tipo de Pagamento é obrigatório")]
+        public PaymentMethods PaymentMethods { get; set; }
+
         public bool bPaymentToMatch { get; set; }
 
         public decimal dPercentDiscount { get; set; }

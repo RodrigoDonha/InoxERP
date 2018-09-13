@@ -251,3 +251,4 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Co
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.exe
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.pdb
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Budgets.BudgetPrint.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Budgets.BudgetPrint.resources
