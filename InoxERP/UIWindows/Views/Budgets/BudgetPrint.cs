@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
@@ -45,34 +46,37 @@ namespace UIWindows.Views.Budgets
         {
             searchBudget = obj.ReturnByID(id);
 
-            var BudgetID = new Microsoft.Reporting.WinForms.ReportParameter();
-            var Name = new Microsoft.Reporting.WinForms.ReportParameter();
-            var Adress = new Microsoft.Reporting.WinForms.ReportParameter();
-            var Contact = new Microsoft.Reporting.WinForms.ReportParameter();
-            var Date = new Microsoft.Reporting.WinForms.ReportParameter();
-            var Type = new Microsoft.Reporting.WinForms.ReportParameter();
-            var Occupation = new Microsoft.Reporting.WinForms.ReportParameter();
-            var PaymentForm = new Microsoft.Reporting.WinForms.ReportParameter();
-            var PaymentInstalment = new Microsoft.Reporting.WinForms.ReportParameter();
-            var InterestRate = new Microsoft.Reporting.WinForms.ReportParameter();
-            var PercentDiscount = new Microsoft.Reporting.WinForms.ReportParameter();
-            var TotalValue = new Microsoft.Reporting.WinForms.ReportParameter();
-            var StartPrevision = new Microsoft.Reporting.WinForms.ReportParameter();
-            var FinalPrevision = new Microsoft.Reporting.WinForms.ReportParameter();
-            var PrevisionOfExecute = new Microsoft.Reporting.WinForms.ReportParameter();
-            var DeliveryPrevision = new Microsoft.Reporting.WinForms.ReportParameter();
-            var WarrantyTime = new Microsoft.Reporting.WinForms.ReportParameter();
-            var ExpirationDate = new Microsoft.Reporting.WinForms.ReportParameter();
+            var BudgetID = new ReportParameter();
+            var Cod = new ReportParameter();
+            var Name = new ReportParameter();
+            var Adress = new ReportParameter();
+            var Contact = new ReportParameter();
+            var Date = new ReportParameter();
+            var Type = new ReportParameter();
+            var Occupation = new ReportParameter();
+            var PaymentForm = new ReportParameter();
+            var PaymentInstalments = new ReportParameter();
+            var InterestRate = new ReportParameter();
+            var PercentDiscount = new ReportParameter();
+            var TotalValue = new ReportParameter();
+            var StartPrevision = new ReportParameter();
+            var FinalPrevision = new ReportParameter();
+            var PrevisionOfExecute = new ReportParameter();
+            var DeliveryPrevision = new ReportParameter();
+            var WarrantyTime = new ReportParameter();
+            var ExpirationDate = new ReportParameter();
+            var Observation = new ReportParameter();
 
             BudgetID.Name = "BudgetID";
+            Cod.Name = "Cod";
             Name.Name = "Name";
             Adress.Name = "Adress";
             Contact.Name = "Contact";
             Date.Name = "Date";
             Type.Name = "Type";
-            Occupation.Name = "Office";
+            Occupation.Name = "Occupation";
             PaymentForm.Name = "PaymentForm";
-            PaymentInstalment.Name = "PaymentInstalment";
+            PaymentInstalments.Name = "PaymentInstalments";
             InterestRate.Name = "InterestRate";
             PercentDiscount.Name = "PercentDiscount";
             TotalValue.Name = "TotalValue";
@@ -82,8 +86,10 @@ namespace UIWindows.Views.Budgets
             DeliveryPrevision.Name = "DeliveryPrevision";
             WarrantyTime.Name = "WarrantyTime";
             ExpirationDate.Name = "ExpirationDate";
+            Observation.Name = "Observation";
 
             BudgetID.Values.Add(searchBudget.sID);
+            Cod.Values.Add(searchBudget.iCod.ToString());
             Date.Values.Add(searchBudget.dtDate.ToShortDateString());
             Name.Values.Add(searchBudget.sName);
             Contact.Values.Add(searchBudget.sTelephone);
@@ -91,9 +97,9 @@ namespace UIWindows.Views.Budgets
             Adress.Values.Add(searchBudget.sAdress);
             Occupation.Values.Add(searchBudget.sOccupation);
             Type.Values.Add(searchBudget.ClientType.ToString());
-            PaymentForm.Values.Add(searchBudget.bPaymentToMatch.ToString());
+            PaymentForm.Values.Add(searchBudget.PaymentMethods.ToString());
             PercentDiscount.Values.Add(searchBudget.dPercentDiscount.ToString());
-            PaymentInstalment.Values.Add(searchBudget.iPaymentInstallments.ToString());
+            PaymentInstalments.Values.Add(searchBudget.iPaymentInstallments.ToString());
             InterestRate.Values.Add(searchBudget.dWithInterest.ToString());
             PrevisionOfExecute.Values.Add(searchBudget.iPrevisionOfExecute.ToString());
             StartPrevision.Values.Add(searchBudget.dtStartPrevision.ToShortDateString());
@@ -102,25 +108,74 @@ namespace UIWindows.Views.Budgets
             ExpirationDate.Values.Add(searchBudget.dtBudgetExpirationDate.ToShortDateString());
             //DeliveryPrevision não tem essa previsão no orçamento, fica com a data de finalização
             DeliveryPrevision.Values.Add(searchBudget.dtFinalPrevision.ToShortDateString());
-
+            Observation.Values.Add(searchBudget.sObservation);
 
             rptPrint.LocalReport.SetParameters(BudgetID);
+            rptPrint.LocalReport.SetParameters(Cod);
             rptPrint.LocalReport.SetParameters(Date);
             rptPrint.LocalReport.SetParameters(Name);
             rptPrint.LocalReport.SetParameters(Contact);
             rptPrint.LocalReport.SetParameters(TotalValue);
             rptPrint.LocalReport.SetParameters(Adress);
-
-            // não está funfando esse atributo, depois vejo
-            //rptPrint.LocalReport.SetParameters(Occupation);
-
+            
+            if (Occupation.Values.Equals(""))
+            {
+                Occupation.Values.Clear();
+                Occupation.Values.Add("");
+            }
+            else
+            {
+                Occupation.Values.Clear();
+                Occupation.Values.Add(" / " + searchBudget.sOccupation.ToString());
+            }
+            rptPrint.LocalReport.SetParameters(Occupation);
             rptPrint.LocalReport.SetParameters(Type);
+
+            switch (searchBudget.PaymentMethods.ToString())
+            {
+                case "toMatch":
+                    PaymentForm.Values.Clear();
+                    PaymentForm.Values.Add("A Combinar");
+                    break;
+                case "cheque":
+                    PaymentForm.Values.Clear();
+                    PaymentForm.Values.Add("Cheque");
+                    break;
+                case "money":
+                    PaymentForm.Values.Clear();
+                    PaymentForm.Values.Add("Dinheiro");
+                    break;
+                case "chequeMoney":
+                    PaymentForm.Values.Clear();
+                    PaymentForm.Values.Add("Cheque e Dinheiro");
+                    break;
+            }
+
+
+            //if (PaymentForm.Values.Equals(1))
+            //{
+            //    PaymentForm.Values.Clear();
+            //    PaymentForm.Values.Add("A Combinar");
+            //}
+            //else if (PaymentForm.Equals(2))
+            //{
+            //    PaymentForm.Values.Clear();
+            //    PaymentForm.Values.Add("Cheque");
+            //}
+            //else if (PaymentForm.Equals(3))
+            //{
+            //    PaymentForm.Values.Clear();
+            //    PaymentForm.Values.Add("Dinheiro");
+            //}
+            //else
+            //{
+            //    PaymentForm.Values.Clear();
+            //    PaymentForm.Values.Add("Cheque e Dinheiro");
+            //}
+
             rptPrint.LocalReport.SetParameters(PaymentForm);
             rptPrint.LocalReport.SetParameters(PercentDiscount);
-
-            // não está funfando esse outro atributo também, depois vejo junto com o outro.
-            //rptPrint.LocalReport.SetParameters(PaymentInstalment);
-
+            rptPrint.LocalReport.SetParameters(PaymentInstalments);
             rptPrint.LocalReport.SetParameters(InterestRate);
             rptPrint.LocalReport.SetParameters(PrevisionOfExecute);
             rptPrint.LocalReport.SetParameters(StartPrevision);
@@ -128,6 +183,7 @@ namespace UIWindows.Views.Budgets
             rptPrint.LocalReport.SetParameters(WarrantyTime);
             rptPrint.LocalReport.SetParameters(ExpirationDate);
             rptPrint.LocalReport.SetParameters(DeliveryPrevision);
+            rptPrint.LocalReport.SetParameters(Observation);
 
             rptPrint.RefreshReport();
         }

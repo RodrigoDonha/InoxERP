@@ -161,7 +161,7 @@ namespace InoxERP.UI_Windows_Forms
             if (radIndustrial.Checked)
                 return ClientType.Industrial;
             if (radResidencial.Checked)
-                return ClientType.Residential;
+                return ClientType.Residencial;
 
             return 0;
         }
@@ -687,7 +687,7 @@ namespace InoxERP.UI_Windows_Forms
             // brings the data of the budget recorded in the database
             budget = obj.ReturnByID(getID);
 
-            if (budget.ClientType == ClientType.Residential)
+            if (budget.ClientType == ClientType.Residencial)
             {
                 radResidencial.Checked = true;
             } else if (budget.ClientType == ClientType.Industrial)

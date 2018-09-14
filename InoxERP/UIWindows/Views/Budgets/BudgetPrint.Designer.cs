@@ -67,21 +67,22 @@
             this.rptPrint.Location = new System.Drawing.Point(0, 0);
             this.rptPrint.Name = "rptPrint";
             this.rptPrint.ServerReport.BearerToken = null;
-            this.rptPrint.Size = new System.Drawing.Size(800, 450);
+            this.rptPrint.Size = new System.Drawing.Size(632, 886);
             this.rptPrint.TabIndex = 0;
+            this.rptPrint.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
             // tb_itemsTableAdapter
             // 
             this.tb_itemsTableAdapter.ClearBeforeFill = true;
             // 
-            // Print
+            // BudgetPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(632, 886);
             this.Controls.Add(this.rptPrint);
-            this.Name = "Print";
-            this.Text = "Print";
+            this.Name = "BudgetPrint";
+            this.Text = "Impressão de Orçamento";
             this.Load += new System.EventHandler(this.Print_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.conjDadosTotaisBindingSource)).EndInit();

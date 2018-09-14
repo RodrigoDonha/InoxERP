@@ -88,7 +88,7 @@ namespace UIWindows
             }
             else
             {
-                //new BudgetPrint(getId).Show();
+                new BudgetPrint(getId).Show();
             }
         }
 

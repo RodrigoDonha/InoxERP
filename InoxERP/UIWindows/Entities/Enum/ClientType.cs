@@ -9,7 +9,7 @@ namespace UIWindows.Entities.Enum
     public enum ClientType
     {
         Comercial = 1,
-        Residential = 2,
+        Residencial = 2,
         Industrial = 3
     }
 }
