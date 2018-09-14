@@ -19,7 +19,7 @@ namespace InoxERP.UI_Windows_Forms
         ItemsBusiness items = new ItemsBusiness(ctx);
 
         private decimal subTotal = 0;
-        string getID;
+        private string getID;
 
         public frmBudgetsRegister(String Id)
         {
@@ -31,59 +31,109 @@ namespace InoxERP.UI_Windows_Forms
         //INSERT
         private void btnGravarOrcamento_Click(object sender, EventArgs e)
         {
-            if (validationCamps())
+            if (btnGravarOrcamento.Text == "Alterar")
             {
-                if (messageYesNo("Save") == DialogResult.Yes)
+                // aqui coloca o código da alteração do orçamento no bd
+
+                if (messageYesNo("Alter") == DialogResult.Yes)
                 {
-                    budget.sID = Guid.NewGuid().ToString(); 
-                    budget.dtDate = DateTime.Now;
-                    budget.ClientType = clientType();
-                    budget.sName = txtNome.Text;
-                    budget.sAdress = txtEndereco.Text;
-                    budget.sTelephone = txtTelefone.Text;
-                    budget.sOccupation = txtCargo.Text;
-                    fillItemsOnBudgets_OS();
-                    budget.PaymentMethods = paymentMethods();
-                    budget.bPaymentToMatch = paymentForm("combine");
-                    budget.dPercentDiscount = Convert.ToDecimal(txtPorcentDescAVista.Text);
-                    budget.iPaymentInstallments = Convert.ToInt32(nudParcelas.Value);
-                    budget.bInterestRate = paymentForm("rate");
-                    budget.dWithInterest = Convert.ToDecimal(txtPorcentJuros.Text);
-                    budget.iPrevisionOfExecute = Convert.ToInt32(nudDias.Value);
-                    budget.dtStartPrevision = dtpDataPrevistaInicio.Value;
-                    budget.dtFinalPrevision = dtpDataPrevistaEntrega.Value;
-                    budget.iWarrantyTime = Convert.ToInt32(nudAnos.Value);
-                    budget.dtBudgetExpirationDate = dtpDataValidadeOrcamento.Value;
-                    budget.sObservation = rtfObservacoes.Text;
-                    budget.dTotal = Convert.ToDecimal(lblTotalGeralValor.Text);
+                    if (!validationCamps())
+                        MessageBox.Show("Por Favor preencha as informações Corretamente");
+                    else
+                    {
+                        budget = obj.ReturnByID(getID);
+                        budget.sID = Guid.NewGuid().ToString();
+                        budget.dtDate = DateTime.Now;
+                        budget.ClientType = clientType();
+                        budget.sName = txtNome.Text;
+                        budget.sAdress = txtEndereco.Text;
+                        budget.sTelephone = txtTelefone.Text;
+                        budget.sOccupation = txtCargo.Text;
+                        fillItemsOnBudgets_OS();
+                        budget.PaymentMethods = paymentMethods();
+                        budget.bPaymentToMatch = paymentForm("combine");
+                        budget.dPercentDiscount = Convert.ToDecimal(txtPorcentDescAVista.Text);
+                        budget.iPaymentInstallments = Convert.ToInt32(nudParcelas.Value);
+                        budget.bInterestRate = paymentForm("rate");
+                        budget.dWithInterest = Convert.ToDecimal(txtPorcentJuros.Text);
+                        budget.iPrevisionOfExecute = Convert.ToInt32(nudDias.Value);
+                        budget.dtStartPrevision = dtpDataPrevistaInicio.Value;
+                        budget.dtFinalPrevision = dtpDataPrevistaEntrega.Value;
+                        budget.iWarrantyTime = Convert.ToInt32(nudAnos.Value);
+                        budget.dtBudgetExpirationDate = dtpDataValidadeOrcamento.Value;
+                        budget.sObservation = rtfObservacoes.Text;
+                        budget.dTotal = Convert.ToDecimal(lblTotalGeralValor.Text);
 
-                    //properts dont fill for default, needs to change to null
+                        //properts dont fill for default, needs to change to null
 
-                    budget.bServiceOrderApproved = false;
-                    budget.bRegisterFinished = false;
-                    budget.dtDateServiceOrderApproved = DateTime.Now;
-                    budget.dtDateRegisterFinished = DateTime.Now;
+                        budget.bServiceOrderApproved = false;
+                        budget.bRegisterFinished = false;
+                        budget.dtDateServiceOrderApproved = DateTime.Now;
+                        budget.dtDateRegisterFinished = DateTime.Now;
 
-                    //Incrementa o Cod do orçamento para ser usado na view
-
-                    var cod = obj.Search.Max(b=>b.iCod); //busca ultimo cod inserido no banco
-
-                    if (cod.ToString().Equals(""))
-                        cod = 0;
-                    budget.iCod = cod + 1;
-                    
-                    ctx.Budgets_OS.Add(budget);
-                    ctx.SaveChanges();
-
-                    MessageBox.Show("Orçamento Salvo com Susseço !!!");
-
-                    //colocar impressao aqui
-
-                    cleanScreen();
+                        obj.Update(budget);
+                        MessageBox.Show("Atualizado");
+                        btnGravarOrcamento.Text = "Gravar";
+                    }
                 }
+
             }
             else
-                MessageBox.Show("Orçamento não foi Salvo");
+            {
+                if (validationCamps())
+                {
+                    if (messageYesNo("Save") == DialogResult.Yes)
+                    {
+                        budget.sID = Guid.NewGuid().ToString();
+                        budget.dtDate = DateTime.Now;
+                        budget.ClientType = clientType();
+                        budget.sName = txtNome.Text;
+                        budget.sAdress = txtEndereco.Text;
+                        budget.sTelephone = txtTelefone.Text;
+                        budget.sOccupation = txtCargo.Text;
+                        fillItemsOnBudgets_OS();
+                        budget.PaymentMethods = paymentMethods();
+                        budget.bPaymentToMatch = paymentForm("combine");
+                        budget.dPercentDiscount = Convert.ToDecimal(txtPorcentDescAVista.Text);
+                        budget.iPaymentInstallments = Convert.ToInt32(nudParcelas.Value);
+                        budget.bInterestRate = paymentForm("rate");
+                        budget.dWithInterest = Convert.ToDecimal(txtPorcentJuros.Text);
+                        budget.iPrevisionOfExecute = Convert.ToInt32(nudDias.Value);
+                        budget.dtStartPrevision = dtpDataPrevistaInicio.Value;
+                        budget.dtFinalPrevision = dtpDataPrevistaEntrega.Value;
+                        budget.iWarrantyTime = Convert.ToInt32(nudAnos.Value);
+                        budget.dtBudgetExpirationDate = dtpDataValidadeOrcamento.Value;
+                        budget.sObservation = rtfObservacoes.Text;
+                        budget.dTotal = Convert.ToDecimal(lblTotalGeralValor.Text);
+
+                        //properts dont fill for default, needs to change to null
+
+                        budget.bServiceOrderApproved = false;
+                        budget.bRegisterFinished = false;
+                        budget.dtDateServiceOrderApproved = DateTime.Now;
+                        budget.dtDateRegisterFinished = DateTime.Now;
+
+                        //Incrementa o Cod do orçamento para ser usado na view
+
+                        var cod = obj.Search.Max(b => b.iCod); //busca ultimo cod inserido no banco
+
+                        if (cod.ToString().Equals(""))
+                            cod = 0;
+                        budget.iCod = cod + 1;
+
+                        ctx.Budgets_OS.Add(budget);
+                        ctx.SaveChanges();
+
+                        MessageBox.Show("Orçamento Salvo com Susseço !!!");
+
+                        //colocar impressao aqui
+
+                        cleanScreen();
+                    }
+                }
+                else
+                    MessageBox.Show("Orçamento não foi Salvo");
+            }
 
         }
 
@@ -376,8 +426,9 @@ namespace InoxERP.UI_Windows_Forms
                     return MessageBox.Show("Deseja Gravar o Orçamento com os Dados Informados?", "Gravar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Add":
                     return MessageBox.Show("Já existe um Produto / Serviço lançando igual, Deseja Continuar?", "Produto Igual Encontrado", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "Alter":
+                    return MessageBox.Show("Deseja Alterar o Orçamento com os Dados Informados?", "Alterar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
-
             return DialogResult.No;
         }
 
@@ -704,12 +755,109 @@ namespace InoxERP.UI_Windows_Forms
             txtCargo.Text = budget.sOccupation.ToString();
 
             // colocar linha de busca dos itens aqui
-            // var search = from p in ctx.Items where p.Budgets_OS_sID.StartsWith(getID) select p;
+
+            var search = budget.Items.ToList();
+
+
+
+            dgvItens.DataSource = budget.Items.ToList();
+
+            
+            dgvItens.Columns[0].Visible = false;
+            dgvItens.Columns[1].Visible = false;
+            dgvItens.Columns[2].Visible = false;
+            dgvItens.Columns[3].Visible = false;
+            dgvItens.Columns[4].Name = "Quantidade";
+            dgvItens.Columns[5].Name = "Descrição";
+            dgvItens.Columns[6].Name = "Unitário";
+            dgvItens.Columns[7].Name = "Total";
+            dgvItens.Columns[8].Visible = false;
+            dgvItens.Columns[9].Visible = false;
+            dgvItens.Columns[10].Visible = false;
+            dgvItens.Columns[11].Visible = false;
 
             
 
 
+            //foreach (Items budgetItem in budget.Items)
+            //{
+            //    dgvItens. = budgetItem;
+            //}
 
+
+            ////exemplo
+            //foreach (var i in budget.Items)
+            //{
+            //    dgvItens.DataSource = i;
+            //}
+
+            //budget.Items = new List<Items>();
+
+            //foreach (DataGridViewRow line in dgvItens.Rows)
+            //{
+            //    budget.Items.Add(
+            //        new Items
+            //        {
+            //            sID = Guid.NewGuid().ToString(),
+            //            dAmount = Convert.ToDouble(line.Cells["dAmount"].Value),
+            //            sDescription = line.Cells["sDescription"].Value.ToString(),
+            //            dPrice = Convert.ToDecimal(line.Cells["dPrice"].Value),
+            //            dTotal = Convert.ToDecimal(line.Cells["dTotal"].Value)
+            //        });
+            //}
+
+
+
+
+
+
+
+
+            if (budget.PaymentMethods == PaymentMethods.toMatch)
+            {
+                chkCombinar.Checked = true;
+            }
+            else if (budget.PaymentMethods == PaymentMethods.toMatch)
+            {
+                chkCombinar.Checked = true;
+            }
+            else if (budget.PaymentMethods == PaymentMethods.cheque)
+            {
+                chkCheque.Checked = true;
+            } else if (budget.PaymentMethods == PaymentMethods.toMatch)
+            {
+                chkCombinar.Checked = true;
+            }
+            else if (budget.PaymentMethods == PaymentMethods.money)
+            {
+                chkDinheiro.Checked = true;
+            }
+            else if (budget.PaymentMethods == PaymentMethods.chequeMoney)
+            {
+                chkCheque.Checked = true;
+                chkDinheiro.Checked = true;
+            }
+
+            txtPorcentDescAVista.Text = budget.dPercentDiscount.ToString();
+            nudParcelas.Text = budget.iPaymentInstallments.ToString();
+
+            if (budget.bInterestRate)
+            {
+                chkJuros.Checked = true;
+                txtPorcentJuros.Text = budget.dWithInterest.ToString();
+                //txtPorcentJuros.Enabled = true;
+            }
+
+            nudDias.Text = budget.iPrevisionOfExecute.ToString();
+            dtpDataPrevistaInicio.Text = budget.dtStartPrevision.ToString();
+            dtpDataPrevistaEntrega.Text = budget.dtFinalPrevision.ToString();
+            nudAnos.Text = budget.iWarrantyTime.ToString();
+            dtpDataValidadeOrcamento.Text = budget.dtBudgetExpirationDate.ToString();
+            rtfObservacoes.Text = budget.sObservation.ToString();
+            //txtPorcentDescAVista.Enabled = true;
+            //nudParcelas.Enabled = true;
+
+            btnGravarOrcamento.Text = "Alterar";
         }
     }    
 

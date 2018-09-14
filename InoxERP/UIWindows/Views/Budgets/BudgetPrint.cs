@@ -66,6 +66,7 @@ namespace UIWindows.Views.Budgets
             var WarrantyTime = new ReportParameter();
             var ExpirationDate = new ReportParameter();
             var Observation = new ReportParameter();
+            var ColunaValorTotal = new ReportParameter();
 
             BudgetID.Name = "BudgetID";
             Cod.Name = "Cod";
@@ -87,6 +88,7 @@ namespace UIWindows.Views.Budgets
             WarrantyTime.Name = "WarrantyTime";
             ExpirationDate.Name = "ExpirationDate";
             Observation.Name = "Observation";
+            ColunaValorTotal.Name = "ColunaValorTotal";
 
             BudgetID.Values.Add(searchBudget.sID);
             Cod.Values.Add(searchBudget.iCod.ToString());
@@ -109,7 +111,6 @@ namespace UIWindows.Views.Budgets
             //DeliveryPrevision não tem essa previsão no orçamento, fica com a data de finalização
             DeliveryPrevision.Values.Add(searchBudget.dtFinalPrevision.ToShortDateString());
             Observation.Values.Add(searchBudget.sObservation);
-
             rptPrint.LocalReport.SetParameters(BudgetID);
             rptPrint.LocalReport.SetParameters(Cod);
             rptPrint.LocalReport.SetParameters(Date);

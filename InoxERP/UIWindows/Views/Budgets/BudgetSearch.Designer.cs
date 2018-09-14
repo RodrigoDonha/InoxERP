@@ -64,7 +64,6 @@
             this.tbbudgetsosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.inoxErpDBDataSet2 = new UIWindows.InoxErpDBDataSet2();
             this.btnAbrir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAprovar = new System.Windows.Forms.Button();
             this.fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -217,7 +216,6 @@
             this.dgvOrcamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrcamentos.Size = new System.Drawing.Size(755, 257);
             this.dgvOrcamentos.TabIndex = 0;
-            this.dgvOrcamentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrcamentos_CellContentClick);
             this.dgvOrcamentos.Click += new System.EventHandler(this.dgvBudgets_Click);
             // 
             // sID
@@ -421,30 +419,20 @@
             this.btnAbrir.Name = "btnAbrir";
             this.btnAbrir.Size = new System.Drawing.Size(80, 30);
             this.btnAbrir.TabIndex = 2;
-            this.btnAbrir.Text = "Abrir";
+            this.btnAbrir.Text = "Alterar";
             this.btnAbrir.UseVisualStyleBackColor = true;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(397, 402);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(80, 30);
-            this.btnAlterar.TabIndex = 3;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(637, 402);
+            this.btnExcluir.Location = new System.Drawing.Point(516, 402);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(80, 30);
             this.btnExcluir.TabIndex = 4;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAprovar
             // 
@@ -455,6 +443,7 @@
             this.btnAprovar.TabIndex = 5;
             this.btnAprovar.Text = "Aprovar";
             this.btnAprovar.UseVisualStyleBackColor = true;
+            this.btnAprovar.Click += new System.EventHandler(this.btnAprovar_Click);
             // 
             // fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource
             // 
@@ -486,7 +475,7 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(517, 402);
+            this.btnPrint.Location = new System.Drawing.Point(396, 402);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(80, 30);
@@ -503,7 +492,6 @@
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnAprovar);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.grpOrcamentos);
             this.Controls.Add(this.grpPesquisa);
@@ -539,7 +527,6 @@
         private System.Windows.Forms.GroupBox grpOrcamentos;
         private System.Windows.Forms.DataGridView dgvOrcamentos;
         private System.Windows.Forms.Button btnAbrir;
-        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAprovar;
         private InoxErpDBDataSet2 inoxErpDBDataSet2;

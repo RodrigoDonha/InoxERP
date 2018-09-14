@@ -19,5 +19,10 @@ namespace UIWindows.Business.Concrete
         {
             return context.Budgets_OS.FirstOrDefault(r=>r.sName == name);
         }
+
+        public Budgets_OS returnByDate(DateTime date)
+        {
+            return context.Budgets_OS.FirstOrDefault(r => r.dtDate.ToShortDateString() == date.ToShortDateString());
+        }
     }
 }

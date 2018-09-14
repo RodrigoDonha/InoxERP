@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InoxERP.UI_Windows_Forms;
 using Microsoft.Reporting.WebForms;
 using Microsoft.Reporting.WinForms;
 using Microsoft.ReportingServices.Diagnostics.Internal;
@@ -24,6 +25,7 @@ namespace UIWindows
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS searchBudget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+        ItemsBusiness item = new  ItemsBusiness(ctx);
         
         String getId;
 
@@ -72,11 +74,14 @@ namespace UIWindows
 
         public void searchByCPF_CNPJ()
         {
-
+            
         }
+
+        // consulta data preciso saber como faz para passar a data do txt para uma consulta, pelo jeito abaixo dá exception
         public void searchByDate()
         {
-
+            //var search = from p in ctx.Budgets_OS where p.dtDate.ToShortDateString().StartsWith(txtPesquisa.Text) select p;
+            //dgvOrcamentos.DataSource = search.ToList();
         }
 
         // call screen print budget
@@ -105,16 +110,6 @@ namespace UIWindows
             }
         }
 
-        private void dgvOrcamentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAbrir_Click(object sender, EventArgs e)
         {
             if (getId == null)
@@ -123,8 +118,70 @@ namespace UIWindows
             }
             else
             {
-                //new BudgetPrint(getId).Show();
+                frmBudgetsRegister bud = new frmBudgetsRegister(getId);
+                bud.BudgetData();
+                bud.Show();
             }
+        }
+
+        // só esta excluindo orçamentos sem itens, com itens está dando erro, precisa pegar o id do orçamento e tentar deletar os itens pelo id do orçemanto
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            getId = "";
+            string itemsID = "";
+
+            if (dgvOrcamentos.CurrentRow != null)
+            {
+                getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());
+                    
+                    if (messageYesNo("Exclude") == DialogResult.Yes)
+                    {
+                        //item.Delete(getId);
+                        obj.Delete(getId);
+                        MessageBox.Show("Excluído");                        
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
+            }
+        }
+
+        //validator YesNo
+        public DialogResult messageYesNo(string type)
+        {
+            switch (type)
+            {
+                case "Exclude":
+                    return MessageBox.Show("Confirma excluisão?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "Approve":
+                    return MessageBox.Show("Confirma aprovação deste orçamento?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            }
+            return DialogResult.No;
+        }
+
+        private void btnAprovar_Click(object sender, EventArgs e)
+        {
+            getId = "";
+            if (dgvOrcamentos.CurrentRow != null)
+            {
+                getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());
+                searchBudget = obj.ReturnByID(getId);
+                if (messageYesNo("Approve") == DialogResult.Yes)
+                {
+                    searchBudget.bServiceOrderApproved = true;
+                    searchBudget.dtDateServiceOrderApproved = DateTime.Now;
+
+                    obj.Update(searchBudget);
+                        MessageBox.Show("Aprovado");}
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
+            }
+
+
+            
         }
     }
 }
