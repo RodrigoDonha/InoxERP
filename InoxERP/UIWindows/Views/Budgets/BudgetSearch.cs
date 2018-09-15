@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Objects;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -77,12 +78,66 @@ namespace UIWindows
             
         }
 
+        // apresenta exception: nome da coluna já existe: conforme tutorial: https://social.msdn.microsoft.com/Forums/pt-BR/7497b070-542a-47f6-991c-81aa2bd0fd1e/inserir-linha-datagridview?forum=504
+        public DataTable CriaDataTable()
+        {
+            var dt = new DataTable();
+            DataColumn dc = new DataColumn();
+
+            dc.DataType = Type.GetType("System.String");
+            dc.ColumnName = "Data";
+            dc.Caption = "dtDate";
+            dc.AllowDBNull = true;
+            //dt.Columns.Add(dc);
+
+            dc.DataType = Type.GetType("System.String");
+            dc.ColumnName = "Nome";
+            dc.Caption = "sName";
+            dc.AllowDBNull = true;
+            //dt.Columns.Add(dc);
+
+            dc.DataType = Type.GetType("System.String");
+            dc.ColumnName = "Telefone";
+            dc.Caption = "sTelephone";
+            dc.AllowDBNull = true;
+            //dt.Columns.Add(dc);
+
+            dc.DataType = Type.GetType("System.String");
+            dc.ColumnName = "Valor";
+            dc.Caption = "dTotal";
+            dc.AllowDBNull = true;
+            dt.Columns.Add(dc);
+
+            return dt;
+        }
+
+        private DataTable dt;
+
         // consulta data preciso saber como faz para passar a data do txt para uma consulta, pelo jeito abaixo dá exception
         public void searchByDate()
         {
-            //var search = from p in ctx.Budgets_OS where p.dtDate.ToShortDateString().StartsWith(txtPesquisa.Text) select p;
-            //dgvOrcamentos.DataSource = search.ToList();
+            var query = from p in ctx.Budgets_OS select p;
+
+            dt = CriaDataTable();
+            dgvOrcamentos.DataSource = dt;
+            DataRow linha = dt.NewRow();
+
+            foreach (var bud in query)
+            {
+                if (bud.dtDate.ToString().Contains("14/09/2018"))
+                {
+                    linha["dtDate"] = bud.dtDate.ToString();
+                    linha["sName"] = bud.sName.ToString();
+                    linha["sTelephone"] = bud.sTelephone.ToString();
+                    linha["dTotal"] = bud.dTotal.ToString();
+                }
+            }
+
+            //alimentando a grid view com um objeto usando .Rows.Add(bud.DtDate.ToString ....) não funfou, diz que não pode receber dados de objeto sem criar DataTable.
+            // por isso tentei dessa maneira acima, mas também não funfou.
         }
+
+        
 
         // call screen print budget
         private void btnPrint_Click(object sender, EventArgs e)
@@ -128,7 +183,7 @@ namespace UIWindows
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             getId = "";
-            string itemsID = "";
+            //string itemsID = "";
 
             if (dgvOrcamentos.CurrentRow != null)
             {

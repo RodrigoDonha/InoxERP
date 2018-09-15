@@ -76,7 +76,6 @@ namespace InoxERP.UI_Windows_Forms
                         btnGravarOrcamento.Text = "Gravar";
                     }
                 }
-
             }
             else
             {
@@ -134,7 +133,6 @@ namespace InoxERP.UI_Windows_Forms
                 else
                     MessageBox.Show("Orçamento não foi Salvo");
             }
-
         }
 
         // fill Collection<items> on Budgets_OS
