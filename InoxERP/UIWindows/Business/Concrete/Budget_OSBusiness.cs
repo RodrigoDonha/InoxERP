@@ -24,5 +24,6 @@ namespace UIWindows.Business.Concrete
         {
             return context.Budgets_OS.FirstOrDefault(r => r.dtDate.ToShortDateString() == date.ToShortDateString());
         }
+        
     }
 }

@@ -43,18 +43,6 @@ namespace UIWindows
             this.tb_budgets_osTableAdapter.Fill(this.inoxErpDBDataSet2.tb_budgets_os);
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.tb_budgets_osTableAdapter.FillBy(this.inoxErpDBDataSet2.tb_budgets_os);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             if (radNome.Checked)
@@ -116,6 +104,8 @@ namespace UIWindows
         // consulta data preciso saber como faz para passar a data do txt para uma consulta, pelo jeito abaixo dá exception
         public void searchByDate()
         {
+            //DateTime data = Convert.ToDateTime(txtPesquisa.Text);
+            //var query = from p in ctx.Budgets_OS where (p.dtDate == data) select p;
             var query = from p in ctx.Budgets_OS select p;
 
             dt = CriaDataTable();
@@ -183,7 +173,6 @@ namespace UIWindows
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             getId = "";
-            //string itemsID = "";
 
             if (dgvOrcamentos.CurrentRow != null)
             {
@@ -191,9 +180,15 @@ namespace UIWindows
                     
                     if (messageYesNo("Exclude") == DialogResult.Yes)
                     {
-                        //item.Delete(getId);
                         obj.Delete(getId);
-                        MessageBox.Show("Excluído");                        
+
+                        var ok = obj.Search.FirstOrDefault(b => b.sID == searchBudget.sID);
+
+                        if (ok != null)
+                            MessageBox.Show("Erro ao Excluir o Orçamento !!!");
+                        else
+                            MessageBox.Show("Orçamento Excluido com Susseço !!!");
+                       
                 }
             }
             else
