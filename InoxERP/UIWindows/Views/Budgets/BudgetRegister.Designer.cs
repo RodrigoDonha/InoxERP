@@ -968,6 +968,7 @@
             this.btnAprovar.TabIndex = 31;
             this.btnAprovar.Text = "Aprovar";
             this.btnAprovar.UseVisualStyleBackColor = false;
+            this.btnAprovar.Click += new System.EventHandler(this.btnAprovar_Click);
             // 
             // grpPrazosFinalizacao
             // 

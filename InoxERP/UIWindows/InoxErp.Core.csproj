@@ -132,6 +132,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.cs">
+      <DependentUpon>InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InoxErpDBDataSetBudget.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -539,6 +547,17 @@
     </None>
     <None Include="InoxErpDBDataSet2.xss">
       <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsc">
+      <DependentUpon>InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd</DependentUpon>
+    </None>
+    <None Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InoxErpDBDataSet3ServiceOrdersApprovedGidView.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.xss">
+      <DependentUpon>InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd</DependentUpon>
     </None>
     <None Include="InoxErpDBDataSetBudget.xsc">
       <DependentUpon>InoxErpDBDataSetBudget.xsd</DependentUpon>

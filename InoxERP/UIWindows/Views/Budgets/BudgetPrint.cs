@@ -151,29 +151,7 @@ namespace UIWindows.Views.Budgets
                     PaymentForm.Values.Add("Cheque e Dinheiro");
                     break;
             }
-
-
-            //if (PaymentForm.Values.Equals(1))
-            //{
-            //    PaymentForm.Values.Clear();
-            //    PaymentForm.Values.Add("A Combinar");
-            //}
-            //else if (PaymentForm.Equals(2))
-            //{
-            //    PaymentForm.Values.Clear();
-            //    PaymentForm.Values.Add("Cheque");
-            //}
-            //else if (PaymentForm.Equals(3))
-            //{
-            //    PaymentForm.Values.Clear();
-            //    PaymentForm.Values.Add("Dinheiro");
-            //}
-            //else
-            //{
-            //    PaymentForm.Values.Clear();
-            //    PaymentForm.Values.Add("Cheque e Dinheiro");
-            //}
-
+            
             rptPrint.LocalReport.SetParameters(PaymentForm);
             rptPrint.LocalReport.SetParameters(PercentDiscount);
             rptPrint.LocalReport.SetParameters(PaymentInstalments);

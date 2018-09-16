@@ -177,23 +177,38 @@ namespace UIWindows
             if (dgvOrcamentos.CurrentRow != null)
             {
                 getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());
-                    
-                    if (messageYesNo("Exclude") == DialogResult.Yes)
-                    {
-                        obj.Delete(getId);
+                
+                if (messageYesNo("Exclude") == DialogResult.Yes)
+                {
+                    deleteItemsBudget(); // chama a consulta aos items para deletar eles antes de deletar o orçamento
+                    obj.Delete(getId);   // deleta o orçamento depois de deletar os itens
 
-                        var ok = obj.Search.FirstOrDefault(b => b.sID == searchBudget.sID);
+                    var ok = obj.Search.FirstOrDefault(b => b.sID == searchBudget.sID);
 
-                        if (ok != null)
-                            MessageBox.Show("Erro ao Excluir o Orçamento !!!");
-                        else
-                            MessageBox.Show("Orçamento Excluido com Susseço !!!");
-                       
+                    if (ok != null)
+                        MessageBox.Show("Erro ao Excluir o Orçamento !!!");
+                    else
+                        MessageBox.Show("Orçamento Excluido com Susseço !!!");
                 }
             }
             else
             {
                 MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
+            }
+        }
+
+
+        // faz consulta aos itens de um orçamento
+        public void deleteItemsBudget()
+        {
+            var search = from p in ctx.Items where p.Budgets_OSID.StartsWith(getId) select p; // esta linha não está consultando pela coluna correta.
+            if (search.Count() > 0)
+            {
+                foreach (var line in search)
+                {
+                    string id = line.sID.ToString();
+                    item.Delete(id);
+                }
             }
         }
 
@@ -210,6 +225,12 @@ namespace UIWindows
             return DialogResult.No;
         }
 
+        //overrid FILL DATASET
+        public void fillDataSet()
+        {
+            this.tb_budgets_osTableAdapter.Fill(this.inoxErpDBDataSet2.tb_budgets_os);
+        }
+
         private void btnAprovar_Click(object sender, EventArgs e)
         {
             getId = "";
@@ -224,14 +245,13 @@ namespace UIWindows
 
                     obj.Update(searchBudget);
                         MessageBox.Show("Aprovado");}
+
+                fillDataSet();
             }
             else
             {
                 MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
             }
-
-
-            
         }
     }
 }

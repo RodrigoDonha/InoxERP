@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,6 +9,7 @@ using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
 using UIWindows.Entities.Enum;
+using UIWindows.Views.Budgets;
 
 namespace InoxERP.UI_Windows_Forms
 {
@@ -26,6 +28,7 @@ namespace InoxERP.UI_Windows_Forms
             InitializeComponent();
             getID = Id;
             btnProcurar.Focus();
+            btnAprovar.Enabled = false;
         }
 
         //INSERT
@@ -57,6 +60,11 @@ namespace InoxERP.UI_Windows_Forms
                         {
                             MessageBox.Show("Orçamento Atualizado com Susseço !!!");
                             btnGravarOrcamento.Text = "Gravar";
+
+
+                            cleanScreen();
+
+                            new BudgetPrint(getID).Show();
                         }
                     }
                 }
@@ -84,20 +92,22 @@ namespace InoxERP.UI_Windows_Forms
                         //salva
                         ctx.Budgets_OS.Add(budget);
                         ctx.SaveChanges();
-
+                        
                         //verifica se o orçamento foi salvo com sucesso
                         var ok = obj.Search.FirstOrDefault(b => b.sID == budget.sID);
 
                         if (ok != null)
-                            MessageBox.Show("Erro ao Salvar o Orçamento !!!");
-                        else
                         {
-                            MessageBox.Show("Orçamento Salvo com Susseço !!!");
-                            
-                            //colocar impressao aqui
+                            MessageBox.Show("Orçamento Salvo com Sucesso !!!");
 
                             cleanScreen();
+
+                            //colocar impressao aqui
+                            string Cod = ok.sID.ToString();
+                            new BudgetPrint(Cod).Show();
                         }
+                        else
+                            MessageBox.Show("Erro ao Salvar o Orçamento !!!");
                     }
                 }
             }
@@ -248,16 +258,24 @@ namespace InoxERP.UI_Windows_Forms
             }
             else
             {
-                var row = dgvItens.SelectedRows[0].Index;
-                subTotal = subTotal - Convert.ToDecimal(dgvItens[3, row].Value.ToString());
-                lblSubTotalValor.Text = Convert.ToString(subTotal);
-                dgvItens.Rows.RemoveAt(row);
-                txtQuantidade.Focus();
-                if(compare.Equals(1))
-                    clearCampsPayment();
+                // não consegui tratar a exclusão no data grid view, apresenta erro no tratamento da iBidingList, então não permiti alteração e exclusão nos itens
+                // até que seja resolvido o erro.
+                //if (btnGravarOrcamento.Text == "Alterar")
+                //{
+                //    MessageBox.Show("Você não pode excluir, nem alterar itens do orçamento já gravado, caso necessite fazer isso, exclua o orçamento e lance outro com os dados corretos.");
+                //}
+                //else
+                //{
+                    var row = dgvItens.SelectedRows[0].Index;
+                    subTotal = subTotal - Convert.ToDecimal(dgvItens[3, row].Value.ToString());
+                    lblSubTotalValor.Text = Convert.ToString(subTotal);
+                    dgvItens.Rows.RemoveAt(row);
+                    txtQuantidade.Focus();
+                    if (compare.Equals(1))
+                        clearCampsPayment();
+                //}
             }
         }
-
 
         //FUNCTIONS OF DATA GRID VIEW ITEMS
 
@@ -279,7 +297,7 @@ namespace InoxERP.UI_Windows_Forms
         // WHEN CLICK DVGITENS LINE
         private void dgvItens_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedItem();
+                selectedItem();
         }
 
         //FILL PRODUCTS/SERVICES ON VIEW
@@ -426,6 +444,8 @@ namespace InoxERP.UI_Windows_Forms
                     return MessageBox.Show("Já existe um Produto / Serviço lançando igual, Deseja Continuar?", "Produto Igual Encontrado", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Alter":
                     return MessageBox.Show("Deseja Alterar o Orçamento com os Dados Informados?", "Alterar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "Approve":
+                    return MessageBox.Show("Deseja Aprovar o orçamento?", "Aprovar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
         }
@@ -725,10 +745,15 @@ namespace InoxERP.UI_Windows_Forms
                 Dispose();
         }
 
-        public void BudgetData()
+        public void bringsDataIdBudget()
         {
+            //getID = null;
             // brings the data of the budget recorded in the database
             budget = obj.ReturnByID(getID);
+        }
+        public void BudgetData()
+        {
+            bringsDataIdBudget();
 
             if (budget.ClientType == ClientType.Residencial)
             {
@@ -746,64 +771,23 @@ namespace InoxERP.UI_Windows_Forms
             txtTelefone.Text = budget.sTelephone.ToString();
             txtCargo.Text = budget.sOccupation.ToString();
 
-            // colocar linha de busca dos itens aqui
+            // preenche a grid view
 
             var search = budget.Items.ToList();
+            decimal subTotal = 0;
+            decimal total = 0;
+
+            foreach (var line in budget.Items.ToList())
+            {
+                dgvItens.Rows.Add(line.dAmount.ToString(), line.sDescription.ToString(), line.dPrice.ToString(), line.dTotal.ToString());
+                total = Convert.ToDecimal(line.dAmount.ToString()) * Convert.ToDecimal(line.dPrice.ToString());
+                subTotal = subTotal + total;
+            }
 
 
-
-            dgvItens.DataSource = budget.Items.ToList();
-
-            
-            dgvItens.Columns[0].Visible = false;
-            dgvItens.Columns[1].Visible = false;
-            dgvItens.Columns[2].Visible = false;
-            dgvItens.Columns[3].Visible = false;
-            dgvItens.Columns[4].Name = "Quantidade";
-            dgvItens.Columns[5].Name = "Descrição";
-            dgvItens.Columns[6].Name = "Unitário";
-            dgvItens.Columns[7].Name = "Total";
-            dgvItens.Columns[8].Visible = false;
-            dgvItens.Columns[9].Visible = false;
-            dgvItens.Columns[10].Visible = false;
-            dgvItens.Columns[11].Visible = false;
-
-            
-
-
-            //foreach (Items budgetItem in budget.Items)
-            //{
-            //    dgvItens. = budgetItem;
-            //}
-
-
-            ////exemplo
-            //foreach (var i in budget.Items)
-            //{
-            //    dgvItens.DataSource = i;
-            //}
-
-            //budget.Items = new List<Items>();
-
-            //foreach (DataGridViewRow line in dgvItens.Rows)
-            //{
-            //    budget.Items.Add(
-            //        new Items
-            //        {
-            //            sID = Guid.NewGuid().ToString(),
-            //            dAmount = Convert.ToDouble(line.Cells["dAmount"].Value),
-            //            sDescription = line.Cells["sDescription"].Value.ToString(),
-            //            dPrice = Convert.ToDecimal(line.Cells["dPrice"].Value),
-            //            dTotal = Convert.ToDecimal(line.Cells["dTotal"].Value)
-            //        });
-            //}
-
-
-
-
-
-
-
+            lblSubTotalValor.Text = Convert.ToString(subTotal);
+            clearItensLine();
+            txtQuantidade.Focus();
 
             if (budget.PaymentMethods == PaymentMethods.toMatch)
             {
@@ -847,10 +831,24 @@ namespace InoxERP.UI_Windows_Forms
             dtpDataValidadeOrcamento.Text = budget.dtBudgetExpirationDate.ToString();
             rtfObservacoes.Text = budget.sObservation.ToString();
             //txtPorcentDescAVista.Enabled = true;
-            //nudParcelas.Enabled = true;
+            nudParcelas.Enabled = true;
 
             btnGravarOrcamento.Text = "Alterar";
+            btnAprovar.Enabled = true;
         }
-    }    
 
+        private void btnAprovar_Click(object sender, EventArgs e)
+        {
+            bringsDataIdBudget();
+            budget = obj.ReturnByID(getID);
+            if (messageYesNo("Approve") == DialogResult.Yes)
+            {
+                budget.bServiceOrderApproved = true;
+                budget.dtDateServiceOrderApproved = DateTime.Now;
+
+                obj.Update(budget);
+                MessageBox.Show("Aprovado");
+            }
+        }
+    }
 }
