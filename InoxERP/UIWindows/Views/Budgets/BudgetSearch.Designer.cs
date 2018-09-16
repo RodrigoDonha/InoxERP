@@ -130,6 +130,7 @@
             this.radData.TabIndex = 3;
             this.radData.Text = "Data";
             this.radData.UseVisualStyleBackColor = true;
+            this.radData.Click += new System.EventHandler(this.radData_Click);
             // 
             // radCPF_CNPJ
             // 

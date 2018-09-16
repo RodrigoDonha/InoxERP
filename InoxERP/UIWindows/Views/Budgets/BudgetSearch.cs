@@ -24,7 +24,7 @@ namespace UIWindows
     public partial class frmBudgetSearch : Form
     {
         static InoxErpContext ctx = new InoxErpContext();
-        Budgets_OS searchBudget = new Budgets_OS();
+        Budgets_OS budget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
         ItemsBusiness item = new  ItemsBusiness(ctx);
         
@@ -66,68 +66,30 @@ namespace UIWindows
             
         }
 
-        // apresenta exception: nome da coluna já existe: conforme tutorial: https://social.msdn.microsoft.com/Forums/pt-BR/7497b070-542a-47f6-991c-81aa2bd0fd1e/inserir-linha-datagridview?forum=504
-        public DataTable CriaDataTable()
-        {
-            var dt = new DataTable();
-            DataColumn dc = new DataColumn();
-
-            dc.DataType = Type.GetType("System.String");
-            dc.ColumnName = "Data";
-            dc.Caption = "dtDate";
-            dc.AllowDBNull = true;
-            //dt.Columns.Add(dc);
-
-            dc.DataType = Type.GetType("System.String");
-            dc.ColumnName = "Nome";
-            dc.Caption = "sName";
-            dc.AllowDBNull = true;
-            //dt.Columns.Add(dc);
-
-            dc.DataType = Type.GetType("System.String");
-            dc.ColumnName = "Telefone";
-            dc.Caption = "sTelephone";
-            dc.AllowDBNull = true;
-            //dt.Columns.Add(dc);
-
-            dc.DataType = Type.GetType("System.String");
-            dc.ColumnName = "Valor";
-            dc.Caption = "dTotal";
-            dc.AllowDBNull = true;
-            dt.Columns.Add(dc);
-
-            return dt;
-        }
-
         private DataTable dt;
 
-        // consulta data preciso saber como faz para passar a data do txt para uma consulta, pelo jeito abaixo dá exception
         public void searchByDate()
         {
-            //DateTime data = Convert.ToDateTime(txtPesquisa.Text);
-            //var query = from p in ctx.Budgets_OS where (p.dtDate == data) select p;
             var query = from p in ctx.Budgets_OS select p;
 
-            dt = CriaDataTable();
-            dgvOrcamentos.DataSource = dt;
-            DataRow linha = dt.NewRow();
-
-            foreach (var bud in query)
+            if (txtPesquisa.Text == "")
             {
-                if (bud.dtDate.ToString().Contains("14/09/2018"))
-                {
-                    linha["dtDate"] = bud.dtDate.ToString();
-                    linha["sName"] = bud.sName.ToString();
-                    linha["sTelephone"] = bud.sTelephone.ToString();
-                    linha["dTotal"] = bud.dTotal.ToString();
-                }
+                dgvOrcamentos.DataSource = query.ToList();
             }
+            else
+            {
+                List<Budgets_OS> list = new List<Budgets_OS>();
 
-            //alimentando a grid view com um objeto usando .Rows.Add(bud.DtDate.ToString ....) não funfou, diz que não pode receber dados de objeto sem criar DataTable.
-            // por isso tentei dessa maneira acima, mas também não funfou.
+                foreach (var line in query.ToList())
+                {
+                    if (line.dtDate.Date.ToShortDateString().Contains(txtPesquisa.Text))
+                    {
+                        list.Add(line);
+                    }
+                }
+                dgvOrcamentos.DataSource = list.ToList();
+            }
         }
-
-        
 
         // call screen print budget
         private void btnPrint_Click(object sender, EventArgs e)
@@ -183,7 +145,7 @@ namespace UIWindows
                     deleteItemsBudget(); // chama a consulta aos items para deletar eles antes de deletar o orçamento
                     obj.Delete(getId);   // deleta o orçamento depois de deletar os itens
 
-                    var ok = obj.Search.FirstOrDefault(b => b.sID == searchBudget.sID);
+                    var ok = obj.Search.FirstOrDefault(b => b.sID == budget.sID);
 
                     if (ok != null)
                         MessageBox.Show("Erro ao Excluir o Orçamento !!!");
@@ -237,13 +199,13 @@ namespace UIWindows
             if (dgvOrcamentos.CurrentRow != null)
             {
                 getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());
-                searchBudget = obj.ReturnByID(getId);
+                budget = obj.ReturnByID(getId);
                 if (messageYesNo("Approve") == DialogResult.Yes)
                 {
-                    searchBudget.bServiceOrderApproved = true;
-                    searchBudget.dtDateServiceOrderApproved = DateTime.Now;
+                    budget.bServiceOrderApproved = true;
+                    budget.dtDateServiceOrderApproved = DateTime.Now;
 
-                    obj.Update(searchBudget);
+                    obj.Update(budget);
                         MessageBox.Show("Aprovado");}
 
                 fillDataSet();
@@ -252,6 +214,11 @@ namespace UIWindows
             {
                 MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
             }
+        }
+
+        private void radData_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Informe a data no formato dd/mm/aaaa, exemplo: 01/09/2018");
         }
     }
 }

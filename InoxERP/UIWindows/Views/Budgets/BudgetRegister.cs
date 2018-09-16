@@ -749,8 +749,8 @@ namespace InoxERP.UI_Windows_Forms
         {
             //getID = null;
             // brings the data of the budget recorded in the database
-            budget = obj.ReturnByID(getID);
         }
+
         public void BudgetData()
         {
             bringsDataIdBudget();
@@ -773,7 +773,6 @@ namespace InoxERP.UI_Windows_Forms
 
             // preenche a grid view
 
-            var search = budget.Items.ToList();
             decimal subTotal = 0;
             decimal total = 0;
 

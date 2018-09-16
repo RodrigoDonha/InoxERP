@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InoxERP.UI_Windows_Forms;
+using Microsoft.ReportingServices.Interfaces;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
@@ -133,6 +134,59 @@ namespace UIWindows
             {
                 MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
             }
+        }
+
+        // SEARCH BY NAME CLIENT
+        public void searchByName() //nao esta funcionando
+        {
+            // corrigir a clausula where, onde 
+            var search = from p in ctx.Budgets_OS where p.sName.StartsWith(txtPesquisa.Text) where p.bServiceOrderApproved.Equals(true) where p.bRegisterFinished.Equals(false) select p;
+
+            grdOrdemServico.DataSource = search.ToList();
+        }
+
+        public void searchByCPF_CNPJ()
+        {
+
+        }
+
+        public void searchByDate()
+        {
+            
+            var query = from p in ctx.Budgets_OS where p.bServiceOrderApproved.Equals(true) where p.bRegisterFinished.Equals(false) select p;
+
+            if (txtPesquisa.Text == "")
+            {
+                grdOrdemServico.DataSource = query.ToList();
+            }
+            else
+            {
+                List<Budgets_OS> list = new List<Budgets_OS>();
+
+                foreach (var line in query.ToList())
+                {
+                    if (line.dtDate.Date.ToShortDateString().Contains(txtPesquisa.Text))
+                    {
+                        list.Add(line);
+                    }
+                }
+                grdOrdemServico.DataSource = list.ToList();
+            }
+        }
+
+        private void radData_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Informe a data no formato dd/mm/aaaa, exemplo: 01/09/2018");
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (radNome.Checked)
+                searchByName();
+            else if (radCPF_CNPJ.Checked)
+                searchByCPF_CNPJ();
+            else if (radData.Checked)
+                searchByDate();
         }
     }
 }
