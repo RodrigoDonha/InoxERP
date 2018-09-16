@@ -37,8 +37,6 @@ namespace UIWindows
 
         private void frmBudgetSearch_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'inoxErpDBDataSet2.tb_items' table. You can move, or remove it, as needed.
-            this.tb_itemsTableAdapter.Fill(this.inoxErpDBDataSet2.tb_items);
             // TODO: This line of code loads data into the 'inoxErpDBDataSet2.tb_budgets_os' table. You can move, or remove it, as needed.
             this.tb_budgets_osTableAdapter.Fill(this.inoxErpDBDataSet2.tb_budgets_os);
         }
@@ -142,7 +140,7 @@ namespace UIWindows
                 
                 if (messageYesNo("Exclude") == DialogResult.Yes)
                 {
-                    deleteItemsBudget(); // chama a consulta aos items para deletar eles antes de deletar o orçamento
+                    //deleteItemsBudget(); // chama a consulta aos items para deletar eles antes de deletar o orçamento
                     obj.Delete(getId);   // deleta o orçamento depois de deletar os itens
 
                     var ok = obj.Search.FirstOrDefault(b => b.sID == budget.sID);
@@ -163,7 +161,7 @@ namespace UIWindows
         // faz consulta aos itens de um orçamento
         public void deleteItemsBudget()
         {
-            var search = from p in ctx.Items where p.Budgets_OSID.StartsWith(getId) select p; // esta linha não está consultando pela coluna correta.
+            var search = from p in ctx.Items where p.IdBudgets_OS.StartsWith(getId) select p; // esta linha não está consultando pela coluna correta.
             if (search.Count() > 0)
             {
                 foreach (var line in search)
@@ -195,10 +193,9 @@ namespace UIWindows
 
         private void btnAprovar_Click(object sender, EventArgs e)
         {
-            getId = "";
             if (dgvOrcamentos.CurrentRow != null)
             {
-                getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());
+                setId();
                 budget = obj.ReturnByID(getId);
                 if (messageYesNo("Approve") == DialogResult.Yes)
                 {
@@ -216,9 +213,27 @@ namespace UIWindows
             }
         }
 
+        private void setId()
+        {
+            getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());
+        }
+
         private void radData_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Informe a data no formato dd/mm/aaaa, exemplo: 01/09/2018");
+        }
+
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.tb_budgets_osTableAdapter.FillBy1(this.inoxErpDBDataSet2.tb_budgets_os);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

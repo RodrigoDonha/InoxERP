@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnFinlizar = new System.Windows.Forms.Button();
             this.btnDesaprovar = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
@@ -116,17 +116,17 @@
             // 
             this.grdOrdemServico.AllowUserToAddRows = false;
             this.grdOrdemServico.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.grdOrdemServico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.grdOrdemServico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdOrdemServico.AutoGenerateColumns = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdOrdemServico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdOrdemServico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grdOrdemServico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdOrdemServico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dtDateDataGridViewTextBoxColumn,
@@ -143,9 +143,11 @@
             this.grdOrdemServico.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdOrdemServico.Location = new System.Drawing.Point(3, 18);
             this.grdOrdemServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grdOrdemServico.MultiSelect = false;
             this.grdOrdemServico.Name = "grdOrdemServico";
             this.grdOrdemServico.ReadOnly = true;
             this.grdOrdemServico.RowTemplate.Height = 24;
+            this.grdOrdemServico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdOrdemServico.Size = new System.Drawing.Size(1205, 270);
             this.grdOrdemServico.TabIndex = 0;
             this.grdOrdemServico.Click += new System.EventHandler(this.grdOrdemServico_Click);
@@ -299,7 +301,6 @@
             this.radData.Name = "radData";
             this.radData.Size = new System.Drawing.Size(56, 21);
             this.radData.TabIndex = 3;
-            this.radData.TabStop = true;
             this.radData.Text = "Data";
             this.radData.UseVisualStyleBackColor = true;
             this.radData.Click += new System.EventHandler(this.radData_Click);
@@ -312,13 +313,13 @@
             this.radCPF_CNPJ.Name = "radCPF_CNPJ";
             this.radCPF_CNPJ.Size = new System.Drawing.Size(91, 21);
             this.radCPF_CNPJ.TabIndex = 2;
-            this.radCPF_CNPJ.TabStop = true;
             this.radCPF_CNPJ.Text = "CPF/CNPJ";
             this.radCPF_CNPJ.UseVisualStyleBackColor = true;
             // 
             // radNome
             // 
             this.radNome.AutoSize = true;
+            this.radNome.Checked = true;
             this.radNome.Location = new System.Drawing.Point(52, 26);
             this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNome.Name = "radNome";

@@ -9,12 +9,10 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_itemsTableAdapter" GeneratorDataComponentClassName="tb_itemsTableAdapter" Name="tb_items" UserDataComponentName="tb_itemsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_items" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_items" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        tb_items.sID, tb_items.dAmount, tb_items.sDescription, tb_items.Budgets_OS_sID
-FROM            tb_items INNER JOIN
-                         tb_budgets_os ON tb_items.Budgets_OS_sID = tb_budgets_os.sID</CommandText>
+                    <CommandText>SELECT tb_items.sID, tb_items.dAmount, tb_items.sDescription, tb_items.IdBudgets_OS FROM tb_items INNER JOIN tb_budgets_os ON tb_items.IdBudgets_OS = tb_budgets_os.sID</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -24,7 +22,7 @@ FROM            tb_items INNER JOIN
               <Mapping SourceColumn="sID" DataSetColumn="sID" />
               <Mapping SourceColumn="dAmount" DataSetColumn="dAmount" />
               <Mapping SourceColumn="sDescription" DataSetColumn="sDescription" />
-              <Mapping SourceColumn="Budgets_OS_sID" DataSetColumn="Budgets_OS_sID" />
+              <Mapping SourceColumn="IdBudgets_OS" DataSetColumn="IdBudgets_OS" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -36,7 +34,7 @@ FROM            tb_items INNER JOIN
   <xs:element name="DSItems" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSItems" msprop:Generator_UserDSName="DSItems">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tb_items" msprop:Generator_TableClassName="tb_itemsDataTable" msprop:Generator_TableVarName="tabletb_items" msprop:Generator_TablePropName="tb_items" msprop:Generator_RowDeletingName="tb_itemsRowDeleting" msprop:Generator_RowChangingName="tb_itemsRowChanging" msprop:Generator_RowEvHandlerName="tb_itemsRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_itemsRowDeleted" msprop:Generator_UserTableName="tb_items" msprop:Generator_RowChangedName="tb_itemsRowChanged" msprop:Generator_RowEvArgName="tb_itemsRowChangeEvent" msprop:Generator_RowClassName="tb_itemsRow">
+        <xs:element name="tb_items" msprop:Generator_TableClassName="tb_itemsDataTable" msprop:Generator_TableVarName="tabletb_items" msprop:Generator_RowChangedName="tb_itemsRowChanged" msprop:Generator_TablePropName="tb_items" msprop:Generator_RowDeletingName="tb_itemsRowDeleting" msprop:Generator_RowChangingName="tb_itemsRowChanging" msprop:Generator_RowEvHandlerName="tb_itemsRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_itemsRowDeleted" msprop:Generator_RowClassName="tb_itemsRow" msprop:Generator_UserTableName="tb_items" msprop:Generator_RowEvArgName="tb_itemsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="sID" msprop:Generator_ColumnVarNameInTable="columnsID" msprop:Generator_ColumnPropNameInRow="sID" msprop:Generator_ColumnPropNameInTable="sIDColumn" msprop:Generator_UserColumnName="sID">
@@ -54,7 +52,7 @@ FROM            tb_items INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Budgets_OS_sID" msprop:Generator_ColumnVarNameInTable="columnBudgets_OS_sID" msprop:Generator_ColumnPropNameInRow="Budgets_OS_sID" msprop:Generator_ColumnPropNameInTable="Budgets_OS_sIDColumn" msprop:Generator_UserColumnName="Budgets_OS_sID" minOccurs="0">
+              <xs:element name="IdBudgets_OS" msprop:Generator_ColumnVarNameInTable="columnIdBudgets_OS" msprop:Generator_ColumnPropNameInRow="IdBudgets_OS" msprop:Generator_ColumnPropNameInTable="IdBudgets_OSColumn" msprop:Generator_UserColumnName="IdBudgets_OS" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="40" />

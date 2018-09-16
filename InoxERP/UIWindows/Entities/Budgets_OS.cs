@@ -75,15 +75,17 @@ namespace UIWindows.Entities
 
         public bool bServiceOrderApproved { get; set; }
 
-        //[Required(ErrorMessage = "Data Aprovação é obrigatória")]
-        public DateTime dtDateServiceOrderApproved { get; set; }
+        public DateTime? dtDateServiceOrderApproved { get; set; }
+
+        public bool bServiceOrderDelivered { get; set; }
+
+        public DateTime? dtDateServiceOrderDelivered { get; set; }
 
         public bool bRegisterFinished { get; set; }
 
-        //[Required(ErrorMessage = "Data Conclusão é obrigatória")]
-        public DateTime dtDateRegisterFinished { get; set; }
-
+        public DateTime? dtDateRegisterFinished { get; set; }
         
+
         //ForengKeys				
 
         public virtual ICollection<Items> Items { get; set; }

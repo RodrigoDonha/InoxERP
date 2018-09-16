@@ -67,7 +67,7 @@
             this.rptPrint.Location = new System.Drawing.Point(0, 0);
             this.rptPrint.Name = "rptPrint";
             this.rptPrint.ServerReport.BearerToken = null;
-            this.rptPrint.Size = new System.Drawing.Size(632, 886);
+            this.rptPrint.Size = new System.Drawing.Size(632, 749);
             this.rptPrint.TabIndex = 0;
             this.rptPrint.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
@@ -79,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 886);
+            this.ClientSize = new System.Drawing.Size(632, 749);
             this.Controls.Add(this.rptPrint);
             this.Name = "BudgetPrint";
             this.Text = "Impressão de Orçamento";

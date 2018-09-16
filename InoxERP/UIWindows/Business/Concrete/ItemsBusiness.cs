@@ -17,7 +17,7 @@ namespace UIWindows.Business.Concrete
 
         public Items returnByBudgests_OSId(string ID)
         {
-            return context.Items.FirstOrDefault(r => r.Budgets_OSID == ID);
+            return context.Items.FirstOrDefault(r => r.IdBudgets_OS == ID);
         }
 
     }

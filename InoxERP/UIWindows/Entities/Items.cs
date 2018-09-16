@@ -31,9 +31,15 @@ namespace UIWindows.Entities
         //ForengKeys				
 
         public virtual Budgets_OS Budgets_OS { get; set; }
-        public string Budgets_OSID { get; set; }
+
+        [ForeignKey("Budgets_OS")]
+        public string IdBudgets_OS { get; set; }
+
+
+
         //public string sServicesID { get; set; }
         //public string sProductsID { get; set; }
         //public string sContractsID { get; set; }
+
     }
 }
