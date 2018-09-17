@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using UIWindows.Business.Concrete;
@@ -26,6 +19,7 @@ namespace UIWindows.Views.Budgets
             if(id == "")
             {
                 MessageBox.Show("Você precisa selecionar um orçamento");
+
                 rptPrint.Dispose();
             }
             else
@@ -36,8 +30,8 @@ namespace UIWindows.Views.Budgets
 
         private void Print_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'conjDadosTotais.tb_items'. Você pode movê-la ou removê-la conforme necessário.
-            this.tb_itemsTableAdapter.Fill(this.conjDadosTotais.tb_items);
+            // TODO: esta linha de código carrega dados na tabela 'generalDataSet.tb_items'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_itemsTableAdapter.Fill(this.generalDataSet.tb_items);
 
             this.rptPrint.RefreshReport();
         }
@@ -165,6 +159,7 @@ namespace UIWindows.Views.Budgets
             rptPrint.LocalReport.SetParameters(Observation);
 
             rptPrint.RefreshReport();
+            
         }
     }
 }

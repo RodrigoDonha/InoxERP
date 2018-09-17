@@ -30,46 +30,46 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.conjDadosTotaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.conjDadosTotais = new UIWindows.ConjDadosTotais();
             this.rptPrint = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tb_itemsTableAdapter = new UIWindows.ConjDadosTotaisTableAdapters.tb_itemsTableAdapter();
+            this.generalDataSet = new UIWindows.GeneralDataSet();
+            this.generalDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_itemsTableAdapter = new UIWindows.GeneralDataSetTableAdapters.tb_itemsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.generalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conjDadosTotaisBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conjDadosTotais)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tbitemsBindingSource
-            // 
-            this.tbitemsBindingSource.DataMember = "tb_items";
-            this.tbitemsBindingSource.DataSource = this.conjDadosTotaisBindingSource;
-            // 
-            // conjDadosTotaisBindingSource
-            // 
-            this.conjDadosTotaisBindingSource.DataSource = this.conjDadosTotais;
-            this.conjDadosTotaisBindingSource.Position = 0;
-            // 
-            // conjDadosTotais
-            // 
-            this.conjDadosTotais.DataSetName = "ConjDadosTotais";
-            this.conjDadosTotais.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rptPrint
             // 
-            this.rptPrint.AutoSize = true;
-            this.rptPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.rptPrint.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetItemsBudget";
+            reportDataSource1.Name = "DataSetBudgetWithoutPrice"; // nome do data set do conjunto de dados do arquivo rdlc
             reportDataSource1.Value = this.tbitemsBindingSource;
-            this.rptPrint.LocalReport.DataSources.Add(reportDataSource1);
+            this.rptPrint.LocalReport.DataSources.Add(reportDataSource1); // essa linha deve ser a mais importante, eu acho
+            this.rptPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rptPrint.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Budget.rdlc";
             this.rptPrint.Location = new System.Drawing.Point(0, 0);
             this.rptPrint.Name = "rptPrint";
             this.rptPrint.ServerReport.BearerToken = null;
             this.rptPrint.Size = new System.Drawing.Size(632, 749);
             this.rptPrint.TabIndex = 0;
+            this.rptPrint.AutoSize = true;
+            this.rptPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.rptPrint.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            // 
+            // generalDataSet
+            // 
+            this.generalDataSet.DataSetName = "GeneralDataSet";
+            this.generalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // generalDataSetBindingSource
+            // 
+            this.generalDataSetBindingSource.DataSource = this.generalDataSet;
+            this.generalDataSetBindingSource.Position = 0;
+            // 
+            // tbitemsBindingSource
+            // 
+            this.tbitemsBindingSource.DataMember = "tb_items";
+            this.tbitemsBindingSource.DataSource = this.generalDataSetBindingSource;
             // 
             // tb_itemsTableAdapter
             // 
@@ -84,20 +84,19 @@
             this.Name = "BudgetPrint";
             this.Text = "Impressão de Orçamento";
             this.Load += new System.EventHandler(this.Print_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.generalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generalDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conjDadosTotaisBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conjDadosTotais)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer rptPrint;
-        private System.Windows.Forms.BindingSource conjDadosTotaisBindingSource;
-        private ConjDadosTotais conjDadosTotais;
+        private GeneralDataSet generalDataSet;
+        private System.Windows.Forms.BindingSource generalDataSetBindingSource;
         private System.Windows.Forms.BindingSource tbitemsBindingSource;
-        private ConjDadosTotaisTableAdapters.tb_itemsTableAdapter tb_itemsTableAdapter;
+        private GeneralDataSetTableAdapters.tb_itemsTableAdapter tb_itemsTableAdapter;
     }
 }

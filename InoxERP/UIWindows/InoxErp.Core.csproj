@@ -117,6 +117,11 @@
     <Compile Include="Entities\Products.cs" />
     <Compile Include="Entities\Services.cs" />
     <Compile Include="Entities\Users.cs" />
+    <Compile Include="GeneralDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeneralDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InoxErpDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,6 +161,18 @@
     </Compile>
     <Compile Include="Views\Budgets\BudgetPrint.Designer.cs">
       <DependentUpon>BudgetPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Budgets\BudgetPrintWithPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Budgets\BudgetPrintWithPrice.Designer.cs">
+      <DependentUpon>BudgetPrintWithPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Budgets\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Budgets\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Reports\ReportUsers.cs">
       <SubType>Form</SubType>
@@ -358,9 +375,17 @@
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Business\Reports\Budget.rdlc" />
+    <EmbeddedResource Include="Business\Reports\BudgetWithPrice.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Report1.rdlc" />
     <EmbeddedResource Include="Business\Reports\rptAllUsers.rdlc" />
     <EmbeddedResource Include="Views\Budgets\BudgetPrint.resx">
       <DependentUpon>BudgetPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Budgets\BudgetPrintWithPrice.resx">
+      <DependentUpon>BudgetPrintWithPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Budgets\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportUsers.resx">
       <DependentUpon>ReportUsers.cs</DependentUpon>
@@ -514,6 +539,17 @@
     </None>
     <None Include="DSItems.xss">
       <DependentUpon>DSItems.xsd</DependentUpon>
+    </None>
+    <None Include="GeneralDataSet.xsc">
+      <DependentUpon>GeneralDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GeneralDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GeneralDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GeneralDataSet.xss">
+      <DependentUpon>GeneralDataSet.xsd</DependentUpon>
     </None>
     <None Include="InoxErpDBDataSet.xsc">
       <DependentUpon>InoxErpDBDataSet.xsd</DependentUpon>

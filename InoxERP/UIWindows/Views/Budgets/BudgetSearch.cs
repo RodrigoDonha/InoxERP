@@ -1,23 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity.Core.Objects;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using InoxERP.UI_Windows_Forms;
-using Microsoft.Reporting.WebForms;
-using Microsoft.Reporting.WinForms;
-using Microsoft.ReportingServices.Diagnostics.Internal;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
 using UIWindows.Views.Budgets;
-using DataSet = System.Data.DataSet;
 
 namespace UIWindows
 {
@@ -64,8 +53,6 @@ namespace UIWindows
             
         }
 
-        private DataTable dt;
-
         public void searchByDate()
         {
             var query = from p in ctx.Budgets_OS select p;
@@ -95,6 +82,20 @@ namespace UIWindows
             if(getId == null)
             {
                 MessageBox.Show("Selecione um orçmento na lista acima.");
+            }
+            else
+            {
+                PrintingBudget();
+                //new BudgetPrint(getId).Show();
+            }
+        }
+
+        // chama a impressão do orçamento, se vai imprimir com preço nos itens ou não.
+        public void PrintingBudget()
+        {
+            if (messageYesNo("Price") == DialogResult.Yes)
+            {
+                new BudgetPrintWithPrice(getId).Show();
             }
             else
             {
@@ -181,6 +182,8 @@ namespace UIWindows
                     return MessageBox.Show("Confirma excluisão?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Approve":
                     return MessageBox.Show("Confirma aprovação deste orçamento?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "Price":
+                    return MessageBox.Show("Deseja Exibir / Imprimir o orçamento com preço nos itens?", "Exibir Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
         }

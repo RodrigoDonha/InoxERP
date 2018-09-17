@@ -94,10 +94,9 @@ namespace InoxERP.UI_Windows_Forms
                             MessageBox.Show("Orçamento Atualizado com Susseço !!!");
                             btnGravarOrcamento.Text = "Gravar";
 
-
                             cleanScreen();
 
-                            new BudgetPrint(getID).Show();
+                            PrintingBudget(budgetAlter.sID.ToString()); // incluir parametro id
                         }
                     }
                 }
@@ -178,12 +177,26 @@ namespace InoxERP.UI_Windows_Forms
 
                             //colocar impressao aqui
                             string Cod = ok.sID.ToString();
-                            new BudgetPrint(Cod).Show();
+
+                            PrintingBudget(budgetPersist.sID.ToString());
                         }
                         else
                             MessageBox.Show("Erro ao Salvar o Orçamento !!!");
                     }
                 }
+            }
+        }
+
+        // chama a impressão do orçamento, se vai imprimir com preço nos itens ou não.
+        public void PrintingBudget(string id)
+        {
+            if (messageYesNo("Price") == DialogResult.Yes)
+            {
+                new BudgetPrintWithPrice(id).Show();
+            }
+            else
+            {
+                new BudgetPrint(id).Show();
             }
         }
 
@@ -505,6 +518,8 @@ namespace InoxERP.UI_Windows_Forms
                     return MessageBox.Show("Deseja Alterar o Orçamento com os Dados Informados?", "Alterar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Approve":
                     return MessageBox.Show("Deseja Aprovar o orçamento?", "Aprovar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "Price":
+                    return MessageBox.Show("Deseja Exibir / Imprimir o orçamento com preço nos itens?", "Exibir Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
         }
