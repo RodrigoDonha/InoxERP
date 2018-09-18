@@ -68,7 +68,7 @@
             // 
             // btnFinlizar
             // 
-            this.btnFinlizar.Location = new System.Drawing.Point(454, 406);
+            this.btnFinlizar.Location = new System.Drawing.Point(714, 406);
             this.btnFinlizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinlizar.Name = "btnFinlizar";
             this.btnFinlizar.Size = new System.Drawing.Size(120, 30);
@@ -79,7 +79,7 @@
             // 
             // btnDesaprovar
             // 
-            this.btnDesaprovar.Location = new System.Drawing.Point(241, 406);
+            this.btnDesaprovar.Location = new System.Drawing.Point(349, 406);
             this.btnDesaprovar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDesaprovar.Name = "btnDesaprovar";
             this.btnDesaprovar.Size = new System.Drawing.Size(120, 30);
@@ -340,7 +340,7 @@
             // 
             // btnGerarContrato
             // 
-            this.btnGerarContrato.Location = new System.Drawing.Point(658, 406);
+            this.btnGerarContrato.Location = new System.Drawing.Point(1100, 406);
             this.btnGerarContrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGerarContrato.Name = "btnGerarContrato";
             this.btnGerarContrato.Size = new System.Drawing.Size(120, 30);

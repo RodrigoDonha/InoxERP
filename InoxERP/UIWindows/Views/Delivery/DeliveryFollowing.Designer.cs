@@ -38,13 +38,6 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.grpEntregas = new System.Windows.Forms.GroupBox();
             this.grdEntregas = new System.Windows.Forms.DataGridView();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnAbrirAlterar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView = new UIWindows.InoxErpDBDataSet3ServiceOrdersApprovedGidView();
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbdeliveryopenedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_delivery_openedTableAdapter = new UIWindows.InoxErpDBDataSet3ServiceOrdersApprovedGidViewTableAdapters.tb_delivery_openedTableAdapter();
             this.dtFinalPrevisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,12 +46,20 @@
             this.dtDateServiceOrderApprovedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iCodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbdeliveryopenedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView = new UIWindows.InoxErpDBDataSet3ServiceOrdersApprovedGidView();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnAbrirAlterar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.tb_delivery_openedTableAdapter = new UIWindows.InoxErpDBDataSet3ServiceOrdersApprovedGidViewTableAdapters.tb_delivery_openedTableAdapter();
+            this.btnReabrirOS = new System.Windows.Forms.Button();
             this.grpPesquisa.SuspendLayout();
             this.grpEntregas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEntregas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdeliveryopenedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView)).BeginInit();
             this.SuspendLayout();
             // 
             // grpPesquisa
@@ -73,24 +74,25 @@
             this.grpPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpPesquisa.Name = "grpPesquisa";
             this.grpPesquisa.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpPesquisa.Size = new System.Drawing.Size(776, 74);
+            this.grpPesquisa.Size = new System.Drawing.Size(1202, 74);
             this.grpPesquisa.TabIndex = 6;
             this.grpPesquisa.TabStop = false;
             this.grpPesquisa.Text = "Pesquisa";
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(684, 23);
+            this.btnPesquisar.Location = new System.Drawing.Point(875, 23);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(85, 30);
             this.btnPesquisar.TabIndex = 5;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisa
             // 
-            this.txtPesquisa.Location = new System.Drawing.Point(347, 27);
+            this.txtPesquisa.Location = new System.Drawing.Point(538, 27);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(331, 23);
@@ -99,7 +101,7 @@
             // radData
             // 
             this.radData.AutoSize = true;
-            this.radData.Location = new System.Drawing.Point(281, 28);
+            this.radData.Location = new System.Drawing.Point(472, 28);
             this.radData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radData.Name = "radData";
             this.radData.Size = new System.Drawing.Size(56, 21);
@@ -107,11 +109,12 @@
             this.radData.TabStop = true;
             this.radData.Text = "Data";
             this.radData.UseVisualStyleBackColor = true;
+            this.radData.Click += new System.EventHandler(this.radData_Click);
             // 
             // radCPF_CNPJ
             // 
             this.radCPF_CNPJ.AutoSize = true;
-            this.radCPF_CNPJ.Location = new System.Drawing.Point(145, 28);
+            this.radCPF_CNPJ.Location = new System.Drawing.Point(336, 28);
             this.radCPF_CNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radCPF_CNPJ.Name = "radCPF_CNPJ";
             this.radCPF_CNPJ.Size = new System.Drawing.Size(91, 21);
@@ -123,7 +126,7 @@
             // radNome
             // 
             this.radNome.AutoSize = true;
-            this.radNome.Location = new System.Drawing.Point(52, 28);
+            this.radNome.Location = new System.Drawing.Point(243, 28);
             this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNome.Name = "radNome";
             this.radNome.Size = new System.Drawing.Size(63, 21);
@@ -135,7 +138,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(5, 30);
+            this.lblTipo.Location = new System.Drawing.Point(196, 30);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(40, 17);
             this.lblTipo.TabIndex = 0;
@@ -179,56 +182,6 @@
             this.grdEntregas.Size = new System.Drawing.Size(1196, 270);
             this.grdEntregas.TabIndex = 0;
             this.grdEntregas.Click += new System.EventHandler(this.grdEntregas_Click);
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.Location = new System.Drawing.Point(658, 399);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(120, 30);
-            this.btnFinalizar.TabIndex = 11;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            // 
-            // btnAbrirAlterar
-            // 
-            this.btnAbrirAlterar.Location = new System.Drawing.Point(23, 399);
-            this.btnAbrirAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAbrirAlterar.Name = "btnAbrirAlterar";
-            this.btnAbrirAlterar.Size = new System.Drawing.Size(120, 30);
-            this.btnAbrirAlterar.TabIndex = 12;
-            this.btnAbrirAlterar.Text = "Abrir / Alterar";
-            this.btnAbrirAlterar.UseVisualStyleBackColor = true;
-            this.btnAbrirAlterar.Click += new System.EventHandler(this.btnAbrirAlterar_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(337, 399);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(120, 30);
-            this.btnExcluir.TabIndex = 17;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // inoxErpDBDataSet3ServiceOrdersApprovedGidView
-            // 
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.DataSetName = "InoxErpDBDataSet3ServiceOrdersApprovedGidView";
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource
-            // 
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidView;
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource.Position = 0;
-            // 
-            // tbdeliveryopenedBindingSource
-            // 
-            this.tbdeliveryopenedBindingSource.DataMember = "tb_delivery_opened";
-            this.tbdeliveryopenedBindingSource.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource;
-            // 
-            // tb_delivery_openedTableAdapter
-            // 
-            this.tb_delivery_openedTableAdapter.ClearBeforeFill = true;
             // 
             // dtFinalPrevisionDataGridViewTextBoxColumn
             // 
@@ -294,11 +247,75 @@
             this.iCodDataGridViewTextBoxColumn.ReadOnly = true;
             this.iCodDataGridViewTextBoxColumn.Visible = false;
             // 
+            // tbdeliveryopenedBindingSource
+            // 
+            this.tbdeliveryopenedBindingSource.DataMember = "tb_delivery_opened";
+            this.tbdeliveryopenedBindingSource.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource;
+            // 
+            // inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource
+            // 
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidView;
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource.Position = 0;
+            // 
+            // inoxErpDBDataSet3ServiceOrdersApprovedGidView
+            // 
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.DataSetName = "InoxErpDBDataSet3ServiceOrdersApprovedGidView";
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(696, 399);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(120, 30);
+            this.btnFinalizar.TabIndex = 11;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // btnAbrirAlterar
+            // 
+            this.btnAbrirAlterar.Location = new System.Drawing.Point(15, 399);
+            this.btnAbrirAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAbrirAlterar.Name = "btnAbrirAlterar";
+            this.btnAbrirAlterar.Size = new System.Drawing.Size(120, 30);
+            this.btnAbrirAlterar.TabIndex = 12;
+            this.btnAbrirAlterar.Text = "Abrir / Alterar";
+            this.btnAbrirAlterar.UseVisualStyleBackColor = true;
+            this.btnAbrirAlterar.Click += new System.EventHandler(this.btnAbrirAlterar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(1091, 399);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(120, 30);
+            this.btnExcluir.TabIndex = 17;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // tb_delivery_openedTableAdapter
+            // 
+            this.tb_delivery_openedTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnReabrirOS
+            // 
+            this.btnReabrirOS.Location = new System.Drawing.Point(328, 399);
+            this.btnReabrirOS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReabrirOS.Name = "btnReabrirOS";
+            this.btnReabrirOS.Size = new System.Drawing.Size(120, 30);
+            this.btnReabrirOS.TabIndex = 18;
+            this.btnReabrirOS.Text = "Reabrir OS";
+            this.btnReabrirOS.UseVisualStyleBackColor = true;
+            this.btnReabrirOS.Click += new System.EventHandler(this.btnReabrirOS_Click);
+            // 
             // frmDeliveryFollowing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1226, 450);
+            this.Controls.Add(this.btnReabrirOS);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAbrirAlterar);
             this.Controls.Add(this.grpPesquisa);
@@ -314,9 +331,9 @@
             this.grpPesquisa.PerformLayout();
             this.grpEntregas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdEntregas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdeliveryopenedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -347,5 +364,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dtDateServiceOrderApprovedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iCodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnReabrirOS;
     }
 }
