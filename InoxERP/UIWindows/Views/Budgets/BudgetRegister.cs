@@ -103,7 +103,7 @@ namespace InoxERP.UI_Windows_Forms
                             //abre tela de consulta novamente
                             new frmBudgetSearch().Show();
 
-                            PrintingBudget(ok.sID); // incluir parametro id
+                            PrintingBudget(budgetAlter.sID);
                         }
                     }
                 }
