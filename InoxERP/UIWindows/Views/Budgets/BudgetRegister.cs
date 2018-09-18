@@ -57,7 +57,8 @@ namespace InoxERP.UI_Windows_Forms
                         budgetAlter.sOccupation = txtCargo.Text;
 
                         //preenche items
-                        budgetAlter.Items = fillItemsOnBudgets_OS();
+                        checkToAlter(budgetAlter.Items.ToList());
+
 
                         budgetAlter.PaymentMethods = paymentMethods();
                         budgetAlter.bPaymentToMatch = checkPaymentForm("combine");
@@ -91,12 +92,12 @@ namespace InoxERP.UI_Windows_Forms
                             MessageBox.Show("Erro ao Atualizar o Orçamento !!!");
                         else
                         {
-                            MessageBox.Show("Orçamento Atualizado com Susseço !!!");
+                            MessageBox.Show("Orçamento Atualizado com Sucesso !!!");
                             btnGravarOrcamento.Text = "Gravar";
 
                             cleanScreen();
 
-                            PrintingBudget(budgetAlter.sID.ToString()); // incluir parametro id
+                            PrintingBudget(ok.sID); // incluir parametro id
                         }
                     }
                 }
@@ -120,9 +121,8 @@ namespace InoxERP.UI_Windows_Forms
                         budgetPersist.sTelephone = txtTelefone.Text;
                         budgetPersist.sOccupation = txtCargo.Text;
 
-                        //budgetPersist.Items.Add(fillItemsOnBudgets_OS());
+                        //preenche itens no orçamento
                         budgetPersist.Items = fillItemsOnBudgets_OS();
-                        //checkToAlter(budgetPersist.Items);
 
                         budgetPersist.PaymentMethods = paymentMethods();
                         budgetPersist.bPaymentToMatch = checkPaymentForm("combine");
@@ -178,7 +178,7 @@ namespace InoxERP.UI_Windows_Forms
                             //colocar impressao aqui
                             string Cod = ok.sID.ToString();
 
-                            PrintingBudget(budgetPersist.sID.ToString());
+                            PrintingBudget(budgetPersist.sID);
                         }
                         else
                             MessageBox.Show("Erro ao Salvar o Orçamento !!!");
@@ -200,20 +200,57 @@ namespace InoxERP.UI_Windows_Forms
             }
         }
 
-        //verifica na alteração se o item ja esta na lista caso esteja nao inclui novamente *****nao esta funcionando
-        public void checkToAlter(List<Items> list)
+        //verifica na alteração se o item ja esta na lista caso esteja nao inclui novamente
+        public List<Items> checkToAlter(List<Items> list) //verificar exclusao de itens
         {
-            var check = list;
+            budget.Items = list; //recebe lista para continuar populando
+
+            List<Items> compare = list; //recebe lista para comparar se inseriu mais items
+
+            var countItems = compare.Count; //recebe quantidade de items
+            var items = 0;
+
+            if (compare.Count > dgvItens.RowCount)//se nova lista for menor que original houve exclusao de items entao popula total novamente
+                items = dgvItens.RowCount + 1;
+            else //sena popula somente o item adicionado
+                items = dgvItens.RowCount - countItems; //recebe quantidade de items para continuar populando a partir do ultimo
 
             foreach (DataGridViewRow line in dgvItens.Rows)
             {
-                if (line.Cells["sDescription"].Value.Equals(check))
-                    if (messageYesNo("Add") == DialogResult.Yes)
-                    {
-                        
-                    }
+                if (items < dgvItens.RowCount) //se for menor ele nao popula
+                {
+                    items++;
+                }
+                else if (items > dgvItens.RowCount) // se for maior ele popula os itens novos
+                {
+                    budget.Items = new List<Items>();
+                    budget.Items.Add(
+                        new Items
+                        {
+                            sID = Guid.NewGuid().ToString(),
+                            dAmount = Convert.ToDouble(line.Cells["dAmount"].Value),
+                            sDescription = line.Cells["sDescription"].Value.ToString(),
+                            dPrice = Convert.ToDecimal(line.Cells["dPrice"].Value),
+                            dTotal = Convert.ToDecimal(line.Cells["dTotal"].Value)
+                            
+                        });
+                }
+                else {
+                     budget.Items.Add(
+                        new Items
+                        {
+                            sID = Guid.NewGuid().ToString(),
+                            dAmount = Convert.ToDouble(line.Cells["dAmount"].Value),
+                            sDescription = line.Cells["sDescription"].Value.ToString(),
+                            dPrice = Convert.ToDecimal(line.Cells["dPrice"].Value),
+                            dTotal = Convert.ToDecimal(line.Cells["dTotal"].Value)
+                        });
+                }
             }
+            return budget.Items.ToList();
+
         }
+
 
         // fill Collection<items> on Budgets_OS
         private List<Items> fillItemsOnBudgets_OS()

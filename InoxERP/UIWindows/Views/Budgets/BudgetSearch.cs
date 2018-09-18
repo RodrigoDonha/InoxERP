@@ -109,10 +109,12 @@ namespace UIWindows
             if (dgvOrcamentos.CurrentRow != null)
             {
                 getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());
+                txtPesquisa.Text = Convert.ToString(dgvOrcamentos[3, dgvOrcamentos.CurrentRow.Index].Value.ToString());
             }
             else
             {
                 MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
+                txtPesquisa.Text = "";
             }
         }
 
@@ -127,6 +129,7 @@ namespace UIWindows
                 frmBudgetsRegister bud = new frmBudgetsRegister(getId);
                 bud.BudgetData();
                 bud.Show();
+                fillDataSet();
             }
         }
 
@@ -141,8 +144,7 @@ namespace UIWindows
                 
                 if (messageYesNo("Exclude") == DialogResult.Yes)
                 {
-                    //deleteItemsBudget(); // chama a consulta aos items para deletar eles antes de deletar o orçamento
-                    obj.Delete(getId);   // deleta o orçamento depois de deletar os itens
+                    obj.Delete(getId);
 
                     var ok = obj.Search.FirstOrDefault(b => b.sID == budget.sID);
 
@@ -151,6 +153,7 @@ namespace UIWindows
                     else
                         MessageBox.Show("Orçamento Excluido com Susseço !!!");
                 }
+                fillDataSet();
             }
             else
             {

@@ -24,6 +24,15 @@ namespace UIWindows.Business.Concrete
         {
             return context.Budgets_OS.FirstOrDefault(r => r.dtDate.ToShortDateString() == date.ToShortDateString());
         }
-        
+
+        public override void Delete(string id)
+        {
+            var linq = from q in context.Budgets_OS.Include("Items").Where(c => c.sID == id).ToList() select q;
+            var entity = linq.First();
+
+            context.Set<Budgets_OS>().Remove(entity);
+            context.SaveChanges();
+        }
+
     }
 }
