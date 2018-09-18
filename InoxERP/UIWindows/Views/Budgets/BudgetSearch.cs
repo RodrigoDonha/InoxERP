@@ -126,10 +126,10 @@ namespace UIWindows
             }
             else
             {
+                Dispose();
                 frmBudgetsRegister bud = new frmBudgetsRegister(getId);
                 bud.BudgetData();
                 bud.Show();
-                fillDataSet();
             }
         }
 

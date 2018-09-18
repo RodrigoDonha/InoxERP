@@ -97,6 +97,12 @@ namespace InoxERP.UI_Windows_Forms
 
                             cleanScreen();
 
+                            //fecha a tela de alteração
+                            Dispose();
+
+                            //abre tela de consulta novamente
+                            new frmBudgetSearch().Show();
+
                             PrintingBudget(ok.sID); // incluir parametro id
                         }
                     }
@@ -201,30 +207,17 @@ namespace InoxERP.UI_Windows_Forms
         }
 
         //verifica na alteração se o item ja esta na lista caso esteja nao inclui novamente
-        public List<Items> checkToAlter(List<Items> list) //verificar exclusao de itens
+        public List<Items> checkToAlter(List<Items> list)
         {
-            budget.Items = list; //recebe lista para continuar populando
+            List<Items> newList = new List<Items>(); //cria lista para receber os dados da gridview
 
-            List<Items> compare = list; //recebe lista para comparar se inseriu mais items
+            List<Items> currentList = new List<Items>(); //recebe lista para comparar se inseriu mais items
 
-            var countItems = compare.Count; //recebe quantidade de items
-            var items = 0;
-
-            if (compare.Count > dgvItens.RowCount)//se nova lista for menor que original houve exclusao de items entao popula total novamente
-                items = dgvItens.RowCount + 1;
-            else //sena popula somente o item adicionado
-                items = dgvItens.RowCount - countItems; //recebe quantidade de items para continuar populando a partir do ultimo
-
+            List<Items> mainList = list; // popula a lista principal
+            
             foreach (DataGridViewRow line in dgvItens.Rows)
             {
-                if (items < dgvItens.RowCount) //se for menor ele nao popula
-                {
-                    items++;
-                }
-                else if (items > dgvItens.RowCount) // se for maior ele popula os itens novos
-                {
-                    budget.Items = new List<Items>();
-                    budget.Items.Add(
+                newList.Add(
                         new Items
                         {
                             sID = Guid.NewGuid().ToString(),
@@ -232,23 +225,31 @@ namespace InoxERP.UI_Windows_Forms
                             sDescription = line.Cells["sDescription"].Value.ToString(),
                             dPrice = Convert.ToDecimal(line.Cells["dPrice"].Value),
                             dTotal = Convert.ToDecimal(line.Cells["dTotal"].Value)
-                            
                         });
-                }
-                else {
-                     budget.Items.Add(
+            }
+
+
+            foreach (var newLine in newList)
+            {
+                if (!mainList.Contains(newLine))
+                {
+                    mainList.Add(
                         new Items
                         {
                             sID = Guid.NewGuid().ToString(),
-                            dAmount = Convert.ToDouble(line.Cells["dAmount"].Value),
-                            sDescription = line.Cells["sDescription"].Value.ToString(),
-                            dPrice = Convert.ToDecimal(line.Cells["dPrice"].Value),
-                            dTotal = Convert.ToDecimal(line.Cells["dTotal"].Value)
+                            dAmount = newLine.dAmount,
+                            sDescription = newLine.sDescription,
+                            dPrice = newLine.dPrice,
+                            dTotal = newLine.dTotal
                         });
                 }
             }
-            return budget.Items.ToList();
+        
+            currentList = newList.Except(mainList).ToList();
 
+            budget.Items = currentList.ToList();
+
+            return budget.Items.ToList();
         }
 
 
