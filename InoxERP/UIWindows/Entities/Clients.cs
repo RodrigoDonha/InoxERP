@@ -16,7 +16,7 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "O Nome é obrigatório")]
         public string sName { get; set; }
 
-        [StringLength(100)]
+        [StringLength(18)]
         [Required(ErrorMessage = "CPF/CNPJ é obrigatório")]
         public string sCpfCnpj { get; set; }
 
@@ -34,7 +34,7 @@ namespace UIWindows.Entities
         //[Required(ErrorMessage = "Bairro é obrigatório")]
         public string sDistrict { get; set; }
 
-        [StringLength(100)]
+        [StringLength(50)]
         public string sComplement { get; set; }
 
         [StringLength(100)]
@@ -44,16 +44,18 @@ namespace UIWindows.Entities
         //[Range(1, 27, ErrorMessage = "Estado é obrigatório")]
         public Estate Estate { get; set; }
 
-        [StringLength(100)]
+        [StringLength(9)]
         //[Required(ErrorMessage = "CEP é obrigatório")]
         public string sCEP { get; set; }
 
+        [StringLength(14)]
         public string sPhoneResidencial { get; set; }
 
+        [StringLength(15)]
         [Required(ErrorMessage = "Celular é obrigatório")]
         public string sPhoneCelularOne { get; set; }
 
-        [StringLength(100)]
+        [StringLength(15)]
         public string sPhoneCelularTwo { get; set; }
 
         [StringLength(100)]
@@ -64,5 +66,11 @@ namespace UIWindows.Entities
 
         [StringLength(300)]
         public string sObservation { get; set; }
+
+
+        //ForengKeys
+
+        //Clients -> Budgets_OS 1:n
+        public ICollection<Budgets_OS> Budgets_OS { get; set; }
     }
 }

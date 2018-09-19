@@ -25,8 +25,13 @@ namespace UIWindows.Entities
         public string sObservation { get; set; }
 
 
-        //ForengKeys				
+        //ForengKeys	
 
-        //public string sItemsID { get; set; }
+
+        //Items -> Products 1:n
+        public virtual Items Items { get; set; }
+
+        [ForeignKey("Items")]
+        public string IdItems { get; set; }
     }
 }

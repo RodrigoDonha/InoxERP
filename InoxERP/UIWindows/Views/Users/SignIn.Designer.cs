@@ -100,7 +100,6 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(307, 23);
             this.txtLogin.TabIndex = 1;
-            this.txtLogin.Text = "admin";
             this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLogin_KeyPress);
             // 
@@ -124,7 +123,6 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(307, 23);
             this.txtSenha.TabIndex = 3;
-            this.txtSenha.Text = "0000";
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 

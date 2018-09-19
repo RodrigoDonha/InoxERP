@@ -30,7 +30,7 @@ namespace UIWindows.Entities
         //[Required(ErrorMessage = "Endereço é obrigatório")]
         public string sAdress { get; set; }
 
-        [StringLength(100)]
+        [StringLength(14)]
         [Required(ErrorMessage = "Telefone é obrigatório")]
         public string sTelephone { get; set; }
 
@@ -84,12 +84,26 @@ namespace UIWindows.Entities
         public bool bRegisterFinished { get; set; }
 
         public DateTime? dtDateRegisterFinished { get; set; }
-        
+
 
         //ForengKeys				
 
+        //Budgets_OS -> Items 1:n
         public virtual ICollection<Items> Items { get; set; }
-        //public string sContractsID { get; set; }
 
+
+        //Budgets_OS -> AccountsToReceive 1:n
+        public virtual ICollection<AccountsToReceive> AccountsToReceive { get; set; }
+
+
+        //Clients -> Products 1:n
+        public virtual Clients Clients { get; set; }
+
+        [ForeignKey("Clients")]
+        public string IdClients { get; set; }
+
+        
+        ////Budgets_OS -> Contracts 1:1
+        //public virtual Contracts Contracts { get; set; }
     }
 }

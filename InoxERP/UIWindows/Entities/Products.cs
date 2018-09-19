@@ -34,7 +34,17 @@ namespace UIWindows.Entities
 
         //ForengKeys				
 
-        //public string sProvidersID { get; set; }
-        //public string sItemsID { get; set; }
+        //Providers -> Products 1:n
+        public virtual Providers Providers { get; set; }
+
+        [ForeignKey("Providers")]
+        public string IdProviders { get; set; }
+
+
+        //Items -> Products 1:n
+        public virtual Items Items { get; set; }
+
+        [ForeignKey("Items")]
+        public string IdItems { get; set; }
     }
 }

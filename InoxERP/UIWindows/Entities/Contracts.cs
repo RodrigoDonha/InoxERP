@@ -88,5 +88,16 @@ namespace UIWindows.Entities
 
         [Required(ErrorMessage = "Data do Contrato é obrigatória")]
         public DateTime dtContractDate { get; set; }
+
+
+        //ForengKeys
+
+
+        //Contracts -> Items 1:n
+        public ICollection<Items> Items { get; set; }
+
+
+        //Contracts -> Budgets_OS 1:1
+        public virtual Budgets_OS Budgets_OS { get; set; }
     }
 }

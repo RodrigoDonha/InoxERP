@@ -128,19 +128,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSItems.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Entities\AccountsToPay.cs" />
+    <Compile Include="Entities\AccountsToReceive.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Budgets_OS.cs" />
+    <Compile Include="Entities\Cash.cs" />
     <Compile Include="Entities\Clients.cs" />
     <Compile Include="Entities\Contracts.cs" />
+    <Compile Include="Entities\Enum\CashType.cs" />
     <Compile Include="Entities\Enum\ClientType.cs" />
     <Compile Include="Entities\Enum\Estate.cs" />
     <Compile Include="Entities\Enum\PaymentMethods.cs" />
     <Compile Include="Entities\Enum\UnityType.cs" />
     <Compile Include="Entities\Enum\UserType.cs" />
     <Compile Include="Entities\Items.cs" />
+    <Compile Include="Entities\ParcialPay.cs" />
     <Compile Include="Entities\Permitions.cs" />
     <Compile Include="Entities\Products.cs" />
+    <Compile Include="Entities\Providers.cs" />
+    <Compile Include="Entities\ParcialReceive.cs" />
     <Compile Include="Entities\Services.cs" />
+    <Compile Include="Entities\Cheques.cs" />
     <Compile Include="Entities\Users.cs" />
     <Compile Include="Views\Backups\AdminChose.cs">
       <SubType>Form</SubType>

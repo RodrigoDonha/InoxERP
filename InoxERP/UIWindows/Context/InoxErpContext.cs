@@ -31,11 +31,25 @@ namespace UIWindows.Context
 
         public DbSet<Contracts> Contracts { get; set; }
 
+        public DbSet<Providers> Providers { get; set; }
+
+        public DbSet<Cash> Cash { get; set; }
+
+        public DbSet<Cheques> Cheques { get; set; }
+
+        public DbSet<AccountsToReceive> AccountsToReceive { get; set; }
+
+        public DbSet<ParcialReceive> ParcialReceive { get; set; }
+
+        public DbSet<AccountsToPay> AccountsToPay { get; set; }
+
+        public DbSet<ParcialPay> ParcialPay { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<InoxErpContext>(new CreateDatabaseIfNotExists<InoxErpContext>());
-            //Database.SetInitializer<InoxErpContext>(new DropCreateDatabaseIfModelChanges<InoxErpContext>());
+            //Database.SetInitializer<InoxErpContext>(new CreateDatabaseIfNotExists<InoxErpContext>());
+            Database.SetInitializer<InoxErpContext>(new DropCreateDatabaseIfModelChanges<InoxErpContext>());
         }
     }
 }

@@ -30,16 +30,26 @@ namespace UIWindows.Entities
 
         //ForengKeys				
 
+        
+        //Items -> Products 1:n
+        public ICollection<Products> Products { get; set; }
+
+
+        //Items -> Services 1:n
+        public ICollection<Services> Services { get; set; }
+
+
+        //Budgets_OS -> Items 1:n
         public virtual Budgets_OS Budgets_OS { get; set; }
 
         [ForeignKey("Budgets_OS")]
         public string IdBudgets_OS { get; set; }
 
 
+        //Contracts -> Items 1:n
+        public virtual Contracts Contracts { get; set; }
 
-        //public string sServicesID { get; set; }
-        //public string sProductsID { get; set; }
-        //public string sContractsID { get; set; }
-
+        [ForeignKey("Contracts")]
+        public string IdContracts { get; set; }
     }
 }

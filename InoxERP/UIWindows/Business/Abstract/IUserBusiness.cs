@@ -12,5 +12,7 @@ namespace UIWindows.Business.Abstract
         Users signIn(Users user);
 
         Users ValidateLoginEqual(Users user);
+
+        string getMD5Hash(string input);
     }
 }

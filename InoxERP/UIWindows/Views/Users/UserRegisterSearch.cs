@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
@@ -32,14 +33,21 @@ namespace UIWindows
                 user.sLogin = txtLogin.Text;
                 if (validateUserEquals(user) == null)
                 {
-                    user.sID = Guid.NewGuid().ToString();
-                    user.sName = txtNome.Text;
-                    user.sKey = user.getMD5Hash(txtSenha.Text);
-                    user.Type = validationUserType(cbxTipo.SelectedItem.ToString());
+                    Users userPersist = new Users();
+
+                    userPersist.sID = Guid.NewGuid().ToString();
+
+                    userPersist.sName = txtNome.Text;
+                    userPersist.sLogin = txtLogin.Text;
+                    userPersist.sKey = obj.getMD5Hash(txtSenha.Text);
+                    userPersist.Type = validationUserType(cbxTipo.SelectedItem.ToString());
 
                     if (messageYesNo() == DialogResult.Yes)
                     {
-                        obj.Insert(user);
+                        obj.Insert(userPersist);
+
+                        var ok = obj.Search.FirstOrDefault(b => b.sID == userPersist.sID);
+
                         afterAction();
                         MessageBox.Show("Salvo");
                         if (userLog.sName == "test")
@@ -58,16 +66,21 @@ namespace UIWindows
                 MessageBox.Show("Por Favor preencha as informações Corretamente");
             else
             {
-                user = obj.ReturnByID(lblID.Text);
+                Users userAlter = new Users();
 
-                user.sName = txtNome.Text;
-                user.sLogin = txtLogin.Text;
-                user.sKey = user.getMD5Hash(txtSenha.Text);
-                user.Type = validationUserType(cbxTipo.SelectedItem.ToString());
+                userAlter = obj.ReturnByID(lblID.Text);
+
+                userAlter.sName = txtNome.Text;
+                userAlter.sLogin = txtLogin.Text;
+                userAlter.sKey = obj.getMD5Hash(txtSenha.Text);
+                userAlter.Type = validationUserType(cbxTipo.SelectedItem.ToString());
 
                 if (messageYesNo() == DialogResult.Yes)
                 {
-                    obj.Update(user);
+                    obj.Update(userAlter);
+
+                    var ok = obj.Search.FirstOrDefault(b => b.sID == userAlter.sID);
+
                     afterAction();
                     MessageBox.Show("Atualizado");
                 }
