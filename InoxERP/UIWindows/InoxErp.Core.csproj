@@ -76,6 +76,11 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.SqlEnum, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
@@ -137,6 +142,18 @@
     <Compile Include="Entities\Products.cs" />
     <Compile Include="Entities\Services.cs" />
     <Compile Include="Entities\Users.cs" />
+    <Compile Include="Views\Backups\AdminChose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Backups\AdminChose.Designer.cs">
+      <DependentUpon>AdminChose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Backups\RestoreServerDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Backups\RestoreServerDB.Designer.cs">
+      <DependentUpon>RestoreServerDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeneralDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,6 +193,12 @@
       <DependentUpon>InoxErpDBDataSetItemsBudget.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Views\Backups\BackupServerDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Backups\BackupServerDB.Designer.cs">
+      <DependentUpon>BackupServerDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Budgets\BudgetPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,12 +222,6 @@
     </Compile>
     <Compile Include="Views\Users\SignIn.Designer.cs">
       <DependentUpon>SignIn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Backup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Backup.Designer.cs">
-      <DependentUpon>Backup.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Accounts\AccountsCheque.cs">
       <SubType>Form</SubType>
@@ -392,6 +409,15 @@
     <EmbeddedResource Include="Business\Reports\BudgetWithPrice.rdlc" />
     <EmbeddedResource Include="Business\Reports\Report1.rdlc" />
     <EmbeddedResource Include="Business\Reports\rptAllUsers.rdlc" />
+    <EmbeddedResource Include="Views\Backups\AdminChose.resx">
+      <DependentUpon>AdminChose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Backups\BackupServerDB.resx">
+      <DependentUpon>BackupServerDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Backups\RestoreServerDB.resx">
+      <DependentUpon>RestoreServerDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Budgets\BudgetPrint.resx">
       <DependentUpon>BudgetPrint.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,9 +429,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Users\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Backup.resx">
-      <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Accounts\AccountsCheque.resx">
       <DependentUpon>AccountsCheque.cs</DependentUpon>
@@ -733,6 +756,7 @@
     <Folder Include="DTO\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\if_121_14145.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using UIWindows;
 using UIWindows.Entities;
 using UIWindows.Entities.Enum;
+using UIWindows.Views;
+using UIWindows.Views.Backups;
 using UIWindows.Views.Reports;
 
 namespace InoxERP
@@ -17,6 +19,7 @@ namespace InoxERP
         {
             this.user = user;
             InitializeComponent();
+            lblLogado.Text = "Olá:  " + user.sName;
         }
 
 
@@ -312,8 +315,18 @@ namespace InoxERP
         //PIC BACKUP
         private void picBackup_Click_1(object sender, EventArgs e)
         {
-            new frmBackup().Show();
+            if (user.Type == UserType.Admin && user.sLogin.Equals("Admin"))
+                new frmAdminChose().Show();
+            else if (user.Type == UserType.Admin)
+                new frmBackupServerDB().Show();
+            else
+                MessageBox.Show("Acesso Restrito !!!");
+        }
 
+        //PIC RESTART APPLICATION
+        private void picRestart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
 
         // CALL FORM REPORT USERS IN MENU
