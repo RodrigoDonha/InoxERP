@@ -79,7 +79,7 @@
             this.txtDestino.Name = "txtDestino";
             this.txtDestino.Size = new System.Drawing.Size(434, 23);
             this.txtDestino.TabIndex = 20;
-            this.txtDestino.Text = "C:\\Users\\jefte\\OneDrive";
+            this.txtDestino.Text = "C:\\Users\\Lucas\\OneDrive";
             this.txtDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // prbCopiando

@@ -35,9 +35,9 @@
             this.prbCopiando = new System.Windows.Forms.ProgressBar();
             this.txtBanco = new System.Windows.Forms.TextBox();
             this.txtServidor = new System.Windows.Forms.TextBox();
+            this.picRestore = new System.Windows.Forms.PictureBox();
             this.lblBanco = new System.Windows.Forms.Label();
             this.lblServidor = new System.Windows.Forms.Label();
-            this.picRestore = new System.Windows.Forms.PictureBox();
             this.gpbRestore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRestore)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +53,9 @@
             this.gpbRestore.Controls.Add(this.lblBanco);
             this.gpbRestore.Controls.Add(this.lblServidor);
             this.gpbRestore.Location = new System.Drawing.Point(19, 18);
-            this.gpbRestore.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.gpbRestore.Margin = new System.Windows.Forms.Padding(7);
             this.gpbRestore.Name = "gpbRestore";
-            this.gpbRestore.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.gpbRestore.Padding = new System.Windows.Forms.Padding(7);
             this.gpbRestore.Size = new System.Drawing.Size(463, 432);
             this.gpbRestore.TabIndex = 3;
             this.gpbRestore.TabStop = false;
@@ -74,11 +74,11 @@
             // txtOrigem
             // 
             this.txtOrigem.Location = new System.Drawing.Point(15, 129);
-            this.txtOrigem.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtOrigem.Margin = new System.Windows.Forms.Padding(7);
             this.txtOrigem.Name = "txtOrigem";
             this.txtOrigem.Size = new System.Drawing.Size(434, 23);
             this.txtOrigem.TabIndex = 20;
-            this.txtOrigem.Text = "C:\\Users\\jefte\\OneDrive\\Backup\\";
+            this.txtOrigem.Text = "C:\\Users\\Lucas\\OneDrive\\Backup\\";
             this.txtOrigem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // prbCopiando
@@ -94,7 +94,7 @@
             // 
             this.txtBanco.Enabled = false;
             this.txtBanco.Location = new System.Drawing.Point(250, 54);
-            this.txtBanco.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtBanco.Margin = new System.Windows.Forms.Padding(7);
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(199, 23);
             this.txtBanco.TabIndex = 18;
@@ -105,12 +105,25 @@
             // 
             this.txtServidor.Enabled = false;
             this.txtServidor.Location = new System.Drawing.Point(15, 54);
-            this.txtServidor.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtServidor.Margin = new System.Windows.Forms.Padding(7);
             this.txtServidor.Name = "txtServidor";
             this.txtServidor.Size = new System.Drawing.Size(199, 23);
             this.txtServidor.TabIndex = 17;
             this.txtServidor.Text = "(localdb)\\MSSQLLocalDB";
             this.txtServidor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // picRestore
+            // 
+            this.picRestore.BackColor = System.Drawing.Color.White;
+            this.picRestore.Image = ((System.Drawing.Image)(resources.GetObject("picRestore.Image")));
+            this.picRestore.Location = new System.Drawing.Point(15, 281);
+            this.picRestore.Margin = new System.Windows.Forms.Padding(7);
+            this.picRestore.Name = "picRestore";
+            this.picRestore.Size = new System.Drawing.Size(434, 137);
+            this.picRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRestore.TabIndex = 8;
+            this.picRestore.TabStop = false;
+            this.picRestore.Click += new System.EventHandler(this.picRestore_Click);
             // 
             // lblBanco
             // 
@@ -132,19 +145,6 @@
             this.lblServidor.TabIndex = 1;
             this.lblServidor.Text = "Servidor";
             // 
-            // picRestore
-            // 
-            this.picRestore.BackColor = System.Drawing.Color.White;
-            this.picRestore.Image = ((System.Drawing.Image)(resources.GetObject("picRestore.Image")));
-            this.picRestore.Location = new System.Drawing.Point(15, 281);
-            this.picRestore.Margin = new System.Windows.Forms.Padding(7);
-            this.picRestore.Name = "picRestore";
-            this.picRestore.Size = new System.Drawing.Size(434, 137);
-            this.picRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRestore.TabIndex = 8;
-            this.picRestore.TabStop = false;
-            this.picRestore.Click += new System.EventHandler(this.picRestore_Click);
-            // 
             // frmRestoreServerDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -152,7 +152,7 @@
             this.ClientSize = new System.Drawing.Size(499, 469);
             this.Controls.Add(this.gpbRestore);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRestoreServerDB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restaurar Servidor";
