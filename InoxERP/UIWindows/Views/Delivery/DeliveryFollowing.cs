@@ -86,6 +86,8 @@ namespace UIWindows
 
                 budgetAlter.bServiceOrderDelivered = true;
                 budgetAlter.dtDateServiceOrderDelivered = DateTime.Now;
+                budgetAlter.bRegisterFinished = true;
+                budgetAlter.dtDateRegisterFinished = DateTime.Now;
 
                 obj.Update(budgetAlter);
 

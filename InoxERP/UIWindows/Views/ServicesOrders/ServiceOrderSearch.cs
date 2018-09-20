@@ -83,6 +83,8 @@ namespace UIWindows
                 {
                     searchBudget.bRegisterFinished = true;
                     searchBudget.dtDateRegisterFinished = DateTime.Now;
+                    searchBudget.bServiceOrderDelivered = true;
+                    searchBudget.dtDateServiceOrderDelivered = DateTime.Now;
 
                     obj.Update(searchBudget);
                     MessageBox.Show("Serviço Finalizado");

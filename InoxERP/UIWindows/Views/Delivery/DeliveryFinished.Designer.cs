@@ -40,17 +40,6 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.grpEntregas = new System.Windows.Forms.GroupBox();
             this.grdEntregas = new System.Windows.Forms.DataGridView();
-            this.btnAbrir = new System.Windows.Forms.Button();
-            this.btnReabrirEntrega = new System.Windows.Forms.Button();
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView = new UIWindows.InoxErpDBDataSet3ServiceOrdersApprovedGidView();
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_delivery_finishedTableAdapter = new UIWindows.InoxErpDBDataSet3ServiceOrdersApprovedGidViewTableAdapters.tb_delivery_finishedTableAdapter();
-            this.tbdeliveryfinishedBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_budgets_osTableAdapter = new UIWindows.GeneralDataSetTableAdapters.tb_budgets_osTableAdapter();
-            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.generalDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.generalDataSet = new UIWindows.GeneralDataSet();
-            this.tbdeliveryfinishedBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,16 +47,27 @@
             this.sObservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbdeliveryfinishedBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView = new UIWindows.InoxErpDBDataSet3ServiceOrdersApprovedGidView();
+            this.btnAbrir = new System.Windows.Forms.Button();
+            this.btnReabrirEntrega = new System.Windows.Forms.Button();
+            this.tb_delivery_finishedTableAdapter = new UIWindows.InoxErpDBDataSet3ServiceOrdersApprovedGidViewTableAdapters.tb_delivery_finishedTableAdapter();
+            this.tbdeliveryfinishedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_budgets_osTableAdapter = new UIWindows.GeneralDataSetTableAdapters.tb_budgets_osTableAdapter();
+            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.generalDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.generalDataSet = new UIWindows.GeneralDataSet();
             this.grpPesquisa.SuspendLayout();
             this.grpEntregas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdEntregas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbdeliveryfinishedBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdeliveryfinishedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generalDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbdeliveryfinishedBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpPesquisa
@@ -187,7 +187,7 @@
             this.sObservationDataGridViewTextBoxColumn,
             this.dTotalDataGridViewTextBoxColumn,
             this.sID});
-            this.grdEntregas.DataSource = this.tbdeliveryfinishedBindingSource1;
+            this.grdEntregas.DataSource = this.tbdeliveryfinishedBindingSource;
             this.grdEntregas.Location = new System.Drawing.Point(11, 21);
             this.grdEntregas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdEntregas.Name = "grdEntregas";
@@ -205,61 +205,6 @@
             this.grdEntregas.Size = new System.Drawing.Size(1185, 257);
             this.grdEntregas.TabIndex = 0;
             this.grdEntregas.Click += new System.EventHandler(this.grdEntregas_Click_1);
-            // 
-            // btnAbrir
-            // 
-            this.btnAbrir.Location = new System.Drawing.Point(12, 402);
-            this.btnAbrir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(150, 30);
-            this.btnAbrir.TabIndex = 9;
-            this.btnAbrir.Text = "Abrir / Alterar";
-            this.btnAbrir.UseVisualStyleBackColor = true;
-            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
-            // 
-            // btnReabrirEntrega
-            // 
-            this.btnReabrirEntrega.Location = new System.Drawing.Point(1064, 402);
-            this.btnReabrirEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnReabrirEntrega.Name = "btnReabrirEntrega";
-            this.btnReabrirEntrega.Size = new System.Drawing.Size(150, 30);
-            this.btnReabrirEntrega.TabIndex = 18;
-            this.btnReabrirEntrega.Text = "Reabrir Entrega";
-            this.btnReabrirEntrega.UseVisualStyleBackColor = true;
-            this.btnReabrirEntrega.Click += new System.EventHandler(this.btnReabrirEntrega_Click);
-            // 
-            // inoxErpDBDataSet3ServiceOrdersApprovedGidView
-            // 
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.DataSetName = "InoxErpDBDataSet3ServiceOrdersApprovedGidView";
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource
-            // 
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidView;
-            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource.Position = 0;
-            // 
-            // tb_delivery_finishedTableAdapter
-            // 
-            this.tb_delivery_finishedTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbdeliveryfinishedBindingSource
-            // 
-            this.tbdeliveryfinishedBindingSource.DataMember = "tb_delivery_finished";
-            this.tbdeliveryfinishedBindingSource.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource;
-            // 
-            // tb_budgets_osTableAdapter
-            // 
-            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
-            // 
-            // generalDataSet
-            // 
-            this.generalDataSet.DataSetName = "GeneralDataSet";
-            this.generalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbdeliveryfinishedBindingSource1
-            // 
-            this.tbdeliveryfinishedBindingSource1.DataMember = "tb_delivery_finished";
-            this.tbdeliveryfinishedBindingSource1.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource;
             // 
             // dtDateServiceOrderDeliveredDataGridViewTextBoxColumn
             // 
@@ -311,6 +256,61 @@
             this.sID.ReadOnly = true;
             this.sID.Visible = false;
             // 
+            // tbdeliveryfinishedBindingSource1
+            // 
+            this.tbdeliveryfinishedBindingSource1.DataMember = "tb_delivery_finished";
+            this.tbdeliveryfinishedBindingSource1.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource;
+            // 
+            // inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource
+            // 
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidView;
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource.Position = 0;
+            // 
+            // inoxErpDBDataSet3ServiceOrdersApprovedGidView
+            // 
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.DataSetName = "InoxErpDBDataSet3ServiceOrdersApprovedGidView";
+            this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.Location = new System.Drawing.Point(12, 402);
+            this.btnAbrir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(150, 30);
+            this.btnAbrir.TabIndex = 9;
+            this.btnAbrir.Text = "Abrir / Alterar";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
+            // 
+            // btnReabrirEntrega
+            // 
+            this.btnReabrirEntrega.Location = new System.Drawing.Point(1064, 402);
+            this.btnReabrirEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReabrirEntrega.Name = "btnReabrirEntrega";
+            this.btnReabrirEntrega.Size = new System.Drawing.Size(150, 30);
+            this.btnReabrirEntrega.TabIndex = 18;
+            this.btnReabrirEntrega.Text = "Reabrir Entrega";
+            this.btnReabrirEntrega.UseVisualStyleBackColor = true;
+            this.btnReabrirEntrega.Click += new System.EventHandler(this.btnReabrirEntrega_Click);
+            // 
+            // tb_delivery_finishedTableAdapter
+            // 
+            this.tb_delivery_finishedTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbdeliveryfinishedBindingSource
+            // 
+            this.tbdeliveryfinishedBindingSource.DataMember = "tb_delivery_finished";
+            this.tbdeliveryfinishedBindingSource.DataSource = this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource;
+            // 
+            // tb_budgets_osTableAdapter
+            // 
+            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
+            // 
+            // generalDataSet
+            // 
+            this.generalDataSet.DataSetName = "GeneralDataSet";
+            this.generalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frmDeliveryFinished
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -330,13 +330,13 @@
             this.grpPesquisa.PerformLayout();
             this.grpEntregas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdEntregas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbdeliveryfinishedBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdeliveryfinishedBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.generalDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.generalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbdeliveryfinishedBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

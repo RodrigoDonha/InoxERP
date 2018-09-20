@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.Reporting.WebForms;
 using UIWindows;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
@@ -59,7 +60,6 @@ namespace InoxERP.UI_Windows_Forms
                         //preenche items
                         checkToAlter(budgetAlter.Items.ToList());
 
-
                         budgetAlter.PaymentMethods = paymentMethods();
                         budgetAlter.bPaymentToMatch = checkPaymentForm("combine");
                         budgetAlter.dPercentDiscount = Convert.ToDecimal(txtPorcentDescAVista.Text);
@@ -72,6 +72,7 @@ namespace InoxERP.UI_Windows_Forms
                         budgetAlter.iWarrantyTime = Convert.ToInt32(nudAnos.Value);
                         budgetAlter.dtBudgetExpirationDate = dtpDataValidadeOrcamento.Value;
                         budgetAlter.sObservation = rtfObservacoes.Text;
+                        budgetAlter.dTotal = Convert.ToDecimal(0.00);
                         budgetAlter.dTotal = Convert.ToDecimal(lblTotalGeralValor.Text);
 
                         //properts dont fill for default, needs to change to null
@@ -97,13 +98,13 @@ namespace InoxERP.UI_Windows_Forms
 
                             cleanScreen();
 
+                            PrintingBudget(budgetAlter.sID);
+
                             //fecha a tela de alteração
                             Dispose();
 
                             //abre tela de consulta novamente
                             new frmBudgetSearch().Show();
-
-                            PrintingBudget(budgetAlter.sID);
                         }
                     }
                 }
@@ -198,6 +199,7 @@ namespace InoxERP.UI_Windows_Forms
         {
             if (messageYesNo("Price") == DialogResult.Yes)
             {
+                new ReportParameter().Values.Clear();
                 new BudgetPrintWithPrice(id).Show();
             }
             else

@@ -1201,7 +1201,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!TotalValue.Value</Value>
+                    <Value>=Parameters!TotalValues.Value</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                     </Style>
@@ -1754,7 +1754,7 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="TotalValue">
+    <ReportParameter Name="TotalValues">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
@@ -1873,7 +1873,7 @@
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>TotalValue</ParameterName>
+          <ParameterName>TotalValues</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>

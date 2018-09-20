@@ -62,8 +62,10 @@ namespace UIWindows
                     //procura o orçamento para alteração
                     budgetAlter = obj.ReturnByID(getId);
 
-                    budgetAlter.bServiceOrderDelivered = false;
+                    budgetAlter.bServiceOrderDelivered = false; // libera na tela de entrega em andamento
                     budgetAlter.dtDateServiceOrderDelivered = DateTime.Now;
+                    budgetAlter.bRegisterFinished = false; // libera na tela de ordens de serviço em andamento
+                    budgetAlter.dtDateRegisterFinished = DateTime.Now;
 
                     obj.Update(budgetAlter);
 

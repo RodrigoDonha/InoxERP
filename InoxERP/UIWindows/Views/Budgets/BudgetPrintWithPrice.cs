@@ -12,6 +12,7 @@ namespace UIWindows.Views.Budgets
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS searchBudget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+        private ReportViewer _reportViewer1;
 
         public BudgetPrintWithPrice(string id)
         {
@@ -38,6 +39,7 @@ namespace UIWindows.Views.Budgets
 
         public void searchData(string id)
         {
+
             searchBudget = obj.ReturnByID(id);
 
             var BudgetID = new ReportParameter();
@@ -52,7 +54,7 @@ namespace UIWindows.Views.Budgets
             var PaymentInstalments = new ReportParameter();
             var InterestRate = new ReportParameter();
             var PercentDiscount = new ReportParameter();
-            var TotalValue = new ReportParameter();
+            var TotalValues = new ReportParameter();
             var StartPrevision = new ReportParameter();
             var FinalPrevision = new ReportParameter();
             var PrevisionOfExecute = new ReportParameter();
@@ -60,7 +62,6 @@ namespace UIWindows.Views.Budgets
             var WarrantyTime = new ReportParameter();
             var ExpirationDate = new ReportParameter();
             var Observation = new ReportParameter();
-            var ColunaValorTotal = new ReportParameter();
 
             BudgetID.Name = "BudgetID";
             Cod.Name = "Cod";
@@ -74,7 +75,8 @@ namespace UIWindows.Views.Budgets
             PaymentInstalments.Name = "PaymentInstalments";
             InterestRate.Name = "InterestRate";
             PercentDiscount.Name = "PercentDiscount";
-            TotalValue.Name = "TotalValue";
+            TotalValues.Name = "TotalValues";
+            
             StartPrevision.Name = "StartPrevision";
             FinalPrevision.Name = "FinalPrevision";
             PrevisionOfExecute.Name = "PrevisionOfExecute";
@@ -82,14 +84,13 @@ namespace UIWindows.Views.Budgets
             WarrantyTime.Name = "WarrantyTime";
             ExpirationDate.Name = "ExpirationDate";
             Observation.Name = "Observation";
-            ColunaValorTotal.Name = "ColunaValorTotal";
 
             BudgetID.Values.Add(searchBudget.sID);
             Cod.Values.Add(searchBudget.iCod.ToString());
             Date.Values.Add(searchBudget.dtDate.ToShortDateString());
             Name.Values.Add(searchBudget.sName);
             Contact.Values.Add(searchBudget.sTelephone);
-            TotalValue.Values.Add(searchBudget.dTotal.ToString());
+            TotalValues.Values.Add(searchBudget.dTotal.ToString());
             Adress.Values.Add(searchBudget.sAdress);
             Occupation.Values.Add(searchBudget.sOccupation);
             Type.Values.Add(searchBudget.ClientType.ToString());
@@ -106,12 +107,13 @@ namespace UIWindows.Views.Budgets
             DeliveryPrevision.Values.Add(searchBudget.dtFinalPrevision.ToShortDateString());
             Observation.Values.Add(searchBudget.sObservation);
 
+            
             reportViewer1.LocalReport.SetParameters(BudgetID);
             reportViewer1.LocalReport.SetParameters(Cod);
             reportViewer1.LocalReport.SetParameters(Date);
             reportViewer1.LocalReport.SetParameters(Name);
             reportViewer1.LocalReport.SetParameters(Contact);
-            reportViewer1.LocalReport.SetParameters(TotalValue);
+            reportViewer1.LocalReport.SetParameters(TotalValues);
             reportViewer1.LocalReport.SetParameters(Adress);
             if (Occupation.Values.Equals(""))
             {
