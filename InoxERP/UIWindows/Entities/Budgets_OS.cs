@@ -67,7 +67,7 @@ namespace UIWindows.Entities
         //[Required(ErrorMessage = "Data Expiração é obrigatória")]
         public DateTime dtBudgetExpirationDate { get; set; }
 
-        [StringLength(300)]
+        //[StringLength(300)]
         public string sObservation { get; set; }
         
         [Required(ErrorMessage = "Total é obrigatório")]
