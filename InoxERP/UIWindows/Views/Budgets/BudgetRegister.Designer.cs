@@ -79,7 +79,7 @@
             this.chkJuros = new System.Windows.Forms.CheckBox();
             this.lblContinuaParcelamento = new System.Windows.Forms.Label();
             this.lblParcelamento = new System.Windows.Forms.Label();
-            this.lblExibeValorAVista = new System.Windows.Forms.Label();
+            this.lblExibeValorDesconto = new System.Windows.Forms.Label();
             this.lblValorAVista = new System.Windows.Forms.Label();
             this.txtPorcentDescAVista = new System.Windows.Forms.TextBox();
             this.lblAVista = new System.Windows.Forms.Label();
@@ -217,6 +217,7 @@
             // 
             this.txtTelefone.Location = new System.Drawing.Point(76, 126);
             this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefone.MaxLength = 14;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(199, 26);
             this.txtTelefone.TabIndex = 7;
@@ -539,7 +540,7 @@
             this.grpFormaPagto.Controls.Add(this.chkJuros);
             this.grpFormaPagto.Controls.Add(this.lblContinuaParcelamento);
             this.grpFormaPagto.Controls.Add(this.lblParcelamento);
-            this.grpFormaPagto.Controls.Add(this.lblExibeValorAVista);
+            this.grpFormaPagto.Controls.Add(this.lblExibeValorDesconto);
             this.grpFormaPagto.Controls.Add(this.lblValorAVista);
             this.grpFormaPagto.Controls.Add(this.txtPorcentDescAVista);
             this.grpFormaPagto.Controls.Add(this.lblAVista);
@@ -557,7 +558,7 @@
             // 
             this.lblValorJuros.AutoSize = true;
             this.lblValorJuros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorJuros.Location = new System.Drawing.Point(412, 131);
+            this.lblValorJuros.Location = new System.Drawing.Point(436, 131);
             this.lblValorJuros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorJuros.Name = "lblValorJuros";
             this.lblValorJuros.Size = new System.Drawing.Size(16, 17);
@@ -652,7 +653,7 @@
             // 
             this.lblValorPorParcela.AutoSize = true;
             this.lblValorPorParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorPorParcela.Location = new System.Drawing.Point(412, 96);
+            this.lblValorPorParcela.Location = new System.Drawing.Point(436, 96);
             this.lblValorPorParcela.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorPorParcela.Name = "lblValorPorParcela";
             this.lblValorPorParcela.Size = new System.Drawing.Size(16, 17);
@@ -688,9 +689,9 @@
             this.lblContinuaJuros.Location = new System.Drawing.Point(236, 131);
             this.lblContinuaJuros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblContinuaJuros.Name = "lblContinuaJuros";
-            this.lblContinuaJuros.Size = new System.Drawing.Size(51, 17);
+            this.lblContinuaJuros.Size = new System.Drawing.Size(48, 17);
             this.lblContinuaJuros.TabIndex = 9;
-            this.lblContinuaJuros.Text = "% a.m.";
+            this.lblContinuaJuros.Text = "% a.n.";
             // 
             // txtPorcentJuros
             // 
@@ -739,27 +740,27 @@
             this.lblParcelamento.TabIndex = 4;
             this.lblParcelamento.Text = "Parcelamento em até:";
             // 
-            // lblExibeValorAVista
+            // lblExibeValorDesconto
             // 
-            this.lblExibeValorAVista.AutoSize = true;
-            this.lblExibeValorAVista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExibeValorAVista.Location = new System.Drawing.Point(334, 61);
-            this.lblExibeValorAVista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblExibeValorAVista.Name = "lblExibeValorAVista";
-            this.lblExibeValorAVista.Size = new System.Drawing.Size(16, 17);
-            this.lblExibeValorAVista.TabIndex = 3;
-            this.lblExibeValorAVista.Text = "0";
+            this.lblExibeValorDesconto.AutoSize = true;
+            this.lblExibeValorDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExibeValorDesconto.Location = new System.Drawing.Point(436, 61);
+            this.lblExibeValorDesconto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExibeValorDesconto.Name = "lblExibeValorDesconto";
+            this.lblExibeValorDesconto.Size = new System.Drawing.Size(16, 17);
+            this.lblExibeValorDesconto.TabIndex = 3;
+            this.lblExibeValorDesconto.Text = "0";
             // 
             // lblValorAVista
             // 
             this.lblValorAVista.AutoSize = true;
             this.lblValorAVista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorAVista.Location = new System.Drawing.Point(242, 61);
+            this.lblValorAVista.Location = new System.Drawing.Point(299, 61);
             this.lblValorAVista.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorAVista.Name = "lblValorAVista";
-            this.lblValorAVista.Size = new System.Drawing.Size(93, 17);
+            this.lblValorAVista.Size = new System.Drawing.Size(133, 17);
             this.lblValorAVista.TabIndex = 2;
-            this.lblValorAVista.Text = "Valor Á Vista:";
+            this.lblValorAVista.Text = "Valor do Desconto: ";
             // 
             // txtPorcentDescAVista
             // 
@@ -998,7 +999,7 @@
             // 
             this.lblTotalGeralValor.AutoSize = true;
             this.lblTotalGeralValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGeralValor.Location = new System.Drawing.Point(438, 35);
+            this.lblTotalGeralValor.Location = new System.Drawing.Point(436, 35);
             this.lblTotalGeralValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalGeralValor.Name = "lblTotalGeralValor";
             this.lblTotalGeralValor.Size = new System.Drawing.Size(16, 17);
@@ -1127,7 +1128,7 @@
         private System.Windows.Forms.CheckBox chkJuros;
         private System.Windows.Forms.Label lblContinuaParcelamento;
         private System.Windows.Forms.Label lblParcelamento;
-        private System.Windows.Forms.Label lblExibeValorAVista;
+        private System.Windows.Forms.Label lblExibeValorDesconto;
         private System.Windows.Forms.Label lblValorAVista;
         private System.Windows.Forms.TextBox txtPorcentDescAVista;
         private System.Windows.Forms.Label lblAVista;

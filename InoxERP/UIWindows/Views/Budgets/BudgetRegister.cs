@@ -351,7 +351,7 @@ namespace InoxERP.UI_Windows_Forms
                 }
                 else
                 {
-                    dgvItens.Rows.Add(txtQuantidade.Text.Replace(".", ","), txtDescricao.Text, txtValorUnitario.Text.Replace(".", ","),
+                    dgvItens.Rows.Add(txtQuantidade.Text.Replace(".", ","), txtDescricao.Text.ToUpper(), txtValorUnitario.Text.Replace(".", ","),
                         Convert.ToString(total));
                     subTotal = subTotal + total;
                     lblSubTotalValor.Text = Convert.ToString(subTotal);
@@ -469,6 +469,12 @@ namespace InoxERP.UI_Windows_Forms
                 chkCombinar.Focus();
                 return false;
             }
+
+            if (txtPorcentDescAVista.Text == "")
+                txtPorcentDescAVista.Text = "0";
+
+            if (txtPorcentJuros.Text == "")
+                txtPorcentJuros.Text = "0";
 
             return true;
         }
@@ -693,26 +699,7 @@ namespace InoxERP.UI_Windows_Forms
         //WHEN SET DESCONT TO VALUE
         private void txtPorcentDescAVista_TextChanged(object sender, EventArgs e)
         {
-            if (!lblSubTotalValor.Text.Length.Equals(0) && !txtPorcentDescAVista.Text.Length.Equals(0))
-            {
-                var descValue = Convert.ToDecimal(lblSubTotalValor.Text) - (Convert.ToDecimal(lblSubTotalValor.Text) * (Convert.ToDecimal(txtPorcentDescAVista.Text)/100));
-
-                lblExibeValorAVista.Text = Convert.ToString(descValue);
-                lblTotalGeralValor.Text = lblExibeValorAVista.Text;
-                nudParcelas.Enabled = false;
-                chkJuros.Enabled = false;
-            }
-            else
-            {
-                lblExibeValorAVista.Text = lblSubTotalValor.Text;
-                lblTotalGeralValor.Text = lblSubTotalValor.Text;
-                if (!chkCombinar.Checked.Equals(true))
-                {
-                    nudParcelas.Enabled = true;
-                    chkJuros.Enabled = true;
-                }
-            }
-
+            calcValueDiscount();
         }
 
         //WHEN NUDPARCELAS IS CHANGED
@@ -748,7 +735,7 @@ namespace InoxERP.UI_Windows_Forms
             lblValorJuros.Text = "0";
             lblExibeValorTotalParcelado.Text = "0";
             nudParcelas.Value = 1;
-            txtPorcentJuros.Text = "0";
+            //txtPorcentJuros.Text = "0";
             lblTotalGeralValor.Text = lblSubTotalValor.Text;
         }
 
@@ -774,7 +761,7 @@ namespace InoxERP.UI_Windows_Forms
             chkCheque.Checked = false;
             chkDinheiro.Checked = false;
             txtPorcentDescAVista.Text = "0";
-            lblExibeValorAVista.Text = "0";
+            lblExibeValorDesconto.Text = "0";
             nudParcelas.Value = 1;
             lblValorPorParcela.Text = "0";
             chkJuros.Checked = false;
@@ -797,7 +784,7 @@ namespace InoxERP.UI_Windows_Forms
             if (lblSubTotalValor.Text != "0")
             {
                 txtPorcentDescAVista.Enabled = true;
-                lblExibeValorAVista.Text = lblSubTotalValor.Text;
+                lblExibeValorDesconto.Text = lblSubTotalValor.Text;
                 nudParcelas.Enabled = true;
                 chkJuros.Enabled = true;
                 chkCombinar.Enabled = true;
@@ -808,7 +795,7 @@ namespace InoxERP.UI_Windows_Forms
             else
             {
                 txtPorcentDescAVista.Enabled = false;
-                lblExibeValorAVista.Text = "0";
+                lblExibeValorDesconto.Text = "0";
                 nudParcelas.Enabled = false;
                 chkJuros.Enabled = false;
                 chkCombinar.Enabled = false;
@@ -818,24 +805,73 @@ namespace InoxERP.UI_Windows_Forms
             lblTotalGeralValor.Text = lblSubTotalValor.Text;
         }
 
+        //SET DISCOUNT PERCENT
+        public void calcValueDiscount()
+        {
+            decimal porcentDesc;
+            decimal subTotalValue;
+
+            if (txtPorcentDescAVista.Text == "")
+                porcentDesc = 0;
+            else
+                porcentDesc= Convert.ToDecimal(txtPorcentDescAVista.Text);
+
+            subTotalValue = Convert.ToDecimal(lblSubTotalValor.Text);
+
+            if (!porcentDesc.Equals(0) && !subTotalValue.Equals(0))
+            {
+                var desc = subTotalValue * (porcentDesc / 100);
+                var descTotalValue = subTotalValue - desc;
+
+                lblExibeValorDesconto.Text = Convert.ToString(Math.Round(desc,2));
+                lblTotalGeralValor.Text = Convert.ToString(Math.Round(descTotalValue,2));
+                nudParcelas.Enabled = false;
+                chkJuros.Enabled = false;
+            }
+            else
+            {
+                lblExibeValorDesconto.Text = "0";
+                lblTotalGeralValor.Text = lblSubTotalValor.Text;
+                if (!chkCombinar.Checked.Equals(true))
+                {
+                    nudParcelas.Enabled = true;
+                    chkJuros.Enabled = true;
+                }
+            }
+        }
+
         //SET VALUE OF RATE
         public void calcValueRate()
         {
-            if (!lblSubTotalValor.Text.Length.Equals(0) && !txtPorcentJuros.Text.Length.Equals(0) && !nudParcelas.Value.Equals(0))
+            decimal porcentRate;
+            decimal subTotalValue;
+            decimal installments;
+            
+
+            if (txtPorcentJuros.Text == "")
+                porcentRate = 0;
+            else
+                porcentRate = Convert.ToDecimal(txtPorcentJuros.Text);
+
+            subTotalValue = Convert.ToDecimal(lblSubTotalValor.Text);
+
+            installments = Convert.ToDecimal(nudParcelas.Value);
+
+            if (!subTotalValue.Equals(0) && !porcentRate.Equals("") && !nudParcelas.Value.Equals(0))
             {
                 decimal percentByTimes = 0;
 
-                if (!nudParcelas.Value.Equals(1))
-                    percentByTimes = Convert.ToDecimal(txtPorcentJuros.Text) / 100;
+                //if (!nudParcelas.Value.Equals(1))
+                    percentByTimes = porcentRate / 100;
 
-                var valueOfInstallmentTimes = Math.Round(Convert.ToDecimal(lblSubTotalValor.Text) / Convert.ToDecimal(nudParcelas.Value),2);
+                var valueOfInstallmentTimes = Math.Round(subTotalValue / installments,2);
                 var valueRate = Math.Round(percentByTimes * valueOfInstallmentTimes, 2);
                 var valueRatePerTimes = Math.Round(valueOfInstallmentTimes + valueRate, 2);
-                var valueTotalWithRate = Math.Round(valueRatePerTimes * Convert.ToDecimal(nudParcelas.Value));
+                var valueTotalWithRate = Math.Round(valueRatePerTimes * installments);
 
                 lblValorPorParcela.Text = Convert.ToString(valueRatePerTimes);
 
-                lblValorJuros.Text = Convert.ToString(valueRate * Convert.ToDecimal(nudParcelas.Value));
+                lblValorJuros.Text = Convert.ToString(valueRate * installments);
 
                 lblExibeValorTotalParcelado.Text = Convert.ToString(valueTotalWithRate);
 
