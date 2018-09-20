@@ -98,13 +98,14 @@ namespace InoxERP.UI_Windows_Forms
 
                             cleanScreen();
 
-                            PrintingBudget(budgetAlter.sID);
-
                             //fecha a tela de alteração
                             Dispose();
 
                             //abre tela de consulta novamente
                             new frmBudgetSearch().Show();
+
+                            PrintingBudget(ok.sID);
+
                         }
                     }
                 }
@@ -370,22 +371,13 @@ namespace InoxERP.UI_Windows_Forms
             }
             else
             {
-                // não consegui tratar a exclusão no data grid view, apresenta erro no tratamento da iBidingList, então não permiti alteração e exclusão nos itens
-                // até que seja resolvido o erro.
-                //if (btnGravarOrcamento.Text == "Alterar")
-                //{
-                //    MessageBox.Show("Você não pode excluir, nem alterar itens do orçamento já gravado, caso necessite fazer isso, exclua o orçamento e lance outro com os dados corretos.");
-                //}
-                //else
-                //{
-                    var row = dgvItens.SelectedRows[0].Index;
-                    subTotal = subTotal - Convert.ToDecimal(dgvItens[3, row].Value.ToString());
-                    lblSubTotalValor.Text = Convert.ToString(subTotal);
-                    dgvItens.Rows.RemoveAt(row);
-                    txtQuantidade.Focus();
-                    if (compare.Equals(1))
-                        clearCampsPayment();
-                //}
+                var row = dgvItens.SelectedRows[0].Index;
+                subTotal = subTotal - Convert.ToDecimal(dgvItens[3, row].Value.ToString());
+                lblSubTotalValor.Text = Convert.ToString(subTotal);
+                dgvItens.Rows.RemoveAt(row);
+                txtQuantidade.Focus();
+                if (compare.Equals(1))
+                    clearCampsPayment();
             }
         }
 
@@ -784,7 +776,6 @@ namespace InoxERP.UI_Windows_Forms
             if (lblSubTotalValor.Text != "0")
             {
                 txtPorcentDescAVista.Enabled = true;
-                lblExibeValorDesconto.Text = lblSubTotalValor.Text;
                 nudParcelas.Enabled = true;
                 chkJuros.Enabled = true;
                 chkCombinar.Enabled = true;
