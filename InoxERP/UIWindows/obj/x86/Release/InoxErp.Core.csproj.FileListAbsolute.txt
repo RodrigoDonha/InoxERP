@@ -166,3 +166,4 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Cor
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csproj.CopyComplete
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxER.exe
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxER.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csprojAssemblyReference.cache

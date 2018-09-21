@@ -28,8 +28,6 @@ namespace UIWindows {
         
         private PermitionsDataTable tablePermitions;
         
-        private tb_budgets_osDataTable tabletb_budgets_os;
-        
         private tb_clientsDataTable tabletb_clients;
         
         private tb_contractsDataTable tabletb_contracts;
@@ -41,6 +39,8 @@ namespace UIWindows {
         private tb_servicesDataTable tabletb_services;
         
         private tb_usersDataTable tabletb_users;
+        
+        private tb_budgets_osDataTable tabletb_budgets_os;
         
         private global::System.Data.DataRelation _relationFK_dbo_tb_items_dbo_tb_budgets_os_IdBudgets_OS;
         
@@ -78,9 +78,6 @@ namespace UIWindows {
                 if ((ds.Tables["Permitions"] != null)) {
                     base.Tables.Add(new PermitionsDataTable(ds.Tables["Permitions"]));
                 }
-                if ((ds.Tables["tb_budgets_os"] != null)) {
-                    base.Tables.Add(new tb_budgets_osDataTable(ds.Tables["tb_budgets_os"]));
-                }
                 if ((ds.Tables["tb_clients"] != null)) {
                     base.Tables.Add(new tb_clientsDataTable(ds.Tables["tb_clients"]));
                 }
@@ -98,6 +95,9 @@ namespace UIWindows {
                 }
                 if ((ds.Tables["tb_users"] != null)) {
                     base.Tables.Add(new tb_usersDataTable(ds.Tables["tb_users"]));
+                }
+                if ((ds.Tables["tb_budgets_os"] != null)) {
+                    base.Tables.Add(new tb_budgets_osDataTable(ds.Tables["tb_budgets_os"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -134,16 +134,6 @@ namespace UIWindows {
         public PermitionsDataTable Permitions {
             get {
                 return this.tablePermitions;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tb_budgets_osDataTable tb_budgets_os {
-            get {
-                return this.tabletb_budgets_os;
             }
         }
         
@@ -204,6 +194,16 @@ namespace UIWindows {
         public tb_usersDataTable tb_users {
             get {
                 return this.tabletb_users;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tb_budgets_osDataTable tb_budgets_os {
+            get {
+                return this.tabletb_budgets_os;
             }
         }
         
@@ -280,9 +280,6 @@ namespace UIWindows {
                 if ((ds.Tables["Permitions"] != null)) {
                     base.Tables.Add(new PermitionsDataTable(ds.Tables["Permitions"]));
                 }
-                if ((ds.Tables["tb_budgets_os"] != null)) {
-                    base.Tables.Add(new tb_budgets_osDataTable(ds.Tables["tb_budgets_os"]));
-                }
                 if ((ds.Tables["tb_clients"] != null)) {
                     base.Tables.Add(new tb_clientsDataTable(ds.Tables["tb_clients"]));
                 }
@@ -300,6 +297,9 @@ namespace UIWindows {
                 }
                 if ((ds.Tables["tb_users"] != null)) {
                     base.Tables.Add(new tb_usersDataTable(ds.Tables["tb_users"]));
+                }
+                if ((ds.Tables["tb_budgets_os"] != null)) {
+                    base.Tables.Add(new tb_budgets_osDataTable(ds.Tables["tb_budgets_os"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -346,12 +346,6 @@ namespace UIWindows {
                     this.tablePermitions.InitVars();
                 }
             }
-            this.tabletb_budgets_os = ((tb_budgets_osDataTable)(base.Tables["tb_budgets_os"]));
-            if ((initTable == true)) {
-                if ((this.tabletb_budgets_os != null)) {
-                    this.tabletb_budgets_os.InitVars();
-                }
-            }
             this.tabletb_clients = ((tb_clientsDataTable)(base.Tables["tb_clients"]));
             if ((initTable == true)) {
                 if ((this.tabletb_clients != null)) {
@@ -388,6 +382,12 @@ namespace UIWindows {
                     this.tabletb_users.InitVars();
                 }
             }
+            this.tabletb_budgets_os = ((tb_budgets_osDataTable)(base.Tables["tb_budgets_os"]));
+            if ((initTable == true)) {
+                if ((this.tabletb_budgets_os != null)) {
+                    this.tabletb_budgets_os.InitVars();
+                }
+            }
             this._relationFK_dbo_tb_items_dbo_tb_budgets_os_IdBudgets_OS = this.Relations["FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS"];
         }
         
@@ -403,8 +403,6 @@ namespace UIWindows {
             base.Tables.Add(this.table__MigrationHistory);
             this.tablePermitions = new PermitionsDataTable();
             base.Tables.Add(this.tablePermitions);
-            this.tabletb_budgets_os = new tb_budgets_osDataTable();
-            base.Tables.Add(this.tabletb_budgets_os);
             this.tabletb_clients = new tb_clientsDataTable();
             base.Tables.Add(this.tabletb_clients);
             this.tabletb_contracts = new tb_contractsDataTable();
@@ -417,6 +415,8 @@ namespace UIWindows {
             base.Tables.Add(this.tabletb_services);
             this.tabletb_users = new tb_usersDataTable();
             base.Tables.Add(this.tabletb_users);
+            this.tabletb_budgets_os = new tb_budgets_osDataTable();
+            base.Tables.Add(this.tabletb_budgets_os);
             this._relationFK_dbo_tb_items_dbo_tb_budgets_os_IdBudgets_OS = new global::System.Data.DataRelation("FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS", new global::System.Data.DataColumn[] {
                         this.tabletb_budgets_os.sIDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletb_items.IdBudgets_OSColumn}, false);
@@ -432,12 +432,6 @@ namespace UIWindows {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializePermitions() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializetb_budgets_os() {
             return false;
         }
         
@@ -474,6 +468,12 @@ namespace UIWindows {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializetb_users() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializetb_budgets_os() {
             return false;
         }
         
@@ -539,9 +539,6 @@ namespace UIWindows {
         public delegate void PermitionsRowChangeEventHandler(object sender, PermitionsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void tb_budgets_osRowChangeEventHandler(object sender, tb_budgets_osRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void tb_clientsRowChangeEventHandler(object sender, tb_clientsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -558,6 +555,9 @@ namespace UIWindows {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void tb_usersRowChangeEventHandler(object sender, tb_usersRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void tb_budgets_osRowChangeEventHandler(object sender, tb_budgets_osRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1220,620 +1220,6 @@ namespace UIWindows {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "PermitionsDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tb_budgets_osDataTable : global::System.Data.TypedTableBase<tb_budgets_osRow> {
-            
-            private global::System.Data.DataColumn columnsID;
-            
-            private global::System.Data.DataColumn columnClientType;
-            
-            private global::System.Data.DataColumn columnsName;
-            
-            private global::System.Data.DataColumn columnsAdress;
-            
-            private global::System.Data.DataColumn columnsTelephone;
-            
-            private global::System.Data.DataColumn columnsOccupation;
-            
-            private global::System.Data.DataColumn columnbPaymentToMatch;
-            
-            private global::System.Data.DataColumn columndPercentDiscount;
-            
-            private global::System.Data.DataColumn columniPaymentInstallments;
-            
-            private global::System.Data.DataColumn columnbInterestRate;
-            
-            private global::System.Data.DataColumn columndWithInterest;
-            
-            private global::System.Data.DataColumn columniPrevisionOfExecute;
-            
-            private global::System.Data.DataColumn columndtStartPrevision;
-            
-            private global::System.Data.DataColumn columndtFinalPrevision;
-            
-            private global::System.Data.DataColumn columniWarrantyTime;
-            
-            private global::System.Data.DataColumn columndtBudgetExpirationDate;
-            
-            private global::System.Data.DataColumn columnsObservation;
-            
-            private global::System.Data.DataColumn columnbServiceOrderApproved;
-            
-            private global::System.Data.DataColumn columndtDateServiceOrderApproved;
-            
-            private global::System.Data.DataColumn columnbRegisterFinished;
-            
-            private global::System.Data.DataColumn columndtDateRegisterFinished;
-            
-            private global::System.Data.DataColumn columndtDate;
-            
-            private global::System.Data.DataColumn columndTotal;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_budgets_osDataTable() {
-                this.TableName = "tb_budgets_os";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal tb_budgets_osDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected tb_budgets_osDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn sIDColumn {
-                get {
-                    return this.columnsID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ClientTypeColumn {
-                get {
-                    return this.columnClientType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn sNameColumn {
-                get {
-                    return this.columnsName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn sAdressColumn {
-                get {
-                    return this.columnsAdress;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn sTelephoneColumn {
-                get {
-                    return this.columnsTelephone;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn sOccupationColumn {
-                get {
-                    return this.columnsOccupation;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn bPaymentToMatchColumn {
-                get {
-                    return this.columnbPaymentToMatch;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dPercentDiscountColumn {
-                get {
-                    return this.columndPercentDiscount;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn iPaymentInstallmentsColumn {
-                get {
-                    return this.columniPaymentInstallments;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn bInterestRateColumn {
-                get {
-                    return this.columnbInterestRate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dWithInterestColumn {
-                get {
-                    return this.columndWithInterest;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn iPrevisionOfExecuteColumn {
-                get {
-                    return this.columniPrevisionOfExecute;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dtStartPrevisionColumn {
-                get {
-                    return this.columndtStartPrevision;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dtFinalPrevisionColumn {
-                get {
-                    return this.columndtFinalPrevision;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn iWarrantyTimeColumn {
-                get {
-                    return this.columniWarrantyTime;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dtBudgetExpirationDateColumn {
-                get {
-                    return this.columndtBudgetExpirationDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn sObservationColumn {
-                get {
-                    return this.columnsObservation;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn bServiceOrderApprovedColumn {
-                get {
-                    return this.columnbServiceOrderApproved;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dtDateServiceOrderApprovedColumn {
-                get {
-                    return this.columndtDateServiceOrderApproved;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn bRegisterFinishedColumn {
-                get {
-                    return this.columnbRegisterFinished;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dtDateRegisterFinishedColumn {
-                get {
-                    return this.columndtDateRegisterFinished;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dtDateColumn {
-                get {
-                    return this.columndtDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn dTotalColumn {
-                get {
-                    return this.columndTotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_budgets_osRow this[int index] {
-                get {
-                    return ((tb_budgets_osRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event tb_budgets_osRowChangeEventHandler tb_budgets_osRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event tb_budgets_osRowChangeEventHandler tb_budgets_osRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event tb_budgets_osRowChangeEventHandler tb_budgets_osRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event tb_budgets_osRowChangeEventHandler tb_budgets_osRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Addtb_budgets_osRow(tb_budgets_osRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_budgets_osRow Addtb_budgets_osRow(
-                        string sID, 
-                        int ClientType, 
-                        string sName, 
-                        string sAdress, 
-                        string sTelephone, 
-                        string sOccupation, 
-                        bool bPaymentToMatch, 
-                        decimal dPercentDiscount, 
-                        int iPaymentInstallments, 
-                        bool bInterestRate, 
-                        decimal dWithInterest, 
-                        int iPrevisionOfExecute, 
-                        System.DateTime dtStartPrevision, 
-                        System.DateTime dtFinalPrevision, 
-                        int iWarrantyTime, 
-                        System.DateTime dtBudgetExpirationDate, 
-                        string sObservation, 
-                        bool bServiceOrderApproved, 
-                        System.DateTime dtDateServiceOrderApproved, 
-                        bool bRegisterFinished, 
-                        System.DateTime dtDateRegisterFinished, 
-                        System.DateTime dtDate, 
-                        decimal dTotal) {
-                tb_budgets_osRow rowtb_budgets_osRow = ((tb_budgets_osRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        sID,
-                        ClientType,
-                        sName,
-                        sAdress,
-                        sTelephone,
-                        sOccupation,
-                        bPaymentToMatch,
-                        dPercentDiscount,
-                        iPaymentInstallments,
-                        bInterestRate,
-                        dWithInterest,
-                        iPrevisionOfExecute,
-                        dtStartPrevision,
-                        dtFinalPrevision,
-                        iWarrantyTime,
-                        dtBudgetExpirationDate,
-                        sObservation,
-                        bServiceOrderApproved,
-                        dtDateServiceOrderApproved,
-                        bRegisterFinished,
-                        dtDateRegisterFinished,
-                        dtDate,
-                        dTotal};
-                rowtb_budgets_osRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtb_budgets_osRow);
-                return rowtb_budgets_osRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_budgets_osRow FindBysID(string sID) {
-                return ((tb_budgets_osRow)(this.Rows.Find(new object[] {
-                            sID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                tb_budgets_osDataTable cln = ((tb_budgets_osDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new tb_budgets_osDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal void InitVars() {
-                this.columnsID = base.Columns["sID"];
-                this.columnClientType = base.Columns["ClientType"];
-                this.columnsName = base.Columns["sName"];
-                this.columnsAdress = base.Columns["sAdress"];
-                this.columnsTelephone = base.Columns["sTelephone"];
-                this.columnsOccupation = base.Columns["sOccupation"];
-                this.columnbPaymentToMatch = base.Columns["bPaymentToMatch"];
-                this.columndPercentDiscount = base.Columns["dPercentDiscount"];
-                this.columniPaymentInstallments = base.Columns["iPaymentInstallments"];
-                this.columnbInterestRate = base.Columns["bInterestRate"];
-                this.columndWithInterest = base.Columns["dWithInterest"];
-                this.columniPrevisionOfExecute = base.Columns["iPrevisionOfExecute"];
-                this.columndtStartPrevision = base.Columns["dtStartPrevision"];
-                this.columndtFinalPrevision = base.Columns["dtFinalPrevision"];
-                this.columniWarrantyTime = base.Columns["iWarrantyTime"];
-                this.columndtBudgetExpirationDate = base.Columns["dtBudgetExpirationDate"];
-                this.columnsObservation = base.Columns["sObservation"];
-                this.columnbServiceOrderApproved = base.Columns["bServiceOrderApproved"];
-                this.columndtDateServiceOrderApproved = base.Columns["dtDateServiceOrderApproved"];
-                this.columnbRegisterFinished = base.Columns["bRegisterFinished"];
-                this.columndtDateRegisterFinished = base.Columns["dtDateRegisterFinished"];
-                this.columndtDate = base.Columns["dtDate"];
-                this.columndTotal = base.Columns["dTotal"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            private void InitClass() {
-                this.columnsID = new global::System.Data.DataColumn("sID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsID);
-                this.columnClientType = new global::System.Data.DataColumn("ClientType", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClientType);
-                this.columnsName = new global::System.Data.DataColumn("sName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsName);
-                this.columnsAdress = new global::System.Data.DataColumn("sAdress", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsAdress);
-                this.columnsTelephone = new global::System.Data.DataColumn("sTelephone", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsTelephone);
-                this.columnsOccupation = new global::System.Data.DataColumn("sOccupation", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsOccupation);
-                this.columnbPaymentToMatch = new global::System.Data.DataColumn("bPaymentToMatch", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbPaymentToMatch);
-                this.columndPercentDiscount = new global::System.Data.DataColumn("dPercentDiscount", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndPercentDiscount);
-                this.columniPaymentInstallments = new global::System.Data.DataColumn("iPaymentInstallments", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columniPaymentInstallments);
-                this.columnbInterestRate = new global::System.Data.DataColumn("bInterestRate", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbInterestRate);
-                this.columndWithInterest = new global::System.Data.DataColumn("dWithInterest", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndWithInterest);
-                this.columniPrevisionOfExecute = new global::System.Data.DataColumn("iPrevisionOfExecute", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columniPrevisionOfExecute);
-                this.columndtStartPrevision = new global::System.Data.DataColumn("dtStartPrevision", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndtStartPrevision);
-                this.columndtFinalPrevision = new global::System.Data.DataColumn("dtFinalPrevision", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndtFinalPrevision);
-                this.columniWarrantyTime = new global::System.Data.DataColumn("iWarrantyTime", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columniWarrantyTime);
-                this.columndtBudgetExpirationDate = new global::System.Data.DataColumn("dtBudgetExpirationDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndtBudgetExpirationDate);
-                this.columnsObservation = new global::System.Data.DataColumn("sObservation", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsObservation);
-                this.columnbServiceOrderApproved = new global::System.Data.DataColumn("bServiceOrderApproved", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbServiceOrderApproved);
-                this.columndtDateServiceOrderApproved = new global::System.Data.DataColumn("dtDateServiceOrderApproved", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndtDateServiceOrderApproved);
-                this.columnbRegisterFinished = new global::System.Data.DataColumn("bRegisterFinished", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbRegisterFinished);
-                this.columndtDateRegisterFinished = new global::System.Data.DataColumn("dtDateRegisterFinished", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndtDateRegisterFinished);
-                this.columndtDate = new global::System.Data.DataColumn("dtDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndtDate);
-                this.columndTotal = new global::System.Data.DataColumn("dTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndTotal);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnsID}, true));
-                this.columnsID.AllowDBNull = false;
-                this.columnsID.Unique = true;
-                this.columnsID.MaxLength = 40;
-                this.columnClientType.AllowDBNull = false;
-                this.columnsName.AllowDBNull = false;
-                this.columnsName.MaxLength = 100;
-                this.columnsAdress.MaxLength = 100;
-                this.columnsTelephone.AllowDBNull = false;
-                this.columnsTelephone.MaxLength = 100;
-                this.columnsOccupation.MaxLength = 100;
-                this.columnbPaymentToMatch.AllowDBNull = false;
-                this.columndPercentDiscount.AllowDBNull = false;
-                this.columniPaymentInstallments.AllowDBNull = false;
-                this.columnbInterestRate.AllowDBNull = false;
-                this.columndWithInterest.AllowDBNull = false;
-                this.columniPrevisionOfExecute.AllowDBNull = false;
-                this.columndtStartPrevision.AllowDBNull = false;
-                this.columndtFinalPrevision.AllowDBNull = false;
-                this.columniWarrantyTime.AllowDBNull = false;
-                this.columndtBudgetExpirationDate.AllowDBNull = false;
-                this.columnsObservation.MaxLength = 300;
-                this.columnbServiceOrderApproved.AllowDBNull = false;
-                this.columndtDateServiceOrderApproved.AllowDBNull = false;
-                this.columnbRegisterFinished.AllowDBNull = false;
-                this.columndtDateRegisterFinished.AllowDBNull = false;
-                this.columndtDate.AllowDBNull = false;
-                this.columndTotal.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_budgets_osRow Newtb_budgets_osRow() {
-                return ((tb_budgets_osRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tb_budgets_osRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(tb_budgets_osRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.tb_budgets_osRowChanged != null)) {
-                    this.tb_budgets_osRowChanged(this, new tb_budgets_osRowChangeEvent(((tb_budgets_osRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.tb_budgets_osRowChanging != null)) {
-                    this.tb_budgets_osRowChanging(this, new tb_budgets_osRowChangeEvent(((tb_budgets_osRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.tb_budgets_osRowDeleted != null)) {
-                    this.tb_budgets_osRowDeleted(this, new tb_budgets_osRowChangeEvent(((tb_budgets_osRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.tb_budgets_osRowDeleting != null)) {
-                    this.tb_budgets_osRowDeleting(this, new tb_budgets_osRowChangeEvent(((tb_budgets_osRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void Removetb_budgets_osRow(tb_budgets_osRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                InoxErpDBDataSet2 ds = new InoxErpDBDataSet2();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tb_budgets_osDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4349,6 +3735,618 @@ namespace UIWindows {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tb_budgets_osDataTable : global::System.Data.TypedTableBase<tb_budgets_osRow> {
+            
+            private global::System.Data.DataColumn columnsID;
+            
+            private global::System.Data.DataColumn columnClientType;
+            
+            private global::System.Data.DataColumn columnsName;
+            
+            private global::System.Data.DataColumn columnsAdress;
+            
+            private global::System.Data.DataColumn columnsTelephone;
+            
+            private global::System.Data.DataColumn columnsOccupation;
+            
+            private global::System.Data.DataColumn columnbPaymentToMatch;
+            
+            private global::System.Data.DataColumn columndPercentDiscount;
+            
+            private global::System.Data.DataColumn columniPaymentInstallments;
+            
+            private global::System.Data.DataColumn columnbInterestRate;
+            
+            private global::System.Data.DataColumn columndWithInterest;
+            
+            private global::System.Data.DataColumn columniPrevisionOfExecute;
+            
+            private global::System.Data.DataColumn columndtStartPrevision;
+            
+            private global::System.Data.DataColumn columndtFinalPrevision;
+            
+            private global::System.Data.DataColumn columniWarrantyTime;
+            
+            private global::System.Data.DataColumn columndtBudgetExpirationDate;
+            
+            private global::System.Data.DataColumn columnsObservation;
+            
+            private global::System.Data.DataColumn columnbServiceOrderApproved;
+            
+            private global::System.Data.DataColumn columndtDateServiceOrderApproved;
+            
+            private global::System.Data.DataColumn columnbRegisterFinished;
+            
+            private global::System.Data.DataColumn columndtDateRegisterFinished;
+            
+            private global::System.Data.DataColumn columndtDate;
+            
+            private global::System.Data.DataColumn columndTotal;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_budgets_osDataTable() {
+                this.TableName = "tb_budgets_os";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal tb_budgets_osDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected tb_budgets_osDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sIDColumn {
+                get {
+                    return this.columnsID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ClientTypeColumn {
+                get {
+                    return this.columnClientType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sNameColumn {
+                get {
+                    return this.columnsName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sAdressColumn {
+                get {
+                    return this.columnsAdress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sTelephoneColumn {
+                get {
+                    return this.columnsTelephone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sOccupationColumn {
+                get {
+                    return this.columnsOccupation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn bPaymentToMatchColumn {
+                get {
+                    return this.columnbPaymentToMatch;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dPercentDiscountColumn {
+                get {
+                    return this.columndPercentDiscount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn iPaymentInstallmentsColumn {
+                get {
+                    return this.columniPaymentInstallments;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn bInterestRateColumn {
+                get {
+                    return this.columnbInterestRate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dWithInterestColumn {
+                get {
+                    return this.columndWithInterest;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn iPrevisionOfExecuteColumn {
+                get {
+                    return this.columniPrevisionOfExecute;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtStartPrevisionColumn {
+                get {
+                    return this.columndtStartPrevision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtFinalPrevisionColumn {
+                get {
+                    return this.columndtFinalPrevision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn iWarrantyTimeColumn {
+                get {
+                    return this.columniWarrantyTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtBudgetExpirationDateColumn {
+                get {
+                    return this.columndtBudgetExpirationDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sObservationColumn {
+                get {
+                    return this.columnsObservation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn bServiceOrderApprovedColumn {
+                get {
+                    return this.columnbServiceOrderApproved;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtDateServiceOrderApprovedColumn {
+                get {
+                    return this.columndtDateServiceOrderApproved;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn bRegisterFinishedColumn {
+                get {
+                    return this.columnbRegisterFinished;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtDateRegisterFinishedColumn {
+                get {
+                    return this.columndtDateRegisterFinished;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtDateColumn {
+                get {
+                    return this.columndtDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dTotalColumn {
+                get {
+                    return this.columndTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_budgets_osRow this[int index] {
+                get {
+                    return ((tb_budgets_osRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_budgets_osRowChangeEventHandler tb_budgets_osRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_budgets_osRowChangeEventHandler tb_budgets_osRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_budgets_osRowChangeEventHandler tb_budgets_osRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_budgets_osRowChangeEventHandler tb_budgets_osRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Addtb_budgets_osRow(tb_budgets_osRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_budgets_osRow Addtb_budgets_osRow(
+                        string sID, 
+                        int ClientType, 
+                        string sName, 
+                        string sAdress, 
+                        string sTelephone, 
+                        string sOccupation, 
+                        bool bPaymentToMatch, 
+                        decimal dPercentDiscount, 
+                        int iPaymentInstallments, 
+                        bool bInterestRate, 
+                        decimal dWithInterest, 
+                        int iPrevisionOfExecute, 
+                        System.DateTime dtStartPrevision, 
+                        System.DateTime dtFinalPrevision, 
+                        int iWarrantyTime, 
+                        System.DateTime dtBudgetExpirationDate, 
+                        string sObservation, 
+                        bool bServiceOrderApproved, 
+                        System.DateTime dtDateServiceOrderApproved, 
+                        bool bRegisterFinished, 
+                        System.DateTime dtDateRegisterFinished, 
+                        System.DateTime dtDate, 
+                        decimal dTotal) {
+                tb_budgets_osRow rowtb_budgets_osRow = ((tb_budgets_osRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        sID,
+                        ClientType,
+                        sName,
+                        sAdress,
+                        sTelephone,
+                        sOccupation,
+                        bPaymentToMatch,
+                        dPercentDiscount,
+                        iPaymentInstallments,
+                        bInterestRate,
+                        dWithInterest,
+                        iPrevisionOfExecute,
+                        dtStartPrevision,
+                        dtFinalPrevision,
+                        iWarrantyTime,
+                        dtBudgetExpirationDate,
+                        sObservation,
+                        bServiceOrderApproved,
+                        dtDateServiceOrderApproved,
+                        bRegisterFinished,
+                        dtDateRegisterFinished,
+                        dtDate,
+                        dTotal};
+                rowtb_budgets_osRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtb_budgets_osRow);
+                return rowtb_budgets_osRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_budgets_osRow FindBysID(string sID) {
+                return ((tb_budgets_osRow)(this.Rows.Find(new object[] {
+                            sID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tb_budgets_osDataTable cln = ((tb_budgets_osDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tb_budgets_osDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnsID = base.Columns["sID"];
+                this.columnClientType = base.Columns["ClientType"];
+                this.columnsName = base.Columns["sName"];
+                this.columnsAdress = base.Columns["sAdress"];
+                this.columnsTelephone = base.Columns["sTelephone"];
+                this.columnsOccupation = base.Columns["sOccupation"];
+                this.columnbPaymentToMatch = base.Columns["bPaymentToMatch"];
+                this.columndPercentDiscount = base.Columns["dPercentDiscount"];
+                this.columniPaymentInstallments = base.Columns["iPaymentInstallments"];
+                this.columnbInterestRate = base.Columns["bInterestRate"];
+                this.columndWithInterest = base.Columns["dWithInterest"];
+                this.columniPrevisionOfExecute = base.Columns["iPrevisionOfExecute"];
+                this.columndtStartPrevision = base.Columns["dtStartPrevision"];
+                this.columndtFinalPrevision = base.Columns["dtFinalPrevision"];
+                this.columniWarrantyTime = base.Columns["iWarrantyTime"];
+                this.columndtBudgetExpirationDate = base.Columns["dtBudgetExpirationDate"];
+                this.columnsObservation = base.Columns["sObservation"];
+                this.columnbServiceOrderApproved = base.Columns["bServiceOrderApproved"];
+                this.columndtDateServiceOrderApproved = base.Columns["dtDateServiceOrderApproved"];
+                this.columnbRegisterFinished = base.Columns["bRegisterFinished"];
+                this.columndtDateRegisterFinished = base.Columns["dtDateRegisterFinished"];
+                this.columndtDate = base.Columns["dtDate"];
+                this.columndTotal = base.Columns["dTotal"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnsID = new global::System.Data.DataColumn("sID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsID);
+                this.columnClientType = new global::System.Data.DataColumn("ClientType", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClientType);
+                this.columnsName = new global::System.Data.DataColumn("sName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsName);
+                this.columnsAdress = new global::System.Data.DataColumn("sAdress", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsAdress);
+                this.columnsTelephone = new global::System.Data.DataColumn("sTelephone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsTelephone);
+                this.columnsOccupation = new global::System.Data.DataColumn("sOccupation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsOccupation);
+                this.columnbPaymentToMatch = new global::System.Data.DataColumn("bPaymentToMatch", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbPaymentToMatch);
+                this.columndPercentDiscount = new global::System.Data.DataColumn("dPercentDiscount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndPercentDiscount);
+                this.columniPaymentInstallments = new global::System.Data.DataColumn("iPaymentInstallments", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniPaymentInstallments);
+                this.columnbInterestRate = new global::System.Data.DataColumn("bInterestRate", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbInterestRate);
+                this.columndWithInterest = new global::System.Data.DataColumn("dWithInterest", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndWithInterest);
+                this.columniPrevisionOfExecute = new global::System.Data.DataColumn("iPrevisionOfExecute", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniPrevisionOfExecute);
+                this.columndtStartPrevision = new global::System.Data.DataColumn("dtStartPrevision", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtStartPrevision);
+                this.columndtFinalPrevision = new global::System.Data.DataColumn("dtFinalPrevision", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtFinalPrevision);
+                this.columniWarrantyTime = new global::System.Data.DataColumn("iWarrantyTime", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniWarrantyTime);
+                this.columndtBudgetExpirationDate = new global::System.Data.DataColumn("dtBudgetExpirationDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtBudgetExpirationDate);
+                this.columnsObservation = new global::System.Data.DataColumn("sObservation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsObservation);
+                this.columnbServiceOrderApproved = new global::System.Data.DataColumn("bServiceOrderApproved", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbServiceOrderApproved);
+                this.columndtDateServiceOrderApproved = new global::System.Data.DataColumn("dtDateServiceOrderApproved", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtDateServiceOrderApproved);
+                this.columnbRegisterFinished = new global::System.Data.DataColumn("bRegisterFinished", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbRegisterFinished);
+                this.columndtDateRegisterFinished = new global::System.Data.DataColumn("dtDateRegisterFinished", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtDateRegisterFinished);
+                this.columndtDate = new global::System.Data.DataColumn("dtDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtDate);
+                this.columndTotal = new global::System.Data.DataColumn("dTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndTotal);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnsID}, true));
+                this.columnsID.AllowDBNull = false;
+                this.columnsID.Unique = true;
+                this.columnsID.MaxLength = 40;
+                this.columnClientType.AllowDBNull = false;
+                this.columnsName.AllowDBNull = false;
+                this.columnsName.MaxLength = 100;
+                this.columnsAdress.MaxLength = 100;
+                this.columnsTelephone.AllowDBNull = false;
+                this.columnsTelephone.MaxLength = 14;
+                this.columnsOccupation.MaxLength = 100;
+                this.columnbPaymentToMatch.AllowDBNull = false;
+                this.columndPercentDiscount.AllowDBNull = false;
+                this.columniPaymentInstallments.AllowDBNull = false;
+                this.columnbInterestRate.AllowDBNull = false;
+                this.columndWithInterest.AllowDBNull = false;
+                this.columniPrevisionOfExecute.AllowDBNull = false;
+                this.columndtStartPrevision.AllowDBNull = false;
+                this.columndtFinalPrevision.AllowDBNull = false;
+                this.columniWarrantyTime.AllowDBNull = false;
+                this.columndtBudgetExpirationDate.AllowDBNull = false;
+                this.columnsObservation.MaxLength = 2147483647;
+                this.columnbServiceOrderApproved.AllowDBNull = false;
+                this.columnbRegisterFinished.AllowDBNull = false;
+                this.columndtDate.AllowDBNull = false;
+                this.columndTotal.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_budgets_osRow Newtb_budgets_osRow() {
+                return ((tb_budgets_osRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tb_budgets_osRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tb_budgets_osRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tb_budgets_osRowChanged != null)) {
+                    this.tb_budgets_osRowChanged(this, new tb_budgets_osRowChangeEvent(((tb_budgets_osRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tb_budgets_osRowChanging != null)) {
+                    this.tb_budgets_osRowChanging(this, new tb_budgets_osRowChangeEvent(((tb_budgets_osRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tb_budgets_osRowDeleted != null)) {
+                    this.tb_budgets_osRowDeleted(this, new tb_budgets_osRowChangeEvent(((tb_budgets_osRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tb_budgets_osRowDeleting != null)) {
+                    this.tb_budgets_osRowDeleting(this, new tb_budgets_osRowChangeEvent(((tb_budgets_osRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Removetb_budgets_osRow(tb_budgets_osRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                InoxErpDBDataSet2 ds = new InoxErpDBDataSet2();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tb_budgets_osDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class @__MigrationHistoryRow : global::System.Data.DataRow {
@@ -4528,336 +4526,6 @@ namespace UIWindows {
                 }
                 set {
                     this[this.tablePermitions.bPermitionsColumn] = value;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class tb_budgets_osRow : global::System.Data.DataRow {
-            
-            private tb_budgets_osDataTable tabletb_budgets_os;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal tb_budgets_osRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tabletb_budgets_os = ((tb_budgets_osDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string sID {
-                get {
-                    return ((string)(this[this.tabletb_budgets_os.sIDColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.sIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ClientType {
-                get {
-                    return ((int)(this[this.tabletb_budgets_os.ClientTypeColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.ClientTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string sName {
-                get {
-                    return ((string)(this[this.tabletb_budgets_os.sNameColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.sNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string sAdress {
-                get {
-                    try {
-                        return ((string)(this[this.tabletb_budgets_os.sAdressColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sAdress\' in table \'tb_budgets_os\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletb_budgets_os.sAdressColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string sTelephone {
-                get {
-                    return ((string)(this[this.tabletb_budgets_os.sTelephoneColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.sTelephoneColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string sOccupation {
-                get {
-                    try {
-                        return ((string)(this[this.tabletb_budgets_os.sOccupationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sOccupation\' in table \'tb_budgets_os\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletb_budgets_os.sOccupationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool bPaymentToMatch {
-                get {
-                    return ((bool)(this[this.tabletb_budgets_os.bPaymentToMatchColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.bPaymentToMatchColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal dPercentDiscount {
-                get {
-                    return ((decimal)(this[this.tabletb_budgets_os.dPercentDiscountColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.dPercentDiscountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int iPaymentInstallments {
-                get {
-                    return ((int)(this[this.tabletb_budgets_os.iPaymentInstallmentsColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.iPaymentInstallmentsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool bInterestRate {
-                get {
-                    return ((bool)(this[this.tabletb_budgets_os.bInterestRateColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.bInterestRateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal dWithInterest {
-                get {
-                    return ((decimal)(this[this.tabletb_budgets_os.dWithInterestColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.dWithInterestColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int iPrevisionOfExecute {
-                get {
-                    return ((int)(this[this.tabletb_budgets_os.iPrevisionOfExecuteColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.iPrevisionOfExecuteColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime dtStartPrevision {
-                get {
-                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtStartPrevisionColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.dtStartPrevisionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime dtFinalPrevision {
-                get {
-                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtFinalPrevisionColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.dtFinalPrevisionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int iWarrantyTime {
-                get {
-                    return ((int)(this[this.tabletb_budgets_os.iWarrantyTimeColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.iWarrantyTimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime dtBudgetExpirationDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtBudgetExpirationDateColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.dtBudgetExpirationDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string sObservation {
-                get {
-                    try {
-                        return ((string)(this[this.tabletb_budgets_os.sObservationColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sObservation\' in table \'tb_budgets_os\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabletb_budgets_os.sObservationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool bServiceOrderApproved {
-                get {
-                    return ((bool)(this[this.tabletb_budgets_os.bServiceOrderApprovedColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.bServiceOrderApprovedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime dtDateServiceOrderApproved {
-                get {
-                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtDateServiceOrderApprovedColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.dtDateServiceOrderApprovedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool bRegisterFinished {
-                get {
-                    return ((bool)(this[this.tabletb_budgets_os.bRegisterFinishedColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.bRegisterFinishedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime dtDateRegisterFinished {
-                get {
-                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtDateRegisterFinishedColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.dtDateRegisterFinishedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime dtDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtDateColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.dtDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal dTotal {
-                get {
-                    return ((decimal)(this[this.tabletb_budgets_os.dTotalColumn]));
-                }
-                set {
-                    this[this.tabletb_budgets_os.dTotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IssAdressNull() {
-                return this.IsNull(this.tabletb_budgets_os.sAdressColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetsAdressNull() {
-                this[this.tabletb_budgets_os.sAdressColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IssOccupationNull() {
-                return this.IsNull(this.tabletb_budgets_os.sOccupationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetsOccupationNull() {
-                this[this.tabletb_budgets_os.sOccupationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IssObservationNull() {
-                return this.IsNull(this.tabletb_budgets_os.sObservationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetsObservationNull() {
-                this[this.tabletb_budgets_os.sObservationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_itemsRow[] Gettb_itemsRows() {
-                if ((this.Table.ChildRelations["FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS"] == null)) {
-                    return new tb_itemsRow[0];
-                }
-                else {
-                    return ((tb_itemsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS"])));
                 }
             }
         }
@@ -5895,6 +5563,372 @@ namespace UIWindows {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tb_budgets_osRow : global::System.Data.DataRow {
+            
+            private tb_budgets_osDataTable tabletb_budgets_os;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal tb_budgets_osRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletb_budgets_os = ((tb_budgets_osDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sID {
+                get {
+                    return ((string)(this[this.tabletb_budgets_os.sIDColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.sIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ClientType {
+                get {
+                    return ((int)(this[this.tabletb_budgets_os.ClientTypeColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.ClientTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sName {
+                get {
+                    return ((string)(this[this.tabletb_budgets_os.sNameColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.sNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sAdress {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_budgets_os.sAdressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sAdress\' in table \'tb_budgets_os\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_budgets_os.sAdressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sTelephone {
+                get {
+                    return ((string)(this[this.tabletb_budgets_os.sTelephoneColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.sTelephoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sOccupation {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_budgets_os.sOccupationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sOccupation\' in table \'tb_budgets_os\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_budgets_os.sOccupationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool bPaymentToMatch {
+                get {
+                    return ((bool)(this[this.tabletb_budgets_os.bPaymentToMatchColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.bPaymentToMatchColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal dPercentDiscount {
+                get {
+                    return ((decimal)(this[this.tabletb_budgets_os.dPercentDiscountColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.dPercentDiscountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int iPaymentInstallments {
+                get {
+                    return ((int)(this[this.tabletb_budgets_os.iPaymentInstallmentsColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.iPaymentInstallmentsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool bInterestRate {
+                get {
+                    return ((bool)(this[this.tabletb_budgets_os.bInterestRateColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.bInterestRateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal dWithInterest {
+                get {
+                    return ((decimal)(this[this.tabletb_budgets_os.dWithInterestColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.dWithInterestColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int iPrevisionOfExecute {
+                get {
+                    return ((int)(this[this.tabletb_budgets_os.iPrevisionOfExecuteColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.iPrevisionOfExecuteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtStartPrevision {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtStartPrevisionColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.dtStartPrevisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtFinalPrevision {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtFinalPrevisionColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.dtFinalPrevisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int iWarrantyTime {
+                get {
+                    return ((int)(this[this.tabletb_budgets_os.iWarrantyTimeColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.iWarrantyTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtBudgetExpirationDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtBudgetExpirationDateColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.dtBudgetExpirationDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sObservation {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_budgets_os.sObservationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sObservation\' in table \'tb_budgets_os\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_budgets_os.sObservationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool bServiceOrderApproved {
+                get {
+                    return ((bool)(this[this.tabletb_budgets_os.bServiceOrderApprovedColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.bServiceOrderApprovedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtDateServiceOrderApproved {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtDateServiceOrderApprovedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dtDateServiceOrderApproved\' in table \'tb_budgets_os\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_budgets_os.dtDateServiceOrderApprovedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool bRegisterFinished {
+                get {
+                    return ((bool)(this[this.tabletb_budgets_os.bRegisterFinishedColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.bRegisterFinishedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtDateRegisterFinished {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtDateRegisterFinishedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'dtDateRegisterFinished\' in table \'tb_budgets_os\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_budgets_os.dtDateRegisterFinishedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtDateColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.dtDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal dTotal {
+                get {
+                    return ((decimal)(this[this.tabletb_budgets_os.dTotalColumn]));
+                }
+                set {
+                    this[this.tabletb_budgets_os.dTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssAdressNull() {
+                return this.IsNull(this.tabletb_budgets_os.sAdressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsAdressNull() {
+                this[this.tabletb_budgets_os.sAdressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssOccupationNull() {
+                return this.IsNull(this.tabletb_budgets_os.sOccupationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsOccupationNull() {
+                this[this.tabletb_budgets_os.sOccupationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssObservationNull() {
+                return this.IsNull(this.tabletb_budgets_os.sObservationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsObservationNull() {
+                this[this.tabletb_budgets_os.sObservationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsdtDateServiceOrderApprovedNull() {
+                return this.IsNull(this.tabletb_budgets_os.dtDateServiceOrderApprovedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetdtDateServiceOrderApprovedNull() {
+                this[this.tabletb_budgets_os.dtDateServiceOrderApprovedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsdtDateRegisterFinishedNull() {
+                return this.IsNull(this.tabletb_budgets_os.dtDateRegisterFinishedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetdtDateRegisterFinishedNull() {
+                this[this.tabletb_budgets_os.dtDateRegisterFinishedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_itemsRow[] Gettb_itemsRows() {
+                if ((this.Table.ChildRelations["FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS"] == null)) {
+                    return new tb_itemsRow[0];
+                }
+                else {
+                    return ((tb_itemsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS"])));
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -5948,40 +5982,6 @@ namespace UIWindows {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PermitionsRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class tb_budgets_osRowChangeEvent : global::System.EventArgs {
-            
-            private tb_budgets_osRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_budgets_osRowChangeEvent(tb_budgets_osRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_budgets_osRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6186,6 +6186,40 @@ namespace UIWindows {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tb_usersRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class tb_budgets_osRowChangeEvent : global::System.EventArgs {
+            
+            private tb_budgets_osRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_budgets_osRowChangeEvent(tb_budgets_osRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_budgets_osRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7016,711 +7050,6 @@ SELECT sID, bRegisters, bBudgets, bServicesOrders, bDeliverys, bAccounts, bCash,
                     bool Original_bBackups, 
                     bool Original_bPermitions) {
             return this.Update(Original_sID, bRegisters, bBudgets, bServicesOrders, bDeliverys, bAccounts, bCash, bReports, bBackups, bPermitions, Original_sID, Original_bRegisters, Original_bBudgets, Original_bServicesOrders, Original_bDeliverys, Original_bAccounts, Original_bCash, Original_bReports, Original_bBackups, Original_bPermitions);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tb_budgets_osTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public tb_budgets_osTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tb_budgets_os";
-            tableMapping.ColumnMappings.Add("sID", "sID");
-            tableMapping.ColumnMappings.Add("ClientType", "ClientType");
-            tableMapping.ColumnMappings.Add("sName", "sName");
-            tableMapping.ColumnMappings.Add("sAdress", "sAdress");
-            tableMapping.ColumnMappings.Add("sTelephone", "sTelephone");
-            tableMapping.ColumnMappings.Add("sOccupation", "sOccupation");
-            tableMapping.ColumnMappings.Add("bPaymentToMatch", "bPaymentToMatch");
-            tableMapping.ColumnMappings.Add("dPercentDiscount", "dPercentDiscount");
-            tableMapping.ColumnMappings.Add("iPaymentInstallments", "iPaymentInstallments");
-            tableMapping.ColumnMappings.Add("bInterestRate", "bInterestRate");
-            tableMapping.ColumnMappings.Add("dWithInterest", "dWithInterest");
-            tableMapping.ColumnMappings.Add("iPrevisionOfExecute", "iPrevisionOfExecute");
-            tableMapping.ColumnMappings.Add("dtStartPrevision", "dtStartPrevision");
-            tableMapping.ColumnMappings.Add("dtFinalPrevision", "dtFinalPrevision");
-            tableMapping.ColumnMappings.Add("iWarrantyTime", "iWarrantyTime");
-            tableMapping.ColumnMappings.Add("dtBudgetExpirationDate", "dtBudgetExpirationDate");
-            tableMapping.ColumnMappings.Add("sObservation", "sObservation");
-            tableMapping.ColumnMappings.Add("bServiceOrderApproved", "bServiceOrderApproved");
-            tableMapping.ColumnMappings.Add("dtDateServiceOrderApproved", "dtDateServiceOrderApproved");
-            tableMapping.ColumnMappings.Add("bRegisterFinished", "bRegisterFinished");
-            tableMapping.ColumnMappings.Add("dtDateRegisterFinished", "dtDateRegisterFinished");
-            tableMapping.ColumnMappings.Add("dtDate", "dtDate");
-            tableMapping.ColumnMappings.Add("dTotal", "dTotal");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tb_budgets_os] WHERE (([sID] = @Original_sID) AND ([ClientType] = @Original_ClientType) AND ([sName] = @Original_sName) AND ((@IsNull_sAdress = 1 AND [sAdress] IS NULL) OR ([sAdress] = @Original_sAdress)) AND ([sTelephone] = @Original_sTelephone) AND ((@IsNull_sOccupation = 1 AND [sOccupation] IS NULL) OR ([sOccupation] = @Original_sOccupation)) AND ([bPaymentToMatch] = @Original_bPaymentToMatch) AND ([dPercentDiscount] = @Original_dPercentDiscount) AND ([iPaymentInstallments] = @Original_iPaymentInstallments) AND ([bInterestRate] = @Original_bInterestRate) AND ([dWithInterest] = @Original_dWithInterest) AND ([iPrevisionOfExecute] = @Original_iPrevisionOfExecute) AND ([dtStartPrevision] = @Original_dtStartPrevision) AND ([dtFinalPrevision] = @Original_dtFinalPrevision) AND ([iWarrantyTime] = @Original_iWarrantyTime) AND ([dtBudgetExpirationDate] = @Original_dtBudgetExpirationDate) AND ((@IsNull_sObservation = 1 AND [sObservation] IS NULL) OR ([sObservation] = @Original_sObservation)) AND ([bServiceOrderApproved] = @Original_bServiceOrderApproved) AND ([dtDateServiceOrderApproved] = @Original_dtDateServiceOrderApproved) AND ([bRegisterFinished] = @Original_bRegisterFinished) AND ([dtDateRegisterFinished] = @Original_dtDateRegisterFinished) AND ([dtDate] = @Original_dtDate) AND ([dTotal] = @Original_dTotal))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sAdress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sTelephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sTelephone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sOccupation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sOccupation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bPaymentToMatch", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bPaymentToMatch", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dPercentDiscount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPercentDiscount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPaymentInstallments", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPaymentInstallments", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtBudgetExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtBudgetExpirationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sObservation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sObservation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sObservation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sObservation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateRegisterFinished", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [tb_budgets_os] SET [sID] = @sID, [ClientType] = @ClientType, [sName] = @s" +
-                "Name, [sAdress] = @sAdress, [sTelephone] = @sTelephone, [sOccupation] = @sOccupa" +
-                "tion, [bPaymentToMatch] = @bPaymentToMatch, [dPercentDiscount] = @dPercentDiscou" +
-                "nt, [iPaymentInstallments] = @iPaymentInstallments, [bInterestRate] = @bInterest" +
-                "Rate, [dWithInterest] = @dWithInterest, [iPrevisionOfExecute] = @iPrevisionOfExe" +
-                "cute, [dtStartPrevision] = @dtStartPrevision, [dtFinalPrevision] = @dtFinalPrevi" +
-                "sion, [iWarrantyTime] = @iWarrantyTime, [dtBudgetExpirationDate] = @dtBudgetExpi" +
-                "rationDate, [sObservation] = @sObservation, [bServiceOrderApproved] = @bServiceO" +
-                "rderApproved, [dtDateServiceOrderApproved] = @dtDateServiceOrderApproved, [bRegi" +
-                "sterFinished] = @bRegisterFinished, [dtDateRegisterFinished] = @dtDateRegisterFi" +
-                "nished, [dtDate] = @dtDate, [dTotal] = @dTotal WHERE (([sID] = @Original_sID) AN" +
-                "D ([ClientType] = @Original_ClientType) AND ([sName] = @Original_sName) AND ((@I" +
-                "sNull_sAdress = 1 AND [sAdress] IS NULL) OR ([sAdress] = @Original_sAdress)) AND" +
-                " ([sTelephone] = @Original_sTelephone) AND ((@IsNull_sOccupation = 1 AND [sOccup" +
-                "ation] IS NULL) OR ([sOccupation] = @Original_sOccupation)) AND ([bPaymentToMatc" +
-                "h] = @Original_bPaymentToMatch) AND ([dPercentDiscount] = @Original_dPercentDisc" +
-                "ount) AND ([iPaymentInstallments] = @Original_iPaymentInstallments) AND ([bInter" +
-                "estRate] = @Original_bInterestRate) AND ([dWithInterest] = @Original_dWithIntere" +
-                "st) AND ([iPrevisionOfExecute] = @Original_iPrevisionOfExecute) AND ([dtStartPre" +
-                "vision] = @Original_dtStartPrevision) AND ([dtFinalPrevision] = @Original_dtFina" +
-                "lPrevision) AND ([iWarrantyTime] = @Original_iWarrantyTime) AND ([dtBudgetExpira" +
-                "tionDate] = @Original_dtBudgetExpirationDate) AND ((@IsNull_sObservation = 1 AND" +
-                " [sObservation] IS NULL) OR ([sObservation] = @Original_sObservation)) AND ([bSe" +
-                "rviceOrderApproved] = @Original_bServiceOrderApproved) AND ([dtDateServiceOrderA" +
-                "pproved] = @Original_dtDateServiceOrderApproved) AND ([bRegisterFinished] = @Ori" +
-                "ginal_bRegisterFinished) AND ([dtDateRegisterFinished] = @Original_dtDateRegiste" +
-                "rFinished) AND ([dtDate] = @Original_dtDate) AND ([dTotal] = @Original_dTotal));" +
-                "\r\nSELECT sID, ClientType, sName, sAdress, sTelephone, sOccupation, bPaymentToMat" +
-                "ch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevi" +
-                "sionOfExecute, dtStartPrevision, dtFinalPrevision, iWarrantyTime, dtBudgetExpira" +
-                "tionDate, sObservation, bServiceOrderApproved, dtDateServiceOrderApproved, bRegi" +
-                "sterFinished, dtDateRegisterFinished, dtDate, dTotal FROM tb_budgets_os WHERE (s" +
-                "ID = @sID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sTelephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sTelephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sOccupation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bPaymentToMatch", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bPaymentToMatch", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dPercentDiscount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPercentDiscount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iPaymentInstallments", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPaymentInstallments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtBudgetExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtBudgetExpirationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sObservation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sObservation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDateRegisterFinished", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateRegisterFinished", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sAdress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sTelephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sTelephone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sOccupation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sOccupation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bPaymentToMatch", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bPaymentToMatch", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dPercentDiscount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPercentDiscount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPaymentInstallments", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPaymentInstallments", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtBudgetExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtBudgetExpirationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sObservation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sObservation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sObservation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sObservation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateRegisterFinished", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::UIWindows.Properties.Settings.Default.InoxErpDBConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        sID, ClientType, sName, sAdress, sTelephone, sOccupation, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, dtFinalPrevision, iWarrantyTime, 
-                         dtBudgetExpirationDate, sObservation, bServiceOrderApproved, dtDateServiceOrderApproved, bRegisterFinished, dtDateRegisterFinished, dtDate, dTotal
-FROM            tb_budgets_os
-WHERE        (bServiceOrderApproved = 0)";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT ClientType, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, dPercentDiscount, dTotal, dWithInterest, dtBudgetExpirationDate, dtDate, dtDateRegisterFinished, dtDateServiceOrderApproved, dtFinalPrevision, dtStartPrevision, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT ClientType, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, dPercentDiscount, dTotal, dWithInterest, dtBudgetExpirationDate, dtDate, dtDateRegisterFinished, dtDateServiceOrderApproved, dtFinalPrevision, dtStartPrevision, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 0)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(InoxErpDBDataSet2.tb_budgets_osDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual InoxErpDBDataSet2.tb_budgets_osDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            InoxErpDBDataSet2.tb_budgets_osDataTable dataTable = new InoxErpDBDataSet2.tb_budgets_osDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(InoxErpDBDataSet2.tb_budgets_osDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(InoxErpDBDataSet2.tb_budgets_osDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(InoxErpDBDataSet2.tb_budgets_osDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(InoxErpDBDataSet2 dataSet) {
-            return this.Adapter.Update(dataSet, "tb_budgets_os");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(
-                    string Original_sID, 
-                    int Original_ClientType, 
-                    string Original_sName, 
-                    string Original_sAdress, 
-                    string Original_sTelephone, 
-                    string Original_sOccupation, 
-                    bool Original_bPaymentToMatch, 
-                    decimal Original_dPercentDiscount, 
-                    int Original_iPaymentInstallments, 
-                    bool Original_bInterestRate, 
-                    decimal Original_dWithInterest, 
-                    int Original_iPrevisionOfExecute, 
-                    System.DateTime Original_dtStartPrevision, 
-                    System.DateTime Original_dtFinalPrevision, 
-                    int Original_iWarrantyTime, 
-                    System.DateTime Original_dtBudgetExpirationDate, 
-                    string Original_sObservation, 
-                    bool Original_bServiceOrderApproved, 
-                    System.DateTime Original_dtDateServiceOrderApproved, 
-                    bool Original_bRegisterFinished, 
-                    System.DateTime Original_dtDateRegisterFinished, 
-                    System.DateTime Original_dtDate, 
-                    decimal Original_dTotal) {
-            if ((Original_sID == null)) {
-                throw new global::System.ArgumentNullException("Original_sID");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_sID));
-            }
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ClientType));
-            if ((Original_sName == null)) {
-                throw new global::System.ArgumentNullException("Original_sName");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_sName));
-            }
-            if ((Original_sAdress == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_sAdress));
-            }
-            if ((Original_sTelephone == null)) {
-                throw new global::System.ArgumentNullException("Original_sTelephone");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_sTelephone));
-            }
-            if ((Original_sOccupation == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_sOccupation));
-            }
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_bPaymentToMatch));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_dPercentDiscount));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_iPaymentInstallments));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_bInterestRate));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_dWithInterest));
-            this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_iPrevisionOfExecute));
-            this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_dtStartPrevision));
-            this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_dtFinalPrevision));
-            this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_iWarrantyTime));
-            this.Adapter.DeleteCommand.Parameters[17].Value = ((System.DateTime)(Original_dtBudgetExpirationDate));
-            if ((Original_sObservation == null)) {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[19].Value = ((string)(Original_sObservation));
-            }
-            this.Adapter.DeleteCommand.Parameters[20].Value = ((bool)(Original_bServiceOrderApproved));
-            this.Adapter.DeleteCommand.Parameters[21].Value = ((System.DateTime)(Original_dtDateServiceOrderApproved));
-            this.Adapter.DeleteCommand.Parameters[22].Value = ((bool)(Original_bRegisterFinished));
-            this.Adapter.DeleteCommand.Parameters[23].Value = ((System.DateTime)(Original_dtDateRegisterFinished));
-            this.Adapter.DeleteCommand.Parameters[24].Value = ((System.DateTime)(Original_dtDate));
-            this.Adapter.DeleteCommand.Parameters[25].Value = ((decimal)(Original_dTotal));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    string sID, 
-                    int ClientType, 
-                    string sName, 
-                    string sAdress, 
-                    string sTelephone, 
-                    string sOccupation, 
-                    bool bPaymentToMatch, 
-                    decimal dPercentDiscount, 
-                    int iPaymentInstallments, 
-                    bool bInterestRate, 
-                    decimal dWithInterest, 
-                    int iPrevisionOfExecute, 
-                    System.DateTime dtStartPrevision, 
-                    System.DateTime dtFinalPrevision, 
-                    int iWarrantyTime, 
-                    System.DateTime dtBudgetExpirationDate, 
-                    string sObservation, 
-                    bool bServiceOrderApproved, 
-                    System.DateTime dtDateServiceOrderApproved, 
-                    bool bRegisterFinished, 
-                    System.DateTime dtDateRegisterFinished, 
-                    System.DateTime dtDate, 
-                    decimal dTotal, 
-                    string Original_sID, 
-                    int Original_ClientType, 
-                    string Original_sName, 
-                    string Original_sAdress, 
-                    string Original_sTelephone, 
-                    string Original_sOccupation, 
-                    bool Original_bPaymentToMatch, 
-                    decimal Original_dPercentDiscount, 
-                    int Original_iPaymentInstallments, 
-                    bool Original_bInterestRate, 
-                    decimal Original_dWithInterest, 
-                    int Original_iPrevisionOfExecute, 
-                    System.DateTime Original_dtStartPrevision, 
-                    System.DateTime Original_dtFinalPrevision, 
-                    int Original_iWarrantyTime, 
-                    System.DateTime Original_dtBudgetExpirationDate, 
-                    string Original_sObservation, 
-                    bool Original_bServiceOrderApproved, 
-                    System.DateTime Original_dtDateServiceOrderApproved, 
-                    bool Original_bRegisterFinished, 
-                    System.DateTime Original_dtDateRegisterFinished, 
-                    System.DateTime Original_dtDate, 
-                    decimal Original_dTotal) {
-            if ((sID == null)) {
-                throw new global::System.ArgumentNullException("sID");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(sID));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ClientType));
-            if ((sName == null)) {
-                throw new global::System.ArgumentNullException("sName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(sName));
-            }
-            if ((sAdress == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(sAdress));
-            }
-            if ((sTelephone == null)) {
-                throw new global::System.ArgumentNullException("sTelephone");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(sTelephone));
-            }
-            if ((sOccupation == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(sOccupation));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(bPaymentToMatch));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(dPercentDiscount));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(iPaymentInstallments));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(bInterestRate));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(dWithInterest));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(iPrevisionOfExecute));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(dtStartPrevision));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(dtFinalPrevision));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(iWarrantyTime));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(dtBudgetExpirationDate));
-            if ((sObservation == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(sObservation));
-            }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(bServiceOrderApproved));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(dtDateServiceOrderApproved));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(bRegisterFinished));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(dtDateRegisterFinished));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(dtDate));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(dTotal));
-            if ((Original_sID == null)) {
-                throw new global::System.ArgumentNullException("Original_sID");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_sID));
-            }
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_ClientType));
-            if ((Original_sName == null)) {
-                throw new global::System.ArgumentNullException("Original_sName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_sName));
-            }
-            if ((Original_sAdress == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_sAdress));
-            }
-            if ((Original_sTelephone == null)) {
-                throw new global::System.ArgumentNullException("Original_sTelephone");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_sTelephone));
-            }
-            if ((Original_sOccupation == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_sOccupation));
-            }
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((bool)(Original_bPaymentToMatch));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_dPercentDiscount));
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_iPaymentInstallments));
-            this.Adapter.UpdateCommand.Parameters[34].Value = ((bool)(Original_bInterestRate));
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((decimal)(Original_dWithInterest));
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_iPrevisionOfExecute));
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_dtStartPrevision));
-            this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_dtFinalPrevision));
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_iWarrantyTime));
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((System.DateTime)(Original_dtBudgetExpirationDate));
-            if ((Original_sObservation == null)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_sObservation));
-            }
-            this.Adapter.UpdateCommand.Parameters[43].Value = ((bool)(Original_bServiceOrderApproved));
-            this.Adapter.UpdateCommand.Parameters[44].Value = ((System.DateTime)(Original_dtDateServiceOrderApproved));
-            this.Adapter.UpdateCommand.Parameters[45].Value = ((bool)(Original_bRegisterFinished));
-            this.Adapter.UpdateCommand.Parameters[46].Value = ((System.DateTime)(Original_dtDateRegisterFinished));
-            this.Adapter.UpdateCommand.Parameters[47].Value = ((System.DateTime)(Original_dtDate));
-            this.Adapter.UpdateCommand.Parameters[48].Value = ((decimal)(Original_dTotal));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int ClientType, 
-                    string sName, 
-                    string sAdress, 
-                    string sTelephone, 
-                    string sOccupation, 
-                    bool bPaymentToMatch, 
-                    decimal dPercentDiscount, 
-                    int iPaymentInstallments, 
-                    bool bInterestRate, 
-                    decimal dWithInterest, 
-                    int iPrevisionOfExecute, 
-                    System.DateTime dtStartPrevision, 
-                    System.DateTime dtFinalPrevision, 
-                    int iWarrantyTime, 
-                    System.DateTime dtBudgetExpirationDate, 
-                    string sObservation, 
-                    bool bServiceOrderApproved, 
-                    System.DateTime dtDateServiceOrderApproved, 
-                    bool bRegisterFinished, 
-                    System.DateTime dtDateRegisterFinished, 
-                    System.DateTime dtDate, 
-                    decimal dTotal, 
-                    string Original_sID, 
-                    int Original_ClientType, 
-                    string Original_sName, 
-                    string Original_sAdress, 
-                    string Original_sTelephone, 
-                    string Original_sOccupation, 
-                    bool Original_bPaymentToMatch, 
-                    decimal Original_dPercentDiscount, 
-                    int Original_iPaymentInstallments, 
-                    bool Original_bInterestRate, 
-                    decimal Original_dWithInterest, 
-                    int Original_iPrevisionOfExecute, 
-                    System.DateTime Original_dtStartPrevision, 
-                    System.DateTime Original_dtFinalPrevision, 
-                    int Original_iWarrantyTime, 
-                    System.DateTime Original_dtBudgetExpirationDate, 
-                    string Original_sObservation, 
-                    bool Original_bServiceOrderApproved, 
-                    System.DateTime Original_dtDateServiceOrderApproved, 
-                    bool Original_bRegisterFinished, 
-                    System.DateTime Original_dtDateRegisterFinished, 
-                    System.DateTime Original_dtDate, 
-                    decimal Original_dTotal) {
-            return this.Update(Original_sID, ClientType, sName, sAdress, sTelephone, sOccupation, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, bServiceOrderApproved, dtDateServiceOrderApproved, bRegisterFinished, dtDateRegisterFinished, dtDate, dTotal, Original_sID, Original_ClientType, Original_sName, Original_sAdress, Original_sTelephone, Original_sOccupation, Original_bPaymentToMatch, Original_dPercentDiscount, Original_iPaymentInstallments, Original_bInterestRate, Original_dWithInterest, Original_iPrevisionOfExecute, Original_dtStartPrevision, Original_dtFinalPrevision, Original_iWarrantyTime, Original_dtBudgetExpirationDate, Original_sObservation, Original_bServiceOrderApproved, Original_dtDateServiceOrderApproved, Original_bRegisterFinished, Original_dtDateRegisterFinished, Original_dtDate, Original_dTotal);
         }
     }
     
@@ -11149,6 +10478,696 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class tb_budgets_osTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public tb_budgets_osTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "tb_budgets_os";
+            tableMapping.ColumnMappings.Add("sID", "sID");
+            tableMapping.ColumnMappings.Add("ClientType", "ClientType");
+            tableMapping.ColumnMappings.Add("sName", "sName");
+            tableMapping.ColumnMappings.Add("sAdress", "sAdress");
+            tableMapping.ColumnMappings.Add("sTelephone", "sTelephone");
+            tableMapping.ColumnMappings.Add("sOccupation", "sOccupation");
+            tableMapping.ColumnMappings.Add("bPaymentToMatch", "bPaymentToMatch");
+            tableMapping.ColumnMappings.Add("dPercentDiscount", "dPercentDiscount");
+            tableMapping.ColumnMappings.Add("iPaymentInstallments", "iPaymentInstallments");
+            tableMapping.ColumnMappings.Add("bInterestRate", "bInterestRate");
+            tableMapping.ColumnMappings.Add("dWithInterest", "dWithInterest");
+            tableMapping.ColumnMappings.Add("iPrevisionOfExecute", "iPrevisionOfExecute");
+            tableMapping.ColumnMappings.Add("dtStartPrevision", "dtStartPrevision");
+            tableMapping.ColumnMappings.Add("dtFinalPrevision", "dtFinalPrevision");
+            tableMapping.ColumnMappings.Add("iWarrantyTime", "iWarrantyTime");
+            tableMapping.ColumnMappings.Add("dtBudgetExpirationDate", "dtBudgetExpirationDate");
+            tableMapping.ColumnMappings.Add("sObservation", "sObservation");
+            tableMapping.ColumnMappings.Add("bServiceOrderApproved", "bServiceOrderApproved");
+            tableMapping.ColumnMappings.Add("dtDateServiceOrderApproved", "dtDateServiceOrderApproved");
+            tableMapping.ColumnMappings.Add("bRegisterFinished", "bRegisterFinished");
+            tableMapping.ColumnMappings.Add("dtDateRegisterFinished", "dtDateRegisterFinished");
+            tableMapping.ColumnMappings.Add("dtDate", "dtDate");
+            tableMapping.ColumnMappings.Add("dTotal", "dTotal");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tb_budgets_os] WHERE (([sID] = @Original_sID) AND ([ClientType] = @Original_ClientType) AND ([sName] = @Original_sName) AND ((@IsNull_sAdress = 1 AND [sAdress] IS NULL) OR ([sAdress] = @Original_sAdress)) AND ([sTelephone] = @Original_sTelephone) AND ((@IsNull_sOccupation = 1 AND [sOccupation] IS NULL) OR ([sOccupation] = @Original_sOccupation)) AND ([bPaymentToMatch] = @Original_bPaymentToMatch) AND ([dPercentDiscount] = @Original_dPercentDiscount) AND ([iPaymentInstallments] = @Original_iPaymentInstallments) AND ([bInterestRate] = @Original_bInterestRate) AND ([dWithInterest] = @Original_dWithInterest) AND ([iPrevisionOfExecute] = @Original_iPrevisionOfExecute) AND ([dtStartPrevision] = @Original_dtStartPrevision) AND ([dtFinalPrevision] = @Original_dtFinalPrevision) AND ([iWarrantyTime] = @Original_iWarrantyTime) AND ([dtBudgetExpirationDate] = @Original_dtBudgetExpirationDate) AND ([bServiceOrderApproved] = @Original_bServiceOrderApproved) AND ((@IsNull_dtDateServiceOrderApproved = 1 AND [dtDateServiceOrderApproved] IS NULL) OR ([dtDateServiceOrderApproved] = @Original_dtDateServiceOrderApproved)) AND ([bRegisterFinished] = @Original_bRegisterFinished) AND ((@IsNull_dtDateRegisterFinished = 1 AND [dtDateRegisterFinished] IS NULL) OR ([dtDateRegisterFinished] = @Original_dtDateRegisterFinished)) AND ([dtDate] = @Original_dtDate) AND ([dTotal] = @Original_dTotal))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sAdress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sTelephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sTelephone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sOccupation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sOccupation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bPaymentToMatch", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bPaymentToMatch", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dPercentDiscount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPercentDiscount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPaymentInstallments", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPaymentInstallments", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtBudgetExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtBudgetExpirationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dtDateServiceOrderApproved", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dtDateRegisterFinished", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateRegisterFinished", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateRegisterFinished", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [tb_budgets_os] SET [sID] = @sID, [ClientType] = @ClientType, [sName] = @s" +
+                "Name, [sAdress] = @sAdress, [sTelephone] = @sTelephone, [sOccupation] = @sOccupa" +
+                "tion, [bPaymentToMatch] = @bPaymentToMatch, [dPercentDiscount] = @dPercentDiscou" +
+                "nt, [iPaymentInstallments] = @iPaymentInstallments, [bInterestRate] = @bInterest" +
+                "Rate, [dWithInterest] = @dWithInterest, [iPrevisionOfExecute] = @iPrevisionOfExe" +
+                "cute, [dtStartPrevision] = @dtStartPrevision, [dtFinalPrevision] = @dtFinalPrevi" +
+                "sion, [iWarrantyTime] = @iWarrantyTime, [dtBudgetExpirationDate] = @dtBudgetExpi" +
+                "rationDate, [sObservation] = @sObservation, [bServiceOrderApproved] = @bServiceO" +
+                "rderApproved, [dtDateServiceOrderApproved] = @dtDateServiceOrderApproved, [bRegi" +
+                "sterFinished] = @bRegisterFinished, [dtDateRegisterFinished] = @dtDateRegisterFi" +
+                "nished, [dtDate] = @dtDate, [dTotal] = @dTotal WHERE (([sID] = @Original_sID) AN" +
+                "D ([ClientType] = @Original_ClientType) AND ([sName] = @Original_sName) AND ((@I" +
+                "sNull_sAdress = 1 AND [sAdress] IS NULL) OR ([sAdress] = @Original_sAdress)) AND" +
+                " ([sTelephone] = @Original_sTelephone) AND ((@IsNull_sOccupation = 1 AND [sOccup" +
+                "ation] IS NULL) OR ([sOccupation] = @Original_sOccupation)) AND ([bPaymentToMatc" +
+                "h] = @Original_bPaymentToMatch) AND ([dPercentDiscount] = @Original_dPercentDisc" +
+                "ount) AND ([iPaymentInstallments] = @Original_iPaymentInstallments) AND ([bInter" +
+                "estRate] = @Original_bInterestRate) AND ([dWithInterest] = @Original_dWithIntere" +
+                "st) AND ([iPrevisionOfExecute] = @Original_iPrevisionOfExecute) AND ([dtStartPre" +
+                "vision] = @Original_dtStartPrevision) AND ([dtFinalPrevision] = @Original_dtFina" +
+                "lPrevision) AND ([iWarrantyTime] = @Original_iWarrantyTime) AND ([dtBudgetExpira" +
+                "tionDate] = @Original_dtBudgetExpirationDate) AND ([bServiceOrderApproved] = @Or" +
+                "iginal_bServiceOrderApproved) AND ((@IsNull_dtDateServiceOrderApproved = 1 AND [" +
+                "dtDateServiceOrderApproved] IS NULL) OR ([dtDateServiceOrderApproved] = @Origina" +
+                "l_dtDateServiceOrderApproved)) AND ([bRegisterFinished] = @Original_bRegisterFin" +
+                "ished) AND ((@IsNull_dtDateRegisterFinished = 1 AND [dtDateRegisterFinished] IS " +
+                "NULL) OR ([dtDateRegisterFinished] = @Original_dtDateRegisterFinished)) AND ([dt" +
+                "Date] = @Original_dtDate) AND ([dTotal] = @Original_dTotal));\r\nSELECT sID, Clien" +
+                "tType, sName, sAdress, sTelephone, sOccupation, bPaymentToMatch, dPercentDiscoun" +
+                "t, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtSt" +
+                "artPrevision, dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservat" +
+                "ion, bServiceOrderApproved, dtDateServiceOrderApproved, bRegisterFinished, dtDat" +
+                "eRegisterFinished, dtDate, dTotal FROM tb_budgets_os WHERE (sID = @sID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sTelephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sTelephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sOccupation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bPaymentToMatch", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bPaymentToMatch", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dPercentDiscount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPercentDiscount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iPaymentInstallments", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPaymentInstallments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtBudgetExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtBudgetExpirationDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sObservation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sObservation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDateRegisterFinished", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateRegisterFinished", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sAdress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sTelephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sTelephone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sOccupation", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sOccupation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sOccupation", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bPaymentToMatch", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bPaymentToMatch", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dPercentDiscount", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPercentDiscount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPaymentInstallments", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPaymentInstallments", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtBudgetExpirationDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtBudgetExpirationDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dtDateServiceOrderApproved", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dtDateRegisterFinished", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateRegisterFinished", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateRegisterFinished", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::UIWindows.Properties.Settings.Default.InoxErpDBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        sID, ClientType, sName, sAdress, sTelephone, sOccupation, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, dtFinalPrevision, iWarrantyTime, 
+                         dtBudgetExpirationDate, sObservation, bServiceOrderApproved, dtDateServiceOrderApproved, bRegisterFinished, dtDateRegisterFinished, dtDate, dTotal
+FROM            tb_budgets_os
+WHERE        (bServiceOrderApproved = 0)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(InoxErpDBDataSet2.tb_budgets_osDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual InoxErpDBDataSet2.tb_budgets_osDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            InoxErpDBDataSet2.tb_budgets_osDataTable dataTable = new InoxErpDBDataSet2.tb_budgets_osDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(InoxErpDBDataSet2.tb_budgets_osDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(InoxErpDBDataSet2 dataSet) {
+            return this.Adapter.Update(dataSet, "tb_budgets_os");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(
+                    string Original_sID, 
+                    int Original_ClientType, 
+                    string Original_sName, 
+                    string Original_sAdress, 
+                    string Original_sTelephone, 
+                    string Original_sOccupation, 
+                    bool Original_bPaymentToMatch, 
+                    decimal Original_dPercentDiscount, 
+                    int Original_iPaymentInstallments, 
+                    bool Original_bInterestRate, 
+                    decimal Original_dWithInterest, 
+                    int Original_iPrevisionOfExecute, 
+                    System.DateTime Original_dtStartPrevision, 
+                    System.DateTime Original_dtFinalPrevision, 
+                    int Original_iWarrantyTime, 
+                    System.DateTime Original_dtBudgetExpirationDate, 
+                    bool Original_bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> Original_dtDateServiceOrderApproved, 
+                    bool Original_bRegisterFinished, 
+                    global::System.Nullable<global::System.DateTime> Original_dtDateRegisterFinished, 
+                    System.DateTime Original_dtDate, 
+                    decimal Original_dTotal) {
+            if ((Original_sID == null)) {
+                throw new global::System.ArgumentNullException("Original_sID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_sID));
+            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ClientType));
+            if ((Original_sName == null)) {
+                throw new global::System.ArgumentNullException("Original_sName");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_sName));
+            }
+            if ((Original_sAdress == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_sAdress));
+            }
+            if ((Original_sTelephone == null)) {
+                throw new global::System.ArgumentNullException("Original_sTelephone");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_sTelephone));
+            }
+            if ((Original_sOccupation == null)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_sOccupation));
+            }
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_bPaymentToMatch));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_dPercentDiscount));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_iPaymentInstallments));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_bInterestRate));
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_dWithInterest));
+            this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_iPrevisionOfExecute));
+            this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_dtStartPrevision));
+            this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_dtFinalPrevision));
+            this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_iWarrantyTime));
+            this.Adapter.DeleteCommand.Parameters[17].Value = ((System.DateTime)(Original_dtBudgetExpirationDate));
+            this.Adapter.DeleteCommand.Parameters[18].Value = ((bool)(Original_bServiceOrderApproved));
+            if ((Original_dtDateServiceOrderApproved.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((System.DateTime)(Original_dtDateServiceOrderApproved.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[21].Value = ((bool)(Original_bRegisterFinished));
+            if ((Original_dtDateRegisterFinished.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((System.DateTime)(Original_dtDateRegisterFinished.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[24].Value = ((System.DateTime)(Original_dtDate));
+            this.Adapter.DeleteCommand.Parameters[25].Value = ((decimal)(Original_dTotal));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string sID, 
+                    int ClientType, 
+                    string sName, 
+                    string sAdress, 
+                    string sTelephone, 
+                    string sOccupation, 
+                    bool bPaymentToMatch, 
+                    decimal dPercentDiscount, 
+                    int iPaymentInstallments, 
+                    bool bInterestRate, 
+                    decimal dWithInterest, 
+                    int iPrevisionOfExecute, 
+                    System.DateTime dtStartPrevision, 
+                    System.DateTime dtFinalPrevision, 
+                    int iWarrantyTime, 
+                    System.DateTime dtBudgetExpirationDate, 
+                    string sObservation, 
+                    bool bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> dtDateServiceOrderApproved, 
+                    bool bRegisterFinished, 
+                    global::System.Nullable<global::System.DateTime> dtDateRegisterFinished, 
+                    System.DateTime dtDate, 
+                    decimal dTotal, 
+                    string Original_sID, 
+                    int Original_ClientType, 
+                    string Original_sName, 
+                    string Original_sAdress, 
+                    string Original_sTelephone, 
+                    string Original_sOccupation, 
+                    bool Original_bPaymentToMatch, 
+                    decimal Original_dPercentDiscount, 
+                    int Original_iPaymentInstallments, 
+                    bool Original_bInterestRate, 
+                    decimal Original_dWithInterest, 
+                    int Original_iPrevisionOfExecute, 
+                    System.DateTime Original_dtStartPrevision, 
+                    System.DateTime Original_dtFinalPrevision, 
+                    int Original_iWarrantyTime, 
+                    System.DateTime Original_dtBudgetExpirationDate, 
+                    bool Original_bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> Original_dtDateServiceOrderApproved, 
+                    bool Original_bRegisterFinished, 
+                    global::System.Nullable<global::System.DateTime> Original_dtDateRegisterFinished, 
+                    System.DateTime Original_dtDate, 
+                    decimal Original_dTotal) {
+            if ((sID == null)) {
+                throw new global::System.ArgumentNullException("sID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(sID));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ClientType));
+            if ((sName == null)) {
+                throw new global::System.ArgumentNullException("sName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(sName));
+            }
+            if ((sAdress == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(sAdress));
+            }
+            if ((sTelephone == null)) {
+                throw new global::System.ArgumentNullException("sTelephone");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(sTelephone));
+            }
+            if ((sOccupation == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(sOccupation));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(bPaymentToMatch));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(dPercentDiscount));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(iPaymentInstallments));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(bInterestRate));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(dWithInterest));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(iPrevisionOfExecute));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(dtStartPrevision));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(dtFinalPrevision));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(iWarrantyTime));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(dtBudgetExpirationDate));
+            if ((sObservation == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(sObservation));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(bServiceOrderApproved));
+            if ((dtDateServiceOrderApproved.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(dtDateServiceOrderApproved.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(bRegisterFinished));
+            if ((dtDateRegisterFinished.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(dtDateRegisterFinished.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(dtDate));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(dTotal));
+            if ((Original_sID == null)) {
+                throw new global::System.ArgumentNullException("Original_sID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_sID));
+            }
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_ClientType));
+            if ((Original_sName == null)) {
+                throw new global::System.ArgumentNullException("Original_sName");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_sName));
+            }
+            if ((Original_sAdress == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_sAdress));
+            }
+            if ((Original_sTelephone == null)) {
+                throw new global::System.ArgumentNullException("Original_sTelephone");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_sTelephone));
+            }
+            if ((Original_sOccupation == null)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_sOccupation));
+            }
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((bool)(Original_bPaymentToMatch));
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_dPercentDiscount));
+            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_iPaymentInstallments));
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((bool)(Original_bInterestRate));
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((decimal)(Original_dWithInterest));
+            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_iPrevisionOfExecute));
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_dtStartPrevision));
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_dtFinalPrevision));
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_iWarrantyTime));
+            this.Adapter.UpdateCommand.Parameters[40].Value = ((System.DateTime)(Original_dtBudgetExpirationDate));
+            this.Adapter.UpdateCommand.Parameters[41].Value = ((bool)(Original_bServiceOrderApproved));
+            if ((Original_dtDateServiceOrderApproved.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((System.DateTime)(Original_dtDateServiceOrderApproved.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[44].Value = ((bool)(Original_bRegisterFinished));
+            if ((Original_dtDateRegisterFinished.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((System.DateTime)(Original_dtDateRegisterFinished.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[47].Value = ((System.DateTime)(Original_dtDate));
+            this.Adapter.UpdateCommand.Parameters[48].Value = ((decimal)(Original_dTotal));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int ClientType, 
+                    string sName, 
+                    string sAdress, 
+                    string sTelephone, 
+                    string sOccupation, 
+                    bool bPaymentToMatch, 
+                    decimal dPercentDiscount, 
+                    int iPaymentInstallments, 
+                    bool bInterestRate, 
+                    decimal dWithInterest, 
+                    int iPrevisionOfExecute, 
+                    System.DateTime dtStartPrevision, 
+                    System.DateTime dtFinalPrevision, 
+                    int iWarrantyTime, 
+                    System.DateTime dtBudgetExpirationDate, 
+                    string sObservation, 
+                    bool bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> dtDateServiceOrderApproved, 
+                    bool bRegisterFinished, 
+                    global::System.Nullable<global::System.DateTime> dtDateRegisterFinished, 
+                    System.DateTime dtDate, 
+                    decimal dTotal, 
+                    string Original_sID, 
+                    int Original_ClientType, 
+                    string Original_sName, 
+                    string Original_sAdress, 
+                    string Original_sTelephone, 
+                    string Original_sOccupation, 
+                    bool Original_bPaymentToMatch, 
+                    decimal Original_dPercentDiscount, 
+                    int Original_iPaymentInstallments, 
+                    bool Original_bInterestRate, 
+                    decimal Original_dWithInterest, 
+                    int Original_iPrevisionOfExecute, 
+                    System.DateTime Original_dtStartPrevision, 
+                    System.DateTime Original_dtFinalPrevision, 
+                    int Original_iWarrantyTime, 
+                    System.DateTime Original_dtBudgetExpirationDate, 
+                    bool Original_bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> Original_dtDateServiceOrderApproved, 
+                    bool Original_bRegisterFinished, 
+                    global::System.Nullable<global::System.DateTime> Original_dtDateRegisterFinished, 
+                    System.DateTime Original_dtDate, 
+                    decimal Original_dTotal) {
+            return this.Update(Original_sID, ClientType, sName, sAdress, sTelephone, sOccupation, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, bServiceOrderApproved, dtDateServiceOrderApproved, bRegisterFinished, dtDateRegisterFinished, dtDate, dTotal, Original_sID, Original_ClientType, Original_sName, Original_sAdress, Original_sTelephone, Original_sOccupation, Original_bPaymentToMatch, Original_dPercentDiscount, Original_iPaymentInstallments, Original_bInterestRate, Original_dWithInterest, Original_iPrevisionOfExecute, Original_dtStartPrevision, Original_dtFinalPrevision, Original_iWarrantyTime, Original_dtBudgetExpirationDate, Original_bServiceOrderApproved, Original_dtDateServiceOrderApproved, Original_bRegisterFinished, Original_dtDateRegisterFinished, Original_dtDate, Original_dTotal);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11164,8 +11183,6 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
         
         private PermitionsTableAdapter _permitionsTableAdapter;
         
-        private tb_budgets_osTableAdapter _tb_budgets_osTableAdapter;
-        
         private tb_clientsTableAdapter _tb_clientsTableAdapter;
         
         private tb_contractsTableAdapter _tb_contractsTableAdapter;
@@ -11177,6 +11194,8 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
         private tb_servicesTableAdapter _tb_servicesTableAdapter;
         
         private tb_usersTableAdapter _tb_usersTableAdapter;
+        
+        private tb_budgets_osTableAdapter _tb_budgets_osTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -11218,20 +11237,6 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
             }
             set {
                 this._permitionsTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public tb_budgets_osTableAdapter tb_budgets_osTableAdapter {
-            get {
-                return this._tb_budgets_osTableAdapter;
-            }
-            set {
-                this._tb_budgets_osTableAdapter = value;
             }
         }
         
@@ -11321,6 +11326,20 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public tb_budgets_osTableAdapter tb_budgets_osTableAdapter {
+            get {
+                return this._tb_budgets_osTableAdapter;
+            }
+            set {
+                this._tb_budgets_osTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -11346,10 +11365,6 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
                             && (this._permitionsTableAdapter.Connection != null))) {
                     return this._permitionsTableAdapter.Connection;
                 }
-                if (((this._tb_budgets_osTableAdapter != null) 
-                            && (this._tb_budgets_osTableAdapter.Connection != null))) {
-                    return this._tb_budgets_osTableAdapter.Connection;
-                }
                 if (((this._tb_clientsTableAdapter != null) 
                             && (this._tb_clientsTableAdapter.Connection != null))) {
                     return this._tb_clientsTableAdapter.Connection;
@@ -11374,6 +11389,10 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
                             && (this._tb_usersTableAdapter.Connection != null))) {
                     return this._tb_usersTableAdapter.Connection;
                 }
+                if (((this._tb_budgets_osTableAdapter != null) 
+                            && (this._tb_budgets_osTableAdapter.Connection != null))) {
+                    return this._tb_budgets_osTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -11393,9 +11412,6 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
                 if ((this._permitionsTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tb_budgets_osTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._tb_clientsTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -11412,6 +11428,9 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
                     count = (count + 1);
                 }
                 if ((this._tb_usersTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._tb_budgets_osTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -11719,11 +11738,6 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._tb_budgets_osTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tb_budgets_osTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._tb_clientsTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tb_clientsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -11751,6 +11765,11 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
             }
             if (((this._tb_usersTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tb_usersTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._tb_budgets_osTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tb_budgets_osTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -11802,15 +11821,6 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
                     if (this._permitionsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._permitionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._permitionsTableAdapter.Adapter);
-                    }
-                }
-                if ((this._tb_budgets_osTableAdapter != null)) {
-                    revertConnections.Add(this._tb_budgets_osTableAdapter, this._tb_budgets_osTableAdapter.Connection);
-                    this._tb_budgets_osTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tb_budgets_osTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tb_budgets_osTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tb_budgets_osTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tb_budgets_osTableAdapter.Adapter);
                     }
                 }
                 if ((this._tb_clientsTableAdapter != null)) {
@@ -11865,6 +11875,15 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
                     if (this._tb_usersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._tb_usersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tb_usersTableAdapter.Adapter);
+                    }
+                }
+                if ((this._tb_budgets_osTableAdapter != null)) {
+                    revertConnections.Add(this._tb_budgets_osTableAdapter, this._tb_budgets_osTableAdapter.Connection);
+                    this._tb_budgets_osTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tb_budgets_osTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tb_budgets_osTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tb_budgets_osTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tb_budgets_osTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -11933,10 +11952,6 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
                     this._permitionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._permitionsTableAdapter]));
                     this._permitionsTableAdapter.Transaction = null;
                 }
-                if ((this._tb_budgets_osTableAdapter != null)) {
-                    this._tb_budgets_osTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_budgets_osTableAdapter]));
-                    this._tb_budgets_osTableAdapter.Transaction = null;
-                }
                 if ((this._tb_clientsTableAdapter != null)) {
                     this._tb_clientsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_clientsTableAdapter]));
                     this._tb_clientsTableAdapter.Transaction = null;
@@ -11960,6 +11975,10 @@ SELECT sID, sName, sLogin, sKey, Type FROM tb_users WHERE (sID = @sID)";
                 if ((this._tb_usersTableAdapter != null)) {
                     this._tb_usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_usersTableAdapter]));
                     this._tb_usersTableAdapter.Transaction = null;
+                }
+                if ((this._tb_budgets_osTableAdapter != null)) {
+                    this._tb_budgets_osTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_budgets_osTableAdapter]));
+                    this._tb_budgets_osTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -38,26 +38,18 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.grpOrcamentos = new System.Windows.Forms.GroupBox();
             this.dgvOrcamentos = new System.Windows.Forms.DataGridView();
-            this.tbbudgetsosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.inoxErpDBDataSet2 = new UIWindows.InoxErpDBDataSet2();
+            this.dtDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAprovar = new System.Windows.Forms.Button();
-            this.fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnPrint = new System.Windows.Forms.Button();
-            this.tb_budgets_osTableAdapter = new UIWindows.InoxErpDBDataSet2TableAdapters.tb_budgets_osTableAdapter();
-            this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_itemsTableAdapter = new UIWindows.InoxErpDBDataSet2TableAdapters.tb_itemsTableAdapter();
-            this.tbbudgetsosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sObservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sOccupationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bPaymentToMatchDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -74,16 +66,22 @@
             this.dtDateServiceOrderApprovedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bRegisterFinishedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dtDateRegisterFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbbudgetsosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.inoxErpDBDataSet2 = new UIWindows.InoxErpDBDataSet2();
+            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_budgets_osTableAdapter = new UIWindows.InoxErpDBDataSet2TableAdapters.tb_budgets_osTableAdapter();
+            this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_itemsTableAdapter = new UIWindows.InoxErpDBDataSet2TableAdapters.tb_itemsTableAdapter();
+            this.tbbudgetsosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.grpPesquisa.SuspendLayout();
             this.grpOrcamentos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrcamentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grpPesquisa
@@ -221,15 +219,21 @@
             this.dgvOrcamentos.TabIndex = 0;
             this.dgvOrcamentos.Click += new System.EventHandler(this.dgvBudgets_Click);
             // 
-            // tbbudgetsosBindingSource2
+            // dtDate
             // 
-            this.tbbudgetsosBindingSource2.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource2.DataSource = this.inoxErpDBDataSet2;
+            this.dtDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dtDate.DataPropertyName = "dtDate";
+            this.dtDate.HeaderText = "Data";
+            this.dtDate.Name = "dtDate";
+            this.dtDate.ReadOnly = true;
             // 
-            // inoxErpDBDataSet2
+            // dTotal
             // 
-            this.inoxErpDBDataSet2.DataSetName = "InoxErpDBDataSet2";
-            this.inoxErpDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dTotal.DataPropertyName = "dTotal";
+            this.dTotal.HeaderText = "Total Orçamento";
+            this.dTotal.Name = "dTotal";
+            this.dTotal.ReadOnly = true;
             // 
             // btnAbrir
             // 
@@ -264,16 +268,6 @@
             this.btnAprovar.UseVisualStyleBackColor = true;
             this.btnAprovar.Click += new System.EventHandler(this.btnAprovar_Click);
             // 
-            // fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource
-            // 
-            this.fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource.DataMember = "FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS";
-            this.fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource.DataSource = this.tbbudgetsosBindingSource;
-            // 
-            // tbbudgetsosBindingSource
-            // 
-            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource.DataSource = this.inoxErpDBDataSet2;
-            // 
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(396, 402);
@@ -284,24 +278,6 @@
             this.btnPrint.Text = "Imprimir";
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // tb_budgets_osTableAdapter
-            // 
-            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbitemsBindingSource
-            // 
-            this.tbitemsBindingSource.DataMember = "tb_items";
-            this.tbitemsBindingSource.DataSource = this.inoxErpDBDataSet2;
-            // 
-            // tb_itemsTableAdapter
-            // 
-            this.tb_itemsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbbudgetsosBindingSource1
-            // 
-            this.tbbudgetsosBindingSource1.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource1.DataSource = this.inoxErpDBDataSet2;
             // 
             // fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource
             // 
@@ -323,14 +299,6 @@
             this.sObservationDataGridViewTextBoxColumn.Name = "sObservationDataGridViewTextBoxColumn";
             this.sObservationDataGridViewTextBoxColumn.ReadOnly = true;
             this.sObservationDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dtDate
-            // 
-            this.dtDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dtDate.DataPropertyName = "dtDate";
-            this.dtDate.HeaderText = "Data";
-            this.dtDate.Name = "dtDate";
-            this.dtDate.ReadOnly = true;
             // 
             // sName
             // 
@@ -355,14 +323,6 @@
             this.sAdressDataGridViewTextBoxColumn.Name = "sAdressDataGridViewTextBoxColumn";
             this.sAdressDataGridViewTextBoxColumn.ReadOnly = true;
             this.sAdressDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dTotal
-            // 
-            this.dTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dTotal.DataPropertyName = "dTotal";
-            this.dTotal.HeaderText = "Total Orçamento";
-            this.dTotal.Name = "dTotal";
-            this.dTotal.ReadOnly = true;
             // 
             // sOccupationDataGridViewTextBoxColumn
             // 
@@ -492,6 +452,39 @@
             this.dtDateRegisterFinishedDataGridViewTextBoxColumn.ReadOnly = true;
             this.dtDateRegisterFinishedDataGridViewTextBoxColumn.Visible = false;
             // 
+            // tbbudgetsosBindingSource2
+            // 
+            this.tbbudgetsosBindingSource2.DataMember = "tb_budgets_os";
+            this.tbbudgetsosBindingSource2.DataSource = this.inoxErpDBDataSet2;
+            // 
+            // inoxErpDBDataSet2
+            // 
+            this.inoxErpDBDataSet2.DataSetName = "InoxErpDBDataSet2";
+            this.inoxErpDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbbudgetsosBindingSource
+            // 
+            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
+            this.tbbudgetsosBindingSource.DataSource = this.inoxErpDBDataSet2;
+            // 
+            // tb_budgets_osTableAdapter
+            // 
+            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbitemsBindingSource
+            // 
+            this.tbitemsBindingSource.DataMember = "tb_items";
+            this.tbitemsBindingSource.DataSource = this.inoxErpDBDataSet2;
+            // 
+            // tb_itemsTableAdapter
+            // 
+            this.tb_itemsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tbbudgetsosBindingSource1
+            // 
+            this.tbbudgetsosBindingSource1.DataMember = "tb_budgets_os";
+            this.tbbudgetsosBindingSource1.DataSource = this.inoxErpDBDataSet2;
+            // 
             // frmBudgetSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -513,13 +506,12 @@
             this.grpPesquisa.PerformLayout();
             this.grpOrcamentos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrcamentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -544,7 +536,6 @@
         private System.Windows.Forms.BindingSource tbitemsBindingSource;
         private InoxErpDBDataSet2TableAdapters.tb_itemsTableAdapter tb_itemsTableAdapter;
         private System.Windows.Forms.BindingSource tbbudgetsosBindingSource2;
-        private System.Windows.Forms.BindingSource fKdbotbitemsdbotbbudgetsosBudgetsOSsIDBindingSource;
         private System.Windows.Forms.BindingSource tbbudgetsosBindingSource1;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.BindingSource fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource;

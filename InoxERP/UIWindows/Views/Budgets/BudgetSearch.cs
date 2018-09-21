@@ -229,17 +229,6 @@ namespace UIWindows
             MessageBox.Show("Informe a data no formato dd/mm/aaaa, exemplo: 01/09/2018");
         }
 
-        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.tb_budgets_osTableAdapter.FillBy1(this.inoxErpDBDataSet2.tb_budgets_os);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+       
     }
 }

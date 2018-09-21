@@ -106,7 +106,6 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxEr
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csproj.CopyComplete
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.exe
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.pdb
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.exe
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.SqlServer.SqlClrProvider.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.SqlServer.Dmf.Common.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.SqlServer.Diagnostics.STrace.dll
@@ -290,4 +289,5 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frm
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csproj.GenerateResource.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csproj.CoreCompileInputs.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csproj.CopyComplete
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.exe
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.pdb
