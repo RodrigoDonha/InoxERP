@@ -38,20 +38,23 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.grpOrcamentos = new System.Windows.Forms.GroupBox();
             this.dgvOrcamentos = new System.Windows.Forms.DataGridView();
-            this.dtDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAprovar = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sObservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tb_budgets_osTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_budgets_osTableAdapter();
+            this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTelephoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iCodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sOccupationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentMethodsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bPaymentToMatchDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dPercentDiscountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iPaymentInstallmentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,26 +65,19 @@
             this.dtFinalPrevisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iWarrantyTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtBudgetExpirationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sObservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bServiceOrderApprovedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dtDateServiceOrderApprovedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bServiceOrderDeliveredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bRegisterFinishedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dtDateRegisterFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbbudgetsosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.inoxErpDBDataSet2 = new UIWindows.InoxErpDBDataSet2();
-            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_budgets_osTableAdapter = new UIWindows.InoxErpDBDataSet2TableAdapters.tb_budgets_osTableAdapter();
-            this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_itemsTableAdapter = new UIWindows.InoxErpDBDataSet2TableAdapters.tb_itemsTableAdapter();
-            this.tbbudgetsosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idClientsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpPesquisa.SuspendLayout();
             this.grpOrcamentos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrcamentos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // grpPesquisa
@@ -184,15 +180,16 @@
             this.dgvOrcamentos.AutoGenerateColumns = false;
             this.dgvOrcamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrcamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sID,
-            this.sObservationDataGridViewTextBoxColumn,
-            this.dtDate,
-            this.sName,
-            this.sTelephone,
-            this.sAdressDataGridViewTextBoxColumn,
-            this.dTotal,
-            this.sOccupationDataGridViewTextBoxColumn,
+            this.sIDDataGridViewTextBoxColumn,
+            this.dtDateDataGridViewTextBoxColumn,
+            this.sNameDataGridViewTextBoxColumn,
+            this.sTelephoneDataGridViewTextBoxColumn,
+            this.dTotalDataGridViewTextBoxColumn,
+            this.iCodDataGridViewTextBoxColumn,
             this.clientTypeDataGridViewTextBoxColumn,
+            this.sAdressDataGridViewTextBoxColumn,
+            this.sOccupationDataGridViewTextBoxColumn,
+            this.paymentMethodsDataGridViewTextBoxColumn,
             this.bPaymentToMatchDataGridViewCheckBoxColumn,
             this.dPercentDiscountDataGridViewTextBoxColumn,
             this.iPaymentInstallmentsDataGridViewTextBoxColumn,
@@ -203,11 +200,15 @@
             this.dtFinalPrevisionDataGridViewTextBoxColumn,
             this.iWarrantyTimeDataGridViewTextBoxColumn,
             this.dtBudgetExpirationDateDataGridViewTextBoxColumn,
+            this.sObservationDataGridViewTextBoxColumn,
             this.bServiceOrderApprovedDataGridViewCheckBoxColumn,
             this.dtDateServiceOrderApprovedDataGridViewTextBoxColumn,
+            this.bServiceOrderDeliveredDataGridViewCheckBoxColumn,
+            this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn,
             this.bRegisterFinishedDataGridViewCheckBoxColumn,
-            this.dtDateRegisterFinishedDataGridViewTextBoxColumn});
-            this.dgvOrcamentos.DataSource = this.tbbudgetsosBindingSource2;
+            this.dtDateRegisterFinishedDataGridViewTextBoxColumn,
+            this.idClientsDataGridViewTextBoxColumn});
+            this.dgvOrcamentos.DataSource = this.tbbudgetsosBindingSource;
             this.dgvOrcamentos.Location = new System.Drawing.Point(11, 21);
             this.dgvOrcamentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvOrcamentos.MultiSelect = false;
@@ -219,21 +220,15 @@
             this.dgvOrcamentos.TabIndex = 0;
             this.dgvOrcamentos.Click += new System.EventHandler(this.dgvBudgets_Click);
             // 
-            // dtDate
+            // tbbudgetsosBindingSource
             // 
-            this.dtDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dtDate.DataPropertyName = "dtDate";
-            this.dtDate.HeaderText = "Data";
-            this.dtDate.Name = "dtDate";
-            this.dtDate.ReadOnly = true;
+            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
+            this.tbbudgetsosBindingSource.DataSource = this.fullDataSet;
             // 
-            // dTotal
+            // fullDataSet
             // 
-            this.dTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dTotal.DataPropertyName = "dTotal";
-            this.dTotal.HeaderText = "Total Orçamento";
-            this.dTotal.Name = "dTotal";
-            this.dTotal.ReadOnly = true;
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnAbrir
             // 
@@ -279,42 +274,68 @@
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource
+            // tb_budgets_osTableAdapter
             // 
-            this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource.DataMember = "FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS";
-            this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource.DataSource = this.tbbudgetsosBindingSource2;
+            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
             // 
-            // sID
+            // sIDDataGridViewTextBoxColumn
             // 
-            this.sID.DataPropertyName = "sID";
-            this.sID.HeaderText = "sID";
-            this.sID.Name = "sID";
-            this.sID.ReadOnly = true;
-            this.sID.Visible = false;
+            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
+            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
+            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
+            this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIDDataGridViewTextBoxColumn.Visible = false;
             // 
-            // sObservationDataGridViewTextBoxColumn
+            // dtDateDataGridViewTextBoxColumn
             // 
-            this.sObservationDataGridViewTextBoxColumn.DataPropertyName = "sObservation";
-            this.sObservationDataGridViewTextBoxColumn.HeaderText = "sObservation";
-            this.sObservationDataGridViewTextBoxColumn.Name = "sObservationDataGridViewTextBoxColumn";
-            this.sObservationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sObservationDataGridViewTextBoxColumn.Visible = false;
+            this.dtDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dtDateDataGridViewTextBoxColumn.DataPropertyName = "dtDate";
+            this.dtDateDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dtDateDataGridViewTextBoxColumn.Name = "dtDateDataGridViewTextBoxColumn";
+            this.dtDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dtDateDataGridViewTextBoxColumn.Width = 63;
             // 
-            // sName
+            // sNameDataGridViewTextBoxColumn
             // 
-            this.sName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sName.DataPropertyName = "sName";
-            this.sName.HeaderText = "Nome";
-            this.sName.Name = "sName";
-            this.sName.ReadOnly = true;
+            this.sNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sNameDataGridViewTextBoxColumn.DataPropertyName = "sName";
+            this.sNameDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
+            this.sNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // sTelephone
+            // sTelephoneDataGridViewTextBoxColumn
             // 
-            this.sTelephone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sTelephone.DataPropertyName = "sTelephone";
-            this.sTelephone.HeaderText = "Telefone";
-            this.sTelephone.Name = "sTelephone";
-            this.sTelephone.ReadOnly = true;
+            this.sTelephoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sTelephoneDataGridViewTextBoxColumn.DataPropertyName = "sTelephone";
+            this.sTelephoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.sTelephoneDataGridViewTextBoxColumn.Name = "sTelephoneDataGridViewTextBoxColumn";
+            this.sTelephoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sTelephoneDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // dTotalDataGridViewTextBoxColumn
+            // 
+            this.dTotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dTotalDataGridViewTextBoxColumn.DataPropertyName = "dTotal";
+            this.dTotalDataGridViewTextBoxColumn.HeaderText = "Total do Orçamento";
+            this.dTotalDataGridViewTextBoxColumn.Name = "dTotalDataGridViewTextBoxColumn";
+            this.dTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dTotalDataGridViewTextBoxColumn.Width = 145;
+            // 
+            // iCodDataGridViewTextBoxColumn
+            // 
+            this.iCodDataGridViewTextBoxColumn.DataPropertyName = "iCod";
+            this.iCodDataGridViewTextBoxColumn.HeaderText = "iCod";
+            this.iCodDataGridViewTextBoxColumn.Name = "iCodDataGridViewTextBoxColumn";
+            this.iCodDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iCodDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // clientTypeDataGridViewTextBoxColumn
+            // 
+            this.clientTypeDataGridViewTextBoxColumn.DataPropertyName = "ClientType";
+            this.clientTypeDataGridViewTextBoxColumn.HeaderText = "ClientType";
+            this.clientTypeDataGridViewTextBoxColumn.Name = "clientTypeDataGridViewTextBoxColumn";
+            this.clientTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientTypeDataGridViewTextBoxColumn.Visible = false;
             // 
             // sAdressDataGridViewTextBoxColumn
             // 
@@ -332,13 +353,13 @@
             this.sOccupationDataGridViewTextBoxColumn.ReadOnly = true;
             this.sOccupationDataGridViewTextBoxColumn.Visible = false;
             // 
-            // clientTypeDataGridViewTextBoxColumn
+            // paymentMethodsDataGridViewTextBoxColumn
             // 
-            this.clientTypeDataGridViewTextBoxColumn.DataPropertyName = "ClientType";
-            this.clientTypeDataGridViewTextBoxColumn.HeaderText = "ClientType";
-            this.clientTypeDataGridViewTextBoxColumn.Name = "clientTypeDataGridViewTextBoxColumn";
-            this.clientTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clientTypeDataGridViewTextBoxColumn.Visible = false;
+            this.paymentMethodsDataGridViewTextBoxColumn.DataPropertyName = "PaymentMethods";
+            this.paymentMethodsDataGridViewTextBoxColumn.HeaderText = "PaymentMethods";
+            this.paymentMethodsDataGridViewTextBoxColumn.Name = "paymentMethodsDataGridViewTextBoxColumn";
+            this.paymentMethodsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.paymentMethodsDataGridViewTextBoxColumn.Visible = false;
             // 
             // bPaymentToMatchDataGridViewCheckBoxColumn
             // 
@@ -420,6 +441,14 @@
             this.dtBudgetExpirationDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.dtBudgetExpirationDateDataGridViewTextBoxColumn.Visible = false;
             // 
+            // sObservationDataGridViewTextBoxColumn
+            // 
+            this.sObservationDataGridViewTextBoxColumn.DataPropertyName = "sObservation";
+            this.sObservationDataGridViewTextBoxColumn.HeaderText = "sObservation";
+            this.sObservationDataGridViewTextBoxColumn.Name = "sObservationDataGridViewTextBoxColumn";
+            this.sObservationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sObservationDataGridViewTextBoxColumn.Visible = false;
+            // 
             // bServiceOrderApprovedDataGridViewCheckBoxColumn
             // 
             this.bServiceOrderApprovedDataGridViewCheckBoxColumn.DataPropertyName = "bServiceOrderApproved";
@@ -435,6 +464,22 @@
             this.dtDateServiceOrderApprovedDataGridViewTextBoxColumn.Name = "dtDateServiceOrderApprovedDataGridViewTextBoxColumn";
             this.dtDateServiceOrderApprovedDataGridViewTextBoxColumn.ReadOnly = true;
             this.dtDateServiceOrderApprovedDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // bServiceOrderDeliveredDataGridViewCheckBoxColumn
+            // 
+            this.bServiceOrderDeliveredDataGridViewCheckBoxColumn.DataPropertyName = "bServiceOrderDelivered";
+            this.bServiceOrderDeliveredDataGridViewCheckBoxColumn.HeaderText = "bServiceOrderDelivered";
+            this.bServiceOrderDeliveredDataGridViewCheckBoxColumn.Name = "bServiceOrderDeliveredDataGridViewCheckBoxColumn";
+            this.bServiceOrderDeliveredDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.bServiceOrderDeliveredDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // dtDateServiceOrderDeliveredDataGridViewTextBoxColumn
+            // 
+            this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.DataPropertyName = "dtDateServiceOrderDelivered";
+            this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.HeaderText = "dtDateServiceOrderDelivered";
+            this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.Name = "dtDateServiceOrderDeliveredDataGridViewTextBoxColumn";
+            this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.Visible = false;
             // 
             // bRegisterFinishedDataGridViewCheckBoxColumn
             // 
@@ -452,38 +497,13 @@
             this.dtDateRegisterFinishedDataGridViewTextBoxColumn.ReadOnly = true;
             this.dtDateRegisterFinishedDataGridViewTextBoxColumn.Visible = false;
             // 
-            // tbbudgetsosBindingSource2
+            // idClientsDataGridViewTextBoxColumn
             // 
-            this.tbbudgetsosBindingSource2.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource2.DataSource = this.inoxErpDBDataSet2;
-            // 
-            // inoxErpDBDataSet2
-            // 
-            this.inoxErpDBDataSet2.DataSetName = "InoxErpDBDataSet2";
-            this.inoxErpDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbbudgetsosBindingSource
-            // 
-            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource.DataSource = this.inoxErpDBDataSet2;
-            // 
-            // tb_budgets_osTableAdapter
-            // 
-            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbitemsBindingSource
-            // 
-            this.tbitemsBindingSource.DataMember = "tb_items";
-            this.tbitemsBindingSource.DataSource = this.inoxErpDBDataSet2;
-            // 
-            // tb_itemsTableAdapter
-            // 
-            this.tb_itemsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbbudgetsosBindingSource1
-            // 
-            this.tbbudgetsosBindingSource1.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource1.DataSource = this.inoxErpDBDataSet2;
+            this.idClientsDataGridViewTextBoxColumn.DataPropertyName = "IdClients";
+            this.idClientsDataGridViewTextBoxColumn.HeaderText = "IdClients";
+            this.idClientsDataGridViewTextBoxColumn.Name = "idClientsDataGridViewTextBoxColumn";
+            this.idClientsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idClientsDataGridViewTextBoxColumn.Visible = false;
             // 
             // frmBudgetSearch
             // 
@@ -506,12 +526,8 @@
             this.grpPesquisa.PerformLayout();
             this.grpOrcamentos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrcamentos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -530,24 +546,20 @@
         private System.Windows.Forms.Button btnAbrir;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAprovar;
-        private InoxErpDBDataSet2 inoxErpDBDataSet2;
-        private System.Windows.Forms.BindingSource tbbudgetsosBindingSource;
-        private InoxErpDBDataSet2TableAdapters.tb_budgets_osTableAdapter tb_budgets_osTableAdapter;
-        private System.Windows.Forms.BindingSource tbitemsBindingSource;
-        private InoxErpDBDataSet2TableAdapters.tb_itemsTableAdapter tb_itemsTableAdapter;
-        private System.Windows.Forms.BindingSource tbbudgetsosBindingSource2;
-        private System.Windows.Forms.BindingSource tbbudgetsosBindingSource1;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.BindingSource fKdbotbitemsdbotbbudgetsosIdBudgetsOSBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sObservationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTelephone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sAdressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sOccupationDataGridViewTextBoxColumn;
+        private FullDataSet fullDataSet;
+        private System.Windows.Forms.BindingSource tbbudgetsosBindingSource;
+        private FullDataSetTableAdapters.tb_budgets_osTableAdapter tb_budgets_osTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTelephoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dTotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iCodDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sAdressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sOccupationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentMethodsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn bPaymentToMatchDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dPercentDiscountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iPaymentInstallmentsDataGridViewTextBoxColumn;
@@ -558,9 +570,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dtFinalPrevisionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iWarrantyTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtBudgetExpirationDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sObservationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn bServiceOrderApprovedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtDateServiceOrderApprovedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn bServiceOrderDeliveredDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtDateServiceOrderDeliveredDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn bRegisterFinishedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtDateRegisterFinishedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idClientsDataGridViewTextBoxColumn;
     }
 }

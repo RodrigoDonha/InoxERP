@@ -30,11 +30,7 @@ namespace UIWindows
 
         // Events
 
-        private void frmDeliveryFollowing_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'inoxErpDBDataSet3ServiceOrdersApprovedGidView.tb_delivery_opened'. Você pode movê-la ou removê-la conforme necessário.
-            this.tb_delivery_openedTableAdapter.Fill(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.tb_delivery_opened);
-        }
+        
 
         private void btnAbrirAlterar_Click(object sender, EventArgs e)
         {
@@ -137,9 +133,10 @@ namespace UIWindows
         public void getIdGrigView()
         {
             getId = "";
-            if (grdEntregas.CurrentRow != null)
+            if (dgvEntregas.CurrentRow != null)
             {
-                getId = Convert.ToString(grdEntregas[6, grdEntregas.CurrentRow.Index].Value.ToString());
+                getId = Convert.ToString(dgvEntregas[0, dgvEntregas.CurrentRow.Index].Value.ToString());
+                txtPesquisa.Text = Convert.ToString(dgvEntregas[2, dgvEntregas.CurrentRow.Index].Value.ToString());
             }
             else
             {
@@ -162,7 +159,7 @@ namespace UIWindows
         //overrid FILL DATASET
         public void fillDataSet()
         {
-            this.tb_delivery_openedTableAdapter.Fill(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.tb_delivery_opened);
+            this.tb_budgets_osTableAdapter.FillByDeliveryFollow(this.fullDataSet.tb_budgets_os);
         }
 
         // SEARCH BY NAME CLIENT
@@ -174,7 +171,7 @@ namespace UIWindows
                 where p.sName.StartsWith(txtPesquisa.Text)
             select p;
 
-            grdEntregas.DataSource = query.ToList();
+            dgvEntregas.DataSource = query.ToList();
         }
 
         public void searchByCPF_CNPJ()
@@ -192,7 +189,7 @@ namespace UIWindows
 
             if (txtPesquisa.Text == "")
             {
-                grdEntregas.DataSource = query.ToList();
+                dgvEntregas.DataSource = query.ToList();
             }
             else
             {
@@ -205,8 +202,15 @@ namespace UIWindows
                         list.Add(line);
                     }
                 }
-                grdEntregas.DataSource = list.ToList();
+                dgvEntregas.DataSource = list.ToList();
             }
+        }
+
+        private void frmDeliveryFollowing_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'fullDataSet.tb_budgets_os' table. You can move, or remove it, as needed.
+            this.tb_budgets_osTableAdapter.FillByDeliveryFollow(this.fullDataSet.tb_budgets_os);
+
         }
     }
 }

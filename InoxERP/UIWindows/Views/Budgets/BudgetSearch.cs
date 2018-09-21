@@ -24,12 +24,6 @@ namespace UIWindows
             InitializeComponent();
         }
 
-        private void frmBudgetSearch_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'inoxErpDBDataSet2.tb_budgets_os' table. You can move, or remove it, as needed.
-            this.tb_budgets_osTableAdapter.Fill(this.inoxErpDBDataSet2.tb_budgets_os);
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             if (radNome.Checked)
@@ -109,7 +103,7 @@ namespace UIWindows
             if (dgvOrcamentos.CurrentRow != null)
             {
                 getId = Convert.ToString(dgvOrcamentos[0, dgvOrcamentos.CurrentRow.Index].Value.ToString());
-                txtPesquisa.Text = Convert.ToString(dgvOrcamentos[3, dgvOrcamentos.CurrentRow.Index].Value.ToString());
+                txtPesquisa.Text = Convert.ToString(dgvOrcamentos[2, dgvOrcamentos.CurrentRow.Index].Value.ToString());
             }
             else
             {
@@ -194,7 +188,7 @@ namespace UIWindows
         //overrid FILL DATASET
         public void fillDataSet()
         {
-            this.tb_budgets_osTableAdapter.Fill(this.inoxErpDBDataSet2.tb_budgets_os);
+            this.tb_budgets_osTableAdapter.FillByBudgetUnapproved(this.fullDataSet.tb_budgets_os);
         }
 
         private void btnAprovar_Click(object sender, EventArgs e)
@@ -229,6 +223,11 @@ namespace UIWindows
             MessageBox.Show("Informe a data no formato dd/mm/aaaa, exemplo: 01/09/2018");
         }
 
-       
+        private void frmBudgetSearch_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'fullDataSet.tb_budgets_os' table. You can move, or remove it, as needed.
+            this.tb_budgets_osTableAdapter.FillByBudgetUnapproved(this.fullDataSet.tb_budgets_os);
+
+        }
     }
 }

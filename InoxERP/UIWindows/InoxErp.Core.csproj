@@ -150,6 +150,14 @@
     <Compile Include="Entities\Services.cs" />
     <Compile Include="Entities\Cheques.cs" />
     <Compile Include="Entities\Users.cs" />
+    <Compile Include="FullDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FullDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InoxErpDBDataSet2.cs">
+      <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Views\Backups\AdminChose.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -581,6 +589,17 @@
     </None>
     <None Include="DSItems.xss">
       <DependentUpon>DSItems.xsd</DependentUpon>
+    </None>
+    <None Include="FullDataSet.xsc">
+      <DependentUpon>FullDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FullDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FullDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FullDataSet.xss">
+      <DependentUpon>FullDataSet.xsd</DependentUpon>
     </None>
     <None Include="GeneralDataSet.xsc">
       <DependentUpon>GeneralDataSet.xsd</DependentUpon>

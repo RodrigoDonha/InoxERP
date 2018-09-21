@@ -28,11 +28,6 @@ namespace UIWindows
             InitializeComponent();
         }
 
-        private void frmDeliveryFinished_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'inoxErpDBDataSet3ServiceOrdersApprovedGidView.tb_delivery_finished'. Você pode movê-la ou removê-la conforme necessário.
-            this.tb_delivery_finishedTableAdapter.Fill(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.tb_delivery_finished);
-        }
 
 
         // Events
@@ -42,7 +37,7 @@ namespace UIWindows
         {
             getId = "";
             getIdGrigView();
-            if (grdEntregas.CurrentRow != null)
+            if (dgvEntregasFinalizadas.CurrentRow != null)
             {
                 frmBudgetsRegister bud = new frmBudgetsRegister(getId);
                 bud.BudgetData();
@@ -53,7 +48,7 @@ namespace UIWindows
         private void btnReabrirEntrega_Click(object sender, EventArgs e)
         {
             getIdGrigView();
-            if (grdEntregas.CurrentRow != null)
+            if (dgvEntregasFinalizadas.CurrentRow != null)
             {
                 if (messageYesNo("ReopenDelivery") == DialogResult.Yes)
                 {
@@ -111,9 +106,10 @@ namespace UIWindows
         public void getIdGrigView()
         {
             getId = "";
-            if (grdEntregas.CurrentRow != null)
+            if (dgvEntregasFinalizadas.CurrentRow != null)
             {
-                getId = Convert.ToString(grdEntregas[6, grdEntregas.CurrentRow.Index].Value.ToString());
+                getId = Convert.ToString(dgvEntregasFinalizadas[0, dgvEntregasFinalizadas.CurrentRow.Index].Value.ToString());
+                txtPesquisa.Text = Convert.ToString(dgvEntregasFinalizadas[2, dgvEntregasFinalizadas.CurrentRow.Index].Value.ToString());
             }
             else
             {
@@ -134,7 +130,7 @@ namespace UIWindows
         //overrid FILL DATASET
         public void fillDataSet()
         {
-            this.tb_delivery_finishedTableAdapter.Fill(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.tb_delivery_finished);
+            this.tb_budgets_osTableAdapter.FillByDeliveryFinished(this.fullDataSet.tb_budgets_os);
         }
 
         // SEARCH BY NAME CLIENT
@@ -147,7 +143,7 @@ namespace UIWindows
                         where p.sName.StartsWith(txtPesquisa.Text)
                         select p;
 
-            grdEntregas.DataSource = query.ToList();
+            dgvEntregasFinalizadas.DataSource = query.ToList();
         }
 
         public void searchByCPF_CNPJ()
@@ -165,7 +161,7 @@ namespace UIWindows
 
             if (txtPesquisa.Text == "")
             {
-                grdEntregas.DataSource = query.ToList();
+                dgvEntregasFinalizadas.DataSource = query.ToList();
             }
             else
             {
@@ -178,8 +174,15 @@ namespace UIWindows
                         list.Add(line);
                     }
                 }
-                grdEntregas.DataSource = list.ToList();
+                dgvEntregasFinalizadas.DataSource = list.ToList();
             }
+        }
+
+        private void frmDeliveryFinished_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'fullDataSet.tb_budgets_os' table. You can move, or remove it, as needed.
+            this.tb_budgets_osTableAdapter.Fill(this.fullDataSet.tb_budgets_os);
+
         }
     }
 }

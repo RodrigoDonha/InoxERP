@@ -30,19 +30,13 @@ namespace UIWindows
             InitializeComponent();
         }
 
-        private void frmServiceOrderSearch_Load(object sender, EventArgs e)
-        {
-            // TODO: esta linha de código carrega dados na tabela 'inoxErpDBDataSet3ServiceOrdersApprovedGidView.tb_budgets_os1'. Você pode movê-la ou removê-la conforme necessário.
-            this.tb_budgets_os1TableAdapter.Fill(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.tb_budgets_os1);
-        }
-
 
         // Events
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
             getIdGrigView();
-            if (grdOrdemServico.CurrentRow != null)
+            if (dgvOrdemServico.CurrentRow != null)
             {
                 frmBudgetsRegister bud = new frmBudgetsRegister(getId);
                 bud.BudgetData();
@@ -53,7 +47,7 @@ namespace UIWindows
         private void btnDespaprovar_Click(object sender, EventArgs e)
         {
             getIdGrigView();
-            if (grdOrdemServico.CurrentRow != null)
+            if (dgvOrdemServico.CurrentRow != null)
             {
                 searchBudget = obj.ReturnByID(getId);
                 if (messageYesNo("Desapprove") == DialogResult.Yes)
@@ -76,7 +70,7 @@ namespace UIWindows
         private void btnFinlizar_Click(object sender, EventArgs e)
         {
             getIdGrigView();
-            if (grdOrdemServico.CurrentRow != null)
+            if (dgvOrdemServico.CurrentRow != null)
             {
                 searchBudget = obj.ReturnByID(getId);
                 if (messageYesNo("Finished") == DialogResult.Yes)
@@ -131,9 +125,10 @@ namespace UIWindows
         public void getIdGrigView()
         {
             getId = "";
-            if (grdOrdemServico.CurrentRow != null)
+            if (dgvOrdemServico.CurrentRow != null)
             {
-                getId = Convert.ToString(grdOrdemServico[8, grdOrdemServico.CurrentRow.Index].Value.ToString());
+                getId = Convert.ToString(dgvOrdemServico[0, dgvOrdemServico.CurrentRow.Index].Value.ToString());
+                txtPesquisa.Text = Convert.ToString(dgvOrdemServico[2, dgvOrdemServico.CurrentRow.Index].Value.ToString());
             }
             else
             {
@@ -148,7 +143,7 @@ namespace UIWindows
             // corrigir a clausula where, onde 
             var search = from p in ctx.Budgets_OS where p.sName.StartsWith(txtPesquisa.Text) where p.bServiceOrderApproved.Equals(true) where p.bRegisterFinished.Equals(false) select p;
 
-            grdOrdemServico.DataSource = search.ToList();
+            dgvOrdemServico.DataSource = search.ToList();
         }
 
         public void searchByCPF_CNPJ()
@@ -162,7 +157,7 @@ namespace UIWindows
 
             if (txtPesquisa.Text == "")
             {
-                grdOrdemServico.DataSource = query.ToList();
+                dgvOrdemServico.DataSource = query.ToList();
             }
             else
             {
@@ -175,7 +170,7 @@ namespace UIWindows
                         list.Add(line);
                     }
                 }
-                grdOrdemServico.DataSource = list.ToList();
+                dgvOrdemServico.DataSource = list.ToList();
             }
         }
 
@@ -196,7 +191,14 @@ namespace UIWindows
         //overrid FILL DATASET
         public void fillDataSet()
         {
-            this.tb_budgets_os1TableAdapter.Fill(this.inoxErpDBDataSet3ServiceOrdersApprovedGidView.tb_budgets_os1);
+            this.tb_budgets_osTableAdapter.FillByOrderServiceApproved(this.fullDataSet.tb_budgets_os);
+        }
+
+        private void frmServiceOrderSearch_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'fullDataSet.tb_budgets_os' table. You can move, or remove it, as needed.
+            this.tb_budgets_osTableAdapter.FillByOrderServiceApproved(this.fullDataSet.tb_budgets_os);
+
         }
     }
 }
