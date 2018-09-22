@@ -1070,31 +1070,13 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Juros / Desconto Á Vista: </Value>
+                    <Value>Desconto Á Vista: </Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!InterestRate.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> % /  </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Parameters!PercentDiscount.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> %</Value>
+                    <Value>=Parameters!DiscountValues.Value</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                     </Style>
@@ -1236,7 +1218,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Observações: </Value>
+                    <Value>Descrição: </Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                     </Style>
@@ -1748,16 +1730,14 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="PercentDiscount">
-      <DataType>String</DataType>
+    <ReportParameter Name="DiscountValues">
+      <DataType>Float</DataType>
       <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="TotalValues">
-      <DataType>String</DataType>
+      <DataType>Float</DataType>
       <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="StartPrevision">
@@ -1868,7 +1848,7 @@
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>PercentDiscount</ParameterName>
+          <ParameterName>DiscountValues</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>

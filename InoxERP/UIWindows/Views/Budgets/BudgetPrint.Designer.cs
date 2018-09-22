@@ -31,19 +31,16 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.rptPrint = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.generalDataSet = new UIWindows.GeneralDataSet();
-            this.generalDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_itemsTableAdapter = new UIWindows.GeneralDataSetTableAdapters.tb_itemsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.generalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).BeginInit();
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.fullDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rptPrint
             // 
             reportDataSource1.Name = "DataSetBudgetWithoutPrice"; // nome do data set do conjunto de dados do arquivo rdlc
-            reportDataSource1.Value = this.tbitemsBindingSource;
+            reportDataSource1.Value = this.fullDataSetBindingSource;
             this.rptPrint.LocalReport.DataSources.Add(reportDataSource1); // essa linha deve ser a mais importante, eu acho
             this.rptPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rptPrint.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Budget.rdlc";
@@ -56,24 +53,15 @@
             this.rptPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.rptPrint.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
-            // generalDataSet
+            // fullDataSet
             // 
-            this.generalDataSet.DataSetName = "GeneralDataSet";
-            this.generalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // generalDataSetBindingSource
+            // fullDataSetBindingSource
             // 
-            this.generalDataSetBindingSource.DataSource = this.generalDataSet;
-            this.generalDataSetBindingSource.Position = 0;
-            // 
-            // tbitemsBindingSource
-            // 
-            this.tbitemsBindingSource.DataMember = "tb_items";
-            this.tbitemsBindingSource.DataSource = this.generalDataSetBindingSource;
-            // 
-            // tb_itemsTableAdapter
-            // 
-            this.tb_itemsTableAdapter.ClearBeforeFill = true;
+            this.fullDataSetBindingSource.DataSource = this.fullDataSet;
+            this.fullDataSetBindingSource.Position = 0;
             // 
             // BudgetPrint
             // 
@@ -84,9 +72,8 @@
             this.Name = "BudgetPrint";
             this.Text = "Impressão de Orçamento";
             this.Load += new System.EventHandler(this.Print_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.generalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -94,9 +81,7 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer rptPrint;
-        private GeneralDataSet generalDataSet;
-        private System.Windows.Forms.BindingSource generalDataSetBindingSource;
-        private System.Windows.Forms.BindingSource tbitemsBindingSource;
-        private GeneralDataSetTableAdapters.tb_itemsTableAdapter tb_itemsTableAdapter;
+        private System.Windows.Forms.BindingSource fullDataSetBindingSource;
+        private FullDataSet fullDataSet;
     }
 }

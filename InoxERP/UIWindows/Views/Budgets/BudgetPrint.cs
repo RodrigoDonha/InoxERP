@@ -30,9 +30,6 @@ namespace UIWindows.Views.Budgets
 
         private void Print_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'generalDataSet.tb_items'. Você pode movê-la ou removê-la conforme necessário.
-            this.tb_itemsTableAdapter.Fill(this.generalDataSet.tb_items);
-
             this.rptPrint.RefreshReport();
         }
 
@@ -51,7 +48,7 @@ namespace UIWindows.Views.Budgets
             var PaymentForm = new ReportParameter();
             var PaymentInstalments = new ReportParameter();
             var InterestRate = new ReportParameter();
-            var PercentDiscount = new ReportParameter();
+            var DiscountValues = new ReportParameter();
             var TotalValue = new ReportParameter();
             var StartPrevision = new ReportParameter();
             var FinalPrevision = new ReportParameter();
@@ -73,7 +70,7 @@ namespace UIWindows.Views.Budgets
             PaymentForm.Name = "PaymentForm";
             PaymentInstalments.Name = "PaymentInstalments";
             InterestRate.Name = "InterestRate";
-            PercentDiscount.Name = "PercentDiscount";
+            DiscountValues.Name = "DiscountValues";
             TotalValue.Name = "TotalValue";
             StartPrevision.Name = "StartPrevision";
             FinalPrevision.Name = "FinalPrevision";
@@ -89,12 +86,19 @@ namespace UIWindows.Views.Budgets
             Date.Values.Add(searchBudget.dtDate.ToShortDateString());
             Name.Values.Add(searchBudget.sName);
             Contact.Values.Add(searchBudget.sTelephone);
-            TotalValue.Values.Add(searchBudget.dTotal.ToString());
+            TotalValue.Values.Add(Convert.ToString(searchBudget.dTotal)); // dTotal convertido para ToString na tentativa de corrigir bug do valor
             Adress.Values.Add(searchBudget.sAdress);
             Occupation.Values.Add(searchBudget.sOccupation);
             Type.Values.Add(searchBudget.ClientType.ToString());
             PaymentForm.Values.Add(searchBudget.PaymentMethods.ToString());
-            PercentDiscount.Values.Add(searchBudget.dPercentDiscount.ToString());
+
+            // calcula o valor do desconto pela porcentagem
+            decimal value = Convert.ToDecimal(searchBudget.dTotal);
+            decimal discount = Convert.ToDecimal(searchBudget.dPercentDiscount);
+            decimal revert = value + discount;
+            decimal Result =  (revert * discount)  / 100;
+
+            DiscountValues.Values.Add(Convert.ToString(Result));
             PaymentInstalments.Values.Add(searchBudget.iPaymentInstallments.ToString());
             InterestRate.Values.Add(searchBudget.dWithInterest.ToString());
             PrevisionOfExecute.Values.Add(searchBudget.iPrevisionOfExecute.ToString());
@@ -147,7 +151,7 @@ namespace UIWindows.Views.Budgets
             }
             
             rptPrint.LocalReport.SetParameters(PaymentForm);
-            rptPrint.LocalReport.SetParameters(PercentDiscount);
+            rptPrint.LocalReport.SetParameters(DiscountValues);
             rptPrint.LocalReport.SetParameters(PaymentInstalments);
             rptPrint.LocalReport.SetParameters(InterestRate);
             rptPrint.LocalReport.SetParameters(PrevisionOfExecute);
@@ -159,7 +163,6 @@ namespace UIWindows.Views.Budgets
             rptPrint.LocalReport.SetParameters(Observation);
 
             rptPrint.RefreshReport();
-            
         }
     }
 }

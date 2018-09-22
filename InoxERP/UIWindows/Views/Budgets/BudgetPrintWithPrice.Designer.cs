@@ -30,36 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.generalDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.generalDataSet = new UIWindows.GeneralDataSet();
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.fullDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).BeginInit();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tb_itemsTableAdapter = new UIWindows.GeneralDataSetTableAdapters.tb_itemsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbitemsBindingSource
+            // fullDataSet
             // 
-            this.tbitemsBindingSource.DataMember = "tb_items";
-            this.tbitemsBindingSource.DataSource = this.generalDataSetBindingSource;
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // generalDataSetBindingSource
+            // fullDataSetBindingSource
             // 
-            this.generalDataSetBindingSource.DataSource = this.generalDataSet;
-            this.generalDataSetBindingSource.Position = 0;
-            // 
-            // generalDataSet
-            // 
-            this.generalDataSet.DataSetName = "GeneralDataSet";
-            this.generalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.fullDataSetBindingSource.DataSource = this.fullDataSet;
+            this.fullDataSetBindingSource.Position = 0;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSetBudgetWihtPrice";
-            reportDataSource1.Value = this.tbitemsBindingSource;
+            reportDataSource1.Value = this.fullDataSetBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.BudgetWithPrice.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -70,10 +62,6 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
-            // tb_itemsTableAdapter
-            // 
-            this.tb_itemsTableAdapter.ClearBeforeFill = true;
-            // 
             // BudgetPrintWithPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -83,19 +71,15 @@
             this.Name = "BudgetPrintWithPrice";
             this.Text = "Impressão do Orçamento com Preço nos Itens";
             this.Load += new System.EventHandler(this.BudgetPrintWithPrice_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.generalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private GeneralDataSet generalDataSet;
-        private System.Windows.Forms.BindingSource generalDataSetBindingSource;
-        private System.Windows.Forms.BindingSource tbitemsBindingSource;
-        private GeneralDataSetTableAdapters.tb_itemsTableAdapter tb_itemsTableAdapter;
+        private System.Windows.Forms.BindingSource fullDataSetBindingSource;
+        private FullDataSet fullDataSet;
     }
 }
