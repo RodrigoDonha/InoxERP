@@ -21233,7 +21233,7 @@ SELECT sID, sDescription, sTime, dTotal, sObservation, IdItems FROM tb_services 
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[tb_users] WHERE (([sID] = @Original_sID) AND ([sName] = @Original_sName) AND ([sLogin] = @Original_sLogin) AND ([sKey] = @Original_sKey) AND ([Type] = @Original_Type) AND ((@IsNull_Permitions_sID = 1 AND [Permitions_sID] IS NULL) OR ([Permitions_sID] = @Original_Permitions_sID)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tb_users] WHERE (([sID] = @Original_sID) AND ([sName] = @Original_sName) AND ([sLogin] = @Original_sLogin) AND ([sKey] = @Original_sKey) AND ([Type] = @Original_Type) AND ((@IsNull_Permitions_sID = 1 AND [Permitions_sID] IS NULL) OR ([Permitions_sID] = @Original_Permitions_sID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -21244,9 +21244,9 @@ SELECT sID, sDescription, sTime, dTotal, sObservation, IdItems FROM tb_services 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Permitions_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Permitions_sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[tb_users] ([sID], [sName], [sLogin], [sKey], [Type], [Permitio" +
-                "ns_sID]) VALUES (@sID, @sName, @sLogin, @sKey, @Type, @Permitions_sID);\r\nSELECT " +
-                "sID, sName, sLogin, sKey, Type, Permitions_sID FROM tb_users WHERE (sID = @sID)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [tb_users] ([sID], [sName], [sLogin], [sKey], [Type], [Permitions_sID" +
+                "]) VALUES (@sID, @sName, @sLogin, @sKey, @Type, @Permitions_sID);\r\nSELECT sID, s" +
+                "Name, sLogin, sKey, Type, Permitions_sID FROM tb_users WHERE (sID = @sID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21256,7 +21256,7 @@ SELECT sID, sDescription, sTime, dTotal, sObservation, IdItems FROM tb_services 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Permitions_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Permitions_sID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tb_users] SET [sID] = @sID, [sName] = @sName, [sLogin] = @sLogin, [sKey] = @sKey, [Type] = @Type, [Permitions_sID] = @Permitions_sID WHERE (([sID] = @Original_sID) AND ([sName] = @Original_sName) AND ([sLogin] = @Original_sLogin) AND ([sKey] = @Original_sKey) AND ([Type] = @Original_Type) AND ((@IsNull_Permitions_sID = 1 AND [Permitions_sID] IS NULL) OR ([Permitions_sID] = @Original_Permitions_sID)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [tb_users] SET [sID] = @sID, [sName] = @sName, [sLogin] = @sLogin, [sKey] = @sKey, [Type] = @Type, [Permitions_sID] = @Permitions_sID WHERE (([sID] = @Original_sID) AND ([sName] = @Original_sName) AND ([sLogin] = @Original_sLogin) AND ([sKey] = @Original_sKey) AND ([Type] = @Original_Type) AND ((@IsNull_Permitions_sID = 1 AND [Permitions_sID] IS NULL) OR ([Permitions_sID] = @Original_Permitions_sID)));
 SELECT sID, sName, sLogin, sKey, Type, Permitions_sID FROM tb_users WHERE (sID = @sID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21284,11 +21284,21 @@ SELECT sID, sName, sLogin, sKey, Type, Permitions_sID FROM tb_users WHERE (sID =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT sID, sName, sLogin, sKey, Type, Permitions_sID FROM dbo.tb_users";
+            this._commandCollection[0].CommandText = "SELECT        sID, sName, sLogin, sKey, Type, Permitions_sID\r\nFROM            tb_" +
+                "users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Permitions_sID, Type, sID, sKey, sLogin, sName FROM tb_users";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        sID, sName, sLogin, sKey, Type, Permitions_sID\r\nFROM            tb_" +
+                "users\r\nWHERE        (sLogin NOT IN (\'Admin\', \'jefter\', \'rodrigo\'))";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21310,6 +21320,54 @@ SELECT sID, sName, sLogin, sKey, Type, Permitions_sID FROM tb_users WHERE (sID =
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual FullDataSet.tb_usersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            FullDataSet.tb_usersDataTable dataTable = new FullDataSet.tb_usersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAdminType(FullDataSet.tb_usersDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_usersDataTable GetDataByAdminType() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            FullDataSet.tb_usersDataTable dataTable = new FullDataSet.tb_usersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByBasicType(FullDataSet.tb_usersDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_usersDataTable GetDataByBasicType() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             FullDataSet.tb_usersDataTable dataTable = new FullDataSet.tb_usersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

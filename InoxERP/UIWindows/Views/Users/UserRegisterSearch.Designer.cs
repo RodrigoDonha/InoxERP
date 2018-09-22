@@ -36,8 +36,6 @@
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.tbusersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.inoxErpDBDataSet = new UIWindows.InoxErpDBDataSet();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
@@ -50,15 +48,18 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.tb_usersTableAdapter1 = new UIWindows.InoxErpDBDataSetTableAdapters.tb_usersTableAdapter();
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.tbusersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_usersTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_usersTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLoginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sKeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.permitionssIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbusersBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbusersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxTipo
@@ -101,8 +102,9 @@
             this.sNameDataGridViewTextBoxColumn,
             this.sLoginDataGridViewTextBoxColumn,
             this.sKeyDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn});
-            this.dgvUsuarios.DataSource = this.tbusersBindingSource1;
+            this.typeDataGridViewTextBoxColumn,
+            this.permitionssIDDataGridViewTextBoxColumn});
+            this.dgvUsuarios.DataSource = this.tbusersBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,16 +133,6 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(370, 165);
             this.dgvUsuarios.TabIndex = 29;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
-            // 
-            // tbusersBindingSource1
-            // 
-            this.tbusersBindingSource1.DataMember = "tb_users";
-            this.tbusersBindingSource1.DataSource = this.inoxErpDBDataSet;
-            // 
-            // inoxErpDBDataSet
-            // 
-            this.inoxErpDBDataSet.DataSetName = "InoxErpDBDataSet";
-            this.inoxErpDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnExcluir
             // 
@@ -263,13 +255,23 @@
             this.lblID.Location = new System.Drawing.Point(85, 42);
             this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(40, 17);
+            this.lblID.Size = new System.Drawing.Size(16, 17);
             this.lblID.TabIndex = 32;
-            this.lblID.Text = "0000";
+            this.lblID.Text = "0";
             // 
-            // tb_usersTableAdapter1
+            // fullDataSet
             // 
-            this.tb_usersTableAdapter1.ClearBeforeFill = true;
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbusersBindingSource
+            // 
+            this.tbusersBindingSource.DataMember = "tb_users";
+            this.tbusersBindingSource.DataSource = this.fullDataSet;
+            // 
+            // tb_usersTableAdapter
+            // 
+            this.tb_usersTableAdapter.ClearBeforeFill = true;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -281,6 +283,7 @@
             // 
             // sNameDataGridViewTextBoxColumn
             // 
+            this.sNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sNameDataGridViewTextBoxColumn.DataPropertyName = "sName";
             this.sNameDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
@@ -288,10 +291,12 @@
             // 
             // sLoginDataGridViewTextBoxColumn
             // 
+            this.sLoginDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.sLoginDataGridViewTextBoxColumn.DataPropertyName = "sLogin";
             this.sLoginDataGridViewTextBoxColumn.HeaderText = "Login";
             this.sLoginDataGridViewTextBoxColumn.Name = "sLoginDataGridViewTextBoxColumn";
             this.sLoginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sLoginDataGridViewTextBoxColumn.Width = 68;
             // 
             // sKeyDataGridViewTextBoxColumn
             // 
@@ -304,9 +309,18 @@
             // typeDataGridViewTextBoxColumn
             // 
             this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
             this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
             this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.typeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // permitionssIDDataGridViewTextBoxColumn
+            // 
+            this.permitionssIDDataGridViewTextBoxColumn.DataPropertyName = "Permitions_sID";
+            this.permitionssIDDataGridViewTextBoxColumn.HeaderText = "Permitions_sID";
+            this.permitionssIDDataGridViewTextBoxColumn.Name = "permitionssIDDataGridViewTextBoxColumn";
+            this.permitionssIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.permitionssIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // frmUserRegisterSearch
             // 
@@ -333,10 +347,10 @@
             this.Name = "frmUserRegisterSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro e Consulta de Usuários";
-            this.Load += new System.EventHandler(this.frmUserRegisterSearch_Load);
+            this.Load += new System.EventHandler(this.frmUserRegisterSearch_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbusersBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbusersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,13 +373,14 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblID;
-        private InoxErpDBDataSet inoxErpDBDataSet;
-        private System.Windows.Forms.BindingSource tbusersBindingSource1;
-        private InoxErpDBDataSetTableAdapters.tb_usersTableAdapter tb_usersTableAdapter1;
+        private FullDataSet fullDataSet;
+        private System.Windows.Forms.BindingSource tbusersBindingSource;
+        private FullDataSetTableAdapters.tb_usersTableAdapter tb_usersTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sLoginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sKeyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn permitionssIDDataGridViewTextBoxColumn;
     }
 }

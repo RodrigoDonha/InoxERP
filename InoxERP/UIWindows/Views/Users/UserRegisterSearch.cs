@@ -48,10 +48,16 @@ namespace UIWindows
 
                         var ok = obj.Search.FirstOrDefault(b => b.sID == userPersist.sID);
 
+                        if (ok == null)
+                            MessageBox.Show("Erro ao Cadastrar o Usuário !!!");
+                        else
+                        {
+                            MessageBox.Show("Usuário Cadastrado com Sucesso !!!");
+                            if (userLog.sName == "test")
+                                Dispose();
+                        }
+
                         afterAction();
-                        MessageBox.Show("Salvo");
-                        if (userLog.sName == "test")
-                            Dispose();
                     }
                 }
                 else
@@ -81,8 +87,12 @@ namespace UIWindows
 
                     var ok = obj.Search.FirstOrDefault(b => b.sID == userAlter.sID);
 
+                    if (ok == null)
+                        MessageBox.Show("Erro ao Atualizar o Usuário !!!");
+                    else
+                        MessageBox.Show("Usuário Atualizado com Sucesso !!!");
+
                     afterAction();
-                    MessageBox.Show("Atualizado");
                 }
             }
         }
@@ -193,7 +203,10 @@ namespace UIWindows
         //overrid FILL DATASET
         public void fillDataSet()
         {
-            this.tb_usersTableAdapter1.Fill(this.inoxErpDBDataSet.tb_users);
+            if(userLog.sLogin == "Admin" || userLog.sLogin == "jefter" || userLog.sLogin == "rodrigo")
+                this.tb_usersTableAdapter.FillByAdminType(this.fullDataSet.tb_users);
+            else
+                this.tb_usersTableAdapter.FillByBasicType(this.fullDataSet.tb_users);
         }
 
         //FILL COMBOBOX
@@ -229,6 +242,11 @@ namespace UIWindows
         {
             var t = dgvUsuarios[4, dgvUsuarios.CurrentRow.Index].Value.ToString();
             cbxTipo.Text = t == "1" ? "Administrador" : "Básico";
+        }
+
+        private void frmUserRegisterSearch_Load_1(object sender, EventArgs e)
+        {
+           fillDataSet();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace UIWindows
 
                 if (user == null)
                 {
-                    MessageBox.Show("Invalid User");
+                    MessageBox.Show("Usuário Inválido");
                     Application.Restart();
                 }
                 else
