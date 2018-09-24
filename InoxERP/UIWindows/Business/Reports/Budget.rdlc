@@ -382,11 +382,13 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>d Amount</Value>
+                                  <Value>Quantidade</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -412,11 +414,13 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>s Description</Value>
+                                  <Value>Descrição</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox32</rd:DefaultName>
@@ -451,7 +455,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>dAmount</rd:DefaultName>
@@ -481,7 +487,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>sDescription</rd:DefaultName>
@@ -528,6 +536,11 @@
                 </FilterValues>
               </Filter>
             </Filters>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!sDescription.Value</Value>
+              </SortExpression>
+            </SortExpressions>
             <Top>5.07683cm</Top>
             <Left>0.32772cm</Left>
             <Height>1.6cm</Height>
@@ -1131,7 +1144,7 @@
               <Source>Embedded</Source>
               <Value>logo</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.26726cm</Top>
+              <Top>0.58476cm</Top>
               <Left>0.30302cm</Left>
               <Height>4.09568cm</Height>
               <Width>8.50604cm</Width>
