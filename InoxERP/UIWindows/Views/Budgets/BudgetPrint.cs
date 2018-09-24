@@ -9,9 +9,7 @@ namespace UIWindows.Views.Budgets
 {
     public partial class BudgetPrint : Form
     {
-        static InoxErpContext ctx = new InoxErpContext();
-        static Budgets_OS searchBudget = new Budgets_OS();
-        static Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+        
 
         public BudgetPrint(string id)
         {
@@ -30,18 +28,9 @@ namespace UIWindows.Views.Budgets
 
         public void searchData(string id)
         {
-            //rptPrint.ShowParameterPrompts = false;
-            //rptPrint.LocalReport.ReportEmbeddedResource = "";
-            //this.rptPrint.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Budget.rdlc";
-            //rptPrint.DataBindings.Clear();
-            //this.rptPrint.RefreshReport();
-            //rptPrint.LocalReport.ReportPath.Remove(0);
-            //new ReportParameter().Values.Clear();
-            //rptPrint.LocalReport.DataSources.Count();
-            //rptPrint.LocalReport.Dispose();
-            //rptPrint.LocalReport.Refresh();
-            //new ReportParameterCollection().Clear();
-            //rptPrint.Reset();
+            InoxErpContext ctx = new InoxErpContext();
+            Budgets_OS searchBudget = new Budgets_OS();
+            Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
 
             searchBudget = obj.ReturnByID(id);
 

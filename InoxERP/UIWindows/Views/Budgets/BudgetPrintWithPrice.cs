@@ -9,9 +9,6 @@ namespace UIWindows.Views.Budgets
 {
     public partial class BudgetPrintWithPrice : Form
     {
-        static InoxErpContext ctx = new InoxErpContext();
-        Budgets_OS searchBudget = new Budgets_OS();
-        Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
         private ReportViewer _reportViewer1;
 
         public BudgetPrintWithPrice(string id)
@@ -38,6 +35,11 @@ namespace UIWindows.Views.Budgets
 
         public void searchData(string id)
         {
+            InoxErpContext ctx = new InoxErpContext();
+
+            Budgets_OS searchBudget = new Budgets_OS();
+            Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+
             searchBudget = obj.ReturnByID(id);
 
             var BudgetID = new ReportParameter();

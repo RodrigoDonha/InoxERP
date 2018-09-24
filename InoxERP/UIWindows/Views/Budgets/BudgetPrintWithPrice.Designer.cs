@@ -53,6 +53,7 @@
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSetBudgetWihtPrice";
             reportDataSource1.Value = this.tbitemsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.BudgetWithPrice.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
