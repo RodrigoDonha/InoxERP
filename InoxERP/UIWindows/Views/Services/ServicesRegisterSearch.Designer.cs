@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Consulta = new System.Windows.Forms.TabPage();
             this.grpConsultarValores = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvConsultaPecas = new System.Windows.Forms.DataGridView();
-            this.tbservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inoxErpDBDataSet1 = new UIWindows.InoxErpDBDataSet1();
             this.txtConsultaServico = new System.Windows.Forms.TextBox();
             this.lblServico = new System.Windows.Forms.Label();
             this.Cadastro = new System.Windows.Forms.TabPage();
@@ -52,20 +51,23 @@
             this.lblMedidas = new System.Windows.Forms.Label();
             this.lblPeca = new System.Windows.Forms.Label();
             this.tbcConsultaValores = new System.Windows.Forms.TabControl();
-            this.tb_servicesTableAdapter = new UIWindows.InoxErpDBDataSet1TableAdapters.tb_servicesTableAdapter();
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.tbservicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_servicesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_servicesTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sObservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idItemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Consulta.SuspendLayout();
             this.grpConsultarValores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaPecas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbservicesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet1)).BeginInit();
             this.Cadastro.SuspendLayout();
             this.grpConsultaValores.SuspendLayout();
             this.tbcConsultaValores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbservicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Consulta
@@ -115,7 +117,8 @@
             this.sDescriptionDataGridViewTextBoxColumn,
             this.sTimeDataGridViewTextBoxColumn,
             this.dTotalDataGridViewTextBoxColumn,
-            this.sObservationDataGridViewTextBoxColumn});
+            this.sObservationDataGridViewTextBoxColumn,
+            this.idItemsDataGridViewTextBoxColumn});
             this.dgvConsultaPecas.DataSource = this.tbservicesBindingSource;
             this.dgvConsultaPecas.Location = new System.Drawing.Point(9, 69);
             this.dgvConsultaPecas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -128,16 +131,6 @@
             this.dgvConsultaPecas.TabIndex = 7;
             this.dgvConsultaPecas.TabStop = false;
             this.dgvConsultaPecas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaPecas_CellDoubleClick);
-            // 
-            // tbservicesBindingSource
-            // 
-            this.tbservicesBindingSource.DataMember = "tb_services";
-            this.tbservicesBindingSource.DataSource = this.inoxErpDBDataSet1;
-            // 
-            // inoxErpDBDataSet1
-            // 
-            this.inoxErpDBDataSet1.DataSetName = "InoxErpDBDataSet1";
-            this.inoxErpDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtConsultaServico
             // 
@@ -313,15 +306,24 @@
             this.tbcConsultaValores.Size = new System.Drawing.Size(514, 466);
             this.tbcConsultaValores.TabIndex = 3;
             // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbservicesBindingSource
+            // 
+            this.tbservicesBindingSource.DataMember = "tb_services";
+            this.tbservicesBindingSource.DataSource = this.fullDataSet;
+            // 
             // tb_servicesTableAdapter
             // 
             this.tb_servicesTableAdapter.ClearBeforeFill = true;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
-            this.sIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
-            this.sIDDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
             this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
             this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.sIDDataGridViewTextBoxColumn.Visible = false;
@@ -330,33 +332,46 @@
             // 
             this.sDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sDescriptionDataGridViewTextBoxColumn.DataPropertyName = "sDescription";
-            this.sDescriptionDataGridViewTextBoxColumn.HeaderText = "Serviço";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sDescriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.sDescriptionDataGridViewTextBoxColumn.HeaderText = "Descrição";
             this.sDescriptionDataGridViewTextBoxColumn.Name = "sDescriptionDataGridViewTextBoxColumn";
             this.sDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sTimeDataGridViewTextBoxColumn
             // 
-            this.sTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sTimeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.sTimeDataGridViewTextBoxColumn.DataPropertyName = "sTime";
             this.sTimeDataGridViewTextBoxColumn.HeaderText = "Tempo";
             this.sTimeDataGridViewTextBoxColumn.Name = "sTimeDataGridViewTextBoxColumn";
             this.sTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sTimeDataGridViewTextBoxColumn.Width = 77;
             // 
             // dTotalDataGridViewTextBoxColumn
             // 
-            this.dTotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dTotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dTotalDataGridViewTextBoxColumn.DataPropertyName = "dTotal";
             this.dTotalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.dTotalDataGridViewTextBoxColumn.Name = "dTotalDataGridViewTextBoxColumn";
             this.dTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dTotalDataGridViewTextBoxColumn.Width = 65;
             // 
             // sObservationDataGridViewTextBoxColumn
             // 
-            this.sObservationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sObservationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.sObservationDataGridViewTextBoxColumn.DataPropertyName = "sObservation";
             this.sObservationDataGridViewTextBoxColumn.HeaderText = "Observação";
             this.sObservationDataGridViewTextBoxColumn.Name = "sObservationDataGridViewTextBoxColumn";
             this.sObservationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sObservationDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // idItemsDataGridViewTextBoxColumn
+            // 
+            this.idItemsDataGridViewTextBoxColumn.DataPropertyName = "IdItems";
+            this.idItemsDataGridViewTextBoxColumn.HeaderText = "IdItems";
+            this.idItemsDataGridViewTextBoxColumn.Name = "idItemsDataGridViewTextBoxColumn";
+            this.idItemsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idItemsDataGridViewTextBoxColumn.Visible = false;
             // 
             // frmServicesRegisterSearch
             // 
@@ -374,12 +389,12 @@
             this.grpConsultarValores.ResumeLayout(false);
             this.grpConsultarValores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaPecas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbservicesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inoxErpDBDataSet1)).EndInit();
             this.Cadastro.ResumeLayout(false);
             this.grpConsultaValores.ResumeLayout(false);
             this.grpConsultaValores.PerformLayout();
             this.tbcConsultaValores.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbservicesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,13 +421,14 @@
         private System.Windows.Forms.TabControl tbcConsultaValores;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblID;
-        private InoxErpDBDataSet1 inoxErpDBDataSet1;
+        private FullDataSet fullDataSet;
         private System.Windows.Forms.BindingSource tbservicesBindingSource;
-        private InoxErpDBDataSet1TableAdapters.tb_servicesTableAdapter tb_servicesTableAdapter;
+        private FullDataSetTableAdapters.tb_servicesTableAdapter tb_servicesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDescriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sObservationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idItemsDataGridViewTextBoxColumn;
     }
 }

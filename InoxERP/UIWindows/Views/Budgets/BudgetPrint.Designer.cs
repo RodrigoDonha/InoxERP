@@ -29,39 +29,44 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rptPrint = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullDataSet = new UIWindows.FullDataSet();
-            this.fullDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rptPrint = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tb_itemsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_itemsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // rptPrint
+            // tbitemsBindingSource
             // 
-            reportDataSource1.Name = "DataSetBudgetWithoutPrice"; // nome do data set do conjunto de dados do arquivo rdlc
-            reportDataSource1.Value = this.fullDataSetBindingSource;
-            this.rptPrint.LocalReport.DataSources.Add(reportDataSource1); // essa linha deve ser a mais importante, eu acho
-            this.rptPrint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rptPrint.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Budget.rdlc";
-            this.rptPrint.Location = new System.Drawing.Point(0, 0);
-            this.rptPrint.Name = "rptPrint";
-            this.rptPrint.ServerReport.BearerToken = null;
-            this.rptPrint.Size = new System.Drawing.Size(632, 749);
-            this.rptPrint.TabIndex = 0;
-            this.rptPrint.AutoSize = true;
-            this.rptPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.rptPrint.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.tbitemsBindingSource.DataMember = "tb_items";
+            this.tbitemsBindingSource.DataSource = this.fullDataSet;
             // 
             // fullDataSet
             // 
             this.fullDataSet.DataSetName = "FullDataSet";
             this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // fullDataSetBindingSource
+            // rptPrint
             // 
-            this.fullDataSetBindingSource.DataSource = this.fullDataSet;
-            this.fullDataSetBindingSource.Position = 0;
+            this.rptPrint.AutoSize = true;
+            this.rptPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.rptPrint.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "DataSetBudgetWithoutPrice";
+            reportDataSource2.Value = this.tbitemsBindingSource;
+            this.rptPrint.LocalReport.DataSources.Add(reportDataSource2);
+            this.rptPrint.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Budget.rdlc";
+            this.rptPrint.Location = new System.Drawing.Point(0, 0);
+            this.rptPrint.Name = "rptPrint";
+            this.rptPrint.ServerReport.BearerToken = null;
+            this.rptPrint.Size = new System.Drawing.Size(632, 749);
+            this.rptPrint.TabIndex = 0;
+            this.rptPrint.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            // 
+            // tb_itemsTableAdapter
+            // 
+            this.tb_itemsTableAdapter.ClearBeforeFill = true;
             // 
             // BudgetPrint
             // 
@@ -71,17 +76,19 @@
             this.Controls.Add(this.rptPrint);
             this.Name = "BudgetPrint";
             this.Text = "Impressão de Orçamento";
-            this.Load += new System.EventHandler(this.Print_Load);
+            this.Load += new System.EventHandler(this.BudgetPrint_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer rptPrint;
-        private System.Windows.Forms.BindingSource fullDataSetBindingSource;
         private FullDataSet fullDataSet;
+        private System.Windows.Forms.BindingSource tbitemsBindingSource;
+        private FullDataSetTableAdapters.tb_itemsTableAdapter tb_itemsTableAdapter;
     }
 }

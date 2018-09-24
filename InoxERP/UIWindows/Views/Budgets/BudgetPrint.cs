@@ -10,13 +10,13 @@ namespace UIWindows.Views.Budgets
     public partial class BudgetPrint : Form
     {
         static InoxErpContext ctx = new InoxErpContext();
-        Budgets_OS searchBudget = new Budgets_OS();
-        Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+        static Budgets_OS searchBudget = new Budgets_OS();
+        static Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
 
         public BudgetPrint(string id)
         {
             InitializeComponent();
-            if(id == "")
+            if (id == "")
             {
                 MessageBox.Show("Você precisa selecionar um orçamento");
 
@@ -28,13 +28,21 @@ namespace UIWindows.Views.Budgets
             }            
         }
 
-        private void Print_Load(object sender, EventArgs e)
-        {
-            this.rptPrint.RefreshReport();
-        }
-
         public void searchData(string id)
         {
+            //rptPrint.ShowParameterPrompts = false;
+            //rptPrint.LocalReport.ReportEmbeddedResource = "";
+            //this.rptPrint.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Budget.rdlc";
+            //rptPrint.DataBindings.Clear();
+            //this.rptPrint.RefreshReport();
+            //rptPrint.LocalReport.ReportPath.Remove(0);
+            //new ReportParameter().Values.Clear();
+            //rptPrint.LocalReport.DataSources.Count();
+            //rptPrint.LocalReport.Dispose();
+            //rptPrint.LocalReport.Refresh();
+            //new ReportParameterCollection().Clear();
+            //rptPrint.Reset();
+
             searchBudget = obj.ReturnByID(id);
 
             var BudgetID = new ReportParameter();
@@ -49,7 +57,7 @@ namespace UIWindows.Views.Budgets
             var PaymentInstalments = new ReportParameter();
             var InterestRate = new ReportParameter();
             var DiscountValues = new ReportParameter();
-            var TotalValue = new ReportParameter();
+            var TotalValues = new ReportParameter();
             var StartPrevision = new ReportParameter();
             var FinalPrevision = new ReportParameter();
             var PrevisionOfExecute = new ReportParameter();
@@ -57,7 +65,7 @@ namespace UIWindows.Views.Budgets
             var WarrantyTime = new ReportParameter();
             var ExpirationDate = new ReportParameter();
             var Observation = new ReportParameter();
-            var ColunaValorTotal = new ReportParameter();
+            var LiquidValue = new ReportParameter();
 
             BudgetID.Name = "BudgetID";
             Cod.Name = "Cod";
@@ -71,7 +79,7 @@ namespace UIWindows.Views.Budgets
             PaymentInstalments.Name = "PaymentInstalments";
             InterestRate.Name = "InterestRate";
             DiscountValues.Name = "DiscountValues";
-            TotalValue.Name = "TotalValue";
+            TotalValues.Name = "TotalValues";
             StartPrevision.Name = "StartPrevision";
             FinalPrevision.Name = "FinalPrevision";
             PrevisionOfExecute.Name = "PrevisionOfExecute";
@@ -79,26 +87,28 @@ namespace UIWindows.Views.Budgets
             WarrantyTime.Name = "WarrantyTime";
             ExpirationDate.Name = "ExpirationDate";
             Observation.Name = "Observation";
-            ColunaValorTotal.Name = "ColunaValorTotal";
+            LiquidValue.Name = "LiquidValue";
 
             BudgetID.Values.Add(searchBudget.sID);
             Cod.Values.Add(searchBudget.iCod.ToString());
             Date.Values.Add(searchBudget.dtDate.ToShortDateString());
             Name.Values.Add(searchBudget.sName);
             Contact.Values.Add(searchBudget.sTelephone);
-            TotalValue.Values.Add(Convert.ToString(searchBudget.dTotal)); // dTotal convertido para ToString na tentativa de corrigir bug do valor
+
             Adress.Values.Add(searchBudget.sAdress);
             Occupation.Values.Add(searchBudget.sOccupation);
             Type.Values.Add(searchBudget.ClientType.ToString());
             PaymentForm.Values.Add(searchBudget.PaymentMethods.ToString());
 
-            // calcula o valor do desconto pela porcentagem
-            decimal value = Convert.ToDecimal(searchBudget.dTotal);
-            decimal discount = Convert.ToDecimal(searchBudget.dPercentDiscount);
-            decimal revert = value + discount;
-            decimal Result =  (revert * discount)  / 100;
-
-            DiscountValues.Values.Add(Convert.ToString(Result));
+            // calcula os valores
+            decimal value = Convert.ToDecimal(searchBudget.dTotal); // valor liquido do orçamento
+            decimal discount = Convert.ToDecimal(searchBudget.dPercentDiscount); // desconto em porcentagem
+            decimal revert = value + discount; // calcula o valor bruto do orçamento (ou seja o valor sem o desconto)
+            decimal Result = (revert * discount) / 100; // valor do desconto
+            Result = Math.Round(Result, 2);
+            revert = Math.Round(revert, 2);
+            TotalValues.Values.Add(Convert.ToString(revert.ToString())); // valor bruto
+            DiscountValues.Values.Add(Convert.ToString(Result.ToString()));
             PaymentInstalments.Values.Add(searchBudget.iPaymentInstallments.ToString());
             InterestRate.Values.Add(searchBudget.dWithInterest.ToString());
             PrevisionOfExecute.Values.Add(searchBudget.iPrevisionOfExecute.ToString());
@@ -109,14 +119,16 @@ namespace UIWindows.Views.Budgets
             //DeliveryPrevision não tem essa previsão no orçamento, fica com a data de finalização
             DeliveryPrevision.Values.Add(searchBudget.dtFinalPrevision.ToShortDateString());
             Observation.Values.Add(searchBudget.sObservation);
+            LiquidValue.Values.Add(Convert.ToString(searchBudget.dTotal.ToString())); // exibe o valor liquido do orçamento
+
             rptPrint.LocalReport.SetParameters(BudgetID);
             rptPrint.LocalReport.SetParameters(Cod);
             rptPrint.LocalReport.SetParameters(Date);
             rptPrint.LocalReport.SetParameters(Name);
             rptPrint.LocalReport.SetParameters(Contact);
-            rptPrint.LocalReport.SetParameters(TotalValue);
+            rptPrint.LocalReport.SetParameters(TotalValues);
             rptPrint.LocalReport.SetParameters(Adress);
-            
+
             if (Occupation.Values.Equals(""))
             {
                 Occupation.Values.Clear();
@@ -149,7 +161,7 @@ namespace UIWindows.Views.Budgets
                     PaymentForm.Values.Add("Cheque e Dinheiro");
                     break;
             }
-            
+
             rptPrint.LocalReport.SetParameters(PaymentForm);
             rptPrint.LocalReport.SetParameters(DiscountValues);
             rptPrint.LocalReport.SetParameters(PaymentInstalments);
@@ -161,8 +173,16 @@ namespace UIWindows.Views.Budgets
             rptPrint.LocalReport.SetParameters(ExpirationDate);
             rptPrint.LocalReport.SetParameters(DeliveryPrevision);
             rptPrint.LocalReport.SetParameters(Observation);
+            rptPrint.LocalReport.SetParameters(LiquidValue);
 
             rptPrint.RefreshReport();
+        }
+
+        private void BudgetPrint_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_items'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_itemsTableAdapter.Fill(this.fullDataSet.tb_items);
+            //this.rptPrint.RefreshReport();
         }
     }
 }

@@ -30,7 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
@@ -40,10 +46,11 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.grpEntregas = new System.Windows.Forms.GroupBox();
             this.dgvEntregasFinalizadas = new System.Windows.Forms.DataGridView();
-            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbbudgetsosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fullDataSet = new UIWindows.FullDataSet();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.btnReabrirEntrega = new System.Windows.Forms.Button();
+            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_budgets_osTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_budgets_osTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,8 +83,9 @@
             this.grpPesquisa.SuspendLayout();
             this.grpEntregas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregasFinalizadas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grpPesquisa
@@ -218,30 +226,30 @@
             this.bRegisterFinishedDataGridViewCheckBoxColumn,
             this.dtDateRegisterFinishedDataGridViewTextBoxColumn,
             this.idClientsDataGridViewTextBoxColumn});
-            this.dgvEntregasFinalizadas.DataSource = this.tbbudgetsosBindingSource;
+            this.dgvEntregasFinalizadas.DataSource = this.tbbudgetsosBindingSource1;
             this.dgvEntregasFinalizadas.Location = new System.Drawing.Point(11, 21);
             this.dgvEntregasFinalizadas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEntregasFinalizadas.MultiSelect = false;
             this.dgvEntregasFinalizadas.Name = "dgvEntregasFinalizadas";
             this.dgvEntregasFinalizadas.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntregasFinalizadas.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntregasFinalizadas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEntregasFinalizadas.RowTemplate.Height = 24;
             this.dgvEntregasFinalizadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEntregasFinalizadas.Size = new System.Drawing.Size(1185, 268);
             this.dgvEntregasFinalizadas.TabIndex = 0;
             this.dgvEntregasFinalizadas.Click += new System.EventHandler(this.grdEntregas_Click_1);
             // 
-            // tbbudgetsosBindingSource
+            // tbbudgetsosBindingSource1
             // 
-            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource.DataSource = this.fullDataSet;
+            this.tbbudgetsosBindingSource1.DataMember = "tb_budgets_os";
+            this.tbbudgetsosBindingSource1.DataSource = this.fullDataSet;
             // 
             // fullDataSet
             // 
@@ -270,6 +278,11 @@
             this.btnReabrirEntrega.UseVisualStyleBackColor = true;
             this.btnReabrirEntrega.Click += new System.EventHandler(this.btnReabrirEntrega_Click);
             // 
+            // tbbudgetsosBindingSource
+            // 
+            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
+            this.tbbudgetsosBindingSource.DataSource = this.fullDataSet;
+            // 
             // tb_budgets_osTableAdapter
             // 
             this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
@@ -286,6 +299,8 @@
             // 
             this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.DataPropertyName = "dtDateServiceOrderDelivered";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.HeaderText = "Data da Entrega";
             this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.Name = "dtDateServiceOrderDeliveredDataGridViewTextBoxColumn";
             this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn.ReadOnly = true;
@@ -293,17 +308,20 @@
             // 
             // sNameDataGridViewTextBoxColumn
             // 
-            this.sNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sNameDataGridViewTextBoxColumn.DataPropertyName = "sName";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sNameDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.sNameDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
             this.sNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sNameDataGridViewTextBoxColumn.Width = 70;
             // 
             // sAdressDataGridViewTextBoxColumn
             // 
             this.sAdressDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sAdressDataGridViewTextBoxColumn.DataPropertyName = "sAdress";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sAdressDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.sAdressDataGridViewTextBoxColumn.HeaderText = "Endereço";
             this.sAdressDataGridViewTextBoxColumn.Name = "sAdressDataGridViewTextBoxColumn";
             this.sAdressDataGridViewTextBoxColumn.ReadOnly = true;
@@ -312,6 +330,8 @@
             // 
             this.sTelephoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.sTelephoneDataGridViewTextBoxColumn.DataPropertyName = "sTelephone";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sTelephoneDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.sTelephoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
             this.sTelephoneDataGridViewTextBoxColumn.Name = "sTelephoneDataGridViewTextBoxColumn";
             this.sTelephoneDataGridViewTextBoxColumn.ReadOnly = true;
@@ -321,15 +341,20 @@
             // 
             this.sObservationDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.sObservationDataGridViewTextBoxColumn.DataPropertyName = "sObservation";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sObservationDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.sObservationDataGridViewTextBoxColumn.HeaderText = "Descrição";
             this.sObservationDataGridViewTextBoxColumn.Name = "sObservationDataGridViewTextBoxColumn";
             this.sObservationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sObservationDataGridViewTextBoxColumn.Visible = false;
             this.sObservationDataGridViewTextBoxColumn.Width = 96;
             // 
             // dTotalDataGridViewTextBoxColumn
             // 
             this.dTotalDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dTotalDataGridViewTextBoxColumn.DataPropertyName = "dTotal";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.dTotalDataGridViewTextBoxColumn.HeaderText = "Total da O.S.";
             this.dTotalDataGridViewTextBoxColumn.Name = "dTotalDataGridViewTextBoxColumn";
             this.dTotalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -522,8 +547,9 @@
             this.grpPesquisa.PerformLayout();
             this.grpEntregas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregasFinalizadas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -544,6 +570,7 @@
         private FullDataSet fullDataSet;
         private System.Windows.Forms.BindingSource tbbudgetsosBindingSource;
         private FullDataSetTableAdapters.tb_budgets_osTableAdapter tb_budgets_osTableAdapter;
+        private System.Windows.Forms.BindingSource tbbudgetsosBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtDateServiceOrderDeliveredDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sNameDataGridViewTextBoxColumn;

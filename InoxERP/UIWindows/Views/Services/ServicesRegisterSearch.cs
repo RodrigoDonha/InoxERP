@@ -148,18 +148,12 @@ namespace UIWindows
 
 
         //FILLs
-
-        //FILL DATASET ON LOAD
-        private void frmServicesRegisterSearch_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'inoxErpDBDataSet1.tb_services' table. You can move, or remove it, as needed.
-            fillDataSet();
-        }
+        
 
         //overrid FILL DATASET
         public void fillDataSet()
         {
-            this.tb_servicesTableAdapter.Fill(this.inoxErpDBDataSet1.tb_services);
+            this.tb_servicesTableAdapter.Fill(this.fullDataSet.tb_services);
         }
 
         //FILL INFORMATION CAMPS
@@ -179,6 +173,13 @@ namespace UIWindows
                 txtValorTotal.Text = dgvConsultaPecas[3, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 txtObservacao.Text = dgvConsultaPecas[4, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
             }
+        }
+
+        //FILL DATASET ON LOAD
+        private void frmServicesRegisterSearch_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_services'. Você pode movê-la ou removê-la conforme necessário.
+            fillDataSet();
         }
     }
 }

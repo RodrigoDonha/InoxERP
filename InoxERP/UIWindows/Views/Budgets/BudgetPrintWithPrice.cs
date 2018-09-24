@@ -31,6 +31,8 @@ namespace UIWindows.Views.Budgets
 
         private void BudgetPrintWithPrice_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_items'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_itemsTableAdapter.Fill(this.fullDataSet.tb_items);
             this.reportViewer1.RefreshReport();
         }
 
@@ -50,7 +52,7 @@ namespace UIWindows.Views.Budgets
             var PaymentInstalments = new ReportParameter();
             var InterestRate = new ReportParameter();
             var DiscountValues = new ReportParameter();
-            var TotalValue = new ReportParameter();
+            var TotalValues = new ReportParameter();
             var StartPrevision = new ReportParameter();
             var FinalPrevision = new ReportParameter();
             var PrevisionOfExecute = new ReportParameter();
@@ -58,7 +60,7 @@ namespace UIWindows.Views.Budgets
             var WarrantyTime = new ReportParameter();
             var ExpirationDate = new ReportParameter();
             var Observation = new ReportParameter();
-            var ColunaValorTotal = new ReportParameter();
+            var LiquidValue = new ReportParameter();
 
             BudgetID.Name = "BudgetID";
             Cod.Name = "Cod";
@@ -72,7 +74,7 @@ namespace UIWindows.Views.Budgets
             PaymentInstalments.Name = "PaymentInstalments";
             InterestRate.Name = "InterestRate";
             DiscountValues.Name = "DiscountValues";
-            TotalValue.Name = "TotalValue";
+            TotalValues.Name = "TotalValues";
             StartPrevision.Name = "StartPrevision";
             FinalPrevision.Name = "FinalPrevision";
             PrevisionOfExecute.Name = "PrevisionOfExecute";
@@ -80,23 +82,27 @@ namespace UIWindows.Views.Budgets
             WarrantyTime.Name = "WarrantyTime";
             ExpirationDate.Name = "ExpirationDate";
             Observation.Name = "Observation";
-            ColunaValorTotal.Name = "ColunaValorTotal";
-
+            LiquidValue.Name = "LiquidValue";
+            
             BudgetID.Values.Add(searchBudget.sID);
             Cod.Values.Add(searchBudget.iCod.ToString());
             Date.Values.Add(searchBudget.dtDate.ToShortDateString());
             Name.Values.Add(searchBudget.sName);
             Contact.Values.Add(searchBudget.sTelephone);
-            TotalValue.Values.Add(Convert.ToString(searchBudget.dTotal)); // dTotal convertido para ToString na tentativa de corrigir bug do valor
+            
             Adress.Values.Add(searchBudget.sAdress);
             Occupation.Values.Add(searchBudget.sOccupation);
             Type.Values.Add(searchBudget.ClientType.ToString());
             PaymentForm.Values.Add(searchBudget.PaymentMethods.ToString());
 
-            // calcula o valor do desconto pela porcentagem
-            decimal Result = (Convert.ToDecimal(searchBudget.dTotal) * Convert.ToDecimal(searchBudget.dPercentDiscount)) / 100;
-
-            DiscountValues.Values.Add(Convert.ToString(Result));
+            // calcula os valores
+            decimal value = Convert.ToDecimal(searchBudget.dTotal); // valor liquido do orçamento
+            decimal discount = Convert.ToDecimal(searchBudget.dPercentDiscount); // desconto em porcentagem
+            decimal revert = value + discount; // calcula o valor bruto do orçamento (ou seja o valor sem o desconto)
+            decimal Result = (revert * discount) / 100; // valor do desconto
+            Result = Math.Round(Result, 2);
+            TotalValues.Values.Add(Convert.ToString(revert.ToString())); // valor bruto
+            DiscountValues.Values.Add(Convert.ToString(Result.ToString()));
             PaymentInstalments.Values.Add(searchBudget.iPaymentInstallments.ToString());
             InterestRate.Values.Add(searchBudget.dWithInterest.ToString());
             PrevisionOfExecute.Values.Add(searchBudget.iPrevisionOfExecute.ToString());
@@ -107,12 +113,14 @@ namespace UIWindows.Views.Budgets
             //DeliveryPrevision não tem essa previsão no orçamento, fica com a data de finalização
             DeliveryPrevision.Values.Add(searchBudget.dtFinalPrevision.ToShortDateString());
             Observation.Values.Add(searchBudget.sObservation);
+            LiquidValue.Values.Add(Convert.ToString(searchBudget.dTotal)); // exibe o valor liquido do orçamento
+
             reportViewer1.LocalReport.SetParameters(BudgetID);
             reportViewer1.LocalReport.SetParameters(Cod);
             reportViewer1.LocalReport.SetParameters(Date);
             reportViewer1.LocalReport.SetParameters(Name);
             reportViewer1.LocalReport.SetParameters(Contact);
-            reportViewer1.LocalReport.SetParameters(TotalValue);
+            reportViewer1.LocalReport.SetParameters(TotalValues);
             reportViewer1.LocalReport.SetParameters(Adress);
 
             if (Occupation.Values.Equals(""))
@@ -159,6 +167,7 @@ namespace UIWindows.Views.Budgets
             reportViewer1.LocalReport.SetParameters(ExpirationDate);
             reportViewer1.LocalReport.SetParameters(DeliveryPrevision);
             reportViewer1.LocalReport.SetParameters(Observation);
+            reportViewer1.LocalReport.SetParameters(LiquidValue);
 
             reportViewer1.RefreshReport();
 

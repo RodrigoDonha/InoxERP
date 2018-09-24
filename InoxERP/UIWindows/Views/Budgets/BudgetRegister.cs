@@ -19,8 +19,7 @@ namespace InoxERP.UI_Windows_Forms
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS budget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
-        ItemsBusiness items = new ItemsBusiness(ctx);
-
+        
         private decimal subTotal = 0;
         private string getID;
 
@@ -33,6 +32,8 @@ namespace InoxERP.UI_Windows_Forms
             setDateService();
         }
 
+        static Budgets_OS budgetAlter = new Budgets_OS();
+
         //INSERT
         private void btnGravarOrcamento_Click(object sender, EventArgs e)
         {
@@ -44,8 +45,6 @@ namespace InoxERP.UI_Windows_Forms
                         MessageBox.Show("Por Favor preencha as informações Corretamente");
                     else
                     {
-                        Budgets_OS budgetAlter = new Budgets_OS();
-
                         //procura o orçamento para alteração
                         budgetAlter = obj.ReturnByID(getID);
 
@@ -105,7 +104,6 @@ namespace InoxERP.UI_Windows_Forms
                             new frmBudgetSearch().Show();
 
                             PrintingBudget(ok.sID);
-
                         }
                     }
                 }

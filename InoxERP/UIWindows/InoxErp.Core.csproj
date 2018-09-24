@@ -233,6 +233,12 @@
     <Compile Include="Views\Budgets\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Budgets\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Budgets\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\ReportUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -447,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Budgets\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Budgets\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportUsers.resx">
       <DependentUpon>ReportUsers.cs</DependentUpon>

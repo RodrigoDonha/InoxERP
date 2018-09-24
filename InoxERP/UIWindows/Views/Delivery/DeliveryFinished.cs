@@ -181,7 +181,7 @@ namespace UIWindows
         private void frmDeliveryFinished_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'fullDataSet.tb_budgets_os' table. You can move, or remove it, as needed.
-            this.tb_budgets_osTableAdapter.Fill(this.fullDataSet.tb_budgets_os);
+            this.tb_budgets_osTableAdapter.FillByDeliveryFinished(this.fullDataSet.tb_budgets_os);
 
         }
     }

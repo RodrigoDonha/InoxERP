@@ -30,28 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullDataSet = new UIWindows.FullDataSet();
-            this.fullDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).BeginInit();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tb_itemsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_itemsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbitemsBindingSource
+            // 
+            this.tbitemsBindingSource.DataMember = "tb_items";
+            this.tbitemsBindingSource.DataSource = this.fullDataSet;
             // 
             // fullDataSet
             // 
             this.fullDataSet.DataSetName = "FullDataSet";
             this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // fullDataSetBindingSource
-            // 
-            this.fullDataSetBindingSource.DataSource = this.fullDataSet;
-            this.fullDataSetBindingSource.Position = 0;
-            // 
             // reportViewer1
-            // 
+            //
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSetBudgetWihtPrice";
-            reportDataSource1.Value = this.fullDataSetBindingSource;
+            reportDataSource1.Value = this.tbitemsBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.BudgetWithPrice.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
@@ -62,6 +63,10 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
+            // tb_itemsTableAdapter
+            // 
+            this.tb_itemsTableAdapter.ClearBeforeFill = true;
+            // 
             // BudgetPrintWithPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -71,15 +76,17 @@
             this.Name = "BudgetPrintWithPrice";
             this.Text = "Impressão do Orçamento com Preço nos Itens";
             this.Load += new System.EventHandler(this.BudgetPrintWithPrice_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource fullDataSetBindingSource;
         private FullDataSet fullDataSet;
+        private System.Windows.Forms.BindingSource tbitemsBindingSource;
+        private FullDataSetTableAdapters.tb_itemsTableAdapter tb_itemsTableAdapter;
     }
 }
