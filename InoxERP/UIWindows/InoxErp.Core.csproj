@@ -107,27 +107,7 @@
     <Compile Include="Business\Concrete\ItemsBusiness.cs" />
     <Compile Include="Business\Concrete\ServicesBusiness.cs" />
     <Compile Include="Business\Concrete\UsersBusiness.cs" />
-    <Compile Include="ConjDadosTotais.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConjDadosTotais.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ConjDadosTotal.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConjDadosTotal.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Context\InoxErpContext.cs" />
-    <Compile Include="DataSetBudgetItems.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetBudgetItems.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DSItems.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DSItems.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Entities\AccountsToPay.cs" />
     <Compile Include="Entities\AccountsToReceive.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
@@ -155,9 +135,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="InoxErpDBDataSet2.cs">
-      <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Views\Backups\AdminChose.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,44 +146,6 @@
     </Compile>
     <Compile Include="Views\Backups\RestoreServerDB.Designer.cs">
       <DependentUpon>RestoreServerDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GeneralDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GeneralDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="InoxErpDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InoxErpDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="InoxErpDBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InoxErpDBDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="InoxErpDBDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.cs">
-      <DependentUpon>InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="InoxErpDBDataSetBudget.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InoxErpDBDataSetBudget.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="InoxErpDBDataSetItemsBudget.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InoxErpDBDataSetItemsBudget.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\Backups\BackupServerDB.cs">
@@ -563,50 +502,6 @@
     <EmbeddedResource Include="Views\Users\UserRegisterSearch.resx">
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ConjDadosTotais.xsc">
-      <DependentUpon>ConjDadosTotais.xsd</DependentUpon>
-    </None>
-    <None Include="ConjDadosTotais.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ConjDadosTotais.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ConjDadosTotais.xss">
-      <DependentUpon>ConjDadosTotais.xsd</DependentUpon>
-    </None>
-    <None Include="ConjDadosTotal.xsc">
-      <DependentUpon>ConjDadosTotal.xsd</DependentUpon>
-    </None>
-    <None Include="ConjDadosTotal.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ConjDadosTotal.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ConjDadosTotal.xss">
-      <DependentUpon>ConjDadosTotal.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetBudgetItems.xsc">
-      <DependentUpon>DataSetBudgetItems.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetBudgetItems.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetBudgetItems.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSetBudgetItems.xss">
-      <DependentUpon>DataSetBudgetItems.xsd</DependentUpon>
-    </None>
-    <None Include="DSItems.xsc">
-      <DependentUpon>DSItems.xsd</DependentUpon>
-    </None>
-    <None Include="DSItems.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSItems.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DSItems.xss">
-      <DependentUpon>DSItems.xsd</DependentUpon>
-    </None>
     <None Include="FullDataSet.xsc">
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </None>
@@ -617,83 +512,6 @@
     </None>
     <None Include="FullDataSet.xss">
       <DependentUpon>FullDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GeneralDataSet.xsc">
-      <DependentUpon>GeneralDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GeneralDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GeneralDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GeneralDataSet.xss">
-      <DependentUpon>GeneralDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSet.xsc">
-      <DependentUpon>InoxErpDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>InoxErpDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="InoxErpDBDataSet.xss">
-      <DependentUpon>InoxErpDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSet1.xsc">
-      <DependentUpon>InoxErpDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>InoxErpDBDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="InoxErpDBDataSet1.xss">
-      <DependentUpon>InoxErpDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSet2.xsc">
-      <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>InoxErpDBDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="InoxErpDBDataSet2.xss">
-      <DependentUpon>InoxErpDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsc">
-      <DependentUpon>InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>InoxErpDBDataSet3ServiceOrdersApprovedGidView.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="InoxErpDBDataSet3ServiceOrdersApprovedGidView.xss">
-      <DependentUpon>InoxErpDBDataSet3ServiceOrdersApprovedGidView.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSetBudget.xsc">
-      <DependentUpon>InoxErpDBDataSetBudget.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSetBudget.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>InoxErpDBDataSetBudget.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="InoxErpDBDataSetBudget.xss">
-      <DependentUpon>InoxErpDBDataSetBudget.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSetItemsBudget.xsc">
-      <DependentUpon>InoxErpDBDataSetItemsBudget.xsd</DependentUpon>
-    </None>
-    <None Include="InoxErpDBDataSetItemsBudget.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>InoxErpDBDataSetItemsBudget.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="InoxErpDBDataSetItemsBudget.xss">
-      <DependentUpon>InoxErpDBDataSetItemsBudget.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
