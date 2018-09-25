@@ -1020,6 +1020,7 @@
             // rtfObservacoes
             // 
             this.rtfObservacoes.Location = new System.Drawing.Point(106, 101);
+            this.rtfObservacoes.MaxLength = 3990;
             this.rtfObservacoes.Name = "rtfObservacoes";
             this.rtfObservacoes.Size = new System.Drawing.Size(414, 64);
             this.rtfObservacoes.TabIndex = 29;

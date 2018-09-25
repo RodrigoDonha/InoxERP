@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using UIWindows.Business.Concrete;
@@ -98,13 +99,11 @@ namespace UIWindows.Views.Budgets
             PaymentForm.Values.Add(searchBudget.PaymentMethods.ToString());
 
             // calcula os valores
-            decimal value = Convert.ToDecimal(searchBudget.dTotal); // valor liquido do orçamento
-            decimal discount = Convert.ToDecimal(searchBudget.dPercentDiscount); // desconto em porcentagem
-            decimal revert = value + discount; // calcula o valor bruto do orçamento (ou seja o valor sem o desconto)
-            decimal Result = (revert * discount) / 100; // valor do desconto
-            Result = Math.Round(Result, 2);
-            TotalValues.Values.Add(Convert.ToString(revert.ToString())); // valor bruto
-            DiscountValues.Values.Add(Convert.ToString(Result.ToString()));
+            decimal value = Convert.ToDecimal(searchBudget.Items.Sum(i => i.dPrice)); // valor liquido do orçamento
+            decimal discount = Math.Round(searchBudget.dPercentDiscount / 100 * value, 2); // desconto em porcentagem
+
+            TotalValues.Values.Add(Convert.ToString(value)); // valor bruto
+            DiscountValues.Values.Add(Convert.ToString(discount));
             PaymentInstalments.Values.Add(searchBudget.iPaymentInstallments.ToString());
             InterestRate.Values.Add(searchBudget.dWithInterest.ToString());
             PrevisionOfExecute.Values.Add(searchBudget.iPrevisionOfExecute.ToString());

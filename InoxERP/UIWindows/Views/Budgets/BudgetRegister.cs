@@ -370,13 +370,18 @@ namespace InoxERP.UI_Windows_Forms
             }
             else
             {
-                var row = dgvItens.SelectedRows[0].Index;
-                subTotal = subTotal - Convert.ToDecimal(dgvItens[3, row].Value.ToString());
-                lblSubTotalValor.Text = Convert.ToString(subTotal);
-                dgvItens.Rows.RemoveAt(row);
-                txtQuantidade.Focus();
-                if (compare.Equals(1))
-                    clearCampsPayment();
+                if (messageYesNo("Delete") == DialogResult.Yes)
+                {
+                    var row = dgvItens.SelectedRows[0].Index;
+                    subTotal = subTotal - Convert.ToDecimal(dgvItens[3, row].Value.ToString());
+                    lblSubTotalValor.Text = Convert.ToString(subTotal);
+                    dgvItens.Rows.RemoveAt(row);
+                    txtQuantidade.Focus();
+
+                    if (compare.Equals(1))
+                        clearCampsPayment();
+                }
+                clearItensLine();
             }
         }
 
@@ -557,6 +562,8 @@ namespace InoxERP.UI_Windows_Forms
                     return MessageBox.Show("Deseja Gravar o Orçamento com os Dados Informados?", "Gravar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Add":
                     return MessageBox.Show("Já existe um Produto / Serviço lançando igual, Deseja Continuar?", "Produto Igual Encontrado", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "Delete":
+                    return MessageBox.Show("Confirma a Exclusão do Produto?", "Excluir Produto", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "HandWork":
                     return MessageBox.Show("A Mão de Obra já foi Calculada para este Orçamento, Deseja Continuar?", "Mão de Obra Lançada", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Alter":
@@ -582,23 +589,25 @@ namespace InoxERP.UI_Windows_Forms
         {
             decimal value;
             if (lblSubTotalValor.Text == "0")
+
             { }
             else
             if(checkEqualsItems())
             {
-                value = subTotal * 2; // 100% em cima das peças
+                value = subTotal; // 100% em cima das peças
 
                 frmServiceCalc calc = new frmServiceCalc(value); //instancia o form
 
                 calc.ShowDialog(); // exibe o form
 
-                if (calc.messageYesNo("Confirm") == DialogResult.Yes) //confirma mão de obra
-                {
-                    dgvItens.Rows.Add(1, "MÃO DE OBRA", calc.finalValue, calc.finalValue); // adiciona direto na DGV
+                if(calc.finalValue != 0 && calc.finalValue > value)
+                    if (calc.messageYesNo("Confirm") == DialogResult.Yes) //confirma mão de obra
+                    {
+                        dgvItens.Rows.Add(1, "MÃO DE OBRA", calc.finalValue, calc.finalValue); // adiciona direto na DGV
 
-                    subTotal = subTotal + calc.finalValue;
-                    lblSubTotalValor.Text = Convert.ToString(subTotal); // atualiza o subTotal
-                }
+                        subTotal = subTotal + calc.finalValue;
+                        lblSubTotalValor.Text = Convert.ToString(subTotal); // atualiza o subTotal
+                    }
             }
         }
 

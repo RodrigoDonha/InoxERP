@@ -25,24 +25,24 @@ namespace UIWindows.Views.Budgets
             this.lblProducts = lblProducts;
             InitializeComponent();
             lblValordosProdutos.Text = Convert.ToString(lblProducts);
+            txtTotal.Text = Convert.ToString(lblProducts);
         }
 
         private void txtPorcent_TextChanged(object sender, EventArgs e)
         {
+            validationNumbers();
             calcService();
         }
 
         public void calcService()
         {
-            
-
             if (txtPorcentagem.Text == "")
                 porcent = 0;
             else
                 porcent = Convert.ToDecimal(txtPorcentagem.Text.Replace(".", ",")) / 100;
 
             valueProducts = Convert.ToDecimal(lblValordosProdutos.Text.Replace(".", ",")); ;
-            finalValue = valueProducts * porcent;
+            finalValue = (valueProducts * 2 * porcent) + valueProducts;
 
             txtTotal.Text = Convert.ToString(Math.Round(finalValue,2));
         }
@@ -51,6 +51,23 @@ namespace UIWindows.Views.Budgets
         {
             finalValue = Convert.ToDecimal(txtTotal.Text);
             Dispose();
+        }
+
+        public void validationNumbers()
+        {
+            decimal d;
+
+            if (!decimal.TryParse(txtPorcentagem.Text, out d)) // validator of numbers
+            {
+                if (txtPorcentagem.Text == "")
+                {
+                }
+                else
+                {
+                    txtPorcentagem.Focus();
+                    txtPorcentagem.Text = "";
+                }
+            }
         }
 
         public DialogResult messageYesNo(string type)
