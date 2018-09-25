@@ -91,7 +91,7 @@ namespace UIWindows.Views.Budgets
             PaymentForm.Values.Add(searchBudget.PaymentMethods.ToString());
 
             // calcula os valores
-            decimal value = Convert.ToDecimal(searchBudget.Items.Sum(i => i.dPrice)); // valor liquido do orçamento
+            decimal value = Convert.ToDecimal(searchBudget.Items.Sum(i => i.dTotal)); // valor liquido do orçamento
             decimal discount = Math.Round(searchBudget.dPercentDiscount/100 * value,2); // desconto em porcentagem
             
             TotalValues.Values.Add(Convert.ToString(value)); // valor bruto
