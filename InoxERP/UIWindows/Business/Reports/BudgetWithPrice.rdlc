@@ -1162,6 +1162,11 @@
                 </FilterValues>
               </Filter>
             </Filters>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!sDescription.Value</Value>
+              </SortExpression>
+            </SortExpressions>
             <Top>5.00804cm</Top>
             <Left>0.10981cm</Left>
             <Height>1.6cm</Height>

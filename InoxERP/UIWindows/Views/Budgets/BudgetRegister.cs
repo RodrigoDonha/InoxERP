@@ -387,8 +387,14 @@ namespace InoxERP.UI_Windows_Forms
         {
             foreach (DataGridViewRow line in dgvItens.Rows)
             {
-                if (line.Cells["sDescription"].Value.Equals(txtDescricao.Text))
+                if (line.Cells["sDescription"].Value.Equals(txtDescricao.Text)) // verifica item igual
                     if (messageYesNo("Add") == DialogResult.Yes)
+                        return true;
+                    else
+                        return false;
+
+                if (line.Cells["sDescription"].Value.Equals("MÃO DE OBRA")) // verifica se mao de obra ja foi lançada
+                    if (messageYesNo("HandWork") == DialogResult.Yes)
                         return true;
                     else
                         return false;
@@ -551,6 +557,8 @@ namespace InoxERP.UI_Windows_Forms
                     return MessageBox.Show("Deseja Gravar o Orçamento com os Dados Informados?", "Gravar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Add":
                     return MessageBox.Show("Já existe um Produto / Serviço lançando igual, Deseja Continuar?", "Produto Igual Encontrado", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "HandWork":
+                    return MessageBox.Show("A Mão de Obra já foi Calculada para este Orçamento, Deseja Continuar?", "Mão de Obra Lançada", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Alter":
                     return MessageBox.Show("Deseja Alterar o Orçamento com os Dados Informados?", "Alterar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Approve":
@@ -573,15 +581,25 @@ namespace InoxERP.UI_Windows_Forms
         private void btnServico_Click(object sender, EventArgs e)
         {
             decimal value;
-            if (lblSubTotalValor.Text == "")
-                value = 0;
+            if (lblSubTotalValor.Text == "0")
+            { }
             else
-                value = subTotal * 2;
-            new frmServiceCalc(value).Show();
+            if(checkEqualsItems())
+            {
+                value = subTotal * 2; // 100% em cima das peças
 
-            //if(test > 0)
+                frmServiceCalc calc = new frmServiceCalc(value); //instancia o form
 
-            //new frmServicesRegisterSearch().Show();
+                calc.ShowDialog(); // exibe o form
+
+                if (calc.messageYesNo("Confirm") == DialogResult.Yes) //confirma mão de obra
+                {
+                    dgvItens.Rows.Add(1, "MÃO DE OBRA", calc.finalValue, calc.finalValue); // adiciona direto na DGV
+
+                    subTotal = subTotal + calc.finalValue;
+                    lblSubTotalValor.Text = Convert.ToString(subTotal); // atualiza o subTotal
+                }
+            }
         }
 
         // CALL VIEW CLIENTS
