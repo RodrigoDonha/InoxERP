@@ -257,6 +257,7 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Vie
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Budgets.BudgetPrintWithPrice.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Budgets.Form1.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Budgets.Form2.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Budgets.frmServiceCalc.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.frmReportUsers.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmSignIn.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmAccountsCheque.resources

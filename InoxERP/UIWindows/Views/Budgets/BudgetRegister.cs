@@ -16,6 +16,7 @@ namespace InoxERP.UI_Windows_Forms
 {
     public partial class frmBudgetsRegister : Form
     {
+        public decimal test = 0;
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS budget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
@@ -336,7 +337,7 @@ namespace InoxERP.UI_Windows_Forms
         }
 
         //INSERT ITEM ON dgvItens
-        private void btnAdicionar_Click(object sender, EventArgs e)
+        public void btnAdicionar_Click(object sender, EventArgs e)
         {
             if (!validatorAdd()) // verifica se os campo de adicionar estão preenchidos
             {
@@ -571,6 +572,15 @@ namespace InoxERP.UI_Windows_Forms
         // CALLS VIEW SERVICES
         private void btnServico_Click(object sender, EventArgs e)
         {
+            decimal value;
+            if (lblSubTotalValor.Text == "")
+                value = 0;
+            else
+                value = subTotal * 2;
+            new frmServiceCalc(value).Show();
+
+            //if(test > 0)
+
             //new frmServicesRegisterSearch().Show();
         }
 
