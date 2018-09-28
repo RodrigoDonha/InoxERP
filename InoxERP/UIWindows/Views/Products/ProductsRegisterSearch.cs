@@ -53,9 +53,9 @@ namespace UIWindows
                     var ok = obj.Search.FirstOrDefault(b => b.sID == productPersist.sID);
 
                     if (ok == null)
-                        MessageBox.Show("Erro ao Cadastrar o Serviço !!!");
+                        MessageBox.Show("Erro ao Cadastrar o Produto !!!");
                     else
-                        MessageBox.Show("Serviço Cadastrado com Sucesso !!!");
+                        MessageBox.Show("Produto Cadastrado com Sucesso !!!");
 
                     afterAction();
                 }
