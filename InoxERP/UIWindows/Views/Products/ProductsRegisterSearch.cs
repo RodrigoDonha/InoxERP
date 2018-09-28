@@ -21,7 +21,6 @@ namespace UIWindows
     public partial class frmProductsRegisterSearch : Form
     {
         static InoxErpContext ctx = new InoxErpContext();
-        Products product = new Products();
         ProductBusiness obj = new  ProductBusiness(ctx);
 
         public frmProductsRegisterSearch()
@@ -35,20 +34,30 @@ namespace UIWindows
                 MessageBox.Show("Por Favor preencha as informações Corretamente");
             else
             {
-                product.sID = Guid.NewGuid().ToString();
+                Products productPersist = new Products();
 
-                product.sDescription = txtPeca.Text;
-                product.dAmount = Convert.ToDouble(nudQuantidade.Text);
-                product.Type = UnityType();
-                product.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
-                product.dTotal = Convert.ToDecimal(txtValorTotal.Text);
-                product.sObservation = txtObservacao.Text;
+                productPersist.sID = Guid.NewGuid().ToString();
+
+                productPersist.sDescription = txtPeca.Text;
+                productPersist.dAmount = Convert.ToDouble(nudQuantidade.Text);
+                productPersist.Type = UnityType();
+                productPersist.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
+                productPersist.dTotal = Convert.ToDecimal(txtValorTotal.Text);
+                productPersist.sObservation = txtObservacao.Text;
 
                 if (messageYesNo("insert") == DialogResult.Yes)
                 {
-                    obj.Insert(product);
+                    obj.Insert(productPersist);
+
+
+                    var ok = obj.Search.FirstOrDefault(b => b.sID == productPersist.sID);
+
+                    if (ok == null)
+                        MessageBox.Show("Erro ao Cadastrar o Serviço !!!");
+                    else
+                        MessageBox.Show("Serviço Cadastrado com Sucesso !!!");
+
                     afterAction();
-                    MessageBox.Show("Salvo");
                 }
             }
         }

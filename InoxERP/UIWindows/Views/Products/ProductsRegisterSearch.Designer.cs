@@ -54,12 +54,6 @@
             this.grpConsultarProdutos = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.grdConsultaPecas = new System.Windows.Forms.DataGridView();
-            this.txtConsultaPeca = new System.Windows.Forms.TextBox();
-            this.lblConsultaPeca = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.tbproductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_productsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_productsTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,15 +63,21 @@
             this.sObservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProvidersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idItemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbproductsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.txtConsultaPeca = new System.Windows.Forms.TextBox();
+            this.lblConsultaPeca = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tb_productsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_productsTableAdapter();
             this.grpCadastroProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             this.tbcConsultaValores.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.grpConsultarProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbproductsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpCadastroProdutos
@@ -105,14 +105,14 @@
             this.grpCadastroProdutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpCadastroProdutos.Name = "grpCadastroProdutos";
             this.grpCadastroProdutos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpCadastroProdutos.Size = new System.Drawing.Size(507, 430);
+            this.grpCadastroProdutos.Size = new System.Drawing.Size(566, 430);
             this.grpCadastroProdutos.TabIndex = 0;
             this.grpCadastroProdutos.TabStop = false;
             this.grpCadastroProdutos.Text = "Cadastro de Produtos";
             // 
             // btnProcurarFornecedor
             // 
-            this.btnProcurarFornecedor.Location = new System.Drawing.Point(364, 151);
+            this.btnProcurarFornecedor.Location = new System.Drawing.Point(435, 151);
             this.btnProcurarFornecedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProcurarFornecedor.Name = "btnProcurarFornecedor";
             this.btnProcurarFornecedor.Size = new System.Drawing.Size(125, 30);
@@ -134,13 +134,13 @@
             this.txtFornecedor.Location = new System.Drawing.Point(112, 155);
             this.txtFornecedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(228, 23);
+            this.txtFornecedor.Size = new System.Drawing.Size(317, 23);
             this.txtFornecedor.TabIndex = 14;
             // 
             // radKG
             // 
             this.radKG.AutoSize = true;
-            this.radKG.Location = new System.Drawing.Point(443, 69);
+            this.radKG.Location = new System.Drawing.Point(514, 69);
             this.radKG.Name = "radKG";
             this.radKG.Size = new System.Drawing.Size(46, 21);
             this.radKG.TabIndex = 13;
@@ -151,7 +151,7 @@
             // radMT
             // 
             this.radMT.AutoSize = true;
-            this.radMT.Location = new System.Drawing.Point(355, 69);
+            this.radMT.Location = new System.Drawing.Point(426, 69);
             this.radMT.Name = "radMT";
             this.radMT.Size = new System.Drawing.Size(46, 21);
             this.radMT.TabIndex = 12;
@@ -162,7 +162,7 @@
             // radUN
             // 
             this.radUN.AutoSize = true;
-            this.radUN.Location = new System.Drawing.Point(262, 69);
+            this.radUN.Location = new System.Drawing.Point(333, 69);
             this.radUN.Name = "radUN";
             this.radUN.Size = new System.Drawing.Size(46, 21);
             this.radUN.TabIndex = 11;
@@ -174,13 +174,13 @@
             // 
             this.nudQuantidade.Location = new System.Drawing.Point(112, 69);
             this.nudQuantidade.Name = "nudQuantidade";
-            this.nudQuantidade.Size = new System.Drawing.Size(120, 23);
+            this.nudQuantidade.Size = new System.Drawing.Size(146, 23);
             this.nudQuantidade.TabIndex = 10;
             this.nudQuantidade.ValueChanged += new System.EventHandler(this.nudQuantidade_ValueChanged);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(372, 330);
+            this.btnExcluir.Location = new System.Drawing.Point(399, 330);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(73, 30);
@@ -199,7 +199,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(221, 330);
+            this.btnAlterar.Location = new System.Drawing.Point(245, 330);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(73, 30);
@@ -213,7 +213,7 @@
             this.txtObservacao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(480, 82);
+            this.txtObservacao.Size = new System.Drawing.Size(551, 82);
             this.txtObservacao.TabIndex = 8;
             // 
             // btnGravar
@@ -229,7 +229,7 @@
             // 
             // txtValorTotal
             // 
-            this.txtValorTotal.Location = new System.Drawing.Point(364, 109);
+            this.txtValorTotal.Location = new System.Drawing.Point(435, 109);
             this.txtValorTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtValorTotal.Name = "txtValorTotal";
             this.txtValorTotal.Size = new System.Drawing.Size(125, 23);
@@ -240,7 +240,7 @@
             this.txtValorUnitario.Location = new System.Drawing.Point(112, 109);
             this.txtValorUnitario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtValorUnitario.Name = "txtValorUnitario";
-            this.txtValorUnitario.Size = new System.Drawing.Size(125, 23);
+            this.txtValorUnitario.Size = new System.Drawing.Size(146, 23);
             this.txtValorUnitario.TabIndex = 6;
             this.txtValorUnitario.TextChanged += new System.EventHandler(this.txtValorUnitario_TextChanged);
             // 
@@ -249,13 +249,13 @@
             this.txtPeca.Location = new System.Drawing.Point(112, 30);
             this.txtPeca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPeca.Name = "txtPeca";
-            this.txtPeca.Size = new System.Drawing.Size(377, 23);
+            this.txtPeca.Size = new System.Drawing.Size(448, 23);
             this.txtPeca.TabIndex = 4;
             // 
             // lblValorTotal
             // 
             this.lblValorTotal.AutoSize = true;
-            this.lblValorTotal.Location = new System.Drawing.Point(259, 112);
+            this.lblValorTotal.Location = new System.Drawing.Point(330, 112);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(81, 17);
             this.lblValorTotal.TabIndex = 3;
@@ -296,7 +296,7 @@
             this.tbcConsultaValores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbcConsultaValores.Name = "tbcConsultaValores";
             this.tbcConsultaValores.SelectedIndex = 0;
-            this.tbcConsultaValores.Size = new System.Drawing.Size(512, 466);
+            this.tbcConsultaValores.Size = new System.Drawing.Size(585, 466);
             this.tbcConsultaValores.TabIndex = 2;
             // 
             // tabPage2
@@ -306,7 +306,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(504, 437);
+            this.tabPage2.Size = new System.Drawing.Size(577, 437);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -317,18 +317,18 @@
             this.grpConsultarProdutos.Controls.Add(this.grdConsultaPecas);
             this.grpConsultarProdutos.Controls.Add(this.txtConsultaPeca);
             this.grpConsultarProdutos.Controls.Add(this.lblConsultaPeca);
-            this.grpConsultarProdutos.Location = new System.Drawing.Point(5, 6);
+            this.grpConsultarProdutos.Location = new System.Drawing.Point(5, 5);
             this.grpConsultarProdutos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpConsultarProdutos.Name = "grpConsultarProdutos";
             this.grpConsultarProdutos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpConsultarProdutos.Size = new System.Drawing.Size(491, 435);
+            this.grpConsultarProdutos.Size = new System.Drawing.Size(576, 437);
             this.grpConsultarProdutos.TabIndex = 1;
             this.grpConsultarProdutos.TabStop = false;
             this.grpConsultarProdutos.Text = "Consultar Produtos";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(407, 25);
+            this.btnBuscar.Location = new System.Drawing.Point(482, 26);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 32);
             this.btnBuscar.TabIndex = 8;
@@ -357,51 +357,8 @@
             this.grdConsultaPecas.Name = "grdConsultaPecas";
             this.grdConsultaPecas.ReadOnly = true;
             this.grdConsultaPecas.RowTemplate.Height = 24;
-            this.grdConsultaPecas.Size = new System.Drawing.Size(473, 354);
+            this.grdConsultaPecas.Size = new System.Drawing.Size(548, 354);
             this.grdConsultaPecas.TabIndex = 7;
-            // 
-            // txtConsultaPeca
-            // 
-            this.txtConsultaPeca.Location = new System.Drawing.Point(56, 30);
-            this.txtConsultaPeca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtConsultaPeca.Name = "txtConsultaPeca";
-            this.txtConsultaPeca.Size = new System.Drawing.Size(345, 23);
-            this.txtConsultaPeca.TabIndex = 6;
-            // 
-            // lblConsultaPeca
-            // 
-            this.lblConsultaPeca.AutoSize = true;
-            this.lblConsultaPeca.Location = new System.Drawing.Point(5, 33);
-            this.lblConsultaPeca.Name = "lblConsultaPeca";
-            this.lblConsultaPeca.Size = new System.Drawing.Size(44, 17);
-            this.lblConsultaPeca.TabIndex = 5;
-            this.lblConsultaPeca.Text = "Peça:";
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.grpCadastroProdutos);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(504, 437);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Cadastro";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbproductsBindingSource
-            // 
-            this.tbproductsBindingSource.DataMember = "tb_products";
-            this.tbproductsBindingSource.DataSource = this.fullDataSet;
-            // 
-            // tb_productsTableAdapter
-            // 
-            this.tb_productsTableAdapter.ClearBeforeFill = true;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -413,7 +370,7 @@
             // 
             // dAmountDataGridViewTextBoxColumn
             // 
-            this.dAmountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dAmountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dAmountDataGridViewTextBoxColumn.DataPropertyName = "dAmount";
             this.dAmountDataGridViewTextBoxColumn.HeaderText = "Quantidade";
             this.dAmountDataGridViewTextBoxColumn.Name = "dAmountDataGridViewTextBoxColumn";
@@ -422,16 +379,15 @@
             // 
             // sDescriptionDataGridViewTextBoxColumn
             // 
-            this.sDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sDescriptionDataGridViewTextBoxColumn.DataPropertyName = "sDescription";
             this.sDescriptionDataGridViewTextBoxColumn.HeaderText = "Descrição";
             this.sDescriptionDataGridViewTextBoxColumn.Name = "sDescriptionDataGridViewTextBoxColumn";
             this.sDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sDescriptionDataGridViewTextBoxColumn.Width = 96;
             // 
             // typeDataGridViewTextBoxColumn
             // 
-            this.typeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.typeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
             this.typeDataGridViewTextBoxColumn.HeaderText = "Medida";
             this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
@@ -440,12 +396,12 @@
             // 
             // dPriceDataGridViewTextBoxColumn
             // 
-            this.dPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dPriceDataGridViewTextBoxColumn.DataPropertyName = "dPrice";
-            this.dPriceDataGridViewTextBoxColumn.HeaderText = "Valor Unitário";
+            this.dPriceDataGridViewTextBoxColumn.HeaderText = "Valor UN";
             this.dPriceDataGridViewTextBoxColumn.Name = "dPriceDataGridViewTextBoxColumn";
             this.dPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dPriceDataGridViewTextBoxColumn.Width = 119;
+            this.dPriceDataGridViewTextBoxColumn.Width = 90;
             // 
             // dTotalDataGridViewTextBoxColumn
             // 
@@ -463,6 +419,7 @@
             this.sObservationDataGridViewTextBoxColumn.HeaderText = "Observações";
             this.sObservationDataGridViewTextBoxColumn.Name = "sObservationDataGridViewTextBoxColumn";
             this.sObservationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sObservationDataGridViewTextBoxColumn.Visible = false;
             // 
             // idProvidersDataGridViewTextBoxColumn
             // 
@@ -480,11 +437,54 @@
             this.idItemsDataGridViewTextBoxColumn.ReadOnly = true;
             this.idItemsDataGridViewTextBoxColumn.Visible = false;
             // 
+            // tbproductsBindingSource
+            // 
+            this.tbproductsBindingSource.DataMember = "tb_products";
+            this.tbproductsBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txtConsultaPeca
+            // 
+            this.txtConsultaPeca.Location = new System.Drawing.Point(71, 31);
+            this.txtConsultaPeca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsultaPeca.Name = "txtConsultaPeca";
+            this.txtConsultaPeca.Size = new System.Drawing.Size(405, 23);
+            this.txtConsultaPeca.TabIndex = 6;
+            // 
+            // lblConsultaPeca
+            // 
+            this.lblConsultaPeca.AutoSize = true;
+            this.lblConsultaPeca.Location = new System.Drawing.Point(6, 33);
+            this.lblConsultaPeca.Name = "lblConsultaPeca";
+            this.lblConsultaPeca.Size = new System.Drawing.Size(44, 17);
+            this.lblConsultaPeca.TabIndex = 5;
+            this.lblConsultaPeca.Text = "Peça:";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.grpCadastroProdutos);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(577, 437);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Cadastro";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tb_productsTableAdapter
+            // 
+            this.tb_productsTableAdapter.ClearBeforeFill = true;
+            // 
             // frmProductsRegisterSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 484);
+            this.ClientSize = new System.Drawing.Size(602, 484);
             this.Controls.Add(this.tbcConsultaValores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -500,9 +500,9 @@
             this.grpConsultarProdutos.ResumeLayout(false);
             this.grpConsultarProdutos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbproductsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

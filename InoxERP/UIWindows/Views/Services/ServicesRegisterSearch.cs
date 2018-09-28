@@ -17,7 +17,6 @@ namespace UIWindows
     {
         static InoxErpContext ctx = new InoxErpContext();
         ServicesBusiness obj = new ServicesBusiness(ctx);
-        Services services = new Services();
 
         public frmServicesRegisterSearch()
         {
@@ -31,18 +30,27 @@ namespace UIWindows
                 MessageBox.Show("Por Favor preencha as informações Corretamente");
             else
             {
-                services.sID = Guid.NewGuid().ToString();
-                
-                services.sDescription = txtServico.Text;
-                services.sTime = Convert.ToDouble(txtHoras.Text);
-                services.dTotal = Convert.ToDecimal(txtValorTotal.Text);
-                services.sObservation = txtObservacao.Text;
+                Services servicesPersist = new Services();
+
+                servicesPersist.sID = Guid.NewGuid().ToString();
+
+                servicesPersist.sDescription = txtServico.Text;
+                servicesPersist.sTime = Convert.ToDouble(txtHoras.Text);
+                servicesPersist.dTotal = Convert.ToDecimal(txtValorTotal.Text);
+                servicesPersist.sObservation = txtObservacao.Text;
 
                 if (messageYesNo("insert") == DialogResult.Yes)
                  {
-                     obj.Insert(services);
-                     afterAction();
-                     MessageBox.Show("Salvo");
+                     obj.Insert(servicesPersist);
+
+                     var ok = obj.Search.FirstOrDefault(b => b.sID == servicesPersist.sID);
+
+                     if (ok == null)
+                         MessageBox.Show("Erro ao Cadastrar o Serviço !!!");
+                     else
+                         MessageBox.Show("Serviço Cadastrado com Sucesso !!!");
+
+                    afterAction();
                  }
             }
         }
@@ -55,18 +63,28 @@ namespace UIWindows
                 MessageBox.Show("Por Favor preencha as informações Corretamente");
             else
             {
-                services = obj.ReturnByID(lblID.Text);
+                Services servicesAlter = new Services();
 
-                services.sDescription = txtServico.Text;
-                services.sTime = Convert.ToDouble(txtHoras.Text);
-                services.dTotal = Convert.ToDecimal(txtValorTotal.Text);
-                services.sObservation = txtObservacao.Text;
+                servicesAlter = obj.ReturnByID(lblID.Text);
+
+                servicesAlter.sDescription = txtServico.Text;
+                servicesAlter.sTime = Convert.ToDouble(txtHoras.Text);
+                servicesAlter.dTotal = Convert.ToDecimal(txtValorTotal.Text);
+                servicesAlter.sObservation = txtObservacao.Text;
 
                 if (messageYesNo("update") == DialogResult.Yes)
                 {
-                    obj.Update(services);
+                    obj.Update(servicesAlter);
+
+                    var ok = obj.Search.FirstOrDefault(b => b.sID == servicesAlter.sID);
+
+                    if (ok == null)
+                        MessageBox.Show("Erro ao Atualizar o Serviço !!!");
+                    else
+                        MessageBox.Show("Serviço Atualizado com Sucesso !!!");
+
                     afterAction();
-                    MessageBox.Show("Atualizado");
+
                     tbcConsultaValores.SelectedTab = Consulta;
                 }
             }
@@ -101,18 +119,21 @@ namespace UIWindows
         {
             if (txtServico.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe o Nome para o Serviço");
                 txtServico.Focus();
                 return false;
             }
 
             if (txtHoras.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe a Quantidade de Tempo Gasto para Fazer o Serviço");
                 txtHoras.Focus();
                 return false;
             }
 
             if (txtValorTotal.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe o Valor Cobrado para Fazer o Serviço");
                 txtValorTotal.Focus();
                 return false;
             }
@@ -137,6 +158,33 @@ namespace UIWindows
         }
 
 
+        //VALIDATION OF NUMBERS
+        public void valueTotal()
+        {
+            decimal d;
+
+            if (!decimal.TryParse(txtHoras.Text, out d))
+            {
+                if (txtHoras.Text == "")
+                { }
+                else
+                {
+                    txtHoras.Focus();
+                    txtHoras.Text = "";
+                }
+            }
+            if (!decimal.TryParse(txtValorTotal.Text, out d))
+            {
+                if (txtValorTotal.Text == "")
+                { }
+                else
+                {
+                    txtValorTotal.Focus();
+                    txtValorTotal.Text = "";
+                }
+            }
+        }
+
         //CLEAN
         public void cleanCamps()
         {
@@ -159,7 +207,7 @@ namespace UIWindows
         //FILL INFORMATION CAMPS
         private void dgvConsultaPecas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int compare = dgvConsultaPecas.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int compare = dgvConsultaServicos.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (compare == 0)
             { }
             else
@@ -167,11 +215,11 @@ namespace UIWindows
                 tbcConsultaValores.SelectedTab = Cadastro; // muda tab
                 txtServico.Focus();
                 cleanCamps();
-                lblID.Text = dgvConsultaPecas[0, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtServico.Text = dgvConsultaPecas[1, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtHoras.Text = dgvConsultaPecas[2, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtValorTotal.Text = dgvConsultaPecas[3, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtObservacao.Text = dgvConsultaPecas[4, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                lblID.Text = dgvConsultaServicos[0, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
+                txtServico.Text = dgvConsultaServicos[1, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
+                txtHoras.Text = dgvConsultaServicos[2, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
+                txtValorTotal.Text = dgvConsultaServicos[3, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
+                txtObservacao.Text = dgvConsultaServicos[4, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
             }
         }
 
@@ -180,6 +228,46 @@ namespace UIWindows
         {
             // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_services'. Você pode movê-la ou removê-la conforme necessário.
             fillDataSet();
+        }
+
+
+        //STATES CHANGED
+
+        //WHEN STATE OF TXTHORAS IS CHANGED
+        private void txtHoras_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHoras.Text != "")
+                valueTotal();
+        }
+
+        //WHEN STATE OF TXTVALORTOTAL IS CHANGED
+        private void txtValorTotal_TextChanged(object sender, EventArgs e)
+        {
+            if (txtValorTotal.Text != "")
+                valueTotal();
+        }
+
+        //SEARCH
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            searchByName();
+        }
+
+        //SEARCH BY NAME
+        public void searchByName()
+        {
+            var search = from p in ctx.Services where p.sDescription.StartsWith(txtConsultaServico.Text) select p;
+
+            if (search.ToList().Count.Equals(0))
+            {
+                txtConsultaServico.Clear();
+                MessageBox.Show("Serviço Não Encontrado");
+            }
+            else
+            {
+                txtConsultaServico.Clear();
+                dgvConsultaServicos.DataSource = search.ToList();
+            }
         }
     }
 }
