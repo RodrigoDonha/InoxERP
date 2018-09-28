@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 
 namespace UIWindows
 {
@@ -30,14 +31,87 @@ namespace UIWindows
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
+            if (!validationCamps())
+                MessageBox.Show("Por Favor preencha as informações Corretamente");
+            else
+            {
+                product.sID = Guid.NewGuid().ToString();
 
+                product.sDescription = txtPeca.Text;
+                product.dAmount = Convert.ToDouble(nudQuantidade.Text);
+                product.Type = UnityType();
+                product.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
+                product.dTotal = Convert.ToDecimal(txtValorTotal.Text);
+                product.sObservation = txtObservacao.Text;
+
+                if (messageYesNo("insert") == DialogResult.Yes)
+                {
+                    obj.Insert(product);
+                    afterAction();
+                    MessageBox.Show("Salvo");
+                }
+            }
+        }
+
+        public UnityType UnityType()
+        {
+            if (radUN.Checked)
+                return Entities.Enum.UnityType.UN;
+            if (radMT.Checked)
+                return Entities.Enum.UnityType.MT;
+            if (radKG.Checked)
+                return Entities.Enum.UnityType.KG;
+            return 0;
+        }
+
+        public DialogResult messageYesNo(string type)
+        {
+            switch (type)
+            {
+                case "insert":
+                    return MessageBox.Show("Confirma a inclusão ?", "Salvar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "update":
+                    return MessageBox.Show("Confirma a atualização ?", "Atualizar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "delete":
+                    return MessageBox.Show("Confirma a Exclusão ?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            }
+
+            return DialogResult.No;
+        }
+
+        public void afterAction()
+        {
+            fillDataSet();
+            cleanCamps();
+        }
+
+        //CLEAN
+        public void cleanCamps()
+        {
+            txtPeca.Clear();
+            nudQuantidade.Value = 0;
+            radUN.Checked = false;
+            radMT.Checked = false;
+            radKG.Checked = false;
+            txtValorUnitario.Clear();
+            txtValorTotal.Clear();
+            txtFornecedor.Clear();
+            txtObservacao.Clear();
+            txtConsultaPeca.Clear(); // limpa até o campo de consulta.
+        }
+
+        //overrid FILL DATASET
+        public void fillDataSet()
+        {
+            // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_products'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_productsTableAdapter.Fill(this.fullDataSet.tb_products);
         }
 
         public bool validationCamps()
         {
             if (txtPeca.Text.Length.Equals(0))
             {
-                MessageBox.Show("Informe um NOME para o Produto / Peça");
+                MessageBox.Show("Informe um Nome para o Produto / Peça");
                 txtPeca.Focus();
                 return false;
             }
@@ -49,7 +123,7 @@ namespace UIWindows
                 return false;
             }
 
-            if (!radUN.Checked | !radKG.Checked | !radMT.Checked)
+            if (!radUN.Checked & !radKG.Checked & !radMT.Checked)
             {
                 MessageBox.Show("Informe uma unidade de medida para o Produto / Peça");
                 radMT.Focus();
@@ -92,9 +166,54 @@ namespace UIWindows
                     nudQuantidade.Focus();
                     nudQuantidade.Text = "0";
                 }
-
                 // implementar aqui a validação do campo valor unitário e demais.
             }
+            if (!decimal.TryParse(txtValorUnitario.Text, out d)) // validator of numbers
+            {
+                if (txtValorUnitario.Text == "")
+                { }
+                else
+                {
+                    txtValorUnitario.Focus();
+                    txtValorUnitario.Text = "";
+                }
+            }
+            else
+            if (nudQuantidade.Text.Length.Equals(0))
+            {
+                nudQuantidade.Text = "0";
+            }
+            else
+            if (txtValorUnitario.Text.Length.Equals(0))
+            {
+                txtValorUnitario.Text = "";
+                txtValorTotal.Text = "0";
+
+            }
+            else
+            {
+                //decimal total = stringReplacePoint(Convert.ToDecimal(txtQuantidade.Text.Replace(",","."))) * stringReplacePoint(Convert.ToDecimal(txtValorUnitario.Text.Replace(",",".")));
+                decimal total = Convert.ToDecimal(nudQuantidade.Text.Replace(".", ",")) * Convert.ToDecimal(txtValorUnitario.Text.Replace(".", ","));
+                txtValorTotal.Text = Convert.ToString(total);
+            }
+
+        }
+
+        private void nudQuantidade_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudQuantidade.Text != "")
+                valueTotal();
+        }
+
+        private void txtValorUnitario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtValorUnitario.Text != "")
+                valueTotal();
+        }
+
+        private void frmProductsRegisterSearch_Load(object sender, EventArgs e)
+        {
+            fillDataSet();
         }
     }
 }
