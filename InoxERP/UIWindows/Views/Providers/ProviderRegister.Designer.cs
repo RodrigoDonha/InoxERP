@@ -38,13 +38,12 @@
             this.lblContatosCelular1 = new System.Windows.Forms.Label();
             this.txtContatosEmail = new System.Windows.Forms.TextBox();
             this.txtContatosCelular2 = new System.Windows.Forms.TextBox();
-            this.txtContatosResidencial = new System.Windows.Forms.TextBox();
+            this.txtContatosComercial = new System.Windows.Forms.TextBox();
             this.lblContatosEmail = new System.Windows.Forms.Label();
             this.lblContatosResidencial = new System.Windows.Forms.Label();
             this.lblContatosCelular2 = new System.Windows.Forms.Label();
             this.grpEndereco = new System.Windows.Forms.GroupBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtBairro = new System.Windows.Forms.TextBox();
@@ -75,6 +74,7 @@
             this.lblBanco = new System.Windows.Forms.Label();
             this.txtAgencia = new System.Windows.Forms.TextBox();
             this.lblAgencia = new System.Windows.Forms.Label();
+            this.cmbEstate = new System.Windows.Forms.ComboBox();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -121,6 +121,7 @@
             this.btnGravar.TabIndex = 39;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = false;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // grpObservacoes
             // 
@@ -150,7 +151,7 @@
             this.grpContatos.Controls.Add(this.lblContatosCelular1);
             this.grpContatos.Controls.Add(this.txtContatosEmail);
             this.grpContatos.Controls.Add(this.txtContatosCelular2);
-            this.grpContatos.Controls.Add(this.txtContatosResidencial);
+            this.grpContatos.Controls.Add(this.txtContatosComercial);
             this.grpContatos.Controls.Add(this.lblContatosEmail);
             this.grpContatos.Controls.Add(this.lblContatosResidencial);
             this.grpContatos.Controls.Add(this.lblContatosCelular2);
@@ -197,13 +198,13 @@
             this.txtContatosCelular2.Size = new System.Drawing.Size(257, 23);
             this.txtContatosCelular2.TabIndex = 20;
             // 
-            // txtContatosResidencial
+            // txtContatosComercial
             // 
-            this.txtContatosResidencial.Location = new System.Drawing.Point(156, 26);
-            this.txtContatosResidencial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtContatosResidencial.Name = "txtContatosResidencial";
-            this.txtContatosResidencial.Size = new System.Drawing.Size(252, 23);
-            this.txtContatosResidencial.TabIndex = 19;
+            this.txtContatosComercial.Location = new System.Drawing.Point(156, 26);
+            this.txtContatosComercial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContatosComercial.Name = "txtContatosComercial";
+            this.txtContatosComercial.Size = new System.Drawing.Size(252, 23);
+            this.txtContatosComercial.TabIndex = 19;
             // 
             // lblContatosEmail
             // 
@@ -234,8 +235,8 @@
             // 
             // grpEndereco
             // 
+            this.grpEndereco.Controls.Add(this.cmbEstate);
             this.grpEndereco.Controls.Add(this.txtCEP);
-            this.grpEndereco.Controls.Add(this.txtEstado);
             this.grpEndereco.Controls.Add(this.txtCidade);
             this.grpEndereco.Controls.Add(this.txtComplemento);
             this.grpEndereco.Controls.Add(this.txtBairro);
@@ -265,14 +266,6 @@
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(185, 23);
             this.txtCEP.TabIndex = 22;
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(740, 98);
-            this.txtEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(69, 23);
-            this.txtEstado.TabIndex = 21;
             // 
             // txtCidade
             // 
@@ -554,6 +547,42 @@
             this.lblAgencia.TabIndex = 28;
             this.lblAgencia.Text = "Agência:";
             // 
+            // cmbEstate
+            // 
+            this.cmbEstate.FormattingEnabled = true;
+            this.cmbEstate.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.cmbEstate.Location = new System.Drawing.Point(733, 98);
+            this.cmbEstate.Name = "cmbEstate";
+            this.cmbEstate.Size = new System.Drawing.Size(74, 25);
+            this.cmbEstate.TabIndex = 23;
+            // 
             // frmProviderRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -598,13 +627,12 @@
         private System.Windows.Forms.Label lblContatosCelular1;
         private System.Windows.Forms.TextBox txtContatosEmail;
         private System.Windows.Forms.TextBox txtContatosCelular2;
-        private System.Windows.Forms.TextBox txtContatosResidencial;
+        private System.Windows.Forms.TextBox txtContatosComercial;
         private System.Windows.Forms.Label lblContatosEmail;
         private System.Windows.Forms.Label lblContatosResidencial;
         private System.Windows.Forms.Label lblContatosCelular2;
         private System.Windows.Forms.GroupBox grpEndereco;
         private System.Windows.Forms.TextBox txtCEP;
-        private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.TextBox txtCidade;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.TextBox txtBairro;
@@ -635,5 +663,6 @@
         private System.Windows.Forms.Label lblBanco;
         private System.Windows.Forms.TextBox txtAgencia;
         private System.Windows.Forms.Label lblAgencia;
+        private System.Windows.Forms.ComboBox cmbEstate;
     }
 }

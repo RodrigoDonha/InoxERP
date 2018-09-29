@@ -11,6 +11,4 @@ namespace UIWindows.Business.Abstract
     {
         Budgets_OS returnByName(string name);
     }
-
-    
 }

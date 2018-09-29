@@ -283,3 +283,17 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csproj.CopyComplete
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.exe
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.pdb
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.SqlServer.SqlClrProvider.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.SqlServer.Dmf.Common.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.SqlServer.Diagnostics.STrace.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.SqlServer.SqlTDiagM.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.SqlServer.ConnectionInfo.resources.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.SqlServer.Management.Sdk.Sfc.resources.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.SqlServer.Smo.resources.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.SqlServer.SmoExtended.resources.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.SqlServer.SqlEnum.resources.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.SqlServer.Dmf.Common.resources.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.SqlServer.ServiceBrokerEnum.resources.dll
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.SqlServer.RegSvrEnum.resources.dll

@@ -95,7 +95,7 @@ namespace UIWindows
         private void btnExcluir_Click_1(object sender, EventArgs e)
         {
             if (lblID.Text.Equals(""))
-                MessageBox.Show("Selecione um Usuario Primeiro");
+                MessageBox.Show("Selecione um Serviço Primeiro");
             else if (messageYesNo("delete") == DialogResult.Yes)
             {
                 obj.Delete(lblID.Text);

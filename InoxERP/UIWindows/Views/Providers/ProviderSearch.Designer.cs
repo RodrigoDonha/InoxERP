@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnSelescionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -40,9 +41,35 @@
             this.radCPF_CNPJ = new System.Windows.Forms.RadioButton();
             this.radNome = new System.Windows.Forms.RadioButton();
             this.lblTipo = new System.Windows.Forms.Label();
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.tbprovidersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_providersTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_providersTableAdapter();
+            this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCpfCnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDistrictDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sComplementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCEPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPhoneComercialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPhoneCelularOneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPhoneCelularTwoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sBankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sAgencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sAccountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sFavoredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sCpfCnpjFavoredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dMinimumPurchaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sObservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpFornecedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdFornecedores)).BeginInit();
             this.grpPesquisa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbprovidersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -105,11 +132,39 @@
             // 
             // grdFornecedores
             // 
+            this.grdFornecedores.AllowUserToAddRows = false;
+            this.grdFornecedores.AllowUserToDeleteRows = false;
+            this.grdFornecedores.AutoGenerateColumns = false;
             this.grdFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sIDDataGridViewTextBoxColumn,
+            this.sNameDataGridViewTextBoxColumn,
+            this.sCpfCnpjDataGridViewTextBoxColumn,
+            this.sAdressDataGridViewTextBoxColumn,
+            this.iNumberDataGridViewTextBoxColumn,
+            this.sDistrictDataGridViewTextBoxColumn,
+            this.sComplementDataGridViewTextBoxColumn,
+            this.sCityDataGridViewTextBoxColumn,
+            this.estateDataGridViewTextBoxColumn,
+            this.sCEPDataGridViewTextBoxColumn,
+            this.sPhoneComercialDataGridViewTextBoxColumn,
+            this.sPhoneCelularOneDataGridViewTextBoxColumn,
+            this.sPhoneCelularTwoDataGridViewTextBoxColumn,
+            this.sEmailDataGridViewTextBoxColumn,
+            this.sBankDataGridViewTextBoxColumn,
+            this.sAgencyDataGridViewTextBoxColumn,
+            this.sAccountDataGridViewTextBoxColumn,
+            this.sFavoredDataGridViewTextBoxColumn,
+            this.sCpfCnpjFavoredDataGridViewTextBoxColumn,
+            this.dMinimumPurchaseDataGridViewTextBoxColumn,
+            this.sObservationDataGridViewTextBoxColumn});
+            this.grdFornecedores.DataSource = this.tbprovidersBindingSource;
             this.grdFornecedores.Location = new System.Drawing.Point(11, 21);
             this.grdFornecedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grdFornecedores.Name = "grdFornecedores";
+            this.grdFornecedores.ReadOnly = true;
             this.grdFornecedores.RowTemplate.Height = 24;
+            this.grdFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdFornecedores.Size = new System.Drawing.Size(755, 257);
             this.grdFornecedores.TabIndex = 0;
             // 
@@ -181,6 +236,191 @@
             this.lblTipo.TabIndex = 0;
             this.lblTipo.Text = "Tipo:";
             // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbprovidersBindingSource
+            // 
+            this.tbprovidersBindingSource.DataMember = "tb_providers";
+            this.tbprovidersBindingSource.DataSource = this.fullDataSet;
+            // 
+            // tb_providersTableAdapter
+            // 
+            this.tb_providersTableAdapter.ClearBeforeFill = true;
+            // 
+            // sIDDataGridViewTextBoxColumn
+            // 
+            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
+            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
+            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
+            this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sNameDataGridViewTextBoxColumn
+            // 
+            this.sNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sNameDataGridViewTextBoxColumn.DataPropertyName = "sName";
+            this.sNameDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
+            this.sNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sCpfCnpjDataGridViewTextBoxColumn
+            // 
+            this.sCpfCnpjDataGridViewTextBoxColumn.DataPropertyName = "sCpfCnpj";
+            this.sCpfCnpjDataGridViewTextBoxColumn.HeaderText = "CPF / CNPJ";
+            this.sCpfCnpjDataGridViewTextBoxColumn.Name = "sCpfCnpjDataGridViewTextBoxColumn";
+            this.sCpfCnpjDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sCpfCnpjDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sAdressDataGridViewTextBoxColumn
+            // 
+            this.sAdressDataGridViewTextBoxColumn.DataPropertyName = "sAdress";
+            this.sAdressDataGridViewTextBoxColumn.HeaderText = "Endereço";
+            this.sAdressDataGridViewTextBoxColumn.Name = "sAdressDataGridViewTextBoxColumn";
+            this.sAdressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sAdressDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iNumberDataGridViewTextBoxColumn
+            // 
+            this.iNumberDataGridViewTextBoxColumn.DataPropertyName = "iNumber";
+            this.iNumberDataGridViewTextBoxColumn.HeaderText = "Nº";
+            this.iNumberDataGridViewTextBoxColumn.Name = "iNumberDataGridViewTextBoxColumn";
+            this.iNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iNumberDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sDistrictDataGridViewTextBoxColumn
+            // 
+            this.sDistrictDataGridViewTextBoxColumn.DataPropertyName = "sDistrict";
+            this.sDistrictDataGridViewTextBoxColumn.HeaderText = "Bairro";
+            this.sDistrictDataGridViewTextBoxColumn.Name = "sDistrictDataGridViewTextBoxColumn";
+            this.sDistrictDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sDistrictDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sComplementDataGridViewTextBoxColumn
+            // 
+            this.sComplementDataGridViewTextBoxColumn.DataPropertyName = "sComplement";
+            this.sComplementDataGridViewTextBoxColumn.HeaderText = "Complemento";
+            this.sComplementDataGridViewTextBoxColumn.Name = "sComplementDataGridViewTextBoxColumn";
+            this.sComplementDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sComplementDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sCityDataGridViewTextBoxColumn
+            // 
+            this.sCityDataGridViewTextBoxColumn.DataPropertyName = "sCity";
+            this.sCityDataGridViewTextBoxColumn.HeaderText = "Cidade";
+            this.sCityDataGridViewTextBoxColumn.Name = "sCityDataGridViewTextBoxColumn";
+            this.sCityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sCityDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estateDataGridViewTextBoxColumn
+            // 
+            this.estateDataGridViewTextBoxColumn.DataPropertyName = "Estate";
+            this.estateDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estateDataGridViewTextBoxColumn.Name = "estateDataGridViewTextBoxColumn";
+            this.estateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sCEPDataGridViewTextBoxColumn
+            // 
+            this.sCEPDataGridViewTextBoxColumn.DataPropertyName = "sCEP";
+            this.sCEPDataGridViewTextBoxColumn.HeaderText = "CEP";
+            this.sCEPDataGridViewTextBoxColumn.Name = "sCEPDataGridViewTextBoxColumn";
+            this.sCEPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sCEPDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sPhoneComercialDataGridViewTextBoxColumn
+            // 
+            this.sPhoneComercialDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sPhoneComercialDataGridViewTextBoxColumn.DataPropertyName = "sPhoneComercial";
+            this.sPhoneComercialDataGridViewTextBoxColumn.HeaderText = "Tel Com.";
+            this.sPhoneComercialDataGridViewTextBoxColumn.Name = "sPhoneComercialDataGridViewTextBoxColumn";
+            this.sPhoneComercialDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sPhoneComercialDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // sPhoneCelularOneDataGridViewTextBoxColumn
+            // 
+            this.sPhoneCelularOneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sPhoneCelularOneDataGridViewTextBoxColumn.DataPropertyName = "sPhoneCelularOne";
+            this.sPhoneCelularOneDataGridViewTextBoxColumn.HeaderText = "Celular 1";
+            this.sPhoneCelularOneDataGridViewTextBoxColumn.Name = "sPhoneCelularOneDataGridViewTextBoxColumn";
+            this.sPhoneCelularOneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sPhoneCelularOneDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // sPhoneCelularTwoDataGridViewTextBoxColumn
+            // 
+            this.sPhoneCelularTwoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sPhoneCelularTwoDataGridViewTextBoxColumn.DataPropertyName = "sPhoneCelularTwo";
+            this.sPhoneCelularTwoDataGridViewTextBoxColumn.HeaderText = "Celular 2";
+            this.sPhoneCelularTwoDataGridViewTextBoxColumn.Name = "sPhoneCelularTwoDataGridViewTextBoxColumn";
+            this.sPhoneCelularTwoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sPhoneCelularTwoDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // sEmailDataGridViewTextBoxColumn
+            // 
+            this.sEmailDataGridViewTextBoxColumn.DataPropertyName = "sEmail";
+            this.sEmailDataGridViewTextBoxColumn.HeaderText = "E-mail";
+            this.sEmailDataGridViewTextBoxColumn.Name = "sEmailDataGridViewTextBoxColumn";
+            this.sEmailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sEmailDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sBankDataGridViewTextBoxColumn
+            // 
+            this.sBankDataGridViewTextBoxColumn.DataPropertyName = "sBank";
+            this.sBankDataGridViewTextBoxColumn.HeaderText = "Banco";
+            this.sBankDataGridViewTextBoxColumn.Name = "sBankDataGridViewTextBoxColumn";
+            this.sBankDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sBankDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sAgencyDataGridViewTextBoxColumn
+            // 
+            this.sAgencyDataGridViewTextBoxColumn.DataPropertyName = "sAgency";
+            this.sAgencyDataGridViewTextBoxColumn.HeaderText = "Agência";
+            this.sAgencyDataGridViewTextBoxColumn.Name = "sAgencyDataGridViewTextBoxColumn";
+            this.sAgencyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sAgencyDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sAccountDataGridViewTextBoxColumn
+            // 
+            this.sAccountDataGridViewTextBoxColumn.DataPropertyName = "sAccount";
+            this.sAccountDataGridViewTextBoxColumn.HeaderText = "Conta";
+            this.sAccountDataGridViewTextBoxColumn.Name = "sAccountDataGridViewTextBoxColumn";
+            this.sAccountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sAccountDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sFavoredDataGridViewTextBoxColumn
+            // 
+            this.sFavoredDataGridViewTextBoxColumn.DataPropertyName = "sFavored";
+            this.sFavoredDataGridViewTextBoxColumn.HeaderText = "Favorecido";
+            this.sFavoredDataGridViewTextBoxColumn.Name = "sFavoredDataGridViewTextBoxColumn";
+            this.sFavoredDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sFavoredDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sCpfCnpjFavoredDataGridViewTextBoxColumn
+            // 
+            this.sCpfCnpjFavoredDataGridViewTextBoxColumn.DataPropertyName = "sCpfCnpjFavored";
+            this.sCpfCnpjFavoredDataGridViewTextBoxColumn.HeaderText = "CPF / CNPJ Favorecido";
+            this.sCpfCnpjFavoredDataGridViewTextBoxColumn.Name = "sCpfCnpjFavoredDataGridViewTextBoxColumn";
+            this.sCpfCnpjFavoredDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sCpfCnpjFavoredDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dMinimumPurchaseDataGridViewTextBoxColumn
+            // 
+            this.dMinimumPurchaseDataGridViewTextBoxColumn.DataPropertyName = "dMinimumPurchase";
+            this.dMinimumPurchaseDataGridViewTextBoxColumn.HeaderText = "Compra Mínima";
+            this.dMinimumPurchaseDataGridViewTextBoxColumn.Name = "dMinimumPurchaseDataGridViewTextBoxColumn";
+            this.dMinimumPurchaseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dMinimumPurchaseDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sObservationDataGridViewTextBoxColumn
+            // 
+            this.sObservationDataGridViewTextBoxColumn.DataPropertyName = "sObservation";
+            this.sObservationDataGridViewTextBoxColumn.HeaderText = "Observação";
+            this.sObservationDataGridViewTextBoxColumn.Name = "sObservationDataGridViewTextBoxColumn";
+            this.sObservationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sObservationDataGridViewTextBoxColumn.Visible = false;
+            // 
             // frmProviderSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,10 +435,13 @@
             this.Name = "frmProviderSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Fornecedores";
+            this.Load += new System.EventHandler(this.frmProviderSearch_Load);
             this.grpFornecedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdFornecedores)).EndInit();
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbprovidersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,5 +460,29 @@
         private System.Windows.Forms.RadioButton radCPF_CNPJ;
         private System.Windows.Forms.RadioButton radNome;
         private System.Windows.Forms.Label lblTipo;
+        private FullDataSet fullDataSet;
+        private System.Windows.Forms.BindingSource tbprovidersBindingSource;
+        private FullDataSetTableAdapters.tb_providersTableAdapter tb_providersTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCpfCnpjDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sAdressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDistrictDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sComplementDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCEPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sPhoneComercialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sPhoneCelularOneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sPhoneCelularTwoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sBankDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sAgencyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sAccountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sFavoredDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sCpfCnpjFavoredDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dMinimumPurchaseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sObservationDataGridViewTextBoxColumn;
     }
 }

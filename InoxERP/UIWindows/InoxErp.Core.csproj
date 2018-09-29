@@ -101,12 +101,14 @@
     <Compile Include="Business\Abstract\IBudget_OSBusiness.cs" />
     <Compile Include="Business\Abstract\IBusiness.cs" />
     <Compile Include="Business\Abstract\IProductBusiness.cs" />
+    <Compile Include="Business\Abstract\IProviderBusiness.cs" />
     <Compile Include="Business\Abstract\IServicesBusiness.cs" />
     <Compile Include="Business\Abstract\IUserBusiness.cs" />
     <Compile Include="Business\Concrete\BaseBusiness.cs" />
     <Compile Include="Business\Concrete\Budget_OSBusiness.cs" />
     <Compile Include="Business\Concrete\ItemsBusiness.cs" />
     <Compile Include="Business\Concrete\ProductBusiness.cs" />
+    <Compile Include="Business\Concrete\ProviderBusiness.cs" />
     <Compile Include="Business\Concrete\ServicesBusiness.cs" />
     <Compile Include="Business\Concrete\UsersBusiness.cs" />
     <Compile Include="Context\InoxErpContext.cs" />

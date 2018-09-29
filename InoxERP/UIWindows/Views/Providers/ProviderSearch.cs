@@ -24,5 +24,12 @@ namespace UIWindows
             frmProviderRegister obj = new frmProviderRegister();
             obj.Show();
         }
+
+        private void frmProviderSearch_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_providers'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_providersTableAdapter.Fill(this.fullDataSet.tb_providers);
+
+        }
     }
 }

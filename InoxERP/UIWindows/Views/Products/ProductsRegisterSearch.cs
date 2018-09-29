@@ -14,14 +14,12 @@ using UIWindows.Entities.Enum;
 
 namespace UIWindows
 {
-    //Para facilitar o preenchimento dos produtos,
-    //o cadatro de produtos terá o preço unitário e total,
-    //quando ele escolher o item e adicionar já será calculado o lucro de 100% em cima do valor do produto.
-
     public partial class frmProductsRegisterSearch : Form
     {
         static InoxErpContext ctx = new InoxErpContext();
         ProductBusiness obj = new  ProductBusiness(ctx);
+
+        private string id;
 
         public frmProductsRegisterSearch()
         {
@@ -39,7 +37,7 @@ namespace UIWindows
                 productPersist.sID = Guid.NewGuid().ToString();
 
                 productPersist.sDescription = txtPeca.Text;
-                productPersist.dAmount = Convert.ToDouble(nudQuantidade.Text);
+                productPersist.dAmount = Convert.ToDouble(txtQuantidade.Text);
                 productPersist.Type = UnityType();
                 productPersist.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
                 productPersist.dTotal = Convert.ToDecimal(txtValorTotal.Text);
@@ -61,6 +59,7 @@ namespace UIWindows
                 }
             }
         }
+
 
         public UnityType UnityType()
         {
@@ -98,7 +97,7 @@ namespace UIWindows
         public void cleanCamps()
         {
             txtPeca.Clear();
-            nudQuantidade.Value = 0;
+            txtQuantidade.Clear();
             radUN.Checked = false;
             radMT.Checked = false;
             radKG.Checked = false;
@@ -112,7 +111,6 @@ namespace UIWindows
         //overrid FILL DATASET
         public void fillDataSet()
         {
-            // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_products'. Você pode movê-la ou removê-la conforme necessário.
             this.tb_productsTableAdapter.Fill(this.fullDataSet.tb_products);
         }
 
@@ -125,11 +123,17 @@ namespace UIWindows
                 return false;
             }
 
-            if (nudQuantidade.Text.Length.Equals(0))
+            if (txtQuantidade.Text.Length.Equals(0))
             {
                 MessageBox.Show("Informe a quantidade para o Produto / Peça");
-                nudQuantidade.Focus();
+                txtQuantidade.Focus();
                 return false;
+            }
+
+            if (txtQuantidade.Text == "0")
+            {
+                MessageBox.Show("Você informou 0 na Quantidade");
+                txtQuantidade.Focus();
             }
 
             if (!radUN.Checked & !radKG.Checked & !radMT.Checked)
@@ -166,16 +170,15 @@ namespace UIWindows
             decimal i;
             decimal d;
 
-            if (!decimal.TryParse(nudQuantidade.Text, out i))
+            if (!decimal.TryParse(txtQuantidade.Text, out d)) // validator of numbers
             {
-                if (nudQuantidade.Text == "")
+                if (txtQuantidade.Text == "")
                 {}
                 else
                 {
-                    nudQuantidade.Focus();
-                    nudQuantidade.Text = "0";
+                    txtQuantidade.Focus();
+                    txtQuantidade.Text = "0";
                 }
-                // implementar aqui a validação do campo valor unitário e demais.
             }
             if (!decimal.TryParse(txtValorUnitario.Text, out d)) // validator of numbers
             {
@@ -188,9 +191,9 @@ namespace UIWindows
                 }
             }
             else
-            if (nudQuantidade.Text.Length.Equals(0))
+            if (txtQuantidade.Text.Length.Equals(0))
             {
-                nudQuantidade.Text = "0";
+                txtQuantidade.Text = "0";
             }
             else
             if (txtValorUnitario.Text.Length.Equals(0))
@@ -202,15 +205,14 @@ namespace UIWindows
             else
             {
                 //decimal total = stringReplacePoint(Convert.ToDecimal(txtQuantidade.Text.Replace(",","."))) * stringReplacePoint(Convert.ToDecimal(txtValorUnitario.Text.Replace(",",".")));
-                decimal total = Convert.ToDecimal(nudQuantidade.Text.Replace(".", ",")) * Convert.ToDecimal(txtValorUnitario.Text.Replace(".", ","));
+                decimal total = Convert.ToDecimal(txtQuantidade.Text.Replace(".", ",")) * Convert.ToDecimal(txtValorUnitario.Text.Replace(".", ","));
                 txtValorTotal.Text = Convert.ToString(total);
             }
-
         }
 
         private void nudQuantidade_ValueChanged(object sender, EventArgs e)
         {
-            if (nudQuantidade.Text != "")
+            if (txtQuantidade.Text != "")
                 valueTotal();
         }
 
@@ -223,6 +225,89 @@ namespace UIWindows
         private void frmProductsRegisterSearch_Load(object sender, EventArgs e)
         {
             fillDataSet();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (!validationCamps())
+                MessageBox.Show("Por Favor preencha as informações Corretamente");
+            else
+            {
+                Products productsAlter = new Products();
+
+                productsAlter = obj.ReturnByID(id);
+
+                productsAlter.sDescription = txtPeca.Text;
+                productsAlter.dAmount = Convert.ToDouble(txtQuantidade.Text);
+                productsAlter.Type = UnityType();
+                productsAlter.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
+                productsAlter.dTotal = Convert.ToDecimal(txtValorTotal.Text);
+                // colocar aqui o nome do fornecedor quando a crud fornecedor estiver funfando.
+                productsAlter.sObservation = txtObservacao.Text;
+
+                if (messageYesNo("update") == DialogResult.Yes)
+                {
+                    obj.Update(productsAlter);
+
+                    var ok = obj.Search.FirstOrDefault(b => b.sID == productsAlter.sID);
+
+                    if (ok == null)
+                        MessageBox.Show("Erro ao Atualizar o Produto !!!");
+                    else
+                        MessageBox.Show("Produto Atualizado com Sucesso !!!");
+
+                    afterAction();
+
+                    tbcConsultaValores.SelectedTab = Consulta;
+                }
+            }
+        }
+
+        private void grdConsultaPecas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id = "";
+            Providers providers = new Providers();
+            
+            int compare = grdConsultaPecas.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (compare == 0)
+            { }
+            else
+            {
+                tbcConsultaValores.SelectedTab = Cadastro;
+                txtPeca.Focus();
+                cleanCamps();
+                id = grdConsultaPecas[0, grdConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtPeca.Text = grdConsultaPecas[2, grdConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtQuantidade.Text = grdConsultaPecas[1, grdConsultaPecas.CurrentRow.Index].Value.ToString();
+                int unitType = Convert.ToInt32(grdConsultaPecas[3, grdConsultaPecas.CurrentRow.Index].Value.ToString());
+                switch (unitType)
+                {
+                    case 1: radUN.Checked = true;
+                        break;
+                    case 2: radMT.Checked = true;
+                        break;
+                    case 3: radKG.Checked = true;
+                        break;
+                }
+                txtValorUnitario.Text = grdConsultaPecas[4, grdConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtValorTotal.Text = grdConsultaPecas[5, grdConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtObservacao.Text = grdConsultaPecas[6, grdConsultaPecas.CurrentRow.Index].Value.ToString();
+                string idProvider = grdConsultaPecas[7, grdConsultaPecas.CurrentRow.Index].Value.ToString();
+                // após fazer crud de Providers, pegar o nome do Provider e passar na txtProvider.
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (id.Equals(""))
+                MessageBox.Show("Selecione um Produto Primeiro");
+            else if (messageYesNo("delete") == DialogResult.Yes)
+            {
+                obj.Delete(id);
+                afterAction();
+                MessageBox.Show("Excluído");
+                tbcConsultaValores.SelectedTab = Consulta;
+            }
         }
     }
 }
