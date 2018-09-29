@@ -99,8 +99,16 @@ namespace UIWindows
             else if (messageYesNo("delete") == DialogResult.Yes)
             {
                 obj.Delete(lblID.Text);
+
+                var ok = obj.Search.FirstOrDefault(b => b.sID == lblID.Text);
+
+                if (ok != null)
+                    MessageBox.Show("Erro ao Excluir o Serviço !!!");
+                else
+                    MessageBox.Show("Serviço Excluido com Sucesso !!!");
+
                 afterAction();
-                MessageBox.Show("Excluído");
+
                 tbcConsultaValores.SelectedTab = Consulta;
             }
         }

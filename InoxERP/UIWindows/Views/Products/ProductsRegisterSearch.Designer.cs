@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grpCadastroProdutos = new System.Windows.Forms.GroupBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.btnProcurarFornecedor = new System.Windows.Forms.Button();
             this.lblFornecedor = new System.Windows.Forms.Label();
             this.txtFornecedor = new System.Windows.Forms.TextBox();
@@ -52,7 +53,7 @@
             this.Consulta = new System.Windows.Forms.TabPage();
             this.grpConsultarProdutos = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.grdConsultaPecas = new System.Windows.Forms.DataGridView();
+            this.dgvConsultaPecas = new System.Windows.Forms.DataGridView();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,12 +69,11 @@
             this.lblConsultaPeca = new System.Windows.Forms.Label();
             this.Cadastro = new System.Windows.Forms.TabPage();
             this.tb_productsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_productsTableAdapter();
-            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.grpCadastroProdutos.SuspendLayout();
             this.tbcConsultaValores.SuspendLayout();
             this.Consulta.SuspendLayout();
             this.grpConsultarProdutos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaPecas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbproductsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             this.Cadastro.SuspendLayout();
@@ -108,6 +108,14 @@
             this.grpCadastroProdutos.TabIndex = 0;
             this.grpCadastroProdutos.TabStop = false;
             this.grpCadastroProdutos.Text = "Cadastro de Produtos";
+            // 
+            // txtQuantidade
+            // 
+            this.txtQuantidade.Location = new System.Drawing.Point(112, 65);
+            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(146, 23);
+            this.txtQuantidade.TabIndex = 2;
             // 
             // btnProcurarFornecedor
             // 
@@ -307,7 +315,7 @@
             // grpConsultarProdutos
             // 
             this.grpConsultarProdutos.Controls.Add(this.btnBuscar);
-            this.grpConsultarProdutos.Controls.Add(this.grdConsultaPecas);
+            this.grpConsultarProdutos.Controls.Add(this.dgvConsultaPecas);
             this.grpConsultarProdutos.Controls.Add(this.txtConsultaPeca);
             this.grpConsultarProdutos.Controls.Add(this.lblConsultaPeca);
             this.grpConsultarProdutos.Location = new System.Drawing.Point(5, 5);
@@ -327,14 +335,15 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // grdConsultaPecas
+            // dgvConsultaPecas
             // 
-            this.grdConsultaPecas.AllowUserToAddRows = false;
-            this.grdConsultaPecas.AllowUserToDeleteRows = false;
-            this.grdConsultaPecas.AutoGenerateColumns = false;
-            this.grdConsultaPecas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdConsultaPecas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvConsultaPecas.AllowUserToAddRows = false;
+            this.dgvConsultaPecas.AllowUserToDeleteRows = false;
+            this.dgvConsultaPecas.AutoGenerateColumns = false;
+            this.dgvConsultaPecas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultaPecas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sIDDataGridViewTextBoxColumn,
             this.dAmountDataGridViewTextBoxColumn,
             this.sDescriptionDataGridViewTextBoxColumn,
@@ -344,16 +353,16 @@
             this.sObservationDataGridViewTextBoxColumn,
             this.idProvidersDataGridViewTextBoxColumn,
             this.idItemsDataGridViewTextBoxColumn});
-            this.grdConsultaPecas.DataSource = this.tbproductsBindingSource;
-            this.grdConsultaPecas.Location = new System.Drawing.Point(9, 69);
-            this.grdConsultaPecas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grdConsultaPecas.Name = "grdConsultaPecas";
-            this.grdConsultaPecas.ReadOnly = true;
-            this.grdConsultaPecas.RowTemplate.Height = 24;
-            this.grdConsultaPecas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdConsultaPecas.Size = new System.Drawing.Size(548, 354);
-            this.grdConsultaPecas.TabIndex = 7;
-            this.grdConsultaPecas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdConsultaPecas_CellDoubleClick);
+            this.dgvConsultaPecas.DataSource = this.tbproductsBindingSource;
+            this.dgvConsultaPecas.Location = new System.Drawing.Point(9, 69);
+            this.dgvConsultaPecas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvConsultaPecas.Name = "dgvConsultaPecas";
+            this.dgvConsultaPecas.ReadOnly = true;
+            this.dgvConsultaPecas.RowTemplate.Height = 24;
+            this.dgvConsultaPecas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvConsultaPecas.Size = new System.Drawing.Size(548, 354);
+            this.dgvConsultaPecas.TabIndex = 7;
+            this.dgvConsultaPecas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdConsultaPecas_CellDoubleClick);
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -475,14 +484,6 @@
             // 
             this.tb_productsTableAdapter.ClearBeforeFill = true;
             // 
-            // txtQuantidade
-            // 
-            this.txtQuantidade.Location = new System.Drawing.Point(112, 65);
-            this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtQuantidade.Name = "txtQuantidade";
-            this.txtQuantidade.Size = new System.Drawing.Size(146, 23);
-            this.txtQuantidade.TabIndex = 2;
-            // 
             // frmProductsRegisterSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -501,7 +502,7 @@
             this.Consulta.ResumeLayout(false);
             this.grpConsultarProdutos.ResumeLayout(false);
             this.grpConsultarProdutos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdConsultaPecas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaPecas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbproductsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             this.Cadastro.ResumeLayout(false);
@@ -532,7 +533,7 @@
         private System.Windows.Forms.RadioButton radUN;
         private System.Windows.Forms.GroupBox grpConsultarProdutos;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView grdConsultaPecas;
+        private System.Windows.Forms.DataGridView dgvConsultaPecas;
         private System.Windows.Forms.TextBox txtConsultaPeca;
         private System.Windows.Forms.Label lblConsultaPeca;
         private System.Windows.Forms.Label lblFornecedor;

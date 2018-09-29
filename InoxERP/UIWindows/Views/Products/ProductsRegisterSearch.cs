@@ -26,10 +26,11 @@ namespace UIWindows
             InitializeComponent();
         }
 
+        //INSERT
         private void btnGravar_Click(object sender, EventArgs e)
         {
             if (!validationCamps())
-                MessageBox.Show("Por Favor preencha as informações Corretamente");
+            { }
             else
             {
                 Products productPersist = new Products();
@@ -60,7 +61,72 @@ namespace UIWindows
             }
         }
 
+        //UPDATE
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (!validationCamps())
+            { }
+            else
+            {
+                Products productsAlter = new Products();
 
+                productsAlter = obj.ReturnByID(id);
+
+                productsAlter.sDescription = txtPeca.Text;
+                productsAlter.dAmount = Convert.ToDouble(txtQuantidade.Text);
+                productsAlter.Type = UnityType();
+                productsAlter.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
+                productsAlter.dTotal = Convert.ToDecimal(txtValorTotal.Text);
+                // colocar aqui o nome do fornecedor quando a crud fornecedor estiver funfando.
+                productsAlter.sObservation = txtObservacao.Text;
+
+                if (messageYesNo("update") == DialogResult.Yes)
+                {
+                    obj.Update(productsAlter);
+
+                    var ok = obj.Search.FirstOrDefault(b => b.sID == productsAlter.sID);
+
+                    if (ok == null)
+                        MessageBox.Show("Erro ao Atualizar o Produto !!!");
+                    else
+                        MessageBox.Show("Produto Atualizado com Sucesso !!!");
+
+                    afterAction();
+
+                    tbcConsultaValores.SelectedTab = Consulta;
+                }
+            }
+        }
+
+        //DELETE
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (id.Equals(""))
+                MessageBox.Show("Selecione um Produto Primeiro");
+            else if (messageYesNo("delete") == DialogResult.Yes)
+            {
+                obj.Delete(id);
+
+                var ok = obj.Search.FirstOrDefault(b => b.sID == id);
+
+                if (ok != null)
+                    MessageBox.Show("Erro ao Excluir o Produto !!!");
+                else
+                    MessageBox.Show("Produto Excluido com Sucesso !!!");
+
+                afterAction();
+
+                tbcConsultaValores.SelectedTab = Consulta;
+            }
+        }
+
+        public void afterAction()
+        {
+            fillDataSet();
+            cleanCamps();
+        }
+        
+        //RETURN TYPE OF PRODUCT
         public UnityType UnityType()
         {
             if (radUN.Checked)
@@ -71,28 +137,7 @@ namespace UIWindows
                 return Entities.Enum.UnityType.KG;
             return 0;
         }
-
-        public DialogResult messageYesNo(string type)
-        {
-            switch (type)
-            {
-                case "insert":
-                    return MessageBox.Show("Confirma a inclusão ?", "Salvar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-                case "update":
-                    return MessageBox.Show("Confirma a atualização ?", "Atualizar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-                case "delete":
-                    return MessageBox.Show("Confirma a Exclusão ?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            }
-
-            return DialogResult.No;
-        }
-
-        public void afterAction()
-        {
-            fillDataSet();
-            cleanCamps();
-        }
-
+        
         //CLEAN
         public void cleanCamps()
         {
@@ -108,12 +153,23 @@ namespace UIWindows
             txtConsultaPeca.Clear(); // limpa até o campo de consulta.
         }
 
-        //overrid FILL DATASET
-        public void fillDataSet()
+        // VALIDATOR MESSAGE DIALOG
+        public DialogResult messageYesNo(string type)
         {
-            this.tb_productsTableAdapter.Fill(this.fullDataSet.tb_products);
+            switch (type)
+            {
+                case "insert":
+                    return MessageBox.Show("Confirma a inclusão ?", "Salvar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "update":
+                    return MessageBox.Show("Confirma a atualização ?", "Atualizar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "delete":
+                    return MessageBox.Show("Confirma a Exclusão ?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            }
+
+            return DialogResult.No;
         }
 
+        //VALIDATORS CAMPS
         public bool validationCamps()
         {
             if (txtPeca.Text.Length.Equals(0))
@@ -165,9 +221,9 @@ namespace UIWindows
             return true;
         }
 
+        //CALC VALUE TOTAL OF PRODUCTS
         public void valueTotal()
         {
-            decimal i;
             decimal d;
 
             if (!decimal.TryParse(txtQuantidade.Text, out d)) // validator of numbers
@@ -203,72 +259,40 @@ namespace UIWindows
 
             }
             else
-            {
-                //decimal total = stringReplacePoint(Convert.ToDecimal(txtQuantidade.Text.Replace(",","."))) * stringReplacePoint(Convert.ToDecimal(txtValorUnitario.Text.Replace(",",".")));
-                decimal total = Convert.ToDecimal(txtQuantidade.Text.Replace(".", ",")) * Convert.ToDecimal(txtValorUnitario.Text.Replace(".", ","));
+            {  decimal total = Convert.ToDecimal(txtQuantidade.Text.Replace(".", ",")) * Convert.ToDecimal(txtValorUnitario.Text.Replace(".", ","));
                 txtValorTotal.Text = Convert.ToString(total);
             }
         }
-
-        private void nudQuantidade_ValueChanged(object sender, EventArgs e)
-        {
-            if (txtQuantidade.Text != "")
-                valueTotal();
-        }
-
+        
+        //WHEN TXTVALORUNITARIO IS CHANGED
         private void txtValorUnitario_TextChanged(object sender, EventArgs e)
         {
             if (txtValorUnitario.Text != "")
                 valueTotal();
         }
 
+
+        //FILLS
+
+        //FILL DATASET
         private void frmProductsRegisterSearch_Load(object sender, EventArgs e)
         {
             fillDataSet();
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
+        //overrid FILL DATASET
+        public void fillDataSet()
         {
-            if (!validationCamps())
-                MessageBox.Show("Por Favor preencha as informações Corretamente");
-            else
-            {
-                Products productsAlter = new Products();
-
-                productsAlter = obj.ReturnByID(id);
-
-                productsAlter.sDescription = txtPeca.Text;
-                productsAlter.dAmount = Convert.ToDouble(txtQuantidade.Text);
-                productsAlter.Type = UnityType();
-                productsAlter.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
-                productsAlter.dTotal = Convert.ToDecimal(txtValorTotal.Text);
-                // colocar aqui o nome do fornecedor quando a crud fornecedor estiver funfando.
-                productsAlter.sObservation = txtObservacao.Text;
-
-                if (messageYesNo("update") == DialogResult.Yes)
-                {
-                    obj.Update(productsAlter);
-
-                    var ok = obj.Search.FirstOrDefault(b => b.sID == productsAlter.sID);
-
-                    if (ok == null)
-                        MessageBox.Show("Erro ao Atualizar o Produto !!!");
-                    else
-                        MessageBox.Show("Produto Atualizado com Sucesso !!!");
-
-                    afterAction();
-
-                    tbcConsultaValores.SelectedTab = Consulta;
-                }
-            }
+            this.tb_productsTableAdapter.Fill(this.fullDataSet.tb_products);
         }
 
+        //FILL TAB PRODUCTS
         private void grdConsultaPecas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             id = "";
             Providers providers = new Providers();
             
-            int compare = grdConsultaPecas.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            int compare = dgvConsultaPecas.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (compare == 0)
             { }
             else
@@ -276,10 +300,10 @@ namespace UIWindows
                 tbcConsultaValores.SelectedTab = Cadastro;
                 txtPeca.Focus();
                 cleanCamps();
-                id = grdConsultaPecas[0, grdConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtPeca.Text = grdConsultaPecas[2, grdConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtQuantidade.Text = grdConsultaPecas[1, grdConsultaPecas.CurrentRow.Index].Value.ToString();
-                int unitType = Convert.ToInt32(grdConsultaPecas[3, grdConsultaPecas.CurrentRow.Index].Value.ToString());
+                id = dgvConsultaPecas[0, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtPeca.Text = dgvConsultaPecas[2, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtQuantidade.Text = dgvConsultaPecas[1, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                int unitType = Convert.ToInt32(dgvConsultaPecas[3, dgvConsultaPecas.CurrentRow.Index].Value.ToString());
                 switch (unitType)
                 {
                     case 1: radUN.Checked = true;
@@ -289,24 +313,34 @@ namespace UIWindows
                     case 3: radKG.Checked = true;
                         break;
                 }
-                txtValorUnitario.Text = grdConsultaPecas[4, grdConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtValorTotal.Text = grdConsultaPecas[5, grdConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtObservacao.Text = grdConsultaPecas[6, grdConsultaPecas.CurrentRow.Index].Value.ToString();
-                string idProvider = grdConsultaPecas[7, grdConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtValorUnitario.Text = dgvConsultaPecas[4, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtValorTotal.Text = dgvConsultaPecas[5, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtObservacao.Text = dgvConsultaPecas[6, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                string idProvider = dgvConsultaPecas[7, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 // após fazer crud de Providers, pegar o nome do Provider e passar na txtProvider.
             }
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        //SEARCH
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (id.Equals(""))
-                MessageBox.Show("Selecione um Produto Primeiro");
-            else if (messageYesNo("delete") == DialogResult.Yes)
+            searchByName();
+        }
+
+        //SEARCH BY NAME
+        public void searchByName()
+        {
+            var search = from g in ctx.Products where g.sDescription.StartsWith(txtConsultaPeca.Text) select g;
+
+            if (search.ToList().Count.Equals(0))
             {
-                obj.Delete(id);
-                afterAction();
-                MessageBox.Show("Excluído");
-                tbcConsultaValores.SelectedTab = Consulta;
+                txtConsultaPeca.Clear();
+                MessageBox.Show("Produto Não Encontrado");
+            }
+            else
+            {
+                txtConsultaPeca.Clear();
+                dgvConsultaPecas.DataSource = search.ToList();
             }
         }
     }

@@ -27,7 +27,7 @@ namespace UIWindows
         private void btIncluir_Click_1(object sender, EventArgs e)
         {
             if (!validationCamps())
-                MessageBox.Show("Por Favor preencha as informações Corretamente");
+            { }
             else
             {
                 user.sLogin = txtLogin.Text;
@@ -42,7 +42,7 @@ namespace UIWindows
                     userPersist.sKey = obj.getMD5Hash(txtSenha.Text);
                     userPersist.Type = validationUserType(cbxTipo.SelectedItem.ToString());
 
-                    if (messageYesNo() == DialogResult.Yes)
+                    if (messageYesNo("insert") == DialogResult.Yes)
                     {
                         obj.Insert(userPersist);
 
@@ -69,7 +69,7 @@ namespace UIWindows
         private void btAlterar_Click(object sender, EventArgs e)
         {
             if (!validationCamps())
-                MessageBox.Show("Por Favor preencha as informações Corretamente");
+            { }
             else
             {
                 Users userAlter = new Users();
@@ -81,7 +81,7 @@ namespace UIWindows
                 userAlter.sKey = obj.getMD5Hash(txtSenha.Text);
                 userAlter.Type = validationUserType(cbxTipo.SelectedItem.ToString());
 
-                if (messageYesNo() == DialogResult.Yes)
+                if (messageYesNo("update") == DialogResult.Yes)
                 {
                     obj.Update(userAlter);
 
@@ -107,11 +107,18 @@ namespace UIWindows
                 user.sLogin = txtLogin.Text;
                 if (userLog.sLogin == user.sLogin)
                     MessageBox.Show("Você não pode EXCLUIR seu próprio Login");
-                else if (messageYesNo() == DialogResult.Yes)
+                else if (messageYesNo("delete") == DialogResult.Yes)
                 {
                     obj.Delete(lblID.Text);
+
+                    var ok = obj.Search.FirstOrDefault(b => b.sID == lblID.Text);
+
+                    if (ok != null)
+                        MessageBox.Show("Erro ao Excluir o Usuário !!!");
+                    else
+                        MessageBox.Show("Usuário Excluido com Sucesso !!!");
+
                     afterAction();
-                    MessageBox.Show("Excluído");
                 }
             }
         }
@@ -131,24 +138,28 @@ namespace UIWindows
         {
             if (txtNome.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe um Nome para o Usuário");
                 txtNome.Focus();
                 return false;
             }
 
             if (txtLogin.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe um Login para o Usuário");
                 txtLogin.Focus();
                 return false;
             }
 
             if (txtSenha.Text.Length.Equals(0))
             {
+                MessageBox.Show("Informe uma Senha para o Usuário");
                 txtSenha.Focus();
                 return false;
             }
 
             if (cbxTipo.SelectedItem == null)
             {
+                MessageBox.Show("Informe um Tipo para o Usuário");
                 cbxTipo.Focus();
                 return false;
             }
@@ -162,9 +173,19 @@ namespace UIWindows
         }
 
         //validator DIALOG
-        public DialogResult messageYesNo()
+        public DialogResult messageYesNo(string type)
         {
-            return MessageBox.Show("Você tem Certeza destas Informações ???", "Usuários", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            switch (type)
+            {
+                case "insert":
+                    return MessageBox.Show("Confirma a inclusão ?", "Salvar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "update":
+                    return MessageBox.Show("Confirma a atualização ?", "Atualizar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "delete":
+                    return MessageBox.Show("Confirma a Exclusão ?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            }
+
+            return DialogResult.No;
         }
 
         //validator TYPE
