@@ -19,6 +19,7 @@ namespace InoxERP.UI_Windows_Forms
     {
         static InoxErpContext ctx = new InoxErpContext();
         ProviderBusiness obj = new ProviderBusiness(ctx);
+
         
         public frmProviderRegister()
         {

@@ -126,6 +126,7 @@
             this.btnProcurarFornecedor.TabIndex = 9;
             this.btnProcurarFornecedor.Text = "Procurar";
             this.btnProcurarFornecedor.UseVisualStyleBackColor = true;
+            this.btnProcurarFornecedor.Click += new System.EventHandler(this.btnProcurarFornecedor_Click);
             // 
             // lblFornecedor
             // 

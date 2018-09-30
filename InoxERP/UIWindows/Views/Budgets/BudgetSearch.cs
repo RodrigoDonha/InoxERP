@@ -15,7 +15,6 @@ namespace UIWindows
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS budget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
-        ItemsBusiness item = new  ItemsBusiness(ctx);
         
         String getId;
 
@@ -127,7 +126,7 @@ namespace UIWindows
             }
         }
 
-        // só esta excluindo orçamentos sem itens, com itens está dando erro, precisa pegar o id do orçamento e tentar deletar os itens pelo id do orçemanto
+        
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             getId = "";
@@ -155,21 +154,7 @@ namespace UIWindows
             }
         }
 
-
-        // faz consulta aos itens de um orçamento
-        public void deleteItemsBudget()
-        {
-            var search = from p in ctx.Items where p.IdBudgets_OS.StartsWith(getId) select p; // esta linha não está consultando pela coluna correta.
-            if (search.Count() > 0)
-            {
-                foreach (var line in search)
-                {
-                    string id = line.sID.ToString();
-                    item.Delete(id);
-                }
-            }
-        }
-
+        
         //validator YesNo
         public DialogResult messageYesNo(string type)
         {

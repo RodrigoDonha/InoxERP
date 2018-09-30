@@ -30,20 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnSelescionar = new System.Windows.Forms.Button();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.grpFornecedor = new System.Windows.Forms.GroupBox();
-            this.grdFornecedores = new System.Windows.Forms.DataGridView();
-            this.grpPesquisa = new System.Windows.Forms.GroupBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.radCPF_CNPJ = new System.Windows.Forms.RadioButton();
-            this.radNome = new System.Windows.Forms.RadioButton();
-            this.lblTipo = new System.Windows.Forms.Label();
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.tbprovidersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_providersTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_providersTableAdapter();
+            this.dgvFornecedores = new System.Windows.Forms.DataGridView();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sCpfCnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,11 +56,20 @@
             this.sCpfCnpjFavoredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dMinimumPurchaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sObservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbprovidersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.radCPF_CNPJ = new System.Windows.Forms.RadioButton();
+            this.radNome = new System.Windows.Forms.RadioButton();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.tb_providersTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_providersTableAdapter();
             this.grpFornecedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdFornecedores)).BeginInit();
-            this.grpPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbprovidersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            this.grpPesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -84,16 +84,17 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // btnSelescionar
+            // btnSelecionar
             // 
-            this.btnSelescionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelescionar.Location = new System.Drawing.Point(12, 406);
-            this.btnSelescionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSelescionar.Name = "btnSelescionar";
-            this.btnSelescionar.Size = new System.Drawing.Size(160, 30);
-            this.btnSelescionar.TabIndex = 24;
-            this.btnSelescionar.Text = "Selecionar";
-            this.btnSelescionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar.Location = new System.Drawing.Point(12, 406);
+            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(160, 30);
+            this.btnSelecionar.TabIndex = 24;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // btnExcluir
             // 
@@ -119,7 +120,7 @@
             // 
             // grpFornecedor
             // 
-            this.grpFornecedor.Controls.Add(this.grdFornecedores);
+            this.grpFornecedor.Controls.Add(this.dgvFornecedores);
             this.grpFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFornecedor.Location = new System.Drawing.Point(12, 95);
             this.grpFornecedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -130,13 +131,13 @@
             this.grpFornecedor.TabStop = false;
             this.grpFornecedor.Text = "Fornecedores";
             // 
-            // grdFornecedores
+            // dgvFornecedores
             // 
-            this.grdFornecedores.AllowUserToAddRows = false;
-            this.grdFornecedores.AllowUserToDeleteRows = false;
-            this.grdFornecedores.AutoGenerateColumns = false;
-            this.grdFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvFornecedores.AllowUserToAddRows = false;
+            this.dgvFornecedores.AllowUserToDeleteRows = false;
+            this.dgvFornecedores.AutoGenerateColumns = false;
+            this.dgvFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sIDDataGridViewTextBoxColumn,
             this.sNameDataGridViewTextBoxColumn,
             this.sCpfCnpjDataGridViewTextBoxColumn,
@@ -158,97 +159,16 @@
             this.sCpfCnpjFavoredDataGridViewTextBoxColumn,
             this.dMinimumPurchaseDataGridViewTextBoxColumn,
             this.sObservationDataGridViewTextBoxColumn});
-            this.grdFornecedores.DataSource = this.tbprovidersBindingSource;
-            this.grdFornecedores.Location = new System.Drawing.Point(11, 21);
-            this.grdFornecedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grdFornecedores.Name = "grdFornecedores";
-            this.grdFornecedores.ReadOnly = true;
-            this.grdFornecedores.RowTemplate.Height = 24;
-            this.grdFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdFornecedores.Size = new System.Drawing.Size(755, 257);
-            this.grdFornecedores.TabIndex = 0;
-            // 
-            // grpPesquisa
-            // 
-            this.grpPesquisa.Controls.Add(this.btnPesquisar);
-            this.grpPesquisa.Controls.Add(this.txtPesquisa);
-            this.grpPesquisa.Controls.Add(this.radCPF_CNPJ);
-            this.grpPesquisa.Controls.Add(this.radNome);
-            this.grpPesquisa.Controls.Add(this.lblTipo);
-            this.grpPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpPesquisa.Location = new System.Drawing.Point(12, 15);
-            this.grpPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpPesquisa.Name = "grpPesquisa";
-            this.grpPesquisa.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpPesquisa.Size = new System.Drawing.Size(776, 74);
-            this.grpPesquisa.TabIndex = 20;
-            this.grpPesquisa.TabStop = false;
-            this.grpPesquisa.Text = "Pesquisa";
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(691, 21);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(80, 30);
-            this.btnPesquisar.TabIndex = 5;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Location = new System.Drawing.Point(347, 25);
-            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(331, 23);
-            this.txtPesquisa.TabIndex = 4;
-            // 
-            // radCPF_CNPJ
-            // 
-            this.radCPF_CNPJ.AutoSize = true;
-            this.radCPF_CNPJ.Location = new System.Drawing.Point(190, 25);
-            this.radCPF_CNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radCPF_CNPJ.Name = "radCPF_CNPJ";
-            this.radCPF_CNPJ.Size = new System.Drawing.Size(91, 21);
-            this.radCPF_CNPJ.TabIndex = 2;
-            this.radCPF_CNPJ.TabStop = true;
-            this.radCPF_CNPJ.Text = "CPF/CNPJ";
-            this.radCPF_CNPJ.UseVisualStyleBackColor = true;
-            // 
-            // radNome
-            // 
-            this.radNome.AutoSize = true;
-            this.radNome.Location = new System.Drawing.Point(97, 25);
-            this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radNome.Name = "radNome";
-            this.radNome.Size = new System.Drawing.Size(63, 21);
-            this.radNome.TabIndex = 1;
-            this.radNome.TabStop = true;
-            this.radNome.Text = "Nome";
-            this.radNome.UseVisualStyleBackColor = true;
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(5, 27);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(40, 17);
-            this.lblTipo.TabIndex = 0;
-            this.lblTipo.Text = "Tipo:";
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbprovidersBindingSource
-            // 
-            this.tbprovidersBindingSource.DataMember = "tb_providers";
-            this.tbprovidersBindingSource.DataSource = this.fullDataSet;
-            // 
-            // tb_providersTableAdapter
-            // 
-            this.tb_providersTableAdapter.ClearBeforeFill = true;
+            this.dgvFornecedores.DataSource = this.tbprovidersBindingSource;
+            this.dgvFornecedores.Location = new System.Drawing.Point(11, 21);
+            this.dgvFornecedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvFornecedores.Name = "dgvFornecedores";
+            this.dgvFornecedores.ReadOnly = true;
+            this.dgvFornecedores.RowTemplate.Height = 24;
+            this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFornecedores.Size = new System.Drawing.Size(755, 257);
+            this.dgvFornecedores.TabIndex = 0;
+            this.dgvFornecedores.Click += new System.EventHandler(this.dgvFornecedores_Click);
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -421,13 +341,95 @@
             this.sObservationDataGridViewTextBoxColumn.ReadOnly = true;
             this.sObservationDataGridViewTextBoxColumn.Visible = false;
             // 
+            // tbprovidersBindingSource
+            // 
+            this.tbprovidersBindingSource.DataMember = "tb_providers";
+            this.tbprovidersBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // grpPesquisa
+            // 
+            this.grpPesquisa.Controls.Add(this.btnPesquisar);
+            this.grpPesquisa.Controls.Add(this.txtPesquisa);
+            this.grpPesquisa.Controls.Add(this.radCPF_CNPJ);
+            this.grpPesquisa.Controls.Add(this.radNome);
+            this.grpPesquisa.Controls.Add(this.lblTipo);
+            this.grpPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpPesquisa.Location = new System.Drawing.Point(12, 15);
+            this.grpPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpPesquisa.Name = "grpPesquisa";
+            this.grpPesquisa.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpPesquisa.Size = new System.Drawing.Size(776, 74);
+            this.grpPesquisa.TabIndex = 20;
+            this.grpPesquisa.TabStop = false;
+            this.grpPesquisa.Text = "Pesquisa";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(691, 21);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(80, 30);
+            this.btnPesquisar.TabIndex = 5;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(347, 25);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(331, 23);
+            this.txtPesquisa.TabIndex = 4;
+            // 
+            // radCPF_CNPJ
+            // 
+            this.radCPF_CNPJ.AutoSize = true;
+            this.radCPF_CNPJ.Location = new System.Drawing.Point(190, 25);
+            this.radCPF_CNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radCPF_CNPJ.Name = "radCPF_CNPJ";
+            this.radCPF_CNPJ.Size = new System.Drawing.Size(91, 21);
+            this.radCPF_CNPJ.TabIndex = 2;
+            this.radCPF_CNPJ.TabStop = true;
+            this.radCPF_CNPJ.Text = "CPF/CNPJ";
+            this.radCPF_CNPJ.UseVisualStyleBackColor = true;
+            // 
+            // radNome
+            // 
+            this.radNome.AutoSize = true;
+            this.radNome.Location = new System.Drawing.Point(97, 25);
+            this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radNome.Name = "radNome";
+            this.radNome.Size = new System.Drawing.Size(63, 21);
+            this.radNome.TabIndex = 1;
+            this.radNome.TabStop = true;
+            this.radNome.Text = "Nome";
+            this.radNome.UseVisualStyleBackColor = true;
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(5, 27);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(40, 17);
+            this.lblTipo.TabIndex = 0;
+            this.lblTipo.Text = "Tipo:";
+            // 
+            // tb_providersTableAdapter
+            // 
+            this.tb_providersTableAdapter.ClearBeforeFill = true;
+            // 
             // frmProviderSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.btnSelescionar);
+            this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.grpFornecedor);
@@ -437,11 +439,11 @@
             this.Text = "Consulta Fornecedores";
             this.Load += new System.EventHandler(this.frmProviderSearch_Load);
             this.grpFornecedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdFornecedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbprovidersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbprovidersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,11 +451,11 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnSelescionar;
+        private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.GroupBox grpFornecedor;
-        private System.Windows.Forms.DataGridView grdFornecedores;
+        private System.Windows.Forms.DataGridView dgvFornecedores;
         private System.Windows.Forms.GroupBox grpPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisa;

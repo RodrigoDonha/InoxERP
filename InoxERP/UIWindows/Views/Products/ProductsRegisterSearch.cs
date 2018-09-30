@@ -19,6 +19,8 @@ namespace UIWindows
         static InoxErpContext ctx = new InoxErpContext();
         ProductBusiness obj = new  ProductBusiness(ctx);
 
+        frmProviderSearch provider = new frmProviderSearch();
+
         private string id;
 
         public frmProductsRegisterSearch()
@@ -31,34 +33,35 @@ namespace UIWindows
         {
             if (!validationCamps())
             { }
-            else
-            {
-                Products productPersist = new Products();
-
-                productPersist.sID = Guid.NewGuid().ToString();
-
-                productPersist.sDescription = txtPeca.Text;
-                productPersist.dAmount = Convert.ToDouble(txtQuantidade.Text);
-                productPersist.Type = UnityType();
-                productPersist.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
-                productPersist.dTotal = Convert.ToDecimal(txtValorTotal.Text);
-                productPersist.sObservation = txtObservacao.Text;
-
-                if (messageYesNo("insert") == DialogResult.Yes)
+            else if(findEqualsProducts())
                 {
-                    obj.Insert(productPersist);
+                    Products productPersist = new Products();
 
+                    productPersist.sID = Guid.NewGuid().ToString();
 
-                    var ok = obj.Search.FirstOrDefault(b => b.sID == productPersist.sID);
+                    productPersist.sDescription = txtPeca.Text;
+                    productPersist.dAmount = Convert.ToDouble(txtQuantidade.Text);
+                    productPersist.Type = UnityType();
+                    productPersist.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
+                    productPersist.dTotal = Convert.ToDecimal(txtValorTotal.Text);
+                    if (provider.returnProviders != null)
+                        productPersist.IdProviders = provider.returnProviders.sID;
+                    productPersist.sObservation = txtObservacao.Text;
 
-                    if (ok == null)
-                        MessageBox.Show("Erro ao Cadastrar o Produto !!!");
-                    else
-                        MessageBox.Show("Produto Cadastrado com Sucesso !!!");
+                    if (messageYesNo("insert") == DialogResult.Yes)
+                    {
+                        obj.Insert(productPersist);
 
-                    afterAction();
+                        var ok = obj.Search.FirstOrDefault(b => b.sID == productPersist.sID);
+
+                        if (ok == null)
+                            MessageBox.Show("Erro ao Cadastrar o Produto !!!");
+                        else
+                            MessageBox.Show("Produto Cadastrado com Sucesso !!!");
+
+                        afterAction();
+                    }
                 }
-            }
         }
 
         //UPDATE
@@ -66,7 +69,7 @@ namespace UIWindows
         {
             if (!validationCamps())
             { }
-            else
+            else 
             {
                 Products productsAlter = new Products();
 
@@ -77,7 +80,8 @@ namespace UIWindows
                 productsAlter.Type = UnityType();
                 productsAlter.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
                 productsAlter.dTotal = Convert.ToDecimal(txtValorTotal.Text);
-                // colocar aqui o nome do fornecedor quando a crud fornecedor estiver funfando.
+                if(provider.returnProviders != null)
+                    productsAlter.IdProviders = provider.returnProviders.sID;
                 productsAlter.sObservation = txtObservacao.Text;
 
                 if (messageYesNo("update") == DialogResult.Yes)
@@ -137,7 +141,20 @@ namespace UIWindows
                 return Entities.Enum.UnityType.KG;
             return 0;
         }
-        
+
+        //FIND PRODUCTS ALREADY REGISTRADED
+        private bool findEqualsProducts()
+        {
+            var result = from p in ctx.Products where p.sDescription.Contains(txtPeca.Text) select p;
+            if (result.ToList().Count > 0)
+                if (messageYesNo("equals") == DialogResult.Yes)
+                    return true;
+                else
+                    return false;
+
+            return true;
+        }
+
         //CLEAN
         public void cleanCamps()
         {
@@ -164,6 +181,10 @@ namespace UIWindows
                     return MessageBox.Show("Confirma a atualização ?", "Atualizar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "delete":
                     return MessageBox.Show("Confirma a Exclusão ?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "provider":
+                    return MessageBox.Show("Confirma o Fornecedor ?", "Fornecedor", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "equals":
+                    return MessageBox.Show("Produto com o Mesmo Nome Já Cadastrado, Confirma Nova Inclusão ?", "Produto Igual Encontrado", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
 
             return DialogResult.No;
@@ -317,7 +338,15 @@ namespace UIWindows
                 txtValorTotal.Text = dgvConsultaPecas[5, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 txtObservacao.Text = dgvConsultaPecas[6, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 string idProvider = dgvConsultaPecas[7, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                // após fazer crud de Providers, pegar o nome do Provider e passar na txtProvider.
+                try
+                {
+                    ProviderBusiness objProv = new ProviderBusiness(ctx);
+                    txtFornecedor.Text = objProv.ReturnByID(idProvider).sName;
+                }
+                catch
+                {
+
+                }
             }
         }
 
@@ -342,6 +371,18 @@ namespace UIWindows
                 txtConsultaPeca.Clear();
                 dgvConsultaPecas.DataSource = search.ToList();
             }
+        }
+
+        //SELECT PROVIDER FRM
+        private void btnProcurarFornecedor_Click(object sender, EventArgs e)
+        {
+            provider.ShowDialog();
+
+            if(provider.returnProviders != null)
+                if (messageYesNo("provider") == DialogResult.Yes)
+                {
+                    txtFornecedor.Text = provider.returnProviders.sName;
+                }
         }
     }
 }
