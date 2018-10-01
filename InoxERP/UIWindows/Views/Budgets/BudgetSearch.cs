@@ -36,9 +36,21 @@ namespace UIWindows
         // SEARCH BY NAME CLIENT
         public void searchByName() //nao esta funcionando
         {
-            var search = from p in ctx.Budgets_OS where p.sName.StartsWith(txtPesquisa.Text) select p;
-
-            dgvOrcamentos.DataSource = search.ToList();
+            var search = from p in ctx.Budgets_OS where p.sName.StartsWith(txtPesquisa.Text) where p.bServiceOrderApproved.Equals(false) select p;
+            
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Orçamento Encontrado");
+                txtPesquisa.Focus();
+                searchByName();
+            }
+            else
+            {
+                List<Budgets_OS> b = search.ToList();
+                txtPesquisa.Clear();
+                dgvOrcamentos.DataSource = b.ToList();
+            }
         }
 
         public void searchByCPF_CNPJ()
@@ -121,6 +133,7 @@ namespace UIWindows
             {
                 Dispose();
                 frmBudgetsRegister bud = new frmBudgetsRegister(getId);
+
                 bud.BudgetData();
                 bud.Show();
             }

@@ -46,12 +46,6 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.grpEntregas = new System.Windows.Forms.GroupBox();
             this.dgvEntregasFinalizadas = new System.Windows.Forms.DataGridView();
-            this.tbbudgetsosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.btnAbrir = new System.Windows.Forms.Button();
-            this.btnReabrirEntrega = new System.Windows.Forms.Button();
-            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_budgets_osTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_budgets_osTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtDateServiceOrderDeliveredDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +74,12 @@
             this.bRegisterFinishedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dtDateRegisterFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idClientsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbbudgetsosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.btnAbrir = new System.Windows.Forms.Button();
+            this.btnReabrirEntrega = new System.Windows.Forms.Button();
+            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_budgets_osTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_budgets_osTableAdapter();
             this.grpPesquisa.SuspendLayout();
             this.grpEntregas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregasFinalizadas)).BeginInit();
@@ -240,52 +240,12 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEntregasFinalizadas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvEntregasFinalizadas.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvEntregasFinalizadas.RowTemplate.Height = 24;
             this.dgvEntregasFinalizadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEntregasFinalizadas.Size = new System.Drawing.Size(1185, 268);
             this.dgvEntregasFinalizadas.TabIndex = 0;
             this.dgvEntregasFinalizadas.Click += new System.EventHandler(this.grdEntregas_Click_1);
-            // 
-            // tbbudgetsosBindingSource1
-            // 
-            this.tbbudgetsosBindingSource1.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource1.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnAbrir
-            // 
-            this.btnAbrir.Location = new System.Drawing.Point(12, 402);
-            this.btnAbrir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(150, 30);
-            this.btnAbrir.TabIndex = 9;
-            this.btnAbrir.Text = "Abrir / Alterar";
-            this.btnAbrir.UseVisualStyleBackColor = true;
-            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
-            // 
-            // btnReabrirEntrega
-            // 
-            this.btnReabrirEntrega.Location = new System.Drawing.Point(1064, 402);
-            this.btnReabrirEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnReabrirEntrega.Name = "btnReabrirEntrega";
-            this.btnReabrirEntrega.Size = new System.Drawing.Size(150, 30);
-            this.btnReabrirEntrega.TabIndex = 18;
-            this.btnReabrirEntrega.Text = "Reabrir Entrega";
-            this.btnReabrirEntrega.UseVisualStyleBackColor = true;
-            this.btnReabrirEntrega.Click += new System.EventHandler(this.btnReabrirEntrega_Click);
-            // 
-            // tbbudgetsosBindingSource
-            // 
-            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource.DataSource = this.fullDataSet;
-            // 
-            // tb_budgets_osTableAdapter
-            // 
-            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -347,7 +307,6 @@
             this.sObservationDataGridViewTextBoxColumn.Name = "sObservationDataGridViewTextBoxColumn";
             this.sObservationDataGridViewTextBoxColumn.ReadOnly = true;
             this.sObservationDataGridViewTextBoxColumn.Visible = false;
-            this.sObservationDataGridViewTextBoxColumn.Width = 96;
             // 
             // dTotalDataGridViewTextBoxColumn
             // 
@@ -527,6 +486,47 @@
             this.idClientsDataGridViewTextBoxColumn.Name = "idClientsDataGridViewTextBoxColumn";
             this.idClientsDataGridViewTextBoxColumn.ReadOnly = true;
             this.idClientsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tbbudgetsosBindingSource1
+            // 
+            this.tbbudgetsosBindingSource1.DataMember = "tb_budgets_os";
+            this.tbbudgetsosBindingSource1.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnAbrir
+            // 
+            this.btnAbrir.Location = new System.Drawing.Point(12, 402);
+            this.btnAbrir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(150, 30);
+            this.btnAbrir.TabIndex = 9;
+            this.btnAbrir.Text = "Abrir / Alterar";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
+            // 
+            // btnReabrirEntrega
+            // 
+            this.btnReabrirEntrega.Location = new System.Drawing.Point(1064, 402);
+            this.btnReabrirEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReabrirEntrega.Name = "btnReabrirEntrega";
+            this.btnReabrirEntrega.Size = new System.Drawing.Size(150, 30);
+            this.btnReabrirEntrega.TabIndex = 18;
+            this.btnReabrirEntrega.Text = "Reabrir Entrega";
+            this.btnReabrirEntrega.UseVisualStyleBackColor = true;
+            this.btnReabrirEntrega.Click += new System.EventHandler(this.btnReabrirEntrega_Click);
+            // 
+            // tbbudgetsosBindingSource
+            // 
+            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
+            this.tbbudgetsosBindingSource.DataSource = this.fullDataSet;
+            // 
+            // tb_budgets_osTableAdapter
+            // 
+            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
             // 
             // frmDeliveryFinished
             // 

@@ -39,12 +39,26 @@ namespace UIWindows
             if (dgvOrdemServico.CurrentRow != null)
             {
                 frmBudgetsRegister bud = new frmBudgetsRegister(getId);
+
+                /////FUNCTION TO DISABLE BUTTONS
+                foreach (Control budControl in bud.Controls)
+                {
+                    foreach (Control btn in budControl.Controls)
+                    {
+                        if (btn.Name == "btnGravarOrcamento" || btn.Name == "btnExcluir" || btn.Name == "btnCancelarOrcamento")
+                            btn.Enabled = false;
+                        if (btn.Name == "btnAprovar")
+                            btn.Enabled = true;
+                    }
+                }
+                /////
+
                 bud.BudgetData();
                 bud.Show();
             }
         }
 
-        private void btnDespaprovar_Click(object sender, EventArgs e)
+        private void btnDesaprovar_Click(object sender, EventArgs e)
         {
             getIdGrigView();
             if (dgvOrdemServico.CurrentRow != null)
@@ -143,7 +157,19 @@ namespace UIWindows
             // corrigir a clausula where, onde 
             var search = from p in ctx.Budgets_OS where p.sName.StartsWith(txtPesquisa.Text) where p.bServiceOrderApproved.Equals(true) where p.bRegisterFinished.Equals(false) select p;
 
-            dgvOrdemServico.DataSource = search.ToList();
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhuma Ordem de Serviço Encontrada");
+                txtPesquisa.Focus();
+                searchByName();
+            }
+            else
+            {
+                List<Budgets_OS> s = search.ToList();
+                txtPesquisa.Clear();
+                dgvOrdemServico.DataSource = s.ToList();
+            }
         }
 
         public void searchByCPF_CNPJ()

@@ -126,7 +126,7 @@ namespace UIWindows
 
         public void afterAction()
         {
-            fillDataSet();
+            searchByName();
             cleanCamps();
         }
         
@@ -298,7 +298,7 @@ namespace UIWindows
         //FILL DATASET
         private void frmProductsRegisterSearch_Load(object sender, EventArgs e)
         {
-            fillDataSet();
+            searchByName();
         }
 
         //overrid FILL DATASET
@@ -324,22 +324,23 @@ namespace UIWindows
                 id = dgvConsultaPecas[0, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 txtPeca.Text = dgvConsultaPecas[2, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 txtQuantidade.Text = dgvConsultaPecas[1, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                int unitType = Convert.ToInt32(dgvConsultaPecas[3, dgvConsultaPecas.CurrentRow.Index].Value.ToString());
+                string unitType = dgvConsultaPecas[3, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 switch (unitType)
                 {
-                    case 1: radUN.Checked = true;
+                    case "UN": radUN.Checked = true;
                         break;
-                    case 2: radMT.Checked = true;
+                    case "MT": radMT.Checked = true;
                         break;
-                    case 3: radKG.Checked = true;
+                    case "KG": radKG.Checked = true;
                         break;
                 }
                 txtValorUnitario.Text = dgvConsultaPecas[4, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 txtValorTotal.Text = dgvConsultaPecas[5, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 txtObservacao.Text = dgvConsultaPecas[6, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                string idProvider = dgvConsultaPecas[7, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
                 try
                 {
+                    string idProvider = dgvConsultaPecas[7, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+
                     ProviderBusiness objProv = new ProviderBusiness(ctx);
                     txtFornecedor.Text = objProv.ReturnByID(idProvider).sName;
                 }
@@ -365,11 +366,14 @@ namespace UIWindows
             {
                 txtConsultaPeca.Clear();
                 MessageBox.Show("Produto Não Encontrado");
+                txtConsultaPeca.Focus();
+                searchByName();
             }
             else
             {
+                List<Products> p = search.ToList();
                 txtConsultaPeca.Clear();
-                dgvConsultaPecas.DataSource = search.ToList();
+                dgvConsultaPecas.DataSource = p.ToList();
             }
         }
 

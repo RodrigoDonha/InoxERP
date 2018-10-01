@@ -152,7 +152,6 @@
             this.radKG.Name = "radKG";
             this.radKG.Size = new System.Drawing.Size(46, 21);
             this.radKG.TabIndex = 5;
-            this.radKG.TabStop = true;
             this.radKG.Text = "KG";
             this.radKG.UseVisualStyleBackColor = true;
             // 
@@ -163,13 +162,13 @@
             this.radMT.Name = "radMT";
             this.radMT.Size = new System.Drawing.Size(46, 21);
             this.radMT.TabIndex = 4;
-            this.radMT.TabStop = true;
             this.radMT.Text = "MT";
             this.radMT.UseVisualStyleBackColor = true;
             // 
             // radUN
             // 
             this.radUN.AutoSize = true;
+            this.radUN.Checked = true;
             this.radUN.Location = new System.Drawing.Point(333, 69);
             this.radUN.Name = "radUN";
             this.radUN.Size = new System.Drawing.Size(46, 21);
@@ -359,6 +358,7 @@
             this.dgvConsultaPecas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvConsultaPecas.Name = "dgvConsultaPecas";
             this.dgvConsultaPecas.ReadOnly = true;
+            this.dgvConsultaPecas.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvConsultaPecas.RowTemplate.Height = 24;
             this.dgvConsultaPecas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultaPecas.Size = new System.Drawing.Size(548, 354);

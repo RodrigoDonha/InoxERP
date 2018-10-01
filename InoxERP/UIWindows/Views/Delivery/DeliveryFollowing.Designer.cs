@@ -38,13 +38,6 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.grpEntregas = new System.Windows.Forms.GroupBox();
             this.dgvEntregas = new System.Windows.Forms.DataGridView();
-            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnAbrirAlterar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnReabrirOS = new System.Windows.Forms.Button();
-            this.tb_budgets_osTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_budgets_osTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtFinalPrevisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +66,13 @@
             this.bRegisterFinishedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dtDateRegisterFinishedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idClientsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnAbrirAlterar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnReabrirOS = new System.Windows.Forms.Button();
+            this.tb_budgets_osTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_budgets_osTableAdapter();
             this.grpPesquisa.SuspendLayout();
             this.grpEntregas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).BeginInit();
@@ -217,69 +217,12 @@
             this.dgvEntregas.MultiSelect = false;
             this.dgvEntregas.Name = "dgvEntregas";
             this.dgvEntregas.ReadOnly = true;
+            this.dgvEntregas.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvEntregas.RowTemplate.Height = 24;
             this.dgvEntregas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEntregas.Size = new System.Drawing.Size(1196, 270);
             this.dgvEntregas.TabIndex = 0;
             this.dgvEntregas.Click += new System.EventHandler(this.grdEntregas_Click);
-            // 
-            // tbbudgetsosBindingSource
-            // 
-            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.Location = new System.Drawing.Point(696, 399);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(120, 30);
-            this.btnFinalizar.TabIndex = 11;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
-            // 
-            // btnAbrirAlterar
-            // 
-            this.btnAbrirAlterar.Location = new System.Drawing.Point(15, 399);
-            this.btnAbrirAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAbrirAlterar.Name = "btnAbrirAlterar";
-            this.btnAbrirAlterar.Size = new System.Drawing.Size(120, 30);
-            this.btnAbrirAlterar.TabIndex = 12;
-            this.btnAbrirAlterar.Text = "Abrir / Alterar";
-            this.btnAbrirAlterar.UseVisualStyleBackColor = true;
-            this.btnAbrirAlterar.Click += new System.EventHandler(this.btnAbrirAlterar_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(1091, 399);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(120, 30);
-            this.btnExcluir.TabIndex = 17;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnReabrirOS
-            // 
-            this.btnReabrirOS.Location = new System.Drawing.Point(328, 399);
-            this.btnReabrirOS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnReabrirOS.Name = "btnReabrirOS";
-            this.btnReabrirOS.Size = new System.Drawing.Size(120, 30);
-            this.btnReabrirOS.TabIndex = 18;
-            this.btnReabrirOS.Text = "Reabrir OS";
-            this.btnReabrirOS.UseVisualStyleBackColor = true;
-            this.btnReabrirOS.Click += new System.EventHandler(this.btnReabrirOS_Click);
-            // 
-            // tb_budgets_osTableAdapter
-            // 
-            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -509,6 +452,64 @@
             this.idClientsDataGridViewTextBoxColumn.Name = "idClientsDataGridViewTextBoxColumn";
             this.idClientsDataGridViewTextBoxColumn.ReadOnly = true;
             this.idClientsDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tbbudgetsosBindingSource
+            // 
+            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
+            this.tbbudgetsosBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(696, 399);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(120, 30);
+            this.btnFinalizar.TabIndex = 11;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // btnAbrirAlterar
+            // 
+            this.btnAbrirAlterar.Location = new System.Drawing.Point(15, 399);
+            this.btnAbrirAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAbrirAlterar.Name = "btnAbrirAlterar";
+            this.btnAbrirAlterar.Size = new System.Drawing.Size(120, 30);
+            this.btnAbrirAlterar.TabIndex = 12;
+            this.btnAbrirAlterar.Text = "Abrir / Alterar";
+            this.btnAbrirAlterar.UseVisualStyleBackColor = true;
+            this.btnAbrirAlterar.Click += new System.EventHandler(this.btnAbrirAlterar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(1091, 399);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(120, 30);
+            this.btnExcluir.TabIndex = 17;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnReabrirOS
+            // 
+            this.btnReabrirOS.Location = new System.Drawing.Point(328, 399);
+            this.btnReabrirOS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReabrirOS.Name = "btnReabrirOS";
+            this.btnReabrirOS.Size = new System.Drawing.Size(120, 30);
+            this.btnReabrirOS.TabIndex = 18;
+            this.btnReabrirOS.Text = "Reabrir OS";
+            this.btnReabrirOS.UseVisualStyleBackColor = true;
+            this.btnReabrirOS.Click += new System.EventHandler(this.btnReabrirOS_Click);
+            // 
+            // tb_budgets_osTableAdapter
+            // 
+            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
             // 
             // frmDeliveryFollowing
             // 

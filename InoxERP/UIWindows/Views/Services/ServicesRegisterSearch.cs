@@ -270,11 +270,14 @@ namespace UIWindows
             {
                 txtConsultaServico.Clear();
                 MessageBox.Show("Serviço Não Encontrado");
+                txtConsultaServico.Focus();
+                searchByName();
             }
             else
             {
+                List<Services> s = search.ToList();
                 txtConsultaServico.Clear();
-                dgvConsultaServicos.DataSource = search.ToList();
+                dgvConsultaServicos.DataSource = s.ToList();
             }
         }
     }

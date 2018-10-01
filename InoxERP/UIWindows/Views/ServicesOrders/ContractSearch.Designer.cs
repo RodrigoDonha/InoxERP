@@ -143,13 +143,13 @@
             this.radCPF_CNPJ.Name = "radCPF_CNPJ";
             this.radCPF_CNPJ.Size = new System.Drawing.Size(91, 21);
             this.radCPF_CNPJ.TabIndex = 2;
-            this.radCPF_CNPJ.TabStop = true;
             this.radCPF_CNPJ.Text = "CPF/CNPJ";
             this.radCPF_CNPJ.UseVisualStyleBackColor = true;
             // 
             // radNome
             // 
             this.radNome.AutoSize = true;
+            this.radNome.Checked = true;
             this.radNome.Location = new System.Drawing.Point(97, 25);
             this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNome.Name = "radNome";

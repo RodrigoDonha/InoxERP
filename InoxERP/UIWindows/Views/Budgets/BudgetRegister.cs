@@ -1011,7 +1011,10 @@ namespace InoxERP.UI_Windows_Forms
             nudParcelas.Enabled = true;
 
             btnGravarOrcamento.Text = "Alterar";
-            btnAprovar.Enabled = true;
+            if (btnAprovar.Enabled)
+                btnAprovar.Enabled = false;
+            else
+                btnAprovar.Enabled = true;
         }
 
         private void btnAprovar_Click(object sender, EventArgs e)
