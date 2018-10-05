@@ -26,15 +26,15 @@ namespace UIWindows.Business.Concrete
         }
         public virtual void Insert(T entity)
         {
-            try
-            {
+            //try
+            //{
                 context.Entry(entity).State = EntityState.Added;
                 context.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show(e.Message);
+            //}
         }
 
         public virtual void Update(T entity)

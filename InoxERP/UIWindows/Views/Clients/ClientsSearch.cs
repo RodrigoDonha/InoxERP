@@ -21,7 +21,7 @@ namespace UIWindows
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             frmClientsRegister obj = new frmClientsRegister();
-            //this.Hide();
+            this.Dispose(true);
             obj.Show();
         }
     }

@@ -614,7 +614,7 @@ namespace InoxERP.UI_Windows_Forms
         // CALL VIEW CLIENTS
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            //new frmClientsSearch().Show();
+            new frmClientsSearch().Show();
         }
 
         
