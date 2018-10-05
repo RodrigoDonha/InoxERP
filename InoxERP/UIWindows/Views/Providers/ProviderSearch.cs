@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using InoxERP.UI_Windows_Forms;
 using UIWindows.Business.Concrete;
@@ -51,7 +44,6 @@ namespace UIWindows
             {
                 MessageBox.Show("Não foi possível selecionar o Fornecedor, tente selecionar novamente.");
             }
-
         }
 
         private void dgvFornecedores_Click(object sender, EventArgs e)
