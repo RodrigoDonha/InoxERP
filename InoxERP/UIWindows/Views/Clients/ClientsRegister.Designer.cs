@@ -58,6 +58,8 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.grpDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.lblCargoProfissao = new System.Windows.Forms.Label();
             this.radIndustrial = new System.Windows.Forms.RadioButton();
             this.radResidencial = new System.Windows.Forms.RadioButton();
             this.radComercial = new System.Windows.Forms.RadioButton();
@@ -65,8 +67,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.lblCPF_CNPJ = new System.Windows.Forms.Label();
-            this.lblCargoProfissao = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.TextBox();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -131,6 +131,7 @@
             // 
             this.txtObservacoes.Location = new System.Drawing.Point(11, 26);
             this.txtObservacoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtObservacoes.MaxLength = 300;
             this.txtObservacoes.Multiline = true;
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(1047, 68);
@@ -160,6 +161,7 @@
             // 
             this.txtContatosCelular1.Location = new System.Drawing.Point(151, 89);
             this.txtContatosCelular1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContatosCelular1.MaxLength = 15;
             this.txtContatosCelular1.Name = "txtContatosCelular1";
             this.txtContatosCelular1.Size = new System.Drawing.Size(257, 23);
             this.txtContatosCelular1.TabIndex = 16;
@@ -177,6 +179,7 @@
             // 
             this.txtContatosEmail.Location = new System.Drawing.Point(540, 36);
             this.txtContatosEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContatosEmail.MaxLength = 100;
             this.txtContatosEmail.Name = "txtContatosEmail";
             this.txtContatosEmail.Size = new System.Drawing.Size(516, 23);
             this.txtContatosEmail.TabIndex = 15;
@@ -185,6 +188,7 @@
             // 
             this.txtContatosCelular2.Location = new System.Drawing.Point(540, 91);
             this.txtContatosCelular2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContatosCelular2.MaxLength = 15;
             this.txtContatosCelular2.Name = "txtContatosCelular2";
             this.txtContatosCelular2.Size = new System.Drawing.Size(257, 23);
             this.txtContatosCelular2.TabIndex = 17;
@@ -193,6 +197,7 @@
             // 
             this.txtContatosResiCom.Location = new System.Drawing.Point(156, 36);
             this.txtContatosResiCom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContatosResiCom.MaxLength = 14;
             this.txtContatosResiCom.Name = "txtContatosResiCom";
             this.txtContatosResiCom.Size = new System.Drawing.Size(252, 23);
             this.txtContatosResiCom.TabIndex = 14;
@@ -290,6 +295,7 @@
             // 
             this.txtCEP.Location = new System.Drawing.Point(871, 130);
             this.txtCEP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(185, 23);
             this.txtCEP.TabIndex = 13;
@@ -298,6 +304,7 @@
             // 
             this.txtCidade.Location = new System.Drawing.Point(156, 130);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCidade.MaxLength = 100;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(495, 23);
             this.txtCidade.TabIndex = 11;
@@ -306,6 +313,7 @@
             // 
             this.txtComplemento.Location = new System.Drawing.Point(807, 85);
             this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(249, 23);
             this.txtComplemento.TabIndex = 10;
@@ -314,6 +322,7 @@
             // 
             this.txtBairro.Location = new System.Drawing.Point(345, 85);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBairro.MaxLength = 100;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(305, 23);
             this.txtBairro.TabIndex = 9;
@@ -322,6 +331,7 @@
             // 
             this.txtNumEndereco.Location = new System.Drawing.Point(156, 84);
             this.txtNumEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNumEndereco.MaxLength = 10;
             this.txtNumEndereco.Name = "txtNumEndereco";
             this.txtNumEndereco.Size = new System.Drawing.Size(97, 23);
             this.txtNumEndereco.TabIndex = 8;
@@ -330,6 +340,7 @@
             // 
             this.txtEndereco.Location = new System.Drawing.Point(156, 41);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(900, 23);
             this.txtEndereco.TabIndex = 7;
@@ -418,6 +429,24 @@
             this.grpDadosPessoais.TabStop = false;
             this.grpDadosPessoais.Text = "Dados Pessoais";
             // 
+            // txtCargo
+            // 
+            this.txtCargo.Location = new System.Drawing.Point(864, 79);
+            this.txtCargo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCargo.MaxLength = 100;
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(192, 23);
+            this.txtCargo.TabIndex = 6;
+            // 
+            // lblCargoProfissao
+            // 
+            this.lblCargoProfissao.AutoSize = true;
+            this.lblCargoProfissao.Location = new System.Drawing.Point(747, 82);
+            this.lblCargoProfissao.Name = "lblCargoProfissao";
+            this.lblCargoProfissao.Size = new System.Drawing.Size(113, 17);
+            this.lblCargoProfissao.TabIndex = 35;
+            this.lblCargoProfissao.Text = "Cargo/Profissão:";
+            // 
             // radIndustrial
             // 
             this.radIndustrial.AutoSize = true;
@@ -454,6 +483,7 @@
             // 
             this.txtCPF_CNPJ.Location = new System.Drawing.Point(156, 78);
             this.txtCPF_CNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCPF_CNPJ.MaxLength = 18;
             this.txtCPF_CNPJ.Name = "txtCPF_CNPJ";
             this.txtCPF_CNPJ.Size = new System.Drawing.Size(295, 23);
             this.txtCPF_CNPJ.TabIndex = 2;
@@ -462,6 +492,7 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(156, 34);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(900, 23);
             this.txtNome.TabIndex = 1;
@@ -483,23 +514,6 @@
             this.lblCPF_CNPJ.Size = new System.Drawing.Size(113, 17);
             this.lblCPF_CNPJ.TabIndex = 1;
             this.lblCPF_CNPJ.Text = "C.P.F. / C.N.P.J.:";
-            // 
-            // lblCargoProfissao
-            // 
-            this.lblCargoProfissao.AutoSize = true;
-            this.lblCargoProfissao.Location = new System.Drawing.Point(747, 82);
-            this.lblCargoProfissao.Name = "lblCargoProfissao";
-            this.lblCargoProfissao.Size = new System.Drawing.Size(113, 17);
-            this.lblCargoProfissao.TabIndex = 35;
-            this.lblCargoProfissao.Text = "Cargo/Profissão:";
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.Location = new System.Drawing.Point(864, 79);
-            this.txtCargo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(192, 23);
-            this.txtCargo.TabIndex = 6;
             // 
             // frmClientsRegister
             // 

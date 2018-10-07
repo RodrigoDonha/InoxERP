@@ -88,6 +88,7 @@
             this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValor.Location = new System.Drawing.Point(112, 115);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.MaxLength = 18;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(120, 22);
             this.txtValor.TabIndex = 35;
@@ -97,6 +98,7 @@
             this.txtReferenteA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReferenteA.Location = new System.Drawing.Point(112, 150);
             this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
             this.txtReferenteA.Size = new System.Drawing.Size(369, 22);
             this.txtReferenteA.TabIndex = 34;
@@ -189,6 +191,7 @@
             // 
             this.txtCodCliente.Location = new System.Drawing.Point(298, 80);
             this.txtCodCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodCliente.MaxLength = 100;
             this.txtCodCliente.Name = "txtCodCliente";
             this.txtCodCliente.Size = new System.Drawing.Size(73, 20);
             this.txtCodCliente.TabIndex = 48;
@@ -208,6 +211,7 @@
             // 
             this.txtOS.Location = new System.Drawing.Point(112, 81);
             this.txtOS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOS.MaxLength = 100;
             this.txtOS.Name = "txtOS";
             this.txtOS.Size = new System.Drawing.Size(73, 20);
             this.txtOS.TabIndex = 46;

@@ -114,6 +114,7 @@
             // 
             this.txtQuantidade.Location = new System.Drawing.Point(112, 65);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtQuantidade.MaxLength = 5;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(146, 23);
             this.txtQuantidade.TabIndex = 2;
@@ -142,6 +143,7 @@
             // 
             this.txtFornecedor.Location = new System.Drawing.Point(112, 155);
             this.txtFornecedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFornecedor.MaxLength = 100;
             this.txtFornecedor.Name = "txtFornecedor";
             this.txtFornecedor.Size = new System.Drawing.Size(317, 23);
             this.txtFornecedor.TabIndex = 8;
@@ -213,6 +215,7 @@
             // 
             this.txtObservacao.Location = new System.Drawing.Point(9, 220);
             this.txtObservacao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtObservacao.MaxLength = 300;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(551, 82);
@@ -233,6 +236,7 @@
             // 
             this.txtValorTotal.Location = new System.Drawing.Point(435, 109);
             this.txtValorTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtValorTotal.MaxLength = 18;
             this.txtValorTotal.Name = "txtValorTotal";
             this.txtValorTotal.Size = new System.Drawing.Size(125, 23);
             this.txtValorTotal.TabIndex = 7;
@@ -241,6 +245,7 @@
             // 
             this.txtValorUnitario.Location = new System.Drawing.Point(112, 109);
             this.txtValorUnitario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtValorUnitario.MaxLength = 18;
             this.txtValorUnitario.Name = "txtValorUnitario";
             this.txtValorUnitario.Size = new System.Drawing.Size(146, 23);
             this.txtValorUnitario.TabIndex = 6;
@@ -250,6 +255,7 @@
             // 
             this.txtPeca.Location = new System.Drawing.Point(112, 30);
             this.txtPeca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPeca.MaxLength = 100;
             this.txtPeca.Name = "txtPeca";
             this.txtPeca.Size = new System.Drawing.Size(448, 23);
             this.txtPeca.TabIndex = 1;
@@ -457,6 +463,7 @@
             // 
             this.txtConsultaPeca.Location = new System.Drawing.Point(71, 31);
             this.txtConsultaPeca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsultaPeca.MaxLength = 100;
             this.txtConsultaPeca.Name = "txtConsultaPeca";
             this.txtConsultaPeca.Size = new System.Drawing.Size(405, 23);
             this.txtConsultaPeca.TabIndex = 1;

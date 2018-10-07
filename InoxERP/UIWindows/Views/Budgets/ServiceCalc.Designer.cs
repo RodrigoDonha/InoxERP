@@ -64,6 +64,7 @@
             // 
             this.txtPorcentagem.Location = new System.Drawing.Point(233, 51);
             this.txtPorcentagem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPorcentagem.MaxLength = 18;
             this.txtPorcentagem.Name = "txtPorcentagem";
             this.txtPorcentagem.Size = new System.Drawing.Size(121, 23);
             this.txtPorcentagem.TabIndex = 2;
@@ -115,6 +116,7 @@
             // 
             this.txtTotal.Location = new System.Drawing.Point(233, 100);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTotal.MaxLength = 18;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(121, 23);
             this.txtTotal.TabIndex = 7;

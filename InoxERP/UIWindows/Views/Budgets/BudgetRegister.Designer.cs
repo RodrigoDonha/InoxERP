@@ -157,6 +157,7 @@
             // 
             this.txtCargo.Location = new System.Drawing.Point(359, 126);
             this.txtCargo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCargo.MaxLength = 100;
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(195, 26);
             this.txtCargo.TabIndex = 8;
@@ -209,6 +210,7 @@
             // 
             this.txtEndereco.Location = new System.Drawing.Point(76, 93);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(478, 26);
             this.txtEndereco.TabIndex = 6;
@@ -226,6 +228,7 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(76, 59);
             this.txtNome.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(478, 26);
             this.txtNome.TabIndex = 5;
@@ -334,6 +337,7 @@
             // 
             this.txtQuantidade.Location = new System.Drawing.Point(9, 67);
             this.txtQuantidade.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuantidade.MaxLength = 99;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(50, 26);
             this.txtQuantidade.TabIndex = 9;
@@ -461,6 +465,7 @@
             this.txtValorTotal.Enabled = false;
             this.txtValorTotal.Location = new System.Drawing.Point(389, 67);
             this.txtValorTotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txtValorTotal.MaxLength = 18;
             this.txtValorTotal.Name = "txtValorTotal";
             this.txtValorTotal.Size = new System.Drawing.Size(76, 26);
             this.txtValorTotal.TabIndex = 12;
@@ -471,6 +476,7 @@
             // 
             this.txtValorUnitario.Location = new System.Drawing.Point(305, 67);
             this.txtValorUnitario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtValorUnitario.MaxLength = 18;
             this.txtValorUnitario.Name = "txtValorUnitario";
             this.txtValorUnitario.Size = new System.Drawing.Size(81, 26);
             this.txtValorUnitario.TabIndex = 11;
@@ -505,6 +511,7 @@
             // 
             this.txtDescricao.Location = new System.Drawing.Point(63, 67);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescricao.MaxLength = 100;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(238, 26);
             this.txtDescricao.TabIndex = 10;
@@ -698,6 +705,7 @@
             this.txtPorcentJuros.Enabled = false;
             this.txtPorcentJuros.Location = new System.Drawing.Point(156, 126);
             this.txtPorcentJuros.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPorcentJuros.MaxLength = 18;
             this.txtPorcentJuros.Name = "txtPorcentJuros";
             this.txtPorcentJuros.Size = new System.Drawing.Size(76, 26);
             this.txtPorcentJuros.TabIndex = 23;
@@ -767,6 +775,7 @@
             this.txtPorcentDescAVista.Enabled = false;
             this.txtPorcentDescAVista.Location = new System.Drawing.Point(155, 56);
             this.txtPorcentDescAVista.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPorcentDescAVista.MaxLength = 18;
             this.txtPorcentDescAVista.Name = "txtPorcentDescAVista";
             this.txtPorcentDescAVista.Size = new System.Drawing.Size(76, 26);
             this.txtPorcentDescAVista.TabIndex = 20;

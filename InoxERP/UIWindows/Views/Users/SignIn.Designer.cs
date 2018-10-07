@@ -97,6 +97,7 @@
             // 
             this.txtLogin.Location = new System.Drawing.Point(19, 47);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLogin.MaxLength = 100;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(307, 23);
             this.txtLogin.TabIndex = 1;
@@ -119,6 +120,7 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(19, 42);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSenha.MaxLength = 100;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(307, 23);

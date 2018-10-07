@@ -201,6 +201,7 @@
             // 
             this.txtConsultaServico.Location = new System.Drawing.Point(71, 30);
             this.txtConsultaServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsultaServico.MaxLength = 100;
             this.txtConsultaServico.Name = "txtConsultaServico";
             this.txtConsultaServico.Size = new System.Drawing.Size(405, 23);
             this.txtConsultaServico.TabIndex = 6;

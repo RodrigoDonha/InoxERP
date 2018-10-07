@@ -34,19 +34,6 @@ namespace UIWindows
             fillDataSet();
         }
 
-        private void btnSelecionar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                returnProviders = obj.returnById(selectProviders());
-                Dispose();
-            }
-            catch
-            {
-                MessageBox.Show("Não foi possível selecionar o Fornecedor, tente selecionar novamente.");
-            }
-        }
-
         private void dgvFornecedores_Click(object sender, EventArgs e)
         {
             string getId = "";
@@ -177,5 +164,35 @@ namespace UIWindows
         {
             this.tb_providersTableAdapter.Fill(this.fullDataSet.tb_providers);
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                returnProviders = obj.returnById(selectProviders());
+                frmProviderRegister provider = new frmProviderRegister();
+                provider.completeRegister(selectProviders());
+                Dispose();
+                provider.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível selecionar o Fornecedor, tente selecionar novamente.");
+            }
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                returnProviders = obj.returnById(selectProviders());
+                Dispose();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível selecionar o Fornecedor, tente selecionar novamente.");
+            }
+        }
+
     }
 }

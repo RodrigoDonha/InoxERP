@@ -79,6 +79,7 @@
             // 
             this.txtOS.Location = new System.Drawing.Point(83, 45);
             this.txtOS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOS.MaxLength = 100;
             this.txtOS.Name = "txtOS";
             this.txtOS.Size = new System.Drawing.Size(132, 23);
             this.txtOS.TabIndex = 39;
@@ -119,6 +120,7 @@
             // 
             this.txtCodCliente.Location = new System.Drawing.Point(60, 49);
             this.txtCodCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodCliente.MaxLength = 100;
             this.txtCodCliente.Name = "txtCodCliente";
             this.txtCodCliente.Size = new System.Drawing.Size(146, 23);
             this.txtCodCliente.TabIndex = 41;
@@ -137,6 +139,7 @@
             // 
             this.txtReferenteA.Location = new System.Drawing.Point(104, 291);
             this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
             this.txtReferenteA.Size = new System.Drawing.Size(409, 23);
             this.txtReferenteA.TabIndex = 70;
@@ -192,6 +195,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(104, 251);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.MaxLength = 33;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(409, 23);
             this.textBox1.TabIndex = 64;
@@ -277,6 +281,7 @@
             // 
             this.txtValor.Location = new System.Drawing.Point(104, 173);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.MaxLength = 18;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(132, 23);
             this.txtValor.TabIndex = 55;
@@ -285,6 +290,7 @@
             // 
             this.txtOrcamento.Location = new System.Drawing.Point(104, 211);
             this.txtOrcamento.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOrcamento.MaxLength = 100;
             this.txtOrcamento.Name = "txtOrcamento";
             this.txtOrcamento.Size = new System.Drawing.Size(132, 23);
             this.txtOrcamento.TabIndex = 54;

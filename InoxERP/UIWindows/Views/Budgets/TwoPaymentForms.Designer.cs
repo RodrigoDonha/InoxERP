@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.grpDinheiro = new System.Windows.Forms.GroupBox();
-            this.grpServicos = new System.Windows.Forms.GroupBox();
-            this.lblDinheiro = new System.Windows.Forms.Label();
             this.txtDinheiro = new System.Windows.Forms.TextBox();
+            this.lblDinheiro = new System.Windows.Forms.Label();
+            this.grpServicos = new System.Windows.Forms.GroupBox();
+            this.nudParcelaCheque = new System.Windows.Forms.NumericUpDown();
+            this.lblParcelas = new System.Windows.Forms.Label();
             this.txtValorCheque = new System.Windows.Forms.TextBox();
             this.lblCheque = new System.Windows.Forms.Label();
-            this.lblParcelas = new System.Windows.Forms.Label();
-            this.nudParcelaCheque = new System.Windows.Forms.NumericUpDown();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
@@ -57,6 +57,23 @@
             this.grpDinheiro.TabStop = false;
             this.grpDinheiro.Text = "Dinheiro";
             // 
+            // txtDinheiro
+            // 
+            this.txtDinheiro.Location = new System.Drawing.Point(110, 33);
+            this.txtDinheiro.MaxLength = 18;
+            this.txtDinheiro.Name = "txtDinheiro";
+            this.txtDinheiro.Size = new System.Drawing.Size(100, 23);
+            this.txtDinheiro.TabIndex = 1;
+            // 
+            // lblDinheiro
+            // 
+            this.lblDinheiro.AutoSize = true;
+            this.lblDinheiro.Location = new System.Drawing.Point(6, 36);
+            this.lblDinheiro.Name = "lblDinheiro";
+            this.lblDinheiro.Size = new System.Drawing.Size(69, 17);
+            this.lblDinheiro.TabIndex = 0;
+            this.lblDinheiro.Text = "Dinheiro: ";
+            // 
             // grpServicos
             // 
             this.grpServicos.Controls.Add(this.nudParcelaCheque);
@@ -71,47 +88,6 @@
             this.grpServicos.TabIndex = 1;
             this.grpServicos.TabStop = false;
             this.grpServicos.Text = "Cheque";
-            // 
-            // lblDinheiro
-            // 
-            this.lblDinheiro.AutoSize = true;
-            this.lblDinheiro.Location = new System.Drawing.Point(6, 36);
-            this.lblDinheiro.Name = "lblDinheiro";
-            this.lblDinheiro.Size = new System.Drawing.Size(69, 17);
-            this.lblDinheiro.TabIndex = 0;
-            this.lblDinheiro.Text = "Dinheiro: ";
-            // 
-            // txtDinheiro
-            // 
-            this.txtDinheiro.Location = new System.Drawing.Point(110, 33);
-            this.txtDinheiro.Name = "txtDinheiro";
-            this.txtDinheiro.Size = new System.Drawing.Size(100, 23);
-            this.txtDinheiro.TabIndex = 1;
-            // 
-            // txtValorCheque
-            // 
-            this.txtValorCheque.Location = new System.Drawing.Point(110, 31);
-            this.txtValorCheque.Name = "txtValorCheque";
-            this.txtValorCheque.Size = new System.Drawing.Size(100, 23);
-            this.txtValorCheque.TabIndex = 3;
-            // 
-            // lblCheque
-            // 
-            this.lblCheque.AutoSize = true;
-            this.lblCheque.Location = new System.Drawing.Point(6, 34);
-            this.lblCheque.Name = "lblCheque";
-            this.lblCheque.Size = new System.Drawing.Size(65, 17);
-            this.lblCheque.TabIndex = 2;
-            this.lblCheque.Text = "Cheque: ";
-            // 
-            // lblParcelas
-            // 
-            this.lblParcelas.AutoSize = true;
-            this.lblParcelas.Location = new System.Drawing.Point(6, 65);
-            this.lblParcelas.Name = "lblParcelas";
-            this.lblParcelas.Size = new System.Drawing.Size(71, 17);
-            this.lblParcelas.TabIndex = 4;
-            this.lblParcelas.Text = "Parcelas: ";
             // 
             // nudParcelaCheque
             // 
@@ -129,6 +105,32 @@
             0,
             0,
             0});
+            // 
+            // lblParcelas
+            // 
+            this.lblParcelas.AutoSize = true;
+            this.lblParcelas.Location = new System.Drawing.Point(6, 65);
+            this.lblParcelas.Name = "lblParcelas";
+            this.lblParcelas.Size = new System.Drawing.Size(71, 17);
+            this.lblParcelas.TabIndex = 4;
+            this.lblParcelas.Text = "Parcelas: ";
+            // 
+            // txtValorCheque
+            // 
+            this.txtValorCheque.Location = new System.Drawing.Point(110, 31);
+            this.txtValorCheque.MaxLength = 18;
+            this.txtValorCheque.Name = "txtValorCheque";
+            this.txtValorCheque.Size = new System.Drawing.Size(100, 23);
+            this.txtValorCheque.TabIndex = 3;
+            // 
+            // lblCheque
+            // 
+            this.lblCheque.AutoSize = true;
+            this.lblCheque.Location = new System.Drawing.Point(6, 34);
+            this.lblCheque.Name = "lblCheque";
+            this.lblCheque.Size = new System.Drawing.Size(65, 17);
+            this.lblCheque.TabIndex = 2;
+            this.lblCheque.Text = "Cheque: ";
             // 
             // lblTotal
             // 

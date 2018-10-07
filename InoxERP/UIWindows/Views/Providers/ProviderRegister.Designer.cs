@@ -140,6 +140,7 @@
             // 
             this.txtObservacoes.Location = new System.Drawing.Point(11, 26);
             this.txtObservacoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtObservacoes.MaxLength = 300;
             this.txtObservacoes.Multiline = true;
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(1047, 35);
@@ -169,6 +170,7 @@
             // 
             this.txtContatosCelular1.Location = new System.Drawing.Point(156, 79);
             this.txtContatosCelular1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContatosCelular1.MaxLength = 15;
             this.txtContatosCelular1.Name = "txtContatosCelular1";
             this.txtContatosCelular1.Size = new System.Drawing.Size(252, 23);
             this.txtContatosCelular1.TabIndex = 11;
@@ -186,6 +188,7 @@
             // 
             this.txtContatosEmail.Location = new System.Drawing.Point(571, 26);
             this.txtContatosEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContatosEmail.MaxLength = 100;
             this.txtContatosEmail.Name = "txtContatosEmail";
             this.txtContatosEmail.Size = new System.Drawing.Size(485, 23);
             this.txtContatosEmail.TabIndex = 12;
@@ -194,6 +197,7 @@
             // 
             this.txtContatosCelular2.Location = new System.Drawing.Point(571, 78);
             this.txtContatosCelular2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContatosCelular2.MaxLength = 15;
             this.txtContatosCelular2.Name = "txtContatosCelular2";
             this.txtContatosCelular2.Size = new System.Drawing.Size(257, 23);
             this.txtContatosCelular2.TabIndex = 13;
@@ -202,6 +206,7 @@
             // 
             this.txtContatosComercial.Location = new System.Drawing.Point(156, 26);
             this.txtContatosComercial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContatosComercial.MaxLength = 14;
             this.txtContatosComercial.Name = "txtContatosComercial";
             this.txtContatosComercial.Size = new System.Drawing.Size(252, 23);
             this.txtContatosComercial.TabIndex = 10;
@@ -299,6 +304,7 @@
             // 
             this.txtCEP.Location = new System.Drawing.Point(871, 98);
             this.txtCEP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(185, 23);
             this.txtCEP.TabIndex = 9;
@@ -307,6 +313,7 @@
             // 
             this.txtCidade.Location = new System.Drawing.Point(156, 98);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCidade.MaxLength = 100;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(495, 23);
             this.txtCidade.TabIndex = 7;
@@ -315,6 +322,7 @@
             // 
             this.txtComplemento.Location = new System.Drawing.Point(807, 61);
             this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(249, 23);
             this.txtComplemento.TabIndex = 6;
@@ -323,6 +331,7 @@
             // 
             this.txtBairro.Location = new System.Drawing.Point(345, 61);
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBairro.MaxLength = 100;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(305, 23);
             this.txtBairro.TabIndex = 5;
@@ -331,6 +340,7 @@
             // 
             this.txtNumEndereco.Location = new System.Drawing.Point(156, 60);
             this.txtNumEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNumEndereco.MaxLength = 10;
             this.txtNumEndereco.Name = "txtNumEndereco";
             this.txtNumEndereco.Size = new System.Drawing.Size(97, 23);
             this.txtNumEndereco.TabIndex = 4;
@@ -339,6 +349,7 @@
             // 
             this.txtEndereco.Location = new System.Drawing.Point(156, 24);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(900, 23);
             this.txtEndereco.TabIndex = 3;
@@ -426,6 +437,7 @@
             // 
             this.txtCPF_CNPJ.Location = new System.Drawing.Point(156, 67);
             this.txtCPF_CNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCPF_CNPJ.MaxLength = 18;
             this.txtCPF_CNPJ.Name = "txtCPF_CNPJ";
             this.txtCPF_CNPJ.Size = new System.Drawing.Size(295, 23);
             this.txtCPF_CNPJ.TabIndex = 2;
@@ -434,6 +446,7 @@
             // 
             this.txtNome.Location = new System.Drawing.Point(156, 23);
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(900, 23);
             this.txtNome.TabIndex = 1;
@@ -484,6 +497,7 @@
             // 
             this.txtCompraMinima.Location = new System.Drawing.Point(571, 97);
             this.txtCompraMinima.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCompraMinima.MaxLength = 18;
             this.txtCompraMinima.Name = "txtCompraMinima";
             this.txtCompraMinima.Size = new System.Drawing.Size(252, 23);
             this.txtCompraMinima.TabIndex = 19;
@@ -502,6 +516,7 @@
             // 
             this.txtFavorecido.Location = new System.Drawing.Point(571, 26);
             this.txtFavorecido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFavorecido.MaxLength = 100;
             this.txtFavorecido.Name = "txtFavorecido";
             this.txtFavorecido.Size = new System.Drawing.Size(485, 23);
             this.txtFavorecido.TabIndex = 17;
@@ -519,6 +534,7 @@
             // 
             this.txtCpfCnpj.Location = new System.Drawing.Point(571, 59);
             this.txtCpfCnpj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCpfCnpj.MaxLength = 18;
             this.txtCpfCnpj.Name = "txtCpfCnpj";
             this.txtCpfCnpj.Size = new System.Drawing.Size(252, 23);
             this.txtCpfCnpj.TabIndex = 18;
@@ -536,6 +552,7 @@
             // 
             this.txtConta.Location = new System.Drawing.Point(156, 97);
             this.txtConta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConta.MaxLength = 20;
             this.txtConta.Name = "txtConta";
             this.txtConta.Size = new System.Drawing.Size(252, 23);
             this.txtConta.TabIndex = 16;
@@ -553,6 +570,7 @@
             // 
             this.txtBanco.Location = new System.Drawing.Point(156, 26);
             this.txtBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBanco.MaxLength = 50;
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(252, 23);
             this.txtBanco.TabIndex = 14;
@@ -570,6 +588,7 @@
             // 
             this.txtAgencia.Location = new System.Drawing.Point(156, 59);
             this.txtAgencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAgencia.MaxLength = 20;
             this.txtAgencia.Name = "txtAgencia";
             this.txtAgencia.Size = new System.Drawing.Size(252, 23);
             this.txtAgencia.TabIndex = 15;

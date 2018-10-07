@@ -74,6 +74,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(301, 79);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.MaxLength = 100;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(73, 23);
             this.textBox2.TabIndex = 34;
@@ -92,6 +93,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(103, 79);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.MaxLength = 100;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(73, 23);
             this.textBox1.TabIndex = 32;
@@ -160,6 +162,7 @@
             // 
             this.txtValor.Location = new System.Drawing.Point(103, 118);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.MaxLength = 18;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(132, 23);
             this.txtValor.TabIndex = 25;
@@ -168,6 +171,7 @@
             // 
             this.txtReferenteA.Location = new System.Drawing.Point(103, 156);
             this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
             this.txtReferenteA.Size = new System.Drawing.Size(381, 23);
             this.txtReferenteA.TabIndex = 24;
@@ -177,6 +181,7 @@
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpData.Location = new System.Drawing.Point(361, 116);
             this.dtpData.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpData.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(123, 23);
             this.dtpData.TabIndex = 23;

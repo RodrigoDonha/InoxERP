@@ -46,6 +46,7 @@
             this.txtValor.Enabled = false;
             this.txtValor.Location = new System.Drawing.Point(109, 63);
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.MaxLength = 18;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(132, 23);
             this.txtValor.TabIndex = 21;
@@ -55,6 +56,7 @@
             this.txtReferenteA.Enabled = false;
             this.txtReferenteA.Location = new System.Drawing.Point(109, 95);
             this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
             this.txtReferenteA.Size = new System.Drawing.Size(381, 23);
             this.txtReferenteA.TabIndex = 20;
@@ -65,6 +67,7 @@
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpData.Location = new System.Drawing.Point(368, 60);
             this.dtpData.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpData.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(123, 23);
             this.dtpData.TabIndex = 19;

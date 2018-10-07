@@ -105,6 +105,7 @@
             this.btnAlterar.TabIndex = 22;
             this.btnAlterar.Text = "Abrir / Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // grpFornecedor
             // 
@@ -372,6 +373,7 @@
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(347, 25);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPesquisa.MaxLength = 100;
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(331, 23);
             this.txtPesquisa.TabIndex = 4;

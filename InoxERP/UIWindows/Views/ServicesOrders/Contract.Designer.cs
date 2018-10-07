@@ -144,6 +144,7 @@
             // 
             this.txtNomeC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeC.Location = new System.Drawing.Point(97, 178);
+            this.txtNomeC.MaxLength = 100;
             this.txtNomeC.Name = "txtNomeC";
             this.txtNomeC.Size = new System.Drawing.Size(670, 22);
             this.txtNomeC.TabIndex = 5;
@@ -152,6 +153,7 @@
             // 
             this.txtCpfCnpjC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpfCnpjC.Location = new System.Drawing.Point(97, 211);
+            this.txtCpfCnpjC.MaxLength = 100;
             this.txtCpfCnpjC.Name = "txtCpfCnpjC";
             this.txtCpfCnpjC.Size = new System.Drawing.Size(204, 22);
             this.txtCpfCnpjC.TabIndex = 6;
@@ -160,6 +162,7 @@
             // 
             this.txtEnderecoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnderecoC.Location = new System.Drawing.Point(389, 211);
+            this.txtEnderecoC.MaxLength = 100;
             this.txtEnderecoC.Name = "txtEnderecoC";
             this.txtEnderecoC.Size = new System.Drawing.Size(378, 22);
             this.txtEnderecoC.TabIndex = 8;
@@ -179,6 +182,7 @@
             // 
             this.txtNumeroC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroC.Location = new System.Drawing.Point(97, 240);
+            this.txtNumeroC.MaxLength = 10;
             this.txtNumeroC.Name = "txtNumeroC";
             this.txtNumeroC.Size = new System.Drawing.Size(96, 22);
             this.txtNumeroC.TabIndex = 10;
@@ -198,6 +202,7 @@
             // 
             this.txtBairroC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBairroC.Location = new System.Drawing.Point(302, 240);
+            this.txtBairroC.MaxLength = 100;
             this.txtBairroC.Name = "txtBairroC";
             this.txtBairroC.Size = new System.Drawing.Size(185, 22);
             this.txtBairroC.TabIndex = 12;
@@ -217,6 +222,7 @@
             // 
             this.txtCepC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCepC.Location = new System.Drawing.Point(563, 240);
+            this.txtCepC.MaxLength = 100;
             this.txtCepC.Name = "txtCepC";
             this.txtCepC.Size = new System.Drawing.Size(204, 22);
             this.txtCepC.TabIndex = 14;
@@ -236,6 +242,7 @@
             // 
             this.txtCidadeC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidadeC.Location = new System.Drawing.Point(97, 269);
+            this.txtCidadeC.MaxLength = 100;
             this.txtCidadeC.Name = "txtCidadeC";
             this.txtCidadeC.Size = new System.Drawing.Size(185, 22);
             this.txtCidadeC.TabIndex = 16;
@@ -277,6 +284,7 @@
             // 
             this.txtEstadoE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstadoE.Location = new System.Drawing.Point(363, 415);
+            this.txtEstadoE.MaxLength = 100;
             this.txtEstadoE.Name = "txtEstadoE";
             this.txtEstadoE.Size = new System.Drawing.Size(124, 22);
             this.txtEstadoE.TabIndex = 35;
@@ -298,6 +306,7 @@
             // 
             this.txtCidadeE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidadeE.Location = new System.Drawing.Point(97, 415);
+            this.txtCidadeE.MaxLength = 100;
             this.txtCidadeE.Name = "txtCidadeE";
             this.txtCidadeE.Size = new System.Drawing.Size(185, 22);
             this.txtCidadeE.TabIndex = 33;
@@ -319,6 +328,7 @@
             // 
             this.txtCepE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCepE.Location = new System.Drawing.Point(563, 386);
+            this.txtCepE.MaxLength = 100;
             this.txtCepE.Name = "txtCepE";
             this.txtCepE.Size = new System.Drawing.Size(204, 22);
             this.txtCepE.TabIndex = 31;
@@ -340,6 +350,7 @@
             // 
             this.txtBairroE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBairroE.Location = new System.Drawing.Point(302, 386);
+            this.txtBairroE.MaxLength = 100;
             this.txtBairroE.Name = "txtBairroE";
             this.txtBairroE.Size = new System.Drawing.Size(185, 22);
             this.txtBairroE.TabIndex = 29;
@@ -361,6 +372,7 @@
             // 
             this.txtNumeroE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroE.Location = new System.Drawing.Point(97, 386);
+            this.txtNumeroE.MaxLength = 100;
             this.txtNumeroE.Name = "txtNumeroE";
             this.txtNumeroE.Size = new System.Drawing.Size(96, 22);
             this.txtNumeroE.TabIndex = 27;
@@ -382,6 +394,7 @@
             // 
             this.txtEnderecoE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEnderecoE.Location = new System.Drawing.Point(389, 357);
+            this.txtEnderecoE.MaxLength = 100;
             this.txtEnderecoE.Name = "txtEnderecoE";
             this.txtEnderecoE.Size = new System.Drawing.Size(378, 22);
             this.txtEnderecoE.TabIndex = 25;
@@ -403,6 +416,7 @@
             // 
             this.txtCnpjE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCnpjE.Location = new System.Drawing.Point(97, 357);
+            this.txtCnpjE.MaxLength = 100;
             this.txtCnpjE.Name = "txtCnpjE";
             this.txtCnpjE.Size = new System.Drawing.Size(204, 22);
             this.txtCnpjE.TabIndex = 23;
@@ -413,6 +427,7 @@
             // 
             this.txtNomeE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeE.Location = new System.Drawing.Point(97, 324);
+            this.txtNomeE.MaxLength = 100;
             this.txtNomeE.Name = "txtNomeE";
             this.txtNomeE.Size = new System.Drawing.Size(390, 22);
             this.txtNomeE.TabIndex = 22;
@@ -445,6 +460,7 @@
             // 
             this.txtCpfE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpfE.Location = new System.Drawing.Point(563, 324);
+            this.txtCpfE.MaxLength = 100;
             this.txtCpfE.Name = "txtCpfE";
             this.txtCpfE.Size = new System.Drawing.Size(204, 22);
             this.txtCpfE.TabIndex = 37;
