@@ -51,8 +51,6 @@ namespace UIWindows
                             btn.Enabled = true;
                     }
                 }
-                /////
-
                 bud.BudgetData();
                 bud.Show();
             }
@@ -132,10 +130,7 @@ namespace UIWindows
                 searchByDate();
         }
 
-
         // Parameters Ready, Validations and Verifications down
-
-
         public void getIdGrigView()
         {
             getId = "";
@@ -162,7 +157,6 @@ namespace UIWindows
                 txtPesquisa.Clear();
                 MessageBox.Show("Nenhuma Ordem de Serviço Encontrada");
                 txtPesquisa.Focus();
-                searchByName();
             }
             else
             {

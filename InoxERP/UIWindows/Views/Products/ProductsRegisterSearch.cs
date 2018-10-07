@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,8 @@ namespace UIWindows
         ProductBusiness obj = new  ProductBusiness(ctx);
 
         frmProviderSearch provider = new frmProviderSearch();
+
+        public Products ReturnProducts { get; set; }
 
         private string id;
 
@@ -387,6 +390,33 @@ namespace UIWindows
                 {
                     txtFornecedor.Text = provider.returnProviders.sName;
                 }
+        }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                ReturnProducts = obj.ReturnByID(selectProducts());
+                Hide();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível selecionar o Produto, tente selecionar novamente, clicando no cliente desejado e no botão selecionar.");
+            }
+        }
+
+        public string selectProducts()
+        {
+            id = "";
+
+            if (dgvConsultaPecas.CurrentRow != null)
+            {
+                id = Convert.ToString(dgvConsultaPecas[0, dgvConsultaPecas.CurrentRow.Index].Value.ToString());
+                txtConsultaPeca.Text = Convert.ToString(dgvConsultaPecas[1, dgvConsultaPecas.CurrentRow.Index].Value.ToString());
+            }
+
+            return id;
         }
     }
 }

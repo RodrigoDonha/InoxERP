@@ -10,8 +10,6 @@ namespace UIWindows.Views.Budgets
 {
     public partial class BudgetPrintWithPrice : Form
     {
-        private ReportViewer _reportViewer1;
-
         public BudgetPrintWithPrice(string id)
         {
             InitializeComponent();

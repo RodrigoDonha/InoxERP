@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnSelecionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.grpFornecedor = new System.Windows.Forms.GroupBox();
@@ -84,38 +83,27 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // btnSelecionar
-            // 
-            this.btnSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecionar.Location = new System.Drawing.Point(12, 406);
-            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(160, 30);
-            this.btnSelecionar.TabIndex = 24;
-            this.btnSelecionar.Text = "Selecionar";
-            this.btnSelecionar.UseVisualStyleBackColor = true;
-            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
-            // 
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(439, 406);
+            this.btnExcluir.Location = new System.Drawing.Point(359, 406);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(80, 30);
             this.btnExcluir.TabIndex = 23;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Location = new System.Drawing.Point(313, 406);
+            this.btnAlterar.Location = new System.Drawing.Point(12, 406);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(80, 30);
+            this.btnAlterar.Size = new System.Drawing.Size(160, 30);
             this.btnAlterar.TabIndex = 22;
-            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.Text = "Abrir / Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
             // grpFornecedor
@@ -169,6 +157,7 @@
             this.dgvFornecedores.Size = new System.Drawing.Size(755, 257);
             this.dgvFornecedores.TabIndex = 0;
             this.dgvFornecedores.Click += new System.EventHandler(this.dgvFornecedores_Click);
+            this.dgvFornecedores.DoubleClick += new System.EventHandler(this.dgvFornecedores_DoubleClick);
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -377,6 +366,7 @@
             this.btnPesquisar.TabIndex = 5;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisa
             // 
@@ -429,7 +419,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.grpFornecedor);
@@ -451,7 +440,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.GroupBox grpFornecedor;

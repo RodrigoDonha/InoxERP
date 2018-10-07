@@ -24,5 +24,14 @@ namespace UIWindows.Business.Concrete
         {
             return context.Providers.FirstOrDefault(r => r.sID == id);
         }
+
+        public override void Delete(string id)
+        {
+            var linq = from q in context.Providers.Include("products").Where(c => c.sID == id).ToList() select q;
+            var entity = linq.First();
+
+            context.Set<Providers>().Remove(entity);
+            context.SaveChanges();
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.lblContatosResidencial = new System.Windows.Forms.Label();
             this.lblContatosCelular2 = new System.Windows.Forms.Label();
             this.grpEndereco = new System.Windows.Forms.GroupBox();
+            this.cmbEstate = new System.Windows.Forms.ComboBox();
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
@@ -74,7 +75,6 @@
             this.lblBanco = new System.Windows.Forms.Label();
             this.txtAgencia = new System.Windows.Forms.TextBox();
             this.lblAgencia = new System.Windows.Forms.Label();
-            this.cmbEstate = new System.Windows.Forms.ComboBox();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -90,7 +90,7 @@
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(124, 31);
-            this.btnSair.TabIndex = 41;
+            this.btnSair.TabIndex = 23;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -104,7 +104,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(124, 31);
-            this.btnCancelar.TabIndex = 40;
+            this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -118,7 +118,7 @@
             this.btnGravar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(124, 31);
-            this.btnGravar.TabIndex = 39;
+            this.btnGravar.TabIndex = 21;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = false;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
@@ -132,7 +132,7 @@
             this.grpObservacoes.Name = "grpObservacoes";
             this.grpObservacoes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpObservacoes.Size = new System.Drawing.Size(1068, 77);
-            this.grpObservacoes.TabIndex = 38;
+            this.grpObservacoes.TabIndex = 4;
             this.grpObservacoes.TabStop = false;
             this.grpObservacoes.Text = "Observações";
             // 
@@ -143,7 +143,7 @@
             this.txtObservacoes.Multiline = true;
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(1047, 35);
-            this.txtObservacoes.TabIndex = 0;
+            this.txtObservacoes.TabIndex = 20;
             // 
             // grpContatos
             // 
@@ -161,7 +161,7 @@
             this.grpContatos.Name = "grpContatos";
             this.grpContatos.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpContatos.Size = new System.Drawing.Size(1068, 121);
-            this.grpContatos.TabIndex = 37;
+            this.grpContatos.TabIndex = 3;
             this.grpContatos.TabStop = false;
             this.grpContatos.Text = "Contatos";
             // 
@@ -171,7 +171,7 @@
             this.txtContatosCelular1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContatosCelular1.Name = "txtContatosCelular1";
             this.txtContatosCelular1.Size = new System.Drawing.Size(252, 23);
-            this.txtContatosCelular1.TabIndex = 27;
+            this.txtContatosCelular1.TabIndex = 11;
             // 
             // lblContatosCelular1
             // 
@@ -188,7 +188,7 @@
             this.txtContatosEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContatosEmail.Name = "txtContatosEmail";
             this.txtContatosEmail.Size = new System.Drawing.Size(485, 23);
-            this.txtContatosEmail.TabIndex = 25;
+            this.txtContatosEmail.TabIndex = 12;
             // 
             // txtContatosCelular2
             // 
@@ -196,7 +196,7 @@
             this.txtContatosCelular2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContatosCelular2.Name = "txtContatosCelular2";
             this.txtContatosCelular2.Size = new System.Drawing.Size(257, 23);
-            this.txtContatosCelular2.TabIndex = 20;
+            this.txtContatosCelular2.TabIndex = 13;
             // 
             // txtContatosComercial
             // 
@@ -204,7 +204,7 @@
             this.txtContatosComercial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContatosComercial.Name = "txtContatosComercial";
             this.txtContatosComercial.Size = new System.Drawing.Size(252, 23);
-            this.txtContatosComercial.TabIndex = 19;
+            this.txtContatosComercial.TabIndex = 10;
             // 
             // lblContatosEmail
             // 
@@ -255,9 +255,45 @@
             this.grpEndereco.Name = "grpEndereco";
             this.grpEndereco.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpEndereco.Size = new System.Drawing.Size(1068, 137);
-            this.grpEndereco.TabIndex = 36;
+            this.grpEndereco.TabIndex = 2;
             this.grpEndereco.TabStop = false;
             this.grpEndereco.Text = "Endereço";
+            // 
+            // cmbEstate
+            // 
+            this.cmbEstate.FormattingEnabled = true;
+            this.cmbEstate.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.cmbEstate.Location = new System.Drawing.Point(733, 98);
+            this.cmbEstate.Name = "cmbEstate";
+            this.cmbEstate.Size = new System.Drawing.Size(74, 25);
+            this.cmbEstate.TabIndex = 8;
             // 
             // txtCEP
             // 
@@ -265,7 +301,7 @@
             this.txtCEP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(185, 23);
-            this.txtCEP.TabIndex = 22;
+            this.txtCEP.TabIndex = 9;
             // 
             // txtCidade
             // 
@@ -273,7 +309,7 @@
             this.txtCidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(495, 23);
-            this.txtCidade.TabIndex = 20;
+            this.txtCidade.TabIndex = 7;
             // 
             // txtComplemento
             // 
@@ -281,7 +317,7 @@
             this.txtComplemento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(249, 23);
-            this.txtComplemento.TabIndex = 19;
+            this.txtComplemento.TabIndex = 6;
             // 
             // txtBairro
             // 
@@ -289,7 +325,7 @@
             this.txtBairro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(305, 23);
-            this.txtBairro.TabIndex = 18;
+            this.txtBairro.TabIndex = 5;
             // 
             // txtNumEndereco
             // 
@@ -297,7 +333,7 @@
             this.txtNumEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumEndereco.Name = "txtNumEndereco";
             this.txtNumEndereco.Size = new System.Drawing.Size(97, 23);
-            this.txtNumEndereco.TabIndex = 17;
+            this.txtNumEndereco.TabIndex = 4;
             // 
             // txtEndereco
             // 
@@ -305,7 +341,7 @@
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(900, 23);
-            this.txtEndereco.TabIndex = 8;
+            this.txtEndereco.TabIndex = 3;
             // 
             // lblComplemento
             // 
@@ -382,7 +418,7 @@
             this.grpDadosPessoais.Name = "grpDadosPessoais";
             this.grpDadosPessoais.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDadosPessoais.Size = new System.Drawing.Size(1068, 108);
-            this.grpDadosPessoais.TabIndex = 35;
+            this.grpDadosPessoais.TabIndex = 1;
             this.grpDadosPessoais.TabStop = false;
             this.grpDadosPessoais.Text = "Dados da Empresa";
             // 
@@ -392,7 +428,7 @@
             this.txtCPF_CNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCPF_CNPJ.Name = "txtCPF_CNPJ";
             this.txtCPF_CNPJ.Size = new System.Drawing.Size(295, 23);
-            this.txtCPF_CNPJ.TabIndex = 5;
+            this.txtCPF_CNPJ.TabIndex = 2;
             // 
             // txtNome
             // 
@@ -400,7 +436,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(900, 23);
-            this.txtNome.TabIndex = 4;
+            this.txtNome.TabIndex = 1;
             // 
             // lblNome
             // 
@@ -450,7 +486,7 @@
             this.txtCompraMinima.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCompraMinima.Name = "txtCompraMinima";
             this.txtCompraMinima.Size = new System.Drawing.Size(252, 23);
-            this.txtCompraMinima.TabIndex = 39;
+            this.txtCompraMinima.TabIndex = 19;
             // 
             // lblCompraMinima
             // 
@@ -468,7 +504,7 @@
             this.txtFavorecido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFavorecido.Name = "txtFavorecido";
             this.txtFavorecido.Size = new System.Drawing.Size(485, 23);
-            this.txtFavorecido.TabIndex = 37;
+            this.txtFavorecido.TabIndex = 17;
             // 
             // lblFavorecido
             // 
@@ -485,7 +521,7 @@
             this.txtCpfCnpj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCpfCnpj.Name = "txtCpfCnpj";
             this.txtCpfCnpj.Size = new System.Drawing.Size(252, 23);
-            this.txtCpfCnpj.TabIndex = 35;
+            this.txtCpfCnpj.TabIndex = 18;
             // 
             // lblCpfCnpj
             // 
@@ -502,7 +538,7 @@
             this.txtConta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtConta.Name = "txtConta";
             this.txtConta.Size = new System.Drawing.Size(252, 23);
-            this.txtConta.TabIndex = 33;
+            this.txtConta.TabIndex = 16;
             // 
             // lblConta
             // 
@@ -519,7 +555,7 @@
             this.txtBanco.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(252, 23);
-            this.txtBanco.TabIndex = 31;
+            this.txtBanco.TabIndex = 14;
             // 
             // lblBanco
             // 
@@ -536,7 +572,7 @@
             this.txtAgencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAgencia.Name = "txtAgencia";
             this.txtAgencia.Size = new System.Drawing.Size(252, 23);
-            this.txtAgencia.TabIndex = 29;
+            this.txtAgencia.TabIndex = 15;
             // 
             // lblAgencia
             // 
@@ -546,42 +582,6 @@
             this.lblAgencia.Size = new System.Drawing.Size(63, 17);
             this.lblAgencia.TabIndex = 28;
             this.lblAgencia.Text = "Agência:";
-            // 
-            // cmbEstate
-            // 
-            this.cmbEstate.FormattingEnabled = true;
-            this.cmbEstate.Items.AddRange(new object[] {
-            "AC",
-            "AL",
-            "AP",
-            "AM",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MT",
-            "MS",
-            "MG",
-            "PA",
-            "PB",
-            "PR",
-            "PE",
-            "PI",
-            "RJ",
-            "RN",
-            "RS",
-            "RO",
-            "RR",
-            "SC",
-            "SP",
-            "SE",
-            "TO"});
-            this.cmbEstate.Location = new System.Drawing.Point(733, 98);
-            this.cmbEstate.Name = "cmbEstate";
-            this.cmbEstate.Size = new System.Drawing.Size(74, 25);
-            this.cmbEstate.TabIndex = 23;
             // 
             // frmProviderRegister
             // 

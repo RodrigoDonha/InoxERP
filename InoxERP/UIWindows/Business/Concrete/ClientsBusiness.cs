@@ -14,5 +14,14 @@ namespace UIWindows.Business.Concrete
         {
             context = contextParam;
         }
+
+        public override void Delete(string id)
+        {
+            var linq = from q in context.Clients.Include("budgets_os").Where(c => c.sID == id).ToList() select q;
+            var entity = linq.First();
+
+            context.Set<Clients>().Remove(entity);
+            context.SaveChanges();
+        }
     }
 }

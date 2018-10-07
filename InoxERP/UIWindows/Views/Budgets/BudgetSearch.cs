@@ -43,7 +43,6 @@ namespace UIWindows
                 txtPesquisa.Clear();
                 MessageBox.Show("Nenhum Orçamento Encontrado");
                 txtPesquisa.Focus();
-                searchByName();
             }
             else
             {
@@ -55,7 +54,20 @@ namespace UIWindows
 
         public void searchByCPF_CNPJ()
         {
-            
+            var search = from p in ctx.Budgets_OS where p.Clients.sCpfCnpj.StartsWith(txtPesquisa.Text) where p.bServiceOrderApproved.Equals(false) select p;
+
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Cliente Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Budgets_OS> b = search.ToList();
+                txtPesquisa.Clear();
+                dgvOrcamentos.DataSource = b.ToList();
+            }
         }
 
         public void searchByDate()
@@ -91,7 +103,6 @@ namespace UIWindows
             else
             {
                 PrintingBudget();
-                //new BudgetPrint(getId).Show();
             }
         }
 

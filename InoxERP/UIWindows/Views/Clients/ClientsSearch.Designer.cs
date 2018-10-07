@@ -35,9 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnSelecionar = new System.Windows.Forms.Button();
+            this.btnAbrirAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
             this.grpClientes = new System.Windows.Forms.GroupBox();
             this.grdClientes = new System.Windows.Forms.DataGridView();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,22 +84,22 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // btnSelecionar
+            // btnAbrirAlterar
             // 
-            this.btnSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecionar.Location = new System.Drawing.Point(12, 406);
-            this.btnSelecionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(160, 30);
-            this.btnSelecionar.TabIndex = 18;
-            this.btnSelecionar.Text = "Selecionar";
-            this.btnSelecionar.UseVisualStyleBackColor = true;
-            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            this.btnAbrirAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirAlterar.Location = new System.Drawing.Point(12, 406);
+            this.btnAbrirAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAbrirAlterar.Name = "btnAbrirAlterar";
+            this.btnAbrirAlterar.Size = new System.Drawing.Size(160, 30);
+            this.btnAbrirAlterar.TabIndex = 18;
+            this.btnAbrirAlterar.Text = "Abrir / Alterar";
+            this.btnAbrirAlterar.UseVisualStyleBackColor = true;
+            this.btnAbrirAlterar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(439, 406);
+            this.btnExcluir.Location = new System.Drawing.Point(359, 403);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(80, 30);
@@ -108,17 +107,6 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Location = new System.Drawing.Point(313, 406);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(80, 30);
-            this.btnAlterar.TabIndex = 15;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
             // 
             // grpClientes
             // 
@@ -175,6 +163,7 @@
             this.grdClientes.Size = new System.Drawing.Size(755, 257);
             this.grdClientes.TabIndex = 0;
             this.grdClientes.Click += new System.EventHandler(this.grdClientes_Click);
+            this.grdClientes.DoubleClick += new System.EventHandler(this.grdClientes_DoubleClick);
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -352,13 +341,14 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(691, 21);
+            this.btnPesquisar.Location = new System.Drawing.Point(686, 21);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(80, 30);
             this.btnPesquisar.TabIndex = 5;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtPesquisa
             // 
@@ -411,9 +401,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 444);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.btnSelecionar);
+            this.Controls.Add(this.btnAbrirAlterar);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.grpClientes);
             this.Controls.Add(this.grpPesquisa);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -434,9 +423,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Button btnSelecionar;
+        private System.Windows.Forms.Button btnAbrirAlterar;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.GroupBox grpClientes;
         private System.Windows.Forms.DataGridView grdClientes;
         private System.Windows.Forms.GroupBox grpPesquisa;

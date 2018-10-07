@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Reporting.WebForms;
@@ -20,9 +21,13 @@ namespace InoxERP.UI_Windows_Forms
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS budget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+        frmClientsSearch client = new frmClientsSearch();
+        frmProductsRegisterSearch product = new frmProductsRegisterSearch();
         
         private decimal subTotal = 0;
         private string getID;
+        private string getIdClient;
+        private string getIdProduct;
 
         public frmBudgetsRegister(String Id)
         {
@@ -82,6 +87,10 @@ namespace InoxERP.UI_Windows_Forms
                         budgetAlter.dtDateServiceOrderApproved = DateTime.Now;
                         budgetAlter.dtDateRegisterFinished = DateTime.Now;
 
+                        if (getIdClient != "")
+                        {
+                            budgetAlter.IdClients = getIdClient;
+                        }
 
                         //atualiza
                         obj.Update(budgetAlter);
@@ -101,10 +110,10 @@ namespace InoxERP.UI_Windows_Forms
                             //fecha a tela de alteração
                             Dispose();
 
+                            PrintingBudget(ok.sID);
+
                             //abre tela de consulta novamente
                             new frmBudgetSearch().Show();
-
-                            PrintingBudget(ok.sID);
                         }
                     }
                 }
@@ -168,6 +177,11 @@ namespace InoxERP.UI_Windows_Forms
                         }
 
                         budgetPersist.iCod = cod + 1;
+
+                        if (getIdClient != "")
+                        {
+                            budgetPersist.IdClients = getIdClient;
+                        }
 
                         //salva
                         ctx.Budgets_OS.Add(budgetPersist);
@@ -572,6 +586,12 @@ namespace InoxERP.UI_Windows_Forms
                     return MessageBox.Show("Deseja Aprovar o orçamento?", "Aprovar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Price":
                     return MessageBox.Show("Deseja Exibir / Imprimir o orçamento com preço nos itens?", "Exibir Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "client":
+                    return MessageBox.Show("Confirma o Cliente ?", "Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "product":
+                    return MessageBox.Show("Confirma a escolha do Produto ?", "Produto", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "productValue":
+                    return MessageBox.Show("Deseja aplicar o cálculo do valor unitário do Produto / Peça agora?", "Preço do Produto", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
         }
@@ -581,7 +601,25 @@ namespace InoxERP.UI_Windows_Forms
         // CALLS VIEW PRODUCTS
         private void btnPeca_Click(object sender, EventArgs e)
         {
-            //new frmProductsRegisterSearch().Show();
+            MessageBox.Show("Na próxima tela, você pode pode escolher o produto clicando uma vez com o botão esquerdo do mouse sobre ele e clicar no botão selecionar.");
+            product.ShowDialog();
+            if (product.ReturnProducts != null)
+                if (messageYesNo("product") == DialogResult.Yes)
+                {
+                    getIdProduct = "";
+                    getIdProduct = product.ReturnProducts.sID;
+                    txtQuantidade.Text = product.ReturnProducts.dAmount.ToString();
+                    txtDescricao.Text = product.ReturnProducts.sDescription;
+                    if (messageYesNo("productValue") == DialogResult.Yes)
+                    {
+                        decimal price = ((product.ReturnProducts.dPrice * 60) / 100) + product.ReturnProducts.dPrice;
+                        txtValorUnitario.Text = price.ToString();
+                    }
+                    else
+                    {
+                        txtValorUnitario.Text = product.ReturnProducts.dPrice.ToString();
+                    }
+                }
         }
 
         // CALLS VIEW SERVICES
@@ -589,8 +627,7 @@ namespace InoxERP.UI_Windows_Forms
         {
             decimal value;
             if (lblSubTotalValor.Text == "0")
-
-            { }
+            { MessageBox.Show("Você precisa ter ao menos um Produto / Peça cadastrado no orçamento para que o lançamento de Serviço / Mão de Obra seja liberado."); }
             else
             if(checkEqualsItems())
             {
@@ -614,10 +651,36 @@ namespace InoxERP.UI_Windows_Forms
         // CALL VIEW CLIENTS
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            new frmClientsSearch().Show();
+            MessageBox.Show("Na próxima tela, você pode dar um duplo clique do mouse em cima do cliente desejado para selecioná-lo.");
+            client.ShowDialog();
+            if (client.ReturnClients != null)
+                if (messageYesNo("client") == DialogResult.Yes)
+                {
+                    getIdClient = "";
+                    getIdClient = client.ReturnClients.sID;
+                    if (client.ReturnClients.ClientType == ClientType.Residencial)
+                    {
+                        radResidencial.Checked = true;
+                    }
+                    else if (client.ReturnClients.ClientType == ClientType.Industrial)
+                    {
+                        radIndustrial.Checked = true;
+                    }
+                    else if (client.ReturnClients.ClientType == ClientType.Comercial)
+                    {
+                        radComercial.Checked = true;
+                    }
+                    txtNome.Text = client.ReturnClients.sName;
+                    txtEndereco.Text = client.ReturnClients.sAdress + " ," + client.ReturnClients.iNumber + " ," +
+                                       client.ReturnClients.sDistrict + " ," + client.ReturnClients.sCity + " ," +
+                                       client.ReturnClients.Estate;
+                    txtTelefone.Text = client.ReturnClients.sPhoneResidencial + " ," + client.ReturnClients.sPhoneCelularOne;
+                    txtCargo.Text = client.ReturnClients.sOccupation;
+                    txtQuantidade.Focus();
+                }
         }
 
-        
+
         // CALL FUNCTION VALUETOTAL() WHERE CAMP QUANTIDADE IS CHANGED
         private void txtQuantidade_TextChanged_1(object sender, EventArgs e)
         {
@@ -816,7 +879,6 @@ namespace InoxERP.UI_Windows_Forms
                 chkCombinar.Enabled = true;
                 chkCheque.Enabled = true;
                 chkDinheiro.Enabled = true;
-
             }
             else
             {

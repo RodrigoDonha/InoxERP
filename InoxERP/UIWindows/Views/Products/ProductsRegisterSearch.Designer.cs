@@ -69,6 +69,7 @@
             this.lblConsultaPeca = new System.Windows.Forms.Label();
             this.Cadastro = new System.Windows.Forms.TabPage();
             this.tb_productsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_productsTableAdapter();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.grpCadastroProdutos.SuspendLayout();
             this.tbcConsultaValores.SuspendLayout();
             this.Consulta.SuspendLayout();
@@ -485,11 +486,22 @@
             // 
             this.tb_productsTableAdapter.ClearBeforeFill = true;
             // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Location = new System.Drawing.Point(220, 479);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(160, 30);
+            this.btnSelecionar.TabIndex = 3;
+            this.btnSelecionar.Text = "Selecionar Produto";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
             // frmProductsRegisterSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 484);
+            this.ClientSize = new System.Drawing.Size(602, 517);
+            this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.tbcConsultaValores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -553,5 +565,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idProvidersDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idItemsDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.Button btnSelecionar;
     }
 }

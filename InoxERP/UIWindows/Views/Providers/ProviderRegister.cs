@@ -67,7 +67,14 @@ namespace InoxERP.UI_Windows_Forms
                 ProvidersPersist.sAccount = txtConta.Text;
                 ProvidersPersist.sFavored = txtFavorecido.Text;
                 ProvidersPersist.sCpfCnpjFavored = txtCpfCnpj.Text;
-                ProvidersPersist.dMinimumPurchase = Convert.ToDecimal(txtCompraMinima.Text);
+                if (txtCompraMinima.Text == "")
+                {
+                    ProvidersPersist.dMinimumPurchase = Convert.ToDecimal("0.00");
+                }
+                else
+                {
+                    ProvidersPersist.dMinimumPurchase = Convert.ToDecimal(txtCompraMinima.Text);
+                }
                 ProvidersPersist.sObservation = txtObservacoes.Text;
 
                 if (messageYesNo("insert") == DialogResult.Yes)
@@ -135,33 +142,33 @@ namespace InoxERP.UI_Windows_Forms
         {
             switch (Convert.ToInt32(cmbEstate.SelectedIndex.ToString()))
             {
-                case 1: return Estate.AC;
-                case 2: return Estate.AI;
-                case 3: return Estate.AP;
-                case 4: return Estate.AM;
-                case 5: return Estate.BA;
-                case 6: return Estate.CE;
-                case 7: return Estate.DF;
-                case 8: return Estate.ES;
-                case 9: return Estate.GO;
-                case 10: return Estate.MA;
-                case 11: return Estate.MT;
-                case 12: return Estate.MS;
-                case 13: return Estate.MG;
-                case 14: return Estate.PA;
-                case 15: return Estate.PB;
-                case 16: return Estate.PR;
-                case 17: return Estate.PE;
-                case 18: return Estate.PI;
-                case 19: return Estate.RJ;
-                case 20: return Estate.RN;
-                case 21: return Estate.RS;
-                case 22: return Estate.RO;
-                case 23: return Estate.RR;
-                case 24: return Estate.SC;
-                case 25: return Estate.SP;
-                case 26: return Estate.SE;
-                case 27: return Estate.TO;
+                case 0: return Estate.AC;
+                case 1: return Estate.AI;
+                case 2: return Estate.AP;
+                case 3: return Estate.AM;
+                case 4: return Estate.BA;
+                case 5: return Estate.CE;
+                case 6: return Estate.DF;
+                case 7: return Estate.ES;
+                case 8: return Estate.GO;
+                case 9: return Estate.MA;
+                case 10: return Estate.MT;
+                case 11: return Estate.MS;
+                case 12: return Estate.MG;
+                case 13: return Estate.PA;
+                case 14: return Estate.PB;
+                case 15: return Estate.PR;
+                case 16: return Estate.PE;
+                case 17: return Estate.PI;
+                case 18: return Estate.RJ;
+                case 19: return Estate.RN;
+                case 20: return Estate.RS;
+                case 21: return Estate.RO;
+                case 22: return Estate.RR;
+                case 23: return Estate.SC;
+                case 24: return Estate.SP;
+                case 25: return Estate.SE;
+                case 26: return Estate.TO;
             }
             return 0;
         }

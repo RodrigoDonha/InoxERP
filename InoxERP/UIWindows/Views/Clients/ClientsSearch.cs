@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using InoxERP.UI_Windows_Forms;
@@ -25,7 +26,7 @@ namespace UIWindows
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            frmClientsRegister obj = new frmClientsRegister();
+            frmClientsRegister obj = new frmClientsRegister(selectClients());
             this.Dispose(true);
             obj.Show();
         }
@@ -39,18 +40,20 @@ namespace UIWindows
         {
             try
             {
-                ReturnClients = obj.ReturnByID(selectClients());
+                frmClientsRegister client = new frmClientsRegister(selectClients());
+                client.completeRegister(selectClients());
                 Dispose();
+                client.Show();
             }
             catch
             {
-                MessageBox.Show("Não foi possível selecionar o Fornecedor, tente selecionar novamente.");
+                MessageBox.Show("Não foi possível selecionar o Cliente, tente selecionar novamente.");
             }
         }
 
         public string selectClients()
         {
-            string getId = "";
+            getId = "";
 
             if (grdClientes.CurrentRow != null)
             {
@@ -63,12 +66,10 @@ namespace UIWindows
 
         private void grdClientes_Click(object sender, EventArgs e)
         {
-            string getId = "";
-
             if (grdClientes.CurrentRow != null)
             {
-                getId = Convert.ToString(grdClientes[0, grdClientes.CurrentRow.Index].Value.ToString());
-                txtPesquisa.Text = Convert.ToString(grdClientes[1, grdClientes.CurrentRow.Index].Value.ToString());
+                getId = "";
+                getId = selectClients();
             }
             else
             {
@@ -116,7 +117,7 @@ namespace UIWindows
             switch (type)
             {
                 case "Exclude":
-                    return MessageBox.Show("Confirma excluisão?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("**ATENÇÃO** \r\n A exclusão deste Cliente fará com que todos os Orçamentos, Ordens de Serviço e etc que estão referenciados a ele percam sua referencia. \r\n Confirma exclusão?", "Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Approve":
                     return MessageBox.Show("Confirma aprovação deste orçamento?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Price":
@@ -125,5 +126,62 @@ namespace UIWindows
             return DialogResult.No;
         }
 
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (radNome.Checked)
+                searchByName();
+            else if (radCPF_CNPJ.Checked)
+                searchByCPF_CNPJ();
+        }
+
+        // SEARCH BY NAME CLIENT
+        public void searchByName()
+        {
+            var search = from p in ctx.Clients where p.sName.StartsWith(txtPesquisa.Text) select p;
+            
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Cliente Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Clients> b = search.ToList();
+                txtPesquisa.Clear();
+                grdClientes.DataSource = b.ToList();
+            }
+        }
+
+        public void searchByCPF_CNPJ()
+        {
+            var search = from p in ctx.Clients where p.sCpfCnpj.StartsWith(txtPesquisa.Text) select p;
+
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Cliente Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Clients> b = search.ToList();
+                txtPesquisa.Clear();
+                grdClientes.DataSource = b.ToList();
+            }
+        }
+
+        private void grdClientes_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                ReturnClients = obj.ReturnByID(selectClients());
+                Hide();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível selecionar o Cliente, tente selecionar novamente, dando um clique duplo em cima do cliente desejado.");
+            }
+        }
     }
 }
