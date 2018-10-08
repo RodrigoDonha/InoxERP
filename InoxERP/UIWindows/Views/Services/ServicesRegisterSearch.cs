@@ -279,5 +279,23 @@ namespace UIWindows
                 dgvConsultaServicos.DataSource = s.ToList();
             }
         }
+
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            int compare = dgvConsultaServicos.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (compare == 0)
+            { }
+            else
+            {
+                tbcConsultaValores.SelectedTab = Cadastro; // muda tab
+                txtServico.Focus();
+                cleanCamps();
+                lblID.Text = dgvConsultaServicos[0, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
+                txtServico.Text = dgvConsultaServicos[1, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
+                txtHoras.Text = dgvConsultaServicos[2, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
+                txtValorTotal.Text = dgvConsultaServicos[3, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
+                txtObservacao.Text = dgvConsultaServicos[4, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
+            }
+        }
     }
 }

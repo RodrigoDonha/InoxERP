@@ -23,7 +23,7 @@ namespace InoxERP.UI_Windows_Forms
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
         frmClientsSearch client = new frmClientsSearch();
         frmProductsRegisterSearch product = new frmProductsRegisterSearch();
-        
+
         private decimal subTotal = 0;
         private string getID;
         private string getIdClient;
@@ -205,6 +205,113 @@ namespace InoxERP.UI_Windows_Forms
                             MessageBox.Show("Erro ao Salvar o Orçamento !!!");
                     }
                 }
+            }
+        }
+
+        //fiil frm to ALTER
+        public void BudgetData()
+        {
+            bringsDataIdBudget();
+
+            if (budget.ClientType == ClientType.Residencial)
+            {
+                radResidencial.Checked = true;
+            }
+            else if (budget.ClientType == ClientType.Industrial)
+            {
+                radIndustrial.Checked = true;
+            }
+            else if (budget.ClientType == ClientType.Comercial)
+            {
+                radComercial.Checked = true;
+            }
+
+            txtNome.Text = budget.sName.ToString();
+            txtEndereco.Text = budget.sAdress.ToString();
+            txtTelefone.Text = budget.sTelephone.ToString();
+            txtCargo.Text = budget.sOccupation.ToString();
+
+            // preenche a grid view
+
+            //decimal subTotal = 0;
+            decimal total = 0;
+
+            foreach (var line in budget.Items.ToList()) // math.round(var,2)
+            {
+                dgvItens.Rows.Add(line.dAmount.ToString(), line.sDescription.ToString(), line.dPrice.ToString(), line.dTotal.ToString());
+                total = Convert.ToDecimal(line.dAmount.ToString()) * Convert.ToDecimal(line.dPrice.ToString());
+                subTotal = subTotal + total;
+            }
+
+
+            lblSubTotalValor.Text = Convert.ToString(subTotal);
+            clearItensLine();
+            txtQuantidade.Focus();
+
+            if (budget.PaymentMethods == PaymentMethods.toMatch)
+            {
+                chkCombinar.Checked = true;
+            }
+            else if (budget.PaymentMethods == PaymentMethods.toMatch)
+            {
+                chkCombinar.Checked = true;
+            }
+            else if (budget.PaymentMethods == PaymentMethods.cheque)
+            {
+                chkCheque.Checked = true;
+            }
+            else if (budget.PaymentMethods == PaymentMethods.toMatch)
+            {
+                chkCombinar.Checked = true;
+            }
+            else if (budget.PaymentMethods == PaymentMethods.money)
+            {
+                chkDinheiro.Checked = true;
+            }
+            else if (budget.PaymentMethods == PaymentMethods.chequeMoney)
+            {
+                chkCheque.Checked = true;
+                chkDinheiro.Checked = true;
+            }
+
+            txtPorcentDescAVista.Text = budget.dPercentDiscount.ToString();
+            nudParcelas.Text = budget.iPaymentInstallments.ToString();
+
+            if (budget.bInterestRate)
+            {
+                chkJuros.Checked = true;
+                txtPorcentJuros.Text = budget.dWithInterest.ToString();
+                //txtPorcentJuros.Enabled = true;
+            }
+
+            nudDias.Text = budget.iPrevisionOfExecute.ToString();
+            dtpDataPrevistaInicio.Text = budget.dtStartPrevision.ToString();
+            dtpDataPrevistaEntrega.Text = budget.dtFinalPrevision.ToString();
+            nudAnos.Text = budget.iWarrantyTime.ToString();
+            dtpDataValidadeOrcamento.Text = budget.dtBudgetExpirationDate.ToString();
+            rtfObservacoes.Text = budget.sObservation.ToString();
+            //txtPorcentDescAVista.Enabled = true;
+            nudParcelas.Enabled = true;
+
+            btnGravarOrcamento.Text = "Alterar";
+            if (btnAprovar.Enabled)
+                btnAprovar.Enabled = false;
+            else
+                btnAprovar.Enabled = true;
+        }
+
+        // APROVE Budget
+        private void btnAprovar_Click(object sender, EventArgs e)
+        {
+            bringsDataIdBudget();
+            budget = obj.ReturnByID(getID);
+            if (messageYesNo("Approve") == DialogResult.Yes)
+            {
+                budget.bServiceOrderApproved = true;
+                budget.dtDateServiceOrderApproved = DateTime.Now;
+
+                obj.Update(budget);
+                MessageBox.Show("Aprovado");
             }
         }
 
@@ -587,9 +694,9 @@ namespace InoxERP.UI_Windows_Forms
                 case "Price":
                     return MessageBox.Show("Deseja Exibir / Imprimir o orçamento com preço nos itens?", "Exibir Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "client":
-                    return MessageBox.Show("Confirma o Cliente ?", "Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma a escolha do Cliente:  " + client.ReturnClients.sName + " ?", "Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "product":
-                    return MessageBox.Show("Confirma a escolha do Produto ?", "Produto", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma a escolha do Produto:  " + product.ReturnProducts.sDescription + " ?", "Produto", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "productValue":
                     return MessageBox.Show("Deseja aplicar o cálculo do valor unitário do Produto / Peça agora?", "Preço do Produto", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
@@ -601,24 +708,35 @@ namespace InoxERP.UI_Windows_Forms
         // CALLS VIEW PRODUCTS
         private void btnPeca_Click(object sender, EventArgs e)
         {
+            //verificar e bloquear btn selecionar e tab 2
+            foreach (Control proControl in product.Controls)
+            {
+                //refazer
+                if (proControl.Name == "btnAbrirAlterar" || proControl.Name == "btnExcluir" || proControl.Name == "btnCadastrar")
+                    proControl.Enabled = false;
+            }
+
+            //erro de produto nao encontrado txtconsultapeca leva '1' e quando nao pode levar nada
             MessageBox.Show("Na próxima tela, você pode pode escolher o produto clicando uma vez com o botão esquerdo do mouse sobre ele e clicar no botão selecionar.");
+
             product.ShowDialog();
-            if (product.ReturnProducts != null)
+
+            if (product.ReturnProducts != null)// sem selecionar o produto volta com o ultimo selecionado
                 if (messageYesNo("product") == DialogResult.Yes)
                 {
                     getIdProduct = "";
                     getIdProduct = product.ReturnProducts.sID;
                     txtQuantidade.Text = product.ReturnProducts.dAmount.ToString();
                     txtDescricao.Text = product.ReturnProducts.sDescription;
-                    if (messageYesNo("productValue") == DialogResult.Yes)
-                    {
-                        decimal price = ((product.ReturnProducts.dPrice * 60) / 100) + product.ReturnProducts.dPrice;
-                        txtValorUnitario.Text = price.ToString();
-                    }
-                    else
-                    {
+                    //if (messageYesNo("productValue") == DialogResult.Yes)
+                    //{
+                    //    decimal price = ((product.ReturnProducts.dPrice * 60) / 100) + product.ReturnProducts.dPrice;
+                    //    txtValorUnitario.Text = price.ToString();
+                    //}
+                    //else
+                    //{
                         txtValorUnitario.Text = product.ReturnProducts.dPrice.ToString();
-                    }
+                    //}
                 }
         }
 
@@ -651,6 +769,13 @@ namespace InoxERP.UI_Windows_Forms
         // CALL VIEW CLIENTS
         private void btnProcurar_Click(object sender, EventArgs e)
         {
+            foreach (Control cliControl in client.Controls)
+            {
+                if (cliControl.Name == "btnAbrirAlterar" || cliControl.Name == "btnExcluir" || cliControl.Name == "btnCadastrar")
+                    cliControl.Enabled = false;
+            }
+
+
             MessageBox.Show("Na próxima tela, você pode dar um duplo clique do mouse em cima do cliente desejado para selecioná-lo.");
             client.ShowDialog();
             if (client.ReturnClients != null)
@@ -989,108 +1114,6 @@ namespace InoxERP.UI_Windows_Forms
             budget = obj.ReturnByID(getID);
             //getID = null;
             // brings the data of the budget recorded in the database
-        }
-
-        public void BudgetData()
-        {
-            bringsDataIdBudget();
-
-            if (budget.ClientType == ClientType.Residencial)
-            {
-                radResidencial.Checked = true;
-            } else if (budget.ClientType == ClientType.Industrial)
-            {
-                radIndustrial.Checked = true;
-            }else if (budget.ClientType == ClientType.Comercial)
-            {
-                radComercial.Checked = true;
-            }
-
-            txtNome.Text = budget.sName.ToString();
-            txtEndereco.Text = budget.sAdress.ToString();
-            txtTelefone.Text = budget.sTelephone.ToString();
-            txtCargo.Text = budget.sOccupation.ToString();
-
-            // preenche a grid view
-
-            //decimal subTotal = 0;
-            decimal total = 0;
-
-            foreach (var line in budget.Items.ToList()) // math.round(var,2)
-            {
-                dgvItens.Rows.Add(line.dAmount.ToString(), line.sDescription.ToString(), line.dPrice.ToString(), line.dTotal.ToString());
-                total = Convert.ToDecimal(line.dAmount.ToString()) * Convert.ToDecimal(line.dPrice.ToString());
-                subTotal = subTotal + total;
-            }
-
-
-            lblSubTotalValor.Text = Convert.ToString(subTotal);
-            clearItensLine();
-            txtQuantidade.Focus();
-
-            if (budget.PaymentMethods == PaymentMethods.toMatch)
-            {
-                chkCombinar.Checked = true;
-            }
-            else if (budget.PaymentMethods == PaymentMethods.toMatch)
-            {
-                chkCombinar.Checked = true;
-            }
-            else if (budget.PaymentMethods == PaymentMethods.cheque)
-            {
-                chkCheque.Checked = true;
-            } else if (budget.PaymentMethods == PaymentMethods.toMatch)
-            {
-                chkCombinar.Checked = true;
-            }
-            else if (budget.PaymentMethods == PaymentMethods.money)
-            {
-                chkDinheiro.Checked = true;
-            }
-            else if (budget.PaymentMethods == PaymentMethods.chequeMoney)
-            {
-                chkCheque.Checked = true;
-                chkDinheiro.Checked = true;
-            }
-
-            txtPorcentDescAVista.Text = budget.dPercentDiscount.ToString();
-            nudParcelas.Text = budget.iPaymentInstallments.ToString();
-
-            if (budget.bInterestRate)
-            {
-                chkJuros.Checked = true;
-                txtPorcentJuros.Text = budget.dWithInterest.ToString();
-                //txtPorcentJuros.Enabled = true;
-            }
-
-            nudDias.Text = budget.iPrevisionOfExecute.ToString();
-            dtpDataPrevistaInicio.Text = budget.dtStartPrevision.ToString();
-            dtpDataPrevistaEntrega.Text = budget.dtFinalPrevision.ToString();
-            nudAnos.Text = budget.iWarrantyTime.ToString();
-            dtpDataValidadeOrcamento.Text = budget.dtBudgetExpirationDate.ToString();
-            rtfObservacoes.Text = budget.sObservation.ToString();
-            //txtPorcentDescAVista.Enabled = true;
-            nudParcelas.Enabled = true;
-
-            btnGravarOrcamento.Text = "Alterar";
-            if (btnAprovar.Enabled)
-                btnAprovar.Enabled = false;
-            else
-                btnAprovar.Enabled = true;
-        }
-
-        private void btnAprovar_Click(object sender, EventArgs e)
-        {
-            bringsDataIdBudget();
-            budget = obj.ReturnByID(getID);
-            if (messageYesNo("Approve") == DialogResult.Yes)
-            {
-                budget.bServiceOrderApproved = true;
-                budget.dtDateServiceOrderApproved = DateTime.Now;
-
-                obj.Update(budget);
-                MessageBox.Show("Aprovado");
-            }
         }
     }
 }

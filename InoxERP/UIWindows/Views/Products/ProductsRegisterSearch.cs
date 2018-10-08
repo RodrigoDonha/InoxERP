@@ -310,47 +310,17 @@ namespace UIWindows
             this.tb_productsTableAdapter.Fill(this.fullDataSet.tb_products);
         }
 
-        //FILL TAB PRODUCTS
+        //GET PRODUCTS
         private void grdConsultaPecas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = "";
-            Providers providers = new Providers();
-            
-            int compare = dgvConsultaPecas.Rows.GetRowCount(DataGridViewElementStates.Selected);
-            if (compare == 0)
-            { }
-            else
+            try
             {
-                tbcConsultaValores.SelectedTab = Cadastro;
-                txtPeca.Focus();
-                cleanCamps();
-                id = dgvConsultaPecas[0, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtPeca.Text = dgvConsultaPecas[2, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtQuantidade.Text = dgvConsultaPecas[1, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                string unitType = dgvConsultaPecas[3, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                switch (unitType)
-                {
-                    case "UN": radUN.Checked = true;
-                        break;
-                    case "MT": radMT.Checked = true;
-                        break;
-                    case "KG": radKG.Checked = true;
-                        break;
-                }
-                txtValorUnitario.Text = dgvConsultaPecas[4, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtValorTotal.Text = dgvConsultaPecas[5, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                txtObservacao.Text = dgvConsultaPecas[6, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-                try
-                {
-                    string idProvider = dgvConsultaPecas[7, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
-
-                    ProviderBusiness objProv = new ProviderBusiness(ctx);
-                    txtFornecedor.Text = objProv.ReturnByID(idProvider).sName;
-                }
-                catch
-                {
-
-                }
+                ReturnProducts = obj.ReturnByID(selectProducts());
+                Hide();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível selecionar o Produto, tente selecionar novamente, clicando no cliente desejado e no botão selecionar.");
             }
         }
 
@@ -361,14 +331,16 @@ namespace UIWindows
         }
 
         //SEARCH BY NAME
-        public void searchByName()
+        public void searchByName()// ESSA FUNÇÃO FOI CRIADA DEVIDO AO FILL TRAZER AS MEDIDAS COMO NUMEROS ESTA TRAZ CERTO
         {
+            //InoxErpContext ctxS = new InoxErpContext(); ERRO TRAZENDO 1 NO txtConsultaPeca.TEXT QDO NAO TEM NADA
+
             var search = from g in ctx.Products where g.sDescription.StartsWith(txtConsultaPeca.Text) select g;
 
             if (search.ToList().Count.Equals(0))
             {
                 txtConsultaPeca.Clear();
-                MessageBox.Show("Produto Não Encontrado");
+                MessageBox.Show("Produto Não Encontrado"); //APARECE ESTA MSG QDO CLIENTE CLICA MAIS DE UMA VEZ EM PECAS
                 txtConsultaPeca.Focus();
                 searchByName();
             }
@@ -392,20 +364,54 @@ namespace UIWindows
                 }
         }
 
+        //FILL PRODUCTS ON TAB
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
-            try
-            {
+            id = "";
+            Providers providers = new Providers();
 
-                ReturnProducts = obj.ReturnByID(selectProducts());
-                Hide();
-            }
-            catch
+            int compare = dgvConsultaPecas.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (compare == 0)
+            { }
+            else
             {
-                MessageBox.Show("Não foi possível selecionar o Produto, tente selecionar novamente, clicando no cliente desejado e no botão selecionar.");
+                tbcConsultaValores.SelectedTab = Cadastro;
+                txtPeca.Focus();
+                cleanCamps();
+                id = dgvConsultaPecas[0, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtPeca.Text = dgvConsultaPecas[2, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtQuantidade.Text = dgvConsultaPecas[1, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                string unitType = dgvConsultaPecas[3, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                switch (unitType)
+                {
+                    case "UN":
+                        radUN.Checked = true;
+                        break;
+                    case "MT":
+                        radMT.Checked = true;
+                        break;
+                    case "KG":
+                        radKG.Checked = true;
+                        break;
+                }
+                txtValorUnitario.Text = dgvConsultaPecas[4, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtValorTotal.Text = dgvConsultaPecas[5, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                txtObservacao.Text = dgvConsultaPecas[6, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+                try
+                {
+                    string idProvider = dgvConsultaPecas[7, dgvConsultaPecas.CurrentRow.Index].Value.ToString();
+
+                    ProviderBusiness objProv = new ProviderBusiness(ctx);
+                    txtFornecedor.Text = objProv.ReturnByID(idProvider).sName;
+                }
+                catch
+                {
+
+                }
             }
         }
 
+        //RETURN ID PRODUCT
         public string selectProducts()
         {
             id = "";

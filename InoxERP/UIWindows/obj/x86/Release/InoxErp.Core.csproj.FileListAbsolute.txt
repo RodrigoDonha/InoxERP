@@ -166,8 +166,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Cor
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csproj.CopyComplete
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxER.exe
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxER.pdb
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Budgets.Form1.resources
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Budgets.Form2.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Budgets.frmServiceCalc.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\SqlServerTypes\x64\msvcr120.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\SqlServerTypes\x64\SqlServerSpatial140.dll
@@ -279,3 +277,4 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\Inox
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csproj.CopyComplete
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxER.exe
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxER.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csprojAssemblyReference.cache

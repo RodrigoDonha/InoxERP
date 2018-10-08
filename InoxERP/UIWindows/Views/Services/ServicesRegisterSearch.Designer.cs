@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Consulta = new System.Windows.Forms.TabPage();
             this.grpConsultarValores = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -60,6 +60,7 @@
             this.lblPeca = new System.Windows.Forms.Label();
             this.tbcConsultaValores = new System.Windows.Forms.TabControl();
             this.tb_servicesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_servicesTableAdapter();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.Consulta.SuspendLayout();
             this.grpConsultarValores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaServicos)).BeginInit();
@@ -146,8 +147,8 @@
             // 
             this.sDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sDescriptionDataGridViewTextBoxColumn.DataPropertyName = "sDescription";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sDescriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sDescriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.sDescriptionDataGridViewTextBoxColumn.HeaderText = "Descrição";
             this.sDescriptionDataGridViewTextBoxColumn.Name = "sDescriptionDataGridViewTextBoxColumn";
             this.sDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -378,11 +379,22 @@
             // 
             this.tb_servicesTableAdapter.ClearBeforeFill = true;
             // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.Location = new System.Drawing.Point(220, 479);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(160, 30);
+            this.btnSelecionar.TabIndex = 4;
+            this.btnSelecionar.Text = "Selecionar Serviço";
+            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
             // frmServicesRegisterSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 484);
+            this.ClientSize = new System.Drawing.Size(602, 517);
+            this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.tbcConsultaValores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -435,5 +447,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sObservationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idItemsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnSelecionar;
     }
 }
