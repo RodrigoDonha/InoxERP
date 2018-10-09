@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccountsSearch));
             this.tbpRecebidos = new System.Windows.Forms.TabPage();
             this.gpbConsultarRecebidos = new System.Windows.Forms.GroupBox();
+            this.btnEstornarRecebidos = new System.Windows.Forms.Button();
             this.dgvRecebidos = new System.Windows.Forms.DataGridView();
             this.tbpPagos = new System.Windows.Forms.TabPage();
             this.gpbConsultaPagos = new System.Windows.Forms.GroupBox();
+            this.btnEstornarPagos = new System.Windows.Forms.Button();
             this.dgvPagos = new System.Windows.Forms.DataGridView();
             this.tbcConsultaValores = new System.Windows.Forms.TabControl();
-            this.btnEstornarPagos = new System.Windows.Forms.Button();
-            this.btnEstornarRecebidos = new System.Windows.Forms.Button();
             this.tbpCheques = new System.Windows.Forms.TabPage();
+            this.gpbCheques = new System.Windows.Forms.GroupBox();
             this.btnEstornarCheque = new System.Windows.Forms.Button();
             this.dgvCheques = new System.Windows.Forms.DataGridView();
-            this.gpbCheques = new System.Windows.Forms.GroupBox();
             this.tbpRecebidos.SuspendLayout();
             this.gpbConsultarRecebidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecebidos)).BeginInit();
@@ -49,8 +50,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.tbcConsultaValores.SuspendLayout();
             this.tbpCheques.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).BeginInit();
             this.gpbCheques.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).BeginInit();
             this.SuspendLayout();
             // 
             // tbpRecebidos
@@ -76,6 +77,15 @@
             this.gpbConsultarRecebidos.TabIndex = 3;
             this.gpbConsultarRecebidos.TabStop = false;
             this.gpbConsultarRecebidos.Text = "Consultar Recebidos";
+            // 
+            // btnEstornarRecebidos
+            // 
+            this.btnEstornarRecebidos.Location = new System.Drawing.Point(205, 396);
+            this.btnEstornarRecebidos.Name = "btnEstornarRecebidos";
+            this.btnEstornarRecebidos.Size = new System.Drawing.Size(134, 30);
+            this.btnEstornarRecebidos.TabIndex = 10;
+            this.btnEstornarRecebidos.Text = "Estornar Recebido";
+            this.btnEstornarRecebidos.UseVisualStyleBackColor = true;
             // 
             // dgvRecebidos
             // 
@@ -110,6 +120,15 @@
             this.gpbConsultaPagos.TabStop = false;
             this.gpbConsultaPagos.Text = "Consultar Pagos";
             // 
+            // btnEstornarPagos
+            // 
+            this.btnEstornarPagos.Location = new System.Drawing.Point(206, 396);
+            this.btnEstornarPagos.Name = "btnEstornarPagos";
+            this.btnEstornarPagos.Size = new System.Drawing.Size(134, 30);
+            this.btnEstornarPagos.TabIndex = 9;
+            this.btnEstornarPagos.Text = "Estornar Pago";
+            this.btnEstornarPagos.UseVisualStyleBackColor = true;
+            // 
             // dgvPagos
             // 
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -132,24 +151,6 @@
             this.tbcConsultaValores.Size = new System.Drawing.Size(553, 466);
             this.tbcConsultaValores.TabIndex = 4;
             // 
-            // btnEstornarPagos
-            // 
-            this.btnEstornarPagos.Location = new System.Drawing.Point(206, 396);
-            this.btnEstornarPagos.Name = "btnEstornarPagos";
-            this.btnEstornarPagos.Size = new System.Drawing.Size(134, 30);
-            this.btnEstornarPagos.TabIndex = 9;
-            this.btnEstornarPagos.Text = "Estornar Pago";
-            this.btnEstornarPagos.UseVisualStyleBackColor = true;
-            // 
-            // btnEstornarRecebidos
-            // 
-            this.btnEstornarRecebidos.Location = new System.Drawing.Point(205, 396);
-            this.btnEstornarRecebidos.Name = "btnEstornarRecebidos";
-            this.btnEstornarRecebidos.Size = new System.Drawing.Size(134, 30);
-            this.btnEstornarRecebidos.TabIndex = 10;
-            this.btnEstornarRecebidos.Text = "Estornar Recebido";
-            this.btnEstornarRecebidos.UseVisualStyleBackColor = true;
-            // 
             // tbpCheques
             // 
             this.tbpCheques.Controls.Add(this.gpbCheques);
@@ -160,6 +161,19 @@
             this.tbpCheques.TabIndex = 5;
             this.tbpCheques.Text = "Cheques";
             this.tbpCheques.UseVisualStyleBackColor = true;
+            // 
+            // gpbCheques
+            // 
+            this.gpbCheques.Controls.Add(this.btnEstornarCheque);
+            this.gpbCheques.Controls.Add(this.dgvCheques);
+            this.gpbCheques.Location = new System.Drawing.Point(6, 5);
+            this.gpbCheques.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gpbCheques.Name = "gpbCheques";
+            this.gpbCheques.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gpbCheques.Size = new System.Drawing.Size(533, 431);
+            this.gpbCheques.TabIndex = 4;
+            this.gpbCheques.TabStop = false;
+            this.gpbCheques.Text = "Consultar Cheques";
             // 
             // btnEstornarCheque
             // 
@@ -180,19 +194,6 @@
             this.dgvCheques.Size = new System.Drawing.Size(517, 362);
             this.dgvCheques.TabIndex = 8;
             // 
-            // gpbCheques
-            // 
-            this.gpbCheques.Controls.Add(this.btnEstornarCheque);
-            this.gpbCheques.Controls.Add(this.dgvCheques);
-            this.gpbCheques.Location = new System.Drawing.Point(6, 5);
-            this.gpbCheques.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gpbCheques.Name = "gpbCheques";
-            this.gpbCheques.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gpbCheques.Size = new System.Drawing.Size(533, 431);
-            this.gpbCheques.TabIndex = 4;
-            this.gpbCheques.TabStop = false;
-            this.gpbCheques.Text = "Consultar Cheques";
-            // 
             // frmAccountsSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -200,6 +201,7 @@
             this.ClientSize = new System.Drawing.Size(561, 484);
             this.Controls.Add(this.tbcConsultaValores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAccountsSearch";
             this.Text = "Consultar Contas";
@@ -211,8 +213,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
             this.tbcConsultaValores.ResumeLayout(false);
             this.tbpCheques.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).EndInit();
             this.gpbCheques.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -708,25 +708,32 @@ namespace InoxERP.UI_Windows_Forms
         // CALLS VIEW PRODUCTS
         private void btnPeca_Click(object sender, EventArgs e)
         {
-            //verificar e bloquear btn selecionar e tab 2
-            foreach (Control proControl in product.Controls)
+            frmProductsRegisterSearch productsSearch = new frmProductsRegisterSearch();
+
+            foreach (Control proControl in productsSearch.Controls)
             {
-                //refazer
-                if (proControl.Name == "btnAbrirAlterar" || proControl.Name == "btnExcluir" || proControl.Name == "btnCadastrar")
+                if (proControl.Name == "btnSelecionar")
                     proControl.Enabled = false;
+
+                foreach (Control tab in proControl.Controls)
+                {
+                    if (tab.Name == "Cadastro")
+                        tab.Enabled = false;
+                }
             }
 
-            //erro de produto nao encontrado txtconsultapeca leva '1' e quando nao pode levar nada
-            MessageBox.Show("Na próxima tela, você pode pode escolher o produto clicando uma vez com o botão esquerdo do mouse sobre ele e clicar no botão selecionar.");
+            //MessageBox.Show("Na próxima tela, você pode pode escolher o produto clicando uma vez com o botão esquerdo do mouse sobre ele e clicar no botão selecionar.");
 
-            product.ShowDialog();
+            productsSearch.ShowDialog();
 
-            if (product.ReturnProducts != null)// sem selecionar o produto volta com o ultimo selecionado
+            if (productsSearch.ReturnProducts != null)
+            {
+                product = productsSearch;
                 if (messageYesNo("product") == DialogResult.Yes)
                 {
                     getIdProduct = "";
                     getIdProduct = product.ReturnProducts.sID;
-                    txtQuantidade.Text = product.ReturnProducts.dAmount.ToString();
+                    txtQuantidade.Text = "1";
                     txtDescricao.Text = product.ReturnProducts.sDescription;
                     //if (messageYesNo("productValue") == DialogResult.Yes)
                     //{
@@ -735,9 +742,10 @@ namespace InoxERP.UI_Windows_Forms
                     //}
                     //else
                     //{
-                        txtValorUnitario.Text = product.ReturnProducts.dPrice.ToString();
+                    txtValorUnitario.Text = product.ReturnProducts.dPrice.ToString();
                     //}
                 }
+            }
         }
 
         // CALLS VIEW SERVICES
@@ -769,16 +777,21 @@ namespace InoxERP.UI_Windows_Forms
         // CALL VIEW CLIENTS
         private void btnProcurar_Click(object sender, EventArgs e)
         {
-            foreach (Control cliControl in client.Controls)
+            frmClientsSearch clientsSearch = new frmClientsSearch();
+
+            foreach (Control cliControl in clientsSearch.Controls)
             {
                 if (cliControl.Name == "btnAbrirAlterar" || cliControl.Name == "btnExcluir" || cliControl.Name == "btnCadastrar")
                     cliControl.Enabled = false;
             }
 
+            //MessageBox.Show("Na próxima tela, você pode dar um duplo clique do mouse em cima do cliente desejado para selecioná-lo.");
 
-            MessageBox.Show("Na próxima tela, você pode dar um duplo clique do mouse em cima do cliente desejado para selecioná-lo.");
-            client.ShowDialog();
-            if (client.ReturnClients != null)
+            clientsSearch.ShowDialog();
+
+            if (clientsSearch.ReturnClients != null)
+            {
+                client = clientsSearch;
                 if (messageYesNo("client") == DialogResult.Yes)
                 {
                     getIdClient = "";
@@ -803,6 +816,8 @@ namespace InoxERP.UI_Windows_Forms
                     txtCargo.Text = client.ReturnClients.sOccupation;
                     txtQuantidade.Focus();
                 }
+            }
+                
         }
 
 

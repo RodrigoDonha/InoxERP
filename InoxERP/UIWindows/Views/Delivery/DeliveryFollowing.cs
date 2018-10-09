@@ -35,38 +35,55 @@ namespace UIWindows
         private void btnAbrirAlterar_Click(object sender, EventArgs e)
         {
             getIdGrigView();
-            frmBudgetsRegister bud = new frmBudgetsRegister(getId);
-            bud.BudgetData();
-            bud.Show();
+            if (!getId.Equals(""))
+            {
+                frmBudgetsRegister bud = new frmBudgetsRegister(getId);
+
+                /////FUNCTION TO DISABLE BUTTONS
+                foreach (Control budControl in bud.Controls)
+                {
+                    foreach (Control btn in budControl.Controls)
+                    {
+                        if (btn.Name == "btnGravarOrcamento" || btn.Name == "btnExcluir" || btn.Name == "btnCancelarOrcamento")
+                            btn.Enabled = false;
+                        if (btn.Name == "btnAprovar")
+                            btn.Enabled = true;
+                    }
+                }
+
+                bud.BudgetData();
+                bud.Show();
+            }
+            
         }
 
         private void btnReabrirOS_Click(object sender, EventArgs e)
         {
-            getIdGrigView();
-            if (messageYesNo("ReopenOS") == DialogResult.Yes)
-            {
-                Budgets_OS budgetAlter = new Budgets_OS();
+            //getIdGrigView();
+            //if (messageYesNo("ReopenOS") == DialogResult.Yes)
+            //{
+            //    Budgets_OS budgetAlter = new Budgets_OS();
 
-                //procura o orçamento para alteração
-                budgetAlter = obj.ReturnByID(getId);
+            //    //procura o orçamento para alteração
+            //    budgetAlter = obj.ReturnByID(getId);
 
-                budgetAlter.bRegisterFinished = false;
-                budgetAlter.dtDateRegisterFinished = DateTime.Now;
+            //    budgetAlter.bRegisterFinished = false;
+            //    budgetAlter.dtDateRegisterFinished = DateTime.Now;
 
-                obj.Update(budgetAlter);
+            //    obj.Update(budgetAlter);
 
-                //verifica se o orçamento foi atualizado com sucesso
-                var ok = obj.Search.FirstOrDefault(b => b.sID == budgetAlter.sID);
+            //    //verifica se o orçamento foi atualizado com sucesso
+            //    var ok = obj.Search.FirstOrDefault(b => b.sID == budgetAlter.sID);
 
-                if (ok == null)
-                    MessageBox.Show("Erro ao Reabrir a Ordem de Serviço !!!");
-                else
-                {
-                    MessageBox.Show("Ordem de Serviço Reaberta!");
-                }
+            //    if (ok == null)
+            //        MessageBox.Show("Erro ao Reabrir a Ordem de Serviço !!!");
+            //    else
+            //    {
+            //        MessageBox.Show("Ordem de Serviço Reaberta!");
+            //    }
 
-                fillDataSet();
-            }
+            //    fillDataSet();
+            //}
         }
 
         private void btnFinalizar_Click(object sender, EventArgs e)
@@ -165,25 +182,52 @@ namespace UIWindows
         // SEARCH BY NAME CLIENT
         public void searchByName()
         {
-            var query = from p in ctx.Budgets_OS where p.bServiceOrderApproved.Equals(true)
-                where p.bRegisterFinished.Equals(true)
+            var search = from p in ctx.Budgets_OS
+                where p.bServiceOrderApproved.Equals(true)
                 where p.bServiceOrderDelivered.Equals(false)
                 where p.sName.StartsWith(txtPesquisa.Text)
             select p;
 
-            dgvEntregas.DataSource = query.ToList();
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Cliente Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Budgets_OS> b = search.ToList();
+                txtPesquisa.Clear();
+                dgvEntregas.DataSource = b.ToList();
+            }
         }
 
         public void searchByCPF_CNPJ()
         {
-            // implementar quando já estiver sido implementado o módulo clientes
+            var search = from p in ctx.Budgets_OS
+                where p.Clients.sCpfCnpj.StartsWith(txtPesquisa.Text)
+                where p.bServiceOrderApproved.Equals(true)
+                where p.bServiceOrderDelivered.Equals(false)
+                select p;
+
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Cliente Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Budgets_OS> b = search.ToList();
+                txtPesquisa.Clear();
+                dgvEntregas.DataSource = b.ToList();
+            }
         }
 
         public void searchByDate(){
 
             var query = from p in ctx.Budgets_OS
                 where p.bServiceOrderApproved.Equals(true)
-                where p.bRegisterFinished.Equals(true)
                 where p.bServiceOrderDelivered.Equals(false)
             select p;
 
@@ -209,8 +253,7 @@ namespace UIWindows
         private void frmDeliveryFollowing_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'fullDataSet.tb_budgets_os' table. You can move, or remove it, as needed.
-            this.tb_budgets_osTableAdapter.FillByDeliveryFollow(this.fullDataSet.tb_budgets_os);
-
+            fillDataSet();
         }
     }
 }

@@ -180,19 +180,5 @@ namespace UIWindows
                 MessageBox.Show("Não foi possível selecionar o Fornecedor, tente selecionar novamente.");
             }
         }
-
-        private void btnSelecionar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                returnProviders = obj.returnById(selectProviders());
-                Dispose();
-            }
-            catch
-            {
-                MessageBox.Show("Não foi possível selecionar o Fornecedor, tente selecionar novamente.");
-            }
-        }
-
     }
 }

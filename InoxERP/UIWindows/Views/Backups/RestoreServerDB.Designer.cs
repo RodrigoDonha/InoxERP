@@ -152,6 +152,7 @@
             this.ClientSize = new System.Drawing.Size(499, 469);
             this.Controls.Add(this.gpbRestore);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRestoreServerDB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

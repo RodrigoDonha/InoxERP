@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServiceOrderSearch));
             this.btnFinlizar = new System.Windows.Forms.Button();
             this.btnDesaprovar = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
@@ -84,10 +85,10 @@
             // 
             // btnFinlizar
             // 
-            this.btnFinlizar.Location = new System.Drawing.Point(714, 406);
+            this.btnFinlizar.Location = new System.Drawing.Point(1070, 406);
             this.btnFinlizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinlizar.Name = "btnFinlizar";
-            this.btnFinlizar.Size = new System.Drawing.Size(120, 30);
+            this.btnFinlizar.Size = new System.Drawing.Size(150, 30);
             this.btnFinlizar.TabIndex = 11;
             this.btnFinlizar.Text = "Finalizar";
             this.btnFinlizar.UseVisualStyleBackColor = true;
@@ -95,21 +96,22 @@
             // 
             // btnDesaprovar
             // 
-            this.btnDesaprovar.Location = new System.Drawing.Point(349, 406);
+            this.btnDesaprovar.Location = new System.Drawing.Point(211, 406);
             this.btnDesaprovar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDesaprovar.Name = "btnDesaprovar";
             this.btnDesaprovar.Size = new System.Drawing.Size(120, 30);
             this.btnDesaprovar.TabIndex = 10;
             this.btnDesaprovar.Text = "Desaprovar";
             this.btnDesaprovar.UseVisualStyleBackColor = true;
+            this.btnDesaprovar.Visible = false;
             this.btnDesaprovar.Click += new System.EventHandler(this.btnDesaprovar_Click);
             // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(23, 406);
+            this.btnAbrir.Location = new System.Drawing.Point(15, 406);
             this.btnAbrir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(120, 30);
+            this.btnAbrir.Size = new System.Drawing.Size(150, 30);
             this.btnAbrir.TabIndex = 8;
             this.btnAbrir.Text = "Visualizar O.S.";
             this.btnAbrir.UseVisualStyleBackColor = true;
@@ -512,10 +514,10 @@
             // 
             // btnGerarContrato
             // 
-            this.btnGerarContrato.Location = new System.Drawing.Point(1100, 406);
+            this.btnGerarContrato.Location = new System.Drawing.Point(542, 406);
             this.btnGerarContrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGerarContrato.Name = "btnGerarContrato";
-            this.btnGerarContrato.Size = new System.Drawing.Size(120, 30);
+            this.btnGerarContrato.Size = new System.Drawing.Size(150, 30);
             this.btnGerarContrato.TabIndex = 12;
             this.btnGerarContrato.Text = "Gerar Contrato";
             this.btnGerarContrato.UseVisualStyleBackColor = true;
@@ -537,6 +539,7 @@
             this.Controls.Add(this.grpOrdemServico);
             this.Controls.Add(this.grpPesquisa);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmServiceOrderSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

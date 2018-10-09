@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDeliveryFollowing));
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
@@ -70,8 +71,6 @@
             this.fullDataSet = new UIWindows.FullDataSet();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnAbrirAlterar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnReabrirOS = new System.Windows.Forms.Button();
             this.tb_budgets_osTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_budgets_osTableAdapter();
             this.grpPesquisa.SuspendLayout();
             this.grpEntregas.SuspendLayout();
@@ -145,6 +144,7 @@
             // radNome
             // 
             this.radNome.AutoSize = true;
+            this.radNome.Checked = true;
             this.radNome.Location = new System.Drawing.Point(243, 28);
             this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNome.Name = "radNome";
@@ -466,12 +466,12 @@
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(696, 399);
+            this.btnFinalizar.Location = new System.Drawing.Point(1061, 399);
             this.btnFinalizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(120, 30);
+            this.btnFinalizar.Size = new System.Drawing.Size(150, 30);
             this.btnFinalizar.TabIndex = 11;
-            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.Text = "Finalizar Entrega";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
@@ -480,33 +480,11 @@
             this.btnAbrirAlterar.Location = new System.Drawing.Point(15, 399);
             this.btnAbrirAlterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAbrirAlterar.Name = "btnAbrirAlterar";
-            this.btnAbrirAlterar.Size = new System.Drawing.Size(120, 30);
+            this.btnAbrirAlterar.Size = new System.Drawing.Size(150, 30);
             this.btnAbrirAlterar.TabIndex = 12;
-            this.btnAbrirAlterar.Text = "Abrir / Alterar";
+            this.btnAbrirAlterar.Text = "Visualizar O.S.";
             this.btnAbrirAlterar.UseVisualStyleBackColor = true;
             this.btnAbrirAlterar.Click += new System.EventHandler(this.btnAbrirAlterar_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(1091, 399);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(120, 30);
-            this.btnExcluir.TabIndex = 17;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnReabrirOS
-            // 
-            this.btnReabrirOS.Location = new System.Drawing.Point(328, 399);
-            this.btnReabrirOS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnReabrirOS.Name = "btnReabrirOS";
-            this.btnReabrirOS.Size = new System.Drawing.Size(120, 30);
-            this.btnReabrirOS.TabIndex = 18;
-            this.btnReabrirOS.Text = "Reabrir OS";
-            this.btnReabrirOS.UseVisualStyleBackColor = true;
-            this.btnReabrirOS.Click += new System.EventHandler(this.btnReabrirOS_Click);
             // 
             // tb_budgets_osTableAdapter
             // 
@@ -517,13 +495,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1226, 450);
-            this.Controls.Add(this.btnReabrirOS);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAbrirAlterar);
             this.Controls.Add(this.grpPesquisa);
             this.Controls.Add(this.grpEntregas);
             this.Controls.Add(this.btnFinalizar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDeliveryFollowing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -552,8 +529,6 @@
         private System.Windows.Forms.DataGridView dgvEntregas;
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.Button btnAbrirAlterar;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnReabrirOS;
         private FullDataSet fullDataSet;
         private System.Windows.Forms.BindingSource tbbudgetsosBindingSource;
         private FullDataSetTableAdapters.tb_budgets_osTableAdapter tb_budgets_osTableAdapter;

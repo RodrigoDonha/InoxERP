@@ -320,7 +320,7 @@ namespace UIWindows
             }
             catch
             {
-                MessageBox.Show("Não foi possível selecionar o Produto, tente selecionar novamente, clicando no cliente desejado e no botão selecionar.");
+                MessageBox.Show("Não foi possível selecionar o Produto, tente selecionar novamente.");
             }
         }
 
@@ -331,16 +331,14 @@ namespace UIWindows
         }
 
         //SEARCH BY NAME
-        public void searchByName()// ESSA FUNÇÃO FOI CRIADA DEVIDO AO FILL TRAZER AS MEDIDAS COMO NUMEROS ESTA TRAZ CERTO
+        public void searchByName()// ESSA FUNÇÃO FOI CRIADA DEVIDO AO FILL TRAZER AS MEDIDAS COMO NUMEROS, ESTA TRAZ CERTO
         {
-            //InoxErpContext ctxS = new InoxErpContext(); ERRO TRAZENDO 1 NO txtConsultaPeca.TEXT QDO NAO TEM NADA
-
-            var search = from g in ctx.Products where g.sDescription.StartsWith(txtConsultaPeca.Text) select g;
+           var search = from g in ctx.Products where g.sDescription.StartsWith(txtConsultaPeca.Text) select g;
 
             if (search.ToList().Count.Equals(0))
             {
                 txtConsultaPeca.Clear();
-                MessageBox.Show("Produto Não Encontrado"); //APARECE ESTA MSG QDO CLIENTE CLICA MAIS DE UMA VEZ EM PECAS
+                MessageBox.Show("Produto Não Encontrado");
                 txtConsultaPeca.Focus();
                 searchByName();
             }

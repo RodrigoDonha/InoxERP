@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccountsToReceive));
             this.lblEntradas = new System.Windows.Forms.Label();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.txtCodCliente = new System.Windows.Forms.TextBox();
@@ -273,6 +274,7 @@
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblReferenteA);
             this.Controls.Add(this.lblEntradas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAccountsToReceive";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contas a Receber";

@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmServicesRegisterSearch));
             this.Consulta = new System.Windows.Forms.TabPage();
             this.grpConsultarValores = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -147,8 +148,8 @@
             // 
             this.sDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sDescriptionDataGridViewTextBoxColumn.DataPropertyName = "sDescription";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sDescriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sDescriptionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.sDescriptionDataGridViewTextBoxColumn.HeaderText = "Descrição";
             this.sDescriptionDataGridViewTextBoxColumn.Name = "sDescriptionDataGridViewTextBoxColumn";
             this.sDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -397,6 +398,7 @@
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.tbcConsultaValores);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmServicesRegisterSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCashGeneral));
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtReferenteA = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
@@ -158,6 +159,7 @@
             this.Controls.Add(this.lblReferenteA);
             this.Controls.Add(this.lblExtratoGeral);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCashGeneral";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

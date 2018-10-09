@@ -37,6 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDeliveryFinished));
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
@@ -153,6 +154,7 @@
             // radNome
             // 
             this.radNome.AutoSize = true;
+            this.radNome.Checked = true;
             this.radNome.Location = new System.Drawing.Point(243, 28);
             this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNome.Name = "radNome";
@@ -500,18 +502,18 @@
             // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(12, 402);
+            this.btnAbrir.Location = new System.Drawing.Point(23, 402);
             this.btnAbrir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAbrir.Name = "btnAbrir";
             this.btnAbrir.Size = new System.Drawing.Size(150, 30);
             this.btnAbrir.TabIndex = 9;
-            this.btnAbrir.Text = "Abrir / Alterar";
+            this.btnAbrir.Text = "Visualizar O.S.";
             this.btnAbrir.UseVisualStyleBackColor = true;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // btnReabrirEntrega
             // 
-            this.btnReabrirEntrega.Location = new System.Drawing.Point(1064, 402);
+            this.btnReabrirEntrega.Location = new System.Drawing.Point(1058, 402);
             this.btnReabrirEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReabrirEntrega.Name = "btnReabrirEntrega";
             this.btnReabrirEntrega.Size = new System.Drawing.Size(150, 30);
@@ -539,6 +541,7 @@
             this.Controls.Add(this.grpPesquisa);
             this.Controls.Add(this.grpEntregas);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDeliveryFinished";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

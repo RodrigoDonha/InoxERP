@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportBudgets));
             this.btnGerar = new System.Windows.Forms.Button();
             this.dtpFim = new System.Windows.Forms.DateTimePicker();
             this.lblAte = new System.Windows.Forms.Label();
@@ -118,6 +119,7 @@
             // radGeral
             // 
             this.radGeral.AutoSize = true;
+            this.radGeral.Checked = true;
             this.radGeral.Location = new System.Drawing.Point(25, 34);
             this.radGeral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radGeral.Name = "radGeral";
@@ -135,7 +137,6 @@
             this.radAprovados.Name = "radAprovados";
             this.radAprovados.Size = new System.Drawing.Size(94, 21);
             this.radAprovados.TabIndex = 1;
-            this.radAprovados.TabStop = true;
             this.radAprovados.Text = "Aprovados";
             this.radAprovados.UseVisualStyleBackColor = true;
             // 
@@ -147,7 +148,6 @@
             this.radEmAberto.Name = "radEmAberto";
             this.radEmAberto.Size = new System.Drawing.Size(92, 21);
             this.radEmAberto.TabIndex = 0;
-            this.radEmAberto.TabStop = true;
             this.radEmAberto.Text = "Em Aberto";
             this.radEmAberto.UseVisualStyleBackColor = true;
             // 
@@ -160,6 +160,7 @@
             this.Controls.Add(this.grpPeriodo);
             this.Controls.Add(this.grpTipo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmReportBudgets";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProviderSearch));
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -386,13 +387,13 @@
             this.radCPF_CNPJ.Name = "radCPF_CNPJ";
             this.radCPF_CNPJ.Size = new System.Drawing.Size(91, 21);
             this.radCPF_CNPJ.TabIndex = 2;
-            this.radCPF_CNPJ.TabStop = true;
             this.radCPF_CNPJ.Text = "CPF/CNPJ";
             this.radCPF_CNPJ.UseVisualStyleBackColor = true;
             // 
             // radNome
             // 
             this.radNome.AutoSize = true;
+            this.radNome.Checked = true;
             this.radNome.Location = new System.Drawing.Point(97, 25);
             this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNome.Name = "radNome";
@@ -425,6 +426,7 @@
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.grpFornecedor);
             this.Controls.Add(this.grpPesquisa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProviderSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Fornecedores";

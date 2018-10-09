@@ -33,9 +33,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserRegisterSearch));
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sLoginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sKeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.permitionssIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbusersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
@@ -48,18 +57,10 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.tbusersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_usersTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_usersTableAdapter();
-            this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sLoginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sKeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.permitionssIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbusersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxTipo
@@ -133,6 +134,65 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(370, 165);
             this.dgvUsuarios.TabIndex = 29;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            // 
+            // sIDDataGridViewTextBoxColumn
+            // 
+            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
+            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
+            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
+            this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sNameDataGridViewTextBoxColumn
+            // 
+            this.sNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sNameDataGridViewTextBoxColumn.DataPropertyName = "sName";
+            this.sNameDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
+            this.sNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sLoginDataGridViewTextBoxColumn
+            // 
+            this.sLoginDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sLoginDataGridViewTextBoxColumn.DataPropertyName = "sLogin";
+            this.sLoginDataGridViewTextBoxColumn.HeaderText = "Login";
+            this.sLoginDataGridViewTextBoxColumn.Name = "sLoginDataGridViewTextBoxColumn";
+            this.sLoginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sLoginDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // sKeyDataGridViewTextBoxColumn
+            // 
+            this.sKeyDataGridViewTextBoxColumn.DataPropertyName = "sKey";
+            this.sKeyDataGridViewTextBoxColumn.HeaderText = "sKey";
+            this.sKeyDataGridViewTextBoxColumn.Name = "sKeyDataGridViewTextBoxColumn";
+            this.sKeyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sKeyDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.typeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // permitionssIDDataGridViewTextBoxColumn
+            // 
+            this.permitionssIDDataGridViewTextBoxColumn.DataPropertyName = "Permitions_sID";
+            this.permitionssIDDataGridViewTextBoxColumn.HeaderText = "Permitions_sID";
+            this.permitionssIDDataGridViewTextBoxColumn.Name = "permitionssIDDataGridViewTextBoxColumn";
+            this.permitionssIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.permitionssIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tbusersBindingSource
+            // 
+            this.tbusersBindingSource.DataMember = "tb_users";
+            this.tbusersBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnExcluir
             // 
@@ -259,68 +319,9 @@
             this.lblID.TabIndex = 32;
             this.lblID.Text = "0";
             // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbusersBindingSource
-            // 
-            this.tbusersBindingSource.DataMember = "tb_users";
-            this.tbusersBindingSource.DataSource = this.fullDataSet;
-            // 
             // tb_usersTableAdapter
             // 
             this.tb_usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // sIDDataGridViewTextBoxColumn
-            // 
-            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
-            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
-            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
-            this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sNameDataGridViewTextBoxColumn
-            // 
-            this.sNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sNameDataGridViewTextBoxColumn.DataPropertyName = "sName";
-            this.sNameDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.sNameDataGridViewTextBoxColumn.Name = "sNameDataGridViewTextBoxColumn";
-            this.sNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sLoginDataGridViewTextBoxColumn
-            // 
-            this.sLoginDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sLoginDataGridViewTextBoxColumn.DataPropertyName = "sLogin";
-            this.sLoginDataGridViewTextBoxColumn.HeaderText = "Login";
-            this.sLoginDataGridViewTextBoxColumn.Name = "sLoginDataGridViewTextBoxColumn";
-            this.sLoginDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sLoginDataGridViewTextBoxColumn.Width = 68;
-            // 
-            // sKeyDataGridViewTextBoxColumn
-            // 
-            this.sKeyDataGridViewTextBoxColumn.DataPropertyName = "sKey";
-            this.sKeyDataGridViewTextBoxColumn.HeaderText = "sKey";
-            this.sKeyDataGridViewTextBoxColumn.Name = "sKeyDataGridViewTextBoxColumn";
-            this.sKeyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sKeyDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.typeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // permitionssIDDataGridViewTextBoxColumn
-            // 
-            this.permitionssIDDataGridViewTextBoxColumn.DataPropertyName = "Permitions_sID";
-            this.permitionssIDDataGridViewTextBoxColumn.HeaderText = "Permitions_sID";
-            this.permitionssIDDataGridViewTextBoxColumn.Name = "permitionssIDDataGridViewTextBoxColumn";
-            this.permitionssIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.permitionssIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // frmUserRegisterSearch
             // 
@@ -343,14 +344,15 @@
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.lblTitulo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmUserRegisterSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro e Consulta de Usuários";
             this.Load += new System.EventHandler(this.frmUserRegisterSearch_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbusersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBudgetsRegister));
             this.btnProcurar = new System.Windows.Forms.Button();
             this.grpCliente = new System.Windows.Forms.GroupBox();
             this.txtCargo = new System.Windows.Forms.TextBox();
@@ -1097,6 +1098,7 @@
             this.Controls.Add(this.grpFormaPagto);
             this.Controls.Add(this.grpProdutos_Servicos);
             this.Controls.Add(this.grpCliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmBudgetsRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

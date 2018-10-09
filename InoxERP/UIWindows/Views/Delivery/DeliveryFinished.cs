@@ -35,11 +35,24 @@ namespace UIWindows
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
-            getId = "";
             getIdGrigView();
-            if (dgvEntregasFinalizadas.CurrentRow != null)
+
+            if (!getId.Equals(""))
             {
                 frmBudgetsRegister bud = new frmBudgetsRegister(getId);
+
+                /////FUNCTION TO DISABLE BUTTONS
+                foreach (Control budControl in bud.Controls)
+                {
+                    foreach (Control btn in budControl.Controls)
+                    {
+                        if (btn.Name == "btnGravarOrcamento" || btn.Name == "btnExcluir" || btn.Name == "btnCancelarOrcamento")
+                            btn.Enabled = false;
+                        if (btn.Name == "btnAprovar")
+                            btn.Enabled = true;
+                    }
+                }
+
                 bud.BudgetData();
                 bud.Show();
             }
@@ -136,19 +149,48 @@ namespace UIWindows
         // SEARCH BY NAME CLIENT
         public void searchByName()
         {
-            var query = from p in ctx.Budgets_OS
+            var search = from p in ctx.Budgets_OS
                         where p.bServiceOrderApproved.Equals(true)
                         where p.bRegisterFinished.Equals(true)
                         where p.bServiceOrderDelivered.Equals(true)
                         where p.sName.StartsWith(txtPesquisa.Text)
                         select p;
 
-            dgvEntregasFinalizadas.DataSource = query.ToList();
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Cliente Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Budgets_OS> b = search.ToList();
+                txtPesquisa.Clear();
+                dgvEntregasFinalizadas.DataSource = b.ToList();
+            }
         }
 
         public void searchByCPF_CNPJ()
         {
-            // implementar quando já estiver sido implementado o módulo clientes
+            var search = from p in ctx.Budgets_OS
+                         where p.Clients.sCpfCnpj.StartsWith(txtPesquisa.Text)
+                         where p.bServiceOrderApproved.Equals(true)
+                         where p.bRegisterFinished.Equals(true)
+                         where p.bServiceOrderDelivered.Equals(true)
+                         select p;
+
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Cliente Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Budgets_OS> b = search.ToList();
+                txtPesquisa.Clear();
+                dgvEntregasFinalizadas.DataSource = b.ToList();
+            }
         }
 
         public void searchByDate()

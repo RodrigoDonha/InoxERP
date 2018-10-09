@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContract));
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.lblTituloContrato = new System.Windows.Forms.Label();
             this.lblContrante = new System.Windows.Forms.Label();
@@ -690,6 +691,7 @@
             this.Controls.Add(this.lblTituloContrato);
             this.Controls.Add(this.picLogo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmContract";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -36,7 +36,7 @@ namespace UIWindows
         private void btnAbrir_Click(object sender, EventArgs e)
         {
             getIdGrigView();
-            if (dgvOrdemServico.CurrentRow != null)
+            if (!getId.Equals(""))
             {
                 frmBudgetsRegister bud = new frmBudgetsRegister(getId);
 
@@ -58,25 +58,25 @@ namespace UIWindows
 
         private void btnDesaprovar_Click(object sender, EventArgs e)
         {
-            getIdGrigView();
-            if (dgvOrdemServico.CurrentRow != null)
-            {
-                searchBudget = obj.ReturnByID(getId);
-                if (messageYesNo("Desapprove") == DialogResult.Yes)
-                {
-                    searchBudget.bServiceOrderApproved = false;
-                    searchBudget.dtDateServiceOrderApproved = DateTime.Now;
+            //getIdGrigView();
+            //if (dgvOrdemServico.CurrentRow != null)
+            //{
+            //    searchBudget = obj.ReturnByID(getId);
+            //    if (messageYesNo("Desapprove") == DialogResult.Yes)
+            //    {
+            //        searchBudget.bServiceOrderApproved = false;
+            //        searchBudget.dtDateServiceOrderApproved = DateTime.Now;
 
-                    obj.Update(searchBudget);
-                    MessageBox.Show("Desaprovado");
+            //        obj.Update(searchBudget);
+            //        MessageBox.Show("Desaprovado");
 
-                    fillDataSet();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
-            }
+            //        fillDataSet();
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Não foi possível selecionar o orçamento, tente selecionar novamente.");
+            //}
         }
 
         private void btnFinlizar_Click(object sender, EventArgs e)
@@ -147,10 +147,13 @@ namespace UIWindows
         }
         
         // SEARCH BY NAME CLIENT
-        public void searchByName() //nao esta funcionando
+        public void searchByName() 
         {
-            // corrigir a clausula where, onde 
-            var search = from p in ctx.Budgets_OS where p.sName.StartsWith(txtPesquisa.Text) where p.bServiceOrderApproved.Equals(true) where p.bRegisterFinished.Equals(false) select p;
+            var search = from p in ctx.Budgets_OS
+                where p.sName.StartsWith(txtPesquisa.Text)
+                where p.bServiceOrderApproved.Equals(true)
+                where p.bRegisterFinished.Equals(false)
+                select p;
 
             if (search.ToList().Count.Equals(0))
             {
@@ -168,12 +171,32 @@ namespace UIWindows
 
         public void searchByCPF_CNPJ()
         {
-            // implementar quando já estiver sido implementado o módulo clientes
+            var search = from p in ctx.Budgets_OS
+                where p.Clients.sCpfCnpj.StartsWith(txtPesquisa.Text)
+                where p.bServiceOrderApproved.Equals(true)
+                where p.bRegisterFinished.Equals(false)
+                select p;
+
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Cliente Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Budgets_OS> b = search.ToList();
+                txtPesquisa.Clear();
+                dgvOrdemServico.DataSource = b.ToList();
+            }
         }
 
         public void searchByDate()
         {
-            var query = from p in ctx.Budgets_OS where p.bServiceOrderApproved.Equals(true) where p.bRegisterFinished.Equals(false) select p;
+            var query = from p in ctx.Budgets_OS
+                where p.bServiceOrderApproved.Equals(true)
+                where p.bRegisterFinished.Equals(false)
+                select p;
 
             if (txtPesquisa.Text == "")
             {
