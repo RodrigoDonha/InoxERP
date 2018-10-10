@@ -164,10 +164,22 @@ namespace InoxERP
             new frmReportCashGeneral().Show();
         }
         
-
+        //BACKUP AUTOMATIC WHEN PRINCIPAL FORM IS CLOSED
         private void PrincipalForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            string server = "(localdb)\\MSSQLLocalDB";
+            string DB = "InoxErpDB";
+            string destiny = "C:\\Users\\Lucas\\OneDrive";
+            //string destiny = "C:\\Users\\jefte\\OneDrive\\Backup";
+
+            try
+            {
+                frmBackupServerDB backup = new frmBackupServerDB(server,DB,destiny);
+            }
+            catch (Exception msgException)
+            {
+                MessageBox.Show(msgException.Message);
+            }
         }
 
         

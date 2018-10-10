@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBackupServerDB));
             this.gpbBackup = new System.Windows.Forms.GroupBox();
             this.lblLocal = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.picBackup = new System.Windows.Forms.PictureBox();
             this.lblBanco = new System.Windows.Forms.Label();
             this.lblServidor = new System.Windows.Forms.Label();
+            this.ttBackup = new System.Windows.Forms.ToolTip(this.components);
             this.gpbBackup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackup)).BeginInit();
             this.SuspendLayout();
@@ -116,6 +118,7 @@
             // picBackup
             // 
             this.picBackup.BackColor = System.Drawing.Color.White;
+            this.picBackup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBackup.Image = ((System.Drawing.Image)(resources.GetObject("picBackup.Image")));
             this.picBackup.Location = new System.Drawing.Point(14, 281);
             this.picBackup.Margin = new System.Windows.Forms.Padding(7);
@@ -124,6 +127,7 @@
             this.picBackup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBackup.TabIndex = 8;
             this.picBackup.TabStop = false;
+            this.ttBackup.SetToolTip(this.picBackup, "Realizar Backup");
             this.picBackup.Click += new System.EventHandler(this.picBackup_Click);
             // 
             // lblBanco
@@ -145,6 +149,13 @@
             this.lblServidor.Size = new System.Drawing.Size(61, 17);
             this.lblServidor.TabIndex = 1;
             this.lblServidor.Text = "Servidor";
+            // 
+            // ttBackup
+            // 
+            this.ttBackup.IsBalloon = true;
+            this.ttBackup.ShowAlways = true;
+            this.ttBackup.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ttBackup.ToolTipTitle = "Backup";
             // 
             // frmBackupServerDB
             // 
@@ -176,5 +187,6 @@
         private System.Windows.Forms.ProgressBar prbCopiando;
         private System.Windows.Forms.TextBox txtDestino;
         private System.Windows.Forms.Label lblLocal;
+        private System.Windows.Forms.ToolTip ttBackup;
     }
 }
