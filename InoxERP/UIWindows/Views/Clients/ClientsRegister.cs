@@ -363,5 +363,18 @@ namespace InoxERP.UI_Windows_Forms
                 radIndustrial.Checked = true;
             }
         }
+
+        public bool validationCampsNumber(object sender, EventArgs e)
+        {
+            //teste = teste.Remove(teste.Lenght - 1);
+            var obj = sender;
+            var eve = e;
+            return true;
+        }
+
+        private void txtCPF_CNPJ_TextChanged(object sender, EventArgs e)
+        {
+            validationCampsNumber(sender, e);
+        }
     }
 }

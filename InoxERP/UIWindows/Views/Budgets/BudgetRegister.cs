@@ -38,8 +38,6 @@ namespace InoxERP.UI_Windows_Forms
             setDateService();
         }
 
-        static Budgets_OS budgetAlter = new Budgets_OS();
-
         //INSERT
         private void btnGravarOrcamento_Click(object sender, EventArgs e)
         {
@@ -51,6 +49,8 @@ namespace InoxERP.UI_Windows_Forms
                         MessageBox.Show("Por Favor preencha as informações Corretamente");
                     else
                     {
+                        Budgets_OS budgetAlter = new Budgets_OS();
+                        
                         //procura o orçamento para alteração
                         budgetAlter = obj.ReturnByID(getID);
 
@@ -208,7 +208,7 @@ namespace InoxERP.UI_Windows_Forms
             }
         }
 
-        //fiil frm to ALTER
+        //fill frm to ALTER
         public void BudgetData()
         {
             bringsDataIdBudget();
@@ -532,7 +532,7 @@ namespace InoxERP.UI_Windows_Forms
         // WHEN CLICK DVGITENS LINE
         private void dgvItens_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                selectedItem();
+            selectedItem();
         }
 
         //FILL PRODUCTS/SERVICES ON VIEW

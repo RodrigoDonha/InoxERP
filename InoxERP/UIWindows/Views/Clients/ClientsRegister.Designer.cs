@@ -488,6 +488,7 @@
             this.txtCPF_CNPJ.Name = "txtCPF_CNPJ";
             this.txtCPF_CNPJ.Size = new System.Drawing.Size(295, 23);
             this.txtCPF_CNPJ.TabIndex = 2;
+            this.txtCPF_CNPJ.TextChanged += new System.EventHandler(this.txtCPF_CNPJ_TextChanged);
             // 
             // txtNome
             // 
