@@ -158,6 +158,7 @@
             this.txtCpfCnpjC.Name = "txtCpfCnpjC";
             this.txtCpfCnpjC.Size = new System.Drawing.Size(204, 22);
             this.txtCpfCnpjC.TabIndex = 6;
+            this.txtCpfCnpjC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandCNPJ);
             // 
             // txtEnderecoC
             // 
@@ -187,6 +188,7 @@
             this.txtNumeroC.Name = "txtNumeroC";
             this.txtNumeroC.Size = new System.Drawing.Size(96, 22);
             this.txtNumeroC.TabIndex = 10;
+            this.txtNumeroC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblNumeroC
             // 
@@ -227,6 +229,7 @@
             this.txtCepC.Name = "txtCepC";
             this.txtCepC.Size = new System.Drawing.Size(204, 22);
             this.txtCepC.TabIndex = 14;
+            this.txtCepC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // lblCepC
             // 
@@ -335,6 +338,7 @@
             this.txtCepE.TabIndex = 31;
             this.txtCepE.Text = "19065-510";
             this.txtCepE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCepE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // lblCepE
             // 
@@ -379,6 +383,7 @@
             this.txtNumeroE.TabIndex = 27;
             this.txtNumeroE.Text = "210";
             this.txtNumeroE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNumeroE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblNumeroE
             // 
@@ -423,6 +428,7 @@
             this.txtCnpjE.TabIndex = 23;
             this.txtCnpjE.Text = "30.286.217/0001-70";
             this.txtCnpjE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCnpjE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandCNPJ);
             // 
             // txtNomeE
             // 
@@ -467,6 +473,7 @@
             this.txtCpfE.TabIndex = 37;
             this.txtCpfE.Text = "093.967.599-45";
             this.txtCpfE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCpfE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandCNPJ);
             // 
             // lblCpfE
             // 

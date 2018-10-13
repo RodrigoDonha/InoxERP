@@ -113,6 +113,7 @@
     <Compile Include="Business\Concrete\ProviderBusiness.cs" />
     <Compile Include="Business\Concrete\ServicesBusiness.cs" />
     <Compile Include="Business\Concrete\UsersBusiness.cs" />
+    <Compile Include="Business\Concrete\ValidationEntries.cs" />
     <Compile Include="Context\InoxErpContext.cs" />
     <Compile Include="Entities\AccountsToPay.cs" />
     <Compile Include="Entities\AccountsToReceive.cs" />

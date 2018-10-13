@@ -70,6 +70,7 @@
             this.txtPorcentagem.Size = new System.Drawing.Size(121, 23);
             this.txtPorcentagem.TabIndex = 2;
             this.txtPorcentagem.TextChanged += new System.EventHandler(this.txtPorcent_TextChanged);
+            this.txtPorcentagem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblValordosProdutos
             // 
@@ -121,6 +122,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(121, 23);
             this.txtTotal.TabIndex = 7;
+            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // frmServiceCalc
             // 

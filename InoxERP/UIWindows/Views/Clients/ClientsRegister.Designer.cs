@@ -166,6 +166,7 @@
             this.txtContatosCelular1.Name = "txtContatosCelular1";
             this.txtContatosCelular1.Size = new System.Drawing.Size(257, 23);
             this.txtContatosCelular1.TabIndex = 16;
+            this.txtContatosCelular1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // lblContatosCelular1
             // 
@@ -193,6 +194,7 @@
             this.txtContatosCelular2.Name = "txtContatosCelular2";
             this.txtContatosCelular2.Size = new System.Drawing.Size(257, 23);
             this.txtContatosCelular2.TabIndex = 17;
+            this.txtContatosCelular2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // txtContatosResiCom
             // 
@@ -202,6 +204,7 @@
             this.txtContatosResiCom.Name = "txtContatosResiCom";
             this.txtContatosResiCom.Size = new System.Drawing.Size(252, 23);
             this.txtContatosResiCom.TabIndex = 14;
+            this.txtContatosResiCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // lblContatosEmail
             // 
@@ -300,6 +303,7 @@
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(185, 23);
             this.txtCEP.TabIndex = 13;
+            this.txtCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // txtCidade
             // 
@@ -336,6 +340,7 @@
             this.txtNumEndereco.Name = "txtNumEndereco";
             this.txtNumEndereco.Size = new System.Drawing.Size(97, 23);
             this.txtNumEndereco.TabIndex = 8;
+            this.txtNumEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // txtEndereco
             // 
@@ -489,6 +494,7 @@
             this.txtCPF_CNPJ.Size = new System.Drawing.Size(295, 23);
             this.txtCPF_CNPJ.TabIndex = 2;
             this.txtCPF_CNPJ.TextChanged += new System.EventHandler(this.txtCPF_CNPJ_TextChanged);
+            this.txtCPF_CNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandCNPJ);
             // 
             // txtNome
             // 

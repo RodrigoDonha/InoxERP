@@ -17,6 +17,7 @@ namespace UIWindows
     {
         static InoxErpContext ctx = new InoxErpContext();
         ServicesBusiness obj = new ServicesBusiness(ctx);
+        ValidationEntries validation = new ValidationEntries();
 
         public frmServicesRegisterSearch()
         {
@@ -296,6 +297,16 @@ namespace UIWindows
                 txtValorTotal.Text = dgvConsultaServicos[3, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
                 txtObservacao.Text = dgvConsultaServicos[4, dgvConsultaServicos.CurrentRow.Index].Value.ToString();
             }
+        }
+
+        public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+        }
+
+        public void validationEntriesTime(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyTime(sender, e);
         }
     }
 }

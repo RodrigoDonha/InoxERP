@@ -175,6 +175,7 @@
             this.txtContatosCelular1.Name = "txtContatosCelular1";
             this.txtContatosCelular1.Size = new System.Drawing.Size(252, 23);
             this.txtContatosCelular1.TabIndex = 11;
+            this.txtContatosCelular1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // lblContatosCelular1
             // 
@@ -202,6 +203,7 @@
             this.txtContatosCelular2.Name = "txtContatosCelular2";
             this.txtContatosCelular2.Size = new System.Drawing.Size(257, 23);
             this.txtContatosCelular2.TabIndex = 13;
+            this.txtContatosCelular2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // txtContatosComercial
             // 
@@ -211,6 +213,7 @@
             this.txtContatosComercial.Name = "txtContatosComercial";
             this.txtContatosComercial.Size = new System.Drawing.Size(252, 23);
             this.txtContatosComercial.TabIndex = 10;
+            this.txtContatosComercial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // lblContatosEmail
             // 
@@ -309,6 +312,7 @@
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(185, 23);
             this.txtCEP.TabIndex = 9;
+            this.txtCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // txtCidade
             // 
@@ -345,6 +349,7 @@
             this.txtNumEndereco.Name = "txtNumEndereco";
             this.txtNumEndereco.Size = new System.Drawing.Size(97, 23);
             this.txtNumEndereco.TabIndex = 4;
+            this.txtNumEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // txtEndereco
             // 
@@ -442,6 +447,7 @@
             this.txtCPF_CNPJ.Name = "txtCPF_CNPJ";
             this.txtCPF_CNPJ.Size = new System.Drawing.Size(295, 23);
             this.txtCPF_CNPJ.TabIndex = 2;
+            this.txtCPF_CNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandCNPJ);
             // 
             // txtNome
             // 
@@ -502,6 +508,7 @@
             this.txtCompraMinima.Name = "txtCompraMinima";
             this.txtCompraMinima.Size = new System.Drawing.Size(252, 23);
             this.txtCompraMinima.TabIndex = 19;
+            this.txtCompraMinima.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblCompraMinima
             // 
@@ -539,6 +546,7 @@
             this.txtCpfCnpj.Name = "txtCpfCnpj";
             this.txtCpfCnpj.Size = new System.Drawing.Size(252, 23);
             this.txtCpfCnpj.TabIndex = 18;
+            this.txtCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandCNPJ);
             // 
             // lblCpfCnpj
             // 
@@ -557,6 +565,7 @@
             this.txtConta.Name = "txtConta";
             this.txtConta.Size = new System.Drawing.Size(252, 23);
             this.txtConta.TabIndex = 16;
+            this.txtConta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // lblConta
             // 
@@ -593,6 +602,7 @@
             this.txtAgencia.Name = "txtAgencia";
             this.txtAgencia.Size = new System.Drawing.Size(252, 23);
             this.txtAgencia.TabIndex = 15;
+            this.txtAgencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // lblAgencia
             // 

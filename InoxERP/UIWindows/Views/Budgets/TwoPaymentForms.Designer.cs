@@ -64,6 +64,7 @@
             this.txtDinheiro.Name = "txtDinheiro";
             this.txtDinheiro.Size = new System.Drawing.Size(100, 23);
             this.txtDinheiro.TabIndex = 1;
+            this.txtDinheiro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblDinheiro
             // 
@@ -122,6 +123,7 @@
             this.txtValorCheque.Name = "txtValorCheque";
             this.txtValorCheque.Size = new System.Drawing.Size(100, 23);
             this.txtValorCheque.TabIndex = 3;
+            this.txtValorCheque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblCheque
             // 

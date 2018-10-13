@@ -14,6 +14,7 @@ namespace UIWindows
         static InoxErpContext ctx = new InoxErpContext();
         Clients client = new Clients();
         ClientsBusiness obj = new ClientsBusiness(ctx);
+        ValidationEntries validation = new ValidationEntries();
 
         String getId;
 
@@ -182,6 +183,32 @@ namespace UIWindows
             {
                 MessageBox.Show("Não foi possível selecionar o Cliente, tente selecionar novamente, dando um clique duplo em cima do cliente desejado.");
             }
+        }
+
+
+        // precisa acertar para ele trocar de validação quando mudar o rad de cpf / cnpj para nome
+
+        public void validationEntriesCPFandCNPJonSearch(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyCPFandCNPJ(sender, e);
+        }
+
+        private void validationEntriesCPFandCNPJ(object sender, EventArgs e)
+        {
+            if (radCPF_CNPJ.Checked)
+            {
+                this.txtPesquisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandCNPJonSearch);
+            }
+
+            if (radNome.Checked)
+            {
+                this.txtPesquisa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cleanValidation);
+            }
+        }
+
+        private void cleanValidation(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

@@ -224,6 +224,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(199, 26);
             this.txtTelefone.TabIndex = 7;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // txtNome
             // 
@@ -344,6 +345,7 @@
             this.txtQuantidade.TabIndex = 9;
             this.txtQuantidade.Tag = "";
             this.txtQuantidade.TextChanged += new System.EventHandler(this.txtQuantidade_TextChanged_1);
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblSubTotalValor
             // 
@@ -472,6 +474,7 @@
             this.txtValorTotal.TabIndex = 12;
             this.txtValorTotal.Tag = "";
             this.txtValorTotal.Text = "0";
+            this.txtValorTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // txtValorUnitario
             // 
@@ -483,6 +486,7 @@
             this.txtValorUnitario.TabIndex = 11;
             this.txtValorUnitario.Tag = "";
             this.txtValorUnitario.TextChanged += new System.EventHandler(this.txtValorUnitario_TextChanged);
+            this.txtValorUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblValorUnitario
             // 
@@ -712,6 +716,7 @@
             this.txtPorcentJuros.TabIndex = 23;
             this.txtPorcentJuros.Text = "0";
             this.txtPorcentJuros.TextChanged += new System.EventHandler(this.txtPorcentJuros_TextChanged);
+            this.txtPorcentJuros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // chkJuros
             // 
@@ -782,6 +787,7 @@
             this.txtPorcentDescAVista.TabIndex = 20;
             this.txtPorcentDescAVista.Text = "0";
             this.txtPorcentDescAVista.TextChanged += new System.EventHandler(this.txtPorcentDescAVista_TextChanged);
+            this.txtPorcentDescAVista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblAVista
             // 

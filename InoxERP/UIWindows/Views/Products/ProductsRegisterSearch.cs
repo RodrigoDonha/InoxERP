@@ -19,8 +19,8 @@ namespace UIWindows
     {
         static InoxErpContext ctx = new InoxErpContext();
         ProductBusiness obj = new  ProductBusiness(ctx);
-
         frmProviderSearch provider = new frmProviderSearch();
+        ValidationEntries validation = new ValidationEntries();
 
         public Products ReturnProducts { get; set; }
 
@@ -421,6 +421,11 @@ namespace UIWindows
             }
 
             return id;
+        }
+
+        public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
         }
     }
 }

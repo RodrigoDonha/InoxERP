@@ -23,6 +23,7 @@ namespace InoxERP.UI_Windows_Forms
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
         frmClientsSearch client = new frmClientsSearch();
         frmProductsRegisterSearch product = new frmProductsRegisterSearch();
+        ValidationEntries validation = new ValidationEntries();
 
         private decimal subTotal = 0;
         private string getID;
@@ -1129,6 +1130,16 @@ namespace InoxERP.UI_Windows_Forms
             budget = obj.ReturnByID(getID);
             //getID = null;
             // brings the data of the budget recorded in the database
+        }
+
+        public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+        }
+
+        public void validationEntriesPhones(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyPhones(sender, e);
         }
     }
 }

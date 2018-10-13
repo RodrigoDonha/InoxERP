@@ -19,6 +19,7 @@ namespace InoxERP.UI_Windows_Forms
     {
         static InoxErpContext ctx = new InoxErpContext();
         ProviderBusiness obj = new ProviderBusiness(ctx);
+        ValidationEntries validation = new ValidationEntries();
 
         private string id;
 
@@ -396,6 +397,26 @@ namespace InoxERP.UI_Windows_Forms
             txtObservacoes.Text = prov.sObservation;
             
             btnGravar.Text = "Alterar";
+        }
+
+        public void validationEntriesCPFandCNPJ(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyCPFandCNPJ(sender, e);
+        }
+
+        public void validationEntriesCEP(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyCEP(sender, e);
+        }
+
+        public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+        }
+
+        public void validationEntriesPhones(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyPhones(sender, e);
         }
     }
 }

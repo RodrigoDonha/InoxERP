@@ -20,6 +20,7 @@ namespace InoxERP.UI_Windows_Forms
     {
         static InoxErpContext ctx = new InoxErpContext();
         ClientsBusiness obj = new ClientsBusiness(ctx);
+        ValidationEntries validation = new ValidationEntries();
         string getID;
 
         public frmClientsRegister(String id)
@@ -375,6 +376,26 @@ namespace InoxERP.UI_Windows_Forms
         private void txtCPF_CNPJ_TextChanged(object sender, EventArgs e)
         {
             validationCampsNumber(sender, e);
+        }
+
+        public void validationEntriesCPFandCNPJ(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyCPFandCNPJ(sender, e);
+        }
+
+        public void validationEntriesCEP(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyCEP(sender, e);
+        }
+
+        public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+        }
+
+        public void validationEntriesPhones(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyPhones(sender, e);
         }
     }
 }

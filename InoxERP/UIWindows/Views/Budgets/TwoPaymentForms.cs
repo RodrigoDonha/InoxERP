@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows.Business.Concrete;
 
 namespace UIWindows
 {
     public partial class frmTwoPaymentForms : Form
     {
+        ValidationEntries validation = new ValidationEntries();
+
         public frmTwoPaymentForms()
         {
             InitializeComponent();
@@ -29,6 +32,11 @@ namespace UIWindows
             frmServicesRegisterSearch consulta = new frmServicesRegisterSearch();
             this.Hide();
             consulta.Show();
+        }
+
+        public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
         }
     }
 }

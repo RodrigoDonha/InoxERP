@@ -320,6 +320,7 @@
             this.txtValorTotal.Size = new System.Drawing.Size(125, 23);
             this.txtValorTotal.TabIndex = 6;
             this.txtValorTotal.TextChanged += new System.EventHandler(this.txtValorTotal_TextChanged);
+            this.txtValorTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // txtHoras
             // 
@@ -329,6 +330,7 @@
             this.txtHoras.Size = new System.Drawing.Size(125, 23);
             this.txtHoras.TabIndex = 5;
             this.txtHoras.TextChanged += new System.EventHandler(this.txtHoras_TextChanged);
+            this.txtHoras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesTime);
             // 
             // txtServico
             // 

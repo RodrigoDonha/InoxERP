@@ -119,6 +119,7 @@
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(146, 23);
             this.txtQuantidade.TabIndex = 2;
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // btnProcurarFornecedor
             // 
@@ -241,6 +242,7 @@
             this.txtValorTotal.Name = "txtValorTotal";
             this.txtValorTotal.Size = new System.Drawing.Size(125, 23);
             this.txtValorTotal.TabIndex = 7;
+            this.txtValorTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // txtValorUnitario
             // 
@@ -251,6 +253,7 @@
             this.txtValorUnitario.Size = new System.Drawing.Size(146, 23);
             this.txtValorUnitario.TabIndex = 6;
             this.txtValorUnitario.TextChanged += new System.EventHandler(this.txtValorUnitario_TextChanged);
+            this.txtValorUnitario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // txtPeca
             // 
