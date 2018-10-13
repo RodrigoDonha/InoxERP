@@ -172,16 +172,32 @@ namespace UIWindows
             }
         }
 
+        //SEARCH FOR OPEN FORMS
+        public static bool OpenForm(Type frmType)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType().Equals(frmType))
+                    return true;
+            }
+            return false;
+        }
+
+        //GET CLIENT DATA
         private void grdClientes_DoubleClick(object sender, EventArgs e)
         {
-            try
+            if (OpenForm(typeof(frmBudgetsRegister)))
             {
-                ReturnClients = obj.ReturnByID(selectClients());
-                Hide();
-            }
-            catch
-            {
-                MessageBox.Show("Não foi possível selecionar o Cliente, tente selecionar novamente, dando um clique duplo em cima do cliente desejado.");
+                try
+                {
+                    ReturnClients = obj.ReturnByID(selectClients());
+                    Hide();
+                }
+                catch
+                {
+                    MessageBox.Show(
+                        "Não foi possível selecionar o Cliente, tente selecionar novamente, dando um clique duplo em cima do cliente desejado.");
+                }
             }
         }
 

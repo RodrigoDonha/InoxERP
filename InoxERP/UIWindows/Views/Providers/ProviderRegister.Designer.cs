@@ -133,7 +133,7 @@
             this.grpObservacoes.Name = "grpObservacoes";
             this.grpObservacoes.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpObservacoes.Size = new System.Drawing.Size(1068, 77);
-            this.grpObservacoes.TabIndex = 4;
+            this.grpObservacoes.TabIndex = 5;
             this.grpObservacoes.TabStop = false;
             this.grpObservacoes.Text = "Observações";
             // 
@@ -174,7 +174,7 @@
             this.txtContatosCelular1.MaxLength = 15;
             this.txtContatosCelular1.Name = "txtContatosCelular1";
             this.txtContatosCelular1.Size = new System.Drawing.Size(252, 23);
-            this.txtContatosCelular1.TabIndex = 11;
+            this.txtContatosCelular1.TabIndex = 12;
             this.txtContatosCelular1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // lblContatosCelular1
@@ -193,7 +193,7 @@
             this.txtContatosEmail.MaxLength = 100;
             this.txtContatosEmail.Name = "txtContatosEmail";
             this.txtContatosEmail.Size = new System.Drawing.Size(485, 23);
-            this.txtContatosEmail.TabIndex = 12;
+            this.txtContatosEmail.TabIndex = 11;
             // 
             // txtContatosCelular2
             // 
@@ -496,7 +496,7 @@
             this.grpDadosBancarios.Name = "grpDadosBancarios";
             this.grpDadosBancarios.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDadosBancarios.Size = new System.Drawing.Size(1068, 135);
-            this.grpDadosBancarios.TabIndex = 42;
+            this.grpDadosBancarios.TabIndex = 4;
             this.grpDadosBancarios.TabStop = false;
             this.grpDadosBancarios.Text = "Dados Bancários";
             // 

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace UIWindows.Business.Concrete
 {
-    class ValidationEntries
+    public class ValidationEntries
     {
         public void characterValidatorOnlyNumbers(object sender, KeyPressEventArgs e)
         {

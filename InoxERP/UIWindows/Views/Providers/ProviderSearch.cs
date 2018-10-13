@@ -107,16 +107,31 @@ namespace UIWindows
             }
         }
 
+        //SEARCH FOR OPEN FORMS
+        public static bool OpenForm(Type frmType)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType().Equals(frmType))
+                    return true;
+            }
+            return false;
+        }
+
+        //GET PROVIDER DATA
         private void dgvFornecedores_DoubleClick(object sender, EventArgs e)
         {
-            try
+            if (OpenForm(typeof(frmBudgetsRegister)))
             {
-                returnProviders = obj.returnById(selectProviders());
-                this.Hide();
-            }
-            catch
-            {
-                MessageBox.Show("Não foi possível selecionar o Fornecedor, tente selecionar novamente.");
+                try
+                {
+                    returnProviders = obj.returnById(selectProviders());
+                    this.Hide();
+                }
+                catch
+                {
+                    MessageBox.Show("Não foi possível selecionar o Fornecedor, tente selecionar novamente.");
+                }
             }
         }
 

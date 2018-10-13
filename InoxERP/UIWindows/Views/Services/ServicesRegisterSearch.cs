@@ -283,6 +283,11 @@ namespace UIWindows
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
+            fillDataOnTab();
+        }
+
+        public void fillDataOnTab()
+        {
             int compare = dgvConsultaServicos.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (compare == 0)
             { }
@@ -307,6 +312,11 @@ namespace UIWindows
         public void validationEntriesTime(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyTime(sender, e);
+        }
+
+        private void dgvConsultaServicos_DoubleClick(object sender, EventArgs e)
+        {
+            fillDataOnTab();
         }
     }
 }

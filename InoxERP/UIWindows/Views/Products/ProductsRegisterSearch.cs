@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InoxERP.UI_Windows_Forms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
@@ -310,18 +311,35 @@ namespace UIWindows
             this.tb_productsTableAdapter.Fill(this.fullDataSet.tb_products);
         }
 
-        //GET PRODUCTS
+        //SEARCH FOR OPEN FORMS
+        public static bool OpenForm(Type frmType)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType().Equals(frmType))
+                    return true;
+            }
+            return false;
+        }
+
+        //GET PRODUCTS DATA
         private void grdConsultaPecas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (OpenForm(typeof(frmBudgetsRegister)))
             {
-                ReturnProducts = obj.ReturnByID(selectProducts());
-                Hide();
+                try
+                {
+                    ReturnProducts = obj.ReturnByID(selectProducts());
+                    Hide();
+                }
+                catch
+                {
+                    MessageBox.Show("Não foi possível selecionar o Produto, tente selecionar novamente.");
+                }
             }
-            catch
-            {
-                MessageBox.Show("Não foi possível selecionar o Produto, tente selecionar novamente.");
-            }
+            else
+                fillDataOnTab();
+            
         }
 
         //SEARCH
@@ -364,6 +382,11 @@ namespace UIWindows
 
         //FILL PRODUCTS ON TAB
         private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            fillDataOnTab();
+        }
+
+        public void fillDataOnTab()
         {
             id = "";
             Providers providers = new Providers();

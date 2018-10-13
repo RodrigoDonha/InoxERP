@@ -135,6 +135,7 @@
             this.dgvConsultaServicos.TabIndex = 7;
             this.dgvConsultaServicos.TabStop = false;
             this.dgvConsultaServicos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaPecas_CellDoubleClick);
+            this.dgvConsultaServicos.DoubleClick += new System.EventHandler(this.dgvConsultaServicos_DoubleClick);
             // 
             // sIDDataGridViewTextBoxColumn
             // 

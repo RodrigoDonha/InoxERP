@@ -185,8 +185,10 @@ namespace InoxERP.UI_Windows_Forms
                         }
 
                         //salva
-                        ctx.Budgets_OS.Add(budgetPersist);
-                        ctx.SaveChanges();
+                        obj.Insert(budgetPersist);
+
+                        //ctx.Budgets_OS.Add(budgetPersist);
+                        //ctx.SaveChanges();
                         
                         //verifica se o orçamento foi salvo com sucesso
                         var ok = obj.Search.FirstOrDefault(b => b.sID == budgetPersist.sID);
@@ -810,10 +812,9 @@ namespace InoxERP.UI_Windows_Forms
                         radComercial.Checked = true;
                     }
                     txtNome.Text = client.ReturnClients.sName;
-                    txtEndereco.Text = client.ReturnClients.sAdress + " ," + client.ReturnClients.iNumber + " ," +
-                                       client.ReturnClients.sDistrict + " ," + client.ReturnClients.sCity + " ," +
-                                       client.ReturnClients.Estate;
-                    txtTelefone.Text = client.ReturnClients.sPhoneResidencial + " ," + client.ReturnClients.sPhoneCelularOne;
+                    txtEndereco.Text = client.ReturnClients.sAdress + ", " + client.ReturnClients.iNumber + " " +
+                                       client.ReturnClients.sDistrict + ", " + client.ReturnClients.sCity;
+                    txtTelefone.Text = client.ReturnClients.sPhoneCelularOne.Replace(" ","");
                     txtCargo.Text = client.ReturnClients.sOccupation;
                     txtQuantidade.Focus();
                 }
