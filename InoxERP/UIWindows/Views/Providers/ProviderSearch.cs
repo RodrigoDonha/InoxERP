@@ -121,7 +121,7 @@ namespace UIWindows
         //GET PROVIDER DATA
         private void dgvFornecedores_DoubleClick(object sender, EventArgs e)
         {
-            if (OpenForm(typeof(frmBudgetsRegister)))
+            if (OpenForm(typeof(frmBudgetsRegister)) || OpenForm(typeof(frmProductsRegisterSearch)))
             {
                 try
                 {

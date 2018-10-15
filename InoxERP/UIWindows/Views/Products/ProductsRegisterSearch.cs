@@ -302,7 +302,11 @@ namespace UIWindows
         //FILL DATASET
         private void frmProductsRegisterSearch_Load(object sender, EventArgs e)
         {
-            searchByName();
+            var search = from g in ctx.Products where g.sDescription.StartsWith(txtConsultaPeca.Text) select g;
+
+            if (search.ToList().Count.Equals(0))
+            { }else
+                searchByName();
         }
 
         //overrid FILL DATASET
