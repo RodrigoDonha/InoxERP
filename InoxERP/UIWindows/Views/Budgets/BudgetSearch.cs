@@ -206,15 +206,18 @@ namespace UIWindows
             {
                 setId();
                 budget = obj.ReturnByID(getId);
-                if (messageYesNo("Approve") == DialogResult.Yes)
-                {
-                    budget.bServiceOrderApproved = true;
-                    budget.dtDateServiceOrderApproved = DateTime.Now;
 
-                    obj.Update(budget);
-                        MessageBox.Show("Aprovado");}
+                frmPaymentForms payment = new frmPaymentForms(budget);
 
-                fillDataSet();
+                //if (messageYesNo("Approve") == DialogResult.Yes)
+                //{
+                //    budget.bServiceOrderApproved = true;
+                //    budget.dtDateServiceOrderApproved = DateTime.Now;
+
+                //    obj.Update(budget);
+                //        MessageBox.Show("Aprovado");}
+
+                //fillDataSet();
             }
             else
             {

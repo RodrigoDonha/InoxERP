@@ -14,6 +14,10 @@ namespace UIWindows.Context
         {
         }
 
+        //public InoxErpContext() : base("data source=tcp:inoxerpdb.database.windows.net,1433;initial catalog=InoxErpDB;persist security info=False;user id=masterRoot;password=inoxDB2018;multipleactiveresultsets=False;connect timeout=30;encrypt=True;trustservercertificate=False;App=EntityFramework")
+        //{
+        //}
+
         //create tables
         public DbSet<Users> Users { get; set; }
 
