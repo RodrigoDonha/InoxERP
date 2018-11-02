@@ -207,7 +207,9 @@ namespace UIWindows
                 setId();
                 budget = obj.ReturnByID(getId);
 
-                frmPaymentForms payment = new frmPaymentForms(budget);
+                frmPaymentForms payment = new frmPaymentForms(getId);
+
+                payment.ShowDialog();
 
                 //if (messageYesNo("Approve") == DialogResult.Yes)
                 //{
