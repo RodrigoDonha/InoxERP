@@ -53,8 +53,10 @@
             this.rptPrint.AutoSize = true;
             this.rptPrint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.rptPrint.Dock = System.Windows.Forms.DockStyle.Fill;
+
             reportDataSource2.Name = "DataSetBudgetWithoutPrice";
             reportDataSource2.Value = this.tbitemsBindingSource;
+
             this.rptPrint.LocalReport.DataSources.Clear();
             this.rptPrint.LocalReport.DataSources.Add(reportDataSource2);
             this.rptPrint.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Budget.rdlc";
