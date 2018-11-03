@@ -185,6 +185,12 @@
     <Compile Include="Views\Reports\Budgets\GeneralBudgetReport.Designer.cs">
       <DependentUpon>GeneralBudgetReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Budgets\SituationBudgetsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Budgets\SituationBudgetsReport.Designer.cs">
+      <DependentUpon>SituationBudgetsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\ReportUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +387,7 @@
     </Compile>
     <EmbeddedResource Include="Business\Reports\Budget.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\GerenalBudgest.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Budgets\SituationBudgets.rdlc" />
     <EmbeddedResource Include="Business\Reports\BudgetWithPrice.rdlc" />
     <EmbeddedResource Include="Views\Backups\AdminChose.resx">
       <DependentUpon>AdminChose.cs</DependentUpon>
@@ -402,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Budgets\GeneralBudgetReport.resx">
       <DependentUpon>GeneralBudgetReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Budgets\SituationBudgetsReport.resx">
+      <DependentUpon>SituationBudgetsReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportUsers.resx">
       <DependentUpon>ReportUsers.cs</DependentUpon>

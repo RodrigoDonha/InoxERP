@@ -20,21 +20,27 @@ namespace UIWindows
 
         private void btnGerar_Click(object sender, EventArgs e)
         {
+            string type = "";
             DateTime startDate = Convert.ToDateTime(dtpInicio.Text);
             DateTime endDate = Convert.ToDateTime(dtpFim.Text);
-            string type;
+            string situation = "";
             if (radGeral.Checked)
             {
                 type = "Geral";
-                new GeneralBudgetReport(type, startDate.ToShortDateString(), endDate.ToShortDateString()).Show();
+                situation = "";
+                new GeneralBudgetReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
             }
             if (radAprovados.Checked)
             {
                 type = "Aprovados";
+                situation = "True";
+                new SituationBudgetsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
             }
             if (radEmAberto.Checked)
             {
                 type = "Em Aberto";
+                situation = "False";
+                new SituationBudgetsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
             }
         }
     }
