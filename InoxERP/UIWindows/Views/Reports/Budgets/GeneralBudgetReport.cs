@@ -45,7 +45,7 @@ namespace UIWindows.Views.Reports.Budgets
             issueDate.Values.Add(DateTime.Today.Date.ToShortDateString());
             startDate.Values.Add(startDateReport);
             endDate.Values.Add(endDateReport);
-            situation.Values.Add(situationReport.ToString());
+            situation.Values.Add(situationReport);
             
             reportViewer1.LocalReport.SetParameters(type);
             reportViewer1.LocalReport.SetParameters(issueDate);

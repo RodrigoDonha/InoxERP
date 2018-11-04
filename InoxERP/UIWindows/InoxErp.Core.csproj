@@ -137,6 +137,9 @@
     <Compile Include="Entities\Services.cs" />
     <Compile Include="Entities\Cheques.cs" />
     <Compile Include="Entities\Users.cs" />
+    <Compile Include="FullDataSet.cs">
+      <DependentUpon>FullDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FullDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

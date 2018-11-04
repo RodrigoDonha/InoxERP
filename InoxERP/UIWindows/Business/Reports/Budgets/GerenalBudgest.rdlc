@@ -975,7 +975,6 @@
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>0cm</Top>
             <Height>1.96729cm</Height>
             <Width>25cm</Width>
             <Style>
@@ -1210,7 +1209,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox6</rd:DefaultName>
               <Top>1.57596cm</Top>
-              <Left>11.12255cm</Left>
+              <Left>10.48755cm</Left>
               <Height>0.6cm</Height>
               <Width>1.44359cm</Width>
               <ZIndex>6</ZIndex>
@@ -1242,7 +1241,7 @@
               </Paragraphs>
               <rd:DefaultName>type</rd:DefaultName>
               <Top>1.57596cm</Top>
-              <Left>13.13403cm</Left>
+              <Left>12.08628cm</Left>
               <Height>0.6cm</Height>
               <Width>3.60026cm</Width>
               <ZIndex>7</ZIndex>

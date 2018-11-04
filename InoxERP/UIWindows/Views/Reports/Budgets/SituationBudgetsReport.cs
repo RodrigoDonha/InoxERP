@@ -22,8 +22,7 @@ namespace UIWindows.Views.Reports.Budgets
 
         private void SituationBudgetsReport_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_items'. Você pode movê-la ou removê-la conforme necessário.
-            this.tb_budgets_osTableAdapter.Fill(this.fullDataSet.tb_budgets_os);
+            this.tb_budgets_osTableAdapter.FillByBudgetReport(this.fullDataSet.tb_budgets_os);
             this.reportViewer1.RefreshReport();
         }
 

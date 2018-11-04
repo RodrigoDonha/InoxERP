@@ -14168,39 +14168,47 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT sID, iCod, ClientType, dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, dtDateServiceOrderApproved, bServiceOrderDelivered, dtDateServiceOrderDelivered, bRegisterFinished, dtDateRegisterFinished, IdClients FROM dbo.tb_budgets_os";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT sID, iCod, ClientType, dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, dtDateServiceOrderApproved, bServiceOrderDelivered, dtDateServiceOrderDelivered, bRegisterFinished, dtDateRegisterFinished, IdClients FROM dbo.tb_budgets_os WHERE        (bServiceOrderApproved = 0)";
+            this._commandCollection[1].CommandText = @"SELECT        sID, iCod, ClientType, CONVERT(DATE, dtDate) AS dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, 
+                         iPrevisionOfExecute, CONVERT(DATE, dtStartPrevision) AS dtStartPrevision, CONVERT(DATE, dtFinalPrevision) AS dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, 
+                         CASE WHEN bServiceOrderApproved = 'True' THEN 'Aprovado' ELSE CASE WHEN bServiceOrderApproved = 'False' THEN 'Em Aberto' END END AS 'bServiceOrderApproved', dtDateServiceOrderApproved, 
+                         bServiceOrderDelivered, dtDateServiceOrderDelivered, bRegisterFinished, dtDateRegisterFinished, IdClients
+FROM            tb_budgets_os";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT        sID, iCod, ClientType, dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, 
-                         dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, dtDateServiceOrderApproved, bServiceOrderDelivered, dtDateServiceOrderDelivered, bRegisterFinished, 
-                         dtDateRegisterFinished
-FROM            tb_budgets_os
-WHERE        (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'true') AND (bRegisterFinished = 'true')";
+            this._commandCollection[2].CommandText = @"SELECT sID, iCod, ClientType, dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, dtDateServiceOrderApproved, bServiceOrderDelivered, dtDateServiceOrderDelivered, bRegisterFinished, dtDateRegisterFinished, IdClients FROM dbo.tb_budgets_os WHERE        (bServiceOrderApproved = 0)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = @"SELECT        sID, iCod, ClientType, dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, 
-                         dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, dtDateServiceOrderApproved, bRegisterFinished, dtDateRegisterFinished, bServiceOrderDelivered, 
-                         dtDateServiceOrderDelivered
+                         dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, dtDateServiceOrderApproved, bServiceOrderDelivered, dtDateServiceOrderDelivered, bRegisterFinished, 
+                         dtDateRegisterFinished
 FROM            tb_budgets_os
-WHERE         (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'false')";
+WHERE        (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'true') AND (bRegisterFinished = 'true')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = @"SELECT        sID, iCod, ClientType, dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, 
+                         dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, dtDateServiceOrderApproved, bRegisterFinished, dtDateRegisterFinished, bServiceOrderDelivered, 
+                         dtDateServiceOrderDelivered
+FROM            tb_budgets_os
+WHERE         (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'false')";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"SELECT        sID, iCod, ClientType, dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, 
                          dtFinalPrevision, iWarrantyTime, dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, dtDateServiceOrderApproved, bServiceOrderDelivered, dtDateServiceOrderDelivered, bRegisterFinished, 
                          dtDateRegisterFinished, IdClients
 FROM            tb_budgets_os
 WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14231,8 +14239,32 @@ WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByBudgetUnapproved(FullDataSet.tb_budgets_osDataTable dataTable) {
+        public virtual int FillByBudgetReport(FullDataSet.tb_budgets_osDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_budgets_osDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            FullDataSet.tb_budgets_osDataTable dataTable = new FullDataSet.tb_budgets_osDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByBudgetUnapproved(FullDataSet.tb_budgets_osDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -14245,7 +14277,7 @@ WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')"
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual FullDataSet.tb_budgets_osDataTable GetDataByBudgetUnapproved() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             FullDataSet.tb_budgets_osDataTable dataTable = new FullDataSet.tb_budgets_osDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -14256,7 +14288,7 @@ WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')"
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByDeliveryFinished(FullDataSet.tb_budgets_osDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -14269,7 +14301,7 @@ WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')"
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual FullDataSet.tb_budgets_osDataTable GetDataByDeliveryFinished() {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             FullDataSet.tb_budgets_osDataTable dataTable = new FullDataSet.tb_budgets_osDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -14280,7 +14312,7 @@ WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')"
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByDeliveryFollow(FullDataSet.tb_budgets_osDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -14293,7 +14325,7 @@ WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')"
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual FullDataSet.tb_budgets_osDataTable GetDataByDeliveryFollow() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             FullDataSet.tb_budgets_osDataTable dataTable = new FullDataSet.tb_budgets_osDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -14304,7 +14336,7 @@ WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')"
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByOrderServiceApproved(FullDataSet.tb_budgets_osDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -14317,7 +14349,7 @@ WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')"
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual FullDataSet.tb_budgets_osDataTable GetDataByOrderServiceApproved() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             FullDataSet.tb_budgets_osDataTable dataTable = new FullDataSet.tb_budgets_osDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
