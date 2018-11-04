@@ -2532,6 +2532,14 @@ namespace UIWindows {
             
             private global::System.Data.DataColumn columnsAprovation;
             
+            private global::System.Data.DataColumn columnsDate;
+            
+            private global::System.Data.DataColumn columnsDateStartPrevision;
+            
+            private global::System.Data.DataColumn columnsDateFinalPrevision;
+            
+            private global::System.Data.DataColumn columnsDateServiceOrderApproved;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tb_budgets_osDataTable() {
@@ -2799,6 +2807,38 @@ namespace UIWindows {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sDateColumn {
+                get {
+                    return this.columnsDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sDateStartPrevisionColumn {
+                get {
+                    return this.columnsDateStartPrevision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sDateFinalPrevisionColumn {
+                get {
+                    return this.columnsDateFinalPrevision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sDateServiceOrderApprovedColumn {
+                get {
+                    return this.columnsDateServiceOrderApproved;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2863,7 +2903,11 @@ namespace UIWindows {
                         bool bRegisterFinished, 
                         System.DateTime dtDateRegisterFinished, 
                         tb_clientsRow _parenttb_clientsRowByFK_dbo_tb_budgets_os_dbo_tb_clients_IdClients, 
-                        string sAprovation) {
+                        string sAprovation, 
+                        string sDate, 
+                        string sDateStartPrevision, 
+                        string sDateFinalPrevision, 
+                        string sDateServiceOrderApproved) {
                 tb_budgets_osRow rowtb_budgets_osRow = ((tb_budgets_osRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         sID,
@@ -2894,7 +2938,11 @@ namespace UIWindows {
                         bRegisterFinished,
                         dtDateRegisterFinished,
                         null,
-                        sAprovation};
+                        sAprovation,
+                        sDate,
+                        sDateStartPrevision,
+                        sDateFinalPrevision,
+                        sDateServiceOrderApproved};
                 if ((_parenttb_clientsRowByFK_dbo_tb_budgets_os_dbo_tb_clients_IdClients != null)) {
                     columnValuesArray[27] = _parenttb_clientsRowByFK_dbo_tb_budgets_os_dbo_tb_clients_IdClients[0];
                 }
@@ -2956,6 +3004,10 @@ namespace UIWindows {
                 this.columndtDateRegisterFinished = base.Columns["dtDateRegisterFinished"];
                 this.columnIdClients = base.Columns["IdClients"];
                 this.columnsAprovation = base.Columns["sAprovation"];
+                this.columnsDate = base.Columns["sDate"];
+                this.columnsDateStartPrevision = base.Columns["sDateStartPrevision"];
+                this.columnsDateFinalPrevision = base.Columns["sDateFinalPrevision"];
+                this.columnsDateServiceOrderApproved = base.Columns["sDateServiceOrderApproved"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3019,6 +3071,14 @@ namespace UIWindows {
                 base.Columns.Add(this.columnIdClients);
                 this.columnsAprovation = new global::System.Data.DataColumn("sAprovation", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsAprovation);
+                this.columnsDate = new global::System.Data.DataColumn("sDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsDate);
+                this.columnsDateStartPrevision = new global::System.Data.DataColumn("sDateStartPrevision", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsDateStartPrevision);
+                this.columnsDateFinalPrevision = new global::System.Data.DataColumn("sDateFinalPrevision", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsDateFinalPrevision);
+                this.columnsDateServiceOrderApproved = new global::System.Data.DataColumn("sDateServiceOrderApproved", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsDateServiceOrderApproved);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnsID}, true));
                 this.columnsID.AllowDBNull = false;
@@ -8817,6 +8877,71 @@ namespace UIWindows {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sDate {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_budgets_os.sDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sDate\' na tabela \'tb_budgets_os\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_budgets_os.sDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sDateStartPrevision {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_budgets_os.sDateStartPrevisionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sDateStartPrevision\' na tabela \'tb_budgets_os\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_budgets_os.sDateStartPrevisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sDateFinalPrevision {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_budgets_os.sDateFinalPrevisionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sDateFinalPrevision\' na tabela \'tb_budgets_os\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_budgets_os.sDateFinalPrevisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sDateServiceOrderApproved {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_budgets_os.sDateServiceOrderApprovedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sDateServiceOrderApproved\' na tabela \'tb_budgets_os\' é DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_budgets_os.sDateServiceOrderApprovedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tb_clientsRow tb_clientsRow {
                 get {
                     return ((tb_clientsRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.tb_budgets_os_dbo.tb_clients_IdClients"])));
@@ -8968,6 +9093,54 @@ namespace UIWindows {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetsAprovationNull() {
                 this[this.tabletb_budgets_os.sAprovationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssDateNull() {
+                return this.IsNull(this.tabletb_budgets_os.sDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsDateNull() {
+                this[this.tabletb_budgets_os.sDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssDateStartPrevisionNull() {
+                return this.IsNull(this.tabletb_budgets_os.sDateStartPrevisionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsDateStartPrevisionNull() {
+                this[this.tabletb_budgets_os.sDateStartPrevisionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssDateFinalPrevisionNull() {
+                return this.IsNull(this.tabletb_budgets_os.sDateFinalPrevisionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsDateFinalPrevisionNull() {
+                this[this.tabletb_budgets_os.sDateFinalPrevisionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssDateServiceOrderApprovedNull() {
+                return this.IsNull(this.tabletb_budgets_os.sDateServiceOrderApprovedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsDateServiceOrderApprovedNull() {
+                this[this.tabletb_budgets_os.sDateServiceOrderApprovedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14226,10 +14399,11 @@ FROM            tb_budgets_os";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        sID, iCod, ClientType, CONVERT(DATE, dtDate) AS dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, 
-                         iPrevisionOfExecute, CONVERT(DATE, dtStartPrevision) AS dtStartPrevision, CONVERT(DATE, dtFinalPrevision) AS dtFinalPrevision, iWarrantyTime, CONVERT(DATE, dtBudgetExpirationDate) AS dtBudgetExpirationDate, 
-                         sObservation, dTotal, bServiceOrderApproved, CASE WHEN bServiceOrderApproved = 'True' THEN 'Aprovado' ELSE CASE WHEN bServiceOrderApproved = 'False' THEN 'Em Aberto' END END AS 'sAprovation', CONVERT(DATE, 
-                         dtDateServiceOrderApproved) AS dtDateServiceOrderApproved, bServiceOrderDelivered, CONVERT(DATE, dtDateServiceOrderDelivered) AS dtDateServiceOrderDelivered, bRegisterFinished, CONVERT(DATE, 
+            this._commandCollection[1].CommandText = @"SELECT        sID, iCod, ClientType, dtDate, CONVERT(DATE, dtDate) AS sDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, 
+                         iPrevisionOfExecute, dtStartPrevision, CONVERT(DATE, dtStartPrevision) AS sDateStartPrevision, dtFinalPrevision, CONVERT(DATE, dtFinalPrevision) AS sDateFinalPrevision, iWarrantyTime, CONVERT(DATE, 
+                         dtBudgetExpirationDate) AS dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, 
+                         CASE WHEN bServiceOrderApproved = 'True' THEN 'Aprovado' ELSE CASE WHEN bServiceOrderApproved = 'False' THEN 'Em Aberto' END END AS 'sAprovation', dtDateServiceOrderApproved, CONVERT(DATE, 
+                         dtDateServiceOrderApproved) AS sDateServiceOrderApproved, bServiceOrderDelivered, CONVERT(DATE, dtDateServiceOrderDelivered) AS dtDateServiceOrderDelivered, bRegisterFinished, CONVERT(DATE, 
                          dtDateRegisterFinished) AS dtDateRegisterFinished, IdClients
 FROM            tb_budgets_os";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
