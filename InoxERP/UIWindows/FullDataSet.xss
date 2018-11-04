@@ -10,7 +10,7 @@
     <Shape ID="DesignTable:Permitions" ZOrder="30" X="395" Y="70" Height="267" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:tb_accountsToPay" ZOrder="29" X="1830" Y="687" Height="305" Width="249" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:tb_accountsToReceive" ZOrder="28" X="1231" Y="70" Height="305" Width="272" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:tb_budgets_os" ZOrder="1" X="895" Y="36" Height="419" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="275" />
+    <Shape ID="DesignTable:tb_budgets_os" ZOrder="1" X="606" Y="336" Height="381" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:tb_cash" ZOrder="27" X="1573" Y="312" Height="210" Width="187" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:tb_cheques" ZOrder="26" X="1830" Y="312" Height="305" Width="209" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:tb_clients" ZOrder="25" X="1231" Y="2073" Height="305" Width="199" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
@@ -55,11 +55,11 @@
     <Connector ID="DesignRelation:FK_dbo.tb_accountsToReceive_dbo.tb_budgets_os_idBudgets_OS" ZOrder="15" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>1122</X>
-          <Y>36</Y>
+          <X>833</X>
+          <Y>336</Y>
         </Point>
         <Point>
-          <X>1122</X>
+          <X>833</X>
           <Y>28</Y>
         </Point>
         <Point>
@@ -99,11 +99,11 @@
     <Connector ID="DesignRelation:FK_dbo.tb_contracts_dbo.tb_budgets_os_Budgets_OS_sID" ZOrder="12" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>1097</X>
-          <Y>455</Y>
+          <X>808</X>
+          <Y>717</Y>
         </Point>
         <Point>
-          <X>1097</X>
+          <X>808</X>
           <Y>1715</Y>
         </Point>
         <Point>
@@ -115,11 +115,11 @@
     <Connector ID="DesignRelation:FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS" ZOrder="11" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>1105</X>
-          <Y>455</Y>
+          <X>816</X>
+          <Y>717</Y>
         </Point>
         <Point>
-          <X>1105</X>
+          <X>816</X>
           <Y>1079</Y>
         </Point>
         <Point>
@@ -223,12 +223,12 @@
           <Y>2090</Y>
         </Point>
         <Point>
-          <X>1089</X>
+          <X>800</X>
           <Y>2090</Y>
         </Point>
         <Point>
-          <X>1089</X>
-          <Y>455</Y>
+          <X>800</X>
+          <Y>717</Y>
         </Point>
       </RoutePoints>
     </Connector>

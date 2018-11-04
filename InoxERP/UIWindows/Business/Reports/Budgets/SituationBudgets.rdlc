@@ -129,6 +129,14 @@
           <DataField>IdClients</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="sAprovation">
+          <DataField>sAprovation</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="sSituation">
+          <DataField>sSituation</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>FullDataSet</rd:DataSetName>
@@ -427,7 +435,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox21">
+                        <Textbox Name="Textbox1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -447,7 +455,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox21</rd:DefaultName>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -799,14 +807,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="bServiceOrderApproved">
+                        <Textbox Name="sAprovation">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!bServiceOrderApproved.Value</Value>
+                                  <Value>=Fields!sAprovation.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#333333</Color>
@@ -818,7 +826,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>bServiceOrderApproved</rd:DefaultName>
+                          <rd:DefaultName>sAprovation</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -999,7 +1007,7 @@
         <Height>8.95802in</Height>
         <Style />
       </Body>
-      <Width>9.8946in</Width>
+      <Width>10.82677in</Width>
       <Page>
         <PageHeader>
           <Height>2.38125cm</Height>
@@ -1026,7 +1034,6 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>0.8274cm</Top>
-              <Left>0cm</Left>
               <Height>0.6cm</Height>
               <Width>6.33328cm</Width>
               <Style>
@@ -1157,7 +1164,6 @@
               </Paragraphs>
               <rd:DefaultName>Textbox25</rd:DefaultName>
               <Top>0.09525cm</Top>
-              <Left>0cm</Left>
               <Height>0.6cm</Height>
               <Width>25cm</Width>
               <ZIndex>4</ZIndex>
@@ -1191,7 +1197,6 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>1.60351cm</Top>
-              <Left>0cm</Left>
               <Height>0.6cm</Height>
               <Width>6.33328cm</Width>
               <ZIndex>5</ZIndex>
@@ -1212,7 +1217,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!startDate.Value</Value>
+                      <Value>=Parameters!startDateString.Value</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -1274,7 +1279,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!endDate.Value</Value>
+                      <Value>=Parameters!endDateString.Value</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -1405,6 +1410,18 @@
       <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="startDateString">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="endDateString">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1435,6 +1452,16 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>situation</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>startDateString</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>endDateString</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
