@@ -3086,6 +3086,7 @@ namespace UIWindows {
                 this.columnsID.MaxLength = 40;
                 this.columniCod.AllowDBNull = false;
                 this.columnClientType.AllowDBNull = false;
+                this.columndtDate.AllowDBNull = false;
                 this.columnsName.AllowDBNull = false;
                 this.columnsName.MaxLength = 100;
                 this.columnsAdress.MaxLength = 100;
@@ -3099,6 +3100,8 @@ namespace UIWindows {
                 this.columnbInterestRate.AllowDBNull = false;
                 this.columndWithInterest.AllowDBNull = false;
                 this.columniPrevisionOfExecute.AllowDBNull = false;
+                this.columndtStartPrevision.AllowDBNull = false;
+                this.columndtFinalPrevision.AllowDBNull = false;
                 this.columniWarrantyTime.AllowDBNull = false;
                 this.columnsObservation.MaxLength = 2147483647;
                 this.columndTotal.AllowDBNull = false;
@@ -3106,6 +3109,14 @@ namespace UIWindows {
                 this.columnbServiceOrderDelivered.AllowDBNull = false;
                 this.columnbRegisterFinished.AllowDBNull = false;
                 this.columnIdClients.MaxLength = 40;
+                this.columnsDate.ReadOnly = true;
+                this.columnsDate.MaxLength = 10;
+                this.columnsDateStartPrevision.ReadOnly = true;
+                this.columnsDateStartPrevision.MaxLength = 10;
+                this.columnsDateFinalPrevision.ReadOnly = true;
+                this.columnsDateFinalPrevision.MaxLength = 10;
+                this.columnsDateServiceOrderApproved.ReadOnly = true;
+                this.columnsDateServiceOrderApproved.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8531,12 +8542,7 @@ namespace UIWindows {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime dtDate {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dtDate\' na tabela \'tb_budgets_os\' é DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtDateColumn]));
                 }
                 set {
                     this[this.tabletb_budgets_os.dtDateColumn] = value;
@@ -8678,12 +8684,7 @@ namespace UIWindows {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime dtStartPrevision {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtStartPrevisionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dtStartPrevision\' na tabela \'tb_budgets_os\' é DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtStartPrevisionColumn]));
                 }
                 set {
                     this[this.tabletb_budgets_os.dtStartPrevisionColumn] = value;
@@ -8694,12 +8695,7 @@ namespace UIWindows {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime dtFinalPrevision {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtFinalPrevisionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'dtFinalPrevision\' na tabela \'tb_budgets_os\' é DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tabletb_budgets_os.dtFinalPrevisionColumn]));
                 }
                 set {
                     this[this.tabletb_budgets_os.dtFinalPrevisionColumn] = value;
@@ -8953,18 +8949,6 @@ namespace UIWindows {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsdtDateNull() {
-                return this.IsNull(this.tabletb_budgets_os.dtDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetdtDateNull() {
-                this[this.tabletb_budgets_os.dtDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IssAdressNull() {
                 return this.IsNull(this.tabletb_budgets_os.sAdressColumn);
             }
@@ -8985,30 +8969,6 @@ namespace UIWindows {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetsOccupationNull() {
                 this[this.tabletb_budgets_os.sOccupationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsdtStartPrevisionNull() {
-                return this.IsNull(this.tabletb_budgets_os.dtStartPrevisionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetdtStartPrevisionNull() {
-                this[this.tabletb_budgets_os.dtStartPrevisionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsdtFinalPrevisionNull() {
-                return this.IsNull(this.tabletb_budgets_os.dtFinalPrevisionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetdtFinalPrevisionNull() {
-                this[this.tabletb_budgets_os.dtFinalPrevisionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14220,14 +14180,19 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
             tableMapping.ColumnMappings.Add("dtDateRegisterFinished", "dtDateRegisterFinished");
             tableMapping.ColumnMappings.Add("IdClients", "IdClients");
             tableMapping.ColumnMappings.Add("sAprovation", "sAprovation");
+            tableMapping.ColumnMappings.Add("sDate", "sDate");
+            tableMapping.ColumnMappings.Add("sDateStartPrevision", "sDateStartPrevision");
+            tableMapping.ColumnMappings.Add("sDateFinalPrevision", "sDateFinalPrevision");
+            tableMapping.ColumnMappings.Add("sDateServiceOrderApproved", "sDateServiceOrderApproved");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tb_budgets_os] WHERE (([sID] = @Original_sID) AND ([iCod] = @Original_iCod) AND ([ClientType] = @Original_ClientType) AND ([sName] = @Original_sName) AND ((@IsNull_sAdress = 1 AND [sAdress] IS NULL) OR ([sAdress] = @Original_sAdress)) AND ([sTelephone] = @Original_sTelephone) AND ((@IsNull_sOccupation = 1 AND [sOccupation] IS NULL) OR ([sOccupation] = @Original_sOccupation)) AND ([PaymentMethods] = @Original_PaymentMethods) AND ([bPaymentToMatch] = @Original_bPaymentToMatch) AND ([dPercentDiscount] = @Original_dPercentDiscount) AND ([iPaymentInstallments] = @Original_iPaymentInstallments) AND ([bInterestRate] = @Original_bInterestRate) AND ([dWithInterest] = @Original_dWithInterest) AND ([iPrevisionOfExecute] = @Original_iPrevisionOfExecute) AND ([iWarrantyTime] = @Original_iWarrantyTime) AND ([dTotal] = @Original_dTotal) AND ([bServiceOrderApproved] = @Original_bServiceOrderApproved) AND ([bServiceOrderDelivered] = @Original_bServiceOrderDelivered) AND ([bRegisterFinished] = @Original_bRegisterFinished) AND ((@IsNull_IdClients = 1 AND [IdClients] IS NULL) OR ([IdClients] = @Original_IdClients)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tb_budgets_os] WHERE (([sID] = @Original_sID) AND ([iCod] = @Original_iCod) AND ([ClientType] = @Original_ClientType) AND ([dtDate] = @Original_dtDate) AND ([sName] = @Original_sName) AND ((@IsNull_sAdress = 1 AND [sAdress] IS NULL) OR ([sAdress] = @Original_sAdress)) AND ([sTelephone] = @Original_sTelephone) AND ((@IsNull_sOccupation = 1 AND [sOccupation] IS NULL) OR ([sOccupation] = @Original_sOccupation)) AND ([PaymentMethods] = @Original_PaymentMethods) AND ([bPaymentToMatch] = @Original_bPaymentToMatch) AND ([dPercentDiscount] = @Original_dPercentDiscount) AND ([iPaymentInstallments] = @Original_iPaymentInstallments) AND ([bInterestRate] = @Original_bInterestRate) AND ([dWithInterest] = @Original_dWithInterest) AND ([iPrevisionOfExecute] = @Original_iPrevisionOfExecute) AND ([dtStartPrevision] = @Original_dtStartPrevision) AND ([dtFinalPrevision] = @Original_dtFinalPrevision) AND ([iWarrantyTime] = @Original_iWarrantyTime) AND ([dTotal] = @Original_dTotal) AND ([bServiceOrderApproved] = @Original_bServiceOrderApproved) AND ((@IsNull_dtDateServiceOrderApproved = 1 AND [dtDateServiceOrderApproved] IS NULL) OR ([dtDateServiceOrderApproved] = @Original_dtDateServiceOrderApproved)) AND ([bServiceOrderDelivered] = @Original_bServiceOrderDelivered) AND ([bRegisterFinished] = @Original_bRegisterFinished) AND ((@IsNull_IdClients = 1 AND [IdClients] IS NULL) OR ([IdClients] = @Original_IdClients)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iCod", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iCod", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sAdress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -14241,40 +14206,48 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dtDateServiceOrderApproved", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bServiceOrderDelivered", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderDelivered", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdClients", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdClients", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdClients", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdClients", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [tb_budgets_os] ([sID], [iCod], [ClientType], [sName], [sAdress], [sT" +
-                "elephone], [sOccupation], [PaymentMethods], [bPaymentToMatch], [dPercentDiscount" +
-                "], [iPaymentInstallments], [bInterestRate], [dWithInterest], [iPrevisionOfExecut" +
-                "e], [iWarrantyTime], [sObservation], [dTotal], [bServiceOrderApproved], [bServic" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [tb_budgets_os] ([sID], [iCod], [ClientType], [dtDate], [sName], [sAd" +
+                "ress], [sTelephone], [sOccupation], [PaymentMethods], [bPaymentToMatch], [dPerce" +
+                "ntDiscount], [iPaymentInstallments], [bInterestRate], [dWithInterest], [iPrevisi" +
+                "onOfExecute], [dtStartPrevision], [dtFinalPrevision], [iWarrantyTime], [sObserva" +
+                "tion], [dTotal], [bServiceOrderApproved], [dtDateServiceOrderApproved], [bServic" +
                 "eOrderDelivered], [bRegisterFinished], [IdClients]) VALUES (@sID, @iCod, @Client" +
-                "Type, @sName, @sAdress, @sTelephone, @sOccupation, @PaymentMethods, @bPaymentToM" +
-                "atch, @dPercentDiscount, @iPaymentInstallments, @bInterestRate, @dWithInterest, " +
-                "@iPrevisionOfExecute, @iWarrantyTime, @sObservation, @dTotal, @bServiceOrderAppr" +
-                "oved, @bServiceOrderDelivered, @bRegisterFinished, @IdClients);\r\nSELECT sID, iCo" +
-                "d, ClientType, CONVERT (DATE, dtDate) AS \'dtDate\', sName, sAdress, sTelephone, s" +
-                "Occupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallme" +
-                "nts, bInterestRate, dWithInterest, iPrevisionOfExecute, CONVERT (DATE, dtStartPr" +
-                "evision) AS \'dtStartPrevision\', CONVERT (DATE, dtFinalPrevision) AS \'dtFinalPrev" +
-                "ision\', iWarrantyTime, CONVERT (DATE, dtBudgetExpirationDate) AS \'dtBudgetExpira" +
-                "tionDate\', sObservation, dTotal, bServiceOrderApproved, CASE WHEN bServiceOrderA" +
-                "pproved = \'True\' THEN \'Aprovado\' ELSE CASE WHEN bServiceOrderApproved = \'False\' " +
-                "THEN \'Em Aberto\' END END AS \'sAprovation\', CONVERT (DATE, dtDateServiceOrderAppr" +
-                "oved) AS \'dtDateServiceOrderApproved\', bServiceOrderDelivered, CONVERT (DATE, dt" +
-                "DateServiceOrderDelivered) AS \'dtDateServiceOrderDelivered\', bRegisterFinished, " +
-                "CONVERT (DATE, dtDateRegisterFinished) AS \'dtDateRegisterFinished\', IdClients FR" +
-                "OM tb_budgets_os WHERE (sID = @sID)";
+                "Type, @dtDate, @sName, @sAdress, @sTelephone, @sOccupation, @PaymentMethods, @bP" +
+                "aymentToMatch, @dPercentDiscount, @iPaymentInstallments, @bInterestRate, @dWithI" +
+                "nterest, @iPrevisionOfExecute, @dtStartPrevision, @dtFinalPrevision, @iWarrantyT" +
+                "ime, @sObservation, @dTotal, @bServiceOrderApproved, @dtDateServiceOrderApproved" +
+                ", @bServiceOrderDelivered, @bRegisterFinished, @IdClients);\r\nSELECT sID, iCod, C" +
+                "lientType, dtDate, CONVERT (CHAR(10), dtDate, 103) AS \'sDate\', sName, sAdress, s" +
+                "Telephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaym" +
+                "entInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevi" +
+                "sion, CONVERT (CHAR(10), dtStartPrevision, 103) AS \'sDateStartPrevision\', dtFina" +
+                "lPrevision, CONVERT (CHAR(10), dtFinalPrevision, 103) AS \'sDateFinalPrevision\', " +
+                "iWarrantyTime, CONVERT (DATE, dtBudgetExpirationDate) AS dtBudgetExpirationDate," +
+                " sObservation, dTotal, bServiceOrderApproved, CASE WHEN bServiceOrderApproved = " +
+                "\'True\' THEN \'Aprovado\' ELSE CASE WHEN bServiceOrderApproved = \'False\' THEN \'Em A" +
+                "berto\' END END AS \'sAprovation\', dtDateServiceOrderApproved, CONVERT (CHAR(10), " +
+                "dtDateServiceOrderApproved, 103) AS \'sDateServiceOrderApproved\', bServiceOrderDe" +
+                "livered, CONVERT (DATE, dtDateServiceOrderDelivered) AS dtDateServiceOrderDelive" +
+                "red, bRegisterFinished, CONVERT (DATE, dtDateRegisterFinished) AS dtDateRegister" +
+                "Finished, IdClients FROM tb_budgets_os WHERE (sID = @sID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iCod", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iCod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sTelephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sTelephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -14286,54 +14259,65 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sObservation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sObservation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bServiceOrderDelivered", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderDelivered", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdClients", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdClients", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [tb_budgets_os] SET [sID] = @sID, [iCod] = @iCod, [ClientType] = @ClientTy" +
-                "pe, [sName] = @sName, [sAdress] = @sAdress, [sTelephone] = @sTelephone, [sOccupa" +
-                "tion] = @sOccupation, [PaymentMethods] = @PaymentMethods, [bPaymentToMatch] = @b" +
-                "PaymentToMatch, [dPercentDiscount] = @dPercentDiscount, [iPaymentInstallments] =" +
-                " @iPaymentInstallments, [bInterestRate] = @bInterestRate, [dWithInterest] = @dWi" +
-                "thInterest, [iPrevisionOfExecute] = @iPrevisionOfExecute, [iWarrantyTime] = @iWa" +
-                "rrantyTime, [sObservation] = @sObservation, [dTotal] = @dTotal, [bServiceOrderAp" +
-                "proved] = @bServiceOrderApproved, [bServiceOrderDelivered] = @bServiceOrderDeliv" +
+                "pe, [dtDate] = @dtDate, [sName] = @sName, [sAdress] = @sAdress, [sTelephone] = @" +
+                "sTelephone, [sOccupation] = @sOccupation, [PaymentMethods] = @PaymentMethods, [b" +
+                "PaymentToMatch] = @bPaymentToMatch, [dPercentDiscount] = @dPercentDiscount, [iPa" +
+                "ymentInstallments] = @iPaymentInstallments, [bInterestRate] = @bInterestRate, [d" +
+                "WithInterest] = @dWithInterest, [iPrevisionOfExecute] = @iPrevisionOfExecute, [d" +
+                "tStartPrevision] = @dtStartPrevision, [dtFinalPrevision] = @dtFinalPrevision, [i" +
+                "WarrantyTime] = @iWarrantyTime, [sObservation] = @sObservation, [dTotal] = @dTot" +
+                "al, [bServiceOrderApproved] = @bServiceOrderApproved, [dtDateServiceOrderApprove" +
+                "d] = @dtDateServiceOrderApproved, [bServiceOrderDelivered] = @bServiceOrderDeliv" +
                 "ered, [bRegisterFinished] = @bRegisterFinished, [IdClients] = @IdClients WHERE (" +
                 "([sID] = @Original_sID) AND ([iCod] = @Original_iCod) AND ([ClientType] = @Origi" +
-                "nal_ClientType) AND ([sName] = @Original_sName) AND ((@IsNull_sAdress = 1 AND [s" +
-                "Adress] IS NULL) OR ([sAdress] = @Original_sAdress)) AND ([sTelephone] = @Origin" +
-                "al_sTelephone) AND ((@IsNull_sOccupation = 1 AND [sOccupation] IS NULL) OR ([sOc" +
-                "cupation] = @Original_sOccupation)) AND ([PaymentMethods] = @Original_PaymentMet" +
-                "hods) AND ([bPaymentToMatch] = @Original_bPaymentToMatch) AND ([dPercentDiscount" +
-                "] = @Original_dPercentDiscount) AND ([iPaymentInstallments] = @Original_iPayment" +
-                "Installments) AND ([bInterestRate] = @Original_bInterestRate) AND ([dWithInteres" +
-                "t] = @Original_dWithInterest) AND ([iPrevisionOfExecute] = @Original_iPrevisionO" +
-                "fExecute) AND ([iWarrantyTime] = @Original_iWarrantyTime) AND ([dTotal] = @Origi" +
-                "nal_dTotal) AND ([bServiceOrderApproved] = @Original_bServiceOrderApproved) AND " +
-                "([bServiceOrderDelivered] = @Original_bServiceOrderDelivered) AND ([bRegisterFin" +
-                "ished] = @Original_bRegisterFinished) AND ((@IsNull_IdClients = 1 AND [IdClients" +
-                "] IS NULL) OR ([IdClients] = @Original_IdClients)));\r\nSELECT sID, iCod, ClientTy" +
-                "pe, CONVERT (DATE, dtDate) AS \'dtDate\', sName, sAdress, sTelephone, sOccupation," +
-                " PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInter" +
-                "estRate, dWithInterest, iPrevisionOfExecute, CONVERT (DATE, dtStartPrevision) AS" +
-                " \'dtStartPrevision\', CONVERT (DATE, dtFinalPrevision) AS \'dtFinalPrevision\', iWa" +
-                "rrantyTime, CONVERT (DATE, dtBudgetExpirationDate) AS \'dtBudgetExpirationDate\', " +
-                "sObservation, dTotal, bServiceOrderApproved, CASE WHEN bServiceOrderApproved = \'" +
-                "True\' THEN \'Aprovado\' ELSE CASE WHEN bServiceOrderApproved = \'False\' THEN \'Em Ab" +
-                "erto\' END END AS \'sAprovation\', CONVERT (DATE, dtDateServiceOrderApproved) AS \'d" +
-                "tDateServiceOrderApproved\', bServiceOrderDelivered, CONVERT (DATE, dtDateService" +
-                "OrderDelivered) AS \'dtDateServiceOrderDelivered\', bRegisterFinished, CONVERT (DA" +
-                "TE, dtDateRegisterFinished) AS \'dtDateRegisterFinished\', IdClients FROM tb_budge" +
-                "ts_os WHERE (sID = @sID)";
+                "nal_ClientType) AND ([dtDate] = @Original_dtDate) AND ([sName] = @Original_sName" +
+                ") AND ((@IsNull_sAdress = 1 AND [sAdress] IS NULL) OR ([sAdress] = @Original_sAd" +
+                "ress)) AND ([sTelephone] = @Original_sTelephone) AND ((@IsNull_sOccupation = 1 A" +
+                "ND [sOccupation] IS NULL) OR ([sOccupation] = @Original_sOccupation)) AND ([Paym" +
+                "entMethods] = @Original_PaymentMethods) AND ([bPaymentToMatch] = @Original_bPaym" +
+                "entToMatch) AND ([dPercentDiscount] = @Original_dPercentDiscount) AND ([iPayment" +
+                "Installments] = @Original_iPaymentInstallments) AND ([bInterestRate] = @Original" +
+                "_bInterestRate) AND ([dWithInterest] = @Original_dWithInterest) AND ([iPrevision" +
+                "OfExecute] = @Original_iPrevisionOfExecute) AND ([dtStartPrevision] = @Original_" +
+                "dtStartPrevision) AND ([dtFinalPrevision] = @Original_dtFinalPrevision) AND ([iW" +
+                "arrantyTime] = @Original_iWarrantyTime) AND ([dTotal] = @Original_dTotal) AND ([" +
+                "bServiceOrderApproved] = @Original_bServiceOrderApproved) AND ((@IsNull_dtDateSe" +
+                "rviceOrderApproved = 1 AND [dtDateServiceOrderApproved] IS NULL) OR ([dtDateServ" +
+                "iceOrderApproved] = @Original_dtDateServiceOrderApproved)) AND ([bServiceOrderDe" +
+                "livered] = @Original_bServiceOrderDelivered) AND ([bRegisterFinished] = @Origina" +
+                "l_bRegisterFinished) AND ((@IsNull_IdClients = 1 AND [IdClients] IS NULL) OR ([I" +
+                "dClients] = @Original_IdClients)));\r\nSELECT sID, iCod, ClientType, dtDate, CONVE" +
+                "RT (CHAR(10), dtDate, 103) AS \'sDate\', sName, sAdress, sTelephone, sOccupation, " +
+                "PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bIntere" +
+                "stRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, CONVERT (CHAR(10)," +
+                " dtStartPrevision, 103) AS \'sDateStartPrevision\', dtFinalPrevision, CONVERT (CHA" +
+                "R(10), dtFinalPrevision, 103) AS \'sDateFinalPrevision\', iWarrantyTime, CONVERT (" +
+                "DATE, dtBudgetExpirationDate) AS dtBudgetExpirationDate, sObservation, dTotal, b" +
+                "ServiceOrderApproved, CASE WHEN bServiceOrderApproved = \'True\' THEN \'Aprovado\' E" +
+                "LSE CASE WHEN bServiceOrderApproved = \'False\' THEN \'Em Aberto\' END END AS \'sApro" +
+                "vation\', dtDateServiceOrderApproved, CONVERT (CHAR(10), dtDateServiceOrderApprov" +
+                "ed, 103) AS \'sDateServiceOrderApproved\', bServiceOrderDelivered, CONVERT (DATE, " +
+                "dtDateServiceOrderDelivered) AS dtDateServiceOrderDelivered, bRegisterFinished, " +
+                "CONVERT (DATE, dtDateRegisterFinished) AS dtDateRegisterFinished, IdClients FROM" +
+                " tb_budgets_os WHERE (sID = @sID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iCod", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iCod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sTelephone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sTelephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -14345,16 +14329,20 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sObservation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sObservation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bServiceOrderDelivered", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderDelivered", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdClients", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdClients", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iCod", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iCod", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sAdress", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sAdress", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sAdress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -14368,9 +14356,13 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bInterestRate", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bInterestRate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dWithInterest", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dWithInterest", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iPrevisionOfExecute", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iPrevisionOfExecute", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtStartPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtStartPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtFinalPrevision", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtFinalPrevision", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iWarrantyTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iWarrantyTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dTotal", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dTotal", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bServiceOrderApproved", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_dtDateServiceOrderApproved", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDateServiceOrderApproved", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDateServiceOrderApproved", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bServiceOrderDelivered", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bServiceOrderDelivered", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bRegisterFinished", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bRegisterFinished", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdClients", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdClients", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -14390,38 +14382,33 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        sID, iCod, ClientType, CONVERT(DATE, dtDate) AS 'dtDate', sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, 
-                         iPrevisionOfExecute, CONVERT(DATE, dtStartPrevision) AS 'dtStartPrevision', CONVERT(DATE, dtFinalPrevision) AS 'dtFinalPrevision', iWarrantyTime, CONVERT(DATE, dtBudgetExpirationDate) AS 'dtBudgetExpirationDate', 
-                         sObservation, dTotal, bServiceOrderApproved, CASE WHEN bServiceOrderApproved = 'True' THEN 'Aprovado' ELSE CASE WHEN bServiceOrderApproved = 'False' THEN 'Em Aberto' END END AS 'sAprovation', CONVERT(DATE, 
-                         dtDateServiceOrderApproved) AS 'dtDateServiceOrderApproved', bServiceOrderDelivered, CONVERT(DATE, dtDateServiceOrderDelivered) AS 'dtDateServiceOrderDelivered', bRegisterFinished, CONVERT(DATE, 
-                         dtDateRegisterFinished) AS 'dtDateRegisterFinished', IdClients
+            this._commandCollection[0].CommandText = @"SELECT        sID, iCod, ClientType, dtDate, CONVERT(CHAR(10), dtDate, 103) AS 'sDate', sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, 
+                         dWithInterest, iPrevisionOfExecute, dtStartPrevision, CONVERT(CHAR(10), dtStartPrevision, 103) AS 'sDateStartPrevision', dtFinalPrevision, CONVERT(CHAR(10), dtFinalPrevision, 103) AS 'sDateFinalPrevision', iWarrantyTime, 
+                         CONVERT(DATE, dtBudgetExpirationDate) AS dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, 
+                         CASE WHEN bServiceOrderApproved = 'True' THEN 'Aprovado' ELSE CASE WHEN bServiceOrderApproved = 'False' THEN 'Em Aberto' END END AS 'sAprovation', dtDateServiceOrderApproved, CONVERT(CHAR(10), 
+                         dtDateServiceOrderApproved, 103) AS 'sDateServiceOrderApproved', bServiceOrderDelivered, CONVERT(DATE, dtDateServiceOrderDelivered) AS dtDateServiceOrderDelivered, bRegisterFinished, CONVERT(DATE, 
+                         dtDateRegisterFinished) AS dtDateRegisterFinished, IdClients
 FROM            tb_budgets_os";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        sID, iCod, ClientType, dtDate, CONVERT(DATE, dtDate) AS sDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, 
-                         iPrevisionOfExecute, dtStartPrevision, CONVERT(DATE, dtStartPrevision) AS sDateStartPrevision, dtFinalPrevision, CONVERT(DATE, dtFinalPrevision) AS sDateFinalPrevision, iWarrantyTime, CONVERT(DATE, 
-                         dtBudgetExpirationDate) AS dtBudgetExpirationDate, sObservation, dTotal, bServiceOrderApproved, 
-                         CASE WHEN bServiceOrderApproved = 'True' THEN 'Aprovado' ELSE CASE WHEN bServiceOrderApproved = 'False' THEN 'Em Aberto' END END AS 'sAprovation', dtDateServiceOrderApproved, CONVERT(DATE, 
-                         dtDateServiceOrderApproved) AS sDateServiceOrderApproved, bServiceOrderDelivered, CONVERT(DATE, dtDateServiceOrderDelivered) AS dtDateServiceOrderDelivered, bRegisterFinished, CONVERT(DATE, 
-                         dtDateRegisterFinished) AS dtDateRegisterFinished, IdClients
-FROM            tb_budgets_os";
+            this._commandCollection[1].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, CONVERT (DATE, dtBudgetExpirationDate) AS dtBudgetExpirationDate, dtDate, CONVERT (DATE, dtDateRegisterFinished) AS dtDateRegisterFinished, dtDateServiceOrderApproved, CONVERT (DATE, dtDateServiceOrderDelivered) AS dtDateServiceOrderDelivered, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, CASE WHEN bServiceOrderApproved = 'True' THEN 'Aprovado' ELSE CASE WHEN bServiceOrderApproved = 'False' THEN 'Em Aberto' END END AS sAprovation, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 0)";
+            this._commandCollection[2].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateServiceOrderApproved, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 0)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'true') AND (bRegisterFinished = 'true')";
+            this._commandCollection[3].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateServiceOrderApproved, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'true') AND (bRegisterFinished = 'true')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'false')";
+            this._commandCollection[4].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateServiceOrderApproved, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'false')";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')";
+            this._commandCollection[5].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateServiceOrderApproved, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -14606,6 +14593,7 @@ FROM            tb_budgets_os";
                     string Original_sID, 
                     int Original_iCod, 
                     int Original_ClientType, 
+                    System.DateTime Original_dtDate, 
                     string Original_sName, 
                     string Original_sAdress, 
                     string Original_sTelephone, 
@@ -14617,9 +14605,12 @@ FROM            tb_budgets_os";
                     bool Original_bInterestRate, 
                     decimal Original_dWithInterest, 
                     int Original_iPrevisionOfExecute, 
+                    System.DateTime Original_dtStartPrevision, 
+                    System.DateTime Original_dtFinalPrevision, 
                     int Original_iWarrantyTime, 
                     decimal Original_dTotal, 
                     bool Original_bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> Original_dtDateServiceOrderApproved, 
                     bool Original_bServiceOrderDelivered, 
                     bool Original_bRegisterFinished, 
                     string Original_IdClients) {
@@ -14631,53 +14622,64 @@ FROM            tb_budgets_os";
             }
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_iCod));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ClientType));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_dtDate));
             if ((Original_sName == null)) {
                 throw new global::System.ArgumentNullException("Original_sName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_sName));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_sName));
             }
             if ((Original_sAdress == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_sAdress));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_sAdress));
             }
             if ((Original_sTelephone == null)) {
                 throw new global::System.ArgumentNullException("Original_sTelephone");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_sTelephone));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_sTelephone));
             }
             if ((Original_sOccupation == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_sOccupation));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_sOccupation));
             }
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_PaymentMethods));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((bool)(Original_bPaymentToMatch));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_dPercentDiscount));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_iPaymentInstallments));
-            this.Adapter.DeleteCommand.Parameters[13].Value = ((bool)(Original_bInterestRate));
-            this.Adapter.DeleteCommand.Parameters[14].Value = ((decimal)(Original_dWithInterest));
-            this.Adapter.DeleteCommand.Parameters[15].Value = ((int)(Original_iPrevisionOfExecute));
-            this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_iWarrantyTime));
-            this.Adapter.DeleteCommand.Parameters[17].Value = ((decimal)(Original_dTotal));
-            this.Adapter.DeleteCommand.Parameters[18].Value = ((bool)(Original_bServiceOrderApproved));
-            this.Adapter.DeleteCommand.Parameters[19].Value = ((bool)(Original_bServiceOrderDelivered));
-            this.Adapter.DeleteCommand.Parameters[20].Value = ((bool)(Original_bRegisterFinished));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_PaymentMethods));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((bool)(Original_bPaymentToMatch));
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((decimal)(Original_dPercentDiscount));
+            this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_iPaymentInstallments));
+            this.Adapter.DeleteCommand.Parameters[14].Value = ((bool)(Original_bInterestRate));
+            this.Adapter.DeleteCommand.Parameters[15].Value = ((decimal)(Original_dWithInterest));
+            this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_iPrevisionOfExecute));
+            this.Adapter.DeleteCommand.Parameters[17].Value = ((System.DateTime)(Original_dtStartPrevision));
+            this.Adapter.DeleteCommand.Parameters[18].Value = ((System.DateTime)(Original_dtFinalPrevision));
+            this.Adapter.DeleteCommand.Parameters[19].Value = ((int)(Original_iWarrantyTime));
+            this.Adapter.DeleteCommand.Parameters[20].Value = ((decimal)(Original_dTotal));
+            this.Adapter.DeleteCommand.Parameters[21].Value = ((bool)(Original_bServiceOrderApproved));
+            if ((Original_dtDateServiceOrderApproved.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((System.DateTime)(Original_dtDateServiceOrderApproved.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[24].Value = ((bool)(Original_bServiceOrderDelivered));
+            this.Adapter.DeleteCommand.Parameters[25].Value = ((bool)(Original_bRegisterFinished));
             if ((Original_IdClients == null)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_IdClients));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((string)(Original_IdClients));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14703,6 +14705,7 @@ FROM            tb_budgets_os";
                     string sID, 
                     int iCod, 
                     int ClientType, 
+                    System.DateTime dtDate, 
                     string sName, 
                     string sAdress, 
                     string sTelephone, 
@@ -14714,10 +14717,13 @@ FROM            tb_budgets_os";
                     bool bInterestRate, 
                     decimal dWithInterest, 
                     int iPrevisionOfExecute, 
+                    System.DateTime dtStartPrevision, 
+                    System.DateTime dtFinalPrevision, 
                     int iWarrantyTime, 
                     string sObservation, 
                     decimal dTotal, 
                     bool bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> dtDateServiceOrderApproved, 
                     bool bServiceOrderDelivered, 
                     bool bRegisterFinished, 
                     string IdClients) {
@@ -14729,53 +14735,62 @@ FROM            tb_budgets_os";
             }
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(iCod));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ClientType));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(dtDate));
             if ((sName == null)) {
                 throw new global::System.ArgumentNullException("sName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(sName));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(sName));
             }
             if ((sAdress == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(sAdress));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(sAdress));
             }
             if ((sTelephone == null)) {
                 throw new global::System.ArgumentNullException("sTelephone");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(sTelephone));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(sTelephone));
             }
             if ((sOccupation == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(sOccupation));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(sOccupation));
             }
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(PaymentMethods));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(bPaymentToMatch));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(dPercentDiscount));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(iPaymentInstallments));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((bool)(bInterestRate));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(dWithInterest));
-            this.Adapter.InsertCommand.Parameters[13].Value = ((int)(iPrevisionOfExecute));
-            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(iWarrantyTime));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(PaymentMethods));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(bPaymentToMatch));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(dPercentDiscount));
+            this.Adapter.InsertCommand.Parameters[11].Value = ((int)(iPaymentInstallments));
+            this.Adapter.InsertCommand.Parameters[12].Value = ((bool)(bInterestRate));
+            this.Adapter.InsertCommand.Parameters[13].Value = ((decimal)(dWithInterest));
+            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(iPrevisionOfExecute));
+            this.Adapter.InsertCommand.Parameters[15].Value = ((System.DateTime)(dtStartPrevision));
+            this.Adapter.InsertCommand.Parameters[16].Value = ((System.DateTime)(dtFinalPrevision));
+            this.Adapter.InsertCommand.Parameters[17].Value = ((int)(iWarrantyTime));
             if ((sObservation == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(sObservation));
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(sObservation));
             }
-            this.Adapter.InsertCommand.Parameters[16].Value = ((decimal)(dTotal));
-            this.Adapter.InsertCommand.Parameters[17].Value = ((bool)(bServiceOrderApproved));
-            this.Adapter.InsertCommand.Parameters[18].Value = ((bool)(bServiceOrderDelivered));
-            this.Adapter.InsertCommand.Parameters[19].Value = ((bool)(bRegisterFinished));
+            this.Adapter.InsertCommand.Parameters[19].Value = ((decimal)(dTotal));
+            this.Adapter.InsertCommand.Parameters[20].Value = ((bool)(bServiceOrderApproved));
+            if ((dtDateServiceOrderApproved.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((System.DateTime)(dtDateServiceOrderApproved.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[22].Value = ((bool)(bServiceOrderDelivered));
+            this.Adapter.InsertCommand.Parameters[23].Value = ((bool)(bRegisterFinished));
             if ((IdClients == null)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(IdClients));
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(IdClients));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14801,6 +14816,7 @@ FROM            tb_budgets_os";
                     string sID, 
                     int iCod, 
                     int ClientType, 
+                    System.DateTime dtDate, 
                     string sName, 
                     string sAdress, 
                     string sTelephone, 
@@ -14812,16 +14828,20 @@ FROM            tb_budgets_os";
                     bool bInterestRate, 
                     decimal dWithInterest, 
                     int iPrevisionOfExecute, 
+                    System.DateTime dtStartPrevision, 
+                    System.DateTime dtFinalPrevision, 
                     int iWarrantyTime, 
                     string sObservation, 
                     decimal dTotal, 
                     bool bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> dtDateServiceOrderApproved, 
                     bool bServiceOrderDelivered, 
                     bool bRegisterFinished, 
                     string IdClients, 
                     string Original_sID, 
                     int Original_iCod, 
                     int Original_ClientType, 
+                    System.DateTime Original_dtDate, 
                     string Original_sName, 
                     string Original_sAdress, 
                     string Original_sTelephone, 
@@ -14833,9 +14853,12 @@ FROM            tb_budgets_os";
                     bool Original_bInterestRate, 
                     decimal Original_dWithInterest, 
                     int Original_iPrevisionOfExecute, 
+                    System.DateTime Original_dtStartPrevision, 
+                    System.DateTime Original_dtFinalPrevision, 
                     int Original_iWarrantyTime, 
                     decimal Original_dTotal, 
                     bool Original_bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> Original_dtDateServiceOrderApproved, 
                     bool Original_bServiceOrderDelivered, 
                     bool Original_bRegisterFinished, 
                     string Original_IdClients) {
@@ -14847,109 +14870,129 @@ FROM            tb_budgets_os";
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(iCod));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ClientType));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(dtDate));
             if ((sName == null)) {
                 throw new global::System.ArgumentNullException("sName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(sName));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(sName));
             }
             if ((sAdress == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(sAdress));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(sAdress));
             }
             if ((sTelephone == null)) {
                 throw new global::System.ArgumentNullException("sTelephone");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(sTelephone));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(sTelephone));
             }
             if ((sOccupation == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(sOccupation));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(sOccupation));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(PaymentMethods));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(bPaymentToMatch));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(dPercentDiscount));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(iPaymentInstallments));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((bool)(bInterestRate));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(dWithInterest));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(iPrevisionOfExecute));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(iWarrantyTime));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(PaymentMethods));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(bPaymentToMatch));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(dPercentDiscount));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(iPaymentInstallments));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((bool)(bInterestRate));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(dWithInterest));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(iPrevisionOfExecute));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(dtStartPrevision));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(dtFinalPrevision));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(iWarrantyTime));
             if ((sObservation == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(sObservation));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(sObservation));
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(dTotal));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(bServiceOrderApproved));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((bool)(bServiceOrderDelivered));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(bRegisterFinished));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(dTotal));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(bServiceOrderApproved));
+            if ((dtDateServiceOrderApproved.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(dtDateServiceOrderApproved.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((bool)(bServiceOrderDelivered));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((bool)(bRegisterFinished));
             if ((IdClients == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(IdClients));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(IdClients));
             }
             if ((Original_sID == null)) {
                 throw new global::System.ArgumentNullException("Original_sID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_sID));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_sID));
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_iCod));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Original_ClientType));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_iCod));
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_ClientType));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(Original_dtDate));
             if ((Original_sName == null)) {
                 throw new global::System.ArgumentNullException("Original_sName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_sName));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_sName));
             }
             if ((Original_sAdress == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_sAdress));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_sAdress));
             }
             if ((Original_sTelephone == null)) {
                 throw new global::System.ArgumentNullException("Original_sTelephone");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_sTelephone));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_sTelephone));
             }
             if ((Original_sOccupation == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_sOccupation));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_sOccupation));
             }
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(Original_PaymentMethods));
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((bool)(Original_bPaymentToMatch));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_dPercentDiscount));
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_iPaymentInstallments));
-            this.Adapter.UpdateCommand.Parameters[34].Value = ((bool)(Original_bInterestRate));
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((decimal)(Original_dWithInterest));
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_iPrevisionOfExecute));
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_iWarrantyTime));
-            this.Adapter.UpdateCommand.Parameters[38].Value = ((decimal)(Original_dTotal));
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((bool)(Original_bServiceOrderApproved));
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((bool)(Original_bServiceOrderDelivered));
-            this.Adapter.UpdateCommand.Parameters[41].Value = ((bool)(Original_bRegisterFinished));
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_PaymentMethods));
+            this.Adapter.UpdateCommand.Parameters[36].Value = ((bool)(Original_bPaymentToMatch));
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((decimal)(Original_dPercentDiscount));
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_iPaymentInstallments));
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((bool)(Original_bInterestRate));
+            this.Adapter.UpdateCommand.Parameters[40].Value = ((decimal)(Original_dWithInterest));
+            this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(Original_iPrevisionOfExecute));
+            this.Adapter.UpdateCommand.Parameters[42].Value = ((System.DateTime)(Original_dtStartPrevision));
+            this.Adapter.UpdateCommand.Parameters[43].Value = ((System.DateTime)(Original_dtFinalPrevision));
+            this.Adapter.UpdateCommand.Parameters[44].Value = ((int)(Original_iWarrantyTime));
+            this.Adapter.UpdateCommand.Parameters[45].Value = ((decimal)(Original_dTotal));
+            this.Adapter.UpdateCommand.Parameters[46].Value = ((bool)(Original_bServiceOrderApproved));
+            if ((Original_dtDateServiceOrderApproved.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((System.DateTime)(Original_dtDateServiceOrderApproved.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[49].Value = ((bool)(Original_bServiceOrderDelivered));
+            this.Adapter.UpdateCommand.Parameters[50].Value = ((bool)(Original_bRegisterFinished));
             if ((Original_IdClients == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_IdClients));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_IdClients));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -14974,6 +15017,7 @@ FROM            tb_budgets_os";
         public virtual int Update(
                     int iCod, 
                     int ClientType, 
+                    System.DateTime dtDate, 
                     string sName, 
                     string sAdress, 
                     string sTelephone, 
@@ -14985,16 +15029,20 @@ FROM            tb_budgets_os";
                     bool bInterestRate, 
                     decimal dWithInterest, 
                     int iPrevisionOfExecute, 
+                    System.DateTime dtStartPrevision, 
+                    System.DateTime dtFinalPrevision, 
                     int iWarrantyTime, 
                     string sObservation, 
                     decimal dTotal, 
                     bool bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> dtDateServiceOrderApproved, 
                     bool bServiceOrderDelivered, 
                     bool bRegisterFinished, 
                     string IdClients, 
                     string Original_sID, 
                     int Original_iCod, 
                     int Original_ClientType, 
+                    System.DateTime Original_dtDate, 
                     string Original_sName, 
                     string Original_sAdress, 
                     string Original_sTelephone, 
@@ -15006,13 +15054,16 @@ FROM            tb_budgets_os";
                     bool Original_bInterestRate, 
                     decimal Original_dWithInterest, 
                     int Original_iPrevisionOfExecute, 
+                    System.DateTime Original_dtStartPrevision, 
+                    System.DateTime Original_dtFinalPrevision, 
                     int Original_iWarrantyTime, 
                     decimal Original_dTotal, 
                     bool Original_bServiceOrderApproved, 
+                    global::System.Nullable<global::System.DateTime> Original_dtDateServiceOrderApproved, 
                     bool Original_bServiceOrderDelivered, 
                     bool Original_bRegisterFinished, 
                     string Original_IdClients) {
-            return this.Update(Original_sID, iCod, ClientType, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, iWarrantyTime, sObservation, dTotal, bServiceOrderApproved, bServiceOrderDelivered, bRegisterFinished, IdClients, Original_sID, Original_iCod, Original_ClientType, Original_sName, Original_sAdress, Original_sTelephone, Original_sOccupation, Original_PaymentMethods, Original_bPaymentToMatch, Original_dPercentDiscount, Original_iPaymentInstallments, Original_bInterestRate, Original_dWithInterest, Original_iPrevisionOfExecute, Original_iWarrantyTime, Original_dTotal, Original_bServiceOrderApproved, Original_bServiceOrderDelivered, Original_bRegisterFinished, Original_IdClients);
+            return this.Update(Original_sID, iCod, ClientType, dtDate, sName, sAdress, sTelephone, sOccupation, PaymentMethods, bPaymentToMatch, dPercentDiscount, iPaymentInstallments, bInterestRate, dWithInterest, iPrevisionOfExecute, dtStartPrevision, dtFinalPrevision, iWarrantyTime, sObservation, dTotal, bServiceOrderApproved, dtDateServiceOrderApproved, bServiceOrderDelivered, bRegisterFinished, IdClients, Original_sID, Original_iCod, Original_ClientType, Original_dtDate, Original_sName, Original_sAdress, Original_sTelephone, Original_sOccupation, Original_PaymentMethods, Original_bPaymentToMatch, Original_dPercentDiscount, Original_iPaymentInstallments, Original_bInterestRate, Original_dWithInterest, Original_iPrevisionOfExecute, Original_dtStartPrevision, Original_dtFinalPrevision, Original_iWarrantyTime, Original_dTotal, Original_bServiceOrderApproved, Original_dtDateServiceOrderApproved, Original_bServiceOrderDelivered, Original_bRegisterFinished, Original_IdClients);
         }
     }
     

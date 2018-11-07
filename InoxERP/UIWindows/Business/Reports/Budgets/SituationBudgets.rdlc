@@ -174,7 +174,7 @@
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5cm</Width>
+                  <Width>7.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -201,14 +201,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox4">
+                        <Textbox Name="Textbox2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>s Date</Value>
+                                  <Value>Data</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -221,7 +221,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -365,14 +365,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox8">
+                        <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>s Date Start Prevision</Value>
+                                  <Value>Data Inicio</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -385,7 +385,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -406,14 +406,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox10">
+                        <Textbox Name="Textbox8">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>s Date Final Prevision</Value>
+                                  <Value>Data Fim</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -426,7 +426,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox10</rd:DefaultName>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -488,14 +488,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox12">
+                        <Textbox Name="Textbox10">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>s Date Service Order Approved</Value>
+                                  <Value>Aprovação</Value>
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -508,7 +508,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -575,7 +575,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="sDate1">
+                        <Textbox Name="sDate">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -594,7 +594,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>sDate1</rd:DefaultName>
+                          <rd:DefaultName>sDate</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -737,7 +737,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="sDateStartPrevision1">
+                        <Textbox Name="sDateStartPrevision">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -756,7 +756,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>sDateStartPrevision1</rd:DefaultName>
+                          <rd:DefaultName>sDateStartPrevision</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -778,7 +778,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="sDateFinalPrevision1">
+                        <Textbox Name="sDateFinalPrevision">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -797,7 +797,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>sDateFinalPrevision1</rd:DefaultName>
+                          <rd:DefaultName>sDateFinalPrevision</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -860,7 +860,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="sDateServiceOrderApproved1">
+                        <Textbox Name="sDateServiceOrderApproved">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -879,7 +879,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>sDateServiceOrderApproved1</rd:DefaultName>
+                          <rd:DefaultName>sDateServiceOrderApproved</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1003,7 +1003,7 @@
             </SortExpressions>
             <Top>0.03528cm</Top>
             <Height>1.96729cm</Height>
-            <Width>25cm</Width>
+            <Width>27.5cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1019,7 +1019,7 @@
         <Height>8.95802in</Height>
         <Style />
       </Body>
-      <Width>10.82677in</Width>
+      <Width>10.8946in</Width>
       <Page>
         <PageHeader>
           <Height>2.38125cm</Height>
@@ -1078,7 +1078,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox22</rd:DefaultName>
               <Top>0.8274cm</Top>
-              <Left>18.77165cm</Left>
+              <Left>21.12115cm</Left>
               <Height>0.6cm</Height>
               <Width>2.15438cm</Width>
               <ZIndex>1</ZIndex>
@@ -1110,7 +1110,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox23</rd:DefaultName>
               <Top>0.8274cm</Top>
-              <Left>21.11056cm</Left>
+              <Left>23.46006cm</Left>
               <Height>0.6cm</Height>
               <Width>4.02172cm</Width>
               <ZIndex>2</ZIndex>
@@ -1177,7 +1177,7 @@
               <rd:DefaultName>Textbox25</rd:DefaultName>
               <Top>0.09525cm</Top>
               <Height>0.6cm</Height>
-              <Width>25cm</Width>
+              <Width>27.5cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
