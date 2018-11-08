@@ -146,10 +146,10 @@
             this.radEmAberto.Location = new System.Drawing.Point(25, 62);
             this.radEmAberto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radEmAberto.Name = "radEmAberto";
-            this.radEmAberto.Size = new System.Drawing.Size(92, 21);
+            this.radEmAberto.Size = new System.Drawing.Size(122, 21);
             this.radEmAberto.TabIndex = 0;
             this.radEmAberto.TabStop = true;
-            this.radEmAberto.Text = "Em Aberto";
+            this.radEmAberto.Text = "Em Andamento";
             this.radEmAberto.UseVisualStyleBackColor = true;
             // 
             // frmReportServicesOrder

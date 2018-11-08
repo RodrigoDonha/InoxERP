@@ -1317,7 +1317,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>0.97896cm</Height>
+          <Height>1cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1351,9 +1351,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox26</rd:DefaultName>
               <Top>0.16165cm</Top>
-              <Left>0.52599cm</Left>
+              <Left>0.21844cm</Left>
               <Height>0.6cm</Height>
-              <Width>24.16937cm</Width>
+              <Width>27.48178cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
