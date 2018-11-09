@@ -18,11 +18,11 @@ namespace UIWindows
     {
         ValidationEntries validation = new ValidationEntries();
 
-        //Budgets_OS budget = new Budgets_OS();
-
+        private string id { get; set; }
+        
         public frmPaymentForms(string id)
         {
-            //this.budget = budget;
+            this.id = id;
             InitializeComponent();
             fillFrm(id);
         }
@@ -65,8 +65,7 @@ namespace UIWindows
 
             lblValorTotalPago.Text = totalValue.ToString();
         }
-
-
+        
         private void checkTxt()
         {
             if (txtPorcentDescAVista.Text.Equals(""))
@@ -128,6 +127,180 @@ namespace UIWindows
 
                     lblValorPorParcelaDin.Text = installmentsValue.ToString();
                 }
+        }
+
+        public void checkDescOrRate()
+        {
+            if (chkLimpar.Checked)
+            {
+                radDesconto.Checked = false;
+                radJuros.Checked = false;
+                txtPorcentDescAVista.Enabled = false;
+                txtPorcentJuros.Enabled = false;
+                chkLimpar.Checked = false;
+
+                txtPorcentJuros.Text = "0,00";
+                txtPorcentDescAVista.Text = "0,00";
+
+                cleanBeforeFill();
+                fillFrm(this.id);
+            }else
+            if (radDesconto.Checked)
+            {
+                radJuros.Checked = false;
+                txtPorcentJuros.Enabled = false;
+                txtPorcentJuros.Text = "0,00";
+
+                txtPorcentDescAVista.Enabled = true;
+
+            }else
+            if (radJuros.Checked)
+            {
+                radDesconto.Checked = false;
+                txtPorcentDescAVista.Enabled = false;
+                txtPorcentDescAVista.Text = "0,00";
+
+                txtPorcentJuros.Enabled = true;
+
+            }
+        }
+
+        private void radDesconto_CheckedChanged(object sender, EventArgs e)
+        {
+            checkDescOrRate();
+        }
+
+        private void radJuros_CheckedChanged(object sender, EventArgs e)
+        {
+            checkDescOrRate();
+        }
+
+        private void chkLimpar_CheckedChanged(object sender, EventArgs e)
+        {
+            checkDescOrRate();
+        }
+        
+        private void cleanBeforeFill()
+        {
+            txtValorArredondamento.Clear();
+
+            txtEntradaDin.Clear();
+            txtEntradaCheq.Clear();
+
+            txtValorDin.Clear();
+            nudParcelasDin.Value = 1;
+            nudPrazoDin.Value = 0;
+            txtPrimParcDin.Clear();
+            lblValorPorParcelaDin.Text = "0";
+            
+            txtValorCheq.Clear();
+            nudParcelasCheq.Value = 1;
+            nudPrazoCheq.Value = 0;
+            txtPrimParcCheq.Clear();
+            lblValorPorParcelaCheq.Text = "0";
+
+            lblValorTotalPago.Text = "0";
+        }
+
+        private void calcRound()
+        {
+            InoxErpContext ctx = new InoxErpContext();
+            Budgets_OS b = new Budgets_OS();
+            Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+
+            b = obj.ReturnByID(id);
+
+            if (!txtValorArredondamento.Text.Equals(""))
+            {
+                decimal valueTotal = b.dTotal;
+                decimal round = Convert.ToDecimal(txtValorArredondamento.Text.Replace(".", ","));
+                decimal final = Math.Round(valueTotal - round, 2);
+                lblExibeValorOS.Text = final.ToString();
+            }
+            else
+                lblExibeValorOS.Text = b.dTotal.ToString();
+        }
+
+        private void calcDesc()
+        {
+            InoxErpContext ctx = new InoxErpContext();
+            Budgets_OS b = new Budgets_OS();
+            Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+
+            b = obj.ReturnByID(id);
+
+            if (!txtPorcentDescAVista.Text.Equals(""))
+            {
+                decimal valueTotal = b.dTotal;
+                decimal desc = Convert.ToDecimal(txtPorcentDescAVista.Text.Replace(".", ","));
+                decimal final = Math.Round(valueTotal - (valueTotal * (desc/100)), 2);
+                lblExibeValorOS.Text = final.ToString();
+            }
+            else
+                lblExibeValorOS.Text = b.dTotal.ToString();
+        }
+
+        private void txtPorcentDescAVista_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+            if (e.KeyChar == 13)
+            {
+                calcDesc();
+            }
+
+        }
+
+        private void txtPorcentJuros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+        }
+
+        private void txtValorArredondamento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+            if (e.KeyChar == 13)
+            {
+                calcRound();
+            }
+        }
+
+        private void txtEntradaDin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+        }
+
+        private void txtEntradaCheq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+        }
+
+        private void txtValorDin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+        }
+
+        private void txtPrimParcDin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+        }
+
+        private void txtValorCheq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+        }
+
+        private void txtPrimParcCheq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
         }
     }
 }
