@@ -129,8 +129,14 @@ namespace UIWindows
             if (txtValorDin.Text.Equals(""))
                 txtValorDin.Text = "0";
 
+            if (txtPrimParcDin.Text.Equals(""))
+                txtPrimParcDin.Text = "0";
+
             if (txtValorCheq.Text.Equals(""))
                 txtValorCheq.Text = "0";
+
+            if (txtPrimParcCheq.Text.Equals(""))
+                txtPrimParcCheq.Text = "0";
         }
 
         //CHECK TYPE OF DESC OR RATE
@@ -287,12 +293,75 @@ namespace UIWindows
         {
             checkTxt();
 
+            lblValorTotalPago.Text = returnEntry().ToString();
+        }
+
+        //RETURN CALCULED ENTRY
+        private decimal returnEntry()
+        {
             decimal din = Convert.ToDecimal(txtEntradaDin.Text.Replace(".", ","));
             decimal cheq = Convert.ToDecimal(txtEntradaCheq.Text.Replace(".", ","));
 
             decimal totalEntry = Math.Round(din + cheq, 2);
 
-            lblValorTotalPago.Text = totalEntry.ToString();
+            decimal totalOS = Convert.ToDecimal(lblExibeValorOS.Text.Replace(".", ","));
+
+            if(totalEntry > totalOS)
+                if (messageYesNo("valueMax") == DialogResult.No)
+                    return totalEntry = 0;
+
+            return totalEntry;
+        }
+
+        //CALC PAYMENT ON MONEY
+        private void calcPaymentDin(string valueTotalOS)
+        {
+            checkTxt();
+
+            decimal valueOS = Convert.ToDecimal(valueTotalOS.Replace(".", ",")); //valor total
+
+            decimal entry = returnEntry(); //valor da entrada
+
+            decimal totalRest = valueOS - entry; // valor que falta pagar
+
+            decimal valueDin = Convert.ToDecimal(txtValorDin.Text.Replace(".", ",")); //valor informado em dinheiro
+
+            if(valueDin > totalRest) //compara se nao é maior que o restante
+                if (messageYesNo("valueMax") == DialogResult.No)
+                    valueDin = 0;
+
+            //arrumar aqui****
+            decimal valuePaied = Convert.ToDecimal(lblValorTotalPago.Text.Replace(".", ",")); // pega valor já pago
+
+            decimal installments = nudParcelasDin.Value; // quantidade de parcelas
+            
+            decimal firstInstallment = Convert.ToDecimal(txtPrimParcDin.Text.Replace(".", ",")); // valor da 1º parcela
+
+            if (firstInstallment > valueDin) //compara se nao é maior que o valor em dinheiro informado
+                if (messageYesNo("valueMax") == DialogResult.No)
+                    firstInstallment = 0;
+
+            decimal valueByInstallments = Math.Round((valueDin - firstInstallment) / installments, 2); // valor por parcela
+
+            lblValorPorParcelaDin.Text = valueByInstallments.ToString(); //exibe valor por parcela
+
+            decimal totalPaied = valuePaied + valueDin; //calcula total já pago
+
+            lblValorTotalPago.Text = totalPaied.ToString(); // exibe/atualiza valor total pago
+
+        }
+
+        //DIALOG OPTIONS
+        public DialogResult messageYesNo(string type)
+        {
+            switch (type)
+            {
+                case "Confirm":
+                    return MessageBox.Show("Confirma a Aprovação do Orçamento e os Lançamentos no Caixa ?", "Apovar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "valueMax":
+                    return MessageBox.Show("O Valor Informado é Maior que o valor do Orçamento, Confirma ?", "Valor Maior", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            }
+            return DialogResult.No;
         }
 
         //WHEN KEY IS PRESS ON txtPorcentDescAVista
@@ -360,7 +429,10 @@ namespace UIWindows
         {
             validation.characterValidatorOnlyNumbers(sender, e);
 
-
+            if (e.KeyChar == 13)
+            {
+                calcPaymentDin(lblExibeValorOS.Text);
+            }
         }
 
         //WHEN KEY IS PRESS ON txtPrimParcDin
