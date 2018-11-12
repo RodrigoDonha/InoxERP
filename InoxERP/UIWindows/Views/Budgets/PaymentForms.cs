@@ -38,6 +38,7 @@ namespace UIWindows
             b = obj.ReturnByID(id);
 
             lblExibeValorOS.Text = b.dTotal.ToString();
+            lblValorRestante.Text = b.dTotal.ToString();
             txtPorcentDescAVista.Text = b.dPercentDiscount.ToString();
             txtPorcentJuros.Text = b.dWithInterest.ToString();
 
@@ -49,9 +50,6 @@ namespace UIWindows
             fillValues(b);
 
             checkTxt();
-
-            //decimal valueDesc = Convert.ToDecimal(txtPorcentDescAVista.Text.Replace(".",","));
-            //decimal valuerate = Convert.ToDecimal(txtPorcentJuros.Text.Replace(".", ","));
 
             decimal valueRound = Convert.ToDecimal(txtValorArredondamento.Text.Replace(".", ","));
             decimal valueMoney = Convert.ToDecimal(txtValorDin.Text.Replace(".", ","));
@@ -212,6 +210,8 @@ namespace UIWindows
             txtEntradaDin.Clear();
             txtEntradaCheq.Clear();
 
+            lblValorRestante.Text = "0";
+
             txtValorDin.Clear();
             nudParcelasDin.Value = 1;
             nudPrazoDin.Value = 0;
@@ -228,7 +228,7 @@ namespace UIWindows
         }
 
         //CALC ROUNDING
-        private void calcRound(string value)
+        private string calcRound(string value)
         {
             InoxErpContext ctx = new InoxErpContext();
             Budgets_OS b = new Budgets_OS();
@@ -236,20 +236,31 @@ namespace UIWindows
 
             b = obj.ReturnByID(id);
 
+            calcDesc();
+            calcRate();
+
             if (!txtValorArredondamento.Text.Equals(""))
             {
-                decimal valueTotal = 0;
-                valueTotal = value.Equals("0") ? b.dTotal : Convert.ToDecimal(value); //IF Ternário
+                decimal valueTotal = b.Items.Sum(i => i.dTotal);
+
+                decimal desc = Convert.ToDecimal(calcDesc().Replace(".", ",")) - valueTotal;
+
+                decimal rate = Convert.ToDecimal(calcRate().Replace(".", ",")) - valueTotal;
+
                 decimal round = Convert.ToDecimal(txtValorArredondamento.Text.Replace(".", ","));
-                decimal final = Math.Round(valueTotal - round, 2);
-                lblExibeValorOS.Text = final.ToString();
+
+                decimal final = Math.Round(valueTotal + desc + rate - round, 2);
+
+                lblValorRestante.Text = final.ToString();
+
+                return lblExibeValorOS.Text = final.ToString();
             }
             else
-                lblExibeValorOS.Text = b.dTotal.ToString();
+                return lblExibeValorOS.Text = b.dTotal.ToString();
         }
 
         //CALC DISCOUNT
-        private void calcDesc()
+        private string calcDesc()
         {
             InoxErpContext ctx = new InoxErpContext();
             Budgets_OS b = new Budgets_OS();
@@ -259,17 +270,18 @@ namespace UIWindows
 
            if (!txtPorcentDescAVista.Text.Equals(""))
             {
-                decimal valueTotal = b.dTotal;
+                decimal valueTotal = b.Items.Sum(i => i.dTotal);
                 decimal desc = Convert.ToDecimal(txtPorcentDescAVista.Text.Replace(".", ","));
                 decimal final = Math.Round(valueTotal - (valueTotal * (desc/100)), 2);
-                lblExibeValorOS.Text = final.ToString();
+                lblValorRestante.Text = final.ToString();
+                return lblExibeValorOS.Text = final.ToString();
             }
             else
-                lblExibeValorOS.Text = b.dTotal.ToString();
+                return lblExibeValorOS.Text = b.dTotal.ToString();
         }
 
         //CALC RATE
-        private void calcRate()
+        private string calcRate()
         {
             InoxErpContext ctx = new InoxErpContext();
             Budgets_OS b = new Budgets_OS();
@@ -279,19 +291,22 @@ namespace UIWindows
             
             if (!txtPorcentJuros.Text.Equals(""))
             {
-                decimal valueTotal = b.dTotal;
+                decimal valueTotal = b.Items.Sum(i => i.dTotal);
                 decimal rate = Convert.ToDecimal(txtPorcentJuros.Text.Replace(".", ","));
                 decimal final = Math.Round(valueTotal + (valueTotal * (rate / 100)), 2);
-                lblExibeValorOS.Text = final.ToString();
+                lblValorRestante.Text = final.ToString();
+                return lblExibeValorOS.Text = final.ToString();
             }
             else
-                lblExibeValorOS.Text = b.dTotal.ToString();
+                return lblExibeValorOS.Text = b.dTotal.ToString();
         }
         
         //CALC ENTRY DIN CHEQ
         private void calcEntryDinCheq()
         {
             checkTxt();
+
+            calcRound(lblExibeValorOS.Text);
 
             lblValorTotalPago.Text = returnEntry().ToString();
         }
@@ -310,28 +325,23 @@ namespace UIWindows
                 if (messageYesNo("valueMax") == DialogResult.No)
                     return totalEntry = 0;
 
+            lblValorRestante.Text = (totalOS - totalEntry).ToString();
+
             return totalEntry;
         }
 
         //CALC PAYMENT ON MONEY
-        private void calcPaymentDin(string valueTotalOS)
+        private decimal calcPaymentDin(decimal valueRemaing, decimal valuePaied)
         {
-            checkTxt();
-
-            decimal valueOS = Convert.ToDecimal(valueTotalOS.Replace(".", ",")); //valor total
-
-            decimal entry = returnEntry(); //valor da entrada
-
-            decimal totalRest = valueOS - entry; // valor que falta pagar
-
+            decimal totalRest = valueRemaing; //valor restante
+            
             decimal valueDin = Convert.ToDecimal(txtValorDin.Text.Replace(".", ",")); //valor informado em dinheiro
 
             if(valueDin > totalRest) //compara se nao é maior que o restante
                 if (messageYesNo("valueMax") == DialogResult.No)
                     valueDin = 0;
 
-            //arrumar aqui****
-            decimal valuePaied = Convert.ToDecimal(lblValorTotalPago.Text.Replace(".", ",")); // pega valor já pago
+            decimal paied = valuePaied; // pega valor já pago
 
             decimal installments = nudParcelasDin.Value; // quantidade de parcelas
             
@@ -345,10 +355,87 @@ namespace UIWindows
 
             lblValorPorParcelaDin.Text = valueByInstallments.ToString(); //exibe valor por parcela
 
-            decimal totalPaied = valuePaied + valueDin; //calcula total já pago
+            decimal totalPaied = paied + valueDin; //calcula total já pago
 
             lblValorTotalPago.Text = totalPaied.ToString(); // exibe/atualiza valor total pago
 
+            lblValorRestante.Text = (totalRest - valueDin).ToString();
+
+            return valueDin;
+        }
+
+        //CALC PAYMENT ON CHEQUE
+        private decimal calcPaymentCheq(decimal valueRemaing, decimal valuePaied)
+        {
+            decimal totalRest = valueRemaing; //valor restante
+
+            decimal valueCheq = Convert.ToDecimal(txtValorCheq.Text.Replace(".", ",")); //valor informado em dinheiro
+
+            if (valueCheq > totalRest) //compara se nao é maior que o restante
+                if (messageYesNo("valueMax") == DialogResult.No)
+                    valueCheq = 0;
+
+            decimal paied = valuePaied; // pega valor já pago
+
+            decimal installments = nudParcelasCheq.Value; // quantidade de parcelas
+
+            decimal firstInstallment = Convert.ToDecimal(txtPrimParcCheq.Text.Replace(".", ",")); // valor da 1º parcela
+
+            if (firstInstallment > valueCheq) //compara se nao é maior que o valor em dinheiro informado
+                if (messageYesNo("valueMax") == DialogResult.No)
+                    firstInstallment = 0;
+
+            decimal valueByInstallments = Math.Round((valueCheq - firstInstallment) / installments, 2); // valor por parcela
+
+            lblValorPorParcelaCheq.Text = valueByInstallments.ToString(); //exibe valor por parcela
+
+            decimal totalPaied = paied + valueCheq; //calcula total já pago
+
+            lblValorTotalPago.Text = totalPaied.ToString(); // exibe/atualiza valor total pago
+
+            lblValorRestante.Text = (totalRest - valueCheq).ToString();
+
+            return valueCheq;
+        }
+
+        private void call(string type)
+        {
+            InoxErpContext ctx = new InoxErpContext();
+            Budgets_OS b = new Budgets_OS();
+            Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+
+            b = obj.ReturnByID(id);
+
+            checkTxt(); //verifica campos vazios
+
+            //recebe todos os dados
+            decimal totalOS = b.Items.Sum(i => i.dTotal);
+
+            decimal desc = Convert.ToDecimal(calcDesc().Replace(".", ",")) - totalOS;
+
+            decimal rate = Convert.ToDecimal(calcRate().Replace(".", ",")) - totalOS;
+
+            decimal round = Convert.ToDecimal(txtValorArredondamento.Text.Replace(".", ","));
+            
+            decimal entry = returnEntry();
+
+            decimal rest = Math.Round(totalOS + desc + rate - round - entry, 2); //valor que falta pagar
+
+            if (type.Equals("din"))
+            {
+                decimal cheq = calcPaymentCheq(rest, entry);
+                decimal final = rest - cheq;
+                calcPaymentDin(final, entry + cheq);
+            }
+
+            if (type.Equals("cheq"))
+            {
+                decimal din = calcPaymentDin(rest, entry);
+                decimal final = rest - din;
+                calcPaymentCheq(final, entry + din);
+            }
+
+            lblExibeValorOS.Text = (totalOS + desc + rate - round).ToString();
         }
 
         //DIALOG OPTIONS
@@ -390,63 +477,36 @@ namespace UIWindows
         private void txtValorArredondamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyNumbers(sender, e);
-
-            if (e.KeyChar == 13)
-            {
-                if (radDesconto.Checked)
-                    calcRound(lblExibeValorOS.Text);
-                else if(radJuros.Checked)
-                    calcRound(lblExibeValorOS.Text);
-                else
-                    calcRound("0");
-            }
         }
 
         //WHEN KEY IS PRESS ON txtEntradaDin
         private void txtEntradaDin_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyNumbers(sender, e);
-
-            if (e.KeyChar == 13)
-            {
-               calcEntryDinCheq();
-            }
         }
 
         //WHEN KEY IS PRESS ON txtEntradaCheq
         private void txtEntradaCheq_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyNumbers(sender, e);
-
-            if (e.KeyChar == 13)
-            {
-                calcEntryDinCheq();
-            }
         }
 
         //WHEN KEY IS PRESS ON txtValorDin
         private void txtValorDin_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyNumbers(sender, e);
-
-            if (e.KeyChar == 13)
-            {
-                calcPaymentDin(lblExibeValorOS.Text);
-            }
         }
 
         //WHEN KEY IS PRESS ON txtPrimParcDin
         private void txtPrimParcDin_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyNumbers(sender, e);
-
         }
 
         //WHEN KEY IS PRESS ON txtValorCheq
         private void txtValorCheq_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyNumbers(sender, e);
-
         }
 
         //WHEN KEY IS PRESS ON txtPrimParcCheq
@@ -454,6 +514,36 @@ namespace UIWindows
         {
             validation.characterValidatorOnlyNumbers(sender, e);
 
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnOkDin_Click(object sender, EventArgs e)
+        {
+            call("din");
+        }
+
+        private void btnOkCheq_Click(object sender, EventArgs e)
+        {
+            call("cheq");
+        }
+
+        private void btnOkArredondamento_Click(object sender, EventArgs e)
+        {
+            if (radDesconto.Checked)
+                calcRound(lblExibeValorOS.Text);
+            else if (radJuros.Checked)
+                calcRound(lblExibeValorOS.Text);
+            else
+                calcRound("0");
+        }
+
+        private void btnOkEntrada_Click(object sender, EventArgs e)
+        {
+            calcEntryDinCheq();
         }
     }
 }
