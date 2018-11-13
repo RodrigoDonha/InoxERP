@@ -38,7 +38,6 @@ namespace UIWindows
             b = obj.ReturnByID(id);
 
             lblExibeValorOS.Text = b.dTotal.ToString();
-            lblValorRestante.Text = b.dTotal.ToString();
             txtPorcentDescAVista.Text = b.dPercentDiscount.ToString();
             txtPorcentJuros.Text = b.dWithInterest.ToString();
 
@@ -57,6 +56,13 @@ namespace UIWindows
 
             var totalValue = valueRound + valueMoney + valueCheque;
 
+            lblValorRestante.Text = b.dTotal.ToString();
+
+            if (valueMoney > 0)
+                call("din");
+            if(valueCheque > 0)
+                call("cheq");
+            
             lblValorTotalPago.Text = totalValue.ToString();
         }
         
@@ -226,39 +232,7 @@ namespace UIWindows
 
             lblValorTotalPago.Text = "0";
         }
-
-        //CALC ROUNDING
-        private string calcRound(string value)
-        {
-            InoxErpContext ctx = new InoxErpContext();
-            Budgets_OS b = new Budgets_OS();
-            Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
-
-            b = obj.ReturnByID(id);
-
-            calcDesc();
-            calcRate();
-
-            if (!txtValorArredondamento.Text.Equals(""))
-            {
-                decimal valueTotal = b.Items.Sum(i => i.dTotal);
-
-                decimal desc = Convert.ToDecimal(calcDesc().Replace(".", ",")) - valueTotal;
-
-                decimal rate = Convert.ToDecimal(calcRate().Replace(".", ",")) - valueTotal;
-
-                decimal round = Convert.ToDecimal(txtValorArredondamento.Text.Replace(".", ","));
-
-                decimal final = Math.Round(valueTotal + desc + rate - round, 2);
-
-                lblValorRestante.Text = final.ToString();
-
-                return lblExibeValorOS.Text = final.ToString();
-            }
-            else
-                return lblExibeValorOS.Text = b.dTotal.ToString();
-        }
-
+        
         //CALC DISCOUNT
         private string calcDesc()
         {
@@ -301,12 +275,44 @@ namespace UIWindows
                 return lblExibeValorOS.Text = b.dTotal.ToString();
         }
         
+        //CALC ROUNDING
+        private string calcRound()
+        {
+            InoxErpContext ctx = new InoxErpContext();
+            Budgets_OS b = new Budgets_OS();
+            Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+
+            b = obj.ReturnByID(id);
+
+            calcDesc();
+            calcRate();
+
+            if (!txtValorArredondamento.Text.Equals(""))
+            {
+                decimal valueTotal = b.Items.Sum(i => i.dTotal);
+
+                decimal desc = Convert.ToDecimal(calcDesc().Replace(".", ",")) - valueTotal;
+
+                decimal rate = Convert.ToDecimal(calcRate().Replace(".", ",")) - valueTotal;
+
+                decimal round = Convert.ToDecimal(txtValorArredondamento.Text.Replace(".", ","));
+
+                decimal final = Math.Round(valueTotal + desc + rate - round, 2);
+
+                lblValorRestante.Text = final.ToString();
+
+                return lblExibeValorOS.Text = final.ToString();
+            }
+            else
+                return lblExibeValorOS.Text = b.dTotal.ToString();
+        }
+
         //CALC ENTRY DIN CHEQ
         private void calcEntryDinCheq()
         {
             checkTxt();
 
-            calcRound(lblExibeValorOS.Text);
+            calcRound();
 
             lblValorTotalPago.Text = returnEntry().ToString();
         }
@@ -455,22 +461,12 @@ namespace UIWindows
         private void txtPorcentDescAVista_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyNumbers(sender, e);
-
-            if (e.KeyChar == 13)
-            {
-                calcDesc();
-            }
         }
 
         //WHEN KEY IS PRESS ON txtPorcentJuros
         private void txtPorcentJuros_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyNumbers(sender, e);
-
-            if (e.KeyChar == 13)
-            {
-                calcRate();
-            }
         }
 
         //WHEN KEY IS PRESS ON txtValorArredondamento
@@ -533,17 +529,22 @@ namespace UIWindows
 
         private void btnOkArredondamento_Click(object sender, EventArgs e)
         {
-            if (radDesconto.Checked)
-                calcRound(lblExibeValorOS.Text);
-            else if (radJuros.Checked)
-                calcRound(lblExibeValorOS.Text);
-            else
-                calcRound("0");
+            calcRound();
         }
 
         private void btnOkEntrada_Click(object sender, EventArgs e)
         {
             calcEntryDinCheq();
+        }
+
+        private void txtPorcentDescAVista_TextChanged(object sender, EventArgs e)
+        {
+            calcDesc();
+        }
+
+        private void txtPorcentJuros_TextChanged(object sender, EventArgs e)
+        {
+            calcRate();
         }
     }
 }

@@ -57,6 +57,7 @@
             this.lblValorTotalPago = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.grpEntrada = new System.Windows.Forms.GroupBox();
+            this.btnOkEntrada = new System.Windows.Forms.Button();
             this.txtEntradaCheq = new System.Windows.Forms.TextBox();
             this.lblEntradaCheq = new System.Windows.Forms.Label();
             this.txtEntradaDin = new System.Windows.Forms.TextBox();
@@ -73,7 +74,6 @@
             this.lblValorRestante = new System.Windows.Forms.Label();
             this.lblRestante = new System.Windows.Forms.Label();
             this.btnOkArredondamento = new System.Windows.Forms.Button();
-            this.btnOkEntrada = new System.Windows.Forms.Button();
             this.grpDinheiro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrazoDin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelasDin)).BeginInit();
@@ -393,6 +393,16 @@
             this.grpEntrada.TabStop = false;
             this.grpEntrada.Text = "Valor da Entrada";
             // 
+            // btnOkEntrada
+            // 
+            this.btnOkEntrada.Location = new System.Drawing.Point(197, 64);
+            this.btnOkEntrada.Name = "btnOkEntrada";
+            this.btnOkEntrada.Size = new System.Drawing.Size(40, 26);
+            this.btnOkEntrada.TabIndex = 15;
+            this.btnOkEntrada.Text = "OK";
+            this.btnOkEntrada.UseVisualStyleBackColor = true;
+            this.btnOkEntrada.Click += new System.EventHandler(this.btnOkEntrada_Click);
+            // 
             // txtEntradaCheq
             // 
             this.txtEntradaCheq.Location = new System.Drawing.Point(308, 33);
@@ -439,6 +449,7 @@
             this.txtPorcentDescAVista.Size = new System.Drawing.Size(40, 23);
             this.txtPorcentDescAVista.TabIndex = 4;
             this.txtPorcentDescAVista.Text = "0";
+            this.txtPorcentDescAVista.TextChanged += new System.EventHandler(this.txtPorcentDescAVista_TextChanged);
             this.txtPorcentDescAVista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentDescAVista_KeyPress);
             // 
             // radDesconto
@@ -475,6 +486,7 @@
             this.txtPorcentJuros.Size = new System.Drawing.Size(40, 23);
             this.txtPorcentJuros.TabIndex = 6;
             this.txtPorcentJuros.Text = "0";
+            this.txtPorcentJuros.TextChanged += new System.EventHandler(this.txtPorcentJuros_TextChanged);
             this.txtPorcentJuros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentJuros_KeyPress);
             // 
             // lblExibeValorOS
@@ -556,16 +568,6 @@
             this.btnOkArredondamento.Text = "OK";
             this.btnOkArredondamento.UseVisualStyleBackColor = true;
             this.btnOkArredondamento.Click += new System.EventHandler(this.btnOkArredondamento_Click);
-            // 
-            // btnOkEntrada
-            // 
-            this.btnOkEntrada.Location = new System.Drawing.Point(197, 64);
-            this.btnOkEntrada.Name = "btnOkEntrada";
-            this.btnOkEntrada.Size = new System.Drawing.Size(40, 26);
-            this.btnOkEntrada.TabIndex = 15;
-            this.btnOkEntrada.Text = "OK";
-            this.btnOkEntrada.UseVisualStyleBackColor = true;
-            this.btnOkEntrada.Click += new System.EventHandler(this.btnOkEntrada_Click);
             // 
             // frmPaymentForms
             // 

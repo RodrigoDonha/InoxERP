@@ -38,6 +38,7 @@ namespace UIWindows
         {
             var search = from p in ctx.Budgets_OS where p.sName.StartsWith(txtPesquisa.Text) where p.bServiceOrderApproved.Equals(false) select p;
             
+
             if (search.ToList().Count.Equals(0))
             {
                 txtPesquisa.Clear();
@@ -72,6 +73,7 @@ namespace UIWindows
 
         public void searchByDate()
         {
+            
             var query = from p in ctx.Budgets_OS select p;
 
             if (txtPesquisa.Text == "")
