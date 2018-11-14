@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows.Business;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
+using UIWindows.DTO;
 using UIWindows.Entities;
 using UIWindows.Entities.Enum;
 
@@ -17,6 +19,8 @@ namespace UIWindows
     public partial class frmPaymentForms : Form
     {
         ValidationEntries validation = new ValidationEntries(); // CLASS TO VALIDATE CAMPS
+        
+        public List<DTOPaymentForm> releases { get; set; }
 
         private string id { get; set; } //BRING ID TO SEARCH ON CONTEXT
         
@@ -449,8 +453,8 @@ namespace UIWindows
         {
             switch (type)
             {
-                case "Confirm":
-                    return MessageBox.Show("Confirma a Aprovação do Orçamento e os Lançamentos no Caixa ?", "Apovar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "confirm":
+                    return MessageBox.Show("Confirma a Aprovação do Orçamento e os Lançamentos no Caixa ?", "Aprovar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "valueMax":
                     return MessageBox.Show("O Valor Informado é Maior que o valor do Orçamento, Confirma ?", "Valor Maior", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
@@ -512,9 +516,132 @@ namespace UIWindows
 
         }
 
+        private bool checkValuestoApprove()
+        {
+            decimal valueOS = Convert.ToDecimal(lblExibeValorOS.Text.Replace(".", ","));
+            decimal valuePaied = Convert.ToDecimal(lblValorTotalPago.Text.Replace(".", ","));
+
+            if (valuePaied < valueOS)
+            {
+                MessageBox.Show("***   Valor total do Orçamento ainda NÃO foi pago   ***");
+                return false;
+            }
+            
+            return true;
+
+        }
+
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            if(checkValuestoApprove())
+                if (messageYesNo("confirm") == DialogResult.Yes)
+                    doReleases();
+                else
+                    MessageBox.Show("Orçamento NÃO foi Aprovado, Lançamentos A Receber Cancelados !!!");
+        }
+
+        private void doReleases()
+        {
+            MessageBoxTimer msg = new MessageBoxTimer(); // TITULO , MSG , TIPO , TEMPO
+            msg.Show("Lançamentos","Por Favor Aguarde... Fazendo Lançamentos À Receber ...",0,3000);
+
+            decimal valueOS = Convert.ToDecimal(lblExibeValorOS.Text.Replace(".", ","));
+            decimal valuePaied = Convert.ToDecimal(lblValorTotalPago.Text.Replace(".", ","));
+
+
+            //fillReleases();
+
+
+            //decimal valueRemaing = Convert.ToDecimal(lblValorRestante.Text.Replace(".", ","));
+
+            //if (valueRemaing < 0)
+            //    MessageBox.Show("Valor do Troco: " + (valueRemaing * -1));
+
+        }
+
+        private void cacthValues()
+        {
+            //entrada
+            decimal eDin = Convert.ToDecimal(txtEntradaDin.Text.Replace(".", ","));
+            decimal eCheq = Convert.ToDecimal(txtEntradaCheq.Text.Replace(".", ","));
+
+            //pagtos
+            decimal vDin = 0;
+            decimal vCheq = 0;
+
+            //parcelamentos
+            decimal iDin = nudParcelasDin.Value;
+            decimal iCheq = nudParcelasCheq.Value;
+
+            //primeira parcela
+            decimal ppDin = 0;
+            decimal ppCheq = 0;
+
+            //prazos
+            decimal pDin = nudPrazoDin.Value;
+            decimal pCheq = nudPrazoCheq.Value;
             
+            if (!txtValorDin.Text.Equals("") && !txtValorDin.Text.Equals("0"))
+                vDin = Convert.ToDecimal(txtValorDin.Text.Replace(".", ","));
+
+            if (!txtValorCheq.Text.Equals("") && !txtValorCheq.Text.Equals("0"))
+                vCheq = Convert.ToDecimal(txtValorCheq.Text.Replace(".", ","));
+            
+            if (!txtPrimParcDin.Text.Equals("") && !txtPrimParcDin.Text.Equals("0"))
+                ppDin = Convert.ToDecimal(txtPrimParcDin.Text.Replace(".", ","));
+
+            if (!txtPrimParcCheq.Text.Equals("") && !txtPrimParcCheq.Text.Equals("0"))
+                ppCheq = Convert.ToDecimal(txtPrimParcCheq.Text.Replace(".", ","));
+
+            fillPayment(vDin,iDin,ppDin,pDin,vCheq,iCheq,ppCheq,pCheq);
+
+        }
+
+        private void fillPayment(decimal vDin, decimal iDin, decimal ppDin, decimal pDin, decimal vCheq, decimal iCheq, decimal ppCheq, decimal pCheq)
+        {
+            InoxErpContext ctx = new InoxErpContext();
+            Budgets_OS b = new Budgets_OS();
+            Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
+
+            //criar listas de contas a receber, cheques e caixa entrada
+            //colocar todos ja em seus respectivos lugares
+            
+            b = obj.ReturnByID(id);
+
+
+
+
+
+        }
+
+        private List<AccountsToReceive> fillListReceive(Budgets_OS budget, decimal vDin, decimal iDin, decimal ppDin, decimal pDin)
+        {
+            List<AccountsToReceive> list = new List<AccountsToReceive>();
+            AccountsToReceive receive = new AccountsToReceive();
+
+
+
+            return list;
+        }
+
+        private List<Cheques> fillListCheques(Budgets_OS budget, decimal vCheq, decimal iCheq, decimal ppCheq, decimal pCheq)
+        {
+            List<Cheques> list = new List<Cheques>();
+            Cheques cheque = new Cheques();
+
+
+
+            return list;
+        }
+
+        private List<Cash> fillListCash(Budgets_OS budget, decimal eDin, decimal eCheq)
+        {
+            List<Cash> list = new List<Cash>();
+            Cash cash = new Cash();
+
+
+
+            return list;
         }
 
         private void btnOkDin_Click(object sender, EventArgs e)

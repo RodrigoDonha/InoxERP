@@ -114,7 +114,9 @@
     <Compile Include="Business\Concrete\ServicesBusiness.cs" />
     <Compile Include="Business\Concrete\UsersBusiness.cs" />
     <Compile Include="Business\Concrete\ValidationEntries.cs" />
+    <Compile Include="Business\MessageBoxTimer.cs" />
     <Compile Include="Context\InoxErpContext.cs" />
+    <Compile Include="DTO\DTOPaymentForm.cs" />
     <Compile Include="Entities\AccountsToPay.cs" />
     <Compile Include="Entities\AccountsToReceive.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
@@ -635,9 +637,7 @@
   <ItemGroup>
     <None Include="Resources\Backup.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\if_121_14145.png" />
     <Content Include="SqlServerTypes\readme.htm" />
