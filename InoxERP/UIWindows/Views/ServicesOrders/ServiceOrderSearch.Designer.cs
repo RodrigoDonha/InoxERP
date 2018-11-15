@@ -76,6 +76,7 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.btnGerarContrato = new System.Windows.Forms.Button();
             this.tb_budgets_osTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_budgets_osTableAdapter();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.grpOrdemServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdemServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).BeginInit();
@@ -527,11 +528,23 @@
             // 
             this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(826, 406);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(120, 30);
+            this.btnImprimir.TabIndex = 13;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // frmServiceOrderSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1235, 450);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnGerarContrato);
             this.Controls.Add(this.btnFinlizar);
             this.Controls.Add(this.btnDesaprovar);
@@ -602,5 +615,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn bRegisterFinishedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtDateRegisterFinishedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idClientsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

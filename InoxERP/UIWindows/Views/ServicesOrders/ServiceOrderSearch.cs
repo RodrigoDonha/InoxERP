@@ -12,6 +12,7 @@ using Microsoft.ReportingServices.Interfaces;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Views.ServicesOrders;
 
 namespace UIWindows
 {
@@ -239,9 +240,12 @@ namespace UIWindows
 
         private void frmServiceOrderSearch_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'fullDataSet.tb_budgets_os' table. You can move, or remove it, as needed.
             this.tb_budgets_osTableAdapter.FillByOrderServiceApproved(this.fullDataSet.tb_budgets_os);
+        }
 
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            new ServiceOrdersPrint(getId).Show();
         }
     }
 }

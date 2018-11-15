@@ -213,15 +213,17 @@ namespace UIWindows
 
                 payment.ShowDialog();
 
-                //if (messageYesNo("Approve") == DialogResult.Yes)
-                //{
-                //    budget.bServiceOrderApproved = true;
-                //    budget.dtDateServiceOrderApproved = DateTime.Now;
+                if (messageYesNo("Approve") == DialogResult.Yes)
+                {
+                    budget.bServiceOrderApproved = true;
+                    budget.dtDateServiceOrderApproved = DateTime.Now;
+                    budget.dtStartPrevision = DateTime.Now;
+                    budget.dtFinalPrevision = DateTime.Now.AddDays(budget.iPrevisionOfExecute);
+                    obj.Update(budget);
+                    MessageBox.Show("Aprovado");
+                }
 
-                //    obj.Update(budget);
-                //        MessageBox.Show("Aprovado");}
-
-                //fillDataSet();
+                fillDataSet();
             }
             else
             {

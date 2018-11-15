@@ -312,6 +312,8 @@ namespace InoxERP.UI_Windows_Forms
             {
                 budget.bServiceOrderApproved = true;
                 budget.dtDateServiceOrderApproved = DateTime.Now;
+                budget.dtStartPrevision = DateTime.Now;
+                budget.dtFinalPrevision = DateTime.Now.AddDays(budget.iPrevisionOfExecute);
 
                 obj.Update(budget);
                 MessageBox.Show("Aprovado");
