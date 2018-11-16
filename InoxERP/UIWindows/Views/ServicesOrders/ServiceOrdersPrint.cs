@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using UIWindows.Business.Concrete;
@@ -13,10 +12,18 @@ namespace UIWindows.Views.ServicesOrders
         private string idOS;
         public ServiceOrdersPrint(string id)
         {
-            idOS = id;
             InitializeComponent();
 
-            searchData(idOS);
+            if (id == "")
+            {
+                MessageBox.Show("Você precisa selecionar uma Ordem de Serviço");
+
+                reportViewer1.Dispose();
+            }
+            else
+            {
+                searchData(id);
+            }
         }
 
         private void ServiceOrdersPrint_Load(object sender, EventArgs e)
@@ -53,15 +60,24 @@ namespace UIWindows.Views.ServicesOrders
             FinalPrevision.Name = "FinalPrevision";
             PrevisionOfExecute.Name = "PrevisionOfExecute";
             Observation.Name = "Observation";
-            
+
+            DateTime dateApproved = Convert.ToDateTime(searchBudget.dtDateServiceOrderApproved);
+            DateTime dateStartPrevision = Convert.ToDateTime(searchBudget.dtStartPrevision);
+            DateTime dateFinalPrevision = Convert.ToDateTime(searchBudget.dtFinalPrevision);
+
+            string dateApprovedString = dateApproved.ToShortDateString();
+            string dateStartPrevisionString = dateStartPrevision.ToShortDateString();
+            string dateFinalPrevisionString = dateFinalPrevision.ToShortDateString();
+
             sID.Values.Add(searchBudget.sID);
             Cod.Values.Add(searchBudget.iCod.ToString());
-            DateApproved.Values.Add(searchBudget.dtDateServiceOrderApproved.ToString());
+            DateApproved.Values.Add(dateApprovedString); //ok
             Name.Values.Add(searchBudget.sName);
             Telephone.Values.Add(searchBudget.sTelephone);
+
             PrevisionOfExecute.Values.Add(searchBudget.iPrevisionOfExecute.ToString());
-            StartPrevision.Values.Add(searchBudget.dtStartPrevision.ToShortDateString());
-            FinalPrevision.Values.Add(searchBudget.dtFinalPrevision.ToShortDateString());
+            StartPrevision.Values.Add(dateStartPrevisionString);
+            FinalPrevision.Values.Add(dateFinalPrevisionString);
             Observation.Values.Add(searchBudget.sObservation);
             
             reportViewer1.LocalReport.SetParameters(sID);
