@@ -533,6 +533,7 @@ namespace UIWindows
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            call("din");
             if(checkValuestoApprove())
                 if (messageYesNo("confirm") == DialogResult.Yes)
                     doReleases();
@@ -545,13 +546,11 @@ namespace UIWindows
             MessageBoxTimer msg = new MessageBoxTimer(); // TITULO , MSG , TIPO , TEMPO
             msg.Show("Lançamentos","Por Favor Aguarde... Fazendo Lançamentos À Receber ...",0,3000);
 
-            decimal valueOS = Convert.ToDecimal(lblExibeValorOS.Text.Replace(".", ","));
-            decimal valuePaied = Convert.ToDecimal(lblValorTotalPago.Text.Replace(".", ","));
+           
+            cacthValues();
 
 
-            //fillReleases();
-
-
+            //TROCO: 
             //decimal valueRemaing = Convert.ToDecimal(lblValorRestante.Text.Replace(".", ","));
 
             //if (valueRemaing < 0)
@@ -593,11 +592,11 @@ namespace UIWindows
             if (!txtPrimParcCheq.Text.Equals("") && !txtPrimParcCheq.Text.Equals("0"))
                 ppCheq = Convert.ToDecimal(txtPrimParcCheq.Text.Replace(".", ","));
 
-            fillPayment(vDin,iDin,ppDin,pDin,vCheq,iCheq,ppCheq,pCheq);
+            fillPayment(eDin,vDin,iDin,ppDin,pDin,eCheq,vCheq,iCheq,ppCheq,pCheq);
 
         }
 
-        private void fillPayment(decimal vDin, decimal iDin, decimal ppDin, decimal pDin, decimal vCheq, decimal iCheq, decimal ppCheq, decimal pCheq)
+        private void fillPayment(decimal eDin, decimal vDin, decimal iDin, decimal ppDin, decimal pDin, decimal eCheq, decimal vCheq, decimal iCheq, decimal ppCheq, decimal pCheq)
         {
             InoxErpContext ctx = new InoxErpContext();
             Budgets_OS b = new Budgets_OS();
@@ -608,18 +607,94 @@ namespace UIWindows
             
             b = obj.ReturnByID(id);
 
-
-
-
-
+            List<AccountsToReceive> listReceives = fillListReceive(b,vDin,iDin,ppDin,pDin);
+            List<Cheques> listCheques = fillListCheques(b, vCheq, iCheq, ppCheq, pCheq);
+            List<Cash> listCashs = fillListCash(b, eDin, eCheq);
+            
         }
 
         private List<AccountsToReceive> fillListReceive(Budgets_OS budget, decimal vDin, decimal iDin, decimal ppDin, decimal pDin)
         {
             List<AccountsToReceive> list = new List<AccountsToReceive>();
-            AccountsToReceive receive = new AccountsToReceive();
+            //AccountsToReceive receive = new AccountsToReceive();
 
+            ////this properts don't change:
+            //receive.sId_Budgets_OS = budget.sID;
+            //receive.sId_Client = budget.IdClients;
+            //receive.dtReceiveDate = DateTime.Today;
+            //receive.bReceivePaid = false;
+            //receive.sReferentTo = budget.iCod.ToString();
+            //receive.Budgets_OS = budget;
 
+            //tratar: 1º parcela, tratar qtd de parcelas senao manda parcela unica
+
+            if (iDin == 1)
+            {
+                AccountsToReceive receive = new AccountsToReceive();
+
+                //this properts don't change:
+                receive.sId_Budgets_OS = budget.sID;
+                receive.sId_Client = budget.IdClients;
+                receive.dtReceiveDate = DateTime.Today;
+                receive.bReceivePaid = false;
+                receive.sReferentTo = budget.iCod.ToString();
+                receive.Budgets_OS = budget;
+
+                receive.dValue = vDin;
+                receive.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pDin));
+                receive.iInstallment = Convert.ToInt32(iDin);
+                receive.iAmountInstallment = Convert.ToInt32(iDin);
+
+                list.Add(receive);
+            }else if (iDin > 1)
+            {
+                DateTime due = DateTime.Today;
+                
+                for (int i = 1; i <= iDin; i++)
+                {
+                    if (ppDin > 0)
+                    {
+                        AccountsToReceive receive2 = new AccountsToReceive();
+
+                        //this properts don't change:
+                        receive2.sId_Budgets_OS = budget.sID;
+                        receive2.sId_Client = budget.IdClients;
+                        receive2.dtReceiveDate = DateTime.Today;
+                        receive2.bReceivePaid = false;
+                        receive2.sReferentTo = budget.iCod.ToString();
+                        receive2.Budgets_OS = budget;
+
+                        receive2.dValue = ppDin;
+                        receive2.dtDueDate = due.AddDays(Convert.ToDouble(pDin));
+                        receive2.iInstallment = i;
+                        receive2.iAmountInstallment = Convert.ToInt32(iDin);
+
+                        list.Add(receive2);
+
+                        ppDin = 0;
+                    }else
+                    {
+                        AccountsToReceive receive3 = new AccountsToReceive();
+
+                        //this properts don't change:
+                        receive3.sId_Budgets_OS = budget.sID;
+                        receive3.sId_Client = budget.IdClients;
+                        receive3.dtReceiveDate = DateTime.Today;
+                        receive3.bReceivePaid = false;
+                        receive3.sReferentTo = budget.iCod.ToString();
+                        receive3.Budgets_OS = budget;
+
+                        receive3.dValue = vDin/iDin;
+                        due = due.AddDays(Convert.ToDouble(pDin));
+                        receive3.dtDueDate = due;
+                        receive3.iInstallment = i;
+                        receive3.iAmountInstallment = Convert.ToInt32(iDin);
+
+                        list.Add(receive3);
+                    }
+                }
+            }
+                
 
             return list;
         }
