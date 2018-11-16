@@ -22,8 +22,6 @@ namespace UIWindows.Views.ServicesOrders
         private void ServiceOrdersPrint_Load(object sender, EventArgs e)
         {
             this.tb_itemsTableAdapter.Fill(this.fullDataSet.tb_items);
-            this.tb_budgets_osTableAdapter.Fill(this.fullDataSet.tb_budgets_os);
-
             this.reportViewer1.RefreshReport();
         }
 

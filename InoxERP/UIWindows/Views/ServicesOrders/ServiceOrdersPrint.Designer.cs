@@ -34,13 +34,10 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.fullDataSet = new UIWindows.FullDataSet();
             this.fullDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbbudgetsosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_budgets_osTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_budgets_osTableAdapter();
             this.tbitemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_itemsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_itemsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,15 +67,6 @@
             this.fullDataSetBindingSource.DataSource = this.fullDataSet;
             this.fullDataSetBindingSource.Position = 0;
             // 
-            // tbbudgetsosBindingSource
-            // 
-            this.tbbudgetsosBindingSource.DataMember = "tb_budgets_os";
-            this.tbbudgetsosBindingSource.DataSource = this.fullDataSetBindingSource;
-            // 
-            // tb_budgets_osTableAdapter
-            // 
-            this.tb_budgets_osTableAdapter.ClearBeforeFill = true;
-            // 
             // tbitemsBindingSource
             // 
             this.tbitemsBindingSource.DataMember = "tb_items";
@@ -99,7 +87,6 @@
             this.Load += new System.EventHandler(this.ServiceOrdersPrint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbbudgetsosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbitemsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -110,8 +97,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private FullDataSet fullDataSet;
         private System.Windows.Forms.BindingSource fullDataSetBindingSource;
-        private System.Windows.Forms.BindingSource tbbudgetsosBindingSource;
-        private FullDataSetTableAdapters.tb_budgets_osTableAdapter tb_budgets_osTableAdapter;
         private System.Windows.Forms.BindingSource tbitemsBindingSource;
         private FullDataSetTableAdapters.tb_itemsTableAdapter tb_itemsTableAdapter;
     }
