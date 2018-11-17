@@ -107,8 +107,18 @@ namespace UIWindows
 
         private void btnGerarContrato_Click(object sender, EventArgs e)
         {
-            new frmContract().Show();
-            // implementar quando o Lucas apresentar o contrato
+            getIdGrigView();
+            if (dgvOrdemServico.CurrentRow != null)
+            {
+                if (messageYesNo("CreateContract") == DialogResult.Yes)
+                {
+                    new frmContract(getId).Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível selecionar a Ordem de Serviço, tente selecionar novamente.");
+            }
         }
 
         private void grdOrdemServico_Click(object sender, EventArgs e)
@@ -228,6 +238,8 @@ namespace UIWindows
                     return MessageBox.Show("Confirma a Desaprovação deste orçamento?", "Ordem de Serviço", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Finished":
                     return MessageBox.Show("Confirma a Finalização do Serviço?", "Finalizar Serviço", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "CreateContract":
+                    return MessageBox.Show("Confirma a Geração do Contrato?", "Gerar Contrato", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
         }
