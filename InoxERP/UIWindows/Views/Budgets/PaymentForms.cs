@@ -20,8 +20,6 @@ namespace UIWindows
     {
         ValidationEntries validation = new ValidationEntries(); // CLASS TO VALIDATE CAMPS
         
-        public List<DTOPaymentForm> releases { get; set; }
-
         private string id { get; set; } //BRING ID TO SEARCH ON CONTEXT
         
         //LOAD FORM
@@ -536,7 +534,10 @@ namespace UIWindows
             call("din");
             if(checkValuestoApprove())
                 if (messageYesNo("confirm") == DialogResult.Yes)
+                {
                     doReleases();
+                    Dispose();
+                }
                 else
                     MessageBox.Show("Orçamento NÃO foi Aprovado, Lançamentos A Receber Cancelados !!!");
         }
@@ -545,17 +546,15 @@ namespace UIWindows
         {
             MessageBoxTimer msg = new MessageBoxTimer(); // TITULO , MSG , TIPO , TEMPO
             msg.Show("Lançamentos","Por Favor Aguarde... Fazendo Lançamentos À Receber ...",0,3000);
-
            
             cacthValues();
 
+            decimal valueRemaing = Convert.ToDecimal(lblValorRestante.Text.Replace(".", ","));
 
-            //TROCO: 
-            //decimal valueRemaing = Convert.ToDecimal(lblValorRestante.Text.Replace(".", ","));
+            if (valueRemaing < 0)
+                msg.Show("Troco do Cliente","Valor do Troco: " + (valueRemaing * -1),0,5000);
 
-            //if (valueRemaing < 0)
-            //    MessageBox.Show("Valor do Troco: " + (valueRemaing * -1));
-
+            msg.Show("Aprovação de Orçamento", "Orçamento Aprovado e Lançamentos Concluidos", 0, 5000);
         }
 
         private void cacthValues()
@@ -600,91 +599,103 @@ namespace UIWindows
         {
             InoxErpContext ctx = new InoxErpContext();
             Budgets_OS b = new Budgets_OS();
-            Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
-
-            //criar listas de contas a receber, cheques e caixa entrada
-            //colocar todos ja em seus respectivos lugares
+            Budget_OSBusiness objBud = new Budget_OSBusiness(ctx);
             
-            b = obj.ReturnByID(id);
+            b = objBud.ReturnByID(id);
 
+            AccountsToReceiveBusiness objAcr = new AccountsToReceiveBusiness(ctx);
+            ChequesBusiness objChq = new ChequesBusiness(ctx);
+            CashBusiness objCash = new CashBusiness(ctx);
+
+            List<Cash> listCashs = fillListCash(b, eDin, eCheq);
             List<AccountsToReceive> listReceives = fillListReceive(b,vDin,iDin,ppDin,pDin);
             List<Cheques> listCheques = fillListCheques(b, vCheq, iCheq, ppCheq, pCheq);
-            List<Cash> listCashs = fillListCash(b, eDin, eCheq);
+
+            if (listCashs.Count > 0)
+                foreach (var cash in listCashs)
+                    objCash.Insert(cash);
+
+            if (listReceives.Count > 0)
+                foreach (var receive in listReceives)
+                    objAcr.Insert(receive);
+
+            if (listCheques.Count > 0)
+                foreach (var cheque in listCheques)
+                    objChq.Insert(cheque);
             
+            b.bServiceOrderApproved = true;
+            b.dtDateServiceOrderApproved = DateTime.Now;
+            b.dtStartPrevision = DateTime.Now;
+            b.dtFinalPrevision = DateTime.Now.AddDays(b.iPrevisionOfExecute);
+            objBud.Update(b);
         }
 
         private List<AccountsToReceive> fillListReceive(Budgets_OS budget, decimal vDin, decimal iDin, decimal ppDin, decimal pDin)
         {
             List<AccountsToReceive> list = new List<AccountsToReceive>();
-            //AccountsToReceive receive = new AccountsToReceive();
-
-            ////this properts don't change:
-            //receive.sId_Budgets_OS = budget.sID;
-            //receive.sId_Client = budget.IdClients;
-            //receive.dtReceiveDate = DateTime.Today;
-            //receive.bReceivePaid = false;
-            //receive.sReferentTo = budget.iCod.ToString();
-            //receive.Budgets_OS = budget;
-
-            //tratar: 1º parcela, tratar qtd de parcelas senao manda parcela unica
-
+            
             if (iDin == 1)
             {
-                AccountsToReceive receive = new AccountsToReceive();
+                AccountsToReceive receive1 = new AccountsToReceive();
 
-                //this properts don't change:
-                receive.sId_Budgets_OS = budget.sID;
-                receive.sId_Client = budget.IdClients;
-                receive.dtReceiveDate = DateTime.Today;
-                receive.bReceivePaid = false;
-                receive.sReferentTo = budget.iCod.ToString();
-                receive.Budgets_OS = budget;
+                receive1.sID = Guid.NewGuid().ToString();
 
-                receive.dValue = vDin;
-                receive.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pDin));
-                receive.iInstallment = Convert.ToInt32(iDin);
-                receive.iAmountInstallment = Convert.ToInt32(iDin);
+                receive1.sId_Budgets_OS = budget.sID;
+                receive1.sId_Client = budget.IdClients;
+                receive1.dtReceiveDate = DateTime.Now;
+                receive1.bReceivePaid = false;
+                receive1.sReferentTo = budget.iCod.ToString();
+                receive1.Budgets_OS = budget;
 
-                list.Add(receive);
+                receive1.dValue = vDin;
+                receive1.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pDin));
+                receive1.iInstallment = Convert.ToInt32(iDin);
+                receive1.iAmountInstallment = Convert.ToInt32(iDin);
+
+                list.Add(receive1);
             }else if (iDin > 1)
             {
                 DateTime due = DateTime.Today;
-                
+                decimal ppDinAux = ppDin;
+
                 for (int i = 1; i <= iDin; i++)
                 {
-                    if (ppDin > 0)
+                    if (ppDinAux > 0)
                     {
                         AccountsToReceive receive2 = new AccountsToReceive();
 
-                        //this properts don't change:
+                        receive2.sID = Guid.NewGuid().ToString();
+
                         receive2.sId_Budgets_OS = budget.sID;
                         receive2.sId_Client = budget.IdClients;
-                        receive2.dtReceiveDate = DateTime.Today;
+                        receive2.dtReceiveDate = DateTime.Now;
                         receive2.bReceivePaid = false;
                         receive2.sReferentTo = budget.iCod.ToString();
                         receive2.Budgets_OS = budget;
 
                         receive2.dValue = ppDin;
-                        receive2.dtDueDate = due.AddDays(Convert.ToDouble(pDin));
+                        due = due.AddDays(Convert.ToDouble(pDin));
+                        receive2.dtDueDate = due;
                         receive2.iInstallment = i;
                         receive2.iAmountInstallment = Convert.ToInt32(iDin);
 
                         list.Add(receive2);
 
-                        ppDin = 0;
+                        ppDinAux = 0;
                     }else
                     {
                         AccountsToReceive receive3 = new AccountsToReceive();
 
-                        //this properts don't change:
+                        receive3.sID = Guid.NewGuid().ToString();
+
                         receive3.sId_Budgets_OS = budget.sID;
                         receive3.sId_Client = budget.IdClients;
-                        receive3.dtReceiveDate = DateTime.Today;
+                        receive3.dtReceiveDate = DateTime.Now;
                         receive3.bReceivePaid = false;
                         receive3.sReferentTo = budget.iCod.ToString();
                         receive3.Budgets_OS = budget;
 
-                        receive3.dValue = vDin/iDin;
+                        receive3.dValue = (vDin-ppDin)/iDin;
                         due = due.AddDays(Convert.ToDouble(pDin));
                         receive3.dtDueDate = due;
                         receive3.iInstallment = i;
@@ -694,7 +705,6 @@ namespace UIWindows
                     }
                 }
             }
-                
 
             return list;
         }
@@ -702,9 +712,80 @@ namespace UIWindows
         private List<Cheques> fillListCheques(Budgets_OS budget, decimal vCheq, decimal iCheq, decimal ppCheq, decimal pCheq)
         {
             List<Cheques> list = new List<Cheques>();
-            Cheques cheque = new Cheques();
 
+            if (iCheq == 1)
+            {
+                Cheques cheque1 = new Cheques();
 
+                cheque1.sID = Guid.NewGuid().ToString();
+
+                cheque1.sId_Budgets_OS = budget.sID;
+                cheque1.sId_Client = budget.IdClients;
+                cheque1.dtPayDate = DateTime.Now;
+                cheque1.bChequePaid = false;
+                cheque1.sChequeNumber = "0";
+                cheque1.sReferentTo = budget.iCod.ToString();
+
+                cheque1.dValue = vCheq;
+                cheque1.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pCheq));
+                cheque1.iInstallment = Convert.ToInt32(iCheq);
+                cheque1.iAmountInstallment = Convert.ToInt32(iCheq);
+
+                list.Add(cheque1);
+            }
+            else if (iCheq > 1)
+            {
+                DateTime due = DateTime.Today;
+                decimal ppCheqAux = ppCheq;
+
+                for (int i = 1; i <= iCheq; i++)
+                {
+                    if (ppCheqAux > 0)
+                    {
+                        Cheques cheque2 = new Cheques();
+
+                        cheque2.sID = Guid.NewGuid().ToString();
+                        
+                        cheque2.sId_Budgets_OS = budget.sID;
+                        cheque2.sId_Client = budget.IdClients;
+                        cheque2.dtPayDate = DateTime.Now;
+                        cheque2.bChequePaid = false;
+                        cheque2.sChequeNumber = "0";
+                        cheque2.sReferentTo = budget.iCod.ToString();
+
+                        cheque2.dValue = ppCheq;
+                        due = due.AddDays(Convert.ToDouble(pCheq));
+                        cheque2.dtDueDate = due;
+                        cheque2.iInstallment = i;
+                        cheque2.iAmountInstallment = Convert.ToInt32(iCheq);
+
+                        list.Add(cheque2);
+
+                        ppCheqAux = 0;
+                    }
+                    else
+                    {
+                        Cheques cheque3 = new Cheques();
+
+                        cheque3.sID = Guid.NewGuid().ToString();
+                        
+                        cheque3.sId_Budgets_OS = budget.sID;
+                        cheque3.sId_Client = budget.IdClients;
+                        cheque3.dtPayDate = DateTime.Now;
+                        cheque3.bChequePaid = false;
+                        cheque3.sChequeNumber = "0";
+                        cheque3.sReferentTo = budget.iCod.ToString();
+
+                        cheque3.dValue = (vCheq - ppCheq) / iCheq;
+                        due = due.AddDays(Convert.ToDouble(pCheq));
+                        cheque3.dtDueDate = due;
+                        cheque3.iInstallment = i;
+                        cheque3.iAmountInstallment = Convert.ToInt32(iCheq);
+
+                        list.Add(cheque3);
+                    }
+                }
+            }
 
             return list;
         }
@@ -712,9 +793,38 @@ namespace UIWindows
         private List<Cash> fillListCash(Budgets_OS budget, decimal eDin, decimal eCheq)
         {
             List<Cash> list = new List<Cash>();
-            Cash cash = new Cash();
 
+            if (eDin > 0)
+            {
+                Cash cash1 = new Cash();
 
+                cash1.sID = Guid.NewGuid().ToString();
+
+                cash1.sId_Budgets_OS = budget.sID;
+                cash1.sId_Client = budget.IdClients;
+                cash1.dValue = eDin;
+                cash1.dtDate = DateTime.Now;
+                cash1.sReferentTo = budget.iCod.ToString();
+                cash1.CashType = CashType.Enter;
+
+                list.Add(cash1);
+            }
+
+            if (eCheq > 0)
+            {
+                Cash cash2 = new Cash();
+
+                cash2.sID = Guid.NewGuid().ToString();
+
+                cash2.sId_Budgets_OS = budget.sID;
+                cash2.sId_Client = budget.IdClients;
+                cash2.dValue = eCheq;
+                cash2.dtDate = DateTime.Now;
+                cash2.sReferentTo = budget.iCod.ToString();
+                cash2.CashType = CashType.Enter;
+
+                list.Add(cash2);
+            }
 
             return list;
         }

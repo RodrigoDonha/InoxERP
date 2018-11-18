@@ -24,5 +24,12 @@ namespace UIWindows
         {
             validation.characterValidatorOnlyNumbers(sender, e);
         }
+
+        private void frmCashEntry_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'fullDataSet.tb_cash' table. You can move, or remove it, as needed.
+            this.tb_cashTableAdapter.FillByCashEntry(this.fullDataSet.tb_cash);
+
+        }
     }
 }

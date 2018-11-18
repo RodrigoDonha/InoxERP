@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCashEntry));
             this.lblEntradas = new System.Windows.Forms.Label();
             this.lblReferenteA = new System.Windows.Forms.Label();
@@ -47,7 +48,21 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtNumCheque = new System.Windows.Forms.TextBox();
+            this.lblNumeroCheque = new System.Windows.Forms.Label();
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.tbcashBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_cashTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cashTableAdapter();
+            this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sReferentToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdEntradas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEntradas
@@ -64,7 +79,7 @@
             // lblReferenteA
             // 
             this.lblReferenteA.AutoSize = true;
-            this.lblReferenteA.Location = new System.Drawing.Point(12, 160);
+            this.lblReferenteA.Location = new System.Drawing.Point(12, 195);
             this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReferenteA.Name = "lblReferenteA";
             this.lblReferenteA.Size = new System.Drawing.Size(91, 17);
@@ -93,8 +108,18 @@
             // 
             // grdEntradas
             // 
+            this.grdEntradas.AutoGenerateColumns = false;
             this.grdEntradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdEntradas.Location = new System.Drawing.Point(15, 240);
+            this.grdEntradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sIDDataGridViewTextBoxColumn,
+            this.sIdBudgetsOSDataGridViewTextBoxColumn,
+            this.sIdClientDataGridViewTextBoxColumn,
+            this.dValueDataGridViewTextBoxColumn,
+            this.dtDateDataGridViewTextBoxColumn,
+            this.sReferentToDataGridViewTextBoxColumn,
+            this.cashTypeDataGridViewTextBoxColumn});
+            this.grdEntradas.DataSource = this.tbcashBindingSource;
+            this.grdEntradas.Location = new System.Drawing.Point(13, 264);
             this.grdEntradas.Margin = new System.Windows.Forms.Padding(4);
             this.grdEntradas.Name = "grdEntradas";
             this.grdEntradas.Size = new System.Drawing.Size(469, 185);
@@ -103,20 +128,20 @@
             // dtpData
             // 
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(361, 116);
+            this.dtpData.Location = new System.Drawing.Point(367, 116);
             this.dtpData.Margin = new System.Windows.Forms.Padding(4);
             this.dtpData.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(123, 23);
+            this.dtpData.Size = new System.Drawing.Size(115, 23);
             this.dtpData.TabIndex = 5;
             // 
             // txtReferenteA
             // 
-            this.txtReferenteA.Location = new System.Drawing.Point(103, 156);
+            this.txtReferenteA.Location = new System.Drawing.Point(103, 192);
             this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
             this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
-            this.txtReferenteA.Size = new System.Drawing.Size(381, 23);
+            this.txtReferenteA.Size = new System.Drawing.Size(379, 23);
             this.txtReferenteA.TabIndex = 6;
             // 
             // txtValor
@@ -131,7 +156,7 @@
             // 
             // btnIncluir
             // 
-            this.btnIncluir.Location = new System.Drawing.Point(16, 203);
+            this.btnIncluir.Location = new System.Drawing.Point(14, 227);
             this.btnIncluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(100, 28);
@@ -141,7 +166,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(200, 203);
+            this.btnAlterar.Location = new System.Drawing.Point(198, 227);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 28);
@@ -151,12 +176,12 @@
             // 
             // btnEstornar
             // 
-            this.btnEstornar.Location = new System.Drawing.Point(386, 203);
+            this.btnEstornar.Location = new System.Drawing.Point(377, 227);
             this.btnEstornar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEstornar.Name = "btnEstornar";
-            this.btnEstornar.Size = new System.Drawing.Size(100, 28);
+            this.btnEstornar.Size = new System.Drawing.Size(105, 28);
             this.btnEstornar.TabIndex = 11;
-            this.btnEstornar.Text = "Estornar";
+            this.btnEstornar.Text = "Excluir";
             this.btnEstornar.UseVisualStyleBackColor = true;
             // 
             // lblCodigo
@@ -222,16 +247,102 @@
             this.button1.Location = new System.Drawing.Point(386, 76);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(96, 28);
             this.button1.TabIndex = 18;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtNumCheque
+            // 
+            this.txtNumCheque.Location = new System.Drawing.Point(103, 157);
+            this.txtNumCheque.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumCheque.MaxLength = 33;
+            this.txtNumCheque.Name = "txtNumCheque";
+            this.txtNumCheque.Size = new System.Drawing.Size(379, 23);
+            this.txtNumCheque.TabIndex = 68;
+            // 
+            // lblNumeroCheque
+            // 
+            this.lblNumeroCheque.AutoSize = true;
+            this.lblNumeroCheque.Location = new System.Drawing.Point(14, 160);
+            this.lblNumeroCheque.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumeroCheque.Name = "lblNumeroCheque";
+            this.lblNumeroCheque.Size = new System.Drawing.Size(84, 17);
+            this.lblNumeroCheque.TabIndex = 67;
+            this.lblNumeroCheque.Text = "Nº Cheque: ";
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbcashBindingSource
+            // 
+            this.tbcashBindingSource.DataMember = "tb_cash";
+            this.tbcashBindingSource.DataSource = this.fullDataSet;
+            // 
+            // tb_cashTableAdapter
+            // 
+            this.tb_cashTableAdapter.ClearBeforeFill = true;
+            // 
+            // sIDDataGridViewTextBoxColumn
+            // 
+            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
+            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
+            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
+            this.sIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sIdBudgetsOSDataGridViewTextBoxColumn
+            // 
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.DataPropertyName = "sId_Budgets_OS";
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.HeaderText = "sId_Budgets_OS";
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.Name = "sIdBudgetsOSDataGridViewTextBoxColumn";
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sIdClientDataGridViewTextBoxColumn
+            // 
+            this.sIdClientDataGridViewTextBoxColumn.DataPropertyName = "sId_Client";
+            this.sIdClientDataGridViewTextBoxColumn.HeaderText = "sId_Client";
+            this.sIdClientDataGridViewTextBoxColumn.Name = "sIdClientDataGridViewTextBoxColumn";
+            this.sIdClientDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dValueDataGridViewTextBoxColumn
+            // 
+            this.dValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dValueDataGridViewTextBoxColumn.DataPropertyName = "dValue";
+            this.dValueDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.dValueDataGridViewTextBoxColumn.Name = "dValueDataGridViewTextBoxColumn";
+            // 
+            // dtDateDataGridViewTextBoxColumn
+            // 
+            this.dtDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dtDateDataGridViewTextBoxColumn.DataPropertyName = "dtDate";
+            this.dtDateDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dtDateDataGridViewTextBoxColumn.Name = "dtDateDataGridViewTextBoxColumn";
+            this.dtDateDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // sReferentToDataGridViewTextBoxColumn
+            // 
+            this.sReferentToDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sReferentToDataGridViewTextBoxColumn.DataPropertyName = "sReferentTo";
+            this.sReferentToDataGridViewTextBoxColumn.HeaderText = "Referente";
+            this.sReferentToDataGridViewTextBoxColumn.Name = "sReferentToDataGridViewTextBoxColumn";
+            this.sReferentToDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // cashTypeDataGridViewTextBoxColumn
+            // 
+            this.cashTypeDataGridViewTextBoxColumn.DataPropertyName = "CashType";
+            this.cashTypeDataGridViewTextBoxColumn.HeaderText = "CashType";
+            this.cashTypeDataGridViewTextBoxColumn.Name = "cashTypeDataGridViewTextBoxColumn";
+            this.cashTypeDataGridViewTextBoxColumn.Visible = false;
             // 
             // frmCashEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 437);
+            this.ClientSize = new System.Drawing.Size(499, 462);
+            this.Controls.Add(this.txtNumCheque);
+            this.Controls.Add(this.lblNumeroCheque);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
@@ -256,7 +367,10 @@
             this.Name = "frmCashEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa Entradas";
+            this.Load += new System.EventHandler(this.frmCashEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdEntradas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,5 +396,17 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtNumCheque;
+        private System.Windows.Forms.Label lblNumeroCheque;
+        private FullDataSet fullDataSet;
+        private System.Windows.Forms.BindingSource tbcashBindingSource;
+        private FullDataSetTableAdapters.tb_cashTableAdapter tb_cashTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sIdBudgetsOSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sIdClientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dValueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sReferentToDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cashTypeDataGridViewTextBoxColumn;
     }
 }
