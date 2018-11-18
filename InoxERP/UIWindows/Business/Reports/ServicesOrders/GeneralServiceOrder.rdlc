@@ -820,6 +820,27 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>GeneralDataSet</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!dtDate.Value</FilterExpression>
+                <Operator>GreaterThanOrEqual</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!startDate.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+              <Filter>
+                <FilterExpression>=Fields!dtDate.Value</FilterExpression>
+                <Operator>LessThanOrEqual</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!endDate.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!dtDate.Value</Value>
+              </SortExpression>
+            </SortExpressions>
             <Top>0.3175cm</Top>
             <Left>0.22755cm</Left>
             <Height>1.67624cm</Height>

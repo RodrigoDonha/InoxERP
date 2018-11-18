@@ -428,3 +428,4 @@ C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.
 C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csproj.CopyComplete
 C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.exe
 C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.pdb
+C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.ServicesOrders.GeneralServiceOrdersReportcs.resources

@@ -38,7 +38,7 @@
             this.grpTipo = new System.Windows.Forms.GroupBox();
             this.radGeral = new System.Windows.Forms.RadioButton();
             this.radFinalizadas = new System.Windows.Forms.RadioButton();
-            this.radEmAberto = new System.Windows.Forms.RadioButton();
+            this.radEmAndamento = new System.Windows.Forms.RadioButton();
             this.grpPeriodo.SuspendLayout();
             this.grpTipo.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +52,7 @@
             this.btnGerar.TabIndex = 5;
             this.btnGerar.Text = "Gerar";
             this.btnGerar.UseVisualStyleBackColor = true;
+            this.btnGerar.Click += new System.EventHandler(this.btnGerar_Click);
             // 
             // dtpFim
             // 
@@ -106,7 +107,7 @@
             // 
             this.grpTipo.Controls.Add(this.radGeral);
             this.grpTipo.Controls.Add(this.radFinalizadas);
-            this.grpTipo.Controls.Add(this.radEmAberto);
+            this.grpTipo.Controls.Add(this.radEmAndamento);
             this.grpTipo.Location = new System.Drawing.Point(12, 12);
             this.grpTipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpTipo.Name = "grpTipo";
@@ -140,17 +141,17 @@
             this.radFinalizadas.Text = "Finalizadas";
             this.radFinalizadas.UseVisualStyleBackColor = true;
             // 
-            // radEmAberto
+            // radEmAndamento
             // 
-            this.radEmAberto.AutoSize = true;
-            this.radEmAberto.Location = new System.Drawing.Point(25, 62);
-            this.radEmAberto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radEmAberto.Name = "radEmAberto";
-            this.radEmAberto.Size = new System.Drawing.Size(122, 21);
-            this.radEmAberto.TabIndex = 0;
-            this.radEmAberto.TabStop = true;
-            this.radEmAberto.Text = "Em Andamento";
-            this.radEmAberto.UseVisualStyleBackColor = true;
+            this.radEmAndamento.AutoSize = true;
+            this.radEmAndamento.Location = new System.Drawing.Point(25, 62);
+            this.radEmAndamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radEmAndamento.Name = "radEmAndamento";
+            this.radEmAndamento.Size = new System.Drawing.Size(122, 21);
+            this.radEmAndamento.TabIndex = 0;
+            this.radEmAndamento.TabStop = true;
+            this.radEmAndamento.Text = "Em Andamento";
+            this.radEmAndamento.UseVisualStyleBackColor = true;
             // 
             // frmReportServicesOrder
             // 
@@ -185,6 +186,6 @@
         private System.Windows.Forms.GroupBox grpTipo;
         private System.Windows.Forms.RadioButton radGeral;
         private System.Windows.Forms.RadioButton radFinalizadas;
-        private System.Windows.Forms.RadioButton radEmAberto;
+        private System.Windows.Forms.RadioButton radEmAndamento;
     }
 }
