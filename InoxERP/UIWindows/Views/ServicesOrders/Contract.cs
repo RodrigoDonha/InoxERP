@@ -32,6 +32,8 @@ namespace UIWindows
             InitializeComponent();
 
             getData();
+            ClickContractOfObject();
+            btnProximo.Text = "Próximo";
         }
 
         public void getData()
@@ -75,16 +77,64 @@ namespace UIWindows
                 txtCidadeC.Text = cli.sCity;
                 cbxEstate.Text = cli.Estate.ToString();
             }
+            else
+            {
+                txtNomeC.Text = searchBudget.sName;
+                txtEnderecoC.Text = searchBudget.sAdress;                
+            }
 
             txtDescription.Text = searchBudget.sObservation;
             txtValores.Text = searchBudget.dTotal.ToString();
             txtValores1.Text = searchBudget.dTotal.ToString();
             txtPrazoGarantia.Text = searchBudget.iWarrantyTime.ToString();
+            txtPrazo1.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
+            txtPrazo2.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
+        }
+
+        public void ConfirmPositionTab()
+        {
+            if (tabControl1.SelectedTab == tabPage1)
+            {
+                btnProximo.Text = "Próximo";
+                tabControl1.SelectedTab = tabPage2;
+                
+            } else if(tabControl1.SelectedTab == tabPage2)
+            {
+                btnProximo.Text = "Próximo";
+                tabControl1.SelectedTab = tabPage3;
+            } else if (tabControl1.SelectedTab == tabPage3)
+            {
+                btnProximo.Text = "Gravar";
+                tabControl1.SelectedTab = tabPage4;
+            }else if (tabControl1.SelectedTab == tabPage4)
+            {
+                // implementar aqui o gravar contrato
+            }
+        }
+
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            ConfirmPositionTab();
         }
 
         private void tabControl1_Click(object sender, EventArgs e)
         {
-            ClickContractOfObject();
+            if (tabControl1.SelectedTab == tabPage1)
+            {
+                btnProximo.Text = "Próximo";
+            }
+            if (tabControl1.SelectedTab == tabPage2)
+            {
+                btnProximo.Text = "Próximo";
+            }
+            if (tabControl1.SelectedTab == tabPage3)
+            {
+                btnProximo.Text = "Próximo";
+            }
+            if (tabControl1.SelectedTab == tabPage4)
+            {
+                btnProximo.Text = "Gravar";
+            }
         }
     }
 }

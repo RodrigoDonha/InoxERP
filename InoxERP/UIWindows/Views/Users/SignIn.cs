@@ -27,14 +27,14 @@ namespace UIWindows
             user.sKey = UserBusiness.getMD5Hash(txtSenha.Text); // ____JR@2018***
             //user.sKey = txtSenha.Text; // ____JR@2018***
 
-            if (user.sLogin == "test" && user.sKey == "EA44959B528B2DE4D143BEABB30970BE")
+            if (user.sLogin == "test" && user.sKey == "59B84304F8CF23B9B294B66E53E2D8F6")
             //if (user.sLogin == "test" && user.sKey == "____JR@2018***")
             {
                 MessageBox.Show("Logged as TEST");
 
                 user.sName = "test";
                 user.sLogin = "test";
-                user.sKey = "EA44959B528B2DE4D143BEABB30970BE";
+                user.sKey = "59B84304F8CF23B9B294B66E53E2D8F6";
                 //user.sKey = "____JR@2018***";
                 user.Type = UserType.Admin;
                 log = true;
