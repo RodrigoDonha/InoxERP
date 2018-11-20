@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaymentForms));
             this.grpDinheiro = new System.Windows.Forms.GroupBox();
-            this.btnOkDin = new System.Windows.Forms.Button();
             this.txtPrimParcDin = new System.Windows.Forms.TextBox();
             this.lblPrimParcDin = new System.Windows.Forms.Label();
             this.nudPrazoDin = new System.Windows.Forms.NumericUpDown();
@@ -42,7 +41,6 @@
             this.txtValorDin = new System.Windows.Forms.TextBox();
             this.lblValorDin = new System.Windows.Forms.Label();
             this.grpCheque = new System.Windows.Forms.GroupBox();
-            this.btnOkCheq = new System.Windows.Forms.Button();
             this.txtPrimParcCheq = new System.Windows.Forms.TextBox();
             this.lblPrimParcCheq = new System.Windows.Forms.Label();
             this.nudPrazoCheq = new System.Windows.Forms.NumericUpDown();
@@ -57,7 +55,6 @@
             this.lblValorTotalPago = new System.Windows.Forms.Label();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.grpEntrada = new System.Windows.Forms.GroupBox();
-            this.btnOkEntrada = new System.Windows.Forms.Button();
             this.txtEntradaCheq = new System.Windows.Forms.TextBox();
             this.lblEntradaCheq = new System.Windows.Forms.Label();
             this.txtEntradaDin = new System.Windows.Forms.TextBox();
@@ -73,7 +70,6 @@
             this.chkLimpar = new System.Windows.Forms.CheckBox();
             this.lblValorRestante = new System.Windows.Forms.Label();
             this.lblRestante = new System.Windows.Forms.Label();
-            this.btnOkArredondamento = new System.Windows.Forms.Button();
             this.grpDinheiro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrazoDin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelasDin)).BeginInit();
@@ -85,7 +81,6 @@
             // 
             // grpDinheiro
             // 
-            this.grpDinheiro.Controls.Add(this.btnOkDin);
             this.grpDinheiro.Controls.Add(this.txtPrimParcDin);
             this.grpDinheiro.Controls.Add(this.lblPrimParcDin);
             this.grpDinheiro.Controls.Add(this.nudPrazoDin);
@@ -96,24 +91,14 @@
             this.grpDinheiro.Controls.Add(this.lblParcelasDin);
             this.grpDinheiro.Controls.Add(this.txtValorDin);
             this.grpDinheiro.Controls.Add(this.lblValorDin);
-            this.grpDinheiro.Location = new System.Drawing.Point(12, 254);
+            this.grpDinheiro.Location = new System.Drawing.Point(12, 232);
             this.grpDinheiro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpDinheiro.Name = "grpDinheiro";
             this.grpDinheiro.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpDinheiro.Size = new System.Drawing.Size(210, 221);
+            this.grpDinheiro.Size = new System.Drawing.Size(210, 195);
             this.grpDinheiro.TabIndex = 18;
             this.grpDinheiro.TabStop = false;
             this.grpDinheiro.Text = "Pagamento em Dinheiro";
-            // 
-            // btnOkDin
-            // 
-            this.btnOkDin.Location = new System.Drawing.Point(83, 189);
-            this.btnOkDin.Name = "btnOkDin";
-            this.btnOkDin.Size = new System.Drawing.Size(45, 26);
-            this.btnOkDin.TabIndex = 29;
-            this.btnOkDin.Text = "OK";
-            this.btnOkDin.UseVisualStyleBackColor = true;
-            this.btnOkDin.Click += new System.EventHandler(this.btnOkDin_Click);
             // 
             // txtPrimParcDin
             // 
@@ -123,6 +108,7 @@
             this.txtPrimParcDin.Size = new System.Drawing.Size(100, 23);
             this.txtPrimParcDin.TabIndex = 26;
             this.txtPrimParcDin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimParcDin_KeyPress);
+            this.txtPrimParcDin.Leave += new System.EventHandler(this.txtPrimParcDin_Leave);
             // 
             // lblPrimParcDin
             // 
@@ -187,6 +173,8 @@
             0,
             0,
             0});
+            this.nudParcelasDin.ValueChanged += new System.EventHandler(this.nudParcelasDin_ValueChanged);
+            this.nudParcelasDin.Leave += new System.EventHandler(this.nudParcelasDin_Leave);
             // 
             // lblParcelasDin
             // 
@@ -205,6 +193,7 @@
             this.txtValorDin.Size = new System.Drawing.Size(100, 23);
             this.txtValorDin.TabIndex = 20;
             this.txtValorDin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorDin_KeyPress);
+            this.txtValorDin.Leave += new System.EventHandler(this.txtValorDin_Leave);
             // 
             // lblValorDin
             // 
@@ -217,7 +206,6 @@
             // 
             // grpCheque
             // 
-            this.grpCheque.Controls.Add(this.btnOkCheq);
             this.grpCheque.Controls.Add(this.txtPrimParcCheq);
             this.grpCheque.Controls.Add(this.lblPrimParcCheq);
             this.grpCheque.Controls.Add(this.nudPrazoCheq);
@@ -228,24 +216,14 @@
             this.grpCheque.Controls.Add(this.lblParcelasCheq);
             this.grpCheque.Controls.Add(this.txtValorCheq);
             this.grpCheque.Controls.Add(this.lblValorCheq);
-            this.grpCheque.Location = new System.Drawing.Point(237, 254);
+            this.grpCheque.Location = new System.Drawing.Point(237, 232);
             this.grpCheque.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpCheque.Name = "grpCheque";
             this.grpCheque.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpCheque.Size = new System.Drawing.Size(210, 221);
+            this.grpCheque.Size = new System.Drawing.Size(210, 195);
             this.grpCheque.TabIndex = 30;
             this.grpCheque.TabStop = false;
             this.grpCheque.Text = "Pagamento em Cheque";
-            // 
-            // btnOkCheq
-            // 
-            this.btnOkCheq.Location = new System.Drawing.Point(83, 189);
-            this.btnOkCheq.Name = "btnOkCheq";
-            this.btnOkCheq.Size = new System.Drawing.Size(45, 26);
-            this.btnOkCheq.TabIndex = 41;
-            this.btnOkCheq.Text = "OK";
-            this.btnOkCheq.UseVisualStyleBackColor = true;
-            this.btnOkCheq.Click += new System.EventHandler(this.btnOkCheq_Click);
             // 
             // txtPrimParcCheq
             // 
@@ -255,6 +233,7 @@
             this.txtPrimParcCheq.Size = new System.Drawing.Size(100, 23);
             this.txtPrimParcCheq.TabIndex = 38;
             this.txtPrimParcCheq.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimParcCheq_KeyPress);
+            this.txtPrimParcCheq.Leave += new System.EventHandler(this.txtPrimParcCheq_Leave);
             // 
             // lblPrimParcCheq
             // 
@@ -319,6 +298,8 @@
             0,
             0,
             0});
+            this.nudParcelasCheq.ValueChanged += new System.EventHandler(this.nudParcelasCheq_ValueChanged);
+            this.nudParcelasCheq.Leave += new System.EventHandler(this.nudParcelasCheq_Leave);
             // 
             // lblParcelasCheq
             // 
@@ -337,6 +318,7 @@
             this.txtValorCheq.Size = new System.Drawing.Size(100, 23);
             this.txtValorCheq.TabIndex = 32;
             this.txtValorCheq.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorCheq_KeyPress);
+            this.txtValorCheq.Leave += new System.EventHandler(this.txtValorCheq_Leave);
             // 
             // lblValorCheq
             // 
@@ -351,7 +333,7 @@
             // 
             this.lblTotalPago.AutoSize = true;
             this.lblTotalPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPago.Location = new System.Drawing.Point(90, 491);
+            this.lblTotalPago.Location = new System.Drawing.Point(90, 450);
             this.lblTotalPago.Name = "lblTotalPago";
             this.lblTotalPago.Size = new System.Drawing.Size(105, 20);
             this.lblTotalPago.TabIndex = 42;
@@ -361,7 +343,7 @@
             // 
             this.lblValorTotalPago.AutoSize = true;
             this.lblValorTotalPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorTotalPago.Location = new System.Drawing.Point(283, 491);
+            this.lblValorTotalPago.Location = new System.Drawing.Point(283, 450);
             this.lblValorTotalPago.Name = "lblValorTotalPago";
             this.lblValorTotalPago.Size = new System.Drawing.Size(19, 20);
             this.lblValorTotalPago.TabIndex = 43;
@@ -369,7 +351,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(361, 483);
+            this.btnConfirmar.Location = new System.Drawing.Point(361, 442);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(86, 33);
             this.btnConfirmar.TabIndex = 44;
@@ -379,7 +361,6 @@
             // 
             // grpEntrada
             // 
-            this.grpEntrada.Controls.Add(this.btnOkEntrada);
             this.grpEntrada.Controls.Add(this.txtEntradaCheq);
             this.grpEntrada.Controls.Add(this.lblEntradaCheq);
             this.grpEntrada.Controls.Add(this.txtEntradaDin);
@@ -388,20 +369,10 @@
             this.grpEntrada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpEntrada.Name = "grpEntrada";
             this.grpEntrada.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpEntrada.Size = new System.Drawing.Size(435, 95);
+            this.grpEntrada.Size = new System.Drawing.Size(435, 74);
             this.grpEntrada.TabIndex = 10;
             this.grpEntrada.TabStop = false;
             this.grpEntrada.Text = "Valor da Entrada";
-            // 
-            // btnOkEntrada
-            // 
-            this.btnOkEntrada.Location = new System.Drawing.Point(197, 64);
-            this.btnOkEntrada.Name = "btnOkEntrada";
-            this.btnOkEntrada.Size = new System.Drawing.Size(40, 26);
-            this.btnOkEntrada.TabIndex = 15;
-            this.btnOkEntrada.Text = "OK";
-            this.btnOkEntrada.UseVisualStyleBackColor = true;
-            this.btnOkEntrada.Click += new System.EventHandler(this.btnOkEntrada_Click);
             // 
             // txtEntradaCheq
             // 
@@ -411,6 +382,7 @@
             this.txtEntradaCheq.Size = new System.Drawing.Size(100, 23);
             this.txtEntradaCheq.TabIndex = 14;
             this.txtEntradaCheq.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEntradaCheq_KeyPress);
+            this.txtEntradaCheq.Leave += new System.EventHandler(this.txtEntradaCheq_Leave);
             // 
             // lblEntradaCheq
             // 
@@ -429,6 +401,7 @@
             this.txtEntradaDin.Size = new System.Drawing.Size(100, 23);
             this.txtEntradaDin.TabIndex = 12;
             this.txtEntradaDin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEntradaDin_KeyPress);
+            this.txtEntradaDin.Leave += new System.EventHandler(this.txtEntradaDin_Leave);
             // 
             // lblEntradaDin
             // 
@@ -517,6 +490,7 @@
             this.txtValorArredondamento.Size = new System.Drawing.Size(68, 23);
             this.txtValorArredondamento.TabIndex = 8;
             this.txtValorArredondamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorArredondamento_KeyPress);
+            this.txtValorArredondamento.Leave += new System.EventHandler(this.txtValorArredondamento_Leave);
             // 
             // lblArredondamento
             // 
@@ -543,7 +517,7 @@
             // 
             this.lblValorRestante.AutoSize = true;
             this.lblValorRestante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorRestante.Location = new System.Drawing.Point(283, 228);
+            this.lblValorRestante.Location = new System.Drawing.Point(283, 204);
             this.lblValorRestante.Name = "lblValorRestante";
             this.lblValorRestante.Size = new System.Drawing.Size(19, 20);
             this.lblValorRestante.TabIndex = 17;
@@ -553,28 +527,17 @@
             // 
             this.lblRestante.AutoSize = true;
             this.lblRestante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRestante.Location = new System.Drawing.Point(90, 228);
+            this.lblRestante.Location = new System.Drawing.Point(90, 204);
             this.lblRestante.Name = "lblRestante";
             this.lblRestante.Size = new System.Drawing.Size(140, 20);
             this.lblRestante.TabIndex = 16;
             this.lblRestante.Text = "Valor Restante: ";
             // 
-            // btnOkArredondamento
-            // 
-            this.btnOkArredondamento.Location = new System.Drawing.Point(407, 89);
-            this.btnOkArredondamento.Name = "btnOkArredondamento";
-            this.btnOkArredondamento.Size = new System.Drawing.Size(40, 26);
-            this.btnOkArredondamento.TabIndex = 9;
-            this.btnOkArredondamento.Text = "OK";
-            this.btnOkArredondamento.UseVisualStyleBackColor = true;
-            this.btnOkArredondamento.Click += new System.EventHandler(this.btnOkArredondamento_Click);
-            // 
             // frmPaymentForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 528);
-            this.Controls.Add(this.btnOkArredondamento);
+            this.ClientSize = new System.Drawing.Size(460, 486);
             this.Controls.Add(this.lblValorRestante);
             this.Controls.Add(this.lblRestante);
             this.Controls.Add(this.chkLimpar);
@@ -654,11 +617,7 @@
         private System.Windows.Forms.TextBox txtPrimParcCheq;
         private System.Windows.Forms.Label lblPrimParcCheq;
         private System.Windows.Forms.CheckBox chkLimpar;
-        private System.Windows.Forms.Button btnOkDin;
-        private System.Windows.Forms.Button btnOkCheq;
         private System.Windows.Forms.Label lblValorRestante;
         private System.Windows.Forms.Label lblRestante;
-        private System.Windows.Forms.Button btnOkArredondamento;
-        private System.Windows.Forms.Button btnOkEntrada;
     }
 }

@@ -192,24 +192,6 @@ namespace UIWindows
             }
         }
 
-        //WHEN RADDESCONTO IS SELECTED
-        private void radDesconto_CheckedChanged(object sender, EventArgs e)
-        {
-            checkDescOrRate();
-        }
-
-        //WHEN RADDJUROS IS SELECTED
-        private void radJuros_CheckedChanged(object sender, EventArgs e)
-        {
-            checkDescOrRate();
-        }
-
-        //WHEN CHKLIMPAR IS CHECKED
-        private void chkLimpar_CheckedChanged(object sender, EventArgs e)
-        {
-            checkDescOrRate();
-        }
-        
         //CLEAR ALL CAMPS BEFORE FILL DATA
         private void cleanBeforeFill()
         {
@@ -285,6 +267,8 @@ namespace UIWindows
             Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
 
             b = obj.ReturnByID(id);
+
+            checkTxt();
 
             calcDesc();
             calcRate();
@@ -459,60 +443,7 @@ namespace UIWindows
             return DialogResult.No;
         }
 
-        //WHEN KEY IS PRESS ON txtPorcentDescAVista
-        private void txtPorcentDescAVista_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-        }
-
-        //WHEN KEY IS PRESS ON txtPorcentJuros
-        private void txtPorcentJuros_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-        }
-
-        //WHEN KEY IS PRESS ON txtValorArredondamento
-        private void txtValorArredondamento_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-        }
-
-        //WHEN KEY IS PRESS ON txtEntradaDin
-        private void txtEntradaDin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-        }
-
-        //WHEN KEY IS PRESS ON txtEntradaCheq
-        private void txtEntradaCheq_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-        }
-
-        //WHEN KEY IS PRESS ON txtValorDin
-        private void txtValorDin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-        }
-
-        //WHEN KEY IS PRESS ON txtPrimParcDin
-        private void txtPrimParcDin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-        }
-
-        //WHEN KEY IS PRESS ON txtValorCheq
-        private void txtValorCheq_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-        }
-
-        //WHEN KEY IS PRESS ON txtPrimParcCheq
-        private void txtPrimParcCheq_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-
-        }
+        
 
         private bool checkValuestoApprove()
         {
@@ -838,17 +769,7 @@ namespace UIWindows
         {
             call("cheq");
         }
-
-        private void btnOkArredondamento_Click(object sender, EventArgs e)
-        {
-            calcRound();
-        }
-
-        private void btnOkEntrada_Click(object sender, EventArgs e)
-        {
-            calcEntryDinCheq();
-        }
-
+        
         private void txtPorcentDescAVista_TextChanged(object sender, EventArgs e)
         {
             calcDesc();
@@ -857,6 +778,155 @@ namespace UIWindows
         private void txtPorcentJuros_TextChanged(object sender, EventArgs e)
         {
             calcRate();
+        }
+
+        private void txtValorArredondamento_Leave(object sender, EventArgs e)
+        {
+            calcRound();
+        }
+
+        private void txtEntradaDin_Leave(object sender, EventArgs e)
+        {
+            calcEntryDinCheq();
+        }
+
+        private void txtEntradaCheq_Leave(object sender, EventArgs e)
+        {
+            calcEntryDinCheq();
+        }
+
+        private void txtValorDin_Leave(object sender, EventArgs e)
+        {
+            call("din");
+        }
+        
+        private void nudParcelasDin_Leave(object sender, EventArgs e)
+        {
+            call("din");
+        }
+
+        private void txtPrimParcDin_Leave(object sender, EventArgs e)
+        {
+            call("din");
+        }
+
+        private void txtValorCheq_Leave(object sender, EventArgs e)
+        {
+            call("cheq");
+        }
+
+        private void nudParcelasCheq_Leave(object sender, EventArgs e)
+        {
+            call("cheq");
+        }
+
+        private void txtPrimParcCheq_Leave(object sender, EventArgs e)
+        {
+            call("cheq");
+        }
+
+        private void nudParcelasCheq_ValueChanged(object sender, EventArgs e)
+        {
+            call("cheq");
+        }
+
+        private void nudParcelasDin_ValueChanged(object sender, EventArgs e)
+        {
+            call("din");
+        }
+
+        //WHEN KEY IS PRESS ON txtPorcentDescAVista
+        private void txtPorcentDescAVista_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+        }
+
+        //WHEN KEY IS PRESS ON txtPorcentJuros
+        private void txtPorcentJuros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+        }
+
+        //WHEN KEY IS PRESS ON txtValorArredondamento
+        private void txtValorArredondamento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+            if ((Keys)e.KeyChar == Keys.Enter)
+                //if(txtEntradaDin.Text.Equals(""))
+                calcRound();
+        }
+
+        //WHEN KEY IS PRESS ON txtEntradaDin
+        private void txtEntradaDin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+            if ((Keys)e.KeyChar == Keys.Enter)
+                calcEntryDinCheq();
+        }
+
+        //WHEN KEY IS PRESS ON txtEntradaCheq
+        private void txtEntradaCheq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+            if ((Keys)e.KeyChar == Keys.Enter)
+                calcEntryDinCheq();
+        }
+
+        //WHEN KEY IS PRESS ON txtValorDin
+        private void txtValorDin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+            if ((Keys)e.KeyChar == Keys.Enter)
+                call("din");
+        }
+
+        //WHEN KEY IS PRESS ON txtPrimParcDin
+        private void txtPrimParcDin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+            if ((Keys)e.KeyChar == Keys.Enter)
+                call("din");
+        }
+
+        //WHEN KEY IS PRESS ON txtValorCheq
+        private void txtValorCheq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+            if ((Keys)e.KeyChar == Keys.Enter)
+                call("cheq");
+        }
+
+        //WHEN KEY IS PRESS ON txtPrimParcCheq
+        private void txtPrimParcCheq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
+
+            if ((Keys)e.KeyChar == Keys.Enter)
+                call("cheq");
+        }
+
+        //WHEN RADDESCONTO IS SELECTED
+        private void radDesconto_CheckedChanged(object sender, EventArgs e)
+        {
+            checkDescOrRate();
+        }
+
+        //WHEN RADDJUROS IS SELECTED
+        private void radJuros_CheckedChanged(object sender, EventArgs e)
+        {
+            checkDescOrRate();
+        }
+
+        //WHEN CHKLIMPAR IS CHECKED
+        private void chkLimpar_CheckedChanged(object sender, EventArgs e)
+        {
+            checkDescOrRate();
         }
     }
 }
