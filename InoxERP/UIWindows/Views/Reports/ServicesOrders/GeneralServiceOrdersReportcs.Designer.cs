@@ -54,7 +54,7 @@
             this.reportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
 
-            reportDataSource2.Name = "GerenalDataSet";
+            reportDataSource2.Name = "GeneralDataSet";
             reportDataSource2.Value = this.tbbudgetsosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);

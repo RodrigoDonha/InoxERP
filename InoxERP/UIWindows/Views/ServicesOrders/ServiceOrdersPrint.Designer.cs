@@ -59,7 +59,7 @@
 
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.ServicesOrders.ServiceOrdersPrint.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.ServiceOrders.ServiceOrdersPrint.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;

@@ -284,11 +284,11 @@
     <Compile Include="Views\Budgets\BudgetSearch.Designer.cs">
       <DependentUpon>BudgetSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ServicesOrders\ServiceOrderSearch.cs">
+    <Compile Include="Views\ServicesOrders\ServiceOrdersSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ServicesOrders\ServiceOrderSearch.Designer.cs">
-      <DependentUpon>ServiceOrderSearch.cs</DependentUpon>
+    <Compile Include="Views\ServicesOrders\ServiceOrdersSearch.Designer.cs">
+      <DependentUpon>ServiceOrdersSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Services\ServicesRegisterSearch.cs">
       <SubType>Form</SubType>
@@ -388,11 +388,11 @@
     <Compile Include="Views\Reports\Budgets\ReportBudgets.Designer.cs">
       <DependentUpon>ReportBudgets.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reports\ServicesOrders\ReportServicesOrder.cs">
+    <Compile Include="Views\Reports\ServicesOrders\ReportServiceOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Reports\ServicesOrders\ReportServicesOrder.Designer.cs">
-      <DependentUpon>ReportServicesOrder.cs</DependentUpon>
+    <Compile Include="Views\Reports\ServicesOrders\ReportServiceOrders.Designer.cs">
+      <DependentUpon>ReportServiceOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Budgets\PaymentForms.cs">
       <SubType>Form</SubType>
@@ -411,8 +411,9 @@
     <EmbeddedResource Include="Business\Reports\Budgets\SituationBudgets.rdlc" />
     <EmbeddedResource Include="Business\Reports\BudgetWithPrice.rdlc" />
     <EmbeddedResource Include="Business\Reports\Delivery\GeneralDelivery.rdlc" />
-    <EmbeddedResource Include="Business\Reports\ServicesOrders\GeneralServiceOrder.rdlc" />
-    <EmbeddedResource Include="Business\Reports\ServicesOrders\ServiceOrdersPrint.rdlc" />
+    <EmbeddedResource Include="Business\Reports\ServiceOrders\GeneralServiceOrder.rdlc" />
+    <EmbeddedResource Include="Business\Reports\ServiceOrders\ServiceOrdersPrint.rdlc" />
+    <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
     <EmbeddedResource Include="Views\Backups\AdminChose.resx">
       <DependentUpon>AdminChose.cs</DependentUpon>
     </EmbeddedResource>
@@ -479,8 +480,8 @@
     <EmbeddedResource Include="Views\Budgets\BudgetSearch.resx">
       <DependentUpon>BudgetSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ServicesOrders\ServiceOrderSearch.resx">
-      <DependentUpon>ServiceOrderSearch.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ServicesOrders\ServiceOrdersSearch.resx">
+      <DependentUpon>ServiceOrdersSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Services\ServicesRegisterSearch.resx">
       <DependentUpon>ServicesRegisterSearch.cs</DependentUpon>
@@ -540,8 +541,8 @@
     <EmbeddedResource Include="Views\Reports\Budgets\ReportBudgets.resx">
       <DependentUpon>ReportBudgets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reports\ServicesOrders\ReportServicesOrder.resx">
-      <DependentUpon>ReportServicesOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Reports\ServicesOrders\ReportServiceOrders.resx">
+      <DependentUpon>ReportServiceOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Budgets\PaymentForms.resx">
       <DependentUpon>PaymentForms.cs</DependentUpon>
