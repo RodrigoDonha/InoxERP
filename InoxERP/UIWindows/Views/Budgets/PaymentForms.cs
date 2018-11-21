@@ -439,6 +439,8 @@ namespace UIWindows
                     return MessageBox.Show("Confirma a Aprovação do Orçamento e os Lançamentos no Caixa ?", "Aprovar Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "valueMax":
                     return MessageBox.Show("O Valor Informado é Maior que o valor do Orçamento, Confirma ?", "Valor Maior", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "change":
+                    return MessageBox.Show("O Valor do TROCO é referente a CHEQUE ?", "Troco", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
         }
@@ -462,7 +464,7 @@ namespace UIWindows
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            call("din");
+            //call("din");
             if(checkValuestoApprove())
                 if (messageYesNo("confirm") == DialogResult.Yes)
                 {
@@ -483,9 +485,40 @@ namespace UIWindows
             decimal valueRemaing = Convert.ToDecimal(lblValorRestante.Text.Replace(".", ","));
 
             if (valueRemaing < 0)
+            {
                 msg.Show("Troco do Cliente","Valor do Troco: " + (valueRemaing * -1),0,5000);
+                if (messageYesNo("change") == DialogResult.Yes)
+                {
+                    throwOut(valueRemaing);
+                    msg.Show("Lançamento de Saída", "Saída incluida no Caixa", 0, 3000);
+                }
+            }
 
             msg.Show("Aprovação de Orçamento", "Orçamento Aprovado e Lançamentos Concluidos", 0, 5000);
+        }
+
+        private void throwOut(decimal valueRemaing)
+        {
+            InoxErpContext ctx = new InoxErpContext();
+
+            Budget_OSBusiness objBud = new Budget_OSBusiness(ctx);
+            CashBusiness objCash = new CashBusiness(ctx);
+
+            Budgets_OS b = objBud.ReturnByID(id);
+            
+            Cash cash = new Cash
+            {
+                sID = Guid.NewGuid().ToString(),
+
+                sId_Budgets_OS = b.sID,
+                sId_Client = b.IdClients,
+                dValue = -valueRemaing,
+                dtDate = DateTime.Now,
+                sReferentTo = b.iCod.ToString(),
+                CashType = CashType.Out
+            };
+
+            objCash.Insert(cash);
         }
 
         private void cacthValues()
@@ -759,16 +792,6 @@ namespace UIWindows
 
             return list;
         }
-
-        private void btnOkDin_Click(object sender, EventArgs e)
-        {
-            call("din");
-        }
-
-        private void btnOkCheq_Click(object sender, EventArgs e)
-        {
-            call("cheq");
-        }
         
         private void txtPorcentDescAVista_TextChanged(object sender, EventArgs e)
         {
@@ -783,16 +806,33 @@ namespace UIWindows
         private void txtValorArredondamento_Leave(object sender, EventArgs e)
         {
             calcRound();
+
+            if (!txtEntradaDin.Text.Equals("") || !txtEntradaCheq.Text.Equals("0"))
+                calcEntryDinCheq();
+            if (!txtValorDin.Text.Equals("") || !txtValorDin.Text.Equals("0"))
+                call("din");
+            if (!txtValorCheq.Text.Equals("") || !txtValorCheq.Text.Equals("0"))
+                call("cheq");
         }
 
         private void txtEntradaDin_Leave(object sender, EventArgs e)
         {
             calcEntryDinCheq();
+
+            if (!txtValorDin.Text.Equals("") || !txtValorDin.Text.Equals("0"))
+                call("din");
+            if (!txtValorCheq.Text.Equals("") || !txtValorCheq.Text.Equals("0"))
+                call("cheq");
         }
 
         private void txtEntradaCheq_Leave(object sender, EventArgs e)
         {
             calcEntryDinCheq();
+
+            if (!txtValorDin.Text.Equals("") || !txtValorDin.Text.Equals("0"))
+                call("din");
+            if (!txtValorCheq.Text.Equals("") || !txtValorCheq.Text.Equals("0"))
+                call("cheq");
         }
 
         private void txtValorDin_Leave(object sender, EventArgs e)
@@ -852,9 +892,16 @@ namespace UIWindows
         {
             validation.characterValidatorOnlyNumbers(sender, e);
 
-            if ((Keys)e.KeyChar == Keys.Enter)
-                //if(txtEntradaDin.Text.Equals(""))
+            if ((Keys) e.KeyChar == Keys.Enter)
+            {
                 calcRound();
+                if(!txtEntradaDin.Text.Equals("") || !txtEntradaCheq.Text.Equals("0"))
+                    calcEntryDinCheq();
+                if(!txtValorDin.Text.Equals("") || !txtValorDin.Text.Equals("0"))
+                    call("din");
+                if (!txtValorCheq.Text.Equals("") || !txtValorCheq.Text.Equals("0"))
+                    call("cheq");
+            }
         }
 
         //WHEN KEY IS PRESS ON txtEntradaDin
@@ -862,8 +909,15 @@ namespace UIWindows
         {
             validation.characterValidatorOnlyNumbers(sender, e);
 
-            if ((Keys)e.KeyChar == Keys.Enter)
+            if ((Keys) e.KeyChar == Keys.Enter)
+            {
                 calcEntryDinCheq();
+                
+                if (!txtValorDin.Text.Equals("") || !txtValorDin.Text.Equals("0"))
+                    call("din");
+                if (!txtValorCheq.Text.Equals("") || !txtValorCheq.Text.Equals("0"))
+                    call("cheq");
+            }
         }
 
         //WHEN KEY IS PRESS ON txtEntradaCheq
@@ -871,8 +925,15 @@ namespace UIWindows
         {
             validation.characterValidatorOnlyNumbers(sender, e);
 
-            if ((Keys)e.KeyChar == Keys.Enter)
+            if ((Keys) e.KeyChar == Keys.Enter)
+            {
                 calcEntryDinCheq();
+
+                if (!txtValorDin.Text.Equals("") || !txtValorDin.Text.Equals("0"))
+                    call("din");
+                if (!txtValorCheq.Text.Equals("") || !txtValorCheq.Text.Equals("0"))
+                    call("cheq");
+            }
         }
 
         //WHEN KEY IS PRESS ON txtValorDin
