@@ -221,7 +221,7 @@ namespace InoxERP.UI_Windows_Forms
             switch (Convert.ToInt32(cmbEstate.SelectedIndex.ToString()))
             {
                 case 0: return Estate.AC;
-                case 1: return Estate.AI;
+                case 1: return Estate.AL;
                 case 2: return Estate.AP;
                 case 3: return Estate.AM;
                 case 4: return Estate.BA;

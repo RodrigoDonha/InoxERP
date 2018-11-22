@@ -151,9 +151,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811211823508_initianCommit.cs" />
-    <Compile Include="Migrations\201811211823508_initianCommit.Designer.cs">
-      <DependentUpon>201811211823508_initianCommit.cs</DependentUpon>
+    <Compile Include="Migrations\201811221826515_fixCampsNotNullidClient.cs" />
+    <Compile Include="Migrations\201811221826515_fixCampsNotNullidClient.Designer.cs">
+      <DependentUpon>201811221826515_fixCampsNotNullidClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\Backups\AdminChose.cs">
@@ -419,8 +419,8 @@
     <EmbeddedResource Include="Business\Reports\ServiceOrders\GeneralServiceOrder.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\ServiceOrdersPrint.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
-    <EmbeddedResource Include="Migrations\201811211823508_initianCommit.resx">
-      <DependentUpon>201811211823508_initianCommit.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811221826515_fixCampsNotNullidClient.resx">
+      <DependentUpon>201811221826515_fixCampsNotNullidClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Backups\AdminChose.resx">
       <DependentUpon>AdminChose.cs</DependentUpon>

@@ -16,7 +16,7 @@ namespace UIWindows.Entities
         public string sId_Budgets_OS { get; set; }
 
         [StringLength(100)]
-        [Required(ErrorMessage = "Codigo do Cliente é Obrigatório")]
+        //[Required(ErrorMessage = "Codigo do Cliente é Obrigatório")]
         public string sId_Client { get; set; }
 
         [Required(ErrorMessage = "Valor da Conta é Obrigatório")]

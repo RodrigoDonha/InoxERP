@@ -9,7 +9,7 @@ namespace UIWindows.Entities.Enum
     public enum Estate
     {
         AC = 1,
-        AI = 2,
+        AL = 2,
         AP = 3,
         AM = 4,
         BA = 5,

@@ -275,10 +275,10 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.R
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmPaymentForms.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Reports.ServicesOrders.GeneralServiceOrdersReportcs.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.ServicesOrders.ServiceOrdersPrint.resources
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.initianCommit.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxERP.Core.exe.config
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxERP.Core.exe
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxERP.Core.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.exe.config
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.exe
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.fixCampsNotNullidClient.resources

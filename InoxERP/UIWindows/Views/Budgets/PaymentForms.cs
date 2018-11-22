@@ -312,14 +312,19 @@ namespace UIWindows
             decimal totalEntry = Math.Round(din + cheq, 2);
 
             decimal totalOS = Convert.ToDecimal(lblExibeValorOS.Text.Replace(".", ","));
-
-            if(totalEntry > totalOS)
-                if (messageYesNo("valueMax") == DialogResult.No)
-                    return totalEntry = 0;
-
+            
             lblValorRestante.Text = (totalOS - totalEntry).ToString();
 
             return totalEntry;
+        }
+
+        private bool checkValueMax(decimal valueOS, decimal value)
+        {
+            if (value > valueOS)
+                if (messageYesNo("valueMax") == DialogResult.No)
+                    return false;
+
+            return true;
         }
 
         //CALC PAYMENT ON MONEY
@@ -329,9 +334,9 @@ namespace UIWindows
             
             decimal valueDin = Convert.ToDecimal(txtValorDin.Text.Replace(".", ",")); //valor informado em dinheiro
 
-            if(valueDin > totalRest) //compara se nao é maior que o restante
-                if (messageYesNo("valueMax") == DialogResult.No)
-                    valueDin = 0;
+            //if(valueDin > totalRest) //compara se nao é maior que o restante
+            //    if (messageYesNo("valueMax") == DialogResult.No)
+            //        valueDin = 0;
 
             decimal paied = valuePaied; // pega valor já pago
 
@@ -339,9 +344,9 @@ namespace UIWindows
             
             decimal firstInstallment = Convert.ToDecimal(txtPrimParcDin.Text.Replace(".", ",")); // valor da 1º parcela
 
-            if (firstInstallment > valueDin) //compara se nao é maior que o valor em dinheiro informado
-                if (messageYesNo("valueMax") == DialogResult.No)
-                    firstInstallment = 0;
+            //if (firstInstallment > valueDin) //compara se nao é maior que o valor em dinheiro informado
+            //    if (messageYesNo("valueMax") == DialogResult.No)
+            //        firstInstallment = 0;
 
             decimal valueByInstallments = Math.Round((valueDin - firstInstallment) / installments, 2); // valor por parcela
 
@@ -363,9 +368,9 @@ namespace UIWindows
 
             decimal valueCheq = Convert.ToDecimal(txtValorCheq.Text.Replace(".", ",")); //valor informado em dinheiro
 
-            if (valueCheq > totalRest) //compara se nao é maior que o restante
-                if (messageYesNo("valueMax") == DialogResult.No)
-                    valueCheq = 0;
+            //if (valueCheq > totalRest) //compara se nao é maior que o restante
+            //    if (messageYesNo("valueMax") == DialogResult.No)
+            //        valueCheq = 0;
 
             decimal paied = valuePaied; // pega valor já pago
 
@@ -373,9 +378,9 @@ namespace UIWindows
 
             decimal firstInstallment = Convert.ToDecimal(txtPrimParcCheq.Text.Replace(".", ",")); // valor da 1º parcela
 
-            if (firstInstallment > valueCheq) //compara se nao é maior que o valor em dinheiro informado
-                if (messageYesNo("valueMax") == DialogResult.No)
-                    firstInstallment = 0;
+            //if (firstInstallment > valueCheq) //compara se nao é maior que o valor em dinheiro informado
+            //    if (messageYesNo("valueMax") == DialogResult.No)
+            //        firstInstallment = 0;
 
             decimal valueByInstallments = Math.Round((valueCheq - firstInstallment) / installments, 2); // valor por parcela
 
@@ -457,9 +462,11 @@ namespace UIWindows
                 MessageBox.Show("***   Valor total do Orçamento ainda NÃO foi pago   ***");
                 return false;
             }
-            
-            return true;
 
+            if (!checkValueMax(valueOS, valuePaied))
+                return false;
+
+            return true;
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -514,7 +521,7 @@ namespace UIWindows
                 sId_Client = b.IdClients,
                 dValue = -valueRemaing,
                 dtDate = DateTime.Now,
-                sReferentTo = b.iCod.ToString(),
+                sReferentTo = "TROCO DA ORDEM DE SERVIÇO NÚMERO  " + b.iCod.ToString(),
                 CashType = CashType.Out
             };
 
@@ -586,7 +593,7 @@ namespace UIWindows
             if (listCheques.Count > 0)
                 foreach (var cheque in listCheques)
                     objChq.Insert(cheque);
-            
+
             b.bServiceOrderApproved = true;
             b.dtDateServiceOrderApproved = DateTime.Now;
             b.dtStartPrevision = DateTime.Now;
@@ -600,72 +607,79 @@ namespace UIWindows
             
             if (iDin == 1)
             {
-                AccountsToReceive receive1 = new AccountsToReceive();
+                if (vDin > 0)
+                {
+                    AccountsToReceive receive1 = new AccountsToReceive();
 
-                receive1.sID = Guid.NewGuid().ToString();
+                    receive1.sID = Guid.NewGuid().ToString();
 
-                receive1.sId_Budgets_OS = budget.sID;
-                receive1.sId_Client = budget.IdClients;
-                receive1.dtReceiveDate = DateTime.Now;
-                receive1.bReceivePaid = false;
-                receive1.sReferentTo = budget.iCod.ToString();
-                receive1.Budgets_OS = budget;
+                    receive1.sId_Budgets_OS = budget.sID;
+                    receive1.sId_Client = budget.IdClients;
+                    receive1.dtReceiveDate = DateTime.Now;
+                    receive1.bReceivePaid = false;
+                    receive1.sReferentTo = budget.iCod.ToString();
+                    receive1.Budgets_OS = budget;
 
-                receive1.dValue = vDin;
-                receive1.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pDin));
-                receive1.iInstallment = Convert.ToInt32(iDin);
-                receive1.iAmountInstallment = Convert.ToInt32(iDin);
+                    receive1.dValue = vDin;
+                    receive1.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pDin));
+                    receive1.iInstallment = Convert.ToInt32(iDin);
+                    receive1.iAmountInstallment = Convert.ToInt32(iDin);
 
-                list.Add(receive1);
+                    list.Add(receive1);
+                }
             }else if (iDin > 1)
             {
-                DateTime due = DateTime.Today;
-                decimal ppDinAux = ppDin;
-
-                for (int i = 1; i <= iDin; i++)
+                if (vDin > 0)
                 {
-                    if (ppDinAux > 0)
+                    DateTime due = DateTime.Today;
+                    decimal ppDinAux = ppDin;
+
+                    for (int i = 1; i <= iDin; i++)
                     {
-                        AccountsToReceive receive2 = new AccountsToReceive();
+                        if (ppDinAux > 0)
+                        {
+                            AccountsToReceive receive2 = new AccountsToReceive();
 
-                        receive2.sID = Guid.NewGuid().ToString();
+                            receive2.sID = Guid.NewGuid().ToString();
 
-                        receive2.sId_Budgets_OS = budget.sID;
-                        receive2.sId_Client = budget.IdClients;
-                        receive2.dtReceiveDate = DateTime.Now;
-                        receive2.bReceivePaid = false;
-                        receive2.sReferentTo = budget.iCod.ToString();
-                        receive2.Budgets_OS = budget;
+                            receive2.sId_Budgets_OS = budget.sID;
+                            receive2.sId_Client = budget.IdClients;
+                            receive2.dtReceiveDate = DateTime.Now;
+                            receive2.bReceivePaid = false;
+                            receive2.sReferentTo = budget.iCod.ToString();
+                            receive2.Budgets_OS = budget;
 
-                        receive2.dValue = ppDin;
-                        due = due.AddDays(Convert.ToDouble(pDin));
-                        receive2.dtDueDate = due;
-                        receive2.iInstallment = i;
-                        receive2.iAmountInstallment = Convert.ToInt32(iDin);
+                            receive2.dValue = ppDin;
+                            due = due.AddDays(Convert.ToDouble(pDin));
+                            receive2.dtDueDate = due;
+                            receive2.iInstallment = i;
+                            receive2.iAmountInstallment = Convert.ToInt32(iDin);
 
-                        list.Add(receive2);
+                            list.Add(receive2);
 
-                        ppDinAux = 0;
-                    }else
-                    {
-                        AccountsToReceive receive3 = new AccountsToReceive();
+                            ppDinAux = 0;
+                        }
+                        else
+                        {
+                            AccountsToReceive receive3 = new AccountsToReceive();
 
-                        receive3.sID = Guid.NewGuid().ToString();
+                            receive3.sID = Guid.NewGuid().ToString();
 
-                        receive3.sId_Budgets_OS = budget.sID;
-                        receive3.sId_Client = budget.IdClients;
-                        receive3.dtReceiveDate = DateTime.Now;
-                        receive3.bReceivePaid = false;
-                        receive3.sReferentTo = budget.iCod.ToString();
-                        receive3.Budgets_OS = budget;
+                            receive3.sId_Budgets_OS = budget.sID;
+                            receive3.sId_Client = budget.IdClients;
+                            receive3.dtReceiveDate = DateTime.Now;
+                            receive3.bReceivePaid = false;
+                            receive3.sReferentTo = budget.iCod.ToString();
+                            receive3.Budgets_OS = budget;
 
-                        receive3.dValue = (vDin-ppDin)/iDin;
-                        due = due.AddDays(Convert.ToDouble(pDin));
-                        receive3.dtDueDate = due;
-                        receive3.iInstallment = i;
-                        receive3.iAmountInstallment = Convert.ToInt32(iDin);
+                            receive3.dValue = (vDin - ppDin) / iDin;
+                            due = due.AddDays(Convert.ToDouble(pDin));
+                            receive3.dtDueDate = due;
+                            receive3.iInstallment = i;
+                            receive3.iAmountInstallment = Convert.ToInt32(iDin);
 
-                        list.Add(receive3);
+                            list.Add(receive3);
+                        }
                     }
                 }
             }
@@ -679,74 +693,80 @@ namespace UIWindows
 
             if (iCheq == 1)
             {
-                Cheques cheque1 = new Cheques();
+                if (vCheq > 0)
+                {
+                    Cheques cheque1 = new Cheques();
 
-                cheque1.sID = Guid.NewGuid().ToString();
+                    cheque1.sID = Guid.NewGuid().ToString();
 
-                cheque1.sId_Budgets_OS = budget.sID;
-                cheque1.sId_Client = budget.IdClients;
-                cheque1.dtPayDate = DateTime.Now;
-                cheque1.bChequePaid = false;
-                cheque1.sChequeNumber = "0";
-                cheque1.sReferentTo = budget.iCod.ToString();
+                    cheque1.sId_Budgets_OS = budget.sID;
+                    cheque1.sId_Client = budget.IdClients;
+                    cheque1.dtPayDate = DateTime.Now;
+                    cheque1.bChequePaid = false;
+                    cheque1.sChequeNumber = "0";
+                    cheque1.sReferentTo = budget.iCod.ToString();
 
-                cheque1.dValue = vCheq;
-                cheque1.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pCheq));
-                cheque1.iInstallment = Convert.ToInt32(iCheq);
-                cheque1.iAmountInstallment = Convert.ToInt32(iCheq);
+                    cheque1.dValue = vCheq;
+                    cheque1.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pCheq));
+                    cheque1.iInstallment = Convert.ToInt32(iCheq);
+                    cheque1.iAmountInstallment = Convert.ToInt32(iCheq);
 
-                list.Add(cheque1);
+                    list.Add(cheque1);
+                }
             }
             else if (iCheq > 1)
             {
-                DateTime due = DateTime.Today;
-                decimal ppCheqAux = ppCheq;
-
-                for (int i = 1; i <= iCheq; i++)
+                if (vCheq > 0)
                 {
-                    if (ppCheqAux > 0)
+                    DateTime due = DateTime.Today;
+                    decimal ppCheqAux = ppCheq;
+
+                    for (int i = 1; i <= iCheq; i++)
                     {
-                        Cheques cheque2 = new Cheques();
+                        if (ppCheqAux > 0)
+                        {
+                            Cheques cheque2 = new Cheques();
 
-                        cheque2.sID = Guid.NewGuid().ToString();
-                        
-                        cheque2.sId_Budgets_OS = budget.sID;
-                        cheque2.sId_Client = budget.IdClients;
-                        cheque2.dtPayDate = DateTime.Now;
-                        cheque2.bChequePaid = false;
-                        cheque2.sChequeNumber = "0";
-                        cheque2.sReferentTo = budget.iCod.ToString();
+                            cheque2.sID = Guid.NewGuid().ToString();
 
-                        cheque2.dValue = ppCheq;
-                        due = due.AddDays(Convert.ToDouble(pCheq));
-                        cheque2.dtDueDate = due;
-                        cheque2.iInstallment = i;
-                        cheque2.iAmountInstallment = Convert.ToInt32(iCheq);
+                            cheque2.sId_Budgets_OS = budget.sID;
+                            cheque2.sId_Client = budget.IdClients;
+                            cheque2.dtPayDate = DateTime.Now;
+                            cheque2.bChequePaid = false;
+                            cheque2.sChequeNumber = "0";
+                            cheque2.sReferentTo = budget.iCod.ToString();
 
-                        list.Add(cheque2);
+                            cheque2.dValue = ppCheq;
+                            due = due.AddDays(Convert.ToDouble(pCheq));
+                            cheque2.dtDueDate = due;
+                            cheque2.iInstallment = i;
+                            cheque2.iAmountInstallment = Convert.ToInt32(iCheq);
 
-                        ppCheqAux = 0;
-                    }
-                    else
-                    {
-                        Cheques cheque3 = new Cheques();
+                            list.Add(cheque2);
 
-                        cheque3.sID = Guid.NewGuid().ToString();
-                        
-                        cheque3.sId_Budgets_OS = budget.sID;
-                        cheque3.sId_Client = budget.IdClients;
-                        cheque3.dtPayDate = DateTime.Now;
-                        cheque3.bChequePaid = false;
-                        cheque3.sChequeNumber = "0";
-                        cheque3.sReferentTo = budget.iCod.ToString();
+                            ppCheqAux = 0;
+                        }
+                        else
+                        {
+                            Cheques cheque3 = new Cheques();
 
-                        cheque3.dValue = (vCheq - ppCheq) / iCheq;
-                        due = due.AddDays(Convert.ToDouble(pCheq));
-                        cheque3.dtDueDate = due;
-                        cheque3.iInstallment = i;
-                        cheque3.iAmountInstallment = Convert.ToInt32(iCheq);
+                            cheque3.sID = Guid.NewGuid().ToString();
 
-                        list.Add(cheque3);
+                            cheque3.sId_Budgets_OS = budget.sID;
+                            cheque3.sId_Client = budget.IdClients;
+                            cheque3.dtPayDate = DateTime.Now;
+                            cheque3.bChequePaid = false;
+                            cheque3.sChequeNumber = "0";
+                            cheque3.sReferentTo = budget.iCod.ToString();
+
+                            cheque3.dValue = (vCheq - ppCheq) / iCheq;
+                            due = due.AddDays(Convert.ToDouble(pCheq));
+                            cheque3.dtDueDate = due;
+                            cheque3.iInstallment = i;
+                            cheque3.iAmountInstallment = Convert.ToInt32(iCheq);
+
+                            list.Add(cheque3);
+                        }
                     }
                 }
             }

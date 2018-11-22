@@ -515,7 +515,7 @@
             // 
             // btnGerarContrato
             // 
-            this.btnGerarContrato.Location = new System.Drawing.Point(542, 406);
+            this.btnGerarContrato.Location = new System.Drawing.Point(348, 406);
             this.btnGerarContrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGerarContrato.Name = "btnGerarContrato";
             this.btnGerarContrato.Size = new System.Drawing.Size(150, 30);
@@ -530,10 +530,10 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(826, 406);
+            this.btnImprimir.Location = new System.Drawing.Point(738, 406);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(120, 30);
+            this.btnImprimir.Size = new System.Drawing.Size(150, 30);
             this.btnImprimir.TabIndex = 13;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
