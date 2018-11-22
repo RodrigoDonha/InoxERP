@@ -110,9 +110,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\SqlServerTypes\x6
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxER.exe.config
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxER.exe
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxER.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\EntityFramework.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\EntityFramework.SqlServer.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\Microsoft.ReportViewer.Common.dll
@@ -211,7 +208,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\zh-CHT\Microsoft.
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\pt-BR\Microsoft.VisualStudio.Data.Services.resources.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\pt-BR\Microsoft.VisualStudio.Data.Core.resources.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\pt-BR\Microsoft.VisualStudio.GraphModel.resources.dll
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.exe.config
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Budgets.BudgetPrint.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Reports.frmReportUsers.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmSignIn.resources
@@ -247,8 +243,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmUser
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csproj.GenerateResource.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csproj.CoreCompileInputs.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csproj.CopyComplete
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.exe
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxER.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxErp.Core.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Budgets.BudgetPrintWithPrice.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Budgets.Form1.resources
@@ -279,3 +273,12 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.B
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Reports.Budgets.GeneralBudgetReport.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Reports.Budgets.SituationBudgetsReport.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.frmPaymentForms.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Reports.ServicesOrders.GeneralServiceOrdersReportcs.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.ServicesOrders.ServiceOrdersPrint.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.initianCommit.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxERP.Core.exe.config
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxERP.Core.exe
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\Debug\InoxERP.Core.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.exe.config
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.exe
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.pdb

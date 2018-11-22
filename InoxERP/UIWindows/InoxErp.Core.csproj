@@ -7,7 +7,7 @@
     <ProjectGuid>{CF73ACF0-6C33-48FD-B5A3-1FAB4281B8C9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>UIWindows</RootNamespace>
-    <AssemblyName>InoxER</AssemblyName>
+    <AssemblyName>InoxERP.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -151,6 +151,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811211823508_initianCommit.cs" />
+    <Compile Include="Migrations\201811211823508_initianCommit.Designer.cs">
+      <DependentUpon>201811211823508_initianCommit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\Backups\AdminChose.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,6 +419,9 @@
     <EmbeddedResource Include="Business\Reports\ServiceOrders\GeneralServiceOrder.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\ServiceOrdersPrint.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
+    <EmbeddedResource Include="Migrations\201811211823508_initianCommit.resx">
+      <DependentUpon>201811211823508_initianCommit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Backups\AdminChose.resx">
       <DependentUpon>AdminChose.cs</DependentUpon>
     </EmbeddedResource>

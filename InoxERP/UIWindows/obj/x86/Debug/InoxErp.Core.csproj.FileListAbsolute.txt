@@ -260,9 +260,9 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\SqlServerType
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\SqlServerTypes\x86\msvcr120.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\InoxER.exe.config
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\InoxER.exe
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\InoxER.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\InoxERP.Core.exe.config
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\InoxERP.Core.exe
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\InoxERP.Core.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\EntityFramework.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\EntityFramework.SqlServer.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.ReportViewer.Common.dll
@@ -380,8 +380,8 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt-BR\Microsoft.VisualStudio.Data.Services.resources.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt-BR\Microsoft.VisualStudio.Data.Core.resources.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt-BR\Microsoft.VisualStudio.GraphModel.resources.dll
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csprojAssemblyReference.cache
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.exe.config
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxERP.Core.exe.config
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.initianCommit.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Backups.frmAdminChose.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.frmBackupServerDB.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmRestoreServerDB.resources
@@ -428,5 +428,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frm
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csproj.GenerateResource.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csproj.CoreCompileInputs.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csproj.CopyComplete
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.exe
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxER.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxERP.Core.exe
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxERP.Core.pdb
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csprojAssemblyReference.cache

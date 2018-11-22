@@ -52,6 +52,10 @@ namespace UIWindows.Entities
         public string sClientCpfCnpj { get; set; }
 
         [StringLength(100)]
+        [Required(ErrorMessage = "RG do Cliente é Obrigatório")]
+        public string sClientRg { get; set; }
+
+        [StringLength(100)]
         [Required(ErrorMessage = "Endereço do Cliente é Obrigatório")]
         public string sClientAdress { get; set; }
 
@@ -89,6 +93,11 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "Data do Contrato é obrigatória")]
         public DateTime dtContractDate { get; set; }
 
+        [Required(ErrorMessage = "O Objeto do Contrato é Obrigatório")]
+        public string sClientObjectContract { get; set; }
+
+        public string sPaymentForm { get; set; }
+        
 
         //ForengKeys
 

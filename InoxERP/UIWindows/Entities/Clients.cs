@@ -20,6 +20,9 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "CPF/CNPJ é obrigatório")]
         public string sCpfCnpj { get; set; }
 
+        [StringLength(14)]
+        public string sRg { get; set; }
+        
         [Range(1, 3, ErrorMessage = "Tipo é obrigatório")]
         public ClientType ClientType { get; set; }
 
