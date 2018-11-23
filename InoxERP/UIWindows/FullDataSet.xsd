@@ -676,6 +676,16 @@ WHERE        (CashType = 1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cash" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCashOut" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByCashOut" GeneratorSourceName="FillByCashOut" GetMethodModifier="Public" GetMethodName="GetByCashOut" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByCashOut" UserSourceName="FillByCashOut">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDate, sReferentTo, CashType
+FROM            tb_cash
+WHERE        (CashType = 2)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_chequesTableAdapter" GeneratorDataComponentClassName="tb_chequesTableAdapter" Name="tb_cheques" UserDataComponentName="tb_chequesTableAdapter">

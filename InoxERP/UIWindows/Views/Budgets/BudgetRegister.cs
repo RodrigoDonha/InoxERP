@@ -27,7 +27,7 @@ namespace InoxERP.UI_Windows_Forms
 
         private decimal subTotal = 0;
         private string getID;
-        private string getIdClient;
+        private string getIdClient = "";
         private string getIdProduct;
 
         public frmBudgetsRegister(String Id)
@@ -50,10 +50,13 @@ namespace InoxERP.UI_Windows_Forms
                         MessageBox.Show("Por Favor preencha as informações Corretamente");
                     else
                     {
+                        InoxErpContext ctxAlter = new InoxErpContext();
+                        Budget_OSBusiness objAlter = new Budget_OSBusiness(ctxAlter);
+
                         Budgets_OS budgetAlter = new Budgets_OS();
                         
                         //procura o orçamento para alteração
-                        budgetAlter = obj.ReturnByID(getID);
+                        budgetAlter = objAlter.ReturnByID(getID);
 
                         //preenche os dados do orçamento
                         budgetAlter.dtDate = DateTime.Now;
@@ -88,16 +91,14 @@ namespace InoxERP.UI_Windows_Forms
                         budgetAlter.dtDateServiceOrderApproved = DateTime.Now;
                         budgetAlter.dtDateRegisterFinished = DateTime.Now;
 
-                        if (getIdClient != "")
-                        {
-                            budgetAlter.IdClients = getIdClient;
-                        }
-
+                        
+                        budgetAlter.IdClients = getIdClient;
+                        
                         //atualiza
-                        obj.Update(budgetAlter);
+                        objAlter.Update(budgetAlter);
 
                         //verifica se o orçamento foi atualizado com sucesso
-                        var ok = obj.Search.FirstOrDefault(b => b.sID == budgetAlter.sID);
+                        var ok = objAlter.Search.FirstOrDefault(b => b.sID == budgetAlter.sID);
 
                         if (ok == null)
                             MessageBox.Show("Erro ao Atualizar o Orçamento !!!");
@@ -125,6 +126,9 @@ namespace InoxERP.UI_Windows_Forms
                 {
                     if (messageYesNo("Save") == DialogResult.Yes)
                     {
+                        InoxErpContext ctxPersist = new InoxErpContext();
+                        Budget_OSBusiness objPersist = new Budget_OSBusiness(ctxPersist);
+
                         Budgets_OS budgetPersist = new Budgets_OS();
 
                         //gera id unico para o orçamento
@@ -179,19 +183,31 @@ namespace InoxERP.UI_Windows_Forms
 
                         budgetPersist.iCod = cod + 1;
 
-                        if (getIdClient != "")
+                        if (!getIdClient.Equals(""))
                         {
                             budgetPersist.IdClients = getIdClient;
                         }
+                        else //recebe do consumidor: "1182bd02-9f79-4042-b900-3b6b522dc0af"
+                        {
+                            try
+                            {
+                                ClientsBusiness idCliente = new ClientsBusiness(ctxPersist);
+                                budgetPersist.IdClients =
+                                    idCliente.Search.FirstOrDefault(c => c.sName.Contains("CONSUMIDOR")).sID;
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show(
+                                    "Anter de concluir este Orçamento Voçê tem que Cadastrar um Cliente CONSUMIDOR para continuar");
+                            }
+                        }
+                        
 
                         //salva
-                        obj.Insert(budgetPersist);
-
-                        //ctx.Budgets_OS.Add(budgetPersist);
-                        //ctx.SaveChanges();
+                        objPersist.Insert(budgetPersist);
                         
                         //verifica se o orçamento foi salvo com sucesso
-                        var ok = obj.Search.FirstOrDefault(b => b.sID == budgetPersist.sID);
+                        var ok = objPersist.Search.FirstOrDefault(b => b.sID == budgetPersist.sID);
 
                         if (ok != null)
                         {
@@ -1130,7 +1146,10 @@ namespace InoxERP.UI_Windows_Forms
 
         public void bringsDataIdBudget()
         {
-            budget = obj.ReturnByID(getID);
+            InoxErpContext ctxData = new InoxErpContext();
+            Budget_OSBusiness objData = new Budget_OSBusiness(ctxData);
+            
+            budget = objData.ReturnByID(getID);
             //getID = null;
             // brings the data of the budget recorded in the database
         }

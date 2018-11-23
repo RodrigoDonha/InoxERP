@@ -521,7 +521,7 @@ namespace UIWindows
                 sId_Client = b.IdClients,
                 dValue = -valueRemaing,
                 dtDate = DateTime.Now,
-                sReferentTo = "TROCO DA ORDEM DE SERVIÇO NÚMERO  " + b.iCod.ToString(),
+                sReferentTo = "TROCO O.S.  " + b.iCod.ToString(),
                 CashType = CashType.Out
             };
 
@@ -617,7 +617,7 @@ namespace UIWindows
                     receive1.sId_Client = budget.IdClients;
                     receive1.dtReceiveDate = DateTime.Now;
                     receive1.bReceivePaid = false;
-                    receive1.sReferentTo = budget.iCod.ToString();
+                    receive1.sReferentTo = "O.S.  " + budget.iCod.ToString();
                     receive1.Budgets_OS = budget;
 
                     receive1.dValue = vDin;
@@ -646,7 +646,7 @@ namespace UIWindows
                             receive2.sId_Client = budget.IdClients;
                             receive2.dtReceiveDate = DateTime.Now;
                             receive2.bReceivePaid = false;
-                            receive2.sReferentTo = budget.iCod.ToString();
+                            receive2.sReferentTo = "O.S.  " + budget.iCod.ToString();
                             receive2.Budgets_OS = budget;
 
                             receive2.dValue = ppDin;
@@ -669,7 +669,7 @@ namespace UIWindows
                             receive3.sId_Client = budget.IdClients;
                             receive3.dtReceiveDate = DateTime.Now;
                             receive3.bReceivePaid = false;
-                            receive3.sReferentTo = budget.iCod.ToString();
+                            receive3.sReferentTo = "O.S.  " + budget.iCod.ToString();
                             receive3.Budgets_OS = budget;
 
                             receive3.dValue = (vDin - ppDin) / iDin;
@@ -704,7 +704,7 @@ namespace UIWindows
                     cheque1.dtPayDate = DateTime.Now;
                     cheque1.bChequePaid = false;
                     cheque1.sChequeNumber = "0";
-                    cheque1.sReferentTo = budget.iCod.ToString();
+                    cheque1.sReferentTo = "O.S.  " + budget.iCod.ToString();
 
                     cheque1.dValue = vCheq;
                     cheque1.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pCheq));
@@ -734,7 +734,7 @@ namespace UIWindows
                             cheque2.dtPayDate = DateTime.Now;
                             cheque2.bChequePaid = false;
                             cheque2.sChequeNumber = "0";
-                            cheque2.sReferentTo = budget.iCod.ToString();
+                            cheque2.sReferentTo = "O.S.  " + budget.iCod.ToString();
 
                             cheque2.dValue = ppCheq;
                             due = due.AddDays(Convert.ToDouble(pCheq));
@@ -757,7 +757,7 @@ namespace UIWindows
                             cheque3.dtPayDate = DateTime.Now;
                             cheque3.bChequePaid = false;
                             cheque3.sChequeNumber = "0";
-                            cheque3.sReferentTo = budget.iCod.ToString();
+                            cheque3.sReferentTo = "O.S.  " + budget.iCod.ToString();
 
                             cheque3.dValue = (vCheq - ppCheq) / iCheq;
                             due = due.AddDays(Convert.ToDouble(pCheq));
@@ -788,7 +788,7 @@ namespace UIWindows
                 cash1.sId_Client = budget.IdClients;
                 cash1.dValue = eDin;
                 cash1.dtDate = DateTime.Now;
-                cash1.sReferentTo = budget.iCod.ToString();
+                cash1.sReferentTo = "O.S.  " + budget.iCod.ToString();
                 cash1.CashType = CashType.Enter;
 
                 list.Add(cash1);
@@ -804,7 +804,7 @@ namespace UIWindows
                 cash2.sId_Client = budget.IdClients;
                 cash2.dValue = eCheq;
                 cash2.dtDate = DateTime.Now;
-                cash2.sReferentTo = budget.iCod.ToString();
+                cash2.sReferentTo = "O.S.  " + budget.iCod.ToString();
                 cash2.CashType = CashType.Enter;
 
                 list.Add(cash2);
