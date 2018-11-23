@@ -91,9 +91,27 @@ namespace InoxERP.UI_Windows_Forms
                         budgetAlter.dtDateServiceOrderApproved = DateTime.Now;
                         budgetAlter.dtDateRegisterFinished = DateTime.Now;
 
-                        
-                        budgetAlter.IdClients = getIdClient;
-                        
+                        try
+                        {
+                            ClientsBusiness idCliente = new ClientsBusiness(ctxAlter);
+                            budgetAlter.IdClients =
+                                idCliente.Search.FirstOrDefault(c => c.sName.Contains(txtNome.Text)).sID;
+                        }
+                        catch (Exception)
+                        {
+                            try
+                            {
+                                ClientsBusiness idCliente = new ClientsBusiness(ctxAlter);
+                                budgetAlter.IdClients =
+                                    idCliente.Search.FirstOrDefault(c => c.sName.Contains("CONSUMIDOR")).sID;
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show(
+                                    "Antes de concluir este Orçamento Voçê tem que Cadastrar um Cliente CONSUMIDOR para continuar");
+                            }
+                        }
+
                         //atualiza
                         objAlter.Update(budgetAlter);
 
@@ -187,7 +205,7 @@ namespace InoxERP.UI_Windows_Forms
                         {
                             budgetPersist.IdClients = getIdClient;
                         }
-                        else //recebe do consumidor: "1182bd02-9f79-4042-b900-3b6b522dc0af"
+                        else //recebe ID do consumidor: "1182bd02-9f79-4042-b900-3b6b522dc0af"
                         {
                             try
                             {
@@ -198,7 +216,7 @@ namespace InoxERP.UI_Windows_Forms
                             catch (Exception)
                             {
                                 MessageBox.Show(
-                                    "Anter de concluir este Orçamento Voçê tem que Cadastrar um Cliente CONSUMIDOR para continuar");
+                                    "Antes de concluir este Orçamento Voçê tem que Cadastrar um Cliente CONSUMIDOR para continuar");
                             }
                         }
                         
@@ -453,15 +471,15 @@ namespace InoxERP.UI_Windows_Forms
         //RETURN paymentMethods
         public PaymentMethods paymentMethods()
         {
+            if (chkCheque.Checked && chkDinheiro.Checked)
+                return PaymentMethods.chequeMoney;
             if (chkCombinar.Checked)
                 return PaymentMethods.toMatch;
             if (chkCheque.Checked)
                 return PaymentMethods.cheque;
             if (chkDinheiro.Checked)
                 return PaymentMethods.money;
-            if (chkCheque.Checked && chkDinheiro.Checked)
-                return PaymentMethods.chequeMoney;
-
+            
             return 0;
         }
 

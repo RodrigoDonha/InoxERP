@@ -75,13 +75,15 @@ namespace UIWindows
             {
                 var divided = Math.Round(b.dTotal / 2,2); //total ja vem com desc ou juros
                 var installments = b.iPaymentInstallments / 2;
-                var installmentsValue = Math.Round(divided / installments,2);
+                decimal installmentsValue;
 
+                installmentsValue = installments == 0 ? Math.Round(divided / 2,2) : Math.Round(divided / installments,2);
+                
                 txtValorDin.Text = divided.ToString();
                 txtValorCheq.Text = divided.ToString();
 
-                nudParcelasDin.Value = installments;
-                nudParcelasCheq.Value = installments;
+                nudParcelasDin.Value = installments == 0 ? 1 : installments;
+                nudParcelasCheq.Value = installments == 0 ? 1 : installments;
 
                 lblValorPorParcelaDin.Text = installmentsValue.ToString();
                 lblValorPorParcelaCheq.Text = installmentsValue.ToString();
