@@ -1,4 +1,6 @@
-﻿namespace UIWindows
+﻿using System.Windows.Forms;
+
+namespace UIWindows
 {
     partial class frmSignIn
     {
@@ -35,6 +37,7 @@
             this.grpUsuario = new System.Windows.Forms.GroupBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.grpSenha = new System.Windows.Forms.GroupBox();
+            this.btnVisualizarSenha = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.grpUsuario.SuspendLayout();
             this.grpSenha.SuspendLayout();
@@ -49,7 +52,7 @@
             this.btnAcessar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAcessar.Name = "btnAcessar";
             this.btnAcessar.Size = new System.Drawing.Size(80, 30);
-            this.btnAcessar.TabIndex = 4;
+            this.btnAcessar.TabIndex = 6;
             this.btnAcessar.Text = "Acessar";
             this.btnAcessar.UseVisualStyleBackColor = false;
             this.btnAcessar.Click += new System.EventHandler(this.btnAcessar_Click);
@@ -63,7 +66,7 @@
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(80, 30);
-            this.btnLimpar.TabIndex = 5;
+            this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -77,7 +80,7 @@
             this.btnFechar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(80, 30);
-            this.btnFechar.TabIndex = 6;
+            this.btnFechar.TabIndex = 8;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
@@ -90,7 +93,7 @@
             this.grpUsuario.Name = "grpUsuario";
             this.grpUsuario.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpUsuario.Size = new System.Drawing.Size(345, 100);
-            this.grpUsuario.TabIndex = 0;
+            this.grpUsuario.TabIndex = 1;
             this.grpUsuario.TabStop = false;
             this.grpUsuario.Text = "Usuário";
             // 
@@ -101,12 +104,13 @@
             this.txtLogin.MaxLength = 100;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(307, 23);
-            this.txtLogin.TabIndex = 1;
+            this.txtLogin.TabIndex = 3;
             this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLogin_KeyPress);
             // 
             // grpSenha
             // 
+            this.grpSenha.Controls.Add(this.btnVisualizarSenha);
             this.grpSenha.Controls.Add(this.txtSenha);
             this.grpSenha.Location = new System.Drawing.Point(63, 151);
             this.grpSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -117,16 +121,34 @@
             this.grpSenha.TabStop = false;
             this.grpSenha.Text = "Senha";
             // 
+            // btnVisualizarSenha
+            // 
+            this.btnVisualizarSenha.BackColor = System.Drawing.Color.White;
+            this.btnVisualizarSenha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVisualizarSenha.BackgroundImage")));
+            this.btnVisualizarSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnVisualizarSenha.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnVisualizarSenha.FlatAppearance.BorderSize = 0;
+            this.btnVisualizarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizarSenha.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnVisualizarSenha.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizarSenha.Image")));
+            this.btnVisualizarSenha.Location = new System.Drawing.Point(294, 44);
+            this.btnVisualizarSenha.Name = "btnVisualizarSenha";
+            this.btnVisualizarSenha.Padding = new System.Windows.Forms.Padding(3);
+            this.btnVisualizarSenha.Size = new System.Drawing.Size(29, 17);
+            this.btnVisualizarSenha.TabIndex = 5;
+            this.btnVisualizarSenha.UseVisualStyleBackColor = false;
+            this.btnVisualizarSenha.Click += new System.EventHandler(this.btnVisualizarSenha_Click);
+            // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(19, 42);
+            this.txtSenha.Location = new System.Drawing.Point(19, 41);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSenha.MaxLength = 100;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(307, 23);
-            this.txtSenha.TabIndex = 3;
+            this.txtSenha.TabIndex = 4;
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSenha.UseSystemPasswordChar = true;
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // frmSignIn
@@ -162,5 +184,6 @@
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.GroupBox grpSenha;
         private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Button btnVisualizarSenha;
     }
 }

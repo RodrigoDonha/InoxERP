@@ -52,8 +52,8 @@ namespace UIWindows.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<InoxErpContext>(new CreateDatabaseIfNotExists<InoxErpContext>());
-            //Database.SetInitializer<InoxErpContext>(new DropCreateDatabaseIfModelChanges<InoxErpContext>());
+            //Database.SetInitializer<InoxErpContext>(new CreateDatabaseIfNotExists<InoxErpContext>());
+            Database.SetInitializer<InoxErpContext>(new DropCreateDatabaseIfModelChanges<InoxErpContext>());
         }
     }
 }

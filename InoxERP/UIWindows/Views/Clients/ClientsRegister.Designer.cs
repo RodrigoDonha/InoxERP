@@ -68,6 +68,8 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.lblCPF_CNPJ = new System.Windows.Forms.Label();
+            this.txtRg = new System.Windows.Forms.TextBox();
+            this.lblRg = new System.Windows.Forms.Label();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -416,6 +418,8 @@
             // 
             // grpDadosPessoais
             // 
+            this.grpDadosPessoais.Controls.Add(this.txtRg);
+            this.grpDadosPessoais.Controls.Add(this.lblRg);
             this.grpDadosPessoais.Controls.Add(this.txtCargo);
             this.grpDadosPessoais.Controls.Add(this.lblCargoProfissao);
             this.grpDadosPessoais.Controls.Add(this.radIndustrial);
@@ -502,7 +506,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(900, 23);
+            this.txtNome.Size = new System.Drawing.Size(648, 23);
             this.txtNome.TabIndex = 1;
             // 
             // lblNomeCompleto
@@ -522,6 +526,25 @@
             this.lblCPF_CNPJ.Size = new System.Drawing.Size(113, 17);
             this.lblCPF_CNPJ.TabIndex = 1;
             this.lblCPF_CNPJ.Text = "C.P.F. / C.N.P.J.:";
+            // 
+            // txtRg
+            // 
+            this.txtRg.Location = new System.Drawing.Point(864, 34);
+            this.txtRg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRg.MaxLength = 18;
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(192, 23);
+            this.txtRg.TabIndex = 37;
+            this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesRG);
+            // 
+            // lblRg
+            // 
+            this.lblRg.AutoSize = true;
+            this.lblRg.Location = new System.Drawing.Point(814, 37);
+            this.lblRg.Name = "lblRg";
+            this.lblRg.Size = new System.Drawing.Size(41, 17);
+            this.lblRg.TabIndex = 36;
+            this.lblRg.Text = "R.G.:";
             // 
             // frmClientsRegister
             // 
@@ -594,5 +617,7 @@
         private System.Windows.Forms.ComboBox cmbEstate;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Label lblCargoProfissao;
+        private System.Windows.Forms.TextBox txtRg;
+        private System.Windows.Forms.Label lblRg;
     }
 }

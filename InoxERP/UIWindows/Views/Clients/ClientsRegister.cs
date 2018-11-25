@@ -68,6 +68,7 @@ namespace InoxERP.UI_Windows_Forms
 
                             //preenche os dados do orçamento
                             clientsAlter.sName = txtNome.Text;
+                            clientsAlter.sRg = txtRg.Text;
                             clientsAlter.sCpfCnpj = txtCPF_CNPJ.Text;
                             clientsAlter.ClientType = clientType();
                             clientsAlter.sOccupation = txtCargo.Text;
@@ -115,6 +116,7 @@ namespace InoxERP.UI_Windows_Forms
                     clientsPersist.sID = Guid.NewGuid().ToString();
 
                     clientsPersist.sName = txtNome.Text;
+                    clientsPersist.sRg = txtRg.Text;
                     clientsPersist.sCpfCnpj = txtCPF_CNPJ.Text;
                     clientsPersist.ClientType = clientType();
                     clientsPersist.sOccupation = txtCargo.Text;
@@ -191,6 +193,7 @@ namespace InoxERP.UI_Windows_Forms
         public void cleanCamps()
         {
             txtNome.Clear();
+            txtRg.Clear();
             txtCPF_CNPJ.Clear();
             radResidencial.Checked = false;
             radComercial.Checked = false;
@@ -254,6 +257,14 @@ namespace InoxERP.UI_Windows_Forms
                 return false;
             }
 
+            // not obrigatory item
+            //if (txtRg.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe um RG para o Cliente");
+            //    txtRg.Focus();
+            //    return false;
+            //}
+
             if (txtCPF_CNPJ.Text.Length.Equals(0))
             {
                 MessageBox.Show("Informe o CPF / CNPJ para o Cliente");
@@ -281,6 +292,7 @@ namespace InoxERP.UI_Windows_Forms
                 return false;
             }
 
+            // not obrigatory item
             //if (txtComplemento.Text.Length.Equals(0))
             //{
             //    MessageBox.Show("Informe um complemento");
@@ -312,6 +324,7 @@ namespace InoxERP.UI_Windows_Forms
                 return false;
             }
 
+            // not obrigatory item
             //if (txtContatosEmail.Text.Length.Equals(0))
             //{
             //    MessageBox.Show("Informe um E-mail");
@@ -329,6 +342,7 @@ namespace InoxERP.UI_Windows_Forms
             getID = "";
             getID = cli.sID;
             txtNome.Text = cli.sName;
+            txtRg.Text = cli.sRg;
             txtCPF_CNPJ.Text = cli.sCpfCnpj;
             Type(cli);
             txtCargo.Text = cli.sOccupation;
@@ -365,6 +379,7 @@ namespace InoxERP.UI_Windows_Forms
             }
         }
 
+        // qual finalidade disso?
         public bool validationCampsNumber(object sender, EventArgs e)
         {
             //teste = teste.Remove(teste.Lenght - 1);
@@ -373,9 +388,15 @@ namespace InoxERP.UI_Windows_Forms
             return true;
         }
 
+        // qual finalidade disso
         private void txtCPF_CNPJ_TextChanged(object sender, EventArgs e)
         {
             validationCampsNumber(sender, e);
+        }
+
+        public void validationEntriesRG(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidationOnlyNumberAndLetters(sender, e);
         }
 
         public void validationEntriesCPFandCNPJ(object sender, KeyPressEventArgs e)

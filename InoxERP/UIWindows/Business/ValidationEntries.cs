@@ -23,6 +23,20 @@ namespace UIWindows.Business.Concrete
             }
         }
 
+        public void characterValidationOnlyNumberAndLetters(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número ou letras
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar >= 65 && e.KeyChar <= 90)
+            {
+                e.Handled = true;
+                if (e.Handled)
+                {
+                    //MessageBox.Show("incluir apenas números de 0 a 9 e letras de A a Z");
+                }
+            }
+            
+        }
+
         public void characterValidatorOnlyPhones(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada não for número e nem backspace e nem traço e nem parenteses
