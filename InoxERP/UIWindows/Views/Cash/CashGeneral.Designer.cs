@@ -28,18 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCashGeneral));
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtReferenteA = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.grdExtratoGeral = new System.Windows.Forms.DataGridView();
+            this.tbcashBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
             this.lblValor = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.lblReferenteA = new System.Windows.Forms.Label();
             this.lblExtratoGeral = new System.Windows.Forms.Label();
             this.lblSaldoFinal = new System.Windows.Forms.Label();
             this.lblExibeSaldoFinal = new System.Windows.Forms.Label();
+            this.tb_cashTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cashTableAdapter();
+            this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sReferentToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdExtratoGeral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtValor
@@ -51,7 +67,6 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(132, 23);
             this.txtValor.TabIndex = 21;
-            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // txtReferenteA
             // 
@@ -76,12 +91,36 @@
             // 
             // grdExtratoGeral
             // 
+            this.grdExtratoGeral.AutoGenerateColumns = false;
             this.grdExtratoGeral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdExtratoGeral.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sIDDataGridViewTextBoxColumn,
+            this.sIdBudgetsOSDataGridViewTextBoxColumn,
+            this.sIdClientDataGridViewTextBoxColumn,
+            this.dtDateDataGridViewTextBoxColumn,
+            this.dValueDataGridViewTextBoxColumn,
+            this.cashTypeDataGridViewTextBoxColumn,
+            this.sReferentToDataGridViewTextBoxColumn});
+            this.grdExtratoGeral.DataSource = this.tbcashBindingSource;
             this.grdExtratoGeral.Location = new System.Drawing.Point(23, 128);
             this.grdExtratoGeral.Margin = new System.Windows.Forms.Padding(4);
+            this.grdExtratoGeral.MultiSelect = false;
             this.grdExtratoGeral.Name = "grdExtratoGeral";
+            this.grdExtratoGeral.ReadOnly = true;
+            this.grdExtratoGeral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdExtratoGeral.Size = new System.Drawing.Size(469, 233);
             this.grdExtratoGeral.TabIndex = 18;
+            this.grdExtratoGeral.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdExtratoGeral_CellClick);
+            // 
+            // tbcashBindingSource
+            // 
+            this.tbcashBindingSource.DataMember = "tb_cash";
+            this.tbcashBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblValor
             // 
@@ -138,11 +177,82 @@
             // lblExibeSaldoFinal
             // 
             this.lblExibeSaldoFinal.AutoSize = true;
-            this.lblExibeSaldoFinal.Location = new System.Drawing.Point(249, 380);
+            this.lblExibeSaldoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExibeSaldoFinal.Location = new System.Drawing.Point(276, 374);
             this.lblExibeSaldoFinal.Name = "lblExibeSaldoFinal";
-            this.lblExibeSaldoFinal.Size = new System.Drawing.Size(114, 17);
+            this.lblExibeSaldoFinal.Size = new System.Drawing.Size(21, 24);
             this.lblExibeSaldoFinal.TabIndex = 23;
-            this.lblExibeSaldoFinal.Text = "Exibir Saldo Aqui";
+            this.lblExibeSaldoFinal.Text = "0";
+            // 
+            // tb_cashTableAdapter
+            // 
+            this.tb_cashTableAdapter.ClearBeforeFill = true;
+            // 
+            // sIDDataGridViewTextBoxColumn
+            // 
+            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
+            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
+            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
+            this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sIdBudgetsOSDataGridViewTextBoxColumn
+            // 
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.DataPropertyName = "sId_Budgets_OS";
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.HeaderText = "sId_Budgets_OS";
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.Name = "sIdBudgetsOSDataGridViewTextBoxColumn";
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sIdClientDataGridViewTextBoxColumn
+            // 
+            this.sIdClientDataGridViewTextBoxColumn.DataPropertyName = "sId_Client";
+            this.sIdClientDataGridViewTextBoxColumn.HeaderText = "sId_Client";
+            this.sIdClientDataGridViewTextBoxColumn.Name = "sIdClientDataGridViewTextBoxColumn";
+            this.sIdClientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIdClientDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dtDateDataGridViewTextBoxColumn
+            // 
+            this.dtDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dtDateDataGridViewTextBoxColumn.DataPropertyName = "dtDate";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dtDateDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dtDateDataGridViewTextBoxColumn.Name = "dtDateDataGridViewTextBoxColumn";
+            this.dtDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dtDateDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // dValueDataGridViewTextBoxColumn
+            // 
+            this.dValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dValueDataGridViewTextBoxColumn.DataPropertyName = "dValue";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dValueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dValueDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.dValueDataGridViewTextBoxColumn.Name = "dValueDataGridViewTextBoxColumn";
+            this.dValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dValueDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // cashTypeDataGridViewTextBoxColumn
+            // 
+            this.cashTypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cashTypeDataGridViewTextBoxColumn.DataPropertyName = "CashType";
+            this.cashTypeDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.cashTypeDataGridViewTextBoxColumn.Name = "cashTypeDataGridViewTextBoxColumn";
+            this.cashTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cashTypeDataGridViewTextBoxColumn.Visible = false;
+            this.cashTypeDataGridViewTextBoxColumn.Width = 61;
+            // 
+            // sReferentToDataGridViewTextBoxColumn
+            // 
+            this.sReferentToDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sReferentToDataGridViewTextBoxColumn.DataPropertyName = "sReferentTo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sReferentToDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.sReferentToDataGridViewTextBoxColumn.HeaderText = "Referente";
+            this.sReferentToDataGridViewTextBoxColumn.Name = "sReferentToDataGridViewTextBoxColumn";
+            this.sReferentToDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmCashGeneral
             // 
@@ -165,7 +275,10 @@
             this.Name = "frmCashGeneral";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa Geral";
+            this.Load += new System.EventHandler(this.frmCashGeneral_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdExtratoGeral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +296,15 @@
         private System.Windows.Forms.Label lblExtratoGeral;
         private System.Windows.Forms.Label lblSaldoFinal;
         private System.Windows.Forms.Label lblExibeSaldoFinal;
+        private FullDataSet fullDataSet;
+        private System.Windows.Forms.BindingSource tbcashBindingSource;
+        private FullDataSetTableAdapters.tb_cashTableAdapter tb_cashTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sIdBudgetsOSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sIdClientDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dValueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cashTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sReferentToDataGridViewTextBoxColumn;
     }
 }

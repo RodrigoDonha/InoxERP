@@ -26,42 +26,21 @@ namespace UIWindows.Business.Concrete
         }
         public virtual void Insert(T entity)
         {
-            try
-            {
-                context.Entry(entity).State = EntityState.Added;
-                context.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+            context.Entry(entity).State = EntityState.Added;
+            context.SaveChanges();
         }
 
         public virtual void Update(T entity)
         {
-            try
-            {
-                context.Entry(entity).State = EntityState.Modified;
-                context.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+            context.Entry(entity).State = EntityState.Modified;
+            context.SaveChanges();
         }
 
         public virtual void Delete(string id)
         {
-            try
-            {
-                var entity = Search.FirstOrDefault(o => o.sID == id);
-                context.Set<T>().Remove(entity);
-                context.SaveChanges();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
+            var entity = Search.FirstOrDefault(o => o.sID == id);
+            context.Set<T>().Remove(entity);
+            context.SaveChanges();
         }
 
         public virtual T ReturnByID(string id)

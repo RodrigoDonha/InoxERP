@@ -282,3 +282,4 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.exe.
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.exe
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\InoxERP.Core.pdb
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.fixCampsNotNullidClient.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.insertCampNumbersChequeOnCash.resources

@@ -110,6 +110,7 @@
     <Compile Include="Business\Concrete\BaseBusiness.cs" />
     <Compile Include="Business\Concrete\Budget_OSBusiness.cs" />
     <Compile Include="Business\Concrete\CashBusiness.cs" />
+    <Compile Include="Business\Concrete\CashGeneralBusiness.cs" />
     <Compile Include="Business\Concrete\ChequesBusiness.cs" />
     <Compile Include="Business\Concrete\ClientsBusiness.cs" />
     <Compile Include="Business\Concrete\ItemsBusiness.cs" />
@@ -154,6 +155,10 @@
     <Compile Include="Migrations\201811221826515_fixCampsNotNullidClient.cs" />
     <Compile Include="Migrations\201811221826515_fixCampsNotNullidClient.Designer.cs">
       <DependentUpon>201811221826515_fixCampsNotNullidClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811261743089_insertCampNumbersChequeOnCash.cs" />
+    <Compile Include="Migrations\201811261743089_insertCampNumbersChequeOnCash.Designer.cs">
+      <DependentUpon>201811261743089_insertCampNumbersChequeOnCash.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\Backups\AdminChose.cs">
@@ -421,6 +426,9 @@
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
     <EmbeddedResource Include="Migrations\201811221826515_fixCampsNotNullidClient.resx">
       <DependentUpon>201811221826515_fixCampsNotNullidClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811261743089_insertCampNumbersChequeOnCash.resx">
+      <DependentUpon>201811261743089_insertCampNumbersChequeOnCash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Backups\AdminChose.resx">
       <DependentUpon>AdminChose.cs</DependentUpon>

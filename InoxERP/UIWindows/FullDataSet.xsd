@@ -357,7 +357,18 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
               <Mapping SourceColumn="idCash" DataSetColumn="idCash" />
               <Mapping SourceColumn="idBudgets_OS" DataSetColumn="idBudgets_OS" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_accountsToReceive" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAccountsToReceive" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByAccountsToReceive" GeneratorSourceName="FillByAccountsToReceive" GetMethodModifier="Public" GetMethodName="GetByAccountsToReceive" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByAccountsToReceive" UserSourceName="FillByAccountsToReceive">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS
+FROM            tb_accountsToReceive
+WHERE        (bReceivePaid = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_budgets_osTableAdapter" GeneratorDataComponentClassName="tb_budgets_osTableAdapter" Name="tb_budgets_os" UserDataComponentName="tb_budgets_osTableAdapter">
             <MainSource>
@@ -671,7 +682,8 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDate, sReferentTo, CashType FR
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDate, sReferentTo, CashType
 FROM            tb_cash
-WHERE        (CashType = 1)</CommandText>
+WHERE        (CashType = 1)
+ORDER BY dtDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -681,7 +693,24 @@ WHERE        (CashType = 1)</CommandText>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDate, sReferentTo, CashType
 FROM            tb_cash
-WHERE        (CashType = 2)</CommandText>
+WHERE        (CashType = 2)
+ORDER BY dtDate DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByGeneralCash" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByGeneralCash" GeneratorSourceName="FillByGeneralCash" GetMethodModifier="Public" GetMethodName="GetByGeneralCash" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByGeneralCash" UserSourceName="FillByGeneralCash">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT [sID]
+      ,[sId_Budgets_OS]
+      ,[sId_Client]
+      ,[dtDate]
+      ,[sReferentTo]
+      ,[CashType]
+	  ,IIF ([CashType]=1,dValue,-dValue) AS dValue
+  FROM [dbo].[tb_cash]
+ORDER BY dtDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

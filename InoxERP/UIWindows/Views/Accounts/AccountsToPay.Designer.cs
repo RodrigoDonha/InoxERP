@@ -41,14 +41,15 @@
             this.lblReferenteA = new System.Windows.Forms.Label();
             this.lblSaidas = new System.Windows.Forms.Label();
             this.btnBaixar = new System.Windows.Forms.Button();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.txtCodCliente = new System.Windows.Forms.TextBox();
-            this.lblCodCliente = new System.Windows.Forms.Label();
+            this.btnBuscarFornecedor = new System.Windows.Forms.Button();
+            this.txtNomeFornecedor = new System.Windows.Forms.TextBox();
+            this.lblNomeFornecedor = new System.Windows.Forms.Label();
             this.txtOS = new System.Windows.Forms.TextBox();
             this.lblOS = new System.Windows.Forms.Label();
-            this.lblExibeCodigo = new System.Windows.Forms.Label();
-            this.lblCodigo = new System.Windows.Forms.Label();
+            this.nudParcelas = new System.Windows.Forms.NumericUpDown();
+            this.lblParcelas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdSaidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExcluir
@@ -91,7 +92,7 @@
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.MaxLength = 18;
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(120, 22);
+            this.txtValor.Size = new System.Drawing.Size(92, 22);
             this.txtValor.TabIndex = 35;
             // 
             // txtReferenteA
@@ -108,10 +109,10 @@
             // 
             this.dtpData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(358, 113);
+            this.dtpData.Location = new System.Drawing.Point(348, 80);
             this.dtpData.Margin = new System.Windows.Forms.Padding(4);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(123, 22);
+            this.dtpData.Size = new System.Drawing.Size(133, 22);
             this.dtpData.TabIndex = 33;
             // 
             // grdSaidas
@@ -138,12 +139,12 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(295, 118);
+            this.lblData.Location = new System.Drawing.Point(242, 85);
             this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(46, 17);
+            this.lblData.Size = new System.Drawing.Size(90, 17);
             this.lblData.TabIndex = 30;
-            this.lblData.Text = "Data: ";
+            this.lblData.Text = "Vencimento: ";
             // 
             // lblReferenteA
             // 
@@ -178,90 +179,96 @@
             this.btnBaixar.Text = "Baixar";
             this.btnBaixar.UseVisualStyleBackColor = true;
             // 
-            // btnBuscarCliente
+            // btnBuscarFornecedor
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(382, 75);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(100, 28);
-            this.btnBuscarCliente.TabIndex = 49;
-            this.btnBuscarCliente.Text = "Buscar";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarFornecedor.Location = new System.Drawing.Point(381, 44);
+            this.btnBuscarFornecedor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarFornecedor.Name = "btnBuscarFornecedor";
+            this.btnBuscarFornecedor.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscarFornecedor.TabIndex = 49;
+            this.btnBuscarFornecedor.Text = "Buscar";
+            this.btnBuscarFornecedor.UseVisualStyleBackColor = true;
             // 
-            // txtCodCliente
+            // txtNomeFornecedor
             // 
-            this.txtCodCliente.Location = new System.Drawing.Point(298, 80);
-            this.txtCodCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodCliente.MaxLength = 100;
-            this.txtCodCliente.Name = "txtCodCliente";
-            this.txtCodCliente.Size = new System.Drawing.Size(73, 20);
-            this.txtCodCliente.TabIndex = 48;
+            this.txtNomeFornecedor.Location = new System.Drawing.Point(113, 49);
+            this.txtNomeFornecedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomeFornecedor.MaxLength = 100;
+            this.txtNomeFornecedor.Name = "txtNomeFornecedor";
+            this.txtNomeFornecedor.Size = new System.Drawing.Size(260, 20);
+            this.txtNomeFornecedor.TabIndex = 48;
             // 
-            // lblCodCliente
+            // lblNomeFornecedor
             // 
-            this.lblCodCliente.AutoSize = true;
-            this.lblCodCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodCliente.Location = new System.Drawing.Point(198, 81);
-            this.lblCodCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCodCliente.Name = "lblCodCliente";
-            this.lblCodCliente.Size = new System.Drawing.Size(92, 17);
-            this.lblCodCliente.TabIndex = 47;
-            this.lblCodCliente.Text = "Cod. Cliente: ";
+            this.lblNomeFornecedor.AutoSize = true;
+            this.lblNomeFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeFornecedor.Location = new System.Drawing.Point(13, 50);
+            this.lblNomeFornecedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomeFornecedor.Name = "lblNomeFornecedor";
+            this.lblNomeFornecedor.Size = new System.Drawing.Size(93, 17);
+            this.lblNomeFornecedor.TabIndex = 47;
+            this.lblNomeFornecedor.Text = "Fornecedor : ";
             // 
             // txtOS
             // 
-            this.txtOS.Location = new System.Drawing.Point(112, 81);
+            this.txtOS.Location = new System.Drawing.Point(112, 82);
             this.txtOS.Margin = new System.Windows.Forms.Padding(4);
             this.txtOS.MaxLength = 100;
             this.txtOS.Name = "txtOS";
-            this.txtOS.Size = new System.Drawing.Size(73, 20);
+            this.txtOS.Size = new System.Drawing.Size(92, 20);
             this.txtOS.TabIndex = 46;
             // 
             // lblOS
             // 
             this.lblOS.AutoSize = true;
             this.lblOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOS.Location = new System.Drawing.Point(13, 82);
+            this.lblOS.Location = new System.Drawing.Point(13, 83);
             this.lblOS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOS.Name = "lblOS";
-            this.lblOS.Size = new System.Drawing.Size(40, 17);
+            this.lblOS.Size = new System.Drawing.Size(62, 17);
             this.lblOS.TabIndex = 45;
-            this.lblOS.Text = "O.S.:";
+            this.lblOS.Text = "NF/O.S.:";
             // 
-            // lblExibeCodigo
+            // nudParcelas
             // 
-            this.lblExibeCodigo.AutoSize = true;
-            this.lblExibeCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExibeCodigo.Location = new System.Drawing.Point(109, 50);
-            this.lblExibeCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblExibeCodigo.Name = "lblExibeCodigo";
-            this.lblExibeCodigo.Size = new System.Drawing.Size(44, 17);
-            this.lblExibeCodigo.TabIndex = 44;
-            this.lblExibeCodigo.Text = "0000 ";
+            this.nudParcelas.Location = new System.Drawing.Point(348, 118);
+            this.nudParcelas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudParcelas.Name = "nudParcelas";
+            this.nudParcelas.Size = new System.Drawing.Size(48, 20);
+            this.nudParcelas.TabIndex = 50;
+            this.nudParcelas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // lblCodigo
+            // lblParcelas
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(13, 50);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(60, 17);
-            this.lblCodigo.TabIndex = 43;
-            this.lblCodigo.Text = "Código: ";
+            this.lblParcelas.AutoSize = true;
+            this.lblParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParcelas.Location = new System.Drawing.Point(242, 118);
+            this.lblParcelas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblParcelas.Name = "lblParcelas";
+            this.lblParcelas.Size = new System.Drawing.Size(71, 17);
+            this.lblParcelas.TabIndex = 51;
+            this.lblParcelas.Text = "Parcelas: ";
             // 
             // frmAccountsToPay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 471);
-            this.Controls.Add(this.btnBuscarCliente);
-            this.Controls.Add(this.txtCodCliente);
-            this.Controls.Add(this.lblCodCliente);
+            this.Controls.Add(this.lblParcelas);
+            this.Controls.Add(this.nudParcelas);
+            this.Controls.Add(this.btnBuscarFornecedor);
+            this.Controls.Add(this.txtNomeFornecedor);
+            this.Controls.Add(this.lblNomeFornecedor);
             this.Controls.Add(this.txtOS);
             this.Controls.Add(this.lblOS);
-            this.Controls.Add(this.lblExibeCodigo);
-            this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnBaixar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
@@ -279,6 +286,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contas a Pagar";
             ((System.ComponentModel.ISupportInitialize)(this.grdSaidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,12 +305,12 @@
         private System.Windows.Forms.Label lblReferenteA;
         private System.Windows.Forms.Label lblSaidas;
         private System.Windows.Forms.Button btnBaixar;
-        private System.Windows.Forms.Button btnBuscarCliente;
-        private System.Windows.Forms.TextBox txtCodCliente;
-        private System.Windows.Forms.Label lblCodCliente;
+        private System.Windows.Forms.Button btnBuscarFornecedor;
+        private System.Windows.Forms.TextBox txtNomeFornecedor;
+        private System.Windows.Forms.Label lblNomeFornecedor;
         private System.Windows.Forms.TextBox txtOS;
         private System.Windows.Forms.Label lblOS;
-        private System.Windows.Forms.Label lblExibeCodigo;
-        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.NumericUpDown nudParcelas;
+        private System.Windows.Forms.Label lblParcelas;
     }
 }

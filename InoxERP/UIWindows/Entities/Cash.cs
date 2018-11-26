@@ -32,6 +32,8 @@ namespace UIWindows.Entities
         [Range(1, 2, ErrorMessage = "Tipo de Entrada no Caixa é obrigatório")]
         public CashType CashType { get; set; }
 
+        public string sChequeNumber { get; set; }
+
 
         //ForengKey
 
