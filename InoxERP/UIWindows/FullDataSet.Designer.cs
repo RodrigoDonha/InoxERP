@@ -13199,13 +13199,15 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePa
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bRec" +
                 "eivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idProviders\r\nFR" +
-                "OM            tb_accountsToPay\r\nWHERE        (bReceivePaid = 1)";
+                "OM            tb_accountsToPay\r\nWHERE        (bReceivePaid = 1)\r\nORDER BY dtDueD" +
+                "ate Desc";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bRec" +
                 "eivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idProviders\r\nFR" +
-                "OM            tb_accountsToPay\r\nWHERE        (bReceivePaid = 0)";
+                "OM            tb_accountsToPay\r\nWHERE        (bReceivePaid = 0)\r\nORDER BY dtDueD" +
+                "ate Desc";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13832,15 +13834,17 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, " +
-                "bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_O" +
-                "S\r\nFROM            tb_accountsToReceive\r\nWHERE        (bReceivePaid = 1)";
+            this._commandCollection[1].CommandText = @"SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS
+FROM            tb_accountsToReceive
+WHERE        (bReceivePaid = 1)
+ORDER BY dtDueDate DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, " +
-                "bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_O" +
-                "S\r\nFROM            tb_accountsToReceive\r\nWHERE        (bReceivePaid = 0)";
+            this._commandCollection[2].CommandText = @"SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS
+FROM            tb_accountsToReceive
+WHERE        (bReceivePaid = 0)
+ORDER BY dtDueDate DESC";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16092,13 +16096,15 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChe" +
                 "quePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash\r\nF" +
-                "ROM            tb_cheques\r\nWHERE        (bChequePaid = 0)";
+                "ROM            tb_cheques\r\nWHERE        (bChequePaid = 0)\r\nORDER BY dtDueDate DE" +
+                "SC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChe" +
                 "quePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash\r\nF" +
-                "ROM            tb_cheques\r\nWHERE        (bChequePaid = 1)";
+                "ROM            tb_cheques\r\nWHERE        (bChequePaid = 1)\r\nORDER BY dtDueDate De" +
+                "sc";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         

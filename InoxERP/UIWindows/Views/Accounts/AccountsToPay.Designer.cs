@@ -78,7 +78,7 @@
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Location = new System.Drawing.Point(382, 192);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 28);
             this.btnExcluir.TabIndex = 39;
@@ -89,7 +89,7 @@
             // 
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.Location = new System.Drawing.Point(201, 192);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 28);
             this.btnAlterar.TabIndex = 38;
@@ -100,7 +100,7 @@
             // 
             this.btnIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIncluir.Location = new System.Drawing.Point(13, 192);
-            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(100, 28);
             this.btnIncluir.TabIndex = 36;
@@ -111,7 +111,7 @@
             // 
             this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValor.Location = new System.Drawing.Point(112, 115);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtValor.MaxLength = 18;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(92, 22);
@@ -121,7 +121,7 @@
             // 
             this.txtReferenteA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReferenteA.Location = new System.Drawing.Point(112, 150);
-            this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
             this.txtReferenteA.Size = new System.Drawing.Size(369, 22);
@@ -132,7 +132,7 @@
             this.dtpData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpData.Location = new System.Drawing.Point(348, 80);
-            this.dtpData.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(133, 22);
             this.dtpData.TabIndex = 33;
@@ -156,7 +156,7 @@
             this.idProvidersDataGridViewTextBoxColumn});
             this.grdSaidas.DataSource = this.tbaccountsToPayBindingSource;
             this.grdSaidas.Location = new System.Drawing.Point(13, 237);
-            this.grdSaidas.Margin = new System.Windows.Forms.Padding(4);
+            this.grdSaidas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grdSaidas.MultiSelect = false;
             this.grdSaidas.Name = "grdSaidas";
             this.grdSaidas.ReadOnly = true;
@@ -197,7 +197,7 @@
             this.dtDueDateDataGridViewTextBoxColumn.HeaderText = "Vencimento";
             this.dtDueDateDataGridViewTextBoxColumn.Name = "dtDueDateDataGridViewTextBoxColumn";
             this.dtDueDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dtDueDateDataGridViewTextBoxColumn.Width = 88;
+            this.dtDueDateDataGridViewTextBoxColumn.Width = 97;
             // 
             // dValueDataGridViewTextBoxColumn
             // 
@@ -208,7 +208,7 @@
             this.dValueDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.dValueDataGridViewTextBoxColumn.Name = "dValueDataGridViewTextBoxColumn";
             this.dValueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dValueDataGridViewTextBoxColumn.Width = 56;
+            this.dValueDataGridViewTextBoxColumn.Width = 60;
             // 
             // dtPayDateDataGridViewTextBoxColumn
             // 
@@ -235,7 +235,7 @@
             this.iInstallmentDataGridViewTextBoxColumn.HeaderText = "Parcela";
             this.iInstallmentDataGridViewTextBoxColumn.Name = "iInstallmentDataGridViewTextBoxColumn";
             this.iInstallmentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iInstallmentDataGridViewTextBoxColumn.Width = 68;
+            this.iInstallmentDataGridViewTextBoxColumn.Width = 74;
             // 
             // iAmountInstallmentDataGridViewTextBoxColumn
             // 
@@ -329,7 +329,7 @@
             // 
             this.btnBaixar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaixar.Location = new System.Drawing.Point(201, 430);
-            this.btnBaixar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBaixar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBaixar.Name = "btnBaixar";
             this.btnBaixar.Size = new System.Drawing.Size(100, 28);
             this.btnBaixar.TabIndex = 42;
@@ -339,7 +339,7 @@
             // btnBuscarFornecedor
             // 
             this.btnBuscarFornecedor.Location = new System.Drawing.Point(381, 44);
-            this.btnBuscarFornecedor.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarFornecedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarFornecedor.Name = "btnBuscarFornecedor";
             this.btnBuscarFornecedor.Size = new System.Drawing.Size(100, 28);
             this.btnBuscarFornecedor.TabIndex = 49;
@@ -349,7 +349,7 @@
             // txtNomeFornecedor
             // 
             this.txtNomeFornecedor.Location = new System.Drawing.Point(113, 49);
-            this.txtNomeFornecedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomeFornecedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNomeFornecedor.MaxLength = 100;
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
             this.txtNomeFornecedor.Size = new System.Drawing.Size(260, 20);
@@ -369,7 +369,7 @@
             // txtOS
             // 
             this.txtOS.Location = new System.Drawing.Point(112, 82);
-            this.txtOS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtOS.MaxLength = 100;
             this.txtOS.Name = "txtOS";
             this.txtOS.Size = new System.Drawing.Size(92, 20);
@@ -442,6 +442,7 @@
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblReferenteA);
             this.Controls.Add(this.lblSaidas);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAccountsToPay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
