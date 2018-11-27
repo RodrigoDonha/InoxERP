@@ -56,12 +56,6 @@
             this.txtOrcamento = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.grdCheques = new System.Windows.Forms.DataGridView();
-            this.lblVecto = new System.Windows.Forms.Label();
-            this.lblOrcamento = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,13 +68,19 @@
             this.sChequeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sReferentToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.lblVecto = new System.Windows.Forms.Label();
+            this.lblOrcamento = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
             this.grpOrdemServico.SuspendLayout();
             this.grpCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // grpOrdemServico
@@ -131,9 +131,9 @@
             this.lblCodCliente.Location = new System.Drawing.Point(7, 51);
             this.lblCodCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodCliente.Name = "lblCodCliente";
-            this.lblCodCliente.Size = new System.Drawing.Size(45, 17);
+            this.lblCodCliente.Size = new System.Drawing.Size(53, 17);
             this.lblCodCliente.TabIndex = 40;
-            this.lblCodCliente.Text = "Cod.: ";
+            this.lblCodCliente.Text = "Nome: ";
             // 
             // txtCodCliente
             // 
@@ -347,51 +347,6 @@
             this.grdCheques.Size = new System.Drawing.Size(496, 156);
             this.grdCheques.TabIndex = 52;
             // 
-            // lblVecto
-            // 
-            this.lblVecto.AutoSize = true;
-            this.lblVecto.Location = new System.Drawing.Point(271, 176);
-            this.lblVecto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblVecto.Name = "lblVecto";
-            this.lblVecto.Size = new System.Drawing.Size(52, 17);
-            this.lblVecto.TabIndex = 51;
-            this.lblVecto.Text = "Vecto: ";
-            // 
-            // lblOrcamento
-            // 
-            this.lblOrcamento.AutoSize = true;
-            this.lblOrcamento.Location = new System.Drawing.Point(17, 215);
-            this.lblOrcamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblOrcamento.Name = "lblOrcamento";
-            this.lblOrcamento.Size = new System.Drawing.Size(86, 17);
-            this.lblOrcamento.TabIndex = 50;
-            this.lblOrcamento.Text = "Orçamento: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(211, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 24);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Cheques";
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbchequesBindingSource
-            // 
-            this.tbchequesBindingSource.DataMember = "tb_cheques";
-            this.tbchequesBindingSource.DataSource = this.fullDataSet;
-            // 
-            // tb_chequesTableAdapter
-            // 
-            this.tb_chequesTableAdapter.ClearBeforeFill = true;
-            // 
             // sIDDataGridViewTextBoxColumn
             // 
             this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
@@ -479,6 +434,51 @@
             this.idCashDataGridViewTextBoxColumn.Name = "idCashDataGridViewTextBoxColumn";
             this.idCashDataGridViewTextBoxColumn.Visible = false;
             // 
+            // tbchequesBindingSource
+            // 
+            this.tbchequesBindingSource.DataMember = "tb_cheques";
+            this.tbchequesBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblVecto
+            // 
+            this.lblVecto.AutoSize = true;
+            this.lblVecto.Location = new System.Drawing.Point(271, 176);
+            this.lblVecto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVecto.Name = "lblVecto";
+            this.lblVecto.Size = new System.Drawing.Size(52, 17);
+            this.lblVecto.TabIndex = 51;
+            this.lblVecto.Text = "Vecto: ";
+            // 
+            // lblOrcamento
+            // 
+            this.lblOrcamento.AutoSize = true;
+            this.lblOrcamento.Location = new System.Drawing.Point(17, 215);
+            this.lblOrcamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOrcamento.Name = "lblOrcamento";
+            this.lblOrcamento.Size = new System.Drawing.Size(86, 17);
+            this.lblOrcamento.TabIndex = 50;
+            this.lblOrcamento.Text = "Orçamento: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(211, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 24);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Cheques";
+            // 
+            // tb_chequesTableAdapter
+            // 
+            this.tb_chequesTableAdapter.ClearBeforeFill = true;
+            // 
             // frmAccountsCheque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -522,8 +522,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

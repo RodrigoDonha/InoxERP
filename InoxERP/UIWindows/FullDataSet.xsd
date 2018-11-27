@@ -253,7 +253,28 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePa
               <Mapping SourceColumn="idCash" DataSetColumn="idCash" />
               <Mapping SourceColumn="idProviders" DataSetColumn="idProviders" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_accountsToPay" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAccountsPaied" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByAccountsPaied" GeneratorSourceName="FillByAccountsPaied" GetMethodModifier="Public" GetMethodName="GetByAccountsPaied" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByAccountsPaied" UserSourceName="FillByAccountsPaied">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idProviders
+FROM            tb_accountsToPay
+WHERE        (bReceivePaid = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_accountsToPay" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAccountsToPay" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByAccountsToPay" GeneratorSourceName="FillByAccountsToPay" GetMethodModifier="Public" GetMethodName="GetByAccountsToPay" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByAccountsToPay" UserSourceName="FillByAccountsToPay">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idProviders
+FROM            tb_accountsToPay
+WHERE        (bReceivePaid = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_accountsToReceiveTableAdapter" GeneratorDataComponentClassName="tb_accountsToReceiveTableAdapter" Name="tb_accountsToReceive" UserDataComponentName="tb_accountsToReceiveTableAdapter">
             <MainSource>
@@ -358,6 +379,16 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
               <Mapping SourceColumn="idBudgets_OS" DataSetColumn="idBudgets_OS" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_accountsToReceive" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAccountReceived" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByAccountReceived" GeneratorSourceName="FillByAccountReceived" GetMethodModifier="Public" GetMethodName="GetByAccountReceived" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByAccountReceived" UserSourceName="FillByAccountReceived">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS
+FROM            tb_accountsToReceive
+WHERE        (bReceivePaid = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_accountsToReceive" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAccountsToReceive" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByAccountsToReceive" GeneratorSourceName="FillByAccountsToReceive" GetMethodModifier="Public" GetMethodName="GetByAccountsToReceive" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByAccountsToReceive" UserSourceName="FillByAccountsToReceive">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -824,6 +855,16 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
                     <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash
 FROM            tb_cheques
 WHERE        (bChequePaid = 0)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cheques" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByChequesReveiced" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByChequesReveiced" GeneratorSourceName="FillByChequesReveiced" GetMethodModifier="Public" GetMethodName="GetByChequesReveiced" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByChequesReveiced" UserSourceName="FillByChequesReveiced">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash
+FROM            tb_cheques
+WHERE        (bChequePaid = 1)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

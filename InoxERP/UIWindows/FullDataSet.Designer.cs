@@ -13188,13 +13188,25 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePa
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePai" +
                 "d, iInstallment, iAmountInstallment, sReferentTo, idCash, idProviders FROM dbo.t" +
                 "b_accountsToPay";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bRec" +
+                "eivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idProviders\r\nFR" +
+                "OM            tb_accountsToPay\r\nWHERE        (bReceivePaid = 1)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bRec" +
+                "eivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idProviders\r\nFR" +
+                "OM            tb_accountsToPay\r\nWHERE        (bReceivePaid = 0)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13216,6 +13228,54 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePa
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual FullDataSet.tb_accountsToPayDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            FullDataSet.tb_accountsToPayDataTable dataTable = new FullDataSet.tb_accountsToPayDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAccountsPaied(FullDataSet.tb_accountsToPayDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_accountsToPayDataTable GetByAccountsPaied() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            FullDataSet.tb_accountsToPayDataTable dataTable = new FullDataSet.tb_accountsToPayDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAccountsToPay(FullDataSet.tb_accountsToPayDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_accountsToPayDataTable GetByAccountsToPay() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             FullDataSet.tb_accountsToPayDataTable dataTable = new FullDataSet.tb_accountsToPayDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -13763,7 +13823,7 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceiv" +
@@ -13774,8 +13834,14 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, " +
                 "bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_O" +
-                "S\r\nFROM            tb_accountsToReceive\r\nWHERE        (bReceivePaid = 0)";
+                "S\r\nFROM            tb_accountsToReceive\r\nWHERE        (bReceivePaid = 1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, " +
+                "bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_O" +
+                "S\r\nFROM            tb_accountsToReceive\r\nWHERE        (bReceivePaid = 0)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13806,7 +13872,7 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByAccountsToReceive(FullDataSet.tb_accountsToReceiveDataTable dataTable) {
+        public virtual int FillByAccountReceived(FullDataSet.tb_accountsToReceiveDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13819,8 +13885,32 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual FullDataSet.tb_accountsToReceiveDataTable GetByAccountsToReceive() {
+        public virtual FullDataSet.tb_accountsToReceiveDataTable GetByAccountReceived() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            FullDataSet.tb_accountsToReceiveDataTable dataTable = new FullDataSet.tb_accountsToReceiveDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAccountsToReceive(FullDataSet.tb_accountsToReceiveDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_accountsToReceiveDataTable GetByAccountsToReceive() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             FullDataSet.tb_accountsToReceiveDataTable dataTable = new FullDataSet.tb_accountsToReceiveDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -15991,7 +16081,7 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid" +
@@ -16004,6 +16094,12 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
                 "quePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash\r\nF" +
                 "ROM            tb_cheques\r\nWHERE        (bChequePaid = 0)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChe" +
+                "quePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash\r\nF" +
+                "ROM            tb_cheques\r\nWHERE        (bChequePaid = 1)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16049,6 +16145,30 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual FullDataSet.tb_chequesDataTable GetByCheque() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            FullDataSet.tb_chequesDataTable dataTable = new FullDataSet.tb_chequesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByChequesReveiced(FullDataSet.tb_chequesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_chequesDataTable GetByChequesReveiced() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             FullDataSet.tb_chequesDataTable dataTable = new FullDataSet.tb_chequesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
