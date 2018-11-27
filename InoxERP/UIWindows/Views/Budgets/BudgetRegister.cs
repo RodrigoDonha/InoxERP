@@ -150,12 +150,12 @@ namespace InoxERP.UI_Windows_Forms
                         Budgets_OS budgetPersist = new Budgets_OS();
 
                         //gera id unico para o orçamento
-                        budgetPersist.sID = Guid.NewGuid().ToString();
+                        //budgetPersist.sID = Guid.NewGuid().ToString();
 
                         //preenche os dados do orçamento
                         budgetPersist.dtDate = DateTime.Now;
                         budgetPersist.ClientType = clientType();
-                        budgetPersist.sName = txtNome.Text;
+                        //budgetPersist.sName = txtNome.Text;
                         budgetPersist.sAdress = txtEndereco.Text;
                         budgetPersist.sTelephone = txtTelefone.Text;
                         budgetPersist.sOccupation = txtCargo.Text;
@@ -166,9 +166,9 @@ namespace InoxERP.UI_Windows_Forms
                         budgetPersist.PaymentMethods = paymentMethods();
                         budgetPersist.bPaymentToMatch = checkPaymentForm("combine");
                         budgetPersist.dPercentDiscount = Convert.ToDecimal(txtPorcentDescAVista.Text);
-                        budgetPersist.iPaymentInstallments = Convert.ToInt32(nudParcelas.Value);
-                        budgetPersist.bInterestRate = checkPaymentForm("rate");
-                        budgetPersist.dWithInterest = Convert.ToDecimal(txtPorcentJuros.Text);
+                        //budgetPersist.iPaymentInstallments = Convert.ToInt32(nudParcelas.Value);
+                        //budgetPersist.bInterestRate = checkPaymentForm("rate");
+                        //budgetPersist.dWithInterest = Convert.ToDecimal(txtPorcentJuros.Text);
                         budgetPersist.iPrevisionOfExecute = Convert.ToInt32(nudDias.Value);
                         budgetPersist.dtStartPrevision = dtpDataPrevistaInicio.Value;
                         budgetPersist.dtFinalPrevision = dtpDataPrevistaEntrega.Value;
