@@ -37,7 +37,7 @@ namespace UIWindows.Context
                         MessageBox.Show("Propriedade:  '"+ ve.PropertyName + "' \n Erro:  "+ ve.ErrorMessage);
                     }
                 }
-                throw;
+                return 0;
             }
         }
 
@@ -75,10 +75,10 @@ namespace UIWindows.Context
         public DbSet<ParcialPay> ParcialPay { get; set; }
 
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            Database.SetInitializer<InoxErpContext>(new CreateDatabaseIfNotExists<InoxErpContext>());
-            //Database.SetInitializer<InoxErpContext>(new DropCreateDatabaseIfModelChanges<InoxErpContext>());
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    Database.SetInitializer<InoxErpContext>(new CreateDatabaseIfNotExists<InoxErpContext>());
+        //    //Database.SetInitializer<InoxErpContext>(new DropCreateDatabaseIfModelChanges<InoxErpContext>());
+        //}
     }
 }

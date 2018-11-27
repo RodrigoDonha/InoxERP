@@ -18,15 +18,50 @@ namespace UIWindows.Business.Concrete
 
         public Users ValidateLoginEqual(Users user)
         {
-            return context.Users.FirstOrDefault(u => u.sLogin == user.sLogin);
+            try
+            {
+                return context.Users.FirstOrDefault(u => u.sLogin == user.sLogin);
+            }
+            catch (Exception e)
+            {
+                if (errorMessage("equal") == DialogResult.Yes)
+                    MessageBox.Show(e.InnerException.InnerException.ToString());
+
+                return null;
+            }
         }
 
         public Users signIn(Users user)
         {
-            return context.Users.FirstOrDefault(u => u.sLogin == user.sLogin && u.sKey == user.sKey);
+            try
+            {
+                return context.Users.FirstOrDefault(u => u.sLogin == user.sLogin && u.sKey == user.sKey);
+            }
+            catch (Exception e)
+            {
+                if (errorMessage("login") == DialogResult.Yes)
+                    MessageBox.Show(e.InnerException.InnerException.ToString());
+
+                return null;
+            }
         }
 
-        //Convet password to MD5 Criptography
+        //ERROR MESSAGES
+        private DialogResult errorMessage(string type)
+        {
+            switch (type)
+            {
+                case "login":
+                    return MessageBox.Show("Erro no Login de Usuário, Deseja ver a menssagem de Erro?", "ERRO AO CONSULTAR O USUÁRIO", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "equal":
+                    return MessageBox.Show("Erro na Validação de Logins Iguais, Deseja ver a menssagem de Erro?", "ERRO AO VALIDAR O LOGIN", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            }
+
+            return DialogResult.No;
+        }
+
+
+        //Convert password to MD5 Criptography
         public string getMD5Hash(string input)
         {
             System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();

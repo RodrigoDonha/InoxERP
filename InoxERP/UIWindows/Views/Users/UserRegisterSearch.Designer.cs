@@ -258,6 +258,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(295, 23);
             this.txtLogin.TabIndex = 2;
+            this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
             // 
             // lblSenha
             // 

@@ -224,10 +224,18 @@ namespace UIWindows
         //overrid FILL DATASET
         public void fillDataSet() /////*********************ARRUMAR**********************************
         {
-            if(userLog.sLogin == "Admin" || userLog.sLogin == "jefter" || userLog.sLogin == "rodrigo")
-                this.tb_usersTableAdapter.FillByAdminType(this.fullDataSet.tb_users);
-            else
-                this.tb_usersTableAdapter.FillByBasicType(this.fullDataSet.tb_users);
+            try
+            {
+                if (userLog.sLogin == "Admin" || userLog.sLogin == "jefter" || userLog.sLogin == "rodrigo")
+                    this.tb_usersTableAdapter.FillByAdminType(this.fullDataSet.tb_users);
+                else
+                    this.tb_usersTableAdapter.FillByBasicType(this.fullDataSet.tb_users);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Tabela de Usuários não foi Encontrada, Certifique-se de ter criado o seu Banco de Dados !!!");
+            }
+            
         }
 
         //FILL COMBOBOX
@@ -268,6 +276,13 @@ namespace UIWindows
         private void frmUserRegisterSearch_Load_1(object sender, EventArgs e)
         {
            fillDataSet();
+        }
+
+        private void txtLogin_Leave(object sender, EventArgs e)
+        {
+            user.sLogin = txtLogin.Text;
+            if(validateUserEquals(user) != null)
+                MessageBox.Show("Login já cadastrado !!!  Por favor escolha outro");
         }
     }
 }
