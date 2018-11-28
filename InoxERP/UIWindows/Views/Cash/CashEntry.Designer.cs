@@ -38,6 +38,13 @@
             this.lblData = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.grdEntradas = new System.Windows.Forms.DataGridView();
+            this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sReferentToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbcashBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullDataSet = new UIWindows.FullDataSet();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
@@ -46,23 +53,14 @@
             this.btnIncluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnEstornar = new System.Windows.Forms.Button();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblExibeCodigo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblOS = new System.Windows.Forms.Label();
+            this.txtOS = new System.Windows.Forms.TextBox();
+            this.txtNomeCliente = new System.Windows.Forms.TextBox();
+            this.lblNomeCliente = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNumCheque = new System.Windows.Forms.TextBox();
             this.lblNumeroCheque = new System.Windows.Forms.Label();
             this.tb_cashTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cashTableAdapter();
-            this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sReferentToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cashTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdEntradas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
@@ -72,41 +70,41 @@
             // 
             this.lblEntradas.AutoSize = true;
             this.lblEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntradas.Location = new System.Drawing.Point(210, 9);
+            this.lblEntradas.Location = new System.Drawing.Point(210, 6);
             this.lblEntradas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEntradas.Name = "lblEntradas";
             this.lblEntradas.Size = new System.Drawing.Size(92, 24);
-            this.lblEntradas.TabIndex = 0;
+            this.lblEntradas.TabIndex = 1;
             this.lblEntradas.Text = "Entradas";
             // 
             // lblReferenteA
             // 
             this.lblReferenteA.AutoSize = true;
-            this.lblReferenteA.Location = new System.Drawing.Point(12, 195);
+            this.lblReferenteA.Location = new System.Drawing.Point(12, 157);
             this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReferenteA.Name = "lblReferenteA";
             this.lblReferenteA.Size = new System.Drawing.Size(91, 17);
-            this.lblReferenteA.TabIndex = 1;
+            this.lblReferenteA.TabIndex = 13;
             this.lblReferenteA.Text = "Referente a: ";
             // 
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(294, 121);
+            this.lblData.Location = new System.Drawing.Point(269, 83);
             this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(46, 17);
-            this.lblData.TabIndex = 2;
-            this.lblData.Text = "Data: ";
+            this.lblData.Size = new System.Drawing.Size(90, 17);
+            this.lblData.TabIndex = 9;
+            this.lblData.Text = "Vencimento: ";
             // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(12, 121);
+            this.lblValor.Location = new System.Drawing.Point(14, 83);
             this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(49, 17);
-            this.lblValor.TabIndex = 3;
+            this.lblValor.TabIndex = 7;
             this.lblValor.Text = "Valor: ";
             // 
             // grdEntradas
@@ -122,174 +120,15 @@
             this.sReferentToDataGridViewTextBoxColumn,
             this.cashTypeDataGridViewTextBoxColumn});
             this.grdEntradas.DataSource = this.tbcashBindingSource;
-            this.grdEntradas.Location = new System.Drawing.Point(13, 264);
+            this.grdEntradas.Location = new System.Drawing.Point(13, 226);
             this.grdEntradas.Margin = new System.Windows.Forms.Padding(4);
             this.grdEntradas.MultiSelect = false;
             this.grdEntradas.Name = "grdEntradas";
             this.grdEntradas.ReadOnly = true;
             this.grdEntradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdEntradas.Size = new System.Drawing.Size(469, 185);
-            this.grdEntradas.TabIndex = 4;
-            // 
-            // tbcashBindingSource
-            // 
-            this.tbcashBindingSource.DataMember = "tb_cash";
-            this.tbcashBindingSource.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dtpData
-            // 
-            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(367, 116);
-            this.dtpData.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpData.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
-            this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(115, 23);
-            this.dtpData.TabIndex = 5;
-            // 
-            // txtReferenteA
-            // 
-            this.txtReferenteA.Location = new System.Drawing.Point(103, 192);
-            this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
-            this.txtReferenteA.MaxLength = 100;
-            this.txtReferenteA.Name = "txtReferenteA";
-            this.txtReferenteA.Size = new System.Drawing.Size(379, 23);
-            this.txtReferenteA.TabIndex = 6;
-            // 
-            // txtValor
-            // 
-            this.txtValor.Location = new System.Drawing.Point(103, 118);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(4);
-            this.txtValor.MaxLength = 18;
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(132, 23);
-            this.txtValor.TabIndex = 7;
-            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
-            // 
-            // btnIncluir
-            // 
-            this.btnIncluir.Location = new System.Drawing.Point(14, 227);
-            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(100, 28);
-            this.btnIncluir.TabIndex = 8;
-            this.btnIncluir.Text = "Incluir";
-            this.btnIncluir.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(198, 227);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(100, 28);
-            this.btnAlterar.TabIndex = 10;
-            this.btnAlterar.Text = "Alterar";
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            // 
-            // btnEstornar
-            // 
-            this.btnEstornar.Location = new System.Drawing.Point(377, 227);
-            this.btnEstornar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEstornar.Name = "btnEstornar";
-            this.btnEstornar.Size = new System.Drawing.Size(105, 28);
-            this.btnEstornar.TabIndex = 11;
-            this.btnEstornar.Text = "Excluir";
-            this.btnEstornar.UseVisualStyleBackColor = true;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(13, 49);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(60, 17);
-            this.lblCodigo.TabIndex = 12;
-            this.lblCodigo.Text = "Código: ";
-            // 
-            // lblExibeCodigo
-            // 
-            this.lblExibeCodigo.AutoSize = true;
-            this.lblExibeCodigo.Location = new System.Drawing.Point(100, 49);
-            this.lblExibeCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblExibeCodigo.Name = "lblExibeCodigo";
-            this.lblExibeCodigo.Size = new System.Drawing.Size(44, 17);
-            this.lblExibeCodigo.TabIndex = 13;
-            this.lblExibeCodigo.Text = "0000 ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 82);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 17);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "O.S.:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(103, 79);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.MaxLength = 100;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(73, 23);
-            this.textBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(301, 79);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.MaxLength = 100;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(73, 23);
-            this.textBox2.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(197, 82);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 17);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Cod. Cliente: ";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(386, 76);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 28);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // txtNumCheque
-            // 
-            this.txtNumCheque.Location = new System.Drawing.Point(103, 157);
-            this.txtNumCheque.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNumCheque.MaxLength = 33;
-            this.txtNumCheque.Name = "txtNumCheque";
-            this.txtNumCheque.Size = new System.Drawing.Size(379, 23);
-            this.txtNumCheque.TabIndex = 68;
-            // 
-            // lblNumeroCheque
-            // 
-            this.lblNumeroCheque.AutoSize = true;
-            this.lblNumeroCheque.Location = new System.Drawing.Point(14, 160);
-            this.lblNumeroCheque.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNumeroCheque.Name = "lblNumeroCheque";
-            this.lblNumeroCheque.Size = new System.Drawing.Size(84, 17);
-            this.lblNumeroCheque.TabIndex = 67;
-            this.lblNumeroCheque.Text = "Nº Cheque: ";
-            // 
-            // tb_cashTableAdapter
-            // 
-            this.tb_cashTableAdapter.ClearBeforeFill = true;
+            this.grdEntradas.TabIndex = 18;
+            this.grdEntradas.TabStop = false;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -355,20 +194,161 @@
             this.cashTypeDataGridViewTextBoxColumn.ReadOnly = true;
             this.cashTypeDataGridViewTextBoxColumn.Visible = false;
             // 
+            // tbcashBindingSource
+            // 
+            this.tbcashBindingSource.DataMember = "tb_cash";
+            this.tbcashBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dtpData
+            // 
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(367, 78);
+            this.dtpData.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpData.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(115, 23);
+            this.dtpData.TabIndex = 10;
+            // 
+            // txtReferenteA
+            // 
+            this.txtReferenteA.Location = new System.Drawing.Point(103, 154);
+            this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtReferenteA.MaxLength = 100;
+            this.txtReferenteA.Name = "txtReferenteA";
+            this.txtReferenteA.Size = new System.Drawing.Size(379, 23);
+            this.txtReferenteA.TabIndex = 14;
+            // 
+            // txtValor
+            // 
+            this.txtValor.Location = new System.Drawing.Point(103, 80);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValor.MaxLength = 18;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(140, 23);
+            this.txtValor.TabIndex = 8;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.Location = new System.Drawing.Point(14, 189);
+            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(100, 28);
+            this.btnIncluir.TabIndex = 15;
+            this.btnIncluir.Text = "Incluir";
+            this.btnIncluir.UseVisualStyleBackColor = true;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(198, 189);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(100, 28);
+            this.btnAlterar.TabIndex = 16;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            // 
+            // btnEstornar
+            // 
+            this.btnEstornar.Location = new System.Drawing.Point(377, 189);
+            this.btnEstornar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEstornar.Name = "btnEstornar";
+            this.btnEstornar.Size = new System.Drawing.Size(105, 28);
+            this.btnEstornar.TabIndex = 17;
+            this.btnEstornar.Text = "Excluir";
+            this.btnEstornar.UseVisualStyleBackColor = true;
+            // 
+            // lblOS
+            // 
+            this.lblOS.AutoSize = true;
+            this.lblOS.Location = new System.Drawing.Point(13, 44);
+            this.lblOS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOS.Name = "lblOS";
+            this.lblOS.Size = new System.Drawing.Size(40, 17);
+            this.lblOS.TabIndex = 2;
+            this.lblOS.Text = "O.S.:";
+            // 
+            // txtOS
+            // 
+            this.txtOS.Location = new System.Drawing.Point(103, 41);
+            this.txtOS.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOS.MaxLength = 100;
+            this.txtOS.Name = "txtOS";
+            this.txtOS.Size = new System.Drawing.Size(73, 23);
+            this.txtOS.TabIndex = 3;
+            this.txtOS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOS_KeyPress);
+            // 
+            // txtNomeCliente
+            // 
+            this.txtNomeCliente.Location = new System.Drawing.Point(251, 41);
+            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomeCliente.MaxLength = 100;
+            this.txtNomeCliente.Name = "txtNomeCliente";
+            this.txtNomeCliente.Size = new System.Drawing.Size(123, 23);
+            this.txtNomeCliente.TabIndex = 5;
+            this.txtNomeCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCliente_KeyPress);
+            // 
+            // lblNomeCliente
+            // 
+            this.lblNomeCliente.AutoSize = true;
+            this.lblNomeCliente.Location = new System.Drawing.Point(184, 44);
+            this.lblNomeCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomeCliente.Name = "lblNomeCliente";
+            this.lblNomeCliente.Size = new System.Drawing.Size(59, 17);
+            this.lblNomeCliente.TabIndex = 4;
+            this.lblNomeCliente.Text = "Cliente: ";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(386, 38);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(96, 28);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtNumCheque
+            // 
+            this.txtNumCheque.Location = new System.Drawing.Point(103, 119);
+            this.txtNumCheque.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumCheque.MaxLength = 33;
+            this.txtNumCheque.Name = "txtNumCheque";
+            this.txtNumCheque.Size = new System.Drawing.Size(379, 23);
+            this.txtNumCheque.TabIndex = 12;
+            this.txtNumCheque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumCheque_KeyPress);
+            // 
+            // lblNumeroCheque
+            // 
+            this.lblNumeroCheque.AutoSize = true;
+            this.lblNumeroCheque.Location = new System.Drawing.Point(14, 122);
+            this.lblNumeroCheque.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumeroCheque.Name = "lblNumeroCheque";
+            this.lblNumeroCheque.Size = new System.Drawing.Size(84, 17);
+            this.lblNumeroCheque.TabIndex = 11;
+            this.lblNumeroCheque.Text = "Nº Cheque: ";
+            // 
+            // tb_cashTableAdapter
+            // 
+            this.tb_cashTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCashEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 462);
+            this.ClientSize = new System.Drawing.Size(499, 425);
             this.Controls.Add(this.txtNumCheque);
             this.Controls.Add(this.lblNumeroCheque);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblExibeCodigo);
-            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtNomeCliente);
+            this.Controls.Add(this.lblNomeCliente);
+            this.Controls.Add(this.txtOS);
+            this.Controls.Add(this.lblOS);
             this.Controls.Add(this.btnEstornar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
@@ -408,13 +388,11 @@
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnEstornar;
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Label lblExibeCodigo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblOS;
+        private System.Windows.Forms.TextBox txtOS;
+        private System.Windows.Forms.TextBox txtNomeCliente;
+        private System.Windows.Forms.Label lblNomeCliente;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtNumCheque;
         private System.Windows.Forms.Label lblNumeroCheque;
         private FullDataSet fullDataSet;

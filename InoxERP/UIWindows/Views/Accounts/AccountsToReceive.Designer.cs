@@ -48,14 +48,6 @@
             this.txtReferenteA = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.grdSaidas = new System.Windows.Forms.DataGridView();
-            this.tbaccountsToReceiveBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.lblValor = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.lblReferenteA = new System.Windows.Forms.Label();
-            this.lblParcelas = new System.Windows.Forms.Label();
-            this.nudParcelas = new System.Windows.Forms.NumericUpDown();
-            this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +60,14 @@
             this.sReferentToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbaccountsToReceiveBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblReferenteA = new System.Windows.Forms.Label();
+            this.lblParcelas = new System.Windows.Forms.Label();
+            this.nudParcelas = new System.Windows.Forms.NumericUpDown();
+            this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grdSaidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbaccountsToReceiveBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
@@ -82,27 +82,28 @@
             this.lblEntradas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEntradas.Name = "lblEntradas";
             this.lblEntradas.Size = new System.Drawing.Size(177, 24);
-            this.lblEntradas.TabIndex = 14;
+            this.lblEntradas.TabIndex = 1;
             this.lblEntradas.Text = "Contas a Receber";
             // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Location = new System.Drawing.Point(382, 45);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(100, 28);
-            this.btnBuscarCliente.TabIndex = 67;
+            this.btnBuscarCliente.TabIndex = 4;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             // 
             // txtNomeCliente
             // 
             this.txtNomeCliente.Location = new System.Drawing.Point(112, 50);
-            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeCliente.MaxLength = 100;
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(262, 20);
-            this.txtNomeCliente.TabIndex = 66;
+            this.txtNomeCliente.TabIndex = 3;
+            this.txtNomeCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCliente_KeyPress);
             // 
             // lblNomeCliente
             // 
@@ -112,17 +113,18 @@
             this.lblNomeCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomeCliente.Name = "lblNomeCliente";
             this.lblNomeCliente.Size = new System.Drawing.Size(59, 17);
-            this.lblNomeCliente.TabIndex = 65;
+            this.lblNomeCliente.TabIndex = 2;
             this.lblNomeCliente.Text = "Cliente: ";
             // 
             // txtOS
             // 
             this.txtOS.Location = new System.Drawing.Point(112, 83);
-            this.txtOS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOS.Margin = new System.Windows.Forms.Padding(4);
             this.txtOS.MaxLength = 100;
             this.txtOS.Name = "txtOS";
             this.txtOS.Size = new System.Drawing.Size(103, 20);
-            this.txtOS.TabIndex = 64;
+            this.txtOS.TabIndex = 6;
+            this.txtOS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOS_KeyPress);
             // 
             // lblOS
             // 
@@ -132,17 +134,17 @@
             this.lblOS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOS.Name = "lblOS";
             this.lblOS.Size = new System.Drawing.Size(40, 17);
-            this.lblOS.TabIndex = 63;
+            this.lblOS.TabIndex = 5;
             this.lblOS.Text = "O.S.:";
             // 
             // btnBaixar
             // 
             this.btnBaixar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaixar.Location = new System.Drawing.Point(201, 432);
-            this.btnBaixar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBaixar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBaixar.Name = "btnBaixar";
             this.btnBaixar.Size = new System.Drawing.Size(100, 28);
-            this.btnBaixar.TabIndex = 60;
+            this.btnBaixar.TabIndex = 18;
             this.btnBaixar.Text = "Baixar";
             this.btnBaixar.UseVisualStyleBackColor = true;
             // 
@@ -150,10 +152,10 @@
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Location = new System.Drawing.Point(382, 192);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 28);
-            this.btnExcluir.TabIndex = 59;
+            this.btnExcluir.TabIndex = 17;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
@@ -161,10 +163,10 @@
             // 
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.Location = new System.Drawing.Point(201, 192);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 28);
-            this.btnAlterar.TabIndex = 58;
+            this.btnAlterar.TabIndex = 16;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
@@ -172,10 +174,10 @@
             // 
             this.btnIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIncluir.Location = new System.Drawing.Point(13, 192);
-            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIncluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(100, 28);
-            this.btnIncluir.TabIndex = 57;
+            this.btnIncluir.TabIndex = 15;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
             // 
@@ -183,31 +185,32 @@
             // 
             this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValor.Location = new System.Drawing.Point(112, 115);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.MaxLength = 18;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(103, 22);
-            this.txtValor.TabIndex = 56;
+            this.txtValor.TabIndex = 10;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // txtReferenteA
             // 
             this.txtReferenteA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReferenteA.Location = new System.Drawing.Point(112, 150);
-            this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReferenteA.Margin = new System.Windows.Forms.Padding(4);
             this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
             this.txtReferenteA.Size = new System.Drawing.Size(369, 22);
-            this.txtReferenteA.TabIndex = 55;
+            this.txtReferenteA.TabIndex = 14;
             // 
             // dtpData
             // 
             this.dtpData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpData.Location = new System.Drawing.Point(366, 84);
-            this.dtpData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpData.Margin = new System.Windows.Forms.Padding(4);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(115, 22);
-            this.dtpData.TabIndex = 54;
+            this.dtpData.TabIndex = 8;
             // 
             // grdSaidas
             // 
@@ -228,88 +231,14 @@
             this.idBudgetsOSDataGridViewTextBoxColumn});
             this.grdSaidas.DataSource = this.tbaccountsToReceiveBindingSource;
             this.grdSaidas.Location = new System.Drawing.Point(13, 237);
-            this.grdSaidas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grdSaidas.Margin = new System.Windows.Forms.Padding(4);
             this.grdSaidas.MultiSelect = false;
             this.grdSaidas.Name = "grdSaidas";
             this.grdSaidas.ReadOnly = true;
             this.grdSaidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdSaidas.Size = new System.Drawing.Size(469, 185);
-            this.grdSaidas.TabIndex = 53;
-            // 
-            // tbaccountsToReceiveBindingSource
-            // 
-            this.tbaccountsToReceiveBindingSource.DataMember = "tb_accountsToReceive";
-            this.tbaccountsToReceiveBindingSource.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblValor
-            // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(13, 118);
-            this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(49, 17);
-            this.lblValor.TabIndex = 52;
-            this.lblValor.Text = "Valor: ";
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(260, 84);
-            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(90, 17);
-            this.lblData.TabIndex = 51;
-            this.lblData.Text = "Vencimento: ";
-            // 
-            // lblReferenteA
-            // 
-            this.lblReferenteA.AutoSize = true;
-            this.lblReferenteA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReferenteA.Location = new System.Drawing.Point(13, 153);
-            this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblReferenteA.Name = "lblReferenteA";
-            this.lblReferenteA.Size = new System.Drawing.Size(91, 17);
-            this.lblReferenteA.TabIndex = 50;
-            this.lblReferenteA.Text = "Referente a: ";
-            // 
-            // lblParcelas
-            // 
-            this.lblParcelas.AutoSize = true;
-            this.lblParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParcelas.Location = new System.Drawing.Point(260, 118);
-            this.lblParcelas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblParcelas.Name = "lblParcelas";
-            this.lblParcelas.Size = new System.Drawing.Size(71, 17);
-            this.lblParcelas.TabIndex = 69;
-            this.lblParcelas.Text = "Parcelas: ";
-            // 
-            // nudParcelas
-            // 
-            this.nudParcelas.Location = new System.Drawing.Point(366, 118);
-            this.nudParcelas.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudParcelas.Name = "nudParcelas";
-            this.nudParcelas.Size = new System.Drawing.Size(48, 20);
-            this.nudParcelas.TabIndex = 68;
-            this.nudParcelas.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // tb_accountsToReceiveTableAdapter
-            // 
-            this.tb_accountsToReceiveTableAdapter.ClearBeforeFill = true;
+            this.grdSaidas.TabIndex = 19;
+            this.grdSaidas.TabStop = false;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -417,6 +346,81 @@
             this.idBudgetsOSDataGridViewTextBoxColumn.Name = "idBudgetsOSDataGridViewTextBoxColumn";
             this.idBudgetsOSDataGridViewTextBoxColumn.ReadOnly = true;
             this.idBudgetsOSDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tbaccountsToReceiveBindingSource
+            // 
+            this.tbaccountsToReceiveBindingSource.DataMember = "tb_accountsToReceive";
+            this.tbaccountsToReceiveBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(13, 118);
+            this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(49, 17);
+            this.lblValor.TabIndex = 9;
+            this.lblValor.Text = "Valor: ";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.Location = new System.Drawing.Point(260, 84);
+            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(90, 17);
+            this.lblData.TabIndex = 7;
+            this.lblData.Text = "Vencimento: ";
+            // 
+            // lblReferenteA
+            // 
+            this.lblReferenteA.AutoSize = true;
+            this.lblReferenteA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReferenteA.Location = new System.Drawing.Point(13, 153);
+            this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReferenteA.Name = "lblReferenteA";
+            this.lblReferenteA.Size = new System.Drawing.Size(91, 17);
+            this.lblReferenteA.TabIndex = 13;
+            this.lblReferenteA.Text = "Referente a: ";
+            // 
+            // lblParcelas
+            // 
+            this.lblParcelas.AutoSize = true;
+            this.lblParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParcelas.Location = new System.Drawing.Point(260, 118);
+            this.lblParcelas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblParcelas.Name = "lblParcelas";
+            this.lblParcelas.Size = new System.Drawing.Size(71, 17);
+            this.lblParcelas.TabIndex = 11;
+            this.lblParcelas.Text = "Parcelas: ";
+            // 
+            // nudParcelas
+            // 
+            this.nudParcelas.Location = new System.Drawing.Point(366, 118);
+            this.nudParcelas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudParcelas.Name = "nudParcelas";
+            this.nudParcelas.Size = new System.Drawing.Size(48, 20);
+            this.nudParcelas.TabIndex = 12;
+            this.nudParcelas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tb_accountsToReceiveTableAdapter
+            // 
+            this.tb_accountsToReceiveTableAdapter.ClearBeforeFill = true;
             // 
             // frmAccountsToReceive
             // 

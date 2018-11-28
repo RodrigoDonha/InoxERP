@@ -23,6 +23,49 @@ namespace UIWindows.Business.Concrete
             }
         }
 
+        public void characterValidatorNumbers(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+                if (e.Handled)
+                {
+                    //MessageBox.Show("incluir apenas números de 0 a 9");
+                }
+            }
+        }
+
+        public void characterValidatorLetters(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada for letras
+            if (char.IsDigit(e.KeyChar))
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+                if (e.Handled)
+                {
+                    //MessageBox.Show("incluir apenas números de 0 a 9");
+                }
+            }
+        }
+
+        public void characterValidatorNumbersCheque(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada nao for numeros espaço ou traço
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 45 && e.KeyChar != 08)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+                if (e.Handled)
+                {
+                    //MessageBox.Show("incluir apenas números de 0 a 9");
+                }
+            }
+        }
+
+
         public void characterValidationOnlyNumberAndLetters(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada não for número ou letras
