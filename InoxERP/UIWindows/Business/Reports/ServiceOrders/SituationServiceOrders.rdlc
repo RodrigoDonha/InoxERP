@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="GeneralDataSet">
+    <DataSet Name="SituationDataSet">
       <Query>
         <DataSourceName>FullDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -160,7 +160,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>FullDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\rodri\Documents\GitHub\InoxERP\InoxERP\UIWindows\FullDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\FullDataSet.xsd</rd:SchemaPath>
         <rd:TableName>tb_budgets_os</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -805,7 +805,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>GeneralDataSet</DataSetName>
+            <DataSetName>SituationDataSet</DataSetName>
             <Top>0.17639cm</Top>
             <Left>0.22755cm</Left>
             <Height>2cm</Height>
@@ -1217,9 +1217,8 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="situation">
-      <DataType>String</DataType>
+      <DataType>Boolean</DataType>
       <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="startDateString">

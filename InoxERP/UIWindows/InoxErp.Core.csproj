@@ -218,6 +218,12 @@
     <Compile Include="Views\Reports\ServicesOrders\GeneralServiceOrdersReportcs.Designer.cs">
       <DependentUpon>GeneralServiceOrdersReportcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\ServicesOrders\SituationServiceOrdersReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\ServicesOrders\SituationServiceOrdersReport.Designer.cs">
+      <DependentUpon>SituationServiceOrdersReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ServicesOrders\ServiceOrdersPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ServicesOrders\GeneralServiceOrdersReportcs.resx">
       <DependentUpon>GeneralServiceOrdersReportcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\ServicesOrders\SituationServiceOrdersReport.resx">
+      <DependentUpon>SituationServiceOrdersReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ServicesOrders\ServiceOrdersPrint.resx">
       <DependentUpon>ServiceOrdersPrint.cs</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using UIWindows.Views.Reports.Budgets;
 using UIWindows.Views.Reports.ServicesOrders;
 
 namespace UIWindows
@@ -22,18 +23,20 @@ namespace UIWindows
                 type = "Geral";
                 situation = "";
                 new GeneralServiceOrdersReportcs(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
-                            }
+            }
+
             if (radFinalizadas.Checked)
             {
-                type = "Aprovados";
+                type = "Finalizada";
                 situation = "True";
-                //new SituationBudgetsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
+                new SituationServiceOrdersReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
             }
+
             if (radEmAndamento.Checked)
             {
-                type = "Em Aberto";
+                type = "Em Andamento";
                 situation = "False";
-                //new SituationBudgetsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
+                new SituationServiceOrdersReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
             }
         }
     }

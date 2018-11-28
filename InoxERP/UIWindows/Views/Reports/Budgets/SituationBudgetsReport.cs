@@ -33,7 +33,7 @@ namespace UIWindows.Views.Reports.Budgets
             var startDate = new ReportParameter();
             var endDate = new ReportParameter();
             var situation = new ReportParameter();
-            var startDateString = new  ReportParameter();
+            var startDateString = new ReportParameter();
             var endDateString = new ReportParameter();
 
             type.Name = "type";
