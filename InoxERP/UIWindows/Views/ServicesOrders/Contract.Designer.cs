@@ -33,22 +33,22 @@
             this.dtpDataAtual = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtRgContratado = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxEstateContratado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCidadeContratado = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCepContratado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBairroContratado = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNumeroContratado = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtEnderecoContratado = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtCpfCnpjContratado = new System.Windows.Forms.TextBox();
+            this.txtNomeContratado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtRgC = new System.Windows.Forms.TextBox();
@@ -89,6 +89,7 @@
             this.txtPrazo1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnProximo = new System.Windows.Forms.Button();
+            this.btnAlterarContratado = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -131,22 +132,23 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.btnAlterarContratado);
+            this.tabPage1.Controls.Add(this.txtRgContratado);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.cbxEstateContratado);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.txtCidadeContratado);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.textBox4);
+            this.tabPage1.Controls.Add(this.txtCepContratado);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.textBox5);
+            this.tabPage1.Controls.Add(this.txtBairroContratado);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.textBox6);
+            this.tabPage1.Controls.Add(this.txtNumeroContratado);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.textBox7);
+            this.tabPage1.Controls.Add(this.txtEnderecoContratado);
             this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.textBox8);
-            this.tabPage1.Controls.Add(this.textBox9);
+            this.tabPage1.Controls.Add(this.txtCpfCnpjContratado);
+            this.tabPage1.Controls.Add(this.txtNomeContratado);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.txtRgC);
@@ -179,15 +181,15 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1 - Identificação das Partes";
             // 
-            // textBox2
+            // txtRgContratado
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(340, 379);
-            this.textBox2.MaxLength = 100;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 22);
-            this.textBox2.TabIndex = 115;
-            this.textBox2.Text = "093967599-45";
+            this.txtRgContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRgContratado.Location = new System.Drawing.Point(340, 379);
+            this.txtRgContratado.MaxLength = 100;
+            this.txtRgContratado.Name = "txtRgContratado";
+            this.txtRgContratado.Size = new System.Drawing.Size(200, 22);
+            this.txtRgContratado.TabIndex = 115;
+            this.txtRgContratado.Text = "093967599-45";
             // 
             // label3
             // 
@@ -200,14 +202,14 @@
             this.label3.TabIndex = 114;
             this.label3.Text = "RG:";
             // 
-            // comboBox1
+            // cbxEstateContratado
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(604, 448);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 24);
-            this.comboBox1.TabIndex = 113;
-            this.comboBox1.Text = "SP";
+            this.cbxEstateContratado.FormattingEnabled = true;
+            this.cbxEstateContratado.Location = new System.Drawing.Point(604, 448);
+            this.cbxEstateContratado.Name = "cbxEstateContratado";
+            this.cbxEstateContratado.Size = new System.Drawing.Size(130, 24);
+            this.cbxEstateContratado.TabIndex = 113;
+            this.cbxEstateContratado.Text = "SP";
             // 
             // label4
             // 
@@ -220,15 +222,15 @@
             this.label4.TabIndex = 112;
             this.label4.Text = "Estado";
             // 
-            // textBox3
+            // txtCidadeContratado
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(340, 448);
-            this.textBox3.MaxLength = 100;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(185, 22);
-            this.textBox3.TabIndex = 111;
-            this.textBox3.Text = "Presidente Prudente";
+            this.txtCidadeContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidadeContratado.Location = new System.Drawing.Point(340, 448);
+            this.txtCidadeContratado.MaxLength = 100;
+            this.txtCidadeContratado.Name = "txtCidadeContratado";
+            this.txtCidadeContratado.Size = new System.Drawing.Size(185, 22);
+            this.txtCidadeContratado.TabIndex = 111;
+            this.txtCidadeContratado.Text = "Presidente Prudente";
             // 
             // label5
             // 
@@ -241,15 +243,15 @@
             this.label5.TabIndex = 110;
             this.label5.Text = "Cidade";
             // 
-            // textBox4
+            // txtCepContratado
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(603, 380);
-            this.textBox4.MaxLength = 100;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(131, 22);
-            this.textBox4.TabIndex = 109;
-            this.textBox4.Text = "19065-510";
+            this.txtCepContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCepContratado.Location = new System.Drawing.Point(603, 380);
+            this.txtCepContratado.MaxLength = 100;
+            this.txtCepContratado.Name = "txtCepContratado";
+            this.txtCepContratado.Size = new System.Drawing.Size(131, 22);
+            this.txtCepContratado.TabIndex = 109;
+            this.txtCepContratado.Text = "19065-510";
             // 
             // label6
             // 
@@ -262,15 +264,15 @@
             this.label6.TabIndex = 108;
             this.label6.Text = "CEP";
             // 
-            // textBox5
+            // txtBairroContratado
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(87, 448);
-            this.textBox5.MaxLength = 100;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(185, 22);
-            this.textBox5.TabIndex = 107;
-            this.textBox5.Text = "Cecap";
+            this.txtBairroContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBairroContratado.Location = new System.Drawing.Point(87, 448);
+            this.txtBairroContratado.MaxLength = 100;
+            this.txtBairroContratado.Name = "txtBairroContratado";
+            this.txtBairroContratado.Size = new System.Drawing.Size(185, 22);
+            this.txtBairroContratado.TabIndex = 107;
+            this.txtBairroContratado.Text = "Cecap";
             // 
             // label7
             // 
@@ -283,15 +285,15 @@
             this.label7.TabIndex = 106;
             this.label7.Text = "Bairro";
             // 
-            // textBox6
+            // txtNumeroContratado
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(603, 414);
-            this.textBox6.MaxLength = 10;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(131, 22);
-            this.textBox6.TabIndex = 105;
-            this.textBox6.Text = "210";
+            this.txtNumeroContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroContratado.Location = new System.Drawing.Point(603, 414);
+            this.txtNumeroContratado.MaxLength = 10;
+            this.txtNumeroContratado.Name = "txtNumeroContratado";
+            this.txtNumeroContratado.Size = new System.Drawing.Size(131, 22);
+            this.txtNumeroContratado.TabIndex = 105;
+            this.txtNumeroContratado.Text = "210";
             // 
             // label8
             // 
@@ -304,15 +306,15 @@
             this.label8.TabIndex = 104;
             this.label8.Text = "Nº";
             // 
-            // textBox7
+            // txtEnderecoContratado
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(87, 414);
-            this.textBox7.MaxLength = 100;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(453, 22);
-            this.textBox7.TabIndex = 103;
-            this.textBox7.Text = "Av: das Flores";
+            this.txtEnderecoContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnderecoContratado.Location = new System.Drawing.Point(87, 414);
+            this.txtEnderecoContratado.MaxLength = 100;
+            this.txtEnderecoContratado.Name = "txtEnderecoContratado";
+            this.txtEnderecoContratado.Size = new System.Drawing.Size(453, 22);
+            this.txtEnderecoContratado.TabIndex = 103;
+            this.txtEnderecoContratado.Text = "Av: das Flores";
             // 
             // label9
             // 
@@ -325,25 +327,25 @@
             this.label9.TabIndex = 102;
             this.label9.Text = "Endereço";
             // 
-            // textBox8
+            // txtCpfCnpjContratado
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(87, 378);
-            this.textBox8.MaxLength = 100;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(200, 22);
-            this.textBox8.TabIndex = 101;
-            this.textBox8.Text = "30.286.217/0001-70";
+            this.txtCpfCnpjContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpfCnpjContratado.Location = new System.Drawing.Point(87, 378);
+            this.txtCpfCnpjContratado.MaxLength = 100;
+            this.txtCpfCnpjContratado.Name = "txtCpfCnpjContratado";
+            this.txtCpfCnpjContratado.Size = new System.Drawing.Size(200, 22);
+            this.txtCpfCnpjContratado.TabIndex = 101;
+            this.txtCpfCnpjContratado.Text = "30.286.217/0001-70";
             // 
-            // textBox9
+            // txtNomeContratado
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(87, 345);
-            this.textBox9.MaxLength = 100;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(647, 22);
-            this.textBox9.TabIndex = 100;
-            this.textBox9.Text = "Lucas Beirigo Reggiani";
+            this.txtNomeContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeContratado.Location = new System.Drawing.Point(87, 345);
+            this.txtNomeContratado.MaxLength = 100;
+            this.txtNomeContratado.Name = "txtNomeContratado";
+            this.txtNomeContratado.Size = new System.Drawing.Size(647, 22);
+            this.txtNomeContratado.TabIndex = 100;
+            this.txtNomeContratado.Text = "Lucas Beirigo Reggiani";
             // 
             // label10
             // 
@@ -756,6 +758,16 @@
             this.btnProximo.UseVisualStyleBackColor = true;
             this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
+            // btnAlterarContratado
+            // 
+            this.btnAlterarContratado.Location = new System.Drawing.Point(588, 311);
+            this.btnAlterarContratado.Name = "btnAlterarContratado";
+            this.btnAlterarContratado.Size = new System.Drawing.Size(146, 31);
+            this.btnAlterarContratado.TabIndex = 116;
+            this.btnAlterarContratado.Text = "Alterar Contratado";
+            this.btnAlterarContratado.UseVisualStyleBackColor = true;
+            this.btnAlterarContratado.Click += new System.EventHandler(this.btnAlterarContratado_Click);
+            // 
             // frmContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -789,22 +801,22 @@
         private System.Windows.Forms.DateTimePicker dtpDataAtual;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtRgContratado;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxEstateContratado;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCidadeContratado;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCepContratado;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBairroContratado;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNumeroContratado;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtEnderecoContratado;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtCpfCnpjContratado;
+        private System.Windows.Forms.TextBox txtNomeContratado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtRgC;
@@ -845,5 +857,6 @@
         private System.Windows.Forms.TextBox txtPrazoGarantia;
         private System.Windows.Forms.TextBox txtPrazo2;
         private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button btnAlterarContratado;
     }
 }

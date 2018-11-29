@@ -422,6 +422,7 @@
     <EmbeddedResource Include="Business\Reports\Budgets\GerenalBudgest.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\SituationBudgets.rdlc" />
     <EmbeddedResource Include="Business\Reports\BudgetWithPrice.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Contract\Contract.rdlc" />
     <EmbeddedResource Include="Business\Reports\Delivery\GeneralDelivery.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\GeneralServiceOrder.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\ServiceOrdersPrint.rdlc" />
@@ -680,9 +681,7 @@
   <ItemGroup>
     <None Include="Resources\Backup.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business\Reports\Contract\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\if_121_14145.png" />
     <Content Include="SqlServerTypes\readme.htm" />
