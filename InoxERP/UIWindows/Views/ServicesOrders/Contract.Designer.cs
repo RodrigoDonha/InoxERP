@@ -101,7 +101,7 @@
             // 
             this.lblPpte.AutoSize = true;
             this.lblPpte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPpte.Location = new System.Drawing.Point(318, 555);
+            this.lblPpte.Location = new System.Drawing.Point(318, 457);
             this.lblPpte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPpte.Name = "lblPpte";
             this.lblPpte.Size = new System.Drawing.Size(146, 17);
@@ -110,7 +110,7 @@
             // 
             // dtpDataAtual
             // 
-            this.dtpDataAtual.Location = new System.Drawing.Point(467, 549);
+            this.dtpDataAtual.Location = new System.Drawing.Point(467, 455);
             this.dtpDataAtual.Name = "dtpDataAtual";
             this.dtpDataAtual.Size = new System.Drawing.Size(272, 23);
             this.dtpDataAtual.TabIndex = 51;
@@ -124,7 +124,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(764, 622);
+            this.tabControl1.Size = new System.Drawing.Size(764, 530);
             this.tabControl1.TabIndex = 75;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
@@ -175,7 +175,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(756, 593);
+            this.tabPage1.Size = new System.Drawing.Size(756, 501);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1 - Identificação das Partes";
             // 
@@ -608,7 +608,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(756, 593);
+            this.tabPage2.Size = new System.Drawing.Size(756, 501);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2 - Objeto do Contrato";
             // 
@@ -617,7 +617,7 @@
             this.txtDescription.Location = new System.Drawing.Point(6, 29);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(744, 558);
+            this.txtDescription.Size = new System.Drawing.Size(744, 466);
             this.txtDescription.TabIndex = 41;
             // 
             // lblObjetoServicos
@@ -640,7 +640,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(756, 593);
+            this.tabPage3.Size = new System.Drawing.Size(756, 501);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "3 - Das Obrigações";
             // 
@@ -658,7 +658,7 @@
             this.txtObrigacoes.Location = new System.Drawing.Point(6, 315);
             this.txtObrigacoes.Multiline = true;
             this.txtObrigacoes.Name = "txtObrigacoes";
-            this.txtObrigacoes.Size = new System.Drawing.Size(744, 272);
+            this.txtObrigacoes.Size = new System.Drawing.Size(744, 180);
             this.txtObrigacoes.TabIndex = 43;
             this.txtObrigacoes.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
             // 
@@ -687,14 +687,14 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(756, 593);
+            this.tabPage4.Size = new System.Drawing.Size(756, 501);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "4 - Do Prazo";
             // 
             // txtPrazoGarantia
             // 
             this.txtPrazoGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrazoGarantia.Location = new System.Drawing.Point(99, 500);
+            this.txtPrazoGarantia.Location = new System.Drawing.Point(99, 400);
             this.txtPrazoGarantia.Name = "txtPrazoGarantia";
             this.txtPrazoGarantia.Size = new System.Drawing.Size(86, 26);
             this.txtPrazoGarantia.TabIndex = 76;
@@ -703,7 +703,7 @@
             // txtPrazo2
             // 
             this.txtPrazo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrazo2.Location = new System.Drawing.Point(258, 461);
+            this.txtPrazo2.Location = new System.Drawing.Point(258, 361);
             this.txtPrazo2.Name = "txtPrazo2";
             this.txtPrazo2.Size = new System.Drawing.Size(86, 26);
             this.txtPrazo2.TabIndex = 45;
@@ -712,7 +712,7 @@
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(6, 369);
+            this.textBox10.Location = new System.Drawing.Point(6, 266);
             this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(728, 84);
@@ -722,7 +722,7 @@
             // txtValores1
             // 
             this.txtValores1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValores1.Location = new System.Drawing.Point(256, 319);
+            this.txtValores1.Location = new System.Drawing.Point(256, 220);
             this.txtValores1.Name = "txtValores1";
             this.txtValores1.Size = new System.Drawing.Size(139, 26);
             this.txtValores1.TabIndex = 2;
@@ -742,13 +742,13 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(3, 3);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(740, 540);
+            this.label14.Size = new System.Drawing.Size(740, 440);
             this.label14.TabIndex = 0;
             this.label14.Text = resources.GetString("label14.Text");
             // 
             // btnProximo
             // 
-            this.btnProximo.Location = new System.Drawing.Point(643, 640);
+            this.btnProximo.Location = new System.Drawing.Point(643, 554);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(129, 40);
             this.btnProximo.TabIndex = 116;
@@ -761,7 +761,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(788, 685);
+            this.ClientSize = new System.Drawing.Size(788, 609);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

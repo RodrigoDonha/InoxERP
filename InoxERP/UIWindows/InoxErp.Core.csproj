@@ -680,7 +680,9 @@
   <ItemGroup>
     <None Include="Resources\Backup.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Business\Reports\Contract\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_121_14145.png" />
     <Content Include="SqlServerTypes\readme.htm" />

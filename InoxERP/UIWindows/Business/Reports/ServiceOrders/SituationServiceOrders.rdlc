@@ -385,7 +385,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!sSituationRegisterFinished.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -806,6 +808,41 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>SituationDataSet</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!dtDate.Value</FilterExpression>
+                <Operator>GreaterThanOrEqual</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!startDate.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+              <Filter>
+                <FilterExpression>=Fields!dtDate.Value</FilterExpression>
+                <Operator>LessThanOrEqual</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!endDate.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+              <Filter>
+                <FilterExpression>=Fields!bRegisterFinished.Value</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!situation.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+              <Filter>
+                <FilterExpression>=Fields!bServiceOrderApproved.Value</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue DataType="Boolean">true</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!dtDate.Value</Value>
+              </SortExpression>
+            </SortExpressions>
             <Top>0.17639cm</Top>
             <Left>0.22755cm</Left>
             <Height>2cm</Height>

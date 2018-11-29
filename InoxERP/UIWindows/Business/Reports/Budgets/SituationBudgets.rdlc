@@ -828,6 +828,7 @@
                                 <TextRun>
                                   <Value>=Fields!sAprovation.Value</Value>
                                   <Style>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#333333</Color>
                                   </Style>
