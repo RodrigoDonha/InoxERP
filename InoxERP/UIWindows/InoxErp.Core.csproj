@@ -110,7 +110,6 @@
     <Compile Include="Business\Concrete\BaseBusiness.cs" />
     <Compile Include="Business\Concrete\Budget_OSBusiness.cs" />
     <Compile Include="Business\Concrete\CashBusiness.cs" />
-    <Compile Include="Business\Concrete\CashGeneralBusiness.cs" />
     <Compile Include="Business\Concrete\ChequesBusiness.cs" />
     <Compile Include="Business\Concrete\ClientsBusiness.cs" />
     <Compile Include="Business\Concrete\ItemsBusiness.cs" />
@@ -155,6 +154,10 @@
     <Compile Include="Migrations\201811262229050_addRangeonCampsChequeNumber.cs" />
     <Compile Include="Migrations\201811262229050_addRangeonCampsChequeNumber.Designer.cs">
       <DependentUpon>201811262229050_addRangeonCampsChequeNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291944172_addNullCampsCashAndReceive.cs" />
+    <Compile Include="Migrations\201811291944172_addNullCampsCashAndReceive.Designer.cs">
+      <DependentUpon>201811291944172_addNullCampsCashAndReceive.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\Backups\AdminChose.cs">
@@ -429,6 +432,9 @@
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
     <EmbeddedResource Include="Migrations\201811262229050_addRangeonCampsChequeNumber.resx">
       <DependentUpon>201811262229050_addRangeonCampsChequeNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291944172_addNullCampsCashAndReceive.resx">
+      <DependentUpon>201811291944172_addNullCampsCashAndReceive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Backups\AdminChose.resx">
       <DependentUpon>AdminChose.cs</DependentUpon>

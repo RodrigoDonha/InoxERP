@@ -17,7 +17,7 @@ namespace UIWindows
     {
         static InoxErpContext ctx = new InoxErpContext();
 
-        CashGeneralBusiness objCashE = new CashGeneralBusiness(ctx);
+        CashBusiness objCashO = new CashBusiness(ctx);
         ClientsBusiness objClient = new ClientsBusiness(ctx);
         Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
 

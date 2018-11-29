@@ -13,7 +13,7 @@ namespace UIWindows.Entities
     public class Cash : BaseEntity
     {
         [StringLength(100)]
-        [Required(ErrorMessage = "Codigo do Orçamento é Obrigatório")]
+        //[Required(ErrorMessage = "Codigo do Orçamento é Obrigatório")]
         public string sId_Budgets_OS { get; set; }
 
         [StringLength(100)]

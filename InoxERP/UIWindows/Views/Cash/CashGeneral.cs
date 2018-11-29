@@ -17,7 +17,7 @@ namespace UIWindows
     public partial class frmCashGeneral : Form
     {
         static InoxErpContext ctx = new InoxErpContext();
-        CashGeneralBusiness cashGen = new CashGeneralBusiness(ctx);
+        CashBusiness cashGen = new CashBusiness(ctx);
 
         public frmCashGeneral()
         {
