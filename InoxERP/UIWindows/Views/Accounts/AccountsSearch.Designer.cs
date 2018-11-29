@@ -152,6 +152,8 @@
             // 
             // dgvRecebidos
             // 
+            this.dgvRecebidos.AllowUserToAddRows = false;
+            this.dgvRecebidos.AllowUserToDeleteRows = false;
             this.dgvRecebidos.AutoGenerateColumns = false;
             this.dgvRecebidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecebidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -332,6 +334,8 @@
             // 
             // dgvPagos
             // 
+            this.dgvPagos.AllowUserToAddRows = false;
+            this.dgvPagos.AllowUserToDeleteRows = false;
             this.dgvPagos.AutoGenerateColumns = false;
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -520,6 +524,8 @@
             // 
             // dgvCheques
             // 
+            this.dgvCheques.AllowUserToAddRows = false;
+            this.dgvCheques.AllowUserToDeleteRows = false;
             this.dgvCheques.AutoGenerateColumns = false;
             this.dgvCheques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCheques.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

@@ -18,7 +18,6 @@ namespace UIWindows
     {
         static InoxErpContext ctx = new InoxErpContext();
         CashGeneralBusiness cashGen = new CashGeneralBusiness(ctx);
-        ValidationEntries validation = new ValidationEntries();
 
         public frmCashGeneral()
         {

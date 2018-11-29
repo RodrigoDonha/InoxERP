@@ -47,7 +47,7 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtReferenteA = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
-            this.grdSaidas = new System.Windows.Forms.DataGridView();
+            this.grdAReceber = new System.Windows.Forms.DataGridView();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +68,7 @@
             this.lblParcelas = new System.Windows.Forms.Label();
             this.nudParcelas = new System.Windows.Forms.NumericUpDown();
             this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.grdSaidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAReceber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbaccountsToReceiveBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
@@ -212,11 +212,13 @@
             this.dtpData.Size = new System.Drawing.Size(115, 22);
             this.dtpData.TabIndex = 8;
             // 
-            // grdSaidas
+            // grdAReceber
             // 
-            this.grdSaidas.AutoGenerateColumns = false;
-            this.grdSaidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdSaidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdAReceber.AllowUserToAddRows = false;
+            this.grdAReceber.AllowUserToDeleteRows = false;
+            this.grdAReceber.AutoGenerateColumns = false;
+            this.grdAReceber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdAReceber.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sIDDataGridViewTextBoxColumn,
             this.sIdBudgetsOSDataGridViewTextBoxColumn,
             this.sIdClientDataGridViewTextBoxColumn,
@@ -229,16 +231,17 @@
             this.sReferentToDataGridViewTextBoxColumn,
             this.idCashDataGridViewTextBoxColumn,
             this.idBudgetsOSDataGridViewTextBoxColumn});
-            this.grdSaidas.DataSource = this.tbaccountsToReceiveBindingSource;
-            this.grdSaidas.Location = new System.Drawing.Point(13, 237);
-            this.grdSaidas.Margin = new System.Windows.Forms.Padding(4);
-            this.grdSaidas.MultiSelect = false;
-            this.grdSaidas.Name = "grdSaidas";
-            this.grdSaidas.ReadOnly = true;
-            this.grdSaidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdSaidas.Size = new System.Drawing.Size(469, 185);
-            this.grdSaidas.TabIndex = 19;
-            this.grdSaidas.TabStop = false;
+            this.grdAReceber.DataSource = this.tbaccountsToReceiveBindingSource;
+            this.grdAReceber.Location = new System.Drawing.Point(13, 237);
+            this.grdAReceber.Margin = new System.Windows.Forms.Padding(4);
+            this.grdAReceber.MultiSelect = false;
+            this.grdAReceber.Name = "grdAReceber";
+            this.grdAReceber.ReadOnly = true;
+            this.grdAReceber.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdAReceber.Size = new System.Drawing.Size(469, 185);
+            this.grdAReceber.TabIndex = 19;
+            this.grdAReceber.TabStop = false;
+            this.grdAReceber.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdAReceber_CellClick);
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -441,7 +444,7 @@
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtReferenteA);
             this.Controls.Add(this.dtpData);
-            this.Controls.Add(this.grdSaidas);
+            this.Controls.Add(this.grdAReceber);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblReferenteA);
@@ -452,7 +455,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contas a Receber";
             this.Load += new System.EventHandler(this.frmAccountsToReceive_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdSaidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAReceber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbaccountsToReceiveBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).EndInit();
@@ -475,7 +478,7 @@
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.TextBox txtReferenteA;
         private System.Windows.Forms.DateTimePicker dtpData;
-        private System.Windows.Forms.DataGridView grdSaidas;
+        private System.Windows.Forms.DataGridView grdAReceber;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblReferenteA;

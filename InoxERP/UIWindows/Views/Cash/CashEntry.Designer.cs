@@ -45,6 +45,7 @@
             this.dValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sReferentToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cashTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sChequeNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbcashBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullDataSet = new UIWindows.FullDataSet();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
@@ -109,6 +110,8 @@
             // 
             // grdEntradas
             // 
+            this.grdEntradas.AllowUserToAddRows = false;
+            this.grdEntradas.AllowUserToDeleteRows = false;
             this.grdEntradas.AutoGenerateColumns = false;
             this.grdEntradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdEntradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -118,7 +121,8 @@
             this.dtDateDataGridViewTextBoxColumn,
             this.dValueDataGridViewTextBoxColumn,
             this.sReferentToDataGridViewTextBoxColumn,
-            this.cashTypeDataGridViewTextBoxColumn});
+            this.cashTypeDataGridViewTextBoxColumn,
+            this.sChequeNumber});
             this.grdEntradas.DataSource = this.tbcashBindingSource;
             this.grdEntradas.Location = new System.Drawing.Point(13, 226);
             this.grdEntradas.Margin = new System.Windows.Forms.Padding(4);
@@ -129,6 +133,7 @@
             this.grdEntradas.Size = new System.Drawing.Size(469, 185);
             this.grdEntradas.TabIndex = 18;
             this.grdEntradas.TabStop = false;
+            this.grdEntradas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEntradas_CellClick);
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -193,6 +198,14 @@
             this.cashTypeDataGridViewTextBoxColumn.Name = "cashTypeDataGridViewTextBoxColumn";
             this.cashTypeDataGridViewTextBoxColumn.ReadOnly = true;
             this.cashTypeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sChequeNumber
+            // 
+            this.sChequeNumber.DataPropertyName = "sChequeNumber";
+            this.sChequeNumber.HeaderText = "sChequeNumber";
+            this.sChequeNumber.Name = "sChequeNumber";
+            this.sChequeNumber.ReadOnly = true;
+            this.sChequeNumber.Visible = false;
             // 
             // tbcashBindingSource
             // 
@@ -405,5 +418,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dValueDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sReferentToDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cashTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sChequeNumber;
     }
 }

@@ -8,11 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIWindows.Business.Concrete;
+using UIWindows.Context;
+using UIWindows.Entities;
 
 namespace UIWindows
 {
     public partial class frmCashOut : Form
     {
+        static InoxErpContext ctx = new InoxErpContext();
+
+        CashGeneralBusiness objCashE = new CashGeneralBusiness(ctx);
+        ClientsBusiness objClient = new ClientsBusiness(ctx);
+        Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
+
         ValidationEntries validation = new ValidationEntries();
 
         public frmCashOut()
@@ -49,6 +57,28 @@ namespace UIWindows
         private void txtNumCheque_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorNumbersCheque(sender,e);
+        }
+
+        private void grdSaidas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int compare = grdSaidas.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (compare == 0)
+            { }
+            else
+            {
+                string id = grdSaidas[1, grdSaidas.CurrentRow.Index].Value.ToString();
+                txtNFOS.Text = objBudget.Search
+                    .FirstOrDefault(c => c.sID == id).iCod.ToString();
+
+                string cli = grdSaidas[2, grdSaidas.CurrentRow.Index].Value.ToString();
+                txtNomeClieForn.Text = objClient.Search
+                    .FirstOrDefault(c => c.sID == cli).sName.ToString();
+
+                txtValor.Text = grdSaidas[4, grdSaidas.CurrentRow.Index].Value.ToString();
+                dtpData.Text = grdSaidas[3, grdSaidas.CurrentRow.Index].Value.ToString();
+                txtNumCheque.Text = grdSaidas[7, grdSaidas.CurrentRow.Index].Value.ToString();
+                txtReferenteA.Text = grdSaidas[5, grdSaidas.CurrentRow.Index].Value.ToString();
+            }
         }
     }
 }

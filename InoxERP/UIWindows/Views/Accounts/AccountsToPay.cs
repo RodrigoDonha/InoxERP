@@ -8,11 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIWindows.Business.Concrete;
+using UIWindows.Context;
 
 namespace UIWindows
 {
     public partial class frmAccountsToPay : Form
     {
+        static InoxErpContext ctx = new InoxErpContext();
+
+        AccountsToPayBusiness objAcPag = new AccountsToPayBusiness(ctx);
+        ClientsBusiness objClient = new ClientsBusiness(ctx);
+        Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
+
         ValidationEntries validation = new ValidationEntries();
 
         public frmAccountsToPay()
@@ -44,6 +51,28 @@ namespace UIWindows
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyNumbers(sender,e);
+        }
+
+        private void grdAPagar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int compare = grdAPagar.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (compare == 0)
+            { }
+            else
+            {
+                string cli = grdAPagar[2, grdAPagar.CurrentRow.Index].Value.ToString();
+                txtNomeFornecedor.Text = objClient.Search
+                    .FirstOrDefault(c => c.sID == cli).sName.ToString();
+
+                string id = grdAPagar[1, grdAPagar.CurrentRow.Index].Value.ToString();
+                txtOS.Text = objBudget.Search
+                    .FirstOrDefault(c => c.sID == id).iCod.ToString();
+
+                dtpData.Text = grdAPagar[3, grdAPagar.CurrentRow.Index].Value.ToString();
+                txtValor.Text = grdAPagar[5, grdAPagar.CurrentRow.Index].Value.ToString();
+                nudParcelas.Value = Convert.ToDecimal(grdAPagar[6, grdAPagar.CurrentRow.Index].Value);
+                txtReferenteA.Text = grdAPagar[9, grdAPagar.CurrentRow.Index].Value.ToString();
+            }
         }
     }
 }

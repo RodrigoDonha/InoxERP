@@ -8,11 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIWindows.Business.Concrete;
+using UIWindows.Context;
 
 namespace UIWindows
 {
     public partial class frmAccountsCheque : Form
     {
+        static InoxErpContext ctx = new InoxErpContext();
+
+        ChequesBusiness objCheq = new ChequesBusiness(ctx);
+        ClientsBusiness objClient = new ClientsBusiness(ctx);
+        Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
+
         ValidationEntries validation = new ValidationEntries();
 
         public frmAccountsCheque()
@@ -49,6 +56,29 @@ namespace UIWindows
         private void txtNumeroCheque_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorNumbersCheque(sender,e);
+        }
+
+        private void grdCheques_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int compare = grdCheques.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            if (compare == 0)
+            { }
+            else
+            {
+                string cli = grdCheques[2, grdCheques.CurrentRow.Index].Value.ToString();
+                txtNomeCliente.Text = objClient.Search
+                    .FirstOrDefault(c => c.sID == cli).sName.ToString();
+
+                string id = grdCheques[1, grdCheques.CurrentRow.Index].Value.ToString();
+                txtOS.Text = objBudget.Search
+                    .FirstOrDefault(c => c.sID == id).iCod.ToString();
+
+                dtpData.Text = grdCheques[3, grdCheques.CurrentRow.Index].Value.ToString();
+                txtValor.Text = grdCheques[5, grdCheques.CurrentRow.Index].Value.ToString();
+                nudParcelas.Value = Convert.ToDecimal(grdCheques[6, grdCheques.CurrentRow.Index].Value);
+                txtNumeroCheque.Text = grdCheques[10, grdCheques.CurrentRow.Index].Value.ToString();
+                txtReferenteA.Text = grdCheques[9, grdCheques.CurrentRow.Index].Value.ToString();
+            }
         }
     }
 }
