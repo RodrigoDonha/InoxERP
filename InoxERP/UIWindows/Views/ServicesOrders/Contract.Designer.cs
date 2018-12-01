@@ -33,6 +33,7 @@
             this.dtpDataAtual = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnAlterarContratado = new System.Windows.Forms.Button();
             this.txtRgContratado = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxEstateContratado = new System.Windows.Forms.ComboBox();
@@ -79,17 +80,17 @@
             this.lblObjetoServicos = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtValores = new System.Windows.Forms.TextBox();
-            this.txtObrigacoes = new System.Windows.Forms.TextBox();
+            this.txtObrigacoesContratante = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.txtPrazoGarantia = new System.Windows.Forms.TextBox();
             this.txtPrazo2 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtObrigacoesContratante1 = new System.Windows.Forms.TextBox();
             this.txtValores1 = new System.Windows.Forms.TextBox();
             this.txtPrazo1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnProximo = new System.Windows.Forms.Button();
-            this.btnAlterarContratado = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -180,6 +181,16 @@
             this.tabPage1.Size = new System.Drawing.Size(756, 501);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1 - Identificação das Partes";
+            // 
+            // btnAlterarContratado
+            // 
+            this.btnAlterarContratado.Location = new System.Drawing.Point(588, 311);
+            this.btnAlterarContratado.Name = "btnAlterarContratado";
+            this.btnAlterarContratado.Size = new System.Drawing.Size(146, 31);
+            this.btnAlterarContratado.TabIndex = 116;
+            this.btnAlterarContratado.Text = "Alterar Contratado";
+            this.btnAlterarContratado.UseVisualStyleBackColor = true;
+            this.btnAlterarContratado.Click += new System.EventHandler(this.btnAlterarContratado_Click);
             // 
             // txtRgContratado
             // 
@@ -637,7 +648,7 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage3.Controls.Add(this.txtValores);
-            this.tabPage3.Controls.Add(this.txtObrigacoes);
+            this.tabPage3.Controls.Add(this.txtObrigacoesContratante);
             this.tabPage3.Controls.Add(this.label12);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -654,15 +665,15 @@
             this.txtValores.Size = new System.Drawing.Size(141, 23);
             this.txtValores.TabIndex = 120;
             // 
-            // txtObrigacoes
+            // txtObrigacoesContratante
             // 
-            this.txtObrigacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObrigacoes.Location = new System.Drawing.Point(6, 315);
-            this.txtObrigacoes.Multiline = true;
-            this.txtObrigacoes.Name = "txtObrigacoes";
-            this.txtObrigacoes.Size = new System.Drawing.Size(744, 180);
-            this.txtObrigacoes.TabIndex = 43;
-            this.txtObrigacoes.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
+            this.txtObrigacoesContratante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObrigacoesContratante.Location = new System.Drawing.Point(6, 315);
+            this.txtObrigacoesContratante.Multiline = true;
+            this.txtObrigacoesContratante.Name = "txtObrigacoesContratante";
+            this.txtObrigacoesContratante.Size = new System.Drawing.Size(744, 180);
+            this.txtObrigacoesContratante.TabIndex = 43;
+            this.txtObrigacoesContratante.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
             // 
             // label12
             // 
@@ -681,7 +692,7 @@
             this.tabPage4.Controls.Add(this.txtPrazoGarantia);
             this.tabPage4.Controls.Add(this.txtPrazo2);
             this.tabPage4.Controls.Add(this.dtpDataAtual);
-            this.tabPage4.Controls.Add(this.textBox10);
+            this.tabPage4.Controls.Add(this.txtObrigacoesContratante1);
             this.tabPage4.Controls.Add(this.lblPpte);
             this.tabPage4.Controls.Add(this.txtValores1);
             this.tabPage4.Controls.Add(this.txtPrazo1);
@@ -711,15 +722,15 @@
             this.txtPrazo2.TabIndex = 45;
             this.txtPrazo2.Text = "30 dias";
             // 
-            // textBox10
+            // txtObrigacoesContratante1
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(6, 266);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(728, 84);
-            this.textBox10.TabIndex = 44;
-            this.textBox10.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
+            this.txtObrigacoesContratante1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObrigacoesContratante1.Location = new System.Drawing.Point(6, 266);
+            this.txtObrigacoesContratante1.Multiline = true;
+            this.txtObrigacoesContratante1.Name = "txtObrigacoesContratante1";
+            this.txtObrigacoesContratante1.Size = new System.Drawing.Size(728, 84);
+            this.txtObrigacoesContratante1.TabIndex = 44;
+            this.txtObrigacoesContratante1.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
             // 
             // txtValores1
             // 
@@ -758,15 +769,14 @@
             this.btnProximo.UseVisualStyleBackColor = true;
             this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
-            // btnAlterarContratado
+            // btnVoltar
             // 
-            this.btnAlterarContratado.Location = new System.Drawing.Point(588, 311);
-            this.btnAlterarContratado.Name = "btnAlterarContratado";
-            this.btnAlterarContratado.Size = new System.Drawing.Size(146, 31);
-            this.btnAlterarContratado.TabIndex = 116;
-            this.btnAlterarContratado.Text = "Alterar Contratado";
-            this.btnAlterarContratado.UseVisualStyleBackColor = true;
-            this.btnAlterarContratado.Click += new System.EventHandler(this.btnAlterarContratado_Click);
+            this.btnVoltar.Location = new System.Drawing.Point(16, 554);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(129, 40);
+            this.btnVoltar.TabIndex = 118;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
             // 
             // frmContract
             // 
@@ -774,6 +784,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(788, 609);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -847,7 +858,7 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox txtObrigacoes;
+        private System.Windows.Forms.TextBox txtObrigacoesContratante;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtValores;
         private System.Windows.Forms.TabPage tabPage4;
@@ -856,7 +867,8 @@
         private System.Windows.Forms.TextBox txtPrazo1;
         private System.Windows.Forms.TextBox txtPrazoGarantia;
         private System.Windows.Forms.TextBox txtPrazo2;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtObrigacoesContratante1;
         private System.Windows.Forms.Button btnAlterarContratado;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }
