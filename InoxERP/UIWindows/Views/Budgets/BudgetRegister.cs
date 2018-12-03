@@ -66,8 +66,11 @@ namespace InoxERP.UI_Windows_Forms
                         budgetAlter.sTelephone = txtTelefone.Text;
                         budgetAlter.sOccupation = txtCargo.Text;
 
-                        //preenche items
-                        checkToAlter(budgetAlter.Items.ToList());
+                        //preenche items *****ESTA PASSANDO SÓ O PRIMEIRO ITEM QUANDO ALTERA, PRECISA CORRIGIR*****
+                        //checkToAlter(budgetAlter.Items.ToList());
+                        //budgetAlter.Items = fillItemsOnBudgets_OS();
+                        budgetAlter.Items = checkToAlter(budgetAlter.Items.ToList());
+
 
                         budgetAlter.PaymentMethods = paymentMethods();
                         budgetAlter.bPaymentToMatch = checkPaymentForm("combine");
@@ -377,6 +380,7 @@ namespace InoxERP.UI_Windows_Forms
 
             List<Items> mainList = list; // popula a lista principal
             
+            // inclui os dados da gridview
             foreach (DataGridViewRow line in dgvItens.Rows)
             {
                 newList.Add(

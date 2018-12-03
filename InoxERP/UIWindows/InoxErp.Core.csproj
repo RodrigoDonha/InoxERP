@@ -692,6 +692,11 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Resources\if_121_14145.png" />
+    <None Include="Resources\Marca Dagua.png" />
+    <None Include="Resources\cinzatransparente50.jpeg" />
+    <None Include="Resources\esc1.jpeg" />
+    <None Include="Resources\esc2.jpeg" />
+    <None Include="Resources\esc2menor.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
