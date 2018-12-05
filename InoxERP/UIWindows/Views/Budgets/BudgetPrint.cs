@@ -10,8 +10,6 @@ namespace UIWindows.Views.Budgets
 {
     public partial class BudgetPrint : Form
     {
-        
-
         public BudgetPrint(string id)
         {
             InitializeComponent();

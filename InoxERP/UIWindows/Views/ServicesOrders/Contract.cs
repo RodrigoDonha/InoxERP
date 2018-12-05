@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Views.Reports.Contracts;
 
 namespace UIWindows
 {
@@ -100,6 +95,7 @@ namespace UIWindows
             txtPrazoGarantia.Text = searchBudget.iWarrantyTime.ToString();
             txtPrazo1.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
             txtPrazo2.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
+            txtCidade.Text = "Colocar atributo cidade no banco";
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
@@ -132,6 +128,7 @@ namespace UIWindows
             {
                 btnVoltar.Visible = true;
                 // implementar aqui o gravar contrato
+                gravarContrato();
             }
         }
 
@@ -327,9 +324,6 @@ namespace UIWindows
                     ContractBusiness objPersist = new ContractBusiness(ctxPersist);
                     Contracts contractPersist = new Contracts();
 
-                    //Budget_OSBusiness objPersist = new Budget_OSBusiness(ctxPersist);
-                    //Budgets_OS budgetPersist = new Budgets_OS();
-
                     //gera id unico para o orçamento
                     contractPersist.sID = Guid.NewGuid().ToString();
 
@@ -344,21 +338,21 @@ namespace UIWindows
                     contractPersist.sClientNumberAdress = txtNumeroC.Text;
                     contractPersist.sClientDistrict = txtBairroC.Text;
                     contractPersist.sClientCity = txtCidadeC.Text;
-                    //contractPersist.ClientEstate = cbxEstate.ToString();
+                    contractPersist.ClientEstate = validation.estate(cbxEstate.SelectedIndex);
 
                     // data provider
                     contractPersist.sProviderName = txtNomeContratado.Text;
                     contractPersist.sProviderCpfCnpj = txtCpfCnpjContratado.Text;
-                    //contractPersist.providerRg = txtRgContratado.Text;
+                    //contractPersist.providerRg = txtRgContratado.Text; pegar rg ou inscr estadual
                     contractPersist.sProviderCep = txtCepContratado.Text;
                     contractPersist.sProviderAdress = txtEnderecoContratado.Text;
                     contractPersist.sProviderNumberAdress = txtNumeroContratado.Text;
                     contractPersist.sProviderDistrict = txtBairroContratado.Text;
                     contractPersist.sProviderCity = txtCidadeContratado.Text;
-                    //contractPersist.ProviderEstate = cbxEstateContratado.ToString();
+                    contractPersist.ProviderEstate = validation.estate(cbxEstateContratado.SelectedIndex);
 
                     // data contract general
-                    contractPersist.dtContractDate = Convert.ToDateTime(dtpDataAtual);
+                    contractPersist.dtContractDate = Convert.ToDateTime(dtpDataAtual.Text);
                     contractPersist.sClientObjectContract = txtDescription.Text;
                     contractPersist.dTotalValue = Convert.ToDecimal(txtValores.Text);
                     contractPersist.sPaymentForm = txtObrigacoesContratante.Text;
@@ -367,7 +361,7 @@ namespace UIWindows
 
 
                     // data to the ForengeKeys
-                    contractPersist.Budgets_OS.sID = getId;
+                    contractPersist.Budgets_OS.sID = getId; // esta errado, ver com jefter como faz para passar o id do orçamento
                     // ver com Jefter se esta correto, se não vai criar mais itens ou se somente irá pegar a ForengeKey
                     if (searchBudget.Items != null)
                     {
@@ -390,14 +384,13 @@ namespace UIWindows
 
                         //string Cod = ok.sID.ToString();
 
-                        //PrintingBudget(budgetPersist.sID);
+                        new ContractPrint(contractPersist.sID).Show();
+                        
                     }
                     else
                         MessageBox.Show("Erro ao Salvar o Contrato !!!");
                 }
             }
-            //}
-
         }
 
         //validator YesNo

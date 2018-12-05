@@ -211,6 +211,12 @@
     <Compile Include="Views\Reports\Budgets\SituationBudgetsReport.Designer.cs">
       <DependentUpon>SituationBudgetsReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Contracts\ContractPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Contracts\ContractPrint.Designer.cs">
+      <DependentUpon>ContractPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\ReportUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -461,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Budgets\SituationBudgetsReport.resx">
       <DependentUpon>SituationBudgetsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Contracts\ContractPrint.resx">
+      <DependentUpon>ContractPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ReportUsers.resx">
       <DependentUpon>ReportUsers.cs</DependentUpon>

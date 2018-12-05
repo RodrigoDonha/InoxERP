@@ -91,6 +91,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -103,18 +104,18 @@
             // 
             this.lblPpte.AutoSize = true;
             this.lblPpte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPpte.Location = new System.Drawing.Point(318, 457);
+            this.lblPpte.Location = new System.Drawing.Point(506, 461);
             this.lblPpte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPpte.Name = "lblPpte";
-            this.lblPpte.Size = new System.Drawing.Size(146, 17);
+            this.lblPpte.Size = new System.Drawing.Size(16, 17);
             this.lblPpte.TabIndex = 50;
-            this.lblPpte.Text = "Presidente Prudente, ";
+            this.lblPpte.Text = ", ";
             // 
             // dtpDataAtual
             // 
-            this.dtpDataAtual.Location = new System.Drawing.Point(467, 455);
+            this.dtpDataAtual.Location = new System.Drawing.Point(520, 456);
             this.dtpDataAtual.Name = "dtpDataAtual";
-            this.dtpDataAtual.Size = new System.Drawing.Size(272, 23);
+            this.dtpDataAtual.Size = new System.Drawing.Size(325, 23);
             this.dtpDataAtual.TabIndex = 51;
             // 
             // tabControl1
@@ -126,7 +127,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(764, 530);
+            this.tabControl1.Size = new System.Drawing.Size(859, 530);
             this.tabControl1.TabIndex = 75;
             this.tabControl1.Click += new System.EventHandler(this.tabControl1_Click);
             // 
@@ -178,13 +179,13 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(756, 501);
+            this.tabPage1.Size = new System.Drawing.Size(851, 501);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1 - Identificação das Partes";
             // 
             // btnAlterarContratado
             // 
-            this.btnAlterarContratado.Location = new System.Drawing.Point(588, 311);
+            this.btnAlterarContratado.Location = new System.Drawing.Point(652, 311);
             this.btnAlterarContratado.Name = "btnAlterarContratado";
             this.btnAlterarContratado.Size = new System.Drawing.Size(146, 31);
             this.btnAlterarContratado.TabIndex = 116;
@@ -195,7 +196,7 @@
             // txtRgContratado
             // 
             this.txtRgContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRgContratado.Location = new System.Drawing.Point(340, 379);
+            this.txtRgContratado.Location = new System.Drawing.Point(404, 378);
             this.txtRgContratado.MaxLength = 100;
             this.txtRgContratado.Name = "txtRgContratado";
             this.txtRgContratado.Size = new System.Drawing.Size(200, 22);
@@ -209,14 +210,14 @@
             this.label3.Location = new System.Drawing.Point(302, 383);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 16);
+            this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 114;
-            this.label3.Text = "RG:";
+            this.label3.Text = "RG / Incr. Est.:";
             // 
             // cbxEstateContratado
             // 
             this.cbxEstateContratado.FormattingEnabled = true;
-            this.cbxEstateContratado.Location = new System.Drawing.Point(604, 448);
+            this.cbxEstateContratado.Location = new System.Drawing.Point(667, 448);
             this.cbxEstateContratado.Name = "cbxEstateContratado";
             this.cbxEstateContratado.Size = new System.Drawing.Size(130, 24);
             this.cbxEstateContratado.TabIndex = 113;
@@ -226,7 +227,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(546, 453);
+            this.label4.Location = new System.Drawing.Point(609, 453);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 16);
@@ -239,7 +240,7 @@
             this.txtCidadeContratado.Location = new System.Drawing.Point(340, 448);
             this.txtCidadeContratado.MaxLength = 100;
             this.txtCidadeContratado.Name = "txtCidadeContratado";
-            this.txtCidadeContratado.Size = new System.Drawing.Size(185, 22);
+            this.txtCidadeContratado.Size = new System.Drawing.Size(264, 22);
             this.txtCidadeContratado.TabIndex = 111;
             this.txtCidadeContratado.Text = "Presidente Prudente";
             // 
@@ -257,7 +258,7 @@
             // txtCepContratado
             // 
             this.txtCepContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCepContratado.Location = new System.Drawing.Point(603, 380);
+            this.txtCepContratado.Location = new System.Drawing.Point(666, 380);
             this.txtCepContratado.MaxLength = 100;
             this.txtCepContratado.Name = "txtCepContratado";
             this.txtCepContratado.Size = new System.Drawing.Size(131, 22);
@@ -268,7 +269,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(562, 384);
+            this.label6.Location = new System.Drawing.Point(625, 384);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 16);
@@ -299,7 +300,7 @@
             // txtNumeroContratado
             // 
             this.txtNumeroContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroContratado.Location = new System.Drawing.Point(603, 414);
+            this.txtNumeroContratado.Location = new System.Drawing.Point(666, 414);
             this.txtNumeroContratado.MaxLength = 10;
             this.txtNumeroContratado.Name = "txtNumeroContratado";
             this.txtNumeroContratado.Size = new System.Drawing.Size(131, 22);
@@ -310,7 +311,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(562, 417);
+            this.label8.Location = new System.Drawing.Point(625, 417);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 16);
@@ -323,7 +324,7 @@
             this.txtEnderecoContratado.Location = new System.Drawing.Point(87, 414);
             this.txtEnderecoContratado.MaxLength = 100;
             this.txtEnderecoContratado.Name = "txtEnderecoContratado";
-            this.txtEnderecoContratado.Size = new System.Drawing.Size(453, 22);
+            this.txtEnderecoContratado.Size = new System.Drawing.Size(517, 22);
             this.txtEnderecoContratado.TabIndex = 103;
             this.txtEnderecoContratado.Text = "Av: das Flores";
             // 
@@ -354,7 +355,7 @@
             this.txtNomeContratado.Location = new System.Drawing.Point(87, 345);
             this.txtNomeContratado.MaxLength = 100;
             this.txtNomeContratado.Name = "txtNomeContratado";
-            this.txtNomeContratado.Size = new System.Drawing.Size(647, 22);
+            this.txtNomeContratado.Size = new System.Drawing.Size(710, 22);
             this.txtNomeContratado.TabIndex = 100;
             this.txtNomeContratado.Text = "Lucas Beirigo Reggiani";
             // 
@@ -383,7 +384,7 @@
             // txtRgC
             // 
             this.txtRgC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRgC.Location = new System.Drawing.Point(339, 213);
+            this.txtRgC.Location = new System.Drawing.Point(404, 213);
             this.txtRgC.MaxLength = 100;
             this.txtRgC.Name = "txtRgC";
             this.txtRgC.Size = new System.Drawing.Size(200, 22);
@@ -396,9 +397,9 @@
             this.label2.Location = new System.Drawing.Point(301, 217);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 16);
+            this.label2.Size = new System.Drawing.Size(97, 16);
             this.label2.TabIndex = 96;
-            this.label2.Text = "RG:";
+            this.label2.Text = "RG / Inscr. Est.:";
             // 
             // label1
             // 
@@ -413,7 +414,7 @@
             // cbxEstate
             // 
             this.cbxEstate.FormattingEnabled = true;
-            this.cbxEstate.Location = new System.Drawing.Point(603, 281);
+            this.cbxEstate.Location = new System.Drawing.Point(667, 281);
             this.cbxEstate.Name = "cbxEstate";
             this.cbxEstate.Size = new System.Drawing.Size(130, 24);
             this.cbxEstate.TabIndex = 94;
@@ -433,7 +434,7 @@
             // 
             this.lblEstadoC.AutoSize = true;
             this.lblEstadoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoC.Location = new System.Drawing.Point(545, 286);
+            this.lblEstadoC.Location = new System.Drawing.Point(610, 286);
             this.lblEstadoC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstadoC.Name = "lblEstadoC";
             this.lblEstadoC.Size = new System.Drawing.Size(51, 16);
@@ -446,7 +447,7 @@
             this.txtCidadeC.Location = new System.Drawing.Point(339, 281);
             this.txtCidadeC.MaxLength = 100;
             this.txtCidadeC.Name = "txtCidadeC";
-            this.txtCidadeC.Size = new System.Drawing.Size(185, 22);
+            this.txtCidadeC.Size = new System.Drawing.Size(264, 22);
             this.txtCidadeC.TabIndex = 91;
             // 
             // lblCidadeC
@@ -463,7 +464,7 @@
             // txtCepC
             // 
             this.txtCepC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCepC.Location = new System.Drawing.Point(602, 214);
+            this.txtCepC.Location = new System.Drawing.Point(667, 214);
             this.txtCepC.MaxLength = 100;
             this.txtCepC.Name = "txtCepC";
             this.txtCepC.Size = new System.Drawing.Size(131, 22);
@@ -473,7 +474,7 @@
             // 
             this.lblCepC.AutoSize = true;
             this.lblCepC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCepC.Location = new System.Drawing.Point(561, 218);
+            this.lblCepC.Location = new System.Drawing.Point(626, 218);
             this.lblCepC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCepC.Name = "lblCepC";
             this.lblCepC.Size = new System.Drawing.Size(35, 16);
@@ -503,7 +504,7 @@
             // txtNumeroC
             // 
             this.txtNumeroC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroC.Location = new System.Drawing.Point(602, 247);
+            this.txtNumeroC.Location = new System.Drawing.Point(667, 247);
             this.txtNumeroC.MaxLength = 10;
             this.txtNumeroC.Name = "txtNumeroC";
             this.txtNumeroC.Size = new System.Drawing.Size(131, 22);
@@ -513,7 +514,7 @@
             // 
             this.lblNumeroC.AutoSize = true;
             this.lblNumeroC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroC.Location = new System.Drawing.Point(561, 250);
+            this.lblNumeroC.Location = new System.Drawing.Point(627, 250);
             this.lblNumeroC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumeroC.Name = "lblNumeroC";
             this.lblNumeroC.Size = new System.Drawing.Size(23, 16);
@@ -526,7 +527,7 @@
             this.txtEnderecoC.Location = new System.Drawing.Point(86, 247);
             this.txtEnderecoC.MaxLength = 100;
             this.txtEnderecoC.Name = "txtEnderecoC";
-            this.txtEnderecoC.Size = new System.Drawing.Size(453, 22);
+            this.txtEnderecoC.Size = new System.Drawing.Size(518, 22);
             this.txtEnderecoC.TabIndex = 83;
             // 
             // lblEnderecoC
@@ -555,7 +556,7 @@
             this.txtNomeC.Location = new System.Drawing.Point(86, 179);
             this.txtNomeC.MaxLength = 100;
             this.txtNomeC.Name = "txtNomeC";
-            this.txtNomeC.Size = new System.Drawing.Size(647, 22);
+            this.txtNomeC.Size = new System.Drawing.Size(712, 22);
             this.txtNomeC.TabIndex = 80;
             // 
             // lblCpfCnpjC
@@ -621,7 +622,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(756, 501);
+            this.tabPage2.Size = new System.Drawing.Size(851, 501);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2 - Objeto do Contrato";
             // 
@@ -630,7 +631,7 @@
             this.txtDescription.Location = new System.Drawing.Point(6, 29);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(744, 466);
+            this.txtDescription.Size = new System.Drawing.Size(839, 466);
             this.txtDescription.TabIndex = 41;
             // 
             // lblObjetoServicos
@@ -653,14 +654,14 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(756, 501);
+            this.tabPage3.Size = new System.Drawing.Size(851, 501);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "3 - Das Obrigações";
             // 
             // txtValores
             // 
             this.txtValores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValores.Location = new System.Drawing.Point(281, 284);
+            this.txtValores.Location = new System.Drawing.Point(155, 265);
             this.txtValores.Name = "txtValores";
             this.txtValores.Size = new System.Drawing.Size(141, 23);
             this.txtValores.TabIndex = 120;
@@ -671,7 +672,7 @@
             this.txtObrigacoesContratante.Location = new System.Drawing.Point(6, 315);
             this.txtObrigacoesContratante.Multiline = true;
             this.txtObrigacoesContratante.Name = "txtObrigacoesContratante";
-            this.txtObrigacoesContratante.Size = new System.Drawing.Size(744, 180);
+            this.txtObrigacoesContratante.Size = new System.Drawing.Size(839, 180);
             this.txtObrigacoesContratante.TabIndex = 43;
             this.txtObrigacoesContratante.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
             // 
@@ -682,13 +683,14 @@
             this.label12.Location = new System.Drawing.Point(2, 6);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(726, 300);
+            this.label12.Size = new System.Drawing.Size(830, 280);
             this.label12.TabIndex = 42;
             this.label12.Text = resources.GetString("label12.Text");
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage4.Controls.Add(this.txtCidade);
             this.tabPage4.Controls.Add(this.txtPrazoGarantia);
             this.tabPage4.Controls.Add(this.txtPrazo2);
             this.tabPage4.Controls.Add(this.dtpDataAtual);
@@ -700,7 +702,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(756, 501);
+            this.tabPage4.Size = new System.Drawing.Size(851, 501);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "4 - Do Prazo";
             // 
@@ -728,7 +730,7 @@
             this.txtObrigacoesContratante1.Location = new System.Drawing.Point(6, 266);
             this.txtObrigacoesContratante1.Multiline = true;
             this.txtObrigacoesContratante1.Name = "txtObrigacoesContratante1";
-            this.txtObrigacoesContratante1.Size = new System.Drawing.Size(728, 84);
+            this.txtObrigacoesContratante1.Size = new System.Drawing.Size(839, 84);
             this.txtObrigacoesContratante1.TabIndex = 44;
             this.txtObrigacoesContratante1.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
             // 
@@ -755,13 +757,13 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(3, 3);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(740, 440);
+            this.label14.Size = new System.Drawing.Size(792, 440);
             this.label14.TabIndex = 0;
             this.label14.Text = resources.GetString("label14.Text");
             // 
             // btnProximo
             // 
-            this.btnProximo.Location = new System.Drawing.Point(643, 554);
+            this.btnProximo.Location = new System.Drawing.Point(738, 554);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(129, 40);
             this.btnProximo.TabIndex = 116;
@@ -771,19 +773,29 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(16, 554);
+            this.btnVoltar.Location = new System.Drawing.Point(12, 554);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(129, 40);
             this.btnVoltar.TabIndex = 118;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidade.Location = new System.Drawing.Point(137, 455);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(362, 26);
+            this.txtCidade.TabIndex = 77;
+            this.txtCidade.Text = "Presidente Prudente";
             // 
             // frmContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(788, 609);
+            this.ClientSize = new System.Drawing.Size(883, 609);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnProximo);
             this.Controls.Add(this.tabControl1);
@@ -870,5 +882,6 @@
         private System.Windows.Forms.TextBox txtObrigacoesContratante1;
         private System.Windows.Forms.Button btnAlterarContratado;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.TextBox txtCidade;
     }
 }

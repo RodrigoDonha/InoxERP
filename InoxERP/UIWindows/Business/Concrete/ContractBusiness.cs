@@ -22,6 +22,11 @@ namespace UIWindows.Business.Concrete
             return context.Contracts.FirstOrDefault(r => r.dtContractDate.ToShortDateString() == date.ToShortDateString());
         }
 
+        public Contracts returnByBudgetOSId(string id)
+        {
+            return context.Contracts.FirstOrDefault(r => r.Budgets_OS.ToString() == id.ToString());
+        }
+
         //public override void Delete(string id)
         //{
         //    var linq = from q in context.Budgets_OS.Include("Items").Where(c => c.sID == id).ToList() select q;

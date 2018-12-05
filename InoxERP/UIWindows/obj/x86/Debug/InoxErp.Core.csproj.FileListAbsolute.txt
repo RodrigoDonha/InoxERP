@@ -470,3 +470,4 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxERP.Core.
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.addNullCampsCashAndReceive.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.addNullCampsCashAndReceive.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.Contracts.ContractPrint.resources

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Reporting.WebForms;
@@ -66,7 +63,7 @@ namespace InoxERP.UI_Windows_Forms
                         budgetAlter.sTelephone = txtTelefone.Text;
                         budgetAlter.sOccupation = txtCargo.Text;
 
-                        //preenche items *****ESTA PASSANDO SÓ O PRIMEIRO ITEM QUANDO ALTERA, PRECISA CORRIGIR*****
+                        //preenche items 
                         //checkToAlter(budgetAlter.Items.ToList());
                         //budgetAlter.Items = fillItemsOnBudgets_OS();
                         budgetAlter.Items = checkToAlter(budgetAlter.Items.ToList());
