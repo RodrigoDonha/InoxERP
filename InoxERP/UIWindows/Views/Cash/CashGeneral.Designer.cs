@@ -30,8 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCashGeneral));
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtReferenteA = new System.Windows.Forms.TextBox();
@@ -94,7 +98,19 @@
             // 
             this.grdExtratoGeral.AllowUserToAddRows = false;
             this.grdExtratoGeral.AllowUserToDeleteRows = false;
+            this.grdExtratoGeral.AllowUserToResizeColumns = false;
+            this.grdExtratoGeral.AllowUserToResizeRows = false;
             this.grdExtratoGeral.AutoGenerateColumns = false;
+            this.grdExtratoGeral.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.grdExtratoGeral.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdExtratoGeral.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdExtratoGeral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdExtratoGeral.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sIDDataGridViewTextBoxColumn,
@@ -106,11 +122,30 @@
             this.sReferentToDataGridViewTextBoxColumn,
             this.sChequeNumber});
             this.grdExtratoGeral.DataSource = this.tbcashBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdExtratoGeral.DefaultCellStyle = dataGridViewCellStyle5;
+            this.grdExtratoGeral.GridColor = System.Drawing.SystemColors.Window;
             this.grdExtratoGeral.Location = new System.Drawing.Point(23, 128);
             this.grdExtratoGeral.Margin = new System.Windows.Forms.Padding(4);
             this.grdExtratoGeral.MultiSelect = false;
             this.grdExtratoGeral.Name = "grdExtratoGeral";
             this.grdExtratoGeral.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdExtratoGeral.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.grdExtratoGeral.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.grdExtratoGeral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdExtratoGeral.Size = new System.Drawing.Size(469, 233);
             this.grdExtratoGeral.TabIndex = 18;
@@ -144,8 +179,10 @@
             // 
             this.dtDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dtDateDataGridViewTextBoxColumn.DataPropertyName = "dtDate";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dtDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtDateDataGridViewTextBoxColumn.HeaderText = "Data";
             this.dtDateDataGridViewTextBoxColumn.Name = "dtDateDataGridViewTextBoxColumn";
             this.dtDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -155,8 +192,10 @@
             // 
             this.dValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dValueDataGridViewTextBoxColumn.DataPropertyName = "dValue";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dValueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dValueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dValueDataGridViewTextBoxColumn.HeaderText = "Valor";
             this.dValueDataGridViewTextBoxColumn.Name = "dValueDataGridViewTextBoxColumn";
             this.dValueDataGridViewTextBoxColumn.ReadOnly = true;
@@ -175,8 +214,8 @@
             // 
             this.sReferentToDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sReferentToDataGridViewTextBoxColumn.DataPropertyName = "sReferentTo";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sReferentToDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sReferentToDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.sReferentToDataGridViewTextBoxColumn.HeaderText = "Referente";
             this.sReferentToDataGridViewTextBoxColumn.Name = "sReferentToDataGridViewTextBoxColumn";
             this.sReferentToDataGridViewTextBoxColumn.ReadOnly = true;
@@ -232,11 +271,11 @@
             // lblExtratoGeral
             // 
             this.lblExtratoGeral.AutoSize = true;
-            this.lblExtratoGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExtratoGeral.Location = new System.Drawing.Point(179, 11);
+            this.lblExtratoGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExtratoGeral.Location = new System.Drawing.Point(195, 11);
             this.lblExtratoGeral.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblExtratoGeral.Name = "lblExtratoGeral";
-            this.lblExtratoGeral.Size = new System.Drawing.Size(118, 24);
+            this.lblExtratoGeral.Size = new System.Drawing.Size(131, 24);
             this.lblExtratoGeral.TabIndex = 14;
             this.lblExtratoGeral.Text = "Extrato Geral";
             // 

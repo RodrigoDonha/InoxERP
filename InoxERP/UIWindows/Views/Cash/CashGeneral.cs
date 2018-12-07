@@ -16,9 +16,6 @@ namespace UIWindows
 {
     public partial class frmCashGeneral : Form
     {
-        static InoxErpContext ctx = new InoxErpContext();
-        CashBusiness cashGen = new CashBusiness(ctx);
-
         public frmCashGeneral()
         {
             InitializeComponent();
@@ -27,6 +24,7 @@ namespace UIWindows
         private void frmCashGeneral_Load(object sender, EventArgs e)
         {
             fillFrm();
+            colorRows();
             returnValue();
         }
 
@@ -38,6 +36,9 @@ namespace UIWindows
 
         private void returnValue()
         {
+            InoxErpContext ctx = new InoxErpContext();
+            CashBusiness cashGen = new CashBusiness(ctx);
+
             decimal enterC = 0;
             decimal outC = 0;
             decimal totalC = 0;
@@ -53,8 +54,13 @@ namespace UIWindows
             }
 
             totalC = enterC - outC;
-
-            lblExibeSaldoFinal.Text = totalC.ToString();
+            if (totalC < 0)
+            {
+                lblExibeSaldoFinal.Text = totalC.ToString();
+                lblExibeSaldoFinal.ForeColor = Color.Red;
+            }
+            else
+                lblExibeSaldoFinal.Text = totalC.ToString();
         }
 
         private void grdExtratoGeral_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -67,6 +73,22 @@ namespace UIWindows
                 txtValor.Text = grdExtratoGeral[4, grdExtratoGeral.CurrentRow.Index].Value.ToString();
                 dtpData.Text = grdExtratoGeral[3, grdExtratoGeral.CurrentRow.Index].Value.ToString();
                 txtReferenteA.Text = grdExtratoGeral[6, grdExtratoGeral.CurrentRow.Index].Value.ToString();
+            }
+        }
+
+        private void colorRows()
+        {
+            DataGridView dgv = grdExtratoGeral;
+            grdExtratoGeral.RowHeadersVisible = false; //tirar a primeira coluna vazia default da DGV
+
+            foreach (DataGridViewRow linha in dgv.Rows)
+            {
+                decimal value = Convert.ToDecimal(linha.Cells[4].Value);
+                if (value < 0)
+                    linha.DefaultCellStyle.ForeColor = Color.Red;
+                else
+                    linha.DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+
             }
         }
     }

@@ -564,11 +564,13 @@ namespace UIWindows
             if (!txtPrimParcCheq.Text.Equals("") && !txtPrimParcCheq.Text.Equals("0"))
                 ppCheq = Convert.ToDecimal(txtPrimParcCheq.Text.Replace(".", ","));
 
-            fillPayment(eDin,vDin,iDin,ppDin,pDin,eCheq,vCheq,iCheq,ppCheq,pCheq);
+            decimal valueOS = Convert.ToDecimal(lblExibeValorOS.Text.Replace(".", ","));
+
+            fillPayment(valueOS,eDin,vDin,iDin,ppDin,pDin,eCheq,vCheq,iCheq,ppCheq,pCheq);
 
         }
 
-        private void fillPayment(decimal eDin, decimal vDin, decimal iDin, decimal ppDin, decimal pDin, decimal eCheq, decimal vCheq, decimal iCheq, decimal ppCheq, decimal pCheq)
+        private void fillPayment(decimal valueOS, decimal eDin, decimal vDin, decimal iDin, decimal ppDin, decimal pDin, decimal eCheq, decimal vCheq, decimal iCheq, decimal ppCheq, decimal pCheq)
         {
             InoxErpContext ctx = new InoxErpContext();
             Budgets_OS b = new Budgets_OS();
@@ -580,7 +582,7 @@ namespace UIWindows
             ChequesBusiness objChq = new ChequesBusiness(ctx);
             CashBusiness objCash = new CashBusiness(ctx);
 
-            List<Cash> listCashs = fillListCash(b, eDin, eCheq);
+            List<Cash> listCashs = fillListCash(b, eDin, eCheq, valueOS);
             List<AccountsToReceive> listReceives = fillListReceive(b,vDin,iDin,ppDin,pDin);
             List<Cheques> listCheques = fillListCheques(b, vCheq, iCheq, ppCheq, pCheq);
 
@@ -776,9 +778,12 @@ namespace UIWindows
             return list;
         }
 
-        private List<Cash> fillListCash(Budgets_OS budget, decimal eDin, decimal eCheq)
+        private List<Cash> fillListCash(Budgets_OS budget, decimal eDin, decimal eCheq, decimal valueOS)
         {
             List<Cash> list = new List<Cash>();
+
+            if (eDin > valueOS)
+                eDin = valueOS;
 
             if (eDin > 0)
             {

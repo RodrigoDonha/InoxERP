@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows.Business;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
@@ -23,6 +24,7 @@ namespace UIWindows
         Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
 
         ValidationEntries validation = new ValidationEntries();
+        MessageBoxTimer msg = new MessageBoxTimer();
 
         public frmCashEntry()
         {
@@ -78,6 +80,8 @@ namespace UIWindows
                     txtOS.Text = "";
                 }
 
+                lblId.Text = grdEntradas[0, grdEntradas.CurrentRow.Index].Value.ToString();
+
                 string cli = grdEntradas[2, grdEntradas.CurrentRow.Index].Value.ToString();
                 txtNomeCliente.Text = objClient.Search
                     .FirstOrDefault(c => c.sID == cli).sName.ToString();
@@ -122,39 +126,6 @@ namespace UIWindows
             return true;
         }
 
-        private void btnIncluir_Click(object sender, EventArgs e)
-        {
-            if (validationCamps())
-                if(messageYesNo("confirm") == DialogResult.Yes)
-                {
-                    InoxErpContext ctx = new InoxErpContext();
-                    CashBusiness objPersist = new CashBusiness(ctx);
-                    Cash cashPersist = new Cash();
-
-                    cashPersist.sID = Guid.NewGuid().ToString();
-
-                    cashPersist.sId_Budgets_OS = returnOS();
-                    cashPersist.sId_Client = returnId();
-                    cashPersist.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
-                    cashPersist.dtDate = dtpData.Value;
-                    cashPersist.sChequeNumber = txtNumCheque.Text;
-                    cashPersist.sReferentTo = txtReferenteA.Text;
-                    cashPersist.CashType = CashType.Enter;
-
-                    objPersist.Insert(cashPersist);
-
-                    var ok = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
-
-                    if (ok == null)
-                        MessageBox.Show("Erro ao Lançar Entrada no Caixa !!!");
-                    else
-                        MessageBox.Show("Entrada Lançada com Sucesso !!!");
-
-                    cleanCamps();
-                    fillGrid();
-                }
-        }
-
         private string returnId()
         {
             string id = txtNomeCliente.Text == "" ? "0" : txtNomeCliente.Text;
@@ -188,20 +159,26 @@ namespace UIWindows
 
         private string returnOS()
         {
-            string os = txtOS.Text;
+            int os = txtOS.Text == "" ? -1 : Convert.ToInt32(txtOS.Text);
+            Budgets_OS retID = new Budgets_OS();
             try
             {
-                os = objBudget.Search.FirstOrDefault(c => c.iCod == Convert.ToInt32(os)).sID;
+                retID = objBudget.Search.FirstOrDefault(c => c.iCod == os);
+                if (retID.Equals(null))
+                    return null;
             }
             catch (Exception)
             {
-                os = "";
+                retID = new Budgets_OS();
+                retID.sID = "";
+                msg.Show("Ordem de Srviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
             }
-            return os;
+            return retID.sID;
         }
 
         private void cleanCamps()
         {
+            lblId.Text = "";
             txtOS.Clear();
             txtNomeCliente.Clear();
             txtValor.Clear();
@@ -224,6 +201,81 @@ namespace UIWindows
                                            "storno no Extrato", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
+        }
+
+        private void btnIncluir_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("confirm") == DialogResult.Yes)
+                {
+                    InoxErpContext ctx = new InoxErpContext();
+                    CashBusiness objPersist = new CashBusiness(ctx);
+                    Cash cashPersist = new Cash();
+
+                    cashPersist.sID = Guid.NewGuid().ToString();
+
+                    cashPersist.sId_Budgets_OS = returnOS();
+                    cashPersist.sId_Client = returnId();
+                    cashPersist.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                    cashPersist.dtDate = dtpData.Value;
+                    cashPersist.sChequeNumber = txtNumCheque.Text;
+                    cashPersist.sReferentTo = txtReferenteA.Text;
+                    cashPersist.CashType = CashType.Enter;
+
+                    objPersist.Insert(cashPersist);
+
+                    var ok = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
+
+                    if (ok == null)
+                        MessageBox.Show("Erro ao Lançar a Entrada no Caixa !!!");
+                    else
+                        MessageBox.Show("Entrada Lançada com Sucesso !!!");
+
+                    cleanCamps();
+                    fillGrid();
+                }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("alter") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxA = new InoxErpContext();
+                    CashBusiness objALter = new CashBusiness(ctxA);
+                    Cash cashAlter = new Cash();
+
+                   
+                    cashAlter = objALter.ReturnByID(getIdGRD());
+
+                    cashAlter.sId_Budgets_OS = returnOS();
+                    cashAlter.sId_Client = returnId();
+                    cashAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                    cashAlter.dtDate = dtpData.Value;
+                    cashAlter.sChequeNumber = txtNumCheque.Text;
+                    cashAlter.sReferentTo = txtReferenteA.Text;
+                    cashAlter.CashType = CashType.Enter;
+                
+                    
+                    objALter.Update(cashAlter);
+
+                    var ok = objALter.Search.FirstOrDefault(b => b.sID == cashAlter.sID);
+
+                    if (ok == null)
+                        MessageBox.Show("Erro ao Alterar a Entrada no Caixa !!!");
+                    else
+                        MessageBox.Show("Entrada Alterada com Sucesso !!!");
+
+                    cleanCamps();
+                    fillGrid();
+                }
+        }
+
+        private string getIdGRD()
+        {
+            string id = lblId.Text;
+            
+            return id;
         }
     }
 }

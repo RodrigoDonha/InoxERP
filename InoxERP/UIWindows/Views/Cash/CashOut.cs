@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows.Business;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 
 namespace UIWindows
 {
@@ -19,9 +21,11 @@ namespace UIWindows
 
         CashBusiness objCashO = new CashBusiness(ctx);
         ClientsBusiness objClient = new ClientsBusiness(ctx);
+        ProviderBusiness objProvider = new ProviderBusiness(ctx);
         Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
 
         ValidationEntries validation = new ValidationEntries();
+        MessageBoxTimer msg = new MessageBoxTimer();
 
         public frmCashOut()
         {
@@ -66,9 +70,19 @@ namespace UIWindows
             { }
             else
             {
+                lblId.Text = grdSaidas[0, grdSaidas.CurrentRow.Index].Value.ToString();
+                
                 string id = grdSaidas[1, grdSaidas.CurrentRow.Index].Value.ToString();
-                txtNFOS.Text = objBudget.Search
-                    .FirstOrDefault(c => c.sID == id).iCod.ToString();
+
+                try
+                {
+                    txtNFOS.Text = objBudget.Search
+                        .FirstOrDefault(c => c.sID == id).iCod.ToString();
+                }
+                catch (Exception)
+                {
+                    txtNFOS.Text = "";
+                }
 
                 string cli = grdSaidas[2, grdSaidas.CurrentRow.Index].Value.ToString();
                 txtNomeClieForn.Text = objClient.Search
@@ -79,6 +93,201 @@ namespace UIWindows
                 txtNumCheque.Text = grdSaidas[7, grdSaidas.CurrentRow.Index].Value.ToString();
                 txtReferenteA.Text = grdSaidas[5, grdSaidas.CurrentRow.Index].Value.ToString();
             }
+        }
+
+        //validators CAMPS frm
+        private bool validationCamps()
+        {
+            if (txtValor.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um Valor para o Lançamento");
+                txtValor.Focus();
+                return false;
+            }
+
+            if (txtValor.Text.Equals("0"))
+            {
+                MessageBox.Show("Informe um Valor Maior Que Zero");
+                txtValor.Focus();
+                return false;
+            }
+
+            if (txtNumCheque.Text.Length.Equals(0))
+            {
+                txtNumCheque.Text = "0";
+            }
+
+            if (txtReferenteA.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um Referencia/Motivo para o Lançamento");
+                txtReferenteA.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private string returnId()
+        {
+            string id = txtNomeClieForn.Text == "" ? "0" : txtNomeClieForn.Text;
+            try
+            {
+                var searchC = from p in ctx.Clients where p.sName.Contains(id) select p;
+
+                if (!searchC.ToList().Count.Equals(0))
+                {
+                    List<Clients> c = new List<Clients>();
+
+                    c = searchC.ToList();
+
+                    id = c[0].sID;
+                }
+                else
+                    try
+                    {
+                        var searchP = from p in ctx.Providers where p.sName.Contains(id) select p;
+
+                        if (!searchP.ToList().Count.Equals(0))
+                        {
+                            List<Providers> c = new List<Providers>();
+
+                            c = searchP.ToList();
+
+                            id = c[0].sID;
+                        }
+                        else
+                            id = objClient.Search.FirstOrDefault(c => c.sName.Contains("CONSUMIDOR")).sID;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Antes de concluir este Lançamento Voçê tem que Cadastrar um Cliente CONSUMIDOR para continuar");
+                    }
+
+            }
+            catch (Exception)
+            { }
+            return id;
+        }
+
+        private string returnOS()
+        {
+            int os = txtNFOS.Text == "" ? -1 : Convert.ToInt32(txtNFOS.Text);
+            Budgets_OS retID = new Budgets_OS();
+            try
+            {
+                retID = objBudget.Search.FirstOrDefault(c => c.iCod == os);
+                if (retID.Equals(null))
+                    return null;
+            }
+            catch (Exception)
+            {
+                retID = new Budgets_OS();
+                retID.sID = "";
+                msg.Show("Ordem de Srviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
+            }
+            return retID.sID;
+        }
+
+        private void cleanCamps()
+        {
+            lblId.Text = "";
+            txtNFOS.Clear();
+            txtNomeClieForn.Clear();
+            txtValor.Clear();
+            dtpData.Value = DateTime.Now;
+            txtNumCheque.Clear();
+            txtReferenteA.Clear();
+        }
+
+        //DIALOG OPTIONS
+        public DialogResult messageYesNo(string type)
+        {
+            switch (type)
+            {
+                case "confirm":
+                    return MessageBox.Show("Confirma o Lançamento no Caixa ?", "Concluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "alter":
+                    return MessageBox.Show("Confirma a Alteração do Lançamento no Caixa ?", "Alterar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "delete":
+                    return MessageBox.Show("Confirma a Exclusçao do Lançamento no Caixa ? \n ***Isso Gera Automaticamente um E" +
+                                           "storno no Extrato", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            }
+            return DialogResult.No;
+        }
+
+        private void btnIncluir_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("confirm") == DialogResult.Yes)
+                {
+                    InoxErpContext ctx = new InoxErpContext();
+                    CashBusiness objPersist = new CashBusiness(ctx);
+                    Cash cashPersist = new Cash();
+
+                    cashPersist.sID = Guid.NewGuid().ToString();
+
+                    cashPersist.sId_Budgets_OS = returnOS();
+                    cashPersist.sId_Client = returnId();
+                    cashPersist.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                    cashPersist.dtDate = dtpData.Value;
+                    cashPersist.sChequeNumber = txtNumCheque.Text;
+                    cashPersist.sReferentTo = txtReferenteA.Text;
+                    cashPersist.CashType = CashType.Out;
+
+                    objPersist.Insert(cashPersist);
+
+                    var ok = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
+
+                    if (ok == null)
+                        MessageBox.Show("Erro ao Lançar a Saída no Caixa !!!");
+                    else
+                        MessageBox.Show("Saída Lançada com Sucesso !!!");
+
+                    cleanCamps();
+                    fillGrid();
+                }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("alter") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxA = new InoxErpContext();
+                    CashBusiness objALter = new CashBusiness(ctxA);
+                    Cash cashAlter = new Cash();
+
+
+                    cashAlter = objALter.ReturnByID(getIdGRD());
+
+                    cashAlter.sId_Budgets_OS = returnOS();
+                    cashAlter.sId_Client = returnId();
+                    cashAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                    cashAlter.dtDate = dtpData.Value;
+                    cashAlter.sChequeNumber = txtNumCheque.Text;
+                    cashAlter.sReferentTo = txtReferenteA.Text;
+                    cashAlter.CashType = CashType.Out;
+                    
+                    objALter.Update(cashAlter);
+
+                    var ok = objALter.Search.FirstOrDefault(b => b.sID == cashAlter.sID);
+
+                    if (ok == null)
+                        MessageBox.Show("Erro ao Alterar a Saída no Caixa !!!");
+                    else
+                        MessageBox.Show("Saída Alterada com Sucesso !!!");
+
+                    cleanCamps();
+                    fillGrid();
+                }
+        }
+
+        private string getIdGRD()
+        {
+            string id = lblId.Text;
+
+            return id;
         }
     }
 }
