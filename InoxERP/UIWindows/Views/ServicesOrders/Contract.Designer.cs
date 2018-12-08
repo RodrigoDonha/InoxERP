@@ -74,7 +74,6 @@
             this.lblNomeC = new System.Windows.Forms.Label();
             this.lblContrante = new System.Windows.Forms.Label();
             this.lblTituloContrato = new System.Windows.Forms.Label();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblObjetoServicos = new System.Windows.Forms.Label();
@@ -83,6 +82,7 @@
             this.txtObrigacoesContratante = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtPrazoGarantia = new System.Windows.Forms.TextBox();
             this.txtPrazo2 = new System.Windows.Forms.TextBox();
             this.txtObrigacoesContratante1 = new System.Windows.Forms.TextBox();
@@ -91,10 +91,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.txtCidade = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -116,7 +114,7 @@
             this.dtpDataAtual.Location = new System.Drawing.Point(520, 456);
             this.dtpDataAtual.Name = "dtpDataAtual";
             this.dtpDataAtual.Size = new System.Drawing.Size(325, 23);
-            this.dtpDataAtual.TabIndex = 51;
+            this.dtpDataAtual.TabIndex = 19;
             // 
             // tabControl1
             // 
@@ -175,7 +173,6 @@
             this.tabPage1.Controls.Add(this.lblNomeC);
             this.tabPage1.Controls.Add(this.lblContrante);
             this.tabPage1.Controls.Add(this.lblTituloContrato);
-            this.tabPage1.Controls.Add(this.picLogo);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -188,7 +185,7 @@
             this.btnAlterarContratado.Location = new System.Drawing.Point(652, 311);
             this.btnAlterarContratado.Name = "btnAlterarContratado";
             this.btnAlterarContratado.Size = new System.Drawing.Size(146, 31);
-            this.btnAlterarContratado.TabIndex = 116;
+            this.btnAlterarContratado.TabIndex = 10;
             this.btnAlterarContratado.Text = "Alterar Contratado";
             this.btnAlterarContratado.UseVisualStyleBackColor = true;
             this.btnAlterarContratado.Click += new System.EventHandler(this.btnAlterarContratado_Click);
@@ -200,7 +197,7 @@
             this.txtRgContratado.MaxLength = 100;
             this.txtRgContratado.Name = "txtRgContratado";
             this.txtRgContratado.Size = new System.Drawing.Size(200, 22);
-            this.txtRgContratado.TabIndex = 115;
+            this.txtRgContratado.TabIndex = 13;
             this.txtRgContratado.Text = "093967599-45";
             // 
             // label3
@@ -220,7 +217,7 @@
             this.cbxEstateContratado.Location = new System.Drawing.Point(667, 448);
             this.cbxEstateContratado.Name = "cbxEstateContratado";
             this.cbxEstateContratado.Size = new System.Drawing.Size(130, 24);
-            this.cbxEstateContratado.TabIndex = 113;
+            this.cbxEstateContratado.TabIndex = 19;
             this.cbxEstateContratado.Text = "SP";
             // 
             // label4
@@ -241,7 +238,7 @@
             this.txtCidadeContratado.MaxLength = 100;
             this.txtCidadeContratado.Name = "txtCidadeContratado";
             this.txtCidadeContratado.Size = new System.Drawing.Size(264, 22);
-            this.txtCidadeContratado.TabIndex = 111;
+            this.txtCidadeContratado.TabIndex = 18;
             this.txtCidadeContratado.Text = "Presidente Prudente";
             // 
             // label5
@@ -262,7 +259,7 @@
             this.txtCepContratado.MaxLength = 100;
             this.txtCepContratado.Name = "txtCepContratado";
             this.txtCepContratado.Size = new System.Drawing.Size(131, 22);
-            this.txtCepContratado.TabIndex = 109;
+            this.txtCepContratado.TabIndex = 14;
             this.txtCepContratado.Text = "19065-510";
             // 
             // label6
@@ -283,7 +280,7 @@
             this.txtBairroContratado.MaxLength = 100;
             this.txtBairroContratado.Name = "txtBairroContratado";
             this.txtBairroContratado.Size = new System.Drawing.Size(185, 22);
-            this.txtBairroContratado.TabIndex = 107;
+            this.txtBairroContratado.TabIndex = 17;
             this.txtBairroContratado.Text = "Cecap";
             // 
             // label7
@@ -304,7 +301,7 @@
             this.txtNumeroContratado.MaxLength = 10;
             this.txtNumeroContratado.Name = "txtNumeroContratado";
             this.txtNumeroContratado.Size = new System.Drawing.Size(131, 22);
-            this.txtNumeroContratado.TabIndex = 105;
+            this.txtNumeroContratado.TabIndex = 16;
             this.txtNumeroContratado.Text = "210";
             // 
             // label8
@@ -325,7 +322,7 @@
             this.txtEnderecoContratado.MaxLength = 100;
             this.txtEnderecoContratado.Name = "txtEnderecoContratado";
             this.txtEnderecoContratado.Size = new System.Drawing.Size(517, 22);
-            this.txtEnderecoContratado.TabIndex = 103;
+            this.txtEnderecoContratado.TabIndex = 15;
             this.txtEnderecoContratado.Text = "Av: das Flores";
             // 
             // label9
@@ -346,7 +343,7 @@
             this.txtCpfCnpjContratado.MaxLength = 100;
             this.txtCpfCnpjContratado.Name = "txtCpfCnpjContratado";
             this.txtCpfCnpjContratado.Size = new System.Drawing.Size(200, 22);
-            this.txtCpfCnpjContratado.TabIndex = 101;
+            this.txtCpfCnpjContratado.TabIndex = 12;
             this.txtCpfCnpjContratado.Text = "30.286.217/0001-70";
             // 
             // txtNomeContratado
@@ -356,7 +353,7 @@
             this.txtNomeContratado.MaxLength = 100;
             this.txtNomeContratado.Name = "txtNomeContratado";
             this.txtNomeContratado.Size = new System.Drawing.Size(710, 22);
-            this.txtNomeContratado.TabIndex = 100;
+            this.txtNomeContratado.TabIndex = 11;
             this.txtNomeContratado.Text = "Lucas Beirigo Reggiani";
             // 
             // label10
@@ -388,7 +385,7 @@
             this.txtRgC.MaxLength = 100;
             this.txtRgC.Name = "txtRgC";
             this.txtRgC.Size = new System.Drawing.Size(200, 22);
-            this.txtRgC.TabIndex = 97;
+            this.txtRgC.TabIndex = 3;
             // 
             // label2
             // 
@@ -414,10 +411,38 @@
             // cbxEstate
             // 
             this.cbxEstate.FormattingEnabled = true;
+            this.cbxEstate.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
             this.cbxEstate.Location = new System.Drawing.Point(667, 281);
             this.cbxEstate.Name = "cbxEstate";
             this.cbxEstate.Size = new System.Drawing.Size(130, 24);
-            this.cbxEstate.TabIndex = 94;
+            this.cbxEstate.TabIndex = 9;
             // 
             // lblContratado
             // 
@@ -448,7 +473,7 @@
             this.txtCidadeC.MaxLength = 100;
             this.txtCidadeC.Name = "txtCidadeC";
             this.txtCidadeC.Size = new System.Drawing.Size(264, 22);
-            this.txtCidadeC.TabIndex = 91;
+            this.txtCidadeC.TabIndex = 8;
             // 
             // lblCidadeC
             // 
@@ -468,7 +493,7 @@
             this.txtCepC.MaxLength = 100;
             this.txtCepC.Name = "txtCepC";
             this.txtCepC.Size = new System.Drawing.Size(131, 22);
-            this.txtCepC.TabIndex = 89;
+            this.txtCepC.TabIndex = 4;
             // 
             // lblCepC
             // 
@@ -488,7 +513,7 @@
             this.txtBairroC.MaxLength = 100;
             this.txtBairroC.Name = "txtBairroC";
             this.txtBairroC.Size = new System.Drawing.Size(185, 22);
-            this.txtBairroC.TabIndex = 87;
+            this.txtBairroC.TabIndex = 7;
             // 
             // lblBairroC
             // 
@@ -508,7 +533,7 @@
             this.txtNumeroC.MaxLength = 10;
             this.txtNumeroC.Name = "txtNumeroC";
             this.txtNumeroC.Size = new System.Drawing.Size(131, 22);
-            this.txtNumeroC.TabIndex = 85;
+            this.txtNumeroC.TabIndex = 6;
             // 
             // lblNumeroC
             // 
@@ -528,7 +553,7 @@
             this.txtEnderecoC.MaxLength = 100;
             this.txtEnderecoC.Name = "txtEnderecoC";
             this.txtEnderecoC.Size = new System.Drawing.Size(518, 22);
-            this.txtEnderecoC.TabIndex = 83;
+            this.txtEnderecoC.TabIndex = 5;
             // 
             // lblEnderecoC
             // 
@@ -548,7 +573,7 @@
             this.txtCpfCnpjC.MaxLength = 100;
             this.txtCpfCnpjC.Name = "txtCpfCnpjC";
             this.txtCpfCnpjC.Size = new System.Drawing.Size(200, 22);
-            this.txtCpfCnpjC.TabIndex = 81;
+            this.txtCpfCnpjC.TabIndex = 2;
             // 
             // txtNomeC
             // 
@@ -557,7 +582,7 @@
             this.txtNomeC.MaxLength = 100;
             this.txtNomeC.Name = "txtNomeC";
             this.txtNomeC.Size = new System.Drawing.Size(712, 22);
-            this.txtNomeC.TabIndex = 80;
+            this.txtNomeC.TabIndex = 1;
             // 
             // lblCpfCnpjC
             // 
@@ -603,17 +628,6 @@
             this.lblTituloContrato.TabIndex = 76;
             this.lblTituloContrato.Text = "IDENTIFICAÇÃO DAS PARTES CONTRATANTES";
             // 
-            // picLogo
-            // 
-            this.picLogo.Image = global::UIWindows.Properties.Resources.logo;
-            this.picLogo.Location = new System.Drawing.Point(7, 7);
-            this.picLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(277, 107);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 75;
-            this.picLogo.TabStop = false;
-            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -632,7 +646,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(839, 466);
-            this.txtDescription.TabIndex = 41;
+            this.txtDescription.TabIndex = 19;
             // 
             // lblObjetoServicos
             // 
@@ -664,7 +678,7 @@
             this.txtValores.Location = new System.Drawing.Point(155, 265);
             this.txtValores.Name = "txtValores";
             this.txtValores.Size = new System.Drawing.Size(141, 23);
-            this.txtValores.TabIndex = 120;
+            this.txtValores.TabIndex = 18;
             // 
             // txtObrigacoesContratante
             // 
@@ -673,7 +687,7 @@
             this.txtObrigacoesContratante.Multiline = true;
             this.txtObrigacoesContratante.Name = "txtObrigacoesContratante";
             this.txtObrigacoesContratante.Size = new System.Drawing.Size(839, 180);
-            this.txtObrigacoesContratante.TabIndex = 43;
+            this.txtObrigacoesContratante.TabIndex = 19;
             this.txtObrigacoesContratante.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
             // 
             // label12
@@ -706,13 +720,22 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "4 - Do Prazo";
             // 
+            // txtCidade
+            // 
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidade.Location = new System.Drawing.Point(137, 455);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(362, 26);
+            this.txtCidade.TabIndex = 18;
+            this.txtCidade.Text = "Presidente Prudente";
+            // 
             // txtPrazoGarantia
             // 
             this.txtPrazoGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrazoGarantia.Location = new System.Drawing.Point(99, 400);
             this.txtPrazoGarantia.Name = "txtPrazoGarantia";
             this.txtPrazoGarantia.Size = new System.Drawing.Size(86, 26);
-            this.txtPrazoGarantia.TabIndex = 76;
+            this.txtPrazoGarantia.TabIndex = 17;
             this.txtPrazoGarantia.Text = "5 anos";
             // 
             // txtPrazo2
@@ -721,7 +744,7 @@
             this.txtPrazo2.Location = new System.Drawing.Point(258, 361);
             this.txtPrazo2.Name = "txtPrazo2";
             this.txtPrazo2.Size = new System.Drawing.Size(86, 26);
-            this.txtPrazo2.TabIndex = 45;
+            this.txtPrazo2.TabIndex = 16;
             this.txtPrazo2.Text = "30 dias";
             // 
             // txtObrigacoesContratante1
@@ -731,7 +754,7 @@
             this.txtObrigacoesContratante1.Multiline = true;
             this.txtObrigacoesContratante1.Name = "txtObrigacoesContratante1";
             this.txtObrigacoesContratante1.Size = new System.Drawing.Size(839, 84);
-            this.txtObrigacoesContratante1.TabIndex = 44;
+            this.txtObrigacoesContratante1.TabIndex = 15;
             this.txtObrigacoesContratante1.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
             // 
             // txtValores1
@@ -740,7 +763,7 @@
             this.txtValores1.Location = new System.Drawing.Point(256, 220);
             this.txtValores1.Name = "txtValores1";
             this.txtValores1.Size = new System.Drawing.Size(139, 26);
-            this.txtValores1.TabIndex = 2;
+            this.txtValores1.TabIndex = 14;
             // 
             // txtPrazo1
             // 
@@ -748,7 +771,7 @@
             this.txtPrazo1.Location = new System.Drawing.Point(521, 22);
             this.txtPrazo1.Name = "txtPrazo1";
             this.txtPrazo1.Size = new System.Drawing.Size(86, 26);
-            this.txtPrazo1.TabIndex = 1;
+            this.txtPrazo1.TabIndex = 13;
             this.txtPrazo1.Text = "30 dias";
             // 
             // label14
@@ -766,7 +789,7 @@
             this.btnProximo.Location = new System.Drawing.Point(738, 554);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(129, 40);
-            this.btnProximo.TabIndex = 116;
+            this.btnProximo.TabIndex = 21;
             this.btnProximo.Text = "Próximo";
             this.btnProximo.UseVisualStyleBackColor = true;
             this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
@@ -776,19 +799,10 @@
             this.btnVoltar.Location = new System.Drawing.Point(12, 554);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(129, 40);
-            this.btnVoltar.TabIndex = 118;
+            this.btnVoltar.TabIndex = 20;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(137, 455);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(362, 26);
-            this.txtCidade.TabIndex = 77;
-            this.txtCidade.Text = "Presidente Prudente";
             // 
             // frmContract
             // 
@@ -808,7 +822,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -864,7 +877,6 @@
         private System.Windows.Forms.Label lblNomeC;
         private System.Windows.Forms.Label lblContrante;
         private System.Windows.Forms.Label lblTituloContrato;
-        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label lblObjetoServicos;
         private System.Windows.Forms.TextBox txtDescription;

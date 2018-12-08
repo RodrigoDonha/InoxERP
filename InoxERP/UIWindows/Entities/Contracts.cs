@@ -105,5 +105,6 @@ namespace UIWindows.Entities
 
         //Contracts -> Budgets_OS 1:1
         public virtual Budgets_OS Budgets_OS { get; set; }
+        //public ICollection<Budgets_OS> Budgets_OS { get; set; }
     }
 }

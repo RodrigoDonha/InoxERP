@@ -103,7 +103,6 @@ namespace UIWindows.Views.Reports.Contracts
             data.Values.Add(dataString);
             proprietario.Values.Add(proprietarioString);
 
-
             reportViewer1.LocalReport.SetParameters(contratante);
             reportViewer1.LocalReport.SetParameters(contratado);
             reportViewer1.LocalReport.SetParameters(objeto);

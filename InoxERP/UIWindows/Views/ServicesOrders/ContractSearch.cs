@@ -16,5 +16,16 @@ namespace UIWindows
         {
             InitializeComponent();
         }
+
+        //overrid FILL DATASET
+        public void fillDataSet()
+        {
+            this.tb_contractsTableAdapter.Fill(this.fullDataSet.tb_contracts);
+        }
+
+        private void frmContractSearch_Load(object sender, EventArgs e)
+        {
+            fillDataSet();
+        }
     }
 }

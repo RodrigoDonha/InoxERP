@@ -203,16 +203,6 @@ namespace UIWindows.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap esc2menor {
-            get {
-                object obj = ResourceManager.GetObject("esc2menor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Finished {
             get {
                 object obj = ResourceManager.GetObject("Finished", resourceCulture);
@@ -276,16 +266,6 @@ namespace UIWindows.Properties {
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap MarcaDagua2 {
-            get {
-                object obj = ResourceManager.GetObject("MarcaDagua2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -359,9 +359,8 @@ namespace UIWindows
                     contractPersist.iDeadline = Convert.ToInt32(txtPrazo1.Text);
                     contractPersist.iWarrantyTime = Convert.ToInt32(txtPrazoGarantia.Text);
 
-
                     // data to the ForengeKeys
-                    contractPersist.Budgets_OS.sID = getId; // esta errado, ver com jefter como faz para passar o id do orçamento
+                    contractPersist.Budgets_OS = searchBudget; // esta errado, ver com jefter como faz para passar o id do orçamento
                     // ver com Jefter se esta correto, se não vai criar mais itens ou se somente irá pegar a ForengeKey
                     if (searchBudget.Items != null)
                     {
