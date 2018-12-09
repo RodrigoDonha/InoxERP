@@ -161,6 +161,14 @@
     <Compile Include="Migrations\201811291944172_addNullCampsCashAndReceive.Designer.cs">
       <DependentUpon>201811291944172_addNullCampsCashAndReceive.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812091620596_campsContractaddremoved.cs" />
+    <Compile Include="Migrations\201812091620596_campsContractaddremoved.Designer.cs">
+      <DependentUpon>201812091620596_campsContractaddremoved.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812091832558_creatbooleancampandcamebackcall.cs" />
+    <Compile Include="Migrations\201812091832558_creatbooleancampandcamebackcall.Designer.cs">
+      <DependentUpon>201812091832558_creatbooleancampandcamebackcall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\Backups\AdminChose.cs">
       <SubType>Form</SubType>
@@ -443,6 +451,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811291944172_addNullCampsCashAndReceive.resx">
       <DependentUpon>201811291944172_addNullCampsCashAndReceive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812091620596_campsContractaddremoved.resx">
+      <DependentUpon>201812091620596_campsContractaddremoved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812091832558_creatbooleancampandcamebackcall.resx">
+      <DependentUpon>201812091832558_creatbooleancampandcamebackcall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Backups\AdminChose.resx">
       <DependentUpon>AdminChose.cs</DependentUpon>

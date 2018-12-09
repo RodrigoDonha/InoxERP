@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 using UIWindows.Views.Reports.Contracts;
 
 namespace UIWindows
@@ -18,9 +19,6 @@ namespace UIWindows
 
         Clients cli = new Clients();
         ClientsBusiness clients = new ClientsBusiness(ctx);
-
-        Items items = new Items();
-        ItemsBusiness item = new ItemsBusiness(ctx);
 
         private string getId;
 
@@ -38,7 +36,6 @@ namespace UIWindows
         public void getData()
         {
             searchBudget = obj.ReturnByID(getId);
-            //items = item.ReturnByID(getData());
         }
 
         public void validationEntriesCPFandCNPJ(object sender, KeyPressEventArgs e)
@@ -67,35 +64,51 @@ namespace UIWindows
             {
                 string idClient = searchBudget.IdClients;
                 cli = clients.ReturnByID(idClient);
-                txtNomeC.Text = cli.sName;
+                txtNomeC.Text = cli.sName.ToUpper();
                 txtCpfCnpjC.Text = cli.sCpfCnpj;
                 txtRgC.Text = cli.sRg;
                 txtCepC.Text = cli.sCEP;
-                txtEnderecoC.Text = cli.sAdress;
+                txtEnderecoC.Text = cli.sAdress.ToUpper();
                 txtNumeroC.Text = cli.iNumber.ToString();
-                txtBairroC.Text = cli.sDistrict;
-                txtCidadeC.Text = cli.sCity;
+                txtBairroC.Text = cli.sDistrict.ToUpper();
+                txtCidadeC.Text = cli.sCity.ToUpper();
                 cbxEstate.Text = cli.Estate.ToString();
+                cbxEstateContratado.SelectedIndex = 24;
             }
             else
             {
-                txtNomeC.Text = searchBudget.sName;
-                txtEnderecoC.Text = searchBudget.sAdress;
+                txtNomeC.Text = searchBudget.sName.ToUpper();
+                txtEnderecoC.Text = searchBudget.sAdress.ToUpper();
             }
+            txtDescription.Text += "ITEMS:\r\n\r\n";
             foreach (var line in searchBudget.Items.ToList()) // math.round(var,2)
             {
-                txtDescription.Text += line.dAmount.ToString() + " - " + line.sDescription + " - " + line.dPrice + " - " + line.dTotal;
+                txtDescription.Text += line.dAmount.ToString() + " - " + line.sDescription + " - " + line.dPrice + " - " + line.dTotal + " \r\n ";
             }
-            txtDescription.Text += "\r\n" + "\r\n" + searchBudget.sObservation;
+            txtDescription.Text += "\r\nDESCRIÇÃO DO SERVIÇO:\r\n" + "\r\n" + searchBudget.sObservation;
             txtValores.Text = searchBudget.dTotal.ToString();
             txtValores1.Text = searchBudget.dTotal.ToString();
-            string obligations = "forma de pagamento: " + searchBudget.PaymentMethods + " - parcelamento: " + searchBudget.iPaymentInstallments;
+            string obligations = "Forma de pagamento: " + paymentForm(searchBudget.PaymentMethods) + " - Parcelamento: " + searchBudget.iPaymentInstallments;
             txtObrigacoesContratante.Text = obligations;
             txtObrigacoesContratante1.Text = obligations;
             txtPrazoGarantia.Text = searchBudget.iWarrantyTime.ToString();
             txtPrazo1.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
             txtPrazo2.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
-            txtCidade.Text = "Colocar atributo cidade no banco";
+            string cidade = searchBudget.Clients.sCity;
+            txtCidade.Text = cidade;
+        }
+
+        private string paymentForm(PaymentMethods payment)
+        {
+            if (payment == PaymentMethods.chequeMoney)
+                return "Dinheiro e Cheque";
+            if (payment == PaymentMethods.money)
+                return "Dinheiro";
+            if (payment == PaymentMethods.cheque)
+                return "Cheque";
+            if (payment == PaymentMethods.toMatch)
+                return "À Combinar";
+            return "";
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
@@ -352,20 +365,16 @@ namespace UIWindows
                     contractPersist.ProviderEstate = validation.estate(cbxEstateContratado.SelectedIndex);
 
                     // data contract general
-                    contractPersist.dtContractDate = Convert.ToDateTime(dtpDataAtual.Text);
+                    contractPersist.dtContractDate = Convert.ToDateTime(dtpDataAtual.Value);
+                    contractPersist.dtStartExecution = DateTime.Today;
                     contractPersist.sClientObjectContract = txtDescription.Text;
                     contractPersist.dTotalValue = Convert.ToDecimal(txtValores.Text);
                     contractPersist.sPaymentForm = txtObrigacoesContratante.Text;
                     contractPersist.iDeadline = Convert.ToInt32(txtPrazo1.Text);
                     contractPersist.iWarrantyTime = Convert.ToInt32(txtPrazoGarantia.Text);
+                    contractPersist.sCity = txtCidade.Text;
 
-                    // data to the ForengeKeys
-                    contractPersist.Budgets_OS = searchBudget; // esta errado, ver com jefter como faz para passar o id do orçamento
-                    // ver com Jefter se esta correto, se não vai criar mais itens ou se somente irá pegar a ForengeKey
-                    if (searchBudget.Items != null)
-                    {
-                        contractPersist.Items = searchBudget.Items;
-                    }
+                    contractPersist.sIdBudget_OS = searchBudget.sID;
 
                     //salva
                     objPersist.Insert(contractPersist);
@@ -379,6 +388,9 @@ namespace UIWindows
 
                         cleanScreen();
 
+                        searchBudget.bContractRegistred = true;
+
+                        obj.Update(searchBudget);
                         //colocar impressao aqui
 
                         //string Cod = ok.sID.ToString();

@@ -515,7 +515,7 @@
             // 
             // btnGerarContrato
             // 
-            this.btnGerarContrato.Location = new System.Drawing.Point(348, 406);
+            this.btnGerarContrato.Location = new System.Drawing.Point(352, 406);
             this.btnGerarContrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGerarContrato.Name = "btnGerarContrato";
             this.btnGerarContrato.Size = new System.Drawing.Size(150, 30);

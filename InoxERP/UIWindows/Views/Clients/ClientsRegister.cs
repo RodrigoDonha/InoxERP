@@ -78,7 +78,7 @@ namespace InoxERP.UI_Windows_Forms
                             clientsAlter.sComplement = txtComplemento.Text;
                             clientsAlter.sCity = txtCidade.Text;
                             //clientsAlter.Estate = estate();
-                            clientsAlter.Estate = validation.estate(cmbEstate.SelectedIndex);
+                            clientsAlter.Estate = validation.estate(cmbEstate.SelectedIndex+1);
                             clientsAlter.sCEP = txtCEP.Text;
                             clientsAlter.sPhoneResidencial = txtContatosResiCom.Text;
                             clientsAlter.sEmail = txtContatosEmail.Text;

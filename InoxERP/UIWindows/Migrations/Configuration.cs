@@ -10,6 +10,7 @@ namespace UIWindows.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(UIWindows.Context.InoxErpContext context)

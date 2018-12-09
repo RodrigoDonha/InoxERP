@@ -14717,7 +14717,11 @@ FROM            tb_budgets_os";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateRegisterFinished, dtDateServiceOrderApproved, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')";
+            this._commandCollection[4].CommandText = @"SELECT        ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateRegisterFinished, 
+                         dtDateServiceOrderApproved, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone
+FROM            tb_budgets_os
+WHERE        (bServiceOrderApproved = 'true') AND (bRegisterFinished = 'false')
+ORDER BY dtDateServiceOrderApproved DESC";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
         }
         

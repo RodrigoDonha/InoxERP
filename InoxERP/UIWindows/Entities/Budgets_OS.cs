@@ -81,6 +81,8 @@ namespace UIWindows.Entities
 
         public DateTime? dtDateRegisterFinished { get; set; }
 
+        public bool bContractRegistred { get; set; }
+
 
         //ForengKeys				
 

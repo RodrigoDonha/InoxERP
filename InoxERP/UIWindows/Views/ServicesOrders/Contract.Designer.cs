@@ -214,11 +214,38 @@
             // cbxEstateContratado
             // 
             this.cbxEstateContratado.FormattingEnabled = true;
+            this.cbxEstateContratado.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
             this.cbxEstateContratado.Location = new System.Drawing.Point(667, 448);
             this.cbxEstateContratado.Name = "cbxEstateContratado";
             this.cbxEstateContratado.Size = new System.Drawing.Size(130, 24);
             this.cbxEstateContratado.TabIndex = 19;
-            this.cbxEstateContratado.Text = "SP";
             // 
             // label4
             // 
@@ -239,7 +266,7 @@
             this.txtCidadeContratado.Name = "txtCidadeContratado";
             this.txtCidadeContratado.Size = new System.Drawing.Size(264, 22);
             this.txtCidadeContratado.TabIndex = 18;
-            this.txtCidadeContratado.Text = "Presidente Prudente";
+            this.txtCidadeContratado.Text = "PRESIDENTE PRUDENTE";
             // 
             // label5
             // 
@@ -281,7 +308,7 @@
             this.txtBairroContratado.Name = "txtBairroContratado";
             this.txtBairroContratado.Size = new System.Drawing.Size(185, 22);
             this.txtBairroContratado.TabIndex = 17;
-            this.txtBairroContratado.Text = "Cecap";
+            this.txtBairroContratado.Text = "CECAP";
             // 
             // label7
             // 
@@ -323,7 +350,7 @@
             this.txtEnderecoContratado.Name = "txtEnderecoContratado";
             this.txtEnderecoContratado.Size = new System.Drawing.Size(517, 22);
             this.txtEnderecoContratado.TabIndex = 15;
-            this.txtEnderecoContratado.Text = "Av: das Flores";
+            this.txtEnderecoContratado.Text = "AV. DAS FLORES";
             // 
             // label9
             // 
@@ -354,7 +381,7 @@
             this.txtNomeContratado.Name = "txtNomeContratado";
             this.txtNomeContratado.Size = new System.Drawing.Size(710, 22);
             this.txtNomeContratado.TabIndex = 11;
-            this.txtNomeContratado.Text = "Lucas Beirigo Reggiani";
+            this.txtNomeContratado.Text = "LUCAS BEIRIGO REGGIANI";
             // 
             // label10
             // 
@@ -402,7 +429,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(296, 45);
+            this.label1.Location = new System.Drawing.Point(202, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(447, 25);
             this.label1.TabIndex = 95;

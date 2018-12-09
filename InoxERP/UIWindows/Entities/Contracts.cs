@@ -10,6 +10,10 @@ namespace UIWindows.Entities
     public class Contracts : BaseEntity
     {
         [StringLength(100)]
+        [Required(ErrorMessage = "Chave da O.S. é Obrigatória")]
+        public string sIdBudget_OS { get; set; }
+
+        [StringLength(100)]
         [Required(ErrorMessage = "Nome do Contratante é Obrigatório")]
         public string sProviderName { get; set; }
 
@@ -94,7 +98,9 @@ namespace UIWindows.Entities
         public string sClientObjectContract { get; set; }
 
         public string sPaymentForm { get; set; }
-        
+
+        public string sCity { get; set; }
+
 
         //ForengKeys
 
@@ -105,6 +111,6 @@ namespace UIWindows.Entities
 
         //Contracts -> Budgets_OS 1:1
         public virtual Budgets_OS Budgets_OS { get; set; }
-        //public ICollection<Budgets_OS> Budgets_OS { get; set; }
+        
     }
 }

@@ -110,15 +110,28 @@ namespace UIWindows
             getIdGrigView();
             if (dgvOrdemServico.CurrentRow != null)
             {
-                if (messageYesNo("CreateContract") == DialogResult.Yes)
+                if(!checkContract(getId))
                 {
-                    new frmContract(getId).Show();
+                    if (messageYesNo("CreateContract") == DialogResult.Yes)
+                    {
+                        new frmContract(getId).Show();
+                    }
                 }
+                else
+                    MessageBox.Show("Já foi Gerado Contrato para esta Ordem de Serviço, Impossível gerar outro");
+                
             }
             else
             {
                 MessageBox.Show("Não foi possível selecionar a Ordem de Serviço, tente selecionar novamente.");
             }
+        }
+
+        private bool checkContract(string id)
+        {
+            bool contract = obj.ReturnByID(id).bContractRegistred;
+
+            return contract;
         }
 
         private void grdOrdemServico_Click(object sender, EventArgs e)
