@@ -197,7 +197,10 @@ namespace UIWindows
                 case "alter":
                     return MessageBox.Show("Confirma a Alteração do Lançamento no Caixa ?", "Alterar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "delete":
-                    return MessageBox.Show("Confirma a Exclusçao do Lançamento no Caixa ? \n ***Isso Gera Automaticamente um E" +
+                    return MessageBox.Show("Confirma a Exclusão do Lançamento no Caixa ? \n ***Isso Gera Automaticamente um E" +
+                                           "storno no Extrato", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "refund":
+                    return MessageBox.Show("Confirma a Exclusão do Lançamento no Caixa ? \n ***Isso Gera Automaticamente um E" +
                                            "storno no Extrato", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
@@ -210,17 +213,18 @@ namespace UIWindows
                 {
                     InoxErpContext ctx = new InoxErpContext();
                     CashBusiness objPersist = new CashBusiness(ctx);
-                    Cash cashPersist = new Cash();
+                    Cash cashPersist = new Cash
+                    {
+                        sID = Guid.NewGuid().ToString(),
 
-                    cashPersist.sID = Guid.NewGuid().ToString();
-
-                    cashPersist.sId_Budgets_OS = returnOS();
-                    cashPersist.sId_Client = returnId();
-                    cashPersist.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
-                    cashPersist.dtDate = dtpData.Value;
-                    cashPersist.sChequeNumber = txtNumCheque.Text;
-                    cashPersist.sReferentTo = txtReferenteA.Text;
-                    cashPersist.CashType = CashType.Enter;
+                        sId_Budgets_OS = returnOS(),
+                        sId_Client = returnId(),
+                        dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
+                        dtDate = dtpData.Value,
+                        sChequeNumber = txtNumCheque.Text,
+                        sReferentTo = txtReferenteA.Text,
+                        CashType = CashType.Enter
+                    };
 
                     objPersist.Insert(cashPersist);
 
@@ -239,43 +243,106 @@ namespace UIWindows
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             if (validationCamps())
-                if (messageYesNo("alter") == DialogResult.Yes)
-                {
-                    InoxErpContext ctxA = new InoxErpContext();
-                    CashBusiness objALter = new CashBusiness(ctxA);
-                    Cash cashAlter = new Cash();
+                if (!checkRefund())
+                    if (messageYesNo("alter") == DialogResult.Yes)
+                    {
+                        InoxErpContext ctxA = new InoxErpContext();
+                        CashBusiness objALter = new CashBusiness(ctxA);
+                        Cash cashAlter = new Cash();
+                        
+                        cashAlter = objALter.ReturnByID(getIdGRD());
 
-                   
-                    cashAlter = objALter.ReturnByID(getIdGRD());
-
-                    cashAlter.sId_Budgets_OS = returnOS();
-                    cashAlter.sId_Client = returnId();
-                    cashAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
-                    cashAlter.dtDate = dtpData.Value;
-                    cashAlter.sChequeNumber = txtNumCheque.Text;
-                    cashAlter.sReferentTo = txtReferenteA.Text;
-                    cashAlter.CashType = CashType.Enter;
-                
+                        cashAlter.sId_Budgets_OS = returnOS();
+                        cashAlter.sId_Client = returnId();
+                        cashAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                        cashAlter.dtDate = dtpData.Value;
+                        cashAlter.sChequeNumber = txtNumCheque.Text;
+                        cashAlter.sReferentTo = txtReferenteA.Text;
+                        cashAlter.CashType = CashType.Enter;
                     
-                    objALter.Update(cashAlter);
+                        
+                        objALter.Update(cashAlter);
 
-                    var ok = objALter.Search.FirstOrDefault(b => b.sID == cashAlter.sID);
+                        var ok = objALter.Search.FirstOrDefault(b => b.sID == cashAlter.sID);
 
-                    if (ok == null)
-                        MessageBox.Show("Erro ao Alterar a Entrada no Caixa !!!");
-                    else
-                        MessageBox.Show("Entrada Alterada com Sucesso !!!");
+                        if (ok == null)
+                            MessageBox.Show("Erro ao Alterar a Entrada no Caixa !!!");
+                        else
+                            MessageBox.Show("Entrada Alterada com Sucesso !!!");
 
-                    cleanCamps();
-                    fillGrid();
-                }
+                        cleanCamps();
+                        fillGrid();
+                    }
         }
 
+
+        private bool checkRefund()
+        {
+            string text = grdEntradas[5, grdEntradas.CurrentRow.Index].Value.ToString();
+            if (text.Contains("ESTORNADO") || text.Contains("ESTORNO"))
+            {
+                msg.Show("Exclusão de Estorno", "Não é possível Alterar ou Excluir um ESTORNO DE LANÇAMENTO", 0, 2000);
+                return true;
+            }
+            return false;
+        }
         private string getIdGRD()
         {
             string id = lblId.Text;
             
             return id;
+        }
+
+        private void btnEstornar_Click(object sender, EventArgs e)
+        {
+            if (lblId.Text.Equals(""))
+                MessageBox.Show("Selecione um Lançamento Primeiro");
+            else if(!checkRefund())
+                    if (messageYesNo("refund") == DialogResult.Yes)
+                    {
+                        InoxErpContext ctxD = new InoxErpContext();
+                        CashBusiness objDel = new CashBusiness(ctxD);
+                        Cash cashDel = new Cash();
+                    
+                        cashDel = objDel.ReturnByID(getIdGRD());
+
+                        cashDel.sId_Budgets_OS = returnOS();
+                        cashDel.sId_Client = returnId();
+                        cashDel.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                        cashDel.dtDate = dtpData.Value;
+                        cashDel.sChequeNumber = txtNumCheque.Text;
+                        cashDel.sReferentTo = "LANÇAMENTO ESTORNADO: " + txtReferenteA.Text;
+                        cashDel.CashType = CashType.Enter;
+
+                        objDel.Update(cashDel);
+
+                        Cash cashOut = new Cash
+                        {
+                            sId_Budgets_OS = returnOS(),
+                            sId_Client = returnId(),
+                            dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
+                            dtDate = DateTime.Now,
+                            sChequeNumber = txtNumCheque.Text,
+                            sReferentTo = "ESTORNO REFERENTE: " + txtReferenteA.Text,
+                            CashType = CashType.Out,
+                            sID = Guid.NewGuid().ToString()
+                        };
+
+                        objDel.Insert(cashOut);
+
+                        var up = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+
+                        var ins = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+                    
+                        if (up == null || ins == null)
+                            MessageBox.Show("Erro ao Estornar a Entrada !!!");
+                        else
+                            MessageBox.Show("Entrada Estornada com Sucesso !!!");
+
+                        cleanCamps();
+
+                        fillGrid();
+                    }
         }
     }
 }

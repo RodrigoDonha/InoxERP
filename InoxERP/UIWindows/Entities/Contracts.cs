@@ -21,6 +21,10 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "CNPJ/CPF do Contratante é Obrigatório")]
         public string sProviderCpfCnpj { get; set; }
 
+        [StringLength(16)]
+        [Required(ErrorMessage = "Inscrção Estadual/RG do Contratante é Obrigatório")]
+        public string sRegistStateRg { get; set; }
+
         [StringLength(100)]
         [Required(ErrorMessage = "Endereço do Contratante é Obrigatório")]
         public string sProviderAdress { get; set; }

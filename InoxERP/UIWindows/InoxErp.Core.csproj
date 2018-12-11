@@ -165,9 +165,9 @@
     <Compile Include="Migrations\201812091620596_campsContractaddremoved.Designer.cs">
       <DependentUpon>201812091620596_campsContractaddremoved.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812091832558_creatbooleancampandcamebackcall.cs" />
-    <Compile Include="Migrations\201812091832558_creatbooleancampandcamebackcall.Designer.cs">
-      <DependentUpon>201812091832558_creatbooleancampandcamebackcall.cs</DependentUpon>
+    <Compile Include="Migrations\201812111841522_campinscricaostadual.cs" />
+    <Compile Include="Migrations\201812111841522_campinscricaostadual.Designer.cs">
+      <DependentUpon>201812111841522_campinscricaostadual.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\Backups\AdminChose.cs">
@@ -455,8 +455,8 @@
     <EmbeddedResource Include="Migrations\201812091620596_campsContractaddremoved.resx">
       <DependentUpon>201812091620596_campsContractaddremoved.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812091832558_creatbooleancampandcamebackcall.resx">
-      <DependentUpon>201812091832558_creatbooleancampandcamebackcall.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812111841522_campinscricaostadual.resx">
+      <DependentUpon>201812111841522_campinscricaostadual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Backups\AdminChose.resx">
       <DependentUpon>AdminChose.cs</DependentUpon>

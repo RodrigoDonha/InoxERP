@@ -278,6 +278,7 @@
             this.btnEstornar.TabIndex = 17;
             this.btnEstornar.Text = "Excluir";
             this.btnEstornar.UseVisualStyleBackColor = true;
+            this.btnEstornar.Click += new System.EventHandler(this.btnEstornar_Click);
             // 
             // lblOS
             // 
