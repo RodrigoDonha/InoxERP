@@ -44,8 +44,9 @@
             this.radNome = new System.Windows.Forms.RadioButton();
             this.lblTipo = new System.Windows.Forms.Label();
             this.tb_contractsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_contractsTableAdapter();
-            this.dtContractDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtContractDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sClientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sProviderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sProviderCpfCnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sProviderAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +55,6 @@
             this.sProviderCepDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sProviderCityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.providerEstateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sClientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sClientCpfCnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sClientAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sClientNumberAdressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +84,7 @@
             this.btnImprimir.TabIndex = 25;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnVisualizar
             // 
@@ -127,8 +128,9 @@
             this.grdContratos.AutoGenerateColumns = false;
             this.grdContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdContratos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dtContractDateDataGridViewTextBoxColumn,
             this.sIDDataGridViewTextBoxColumn,
+            this.dtContractDateDataGridViewTextBoxColumn,
+            this.sClientNameDataGridViewTextBoxColumn,
             this.sProviderNameDataGridViewTextBoxColumn,
             this.sProviderCpfCnpjDataGridViewTextBoxColumn,
             this.sProviderAdressDataGridViewTextBoxColumn,
@@ -137,7 +139,6 @@
             this.sProviderCepDataGridViewTextBoxColumn,
             this.sProviderCityDataGridViewTextBoxColumn,
             this.providerEstateDataGridViewTextBoxColumn,
-            this.sClientNameDataGridViewTextBoxColumn,
             this.sClientCpfCnpjDataGridViewTextBoxColumn,
             this.sClientAdressDataGridViewTextBoxColumn,
             this.sClientNumberAdressDataGridViewTextBoxColumn,
@@ -159,6 +160,7 @@
             this.grdContratos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdContratos.Size = new System.Drawing.Size(755, 257);
             this.grdContratos.TabIndex = 0;
+            this.grdContratos.Click += new System.EventHandler(this.grdContratos_Click);
             // 
             // tbcontractsBindingSource
             // 
@@ -243,6 +245,14 @@
             // 
             this.tb_contractsTableAdapter.ClearBeforeFill = true;
             // 
+            // sIDDataGridViewTextBoxColumn
+            // 
+            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
+            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
+            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
+            this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIDDataGridViewTextBoxColumn.Visible = false;
+            // 
             // dtContractDateDataGridViewTextBoxColumn
             // 
             this.dtContractDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -252,13 +262,13 @@
             this.dtContractDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.dtContractDateDataGridViewTextBoxColumn.Width = 63;
             // 
-            // sIDDataGridViewTextBoxColumn
+            // sClientNameDataGridViewTextBoxColumn
             // 
-            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
-            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
-            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
-            this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sIDDataGridViewTextBoxColumn.Visible = false;
+            this.sClientNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sClientNameDataGridViewTextBoxColumn.DataPropertyName = "sClientName";
+            this.sClientNameDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.sClientNameDataGridViewTextBoxColumn.Name = "sClientNameDataGridViewTextBoxColumn";
+            this.sClientNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sProviderNameDataGridViewTextBoxColumn
             // 
@@ -323,14 +333,6 @@
             this.providerEstateDataGridViewTextBoxColumn.Name = "providerEstateDataGridViewTextBoxColumn";
             this.providerEstateDataGridViewTextBoxColumn.ReadOnly = true;
             this.providerEstateDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sClientNameDataGridViewTextBoxColumn
-            // 
-            this.sClientNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sClientNameDataGridViewTextBoxColumn.DataPropertyName = "sClientName";
-            this.sClientNameDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.sClientNameDataGridViewTextBoxColumn.Name = "sClientNameDataGridViewTextBoxColumn";
-            this.sClientNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sClientCpfCnpjDataGridViewTextBoxColumn
             // 
@@ -473,8 +475,9 @@
         private FullDataSet fullDataSet;
         private System.Windows.Forms.BindingSource tbcontractsBindingSource;
         private FullDataSetTableAdapters.tb_contractsTableAdapter tb_contractsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtContractDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtContractDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sClientNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sProviderNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sProviderCpfCnpjDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sProviderAdressDataGridViewTextBoxColumn;
@@ -483,7 +486,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sProviderCepDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sProviderCityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn providerEstateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sClientNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sClientCpfCnpjDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sClientAdressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sClientNumberAdressDataGridViewTextBoxColumn;

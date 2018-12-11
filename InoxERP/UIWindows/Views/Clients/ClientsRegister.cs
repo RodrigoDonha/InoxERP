@@ -126,7 +126,7 @@ namespace InoxERP.UI_Windows_Forms
                     clientsPersist.sDistrict = txtBairro.Text;
                     clientsPersist.sComplement = txtComplemento.Text;
                     clientsPersist.sCity = txtCidade.Text;
-                    //clientsPersist.Estate = estate();
+                    //clientsPersist.Estate = estate(cmbEstate.SelectedIndex);
                     clientsPersist.Estate = validation.estate(cmbEstate.SelectedIndex);
                     clientsPersist.sCEP = txtCEP.Text;
                     clientsPersist.sPhoneResidencial = txtContatosResiCom.Text;
@@ -172,6 +172,70 @@ namespace InoxERP.UI_Windows_Forms
 
             return DialogResult.No;
         }
+        
+        // RETURN Estate
+        //public Estate estate(int index)
+        //{
+        //    switch (index)
+        //    {
+        //        case 0 :
+        //            return Estate.AC;
+        //        case 1 :
+        //            return Estate.AL;
+        //        case 2 :
+        //            return Estate.AP;
+        //        case 3 :
+        //            return Estate.AM;
+        //        case 4 :
+        //            return Estate.BA;
+        //        case 5 :
+        //            return Estate.CE;
+        //        case 6 :
+        //            return Estate.DF;
+        //        case 7 :
+        //            return Estate.ES;
+        //        case 8:
+        //            return Estate.GO;
+        //        case 9:
+        //            return Estate.MA;
+        //        case 10:
+        //            return Estate.MT;
+        //        case 11:
+        //            return Estate.MS;
+        //        case 12:
+        //            return Estate.MG;
+        //        case 13:
+        //            return Estate.PA;
+        //        case 14:
+        //            return Estate.PB;
+        //        case 15: 
+        //            return Estate.PR;
+        //        case 16:
+        //            return Estate.PE;
+        //        case 17:
+        //            return Estate.PI;
+        //        case 18:
+        //            return Estate.RJ;
+        //        case 19:
+        //            return Estate.RN;
+        //        case 20:
+        //            return Estate.RS;
+        //        case 21:
+        //            return Estate.RO;
+        //        case 22:
+        //            return Estate.RR;
+        //        case 23:
+        //            return Estate.SC;
+        //        case 24:
+        //            return Estate.SP;
+        //        case 25:
+        //            return Estate.SE;
+        //        case 26:
+        //            return Estate.TO;
+        //        default:
+        //            return 0;
+        //    }
+        //}
 
         //RETURN ClientType
         public ClientType clientType()
@@ -331,7 +395,6 @@ namespace InoxERP.UI_Windows_Forms
         //RETURN ClientType
         public void Type(Clients cli)
         {
-
             if (cli.ClientType == ClientType.Comercial)
             {
                 radComercial.Checked = true;

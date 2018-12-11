@@ -53,10 +53,10 @@
             this.reportViewer1.AutoSize = true;
             this.reportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetBudgetWithoutPrice";
+            reportDataSource1.Name = "ContractDataSet";
             reportDataSource1.Value = this.tbcontractsBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Contract.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Contract.Contract.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;

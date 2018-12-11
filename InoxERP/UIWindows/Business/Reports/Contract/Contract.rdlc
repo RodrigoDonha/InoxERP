@@ -777,7 +777,27 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>, podendo ser prorrogado por condições climáticas inadequadas, má condições do ambiente onde será executado o serviço ou motivo de força maior por mais 10 dias, por solicitação do CONTRATADO e mediante comunicação ao CONTRATANTE.</Value>
+                    <Value>, podendo ser prorrogado por condições climáticas inadequadas, má condições do ambiente onde será executado o serviço ou motivo de força maior por mais 10 dias, por solicitação do CONTRATADO </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <RightIndent>0cm</RightIndent>
+                <Style>
+                  <TextAlign>General</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>e mediante comunicação ao CONTRATANTE.</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>cambria</FontFamily>
@@ -998,7 +1018,6 @@
                 <RightIndent>0cm</RightIndent>
                 <Style>
                   <TextAlign>General</TextAlign>
-                  <LineHeight>14pt</LineHeight>
                 </Style>
               </Paragraph>
               <Paragraph>
@@ -1025,7 +1044,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value> Referente ao prazo de entrega de: </Value>
+                    <Value>Referente ao prazo de entrega de: </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>cambria</FontFamily>
@@ -1090,7 +1109,28 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> anos contra defeito de fabricação. Devidamente comprovados, não havendo interferência de má utilização.</Value>
+                    <Value> anos contra defeito de fabricação. Devidamente </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <RightIndent>0cm</RightIndent>
+                <Style>
+                  <TextAlign>General</TextAlign>
+                  <LineHeight>14pt</LineHeight>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>comprovados, não havendo interferência de má utilização.</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>cambria</FontFamily>
@@ -1429,9 +1469,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox15</rd:DefaultName>
-            <Left>0.40368cm</Left>
-            <Height>35.57685cm</Height>
-            <Width>17.63099cm</Width>
+            <Top>0.22929cm</Top>
+            <Left>0.08618cm</Left>
+            <Height>30.3381cm</Height>
+            <Width>17.72095cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1443,7 +1484,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>14.00663in</Height>
+        <Height>12.07955in</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1454,10 +1495,10 @@
           </BackgroundImage>
         </Style>
       </Body>
-      <Width>7.25919in</Width>
+      <Width>7.07318in</Width>
       <Page>
         <PageHeader>
-          <Height>3.09026cm</Height>
+          <Height>3.11672cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1465,7 +1506,7 @@
               <Source>Embedded</Source>
               <Value>logo</Value>
               <Sizing>FitProportional</Sizing>
-              <Left>0.40368cm</Left>
+              <Left>0.08618cm</Left>
               <Height>3.09026cm</Height>
               <Width>5.75437cm</Width>
               <Style>
@@ -1516,7 +1557,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.12924cm</Top>
-              <Left>6.53884cm</Left>
+              <Left>5.96734cm</Left>
               <Height>0.81167cm</Height>
               <Width>11.49583cm</Width>
               <ZIndex>1</ZIndex>
@@ -1535,6 +1576,10 @@
             <Border>
               <Style>None</Style>
             </Border>
+            <BottomBorder>
+              <Style>Solid</Style>
+            </BottomBorder>
+            <BackgroundColor>WhiteSmoke</BackgroundColor>
           </Style>
         </PageHeader>
         <PageFooter>
@@ -1646,7 +1691,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Globals!PageName</Value>
+                      <Value>=Globals!PageNumber</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontFamily>Open Sans</FontFamily>
@@ -1685,10 +1730,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.06173cm</Top>
-              <Left>0.40368cm</Left>
+              <Top>0.06172cm</Top>
+              <Left>0.08618cm</Left>
               <Height>2.41653cm</Height>
-              <Width>17.63099cm</Width>
+              <Width>17.72095cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1704,14 +1749,18 @@
             <Border>
               <Style>None</Style>
             </Border>
+            <TopBorder>
+              <Style>Solid</Style>
+            </TopBorder>
+            <BackgroundColor>WhiteSmoke</BackgroundColor>
           </Style>
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>

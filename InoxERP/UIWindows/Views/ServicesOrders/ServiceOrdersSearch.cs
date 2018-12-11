@@ -110,7 +110,7 @@ namespace UIWindows
             getIdGrigView();
             if (dgvOrdemServico.CurrentRow != null)
             {
-                if(!checkContract(getId))
+                if (!checkContract(getId))
                 {
                     if (messageYesNo("CreateContract") == DialogResult.Yes)
                     {
@@ -119,7 +119,7 @@ namespace UIWindows
                 }
                 else
                     MessageBox.Show("Já foi Gerado Contrato para esta Ordem de Serviço, Impossível gerar outro");
-                
+
             }
             else
             {

@@ -246,6 +246,7 @@
             this.cbxEstateContratado.Name = "cbxEstateContratado";
             this.cbxEstateContratado.Size = new System.Drawing.Size(130, 24);
             this.cbxEstateContratado.TabIndex = 19;
+            this.cbxEstateContratado.Text = "SP";
             // 
             // label4
             // 

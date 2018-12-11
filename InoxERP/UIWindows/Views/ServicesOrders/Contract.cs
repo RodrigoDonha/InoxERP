@@ -83,7 +83,7 @@ namespace UIWindows
             txtDescription.Text += "ITEMS:\r\n\r\n";
             foreach (var line in searchBudget.Items.ToList()) // math.round(var,2)
             {
-                txtDescription.Text += line.dAmount.ToString() + " - " + line.sDescription + " - " + line.dPrice + " - " + line.dTotal + " \r\n ";
+                txtDescription.Text += line.dAmount + " - " + line.sDescription + " - " + line.dPrice + " - " + line.dTotal + " \r\n ";
             }
             txtDescription.Text += "\r\nDESCRIÇÃO DO SERVIÇO:\r\n" + "\r\n" + searchBudget.sObservation;
             txtValores.Text = searchBudget.dTotal.ToString();
@@ -94,8 +94,8 @@ namespace UIWindows
             txtPrazoGarantia.Text = searchBudget.iWarrantyTime.ToString();
             txtPrazo1.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
             txtPrazo2.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
-            string cidade = searchBudget.Clients.sCity;
-            txtCidade.Text = cidade;
+            //string cidade = searchBudget.Clients.sCity;
+            //txtCidade.Text = cidade;
         }
 
         private string paymentForm(PaymentMethods payment)
@@ -231,104 +231,6 @@ namespace UIWindows
 
         public void gravarContrato()
         {
-            //if (btnGravarOrcamento.Text == "Alterar")
-            //{
-            //    if (messageYesNo("Alter") == DialogResult.Yes)
-            //    {
-            //        if (!validationCamps())
-            //            MessageBox.Show("Por Favor preencha as informações Corretamente");
-            //        else
-            //        {
-            //            InoxErpContext ctxAlter = new InoxErpContext();
-            //            Budget_OSBusiness objAlter = new Budget_OSBusiness(ctxAlter);
-
-            //            Budgets_OS budgetAlter = new Budgets_OS();
-
-            //            //procura o orçamento para alteração
-            //            budgetAlter = objAlter.ReturnByID(getID);
-
-            //            //preenche os dados do orçamento
-            //            budgetAlter.dtDate = DateTime.Now;
-            //            budgetAlter.ClientType = clientType();
-            //            budgetAlter.sName = txtNome.Text;
-            //            budgetAlter.sAdress = txtEndereco.Text;
-            //            budgetAlter.sTelephone = txtTelefone.Text;
-            //            budgetAlter.sOccupation = txtCargo.Text;
-
-            //            //preenche items
-            //            checkToAlter(budgetAlter.Items.ToList());
-
-            //            budgetAlter.PaymentMethods = paymentMethods();
-            //            budgetAlter.bPaymentToMatch = checkPaymentForm("combine");
-            //            budgetAlter.dPercentDiscount = Convert.ToDecimal(txtPorcentDescAVista.Text);
-            //            budgetAlter.iPaymentInstallments = Convert.ToInt32(nudParcelas.Value);
-            //            budgetAlter.bInterestRate = checkPaymentForm("rate");
-            //            budgetAlter.dWithInterest = Convert.ToDecimal(txtPorcentJuros.Text);
-            //            budgetAlter.iPrevisionOfExecute = Convert.ToInt32(nudDias.Value);
-            //            budgetAlter.dtStartPrevision = dtpDataPrevistaInicio.Value;
-            //            budgetAlter.dtFinalPrevision = dtpDataPrevistaEntrega.Value;
-            //            budgetAlter.iWarrantyTime = Convert.ToInt32(nudAnos.Value);
-            //            budgetAlter.dtBudgetExpirationDate = dtpDataValidadeOrcamento.Value;
-            //            budgetAlter.sObservation = rtfObservacoes.Text;
-            //            budgetAlter.dTotal = Convert.ToDecimal(0.00);
-            //            budgetAlter.dTotal = Convert.ToDecimal(lblTotalGeralValor.Text);
-
-            //            //properts dont fill for default, needs to change to null
-
-            //            budgetAlter.bServiceOrderApproved = false;
-            //            budgetAlter.bRegisterFinished = false;
-            //            budgetAlter.dtDateServiceOrderApproved = DateTime.Now;
-            //            budgetAlter.dtDateRegisterFinished = DateTime.Now;
-
-            //            try
-            //            {
-            //                ClientsBusiness idCliente = new ClientsBusiness(ctxAlter);
-            //                budgetAlter.IdClients =
-            //                    idCliente.Search.FirstOrDefault(c => c.sName.Contains(txtNome.Text)).sID;
-            //            }
-            //            catch (Exception)
-            //            {
-            //                try
-            //                {
-            //                    ClientsBusiness idCliente = new ClientsBusiness(ctxAlter);
-            //                    budgetAlter.IdClients =
-            //                        idCliente.Search.FirstOrDefault(c => c.sName.Contains("CONSUMIDOR")).sID;
-            //                }
-            //                catch (Exception)
-            //                {
-            //                    MessageBox.Show(
-            //                        "Antes de concluir este Orçamento Voçê tem que Cadastrar um Cliente CONSUMIDOR para continuar");
-            //                }
-            //            }
-
-            //            //atualiza
-            //            objAlter.Update(budgetAlter);
-
-            //            //verifica se o orçamento foi atualizado com sucesso
-            //            var ok = objAlter.Search.FirstOrDefault(b => b.sID == budgetAlter.sID);
-
-            //            if (ok == null)
-            //                MessageBox.Show("Erro ao Atualizar o Orçamento !!!");
-            //            else
-            //            {
-            //                MessageBox.Show("Orçamento Atualizado com Sucesso !!!");
-            //                btnGravarOrcamento.Text = "Gravar";
-
-            //                cleanScreen();
-
-            //                //fecha a tela de alteração
-            //                Dispose();
-
-            //                PrintingBudget(ok.sID);
-
-            //                //abre tela de consulta novamente
-            //                new frmBudgetSearch().Show();
-            //            }
-            //        }
-            //    }
-            //}
-            //else
-            //{
             if (validationCamps())
             {
                 if (messageYesNo("Save") == DialogResult.Yes)
@@ -386,17 +288,14 @@ namespace UIWindows
                     {
                         MessageBox.Show("Contrato Salvo com Sucesso !!!");
 
-                        cleanScreen();
-
                         searchBudget.bContractRegistred = true;
 
                         obj.Update(searchBudget);
-                        //colocar impressao aqui
-
-                        //string Cod = ok.sID.ToString();
-
-                        new ContractPrint(contractPersist.sID).Show();
                         
+                        this.Dispose();
+
+                        // impressao
+                        new ContractPrint(contractPersist.sID).Show();
                     }
                     else
                         MessageBox.Show("Erro ao Salvar o Contrato !!!");
@@ -418,93 +317,200 @@ namespace UIWindows
         //validators CAMPS frm
         public bool validationCamps()
         {
-            //if (txtNome.Text.Length.Equals(0))
-            //{
-            //    MessageBox.Show("Informe um NOME para o cliente");
-            //    txtNome.Focus();
-            //    return false;
-            //}
+            // CONTRATANTE
+            if (txtNomeC.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um NOME para o cliente");
+                txtNomeC.Focus();
+                return false;
+            }
 
-            //if (txtEndereco.Text.Length.Equals(0))
-            //{
-            //    MessageBox.Show("Informe um ENDEREÇO para o cliente");
-            //    txtEndereco.Focus();
-            //    return false;
-            //}
+            if (txtCpfCnpjC.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um CPF/CNPJ para o cliente");
+                txtEnderecoC.Focus();
+                return false;
+            }
 
-            //if (txtTelefone.Text.Length.Equals(0))
-            //{
-            //    MessageBox.Show("Informe um TELEFONE para o cliente");
-            //    txtTelefone.Focus();
-            //    return false;
-            //}
+            if (txtRgC.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um RG / INSCR EST. para o cliente");
+                txtEnderecoC.Focus();
+                return false;
+            }
 
-            //if (txtCargo.Text.Length.Equals(0))
-            //{
-            //    MessageBox.Show("Informe um CARGO para o cliente");
-            //    txtCargo.Focus();
-            //    return false;
-            //}
+            if (txtCepC.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um CEP para o cliente");
+                txtEnderecoC.Focus();
+                return false;
+            }
 
-            //int compare = dgvItens.Rows.Count;
-            //if (compare == 0)
-            //{
-            //    MessageBox.Show("Nenhum Item Adicionado ao Orçamento");
-            //    txtQuantidade.Focus();
-            //    return false;
-            //}
+            if (txtEnderecoC.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um ENDEREÇO para o cliente");
+                txtEnderecoC.Focus();
+                return false;
+            }
 
-            //if (!chkCombinar.Checked && !chkCheque.Checked && !chkDinheiro.Checked)
-            //{
-            //    MessageBox.Show("Informe a FORMA de pagamento");
-            //    chkCombinar.Focus();
-            //    return false;
-            //}
+            if (txtNumeroC.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um NÚMERO para o cliente");
+                txtEnderecoC.Focus();
+                return false;
+            }
 
-            //if (txtPorcentDescAVista.Text == "")
-            //    txtPorcentDescAVista.Text = "0";
+            if (txtBairroC.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um BAIRRO para o cliente");
+                txtEnderecoC.Focus();
+                return false;
+            }
 
-            //if (txtPorcentJuros.Text == "")
-            //    txtPorcentJuros.Text = "0";
+            if (txtCidadeC.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um CIDADE para o cliente");
+                txtEnderecoC.Focus();
+                return false;
+            }
+
+            if (cbxEstate.SelectedIndex < 0)
+            {
+                MessageBox.Show("Informe um ESTADO para o cliente");
+                txtEnderecoC.Focus();
+                return false;
+            }
+
+            // CONTRATADO
+            if (txtNomeC.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um NOME para o cliente");
+                txtNomeC.Focus();
+                return false;
+            }
+
+            if (txtCpfCnpjContratado.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um CPF/CNPJ para o Contratado");
+                txtEnderecoContratado.Focus();
+                return false;
+            }
+
+            if (txtRgContratado.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um RG / INSCR EST. para o Contratado");
+                txtEnderecoContratado.Focus();
+                return false;
+            }
+
+            if (txtCepContratado.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um CEP para o Contratado");
+                txtEnderecoContratado.Focus();
+                return false;
+            }
+
+            if (txtEnderecoContratado.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um ENDEREÇO para o Contratado");
+                txtEnderecoContratado.Focus();
+                return false;
+            }
+
+            if (txtNumeroContratado.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um NÚMERO para o Contratado");
+                txtEnderecoContratado.Focus();
+                return false;
+            }
+
+            if (txtBairroContratado.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um BAIRRO para o Contratado");
+                txtEnderecoContratado.Focus();
+                return false;
+            }
+
+            if (txtCidadeContratado.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um CIDADE para o Contratado");
+                txtEnderecoContratado.Focus();
+                return false;
+            }
+
+            if (cbxEstateContratado.SelectedIndex < 0)
+            {
+                MessageBox.Show("Informe um ESTADO para o Contratado");
+                txtEnderecoContratado.Focus();
+                return false;
+            }
+
+            // OBJETO, FORMAS DE PAGAMENTO E PRAZOS
+
+            if (txtDescription.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um OBJETO para o Contrato");
+                txtDescription.Focus();
+                return false;
+            }
+
+            if (txtValores.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um VALOR para o Contrato na aba 3");
+                txtValores.Focus();
+                return false;
+            }
+
+            if (txtObrigacoesContratante.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe as OBRIGAÇÕES para o Contratante");
+                txtObrigacoesContratante.Focus();
+                return false;
+            }
+
+            if (txtPrazo1.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe os PRAZO DE VIGENCIA para o Contrato na aba 4, Clausula 5º");
+                txtPrazo1.Focus();
+                return false;
+            }
+
+            if (txtValores1.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe o VALORE para o Contrato na aba 4, Clausula 6º");
+                txtValores1.Focus();
+                return false;
+            }
+
+            if (txtObrigacoesContratante1.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe as OBRIGAÇÕES para o Contratante na aba 4, Clausula 6º");
+                txtObrigacoesContratante1.Focus();
+                return false;
+            }
+
+            if (txtPrazo2.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe o PRAZO DE ENTREGA para o Produto na aba 4, Clausula 6º");
+                txtPrazo2.Focus();
+                return false;
+            }
+
+            if (txtPrazoGarantia.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe o PRAZO DE GARANTIA do Produto na aba 4, Clausula 6º");
+                txtPrazoGarantia.Focus();
+                return false;
+            }
+
+            if (txtCidade.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe a CIDADE DE EMISSÃO do Contrato na aba 4");
+                txtCidade.Focus();
+                return false;
+            }
 
             return true;
-        }
-
-        // CLEAN ALL DATA OF VIEW
-        public void cleanScreen()
-        {
-            ////CLIENT
-            //radComercial.Checked = true;
-            //txtNome.Clear();
-            //txtEndereco.Clear();
-            //txtTelefone.Clear();
-            //txtCargo.Clear();
-            ////DGVITEMS
-            //txtQuantidade.Text = "";
-            //txtDescricao.Text = "";
-            //txtValorUnitario.Text = "";
-            //txtValorTotal.Text = "0";
-            //lblSubTotalValor.Text = "0";
-            //dgvItens.Rows.Clear();
-            //subTotal = 0;
-            ////PAYMENTS
-            //chkCombinar.Checked = false;
-            //chkCheque.Checked = false;
-            //chkDinheiro.Checked = false;
-            //txtPorcentDescAVista.Text = "0";
-            //lblExibeValorDesconto.Text = "0";
-            //nudParcelas.Value = 1;
-            //lblValorPorParcela.Text = "0";
-            //chkJuros.Checked = false;
-            //txtPorcentJuros.Text = "0";
-            //lblValorJuros.Text = "0";
-            //lblExibeValorTotalParcelado.Text = "0";
-            ////DELIVERY
-            //nudDias.Value = 1;
-            ////WARRANTY
-            //nudAnos.Value = 1;
-            //rtfObservacoes.Clear();
-            //lblTotalGeralValor.Text = "0";
         }
     }
 }

@@ -297,7 +297,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\Microsoft.Vis
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\pt\Microsoft.SqlServer.ServiceBrokerEnum.resources.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxERP.Core.pdb
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.ServicesOrders.SituationServiceOrdersReport.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
@@ -474,3 +473,5 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Vie
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.campsContractaddremoved.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csprojAssemblyReference.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.creatbooleancampandcamebackcall.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.campsContractaddremoved.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.creatbooleancampandcamebackcall.resources
