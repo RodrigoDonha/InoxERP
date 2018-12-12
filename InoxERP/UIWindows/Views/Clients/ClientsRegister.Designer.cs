@@ -59,6 +59,8 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.grpDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.txtRg = new System.Windows.Forms.TextBox();
+            this.lblRg = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.lblCargoProfissao = new System.Windows.Forms.Label();
             this.radIndustrial = new System.Windows.Forms.RadioButton();
@@ -68,8 +70,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.lblCPF_CNPJ = new System.Windows.Forms.Label();
-            this.txtRg = new System.Windows.Forms.TextBox();
-            this.lblRg = new System.Windows.Forms.Label();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -84,7 +84,7 @@
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(124, 31);
-            this.btnSair.TabIndex = 21;
+            this.btnSair.TabIndex = 22;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -98,7 +98,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(124, 31);
-            this.btnCancelar.TabIndex = 20;
+            this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -112,7 +112,7 @@
             this.btnGravar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(124, 31);
-            this.btnGravar.TabIndex = 19;
+            this.btnGravar.TabIndex = 20;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = false;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
@@ -138,7 +138,7 @@
             this.txtObservacoes.Multiline = true;
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(1047, 68);
-            this.txtObservacoes.TabIndex = 18;
+            this.txtObservacoes.TabIndex = 19;
             // 
             // grpContatos
             // 
@@ -167,7 +167,7 @@
             this.txtContatosCelular1.MaxLength = 15;
             this.txtContatosCelular1.Name = "txtContatosCelular1";
             this.txtContatosCelular1.Size = new System.Drawing.Size(257, 23);
-            this.txtContatosCelular1.TabIndex = 16;
+            this.txtContatosCelular1.TabIndex = 17;
             this.txtContatosCelular1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // lblContatosCelular1
@@ -186,7 +186,7 @@
             this.txtContatosEmail.MaxLength = 100;
             this.txtContatosEmail.Name = "txtContatosEmail";
             this.txtContatosEmail.Size = new System.Drawing.Size(516, 23);
-            this.txtContatosEmail.TabIndex = 15;
+            this.txtContatosEmail.TabIndex = 16;
             // 
             // txtContatosCelular2
             // 
@@ -195,7 +195,7 @@
             this.txtContatosCelular2.MaxLength = 15;
             this.txtContatosCelular2.Name = "txtContatosCelular2";
             this.txtContatosCelular2.Size = new System.Drawing.Size(257, 23);
-            this.txtContatosCelular2.TabIndex = 17;
+            this.txtContatosCelular2.TabIndex = 18;
             this.txtContatosCelular2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // txtContatosResiCom
@@ -205,7 +205,7 @@
             this.txtContatosResiCom.MaxLength = 14;
             this.txtContatosResiCom.Name = "txtContatosResiCom";
             this.txtContatosResiCom.Size = new System.Drawing.Size(252, 23);
-            this.txtContatosResiCom.TabIndex = 14;
+            this.txtContatosResiCom.TabIndex = 15;
             this.txtContatosResiCom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // lblContatosEmail
@@ -295,7 +295,7 @@
             this.cmbEstate.Location = new System.Drawing.Point(730, 128);
             this.cmbEstate.Name = "cmbEstate";
             this.cmbEstate.Size = new System.Drawing.Size(74, 25);
-            this.cmbEstate.TabIndex = 12;
+            this.cmbEstate.TabIndex = 13;
             // 
             // txtCEP
             // 
@@ -304,7 +304,7 @@
             this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(185, 23);
-            this.txtCEP.TabIndex = 13;
+            this.txtCEP.TabIndex = 14;
             this.txtCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // txtCidade
@@ -314,7 +314,7 @@
             this.txtCidade.MaxLength = 100;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(495, 23);
-            this.txtCidade.TabIndex = 11;
+            this.txtCidade.TabIndex = 12;
             // 
             // txtComplemento
             // 
@@ -323,7 +323,7 @@
             this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(249, 23);
-            this.txtComplemento.TabIndex = 10;
+            this.txtComplemento.TabIndex = 11;
             // 
             // txtBairro
             // 
@@ -332,7 +332,7 @@
             this.txtBairro.MaxLength = 100;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(305, 23);
-            this.txtBairro.TabIndex = 9;
+            this.txtBairro.TabIndex = 10;
             // 
             // txtNumEndereco
             // 
@@ -341,7 +341,7 @@
             this.txtNumEndereco.MaxLength = 10;
             this.txtNumEndereco.Name = "txtNumEndereco";
             this.txtNumEndereco.Size = new System.Drawing.Size(97, 23);
-            this.txtNumEndereco.TabIndex = 8;
+            this.txtNumEndereco.TabIndex = 9;
             this.txtNumEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // txtEndereco
@@ -351,7 +351,7 @@
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(900, 23);
-            this.txtEndereco.TabIndex = 7;
+            this.txtEndereco.TabIndex = 8;
             // 
             // lblComplemento
             // 
@@ -439,6 +439,25 @@
             this.grpDadosPessoais.TabStop = false;
             this.grpDadosPessoais.Text = "Dados Pessoais";
             // 
+            // txtRg
+            // 
+            this.txtRg.Location = new System.Drawing.Point(864, 34);
+            this.txtRg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRg.MaxLength = 18;
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(192, 23);
+            this.txtRg.TabIndex = 2;
+            this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesRG);
+            // 
+            // lblRg
+            // 
+            this.lblRg.AutoSize = true;
+            this.lblRg.Location = new System.Drawing.Point(753, 37);
+            this.lblRg.Name = "lblRg";
+            this.lblRg.Size = new System.Drawing.Size(107, 17);
+            this.lblRg.TabIndex = 36;
+            this.lblRg.Text = "R.G./Inscr. Est.:";
+            // 
             // txtCargo
             // 
             this.txtCargo.Location = new System.Drawing.Point(864, 79);
@@ -446,7 +465,7 @@
             this.txtCargo.MaxLength = 100;
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(192, 23);
-            this.txtCargo.TabIndex = 6;
+            this.txtCargo.TabIndex = 7;
             // 
             // lblCargoProfissao
             // 
@@ -463,7 +482,7 @@
             this.radIndustrial.Location = new System.Drawing.Point(656, 80);
             this.radIndustrial.Name = "radIndustrial";
             this.radIndustrial.Size = new System.Drawing.Size(83, 21);
-            this.radIndustrial.TabIndex = 5;
+            this.radIndustrial.TabIndex = 6;
             this.radIndustrial.Text = "Industrial";
             this.radIndustrial.UseVisualStyleBackColor = true;
             // 
@@ -473,7 +492,7 @@
             this.radResidencial.Location = new System.Drawing.Point(551, 79);
             this.radResidencial.Name = "radResidencial";
             this.radResidencial.Size = new System.Drawing.Size(99, 21);
-            this.radResidencial.TabIndex = 4;
+            this.radResidencial.TabIndex = 5;
             this.radResidencial.Text = "Residêncial";
             this.radResidencial.UseVisualStyleBackColor = true;
             // 
@@ -484,7 +503,7 @@
             this.radComercial.Location = new System.Drawing.Point(457, 78);
             this.radComercial.Name = "radComercial";
             this.radComercial.Size = new System.Drawing.Size(88, 21);
-            this.radComercial.TabIndex = 3;
+            this.radComercial.TabIndex = 4;
             this.radComercial.TabStop = true;
             this.radComercial.Text = "Comercial";
             this.radComercial.UseVisualStyleBackColor = true;
@@ -496,7 +515,7 @@
             this.txtCPF_CNPJ.MaxLength = 18;
             this.txtCPF_CNPJ.Name = "txtCPF_CNPJ";
             this.txtCPF_CNPJ.Size = new System.Drawing.Size(295, 23);
-            this.txtCPF_CNPJ.TabIndex = 2;
+            this.txtCPF_CNPJ.TabIndex = 3;
             this.txtCPF_CNPJ.TextChanged += new System.EventHandler(this.txtCPF_CNPJ_TextChanged);
             this.txtCPF_CNPJ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandCNPJ);
             // 
@@ -506,7 +525,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(648, 23);
+            this.txtNome.Size = new System.Drawing.Size(583, 23);
             this.txtNome.TabIndex = 1;
             // 
             // lblNomeCompleto
@@ -526,25 +545,6 @@
             this.lblCPF_CNPJ.Size = new System.Drawing.Size(113, 17);
             this.lblCPF_CNPJ.TabIndex = 1;
             this.lblCPF_CNPJ.Text = "C.P.F. / C.N.P.J.:";
-            // 
-            // txtRg
-            // 
-            this.txtRg.Location = new System.Drawing.Point(864, 34);
-            this.txtRg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtRg.MaxLength = 18;
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(192, 23);
-            this.txtRg.TabIndex = 37;
-            this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesRG);
-            // 
-            // lblRg
-            // 
-            this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(814, 37);
-            this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(41, 17);
-            this.lblRg.TabIndex = 36;
-            this.lblRg.Text = "R.G.:";
             // 
             // frmClientsRegister
             // 

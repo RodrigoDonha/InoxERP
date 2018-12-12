@@ -7,16 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows.Business.Concrete;
+using UIWindows.Context;
+using UIWindows.Entities;
 using UIWindows.Views.Reports.Contracts;
 
 namespace UIWindows
 {
     public partial class frmContractSearch : Form
     {
+        static InoxErpContext ctx = new InoxErpContext();
+        
         private string getId;
         public frmContractSearch()
         {
             InitializeComponent();
+
+            // botoes que não serão implementados no momento
+            btnExcluir.Visible = false;
+            btnVisualizar.Visible = false;
         }
 
         //overrid FILL DATASET
@@ -54,6 +63,54 @@ namespace UIWindows
         private void grdContratos_Click(object sender, EventArgs e)
         {
             getIdGrigView();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (radNome.Checked)
+                searchByName();
+            else if (radCPF_CNPJ.Checked)
+                searchByCPF_CNPJ();
+        }
+
+        public void searchByName()
+        {
+            var search = from p in ctx.Contracts
+                where p.sClientName.StartsWith(txtPesquisa.Text)
+                select p;
+
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Contrato Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Contracts> s = search.ToList();
+                txtPesquisa.Clear();
+                grdContratos.DataSource = s.ToList();
+            }
+        }
+
+        public void searchByCPF_CNPJ()
+        {
+            var search = from p in ctx.Contracts
+                where p.sClientCpfCnpj.StartsWith(txtPesquisa.Text)
+                select p;
+
+            if (search.ToList().Count.Equals(0))
+            {
+                txtPesquisa.Clear();
+                MessageBox.Show("Nenhum Contrato Encontrado");
+                txtPesquisa.Focus();
+            }
+            else
+            {
+                List<Contracts> b = search.ToList();
+                txtPesquisa.Clear();
+                grdContratos.DataSource = b.ToList();
+            }
         }
     }
 }

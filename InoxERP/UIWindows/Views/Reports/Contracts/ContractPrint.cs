@@ -37,35 +37,32 @@ namespace UIWindows.Views.Reports.Contracts
 
             searchContracts = obj.returnByBudgetOSId(id);
             string pulaLinha = "\r\n";
-            string contratanteString = "Nome: " + searchContracts.sClientName + pulaLinha +
-                                       " CPF/CNPJ: " + searchContracts.sClientCpfCnpj + " RG/Inscr. Est" +
-                                       searchContracts.sClientRg + " " + pulaLinha +
-                                       "Endereço: " + searchContracts.sClientAdress + "Nº " +
-                                       searchContracts.sClientNumberAdress +
-                                       "Bairro: " + searchContracts.sClientDistrict + "Cidade: " +
+
+            string contratanteString = "Nome: " + searchContracts.sClientName +
+                                       " ,CPF/CNPJ: " + searchContracts.sClientCpfCnpj +
+                                       " ,RG/Inscr. Est.: " + searchContracts.sClientRg +
+                                       " ,Endereço: " + searchContracts.sClientAdress + 
+                                       " Nº. " + searchContracts.sClientNumberAdress +
+                                       ", Bairro: " + searchContracts.sClientDistrict + ", Cidade: " +
                                        searchContracts.sClientCity + "/" + searchContracts.ClientEstate;
 
             string contratadoString = "Nome: " + searchContracts.sProviderName +
-                                      " CPF/CNPJ: " + searchContracts.sProviderCpfCnpj + pulaLinha +
-                                      "Endereço: " + searchContracts.sProviderAdress + "Nº " +
-                                      searchContracts.sProviderNumberAdress +
-                                      "Bairro: " + searchContracts.sProviderDistrict + "Cidade: " +
-                                      searchContracts.sProviderCity + "/" + searchContracts.ProviderEstate;
+                                      " ,CPF/CNPJ: " + searchContracts.sProviderCpfCnpj +
+                                      " ,Endereço: " + searchContracts.sProviderAdress + 
+                                      " Nº. " + searchContracts.sProviderNumberAdress +
+                                      " ,Bairro: " + searchContracts.sProviderDistrict + 
+                                      " ,Cidade: " + searchContracts.sProviderCity + 
+                                      "/" + searchContracts.ProviderEstate;
+
             string objetoString = searchContracts.sClientObjectContract;
             string valorString = searchContracts.dTotalValue.ToString();
             string formaString = searchContracts.sPaymentForm;
             string execucaoString = searchContracts.iDeadline.ToString(); //deadline = data limite
             string entregaString = searchContracts.iDeadline.ToString();
             string garantiaString = searchContracts.iWarrantyTime.ToString();
-            string cidadeStrint = ""; // IMPLEMENTAR MAIS UM ATRIBUTO DO BANCO NA TABELA CONTRATOS, ATRIBUTO CIDADE.
+            string cidadeString = searchContracts.sCity;
             string dataString = searchContracts.dtContractDate.ToLongDateString();
             string proprietarioString = searchContracts.sProviderName;
-
-            //string items = "";
-            //foreach (Items item in searchContracts.Items)
-            //{
-            //    items = item.dAmount + " - " + item.sDescription;
-            //}
 
             var contratante = new ReportParameter();
             var contratado = new ReportParameter();
@@ -99,7 +96,7 @@ namespace UIWindows.Views.Reports.Contracts
             execucao.Values.Add(execucaoString);
             entrega.Values.Add(entregaString);
             garantia.Values.Add(garantiaString);
-            cidade.Values.Add(cidadeStrint);
+            cidade.Values.Add(cidadeString);
             data.Values.Add(dataString);
             proprietario.Values.Add(proprietarioString);
 
@@ -121,7 +118,6 @@ namespace UIWindows.Views.Reports.Contracts
         private void ContractPrint_Load(object sender, EventArgs e)
         {
             this.tb_contractsTableAdapter.Fill(this.fullDataSet.tb_contracts);
-            //this.reportViewer1.RefreshReport();
         }
     }
 }

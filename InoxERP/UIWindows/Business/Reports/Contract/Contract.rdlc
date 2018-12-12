@@ -357,6 +357,15 @@
                       <Color>#000000</Color>
                     </Style>
                   </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <RightIndent>0cm</RightIndent>
+                <Style>
+                  <TextAlign>General</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
                   <TextRun>
                     <Value>=Parameters!objeto.Value</Value>
                     <Style>

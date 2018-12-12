@@ -22,8 +22,7 @@ namespace UIWindows
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS searchBudget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
-        ItemsBusiness item = new ItemsBusiness(ctx);
-
+        
         String getId;
 
         public frmServiceOrderSearch()

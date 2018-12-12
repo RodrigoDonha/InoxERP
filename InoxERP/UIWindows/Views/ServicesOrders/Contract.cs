@@ -258,7 +258,7 @@ namespace UIWindows
                     // data provider
                     contractPersist.sProviderName = txtNomeContratado.Text;
                     contractPersist.sProviderCpfCnpj = txtCpfCnpjContratado.Text;
-                    //contractPersist.providerRg = txtRgContratado.Text; pegar rg ou inscr estadual
+                    contractPersist.sRegistStateRg = txtRgContratado.Text;
                     contractPersist.sProviderCep = txtCepContratado.Text;
                     contractPersist.sProviderAdress = txtEnderecoContratado.Text;
                     contractPersist.sProviderNumberAdress = txtNumeroContratado.Text;

@@ -343,6 +343,6 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Reports.Contracts.ContractPrint.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.campsContractaddremoved.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.campsContractaddremoved.resources
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.creatbooleancampandcamebackcall.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Views.Reports.Contracts.ContractPrint.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.campinscricaostadual.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\Debug\UIWindows.Migrations.campinscricaostadual.resources
