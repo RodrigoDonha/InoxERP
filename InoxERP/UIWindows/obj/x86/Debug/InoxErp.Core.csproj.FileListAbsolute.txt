@@ -426,7 +426,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Vie
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Budgets.frmServiceCalc.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.Budgets.GeneralBudgetReport.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.Budgets.SituationBudgetsReport.resources
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.frmReportUsers.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.ServicesOrders.GeneralServiceOrdersReportcs.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.ServicesOrders.SituationServiceOrdersReport.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.ServicesOrders.ServiceOrdersPrint.resources
@@ -472,7 +471,7 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWind
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.Contracts.ContractPrint.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.campsContractaddremoved.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.campsContractaddremoved.resources
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csprojAssemblyReference.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.campinscricaostadual.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Migrations.campinscricaostadual.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxErp.Core.csprojAssemblyReference.cache

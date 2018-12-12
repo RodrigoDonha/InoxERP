@@ -19,7 +19,6 @@ namespace UIWindows
     {
         static InoxErpContext ctx = new InoxErpContext();
 
-        CashBusiness objCashE = new CashBusiness(ctx);
         ClientsBusiness objClient = new ClientsBusiness(ctx);
         Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
 
@@ -69,6 +68,10 @@ namespace UIWindows
             { }
             else
             {
+                InoxErpContext ctxS = new InoxErpContext();
+
+                ClientsBusiness objS = new ClientsBusiness(ctxS);
+
                 string id = grdEntradas[1, grdEntradas.CurrentRow.Index].Value.ToString();
                 try
                 {
@@ -83,7 +86,7 @@ namespace UIWindows
                 lblId.Text = grdEntradas[0, grdEntradas.CurrentRow.Index].Value.ToString();
 
                 string cli = grdEntradas[2, grdEntradas.CurrentRow.Index].Value.ToString();
-                txtNomeCliente.Text = objClient.Search
+                txtNomeCliente.Text = objS.Search
                     .FirstOrDefault(c => c.sID == cli).sName.ToString();
                 
                 txtValor.Text = grdEntradas[4, grdEntradas.CurrentRow.Index].Value.ToString();
@@ -286,6 +289,7 @@ namespace UIWindows
             }
             return false;
         }
+
         private string getIdGRD()
         {
             string id = lblId.Text;
@@ -343,6 +347,43 @@ namespace UIWindows
 
                         fillGrid();
                     }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            searchByName();
+        }
+
+        private void searchByName()
+        {
+            string idClient = "";
+            frmClientsSearch clientsSearch = new frmClientsSearch();
+
+            foreach (Control cliControl in clientsSearch.Controls)
+            {
+                if (cliControl.Name == "btnAbrirAlterar" || cliControl.Name == "btnExcluir" || cliControl.Name == "btnCadastrar")
+                    cliControl.Enabled = false;
+            }
+
+            clientsSearch.ShowDialog();
+
+            if (clientsSearch.ReturnClients != null)
+                idClient = clientsSearch.ReturnClients.sID;
+            
+            var cash = from p in ctx.Cash where p.sId_Client.Equals(idClient) where p.CashType == CashType.Enter select p;
+
+            if (cash.ToList().Count.Equals(0))
+            {
+                txtNomeCliente.Text = clientsSearch.ReturnClients.sName;
+                msg.Show("Lançamento Não Encontrado","Não foi Encontrado Lançamentos para este Cliente",0,2000);
+                txtNomeCliente.Focus();
+            }
+            else
+            {
+                List<Cash> s = cash.ToList();
+                txtNomeCliente.Text = clientsSearch.ReturnClients.sName;
+                grdEntradas.DataSource = s.ToList();
+            }
         }
     }
 }

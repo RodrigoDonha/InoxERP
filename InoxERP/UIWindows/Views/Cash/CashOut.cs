@@ -85,8 +85,17 @@ namespace UIWindows
                 }
 
                 string cli = grdSaidas[2, grdSaidas.CurrentRow.Index].Value.ToString();
-                txtNomeClieForn.Text = objClient.Search
-                    .FirstOrDefault(c => c.sID == cli).sName.ToString();
+                try
+                {
+                    txtNomeClieForn.Text = objProvider.Search
+                        .FirstOrDefault(c => c.sID == cli).sName;
+                }
+                catch (Exception)
+                {
+                    txtNomeClieForn.Text = objClient.Search
+                        .FirstOrDefault(c => c.sID == cli).sName;
+                }
+               
 
                 txtValor.Text = grdSaidas[4, grdSaidas.CurrentRow.Index].Value.ToString();
                 dtpData.Text = grdSaidas[3, grdSaidas.CurrentRow.Index].Value.ToString();
@@ -212,6 +221,9 @@ namespace UIWindows
                 case "delete":
                     return MessageBox.Show("Confirma a Exclusçao do Lançamento no Caixa ? \n ***Isso Gera Automaticamente um E" +
                                            "storno no Extrato", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "refund":
+                    return MessageBox.Show("Confirma a Exclusão do Lançamento no Caixa ? \n ***Isso Gera Automaticamente um E" +
+                                           "storno no Extrato", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
         }
@@ -252,35 +264,47 @@ namespace UIWindows
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             if (validationCamps())
-                if (messageYesNo("alter") == DialogResult.Yes)
-                {
-                    InoxErpContext ctxA = new InoxErpContext();
-                    CashBusiness objALter = new CashBusiness(ctxA);
-                    Cash cashAlter = new Cash();
+                if (!checkRefund())
+                    if (messageYesNo("alter") == DialogResult.Yes)
+                    {
+                        InoxErpContext ctxA = new InoxErpContext();
+                        CashBusiness objALter = new CashBusiness(ctxA);
+                        Cash cashAlter = new Cash();
 
 
-                    cashAlter = objALter.ReturnByID(getIdGRD());
+                        cashAlter = objALter.ReturnByID(getIdGRD());
 
-                    cashAlter.sId_Budgets_OS = returnOS();
-                    cashAlter.sId_Client = returnId();
-                    cashAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
-                    cashAlter.dtDate = dtpData.Value;
-                    cashAlter.sChequeNumber = txtNumCheque.Text;
-                    cashAlter.sReferentTo = txtReferenteA.Text;
-                    cashAlter.CashType = CashType.Out;
-                    
-                    objALter.Update(cashAlter);
+                        cashAlter.sId_Budgets_OS = returnOS();
+                        cashAlter.sId_Client = returnId();
+                        cashAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                        cashAlter.dtDate = dtpData.Value;
+                        cashAlter.sChequeNumber = txtNumCheque.Text;
+                        cashAlter.sReferentTo = txtReferenteA.Text;
+                        cashAlter.CashType = CashType.Out;
+                        
+                        objALter.Update(cashAlter);
 
-                    var ok = objALter.Search.FirstOrDefault(b => b.sID == cashAlter.sID);
+                        var ok = objALter.Search.FirstOrDefault(b => b.sID == cashAlter.sID);
 
-                    if (ok == null)
-                        MessageBox.Show("Erro ao Alterar a Saída no Caixa !!!");
-                    else
-                        MessageBox.Show("Saída Alterada com Sucesso !!!");
+                        if (ok == null)
+                            MessageBox.Show("Erro ao Alterar a Saída no Caixa !!!");
+                        else
+                            MessageBox.Show("Saída Alterada com Sucesso !!!");
 
-                    cleanCamps();
-                    fillGrid();
-                }
+                        cleanCamps();
+                        fillGrid();
+                    }
+        }
+
+        private bool checkRefund()
+        {
+            string text = grdSaidas[5, grdSaidas.CurrentRow.Index].Value.ToString();
+            if (text.Contains("ESTORNADO") || text.Contains("ESTORNO"))
+            {
+                msg.Show("Exclusão de Estorno", "Não é possível Alterar ou Excluir um ESTORNO DE LANÇAMENTO", 0, 2000);
+                return true;
+            }
+            return false;
         }
 
         private string getIdGRD()
@@ -288,6 +312,95 @@ namespace UIWindows
             string id = lblId.Text;
 
             return id;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            searchByName();
+        }
+
+        private void searchByName()
+        {
+            string idProvider = "";
+            frmProviderSearch providerSearch = new frmProviderSearch();
+
+            foreach (Control proControl in providerSearch.Controls)
+            {
+                if (proControl.Name == "btnAlterar" || proControl.Name == "btnExcluir" || proControl.Name == "btnCadastrar")
+                    proControl.Enabled = false;
+            }
+
+            providerSearch.ShowDialog();
+
+            if (providerSearch.returnProviders != null)
+                idProvider = providerSearch.returnProviders.sID;
+
+            var cash = from p in ctx.Cash where p.sId_Client.Equals(idProvider) where p.CashType == CashType.Out select p;
+
+            if (cash.ToList().Count.Equals(0))
+            {
+                txtNomeClieForn.Text = providerSearch.returnProviders.sName;
+                msg.Show("Lançamento Não Encontrado", "Não foi Encontrado Lançamentos para este Fornecedor", 0, 2000);
+                txtNomeClieForn.Focus();
+            }
+            else
+            {
+                List<Cash> s = cash.ToList();
+                txtNomeClieForn.Text = providerSearch.returnProviders.sName;
+                grdSaidas.DataSource = s.ToList();
+            }
+        }
+
+        private void btnEstornar_Click(object sender, EventArgs e)
+        {
+            if (lblId.Text.Equals(""))
+                MessageBox.Show("Selecione um Lançamento Primeiro");
+            else if (!checkRefund())
+                if (messageYesNo("refund") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxD = new InoxErpContext();
+                    CashBusiness objDel = new CashBusiness(ctxD);
+                    Cash cashDel = new Cash();
+
+                    cashDel = objDel.ReturnByID(getIdGRD());
+
+                    cashDel.sId_Budgets_OS = returnOS();
+                    cashDel.sId_Client = returnId();
+                    cashDel.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                    cashDel.dtDate = dtpData.Value;
+                    cashDel.sChequeNumber = txtNumCheque.Text;
+                    cashDel.sReferentTo = "LANÇAMENTO ESTORNADO: " + txtReferenteA.Text;
+                    cashDel.CashType = CashType.Out;
+
+                    objDel.Update(cashDel);
+
+                    Cash cashOut = new Cash
+                    {
+                        sId_Budgets_OS = returnOS(),
+                        sId_Client = returnId(),
+                        dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
+                        dtDate = DateTime.Now,
+                        sChequeNumber = txtNumCheque.Text,
+                        sReferentTo = "ESTORNO REFERENTE: " + txtReferenteA.Text,
+                        CashType = CashType.Enter,
+                        sID = Guid.NewGuid().ToString()
+                    };
+
+                    objDel.Insert(cashOut);
+
+                    var up = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+
+                    var ins = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+
+                    if (up == null || ins == null)
+                        MessageBox.Show("Erro ao Estornar a Saída !!!");
+                    else
+                        MessageBox.Show("Saída Estornada com Sucesso !!!");
+
+                    cleanCamps();
+
+                    fillGrid();
+                }
         }
     }
 }

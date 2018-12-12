@@ -39,7 +39,7 @@
             this.lblCliForn = new System.Windows.Forms.Label();
             this.txtNFOS = new System.Windows.Forms.TextBox();
             this.lblNFOS = new System.Windows.Forms.Label();
-            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnEstornar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -88,6 +88,7 @@
             this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtNomeClieForn
             // 
@@ -105,9 +106,9 @@
             this.lblCliForn.Location = new System.Drawing.Point(184, 45);
             this.lblCliForn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCliForn.Name = "lblCliForn";
-            this.lblCliForn.Size = new System.Drawing.Size(80, 17);
+            this.lblCliForn.Size = new System.Drawing.Size(89, 17);
             this.lblCliForn.TabIndex = 4;
-            this.lblCliForn.Text = "Clien/Forn: ";
+            this.lblCliForn.Text = "Fornecedor: ";
             // 
             // txtNFOS
             // 
@@ -129,15 +130,16 @@
             this.lblNFOS.TabIndex = 2;
             this.lblNFOS.Text = "NF/O.S.:";
             // 
-            // btnExcluir
+            // btnEstornar
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(384, 190);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(100, 28);
-            this.btnExcluir.TabIndex = 17;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnEstornar.Location = new System.Drawing.Point(384, 190);
+            this.btnEstornar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEstornar.Name = "btnEstornar";
+            this.btnEstornar.Size = new System.Drawing.Size(100, 28);
+            this.btnEstornar.TabIndex = 17;
+            this.btnEstornar.Text = "Excluir";
+            this.btnEstornar.UseVisualStyleBackColor = true;
+            this.btnEstornar.Click += new System.EventHandler(this.btnEstornar_Click);
             // 
             // btnAlterar
             // 
@@ -377,7 +379,7 @@
             this.Controls.Add(this.lblCliForn);
             this.Controls.Add(this.txtNFOS);
             this.Controls.Add(this.lblNFOS);
-            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnEstornar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.txtValor);
@@ -410,7 +412,7 @@
         private System.Windows.Forms.Label lblCliForn;
         private System.Windows.Forms.TextBox txtNFOS;
         private System.Windows.Forms.Label lblNFOS;
-        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnEstornar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.TextBox txtValor;

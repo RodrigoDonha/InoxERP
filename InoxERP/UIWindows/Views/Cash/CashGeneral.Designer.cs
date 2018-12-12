@@ -101,6 +101,7 @@
             this.grdExtratoGeral.AllowUserToResizeColumns = false;
             this.grdExtratoGeral.AllowUserToResizeRows = false;
             this.grdExtratoGeral.AutoGenerateColumns = false;
+            this.grdExtratoGeral.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.grdExtratoGeral.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grdExtratoGeral.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -126,7 +127,7 @@
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.grdExtratoGeral.DefaultCellStyle = dataGridViewCellStyle5;
