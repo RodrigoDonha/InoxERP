@@ -225,6 +225,18 @@
     <Compile Include="Views\Reports\Contracts\ContractPrint.Designer.cs">
       <DependentUpon>ContractPrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Delivery\GeneralDeliveryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Delivery\GeneralDeliveryReport.Designer.cs">
+      <DependentUpon>GeneralDeliveryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Delivery\SituationDeliveryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Delivery\SituationDeliveryReport.Designer.cs">
+      <DependentUpon>SituationDeliveryReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\ServicesOrders\GeneralServiceOrdersReportcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +449,7 @@
     <EmbeddedResource Include="Business\Reports\BudgetWithPrice.rdlc" />
     <EmbeddedResource Include="Business\Reports\Contract\Contract.rdlc" />
     <EmbeddedResource Include="Business\Reports\Delivery\GeneralDelivery.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Delivery\SituationDelivery.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\GeneralServiceOrder.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\ServiceOrdersPrint.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
@@ -478,6 +491,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Contracts\ContractPrint.resx">
       <DependentUpon>ContractPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Delivery\GeneralDeliveryReport.resx">
+      <DependentUpon>GeneralDeliveryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Delivery\SituationDeliveryReport.resx">
+      <DependentUpon>SituationDeliveryReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ServicesOrders\GeneralServiceOrdersReportcs.resx">
       <DependentUpon>GeneralServiceOrdersReportcs.cs</DependentUpon>

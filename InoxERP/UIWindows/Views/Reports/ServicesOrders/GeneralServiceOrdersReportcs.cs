@@ -22,7 +22,6 @@ namespace UIWindows.Views.Reports.ServicesOrders
 
         private void GeneralServiceOrdersReportcs_Load(object sender, EventArgs e)
         {
-
             this.tb_budgets_osTableAdapter.Fill(this.fullDataSet.tb_budgets_os);
             this.reportViewer1.RefreshReport();
         }
