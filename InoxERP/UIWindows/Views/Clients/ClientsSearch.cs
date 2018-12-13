@@ -186,7 +186,7 @@ namespace UIWindows
         //GET CLIENT DATA
         private void grdClientes_DoubleClick(object sender, EventArgs e)
         {
-            if (OpenForm(typeof(frmBudgetsRegister)) || OpenForm(typeof(frmCashEntry)))
+            if (OpenForm(typeof(frmBudgetsRegister)) || OpenForm(typeof(frmCashEntry)) || OpenForm(typeof(frmAccountsCheque)))
             {
                 try
                 {

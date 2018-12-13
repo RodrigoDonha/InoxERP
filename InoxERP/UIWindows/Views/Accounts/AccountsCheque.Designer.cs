@@ -36,7 +36,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccountsCheque));
             this.lblCodCliente = new System.Windows.Forms.Label();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtReferenteA = new System.Windows.Forms.TextBox();
             this.lblReferenteA = new System.Windows.Forms.Label();
             this.txtNumeroCheque = new System.Windows.Forms.TextBox();
@@ -52,12 +52,6 @@
             this.txtOS = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.grdCheques = new System.Windows.Forms.DataGridView();
-            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.lblVecto = new System.Windows.Forms.Label();
-            this.lblOrcamento = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +64,13 @@
             this.sReferentToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sChequeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.lblVecto = new System.Windows.Forms.Label();
+            this.lblOrcamento = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
+            this.lblId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).BeginInit();
@@ -96,15 +97,16 @@
             this.txtNomeCliente.TabIndex = 3;
             this.txtNomeCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodCliente_KeyPress);
             // 
-            // btnBuscarCliente
+            // btnBuscar
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(411, 46);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(101, 28);
-            this.btnBuscarCliente.TabIndex = 4;
-            this.btnBuscarCliente.Text = "Buscar";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(411, 46);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(101, 28);
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtReferenteA
             // 
@@ -222,6 +224,7 @@
             this.btnIncluir.TabIndex = 17;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // txtValor
             // 
@@ -282,51 +285,6 @@
             this.grdCheques.TabIndex = 21;
             this.grdCheques.TabStop = false;
             this.grdCheques.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCheques_CellClick);
-            // 
-            // tbchequesBindingSource
-            // 
-            this.tbchequesBindingSource.DataMember = "tb_cheques";
-            this.tbchequesBindingSource.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblVecto
-            // 
-            this.lblVecto.AutoSize = true;
-            this.lblVecto.Location = new System.Drawing.Point(271, 86);
-            this.lblVecto.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblVecto.Name = "lblVecto";
-            this.lblVecto.Size = new System.Drawing.Size(85, 16);
-            this.lblVecto.TabIndex = 7;
-            this.lblVecto.Text = "Vencimento: ";
-            // 
-            // lblOrcamento
-            // 
-            this.lblOrcamento.AutoSize = true;
-            this.lblOrcamento.Location = new System.Drawing.Point(17, 89);
-            this.lblOrcamento.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblOrcamento.Name = "lblOrcamento";
-            this.lblOrcamento.Size = new System.Drawing.Size(61, 16);
-            this.lblOrcamento.TabIndex = 5;
-            this.lblOrcamento.Text = "NF/O.S.: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(211, 14);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cheques";
-            // 
-            // tb_chequesTableAdapter
-            // 
-            this.tb_chequesTableAdapter.ClearBeforeFill = true;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -435,12 +393,68 @@
             this.idCashDataGridViewTextBoxColumn.ReadOnly = true;
             this.idCashDataGridViewTextBoxColumn.Visible = false;
             // 
+            // tbchequesBindingSource
+            // 
+            this.tbchequesBindingSource.DataMember = "tb_cheques";
+            this.tbchequesBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblVecto
+            // 
+            this.lblVecto.AutoSize = true;
+            this.lblVecto.Location = new System.Drawing.Point(271, 86);
+            this.lblVecto.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblVecto.Name = "lblVecto";
+            this.lblVecto.Size = new System.Drawing.Size(85, 16);
+            this.lblVecto.TabIndex = 7;
+            this.lblVecto.Text = "Vencimento: ";
+            // 
+            // lblOrcamento
+            // 
+            this.lblOrcamento.AutoSize = true;
+            this.lblOrcamento.Location = new System.Drawing.Point(17, 89);
+            this.lblOrcamento.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblOrcamento.Name = "lblOrcamento";
+            this.lblOrcamento.Size = new System.Drawing.Size(61, 16);
+            this.lblOrcamento.TabIndex = 5;
+            this.lblOrcamento.Text = "NF/O.S.: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(211, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cheques";
+            // 
+            // tb_chequesTableAdapter
+            // 
+            this.tb_chequesTableAdapter.ClearBeforeFill = true;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(14, 20);
+            this.lblId.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 16);
+            this.lblId.TabIndex = 22;
+            this.lblId.Visible = false;
+            // 
             // frmAccountsCheque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 494);
-            this.Controls.Add(this.btnBuscarCliente);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCodCliente);
             this.Controls.Add(this.txtNomeCliente);
             this.Controls.Add(this.txtReferenteA);
@@ -480,7 +494,7 @@
         #endregion
         private System.Windows.Forms.Label lblCodCliente;
         private System.Windows.Forms.TextBox txtNomeCliente;
-        private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtReferenteA;
         private System.Windows.Forms.Label lblReferenteA;
         private System.Windows.Forms.TextBox txtNumeroCheque;
@@ -514,5 +528,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sReferentToDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sChequeNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCashDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblId;
     }
 }

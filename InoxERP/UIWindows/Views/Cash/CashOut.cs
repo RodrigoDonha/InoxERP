@@ -193,7 +193,7 @@ namespace UIWindows
             {
                 retID = new Budgets_OS();
                 retID.sID = "";
-                msg.Show("Ordem de Srviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
+                msg.Show("Ordem de Serviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
             }
             return retID.sID;
         }
@@ -341,11 +341,12 @@ namespace UIWindows
             {
                 if (providerSearch.returnProviders == null)
                 {
-                    msg.Show("Fornecedor Não Encontrado", "Não foi Encontrado o fornecedor para este lançamento", 0, 2000);
+                    msg.Show("Fornecedor Não Encontrado", "Não foi Encontrado Fornecedor para este lançamento", 0, 2000);
                 }else
                 {
                     txtNomeClieForn.Text = providerSearch.returnProviders.sName;
                 }
+
                 msg.Show("Lançamento Não Encontrado", "Não foi Encontrado Lançamentos para este Fornecedor", 0, 2000);
                 txtNomeClieForn.Focus();
             }

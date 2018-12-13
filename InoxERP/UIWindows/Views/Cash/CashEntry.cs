@@ -174,7 +174,7 @@ namespace UIWindows
             {
                 retID = new Budgets_OS();
                 retID.sID = "";
-                msg.Show("Ordem de Srviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
+                msg.Show("Ordem de Serviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
             }
             return retID.sID;
         }
@@ -374,7 +374,15 @@ namespace UIWindows
 
             if (cash.ToList().Count.Equals(0))
             {
-                txtNomeCliente.Text = clientsSearch.ReturnClients.sName;
+                if (clientsSearch.ReturnClients == null)
+                {
+                    msg.Show("Cliente Não Encontrado", "Não foi Encontrado Cliente para este lançamento", 0, 2000);
+                }
+                else
+                {
+                    txtNomeCliente.Text = clientsSearch.ReturnClients.sName;
+                }
+
                 msg.Show("Lançamento Não Encontrado","Não foi Encontrado Lançamentos para este Cliente",0,2000);
                 txtNomeCliente.Focus();
             }

@@ -165,11 +165,17 @@
     <Compile Include="Migrations\201812091620596_campsContractaddremoved.Designer.cs">
       <DependentUpon>201812091620596_campsContractaddremoved.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812111841522_campinscricaostadual.cs" />
-    <Compile Include="Migrations\201812111841522_campinscricaostadual.Designer.cs">
-      <DependentUpon>201812111841522_campinscricaostadual.cs</DependentUpon>
+    <Compile Include="Migrations\201812131958453_nullbablecampidbudgetofcheques.cs" />
+    <Compile Include="Migrations\201812131958453_nullbablecampidbudgetofcheques.Designer.cs">
+      <DependentUpon>201812131958453_nullbablecampidbudgetofcheques.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Views\Accounts\ChequeNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Accounts\ChequeNumber.Designer.cs">
+      <DependentUpon>ChequeNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Backups\AdminChose.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -469,8 +475,11 @@
     <EmbeddedResource Include="Migrations\201812091620596_campsContractaddremoved.resx">
       <DependentUpon>201812091620596_campsContractaddremoved.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812111841522_campinscricaostadual.resx">
-      <DependentUpon>201812111841522_campinscricaostadual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812131958453_nullbablecampidbudgetofcheques.resx">
+      <DependentUpon>201812131958453_nullbablecampidbudgetofcheques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Accounts\ChequeNumber.resx">
+      <DependentUpon>ChequeNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Backups\AdminChose.resx">
       <DependentUpon>AdminChose.cs</DependentUpon>
