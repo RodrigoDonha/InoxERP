@@ -39,19 +39,20 @@ namespace UIWindows.Views.Reports.Contracts
             string pulaLinha = "\r\n";
 
             string contratanteString = "Nome: " + searchContracts.sClientName +
-                                       " ,CPF/CNPJ: " + searchContracts.sClientCpfCnpj +
-                                       " ,RG/Inscr. Est.: " + searchContracts.sClientRg +
-                                       " ,Endereço: " + searchContracts.sClientAdress + 
+                                       ", CPF/CNPJ: " + searchContracts.sClientCpfCnpj +
+                                       ", RG/Inscr. Est.: " + searchContracts.sClientRg +
+                                       ", Endereço: " + searchContracts.sClientAdress + 
                                        " Nº. " + searchContracts.sClientNumberAdress +
-                                       ", Bairro: " + searchContracts.sClientDistrict + ", Cidade: " +
-                                       searchContracts.sClientCity + "/" + searchContracts.ClientEstate;
+                                       ", Bairro: " + searchContracts.sClientDistrict + 
+                                       ", Cidade: " + searchContracts.sClientCity + 
+                                       "/" + searchContracts.ClientEstate;
 
             string contratadoString = "Nome: " + searchContracts.sProviderName +
-                                      " ,CPF/CNPJ: " + searchContracts.sProviderCpfCnpj +
-                                      " ,Endereço: " + searchContracts.sProviderAdress + 
+                                      ", CPF/CNPJ: " + searchContracts.sProviderCpfCnpj +
+                                      ", Endereço: " + searchContracts.sProviderAdress + 
                                       " Nº. " + searchContracts.sProviderNumberAdress +
-                                      " ,Bairro: " + searchContracts.sProviderDistrict + 
-                                      " ,Cidade: " + searchContracts.sProviderCity + 
+                                      ", Bairro: " + searchContracts.sProviderDistrict + 
+                                      ", Cidade: " + searchContracts.sProviderCity + 
                                       "/" + searchContracts.ProviderEstate;
 
             string objetoString = searchContracts.sClientObjectContract;

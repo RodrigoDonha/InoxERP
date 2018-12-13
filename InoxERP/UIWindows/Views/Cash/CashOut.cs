@@ -339,7 +339,13 @@ namespace UIWindows
 
             if (cash.ToList().Count.Equals(0))
             {
-                txtNomeClieForn.Text = providerSearch.returnProviders.sName;
+                if (providerSearch.returnProviders == null)
+                {
+                    msg.Show("Fornecedor Não Encontrado", "Não foi Encontrado o fornecedor para este lançamento", 0, 2000);
+                }else
+                {
+                    txtNomeClieForn.Text = providerSearch.returnProviders.sName;
+                }
                 msg.Show("Lançamento Não Encontrado", "Não foi Encontrado Lançamentos para este Fornecedor", 0, 2000);
                 txtNomeClieForn.Focus();
             }
