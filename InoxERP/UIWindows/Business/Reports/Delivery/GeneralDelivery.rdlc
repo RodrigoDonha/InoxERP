@@ -222,7 +222,6 @@
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -264,7 +263,6 @@
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -306,7 +304,6 @@
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -348,7 +345,6 @@
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -390,7 +386,6 @@
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -432,7 +427,6 @@
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -474,7 +468,6 @@
                                   <Style>
                                     <FontSize>11pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -520,7 +513,6 @@
                                   <Value>=Fields!sDate.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -556,7 +548,6 @@
                                   <Value>=Fields!iCod.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -592,7 +583,6 @@
                                   <Value>=Fields!sName.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -628,7 +618,6 @@
                                   <Value>=Fields!sAdress.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -664,7 +653,6 @@
                                   <Value>=Fields!sTelephone.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -700,7 +688,6 @@
                                   <Value>=Fields!sDelivered.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -736,7 +723,6 @@
                                   <Value>=Fields!sDateServiceOrderDelivered.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -789,16 +775,16 @@
             <Filters>
               <Filter>
                 <FilterExpression>=Fields!dtDate.Value</FilterExpression>
-                <Operator>GreaterThanOrEqual</Operator>
+                <Operator>LessThanOrEqual</Operator>
                 <FilterValues>
-                  <FilterValue>=Parameters!startDate.Value</FilterValue>
+                  <FilterValue>=Parameters!endDate.Value</FilterValue>
                 </FilterValues>
               </Filter>
               <Filter>
                 <FilterExpression>=Fields!dtDate.Value</FilterExpression>
-                <Operator>Equal</Operator>
+                <Operator>GreaterThanOrEqual</Operator>
                 <FilterValues>
-                  <FilterValue>=Parameters!endDate.Value</FilterValue>
+                  <FilterValue>=Parameters!startDate.Value</FilterValue>
                 </FilterValues>
               </Filter>
             </Filters>
