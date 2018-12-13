@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows.Views.Reports.Cash;
 
 namespace UIWindows
 {
@@ -15,6 +16,11 @@ namespace UIWindows
         public frmReportCashGeneral()
         {
             InitializeComponent();
+        }
+
+        private void btnGerar_Click(object sender, EventArgs e)
+        {
+            new GeneralCashReport().Show();
         }
     }
 }
