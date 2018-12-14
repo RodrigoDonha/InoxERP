@@ -106,7 +106,24 @@ namespace UIWindows
                 dtpData.Text = grdCheques[3, grdCheques.CurrentRow.Index].Value.ToString();
                 txtValor.Text = grdCheques[5, grdCheques.CurrentRow.Index].Value.ToString();
                 nudParcelas.Value = Convert.ToDecimal(grdCheques[6, grdCheques.CurrentRow.Index].Value);
-                txtNumeroCheque.Text = grdCheques[10, grdCheques.CurrentRow.Index].Value.ToString();
+                string num = grdCheques[10, grdCheques.CurrentRow.Index].Value.ToString();
+                try
+                {
+                    string[] parts = num.Split('-');
+
+                    txtC1.Text = parts[0];
+                    txtC2.Text = parts[1];
+                    txtC3.Text = parts[2];
+                }
+                catch (Exception)
+                {
+                    txtC1.Text = "0";
+                    txtC2.Text = "0";
+                    txtC3.Text = "0";
+                    msg.Show("Cheque", "Número do Cheque Não Encontrado", 0, 2000);
+                }
+                
+
                 txtReferenteA.Text = grdCheques[9, grdCheques.CurrentRow.Index].Value.ToString();
             }
         }
@@ -126,19 +143,77 @@ namespace UIWindows
                 txtValor.Focus();
                 return false;
             }
-            
 
-            if (txtNumeroCheque.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe o Número do Cheque");
-                txtNumeroCheque.Focus();
+            if (!validationC1())
                 return false;
-            }
+
+            if (!validationC2())
+                return false;
+
+            if (!validationC3())
+                return false;
 
             if (txtReferenteA.Text.Length.Equals(0))
             {
                 MessageBox.Show("Informe um Referencia/Motivo para o Lançamento");
                 txtReferenteA.Focus();
+                return false;
+            }
+
+            return true;
+        }
+        private bool validationC1()
+        {
+            if (txtC1.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um Valor para o Campo 1");
+                txtC1.Focus();
+                return false;
+            }
+
+            if (txtC1.Text.Length < 8)
+            {
+                MessageBox.Show("O Campo 1 deve conter 8 numeros");
+                txtC1.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool validationC2()
+        {
+            if (txtC2.Text.Equals("0"))
+            {
+                MessageBox.Show("Informe um Valor para o Campo 2");
+                txtC2.Focus();
+                return false;
+            }
+
+
+            if (txtC2.Text.Equals("0"))
+            {
+                MessageBox.Show("Informe um Valor para o Campo 2");
+                txtC2.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool validationC3()
+        {
+            if (txtC3.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um Valor para o Campo 3");
+                txtC3.Focus();
+                return false;
+            }
+
+            if (txtC3.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe um Valor para o Campo 3");
+                txtC3.Focus();
                 return false;
             }
 
@@ -151,15 +226,12 @@ namespace UIWindows
             switch (type)
             {
                 case "confirm":
-                    return MessageBox.Show("Confirma o Lançamento no Caixa ?", "Concluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma o Lançamento do Cheque ?", "Concluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "alter":
-                    return MessageBox.Show("Confirma a Alteração do Lançamento no Caixa ?", "Alterar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma a Alteração do Cheque ?", "Alterar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "delete":
-                    return MessageBox.Show("Confirma a Exclusçao do Lançamento no Caixa ? \n ***Isso Gera Automaticamente um E" +
-                                           "storno no Extrato", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-                case "refund":
-                    return MessageBox.Show("Confirma a Exclusão do Lançamento no Caixa ? \n ***Isso Gera Automaticamente um E" +
-                                           "storno no Extrato", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma a Exclusçao do Cheque ?", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                
             }
             return DialogResult.No;
         }
@@ -279,22 +351,50 @@ namespace UIWindows
             txtValor.Clear();
             dtpData.Value = DateTime.Now;
             nudParcelas.Value = 1;
-            txtNumeroCheque.Clear();
+            txtC1.Clear();
+            txtC2.Clear();
+            txtC3.Clear();
             txtReferenteA.Clear();
         }
 
         private string returnChequeNumber(int installment)
         {
             string number = "0";
+            if (installment > 1)
+            {
+                frmChequeNumber numCheque = new frmChequeNumber(installment);
 
-            frmChequeNumber numCheque = new frmChequeNumber(installment);
+                numCheque.ShowDialog();
 
-            numCheque.ShowDialog();
-
-            if(numCheque.chequeNumber != null)
-                number = numCheque.chequeNumber;
+                if (numCheque.chequeNumber != null)
+                    number = numCheque.chequeNumber;
+            }else
+                number = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text;
 
             return number;
+        }
+
+        private DateTime returnDueDate(int instalments)
+        {
+            if(instalments == 1 && nudPrazo.Value == 0 && dtpData.Value.Equals(DateTime.Now))//cheque a vista
+                return DateTime.Now;
+
+            if (instalments == 1 && nudPrazo.Value == 0 && !dtpData.Value.Equals(DateTime.Now))//cheque pré 1 parcela unica dia fixo
+                return dtpData.Value;
+
+            if (instalments == 1 && nudPrazo.Value != 0) //cheque pré 1 parcela unica com dias especificados
+                return dtpData.Value.AddDays(Convert.ToDouble(nudPrazo.Value));
+
+            if (instalments > 1 && nudPrazo.Value == 0)
+                return dtpData.Value.AddMonths(instalments);
+
+            if (instalments > 1 && nudPrazo.Value != 0)
+            {
+                dtpData.Value.AddDays(Convert.ToDouble(nudPrazo.Value));
+                return dtpData.Value.AddMonths(instalments);
+            }
+
+            return DateTime.Now;
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -314,11 +414,11 @@ namespace UIWindows
                             sId_Budgets_OS = returnOS(),
                             sId_Client = returnId(),
                             dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
-                            dtDueDate = dtpData.Value, // veirficar data
+                            dtDueDate = returnDueDate(i+1), // veirficar data
                             dtPayDate = DateTime.Today,
                             bChequePaid = false,
                             iInstallment = i+1,
-                            iAmountInstallment = Convert.ToInt32(nudParcelas.Value), //verificar primeira parcela
+                            iAmountInstallment = Convert.ToInt32(nudParcelas.Value),
                             sChequeNumber = returnChequeNumber(i+1),
                             sReferentTo = txtReferenteA.Text
                         };
@@ -337,6 +437,36 @@ namespace UIWindows
                     cleanCamps();
                     fillGrid();
                 }
+        }
+
+        private void txtC1_Leave(object sender, EventArgs e)
+        {
+            validationC1();
+        }
+
+        private void txtC2_Leave(object sender, EventArgs e)
+        {
+            validationC2();
+        }
+
+        private void txtC3_Leave(object sender, EventArgs e)
+        {
+            validationC3();
+        }
+
+        private void txtC1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorNumbersCheque(sender,e);
+        }
+
+        private void txtC2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorNumbersCheque(sender,e);
+        }
+
+        private void txtC3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorNumbersCheque(sender,e);
         }
     }
 }

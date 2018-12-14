@@ -64,14 +64,18 @@
             this.txtC1.Name = "txtC1";
             this.txtC1.Size = new System.Drawing.Size(160, 23);
             this.txtC1.TabIndex = 2;
+            this.txtC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC1_KeyPress);
+            this.txtC1.Leave += new System.EventHandler(this.txtC1_Leave);
             // 
             // txtC2
             // 
             this.txtC2.Location = new System.Drawing.Point(179, 45);
-            this.txtC2.MaxLength = 9;
+            this.txtC2.MaxLength = 10;
             this.txtC2.Name = "txtC2";
             this.txtC2.Size = new System.Drawing.Size(160, 23);
             this.txtC2.TabIndex = 3;
+            this.txtC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC2_KeyPress);
+            this.txtC2.Leave += new System.EventHandler(this.txtC2_Leave);
             // 
             // txtC3
             // 
@@ -80,6 +84,8 @@
             this.txtC3.Name = "txtC3";
             this.txtC3.Size = new System.Drawing.Size(160, 23);
             this.txtC3.TabIndex = 4;
+            this.txtC3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC3_KeyPress);
+            this.txtC3.Leave += new System.EventHandler(this.txtC3_Leave);
             // 
             // btnConfirma
             // 
@@ -104,7 +110,7 @@
             this.Controls.Add(this.lblParcela);
             this.Controls.Add(this.lblRefParcela);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmChequeNumber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Numero do Cheque";

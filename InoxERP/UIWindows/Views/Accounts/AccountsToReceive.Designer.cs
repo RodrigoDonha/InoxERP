@@ -68,17 +68,20 @@
             this.lblParcelas = new System.Windows.Forms.Label();
             this.nudParcelas = new System.Windows.Forms.NumericUpDown();
             this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
+            this.nudPrazo = new System.Windows.Forms.NumericUpDown();
+            this.lblPrazo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdAReceber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbaccountsToReceiveBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEntradas
             // 
             this.lblEntradas.AutoSize = true;
             this.lblEntradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntradas.Location = new System.Drawing.Point(182, 9);
+            this.lblEntradas.Location = new System.Drawing.Point(172, 9);
             this.lblEntradas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEntradas.Name = "lblEntradas";
             this.lblEntradas.Size = new System.Drawing.Size(177, 24);
@@ -206,10 +209,10 @@
             // 
             this.dtpData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(366, 84);
+            this.dtpData.Location = new System.Drawing.Point(336, 79);
             this.dtpData.Margin = new System.Windows.Forms.Padding(4);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(115, 22);
+            this.dtpData.Size = new System.Drawing.Size(145, 22);
             this.dtpData.TabIndex = 8;
             // 
             // grdAReceber
@@ -375,7 +378,7 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(260, 84);
+            this.lblData.Location = new System.Drawing.Point(238, 79);
             this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(90, 17);
@@ -397,7 +400,7 @@
             // 
             this.lblParcelas.AutoSize = true;
             this.lblParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParcelas.Location = new System.Drawing.Point(260, 118);
+            this.lblParcelas.Location = new System.Drawing.Point(238, 118);
             this.lblParcelas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblParcelas.Name = "lblParcelas";
             this.lblParcelas.Size = new System.Drawing.Size(71, 17);
@@ -406,14 +409,14 @@
             // 
             // nudParcelas
             // 
-            this.nudParcelas.Location = new System.Drawing.Point(366, 118);
+            this.nudParcelas.Location = new System.Drawing.Point(336, 118);
             this.nudParcelas.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.nudParcelas.Name = "nudParcelas";
-            this.nudParcelas.Size = new System.Drawing.Size(48, 20);
+            this.nudParcelas.Size = new System.Drawing.Size(47, 20);
             this.nudParcelas.TabIndex = 12;
             this.nudParcelas.Value = new decimal(new int[] {
             1,
@@ -425,11 +428,31 @@
             // 
             this.tb_accountsToReceiveTableAdapter.ClearBeforeFill = true;
             // 
+            // nudPrazo
+            // 
+            this.nudPrazo.Location = new System.Drawing.Point(434, 118);
+            this.nudPrazo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudPrazo.Name = "nudPrazo";
+            this.nudPrazo.Size = new System.Drawing.Size(47, 20);
+            this.nudPrazo.TabIndex = 26;
+            // 
+            // lblPrazo
+            // 
+            this.lblPrazo.AutoSize = true;
+            this.lblPrazo.Location = new System.Drawing.Point(385, 120);
+            this.lblPrazo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPrazo.Name = "lblPrazo";
+            this.lblPrazo.Size = new System.Drawing.Size(42, 15);
+            this.lblPrazo.TabIndex = 25;
+            this.lblPrazo.Text = "Prazo:";
+            // 
             // frmAccountsToReceive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 471);
+            this.Controls.Add(this.nudPrazo);
+            this.Controls.Add(this.lblPrazo);
             this.Controls.Add(this.lblParcelas);
             this.Controls.Add(this.nudParcelas);
             this.Controls.Add(this.btnBuscarCliente);
@@ -459,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbaccountsToReceiveBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,5 +523,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sReferentToDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCashDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBudgetsOSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown nudPrazo;
+        private System.Windows.Forms.Label lblPrazo;
     }
 }

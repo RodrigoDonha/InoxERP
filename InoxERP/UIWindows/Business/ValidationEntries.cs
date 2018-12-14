@@ -55,7 +55,8 @@ namespace UIWindows.Business.Concrete
         public void characterValidatorNumbersCheque(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada nao for numeros espaço ou traço
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 45 && e.KeyChar != 08)
+            //if (!char.IsDigit(e.KeyChar) && e.KeyChar != 45 && e.KeyChar != 08)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
             {
                 //Atribui True no Handled para cancelar o evento
                 e.Handled = true;

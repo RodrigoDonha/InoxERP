@@ -39,7 +39,6 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtReferenteA = new System.Windows.Forms.TextBox();
             this.lblReferenteA = new System.Windows.Forms.Label();
-            this.txtNumeroCheque = new System.Windows.Forms.TextBox();
             this.lblNumeroCheque = new System.Windows.Forms.Label();
             this.nudParcelas = new System.Windows.Forms.NumericUpDown();
             this.lblParcelas = new System.Windows.Forms.Label();
@@ -71,10 +70,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
             this.lblId = new System.Windows.Forms.Label();
+            this.nudPrazo = new System.Windows.Forms.NumericUpDown();
+            this.lblPrazo = new System.Windows.Forms.Label();
+            this.txtC3 = new System.Windows.Forms.TextBox();
+            this.txtC2 = new System.Windows.Forms.TextBox();
+            this.txtC1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodCliente
@@ -99,7 +104,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(411, 46);
+            this.btnBuscar.Location = new System.Drawing.Point(413, 44);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(101, 28);
@@ -114,7 +119,7 @@
             this.txtReferenteA.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
-            this.txtReferenteA.Size = new System.Drawing.Size(409, 22);
+            this.txtReferenteA.Size = new System.Drawing.Size(408, 22);
             this.txtReferenteA.TabIndex = 16;
             // 
             // lblReferenteA
@@ -127,20 +132,10 @@
             this.lblReferenteA.TabIndex = 15;
             this.lblReferenteA.Text = "Referente a: ";
             // 
-            // txtNumeroCheque
-            // 
-            this.txtNumeroCheque.Location = new System.Drawing.Point(104, 161);
-            this.txtNumeroCheque.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtNumeroCheque.MaxLength = 33;
-            this.txtNumeroCheque.Name = "txtNumeroCheque";
-            this.txtNumeroCheque.Size = new System.Drawing.Size(409, 22);
-            this.txtNumeroCheque.TabIndex = 14;
-            this.txtNumeroCheque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroCheque_KeyPress);
-            // 
             // lblNumeroCheque
             // 
             this.lblNumeroCheque.AutoSize = true;
-            this.lblNumeroCheque.Location = new System.Drawing.Point(17, 164);
+            this.lblNumeroCheque.Location = new System.Drawing.Point(17, 165);
             this.lblNumeroCheque.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNumeroCheque.Name = "lblNumeroCheque";
             this.lblNumeroCheque.Size = new System.Drawing.Size(79, 16);
@@ -149,7 +144,7 @@
             // 
             // nudParcelas
             // 
-            this.nudParcelas.Location = new System.Drawing.Point(365, 123);
+            this.nudParcelas.Location = new System.Drawing.Point(354, 123);
             this.nudParcelas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudParcelas.Minimum = new decimal(new int[] {
             1,
@@ -157,7 +152,7 @@
             0,
             0});
             this.nudParcelas.Name = "nudParcelas";
-            this.nudParcelas.Size = new System.Drawing.Size(53, 22);
+            this.nudParcelas.Size = new System.Drawing.Size(47, 22);
             this.nudParcelas.TabIndex = 12;
             this.nudParcelas.Value = new decimal(new int[] {
             1,
@@ -168,7 +163,7 @@
             // lblParcelas
             // 
             this.lblParcelas.AutoSize = true;
-            this.lblParcelas.Location = new System.Drawing.Point(271, 126);
+            this.lblParcelas.Location = new System.Drawing.Point(267, 126);
             this.lblParcelas.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblParcelas.Name = "lblParcelas";
             this.lblParcelas.Size = new System.Drawing.Size(68, 16);
@@ -197,7 +192,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(413, 247);
+            this.btnExcluir.Location = new System.Drawing.Point(411, 247);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(101, 28);
@@ -232,7 +227,7 @@
             this.txtValor.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtValor.MaxLength = 18;
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(132, 22);
+            this.txtValor.Size = new System.Drawing.Size(130, 22);
             this.txtValor.TabIndex = 10;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
@@ -242,17 +237,17 @@
             this.txtOS.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtOS.MaxLength = 100;
             this.txtOS.Name = "txtOS";
-            this.txtOS.Size = new System.Drawing.Size(132, 22);
+            this.txtOS.Size = new System.Drawing.Size(130, 22);
             this.txtOS.TabIndex = 6;
             this.txtOS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOrcamento_KeyPress);
             // 
             // dtpData
             // 
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(365, 82);
+            this.dtpData.Location = new System.Drawing.Point(356, 84);
             this.dtpData.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(145, 22);
+            this.dtpData.Size = new System.Drawing.Size(156, 22);
             this.dtpData.TabIndex = 8;
             // 
             // grdCheques
@@ -406,7 +401,7 @@
             // lblVecto
             // 
             this.lblVecto.AutoSize = true;
-            this.lblVecto.Location = new System.Drawing.Point(271, 86);
+            this.lblVecto.Location = new System.Drawing.Point(267, 86);
             this.lblVecto.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblVecto.Name = "lblVecto";
             this.lblVecto.Size = new System.Drawing.Size(85, 16);
@@ -448,18 +443,70 @@
             this.lblId.TabIndex = 22;
             this.lblId.Visible = false;
             // 
+            // nudPrazo
+            // 
+            this.nudPrazo.Location = new System.Drawing.Point(466, 124);
+            this.nudPrazo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudPrazo.Name = "nudPrazo";
+            this.nudPrazo.Size = new System.Drawing.Size(47, 22);
+            this.nudPrazo.TabIndex = 24;
+            // 
+            // lblPrazo
+            // 
+            this.lblPrazo.AutoSize = true;
+            this.lblPrazo.Location = new System.Drawing.Point(412, 126);
+            this.lblPrazo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPrazo.Name = "lblPrazo";
+            this.lblPrazo.Size = new System.Drawing.Size(46, 16);
+            this.lblPrazo.TabIndex = 23;
+            this.lblPrazo.Text = "Prazo:";
+            // 
+            // txtC3
+            // 
+            this.txtC3.Location = new System.Drawing.Point(382, 162);
+            this.txtC3.MaxLength = 12;
+            this.txtC3.Name = "txtC3";
+            this.txtC3.Size = new System.Drawing.Size(130, 22);
+            this.txtC3.TabIndex = 27;
+            this.txtC3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC3_KeyPress);
+            this.txtC3.Leave += new System.EventHandler(this.txtC3_Leave);
+            // 
+            // txtC2
+            // 
+            this.txtC2.Location = new System.Drawing.Point(244, 162);
+            this.txtC2.MaxLength = 10;
+            this.txtC2.Name = "txtC2";
+            this.txtC2.Size = new System.Drawing.Size(130, 22);
+            this.txtC2.TabIndex = 26;
+            this.txtC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC2_KeyPress);
+            this.txtC2.Leave += new System.EventHandler(this.txtC2_Leave);
+            // 
+            // txtC1
+            // 
+            this.txtC1.Location = new System.Drawing.Point(103, 162);
+            this.txtC1.MaxLength = 8;
+            this.txtC1.Name = "txtC1";
+            this.txtC1.Size = new System.Drawing.Size(130, 22);
+            this.txtC1.TabIndex = 25;
+            this.txtC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC1_KeyPress);
+            this.txtC1.Leave += new System.EventHandler(this.txtC1_Leave);
+            // 
             // frmAccountsCheque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 494);
+            this.Controls.Add(this.txtC3);
+            this.Controls.Add(this.txtC2);
+            this.Controls.Add(this.txtC1);
+            this.Controls.Add(this.nudPrazo);
+            this.Controls.Add(this.lblPrazo);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblCodCliente);
             this.Controls.Add(this.txtNomeCliente);
             this.Controls.Add(this.txtReferenteA);
             this.Controls.Add(this.lblReferenteA);
-            this.Controls.Add(this.txtNumeroCheque);
             this.Controls.Add(this.lblNumeroCheque);
             this.Controls.Add(this.nudParcelas);
             this.Controls.Add(this.lblParcelas);
@@ -486,6 +533,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,7 +545,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtReferenteA;
         private System.Windows.Forms.Label lblReferenteA;
-        private System.Windows.Forms.TextBox txtNumeroCheque;
         private System.Windows.Forms.Label lblNumeroCheque;
         private System.Windows.Forms.NumericUpDown nudParcelas;
         private System.Windows.Forms.Label lblParcelas;
@@ -529,5 +576,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sChequeNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCashDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.NumericUpDown nudPrazo;
+        private System.Windows.Forms.Label lblPrazo;
+        private System.Windows.Forms.TextBox txtC3;
+        private System.Windows.Forms.TextBox txtC2;
+        private System.Windows.Forms.TextBox txtC1;
     }
 }
