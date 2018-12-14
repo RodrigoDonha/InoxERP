@@ -34,7 +34,7 @@
             this.fullDataSet = new UIWindows.FullDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbcashBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_cashTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cashTableAdapter();
+            this.tb_cashReportTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cashReportTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).BeginInit();
@@ -65,12 +65,12 @@
             // 
             // tbcashBindingSource
             // 
-            this.tbcashBindingSource.DataMember = "tb_cash";
+            this.tbcashBindingSource.DataMember = "tb_cashReport";
             this.tbcashBindingSource.DataSource = this.fullDataSetBindingSource;
             // 
             // tb_cashTableAdapter
             // 
-            this.tb_cashTableAdapter.ClearBeforeFill = true;
+            this.tb_cashReportTableAdapter.ClearBeforeFill = true;
             // 
             // GeneralCashReport
             // 
@@ -94,6 +94,6 @@
         private System.Windows.Forms.BindingSource fullDataSetBindingSource;
         private FullDataSet fullDataSet;
         private System.Windows.Forms.BindingSource tbcashBindingSource;
-        private FullDataSetTableAdapters.tb_cashTableAdapter tb_cashTableAdapter;
+        private FullDataSetTableAdapters.tb_cashReportTableAdapter tb_cashReportTableAdapter;
     }
 }
