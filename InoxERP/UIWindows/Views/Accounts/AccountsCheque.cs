@@ -19,7 +19,6 @@ namespace UIWindows
     {
         static InoxErpContext ctx = new InoxErpContext();
 
-        ChequesBusiness objCheq = new ChequesBusiness(ctx);
         ClientsBusiness objClient = new ClientsBusiness(ctx);
         Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
 
@@ -45,6 +44,9 @@ namespace UIWindows
         private void txtCodCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorLetters(sender,e);
+
+            if (e.KeyChar == 13)
+                searcByLike();
         }
 
         private void txtOrcamento_KeyPress(object sender, KeyPressEventArgs e)
@@ -64,6 +66,7 @@ namespace UIWindows
 
         private void grdCheques_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            cleanCamps();
             int compare = grdCheques.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (compare == 0)
             { }
@@ -120,7 +123,7 @@ namespace UIWindows
                     txtC1.Text = "0";
                     txtC2.Text = "0";
                     txtC3.Text = "0";
-                    msg.Show("Cheque", "Número do Cheque Não Encontrado", 0, 2000);
+                    msg.Show("Cheque", "Número do Cheque Não Encontrado", 0, 1000);
                 }
                 
 
@@ -173,7 +176,7 @@ namespace UIWindows
 
             if (txtC1.Text.Length < 8)
             {
-                MessageBox.Show("O Campo 1 deve conter 8 numeros");
+                MessageBox.Show("O Campo 1 deve conter 8 Digitos");
                 txtC1.Focus();
                 return false;
             }
@@ -191,9 +194,9 @@ namespace UIWindows
             }
 
 
-            if (txtC2.Text.Equals("0"))
+            if (txtC2.Text.Length < 10)
             {
-                MessageBox.Show("Informe um Valor para o Campo 2");
+                MessageBox.Show("O Campo 2 deve conter 10 Digitos");
                 txtC2.Focus();
                 return false;
             }
@@ -210,9 +213,9 @@ namespace UIWindows
                 return false;
             }
 
-            if (txtC3.Text.Length.Equals(0))
+            if (txtC3.Text.Length < 12)
             {
-                MessageBox.Show("Informe um Valor para o Campo 3");
+                MessageBox.Show("O Campo 3 deve conter 12 Digitos");
                 txtC3.Focus();
                 return false;
             }
@@ -276,6 +279,27 @@ namespace UIWindows
             }
         }
 
+        private void searcByLike()
+        {
+            string idClient = txtNomeCliente.Text;
+            
+            var cli = from p in ctx.Clients where p.sName.Contains(idClient) select p.sID;
+
+            var chq = from p in ctx.Cheques where p.sId_Client.Equals(cli.FirstOrDefault()) where p.bChequePaid.Equals(false) select p;
+
+            if (chq.ToList().Count.Equals(0))
+            {
+                msg.Show("Lançamento Não Encontrado", "Não foi Encontrado Lançamentos para este Cliente / Fornecedor", 0, 2000);
+                fillGrid();
+                txtNomeCliente.Focus();
+            }
+            else
+            {
+                List<Cheques> s = chq.ToList();
+                grdCheques.DataSource = s.ToList();
+            }
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             searchByName();
@@ -295,7 +319,7 @@ namespace UIWindows
             {
                 retID = new Budgets_OS();
                 retID.sID = "";
-                msg.Show("Ordem de Serviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
+                //msg.Show("Ordem de Serviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
             }
             return retID.sID;
         }
@@ -351,6 +375,7 @@ namespace UIWindows
             txtValor.Clear();
             dtpData.Value = DateTime.Now;
             nudParcelas.Value = 1;
+            nudPrazo.Value = 0;
             txtC1.Clear();
             txtC2.Clear();
             txtC3.Clear();
@@ -407,14 +432,14 @@ namespace UIWindows
 
                     for (int i = 0; i < nudParcelas.Value; i++)
                     {
-                        Cheques chequePersist = new Cheques()
+                        Cheques chequePersist = new Cheques
                         {
                             sID = Guid.NewGuid().ToString(),
 
                             sId_Budgets_OS = returnOS(),
                             sId_Client = returnId(),
                             dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
-                            dtDueDate = returnDueDate(i+1), // veirficar data
+                            dtDueDate = returnDueDate(i+1), // veirficar data ********
                             dtPayDate = DateTime.Today,
                             bChequePaid = false,
                             iInstallment = i+1,
@@ -430,12 +455,12 @@ namespace UIWindows
                         if (ok == null)
                             MessageBox.Show("Erro ao Lançar a Entrada no Caixa !!!");
                         else if(i == nudParcelas.Value)
-                            MessageBox.Show("Entrada Lançada com Sucesso !!!");
+                            MessageBox.Show("Entrada Lançada com Sucesso !!!"); ////verificar confirmação
 
                     }
                     
                     cleanCamps();
-                    fillGrid();
+                    fillGrid(); ////verificar fill
                 }
         }
 

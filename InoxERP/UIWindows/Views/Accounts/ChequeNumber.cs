@@ -79,9 +79,9 @@ namespace UIWindows.Views.Accounts
             }
 
 
-            if (txtC2.Text.Equals("0"))
+            if (txtC2.Text.Length < 10)
             {
-                MessageBox.Show("Informe um Valor para o Campo 2");
+                MessageBox.Show("O Campo 2 deve conter 10 Digitos");
                 txtC2.Focus();
                 return false;
             }
@@ -98,9 +98,9 @@ namespace UIWindows.Views.Accounts
                 return false;
             }
 
-            if (txtC3.Text.Length.Equals(0))
+            if (txtC3.Text.Length < 12)
             {
-                MessageBox.Show("Informe um Valor para o Campo 3");
+                MessageBox.Show("O Campo 3 deve conter 12 Digitos");
                 txtC3.Focus();
                 return false;
             }
