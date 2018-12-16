@@ -231,6 +231,12 @@
     <Compile Include="Views\Reports\Cash\GeneralCashReport.Designer.cs">
       <DependentUpon>GeneralCashReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Cash\TypeLaunchCashReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Cash\TypeLaunchCashReport.Designer.cs">
+      <DependentUpon>TypeLaunchCashReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\Contracts\ContractPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -419,10 +425,10 @@
     <Compile Include="Views\Reports\ReportCashMoney.Designer.cs">
       <DependentUpon>ReportCashMoney.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reports\ReportCashGeneral.cs">
+    <Compile Include="Views\Cash\ReportCashGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Reports\ReportCashGeneral.Designer.cs">
+    <Compile Include="Views\Cash\ReportCashGeneral.Designer.cs">
       <DependentUpon>ReportCashGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Delivery\ReportDelivery.cs">
@@ -460,6 +466,7 @@
     <EmbeddedResource Include="Business\Reports\Budgets\SituationBudgets.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\BudgetWithPrice.rdlc" />
     <EmbeddedResource Include="Business\Reports\Cash\GeneralCash.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Cash\TypeLaunchCash.rdlc" />
     <EmbeddedResource Include="Business\Reports\Contract\Contract.rdlc" />
     <EmbeddedResource Include="Business\Reports\Delivery\GeneralDelivery.rdlc" />
     <EmbeddedResource Include="Business\Reports\Delivery\SituationDelivery.rdlc" />
@@ -507,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Cash\GeneralCashReport.resx">
       <DependentUpon>GeneralCashReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Cash\TypeLaunchCashReport.resx">
+      <DependentUpon>TypeLaunchCashReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Contracts\ContractPrint.resx">
       <DependentUpon>ContractPrint.cs</DependentUpon>
@@ -611,7 +621,7 @@
     <EmbeddedResource Include="Views\Reports\ReportCashMoney.resx">
       <DependentUpon>ReportCashMoney.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reports\ReportCashGeneral.resx">
+    <EmbeddedResource Include="Views\Cash\ReportCashGeneral.resx">
       <DependentUpon>ReportCashGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Delivery\ReportDelivery.resx">

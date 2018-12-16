@@ -8002,6 +8002,8 @@ namespace UIWindows {
             
             private global::System.Data.DataColumn columnsName;
             
+            private global::System.Data.DataColumn columnSaldo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tb_cashReportDataTable() {
@@ -8133,6 +8135,14 @@ namespace UIWindows {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn SaldoColumn {
+                get {
+                    return this.columnSaldo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8168,7 +8178,7 @@ namespace UIWindows {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_cashReportRow Addtb_cashReportRow(string sID, string sId_Budgets_OS, string sId_Client, decimal dValue, System.DateTime dtDate, string sReferentTo, int CashType, string sChequeNumber, string sDate, string sCashType, string sValue, string sName) {
+            public tb_cashReportRow Addtb_cashReportRow(string sID, string sId_Budgets_OS, string sId_Client, decimal dValue, System.DateTime dtDate, string sReferentTo, int CashType, string sChequeNumber, string sDate, string sCashType, string sValue, string sName, string Saldo) {
                 tb_cashReportRow rowtb_cashReportRow = ((tb_cashReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         sID,
@@ -8182,7 +8192,8 @@ namespace UIWindows {
                         sDate,
                         sCashType,
                         sValue,
-                        sName};
+                        sName,
+                        Saldo};
                 rowtb_cashReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtb_cashReportRow);
                 return rowtb_cashReportRow;
@@ -8224,6 +8235,7 @@ namespace UIWindows {
                 this.columnsCashType = base.Columns["sCashType"];
                 this.columnsValue = base.Columns["sValue"];
                 this.columnsName = base.Columns["sName"];
+                this.columnSaldo = base.Columns["Saldo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8253,6 +8265,8 @@ namespace UIWindows {
                 base.Columns.Add(this.columnsValue);
                 this.columnsName = new global::System.Data.DataColumn("sName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsName);
+                this.columnSaldo = new global::System.Data.DataColumn("Saldo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSaldo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnsID}, true));
                 this.columnsID.AllowDBNull = false;
@@ -8273,6 +8287,8 @@ namespace UIWindows {
                 this.columnsValue.MaxLength = 52;
                 this.columnsName.AllowDBNull = false;
                 this.columnsName.MaxLength = 100;
+                this.columnSaldo.ReadOnly = true;
+                this.columnSaldo.MaxLength = 4000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12474,6 +12490,22 @@ namespace UIWindows {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Saldo {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_cashReport.SaldoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Saldo\' na tabela \'tb_cashReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_cashReport.SaldoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IssId_Budgets_OSNull() {
                 return this.IsNull(this.tabletb_cashReport.sId_Budgets_OSColumn);
             }
@@ -12554,6 +12586,18 @@ namespace UIWindows {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetsValueNull() {
                 this[this.tabletb_cashReport.sValueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSaldoNull() {
+                return this.IsNull(this.tabletb_cashReport.SaldoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSaldoNull() {
+                this[this.tabletb_cashReport.SaldoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23150,6 +23194,7 @@ SELECT sID, sName, sLogin, sKey, Type, Permitions_sID FROM tb_users WHERE (sID =
             tableMapping.ColumnMappings.Add("sCashType", "sCashType");
             tableMapping.ColumnMappings.Add("sValue", "sValue");
             tableMapping.ColumnMappings.Add("sName", "sName");
+            tableMapping.ColumnMappings.Add("Saldo", "Saldo");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -23167,8 +23212,9 @@ SELECT sID, sName, sLogin, sKey, Type, Permitions_sID FROM tb_users WHERE (sID =
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        tb_cash.dtDate, CONVERT(CHAR(10), tb_cash.dtDate, 103) AS 'sDate', tb_cash.sID, tb_cash.sId_Budgets_OS, tb_cash.sId_Client, tb_cash.sReferentTo, tb_cash.CashType, 
-                         CASE WHEN tb_cash.CashType = 1 THEN 'Entrada' ELSE CASE WHEN tb_cash.CashType = 2 THEN 'Saida' END END AS 'sCashType', tb_cash.dValue, CASE WHEN tb_cash.CashType = 1 THEN ('- ' + CONVERT(VARCHAR(50), 
-                         REPLACE(tb_cash.dValue, '.', ','))) ELSE CASE WHEN tb_cash.CashType = 2 THEN (CONVERT(VARCHAR(50), REPLACE(tb_cash.dValue, '.', ','))) END END AS 'sValue', tb_cash.sChequeNumber, tb_clients.sName
+                         CASE WHEN tb_cash.CashType = 1 THEN 'Entrada' ELSE CASE WHEN tb_cash.CashType = 2 THEN 'Saida' END END AS 'sCashType', tb_cash.dValue, FORMAT(tb_cash.dValue, 'N', 'pt-br') AS Saldo, 
+                         CASE WHEN tb_cash.CashType = 1 THEN ('- ' + CONVERT(VARCHAR(50), REPLACE(tb_cash.dValue, '.', ','))) ELSE CASE WHEN tb_cash.CashType = 2 THEN (CONVERT(VARCHAR(50), REPLACE(tb_cash.dValue, '.', ','))) 
+                         END END AS 'sValue', tb_cash.sChequeNumber, tb_clients.sName
 FROM            tb_cash INNER JOIN
                          tb_clients ON tb_cash.sId_Client = tb_clients.sID
 ORDER BY tb_cash.dtDate";

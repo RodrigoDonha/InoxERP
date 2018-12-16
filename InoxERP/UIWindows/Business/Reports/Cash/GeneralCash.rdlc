@@ -65,6 +65,10 @@
           <DataField>sName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Saldo">
+          <DataField>Saldo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>FullDataSet</rd:DataSetName>
@@ -545,14 +549,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="sValue">
+                        <Textbox Name="Saldo">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!sValue.Value</Value>
+                                  <Value>=Fields!Saldo.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#333333</Color>
@@ -564,7 +568,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>sValue</rd:DefaultName>
+                          <rd:DefaultName>Saldo</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -604,6 +608,27 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>GeneralDataSet</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!dtDate.Value</FilterExpression>
+                <Operator>LessThanOrEqual</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!endDate.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+              <Filter>
+                <FilterExpression>=Fields!dtDate.Value</FilterExpression>
+                <Operator>GreaterThanOrEqual</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!startDate.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!dtDate.Value</Value>
+              </SortExpression>
+            </SortExpressions>
             <Top>0.1905cm</Top>
             <Left>0.19991cm</Left>
             <Height>2cm</Height>
@@ -618,7 +643,7 @@
         <Height>8.95802in</Height>
         <Style />
       </Body>
-      <Width>11.00383in</Width>
+      <Width>10.99877in</Width>
       <Page>
         <PageHeader>
           <Height>2.38125cm</Height>
@@ -999,8 +1024,9 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="issueDate">
-      <DataType>DateTime</DataType>
+      <DataType>String</DataType>
       <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="startDate">
@@ -1013,7 +1039,7 @@
       <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="situation">
+    <ReportParameter Name="typeLaunch">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
@@ -1060,7 +1086,7 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>situation</ParameterName>
+          <ParameterName>typeLaunch</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>

@@ -30,15 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.tbcashBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullDataSet = new UIWindows.FullDataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tbcashBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_cashReportTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cashReportTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbcashBindingSource
+            // 
+            this.tbcashBindingSource.DataMember = "tb_cashReport";
+            this.tbcashBindingSource.DataSource = this.fullDataSetBindingSource;
             // 
             // fullDataSetBindingSource
             // 
@@ -60,15 +65,10 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(632, 749);
             this.reportViewer1.TabIndex = 0;
             // 
-            // tbcashBindingSource
-            // 
-            this.tbcashBindingSource.DataMember = "tb_cashReport";
-            this.tbcashBindingSource.DataSource = this.fullDataSetBindingSource;
-            // 
-            // tb_cashTableAdapter
+            // tb_cashReportTableAdapter
             // 
             this.tb_cashReportTableAdapter.ClearBeforeFill = true;
             // 
@@ -76,14 +76,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(632, 749);
             this.Controls.Add(this.reportViewer1);
             this.Name = "GeneralCashReport";
-            this.Text = "GeneralCashReport";
+            this.Text = "Impressão de Relatório";
             this.Load += new System.EventHandler(this.GeneralCashReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
