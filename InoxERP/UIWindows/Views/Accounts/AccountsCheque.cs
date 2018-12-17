@@ -11,6 +11,7 @@ using UIWindows.Business;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 using UIWindows.Views.Accounts;
 
 namespace UIWindows
@@ -67,7 +68,9 @@ namespace UIWindows
             { }
             else
             {
-                ClientsBusiness objC= new ClientsBusiness(ctx);
+                lblId.Text = grdCheques[0, grdCheques.CurrentRow.Index].Value.ToString();
+
+                ClientsBusiness objC = new ClientsBusiness(ctx);
                 ProviderBusiness objP = new ProviderBusiness(ctx);
 
                 string cli = grdCheques[2, grdCheques.CurrentRow.Index].Value.ToString();
@@ -120,7 +123,6 @@ namespace UIWindows
                     txtC3.Text = "0";
                     msg.Show("Cheque", "Número do Cheque Não Encontrado", 0, 1000);
                 }
-                
 
                 txtReferenteA.Text = grdCheques[9, grdCheques.CurrentRow.Index].Value.ToString();
             }
@@ -228,8 +230,10 @@ namespace UIWindows
                 case "alter":
                     return MessageBox.Show("Confirma a Alteração do Cheque ?", "Alterar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "delete":
-                    return MessageBox.Show("Confirma a Exclusçao do Cheque ?", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-                
+                    return MessageBox.Show("Confirma a Exclusão do Cheque ?", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "cash":
+                    return MessageBox.Show("Confirma a Baixa do Cheque ?", "Baixar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+
             }
             return DialogResult.No;
         }
@@ -429,8 +433,8 @@ namespace UIWindows
             if (validationCamps())
                 if (messageYesNo("confirm") == DialogResult.Yes)
                 {
-                    InoxErpContext ctx = new InoxErpContext();
-                    ChequesBusiness objPersist = new ChequesBusiness(ctx);
+                    InoxErpContext ctxP = new InoxErpContext();
+                    ChequesBusiness objPersist = new ChequesBusiness(ctxP);
 
                     DateTime date = dtpData.Value;
 
@@ -457,9 +461,9 @@ namespace UIWindows
                         var ok = objPersist.Search.FirstOrDefault(b => b.sID == chequePersist.sID);
 
                         if (ok == null)
-                            MessageBox.Show("Erro ao Lançar a Entrada no Caixa !!!");
+                            MessageBox.Show("Erro ao Lançar o Cheque !!!");
                         else if(i+1 == nudParcelas.Value)
-                            MessageBox.Show("Entradas Lançadas com Sucesso !!!");
+                            MessageBox.Show("Cheques Lançados com Sucesso !!!");
 
                     }
                     
@@ -467,7 +471,99 @@ namespace UIWindows
                 }
 
             fillGrid();
+        }
 
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("alter") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxA = new InoxErpContext();
+                    ChequesBusiness objAlter = new ChequesBusiness(ctxA);
+                    Cheques chequeAlter = new Cheques();
+                    
+                    chequeAlter = objAlter.ReturnByID(lblId.Text);
+
+                    chequeAlter.sId_Budgets_OS = returnOS();
+                    chequeAlter.sId_Client = returnId();
+                    chequeAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                    chequeAlter.dtDueDate = dtpData.Value.Date;
+                    chequeAlter.sChequeNumber = returnChequeNumber(1);
+                    chequeAlter.sReferentTo = txtReferenteA.Text;
+                   
+
+                    objAlter.Update(chequeAlter);
+
+                    var ok = objAlter.Search.FirstOrDefault(b => b.sID == chequeAlter.sID);
+
+
+                    MessageBox.Show(ok == null ? "Erro ao Alterar o Cheque !!!" : "Cheques Alterado com Sucesso !!!");
+                }
+
+            cleanCamps();
+            fillGrid();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (messageYesNo("delete") == DialogResult.Yes)
+            {
+                InoxErpContext ctxD = new InoxErpContext();
+                ChequesBusiness objDel = new ChequesBusiness(ctxD);
+
+                objDel.Delete(lblId.Text);
+
+                var ok = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+
+                MessageBox.Show(ok != null ? "Erro ao Excluir o Cheque !!!" : "Cheques Excluído com Sucesso !!!");
+            }
+
+            cleanCamps();
+            fillGrid();
+        }
+
+        private void btnBaixar_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("cash") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxC = new InoxErpContext();
+                    ChequesBusiness objC = new ChequesBusiness(ctxC);
+                    Cheques chequeCash = new Cheques();
+
+                    chequeCash = objC.ReturnByID(lblId.Text);
+
+                    chequeCash.dtPayDate = DateTime.Today;
+                    chequeCash.bChequePaid = true;
+                    
+                    objC.Update(chequeCash);
+
+                    CashBusiness objPersist = new CashBusiness(ctxC);
+                    Cash cashPersist = new Cash
+                    {
+                        sID = Guid.NewGuid().ToString(),
+
+                        sId_Budgets_OS = chequeCash.sId_Budgets_OS,
+                        sId_Client = chequeCash.sId_Client,
+                        dValue = chequeCash.dValue,
+                        dtDate = chequeCash.dtPayDate,
+                        sChequeNumber = chequeCash.sChequeNumber,
+                        sReferentTo = chequeCash.sReferentTo,
+                        CashType = CashType.Enter
+                    };
+
+                    objPersist.Insert(cashPersist);
+
+                    var okCash = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
+
+
+                    var okCheq = objC.Search.FirstOrDefault(b => b.sID == chequeCash.sID);
+                    
+                    MessageBox.Show(okCash == null || okCheq == null ? "Erro ao Baixar o Cheque !!!" : "Cheques Baixado com Sucesso !!!");
+                }
+
+            cleanCamps();
+            fillGrid();
         }
 
         private void txtC1_Leave(object sender, EventArgs e)
@@ -499,5 +595,7 @@ namespace UIWindows
         {
             validation.characterValidatorNumbersCheque(sender,e);
         }
+
+        
     }
 }

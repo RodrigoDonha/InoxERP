@@ -99,7 +99,22 @@ namespace UIWindows
 
                 txtValor.Text = grdSaidas[4, grdSaidas.CurrentRow.Index].Value.ToString();
                 dtpData.Text = grdSaidas[3, grdSaidas.CurrentRow.Index].Value.ToString();
-                txtNumCheque.Text = grdSaidas[7, grdSaidas.CurrentRow.Index].Value.ToString();
+                string num = grdSaidas[7, grdSaidas.CurrentRow.Index].Value.ToString();
+                try
+                {
+                    string[] parts = num.Split('-');
+
+                    txtC1.Text = parts[0];
+                    txtC2.Text = parts[1];
+                    txtC3.Text = parts[2];
+                }
+                catch (Exception)
+                {
+                    txtC1.Text = "0";
+                    txtC2.Text = "0";
+                    txtC3.Text = "0";
+                    //msg.Show("Cheque", "Número do Cheque Não Encontrado", 0, 1000);
+                }
                 txtReferenteA.Text = grdSaidas[5, grdSaidas.CurrentRow.Index].Value.ToString();
             }
         }
@@ -121,9 +136,19 @@ namespace UIWindows
                 return false;
             }
 
-            if (txtNumCheque.Text.Length.Equals(0))
+            if (txtC1.Text.Length.Equals(0))
             {
-                txtNumCheque.Text = "0";
+                txtC1.Text = "0";
+            }
+
+            if (txtC2.Text.Length.Equals(0))
+            {
+                txtC2.Text = "0";
+            }
+
+            if (txtC3.Text.Length.Equals(0))
+            {
+                txtC3.Text = "0";
             }
 
             if (txtReferenteA.Text.Length.Equals(0))
@@ -193,7 +218,7 @@ namespace UIWindows
             {
                 retID = new Budgets_OS();
                 retID.sID = "";
-                msg.Show("Ordem de Serviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
+                //msg.Show("Ordem de Serviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
             }
             return retID.sID;
         }
@@ -205,7 +230,9 @@ namespace UIWindows
             txtNomeClieForn.Clear();
             txtValor.Clear();
             dtpData.Value = DateTime.Now;
-            txtNumCheque.Clear();
+            txtC1.Clear();
+            txtC2.Clear();
+            txtC3.Clear();
             txtReferenteA.Clear();
         }
 
@@ -243,7 +270,7 @@ namespace UIWindows
                     cashPersist.sId_Client = returnId();
                     cashPersist.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
                     cashPersist.dtDate = dtpData.Value;
-                    cashPersist.sChequeNumber = txtNumCheque.Text;
+                    cashPersist.sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text;
                     cashPersist.sReferentTo = txtReferenteA.Text;
                     cashPersist.CashType = CashType.Out;
 
@@ -278,7 +305,7 @@ namespace UIWindows
                         cashAlter.sId_Client = returnId();
                         cashAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
                         cashAlter.dtDate = dtpData.Value;
-                        cashAlter.sChequeNumber = txtNumCheque.Text;
+                        cashAlter.sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text;
                         cashAlter.sReferentTo = txtReferenteA.Text;
                         cashAlter.CashType = CashType.Out;
                         
@@ -375,7 +402,7 @@ namespace UIWindows
                     cashDel.sId_Client = returnId();
                     cashDel.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
                     cashDel.dtDate = dtpData.Value;
-                    cashDel.sChequeNumber = txtNumCheque.Text;
+                    cashDel.sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text;
                     cashDel.sReferentTo = "LANÇAMENTO ESTORNADO: " + txtReferenteA.Text;
                     cashDel.CashType = CashType.Out;
 
@@ -387,7 +414,7 @@ namespace UIWindows
                         sId_Client = returnId(),
                         dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
                         dtDate = DateTime.Now,
-                        sChequeNumber = txtNumCheque.Text,
+                        sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text,
                         sReferentTo = "ESTORNO REFERENTE: " + txtReferenteA.Text,
                         CashType = CashType.Enter,
                         sID = Guid.NewGuid().ToString()

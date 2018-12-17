@@ -120,7 +120,7 @@
             this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
             this.txtReferenteA.Size = new System.Drawing.Size(408, 22);
-            this.txtReferenteA.TabIndex = 16;
+            this.txtReferenteA.TabIndex = 20;
             // 
             // lblReferenteA
             // 
@@ -129,7 +129,7 @@
             this.lblReferenteA.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblReferenteA.Name = "lblReferenteA";
             this.lblReferenteA.Size = new System.Drawing.Size(84, 16);
-            this.lblReferenteA.TabIndex = 15;
+            this.lblReferenteA.TabIndex = 19;
             this.lblReferenteA.Text = "Referente a: ";
             // 
             // lblNumeroCheque
@@ -139,7 +139,7 @@
             this.lblNumeroCheque.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNumeroCheque.Name = "lblNumeroCheque";
             this.lblNumeroCheque.Size = new System.Drawing.Size(79, 16);
-            this.lblNumeroCheque.TabIndex = 13;
+            this.lblNumeroCheque.TabIndex = 15;
             this.lblNumeroCheque.Text = "Nº Cheque: ";
             // 
             // nudParcelas
@@ -172,13 +172,14 @@
             // 
             // btnBaixar
             // 
-            this.btnBaixar.Location = new System.Drawing.Point(217, 458);
+            this.btnBaixar.Location = new System.Drawing.Point(221, 458);
             this.btnBaixar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnBaixar.Name = "btnBaixar";
             this.btnBaixar.Size = new System.Drawing.Size(101, 28);
-            this.btnBaixar.TabIndex = 20;
+            this.btnBaixar.TabIndex = 24;
             this.btnBaixar.Text = "Baixar";
             this.btnBaixar.UseVisualStyleBackColor = true;
+            this.btnBaixar.Click += new System.EventHandler(this.btnBaixar_Click);
             // 
             // lblValor
             // 
@@ -196,19 +197,21 @@
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(101, 28);
-            this.btnExcluir.TabIndex = 19;
+            this.btnExcluir.TabIndex = 23;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(217, 247);
+            this.btnAlterar.Location = new System.Drawing.Point(221, 247);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(101, 28);
-            this.btnAlterar.TabIndex = 18;
+            this.btnAlterar.TabIndex = 22;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -216,7 +219,7 @@
             this.btnIncluir.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(101, 28);
-            this.btnIncluir.TabIndex = 17;
+            this.btnIncluir.TabIndex = 21;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
@@ -342,7 +345,7 @@
             this.nudPrazo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudPrazo.Name = "nudPrazo";
             this.nudPrazo.Size = new System.Drawing.Size(47, 22);
-            this.nudPrazo.TabIndex = 24;
+            this.nudPrazo.TabIndex = 14;
             // 
             // lblPrazo
             // 
@@ -351,7 +354,7 @@
             this.lblPrazo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblPrazo.Name = "lblPrazo";
             this.lblPrazo.Size = new System.Drawing.Size(46, 16);
-            this.lblPrazo.TabIndex = 23;
+            this.lblPrazo.TabIndex = 13;
             this.lblPrazo.Text = "Prazo:";
             // 
             // txtC3
@@ -360,7 +363,7 @@
             this.txtC3.MaxLength = 12;
             this.txtC3.Name = "txtC3";
             this.txtC3.Size = new System.Drawing.Size(130, 22);
-            this.txtC3.TabIndex = 27;
+            this.txtC3.TabIndex = 18;
             this.txtC3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC3_KeyPress);
             this.txtC3.Leave += new System.EventHandler(this.txtC3_Leave);
             // 
@@ -370,7 +373,7 @@
             this.txtC2.MaxLength = 10;
             this.txtC2.Name = "txtC2";
             this.txtC2.Size = new System.Drawing.Size(130, 22);
-            this.txtC2.TabIndex = 26;
+            this.txtC2.TabIndex = 17;
             this.txtC2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC2_KeyPress);
             this.txtC2.Leave += new System.EventHandler(this.txtC2_Leave);
             // 
@@ -380,7 +383,7 @@
             this.txtC1.MaxLength = 8;
             this.txtC1.Name = "txtC1";
             this.txtC1.Size = new System.Drawing.Size(130, 22);
-            this.txtC1.TabIndex = 25;
+            this.txtC1.TabIndex = 16;
             this.txtC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC1_KeyPress);
             this.txtC1.Leave += new System.EventHandler(this.txtC1_Leave);
             // 

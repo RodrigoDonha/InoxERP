@@ -59,10 +59,12 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.lblReferenteA = new System.Windows.Forms.Label();
-            this.txtNumCheque = new System.Windows.Forms.TextBox();
             this.lblNumeroCheque = new System.Windows.Forms.Label();
             this.tb_cashTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cashTableAdapter();
             this.lblId = new System.Windows.Forms.Label();
+            this.txtC3 = new System.Windows.Forms.TextBox();
+            this.txtC2 = new System.Windows.Forms.TextBox();
+            this.txtC1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdSaidas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
@@ -136,7 +138,7 @@
             this.btnEstornar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEstornar.Name = "btnEstornar";
             this.btnEstornar.Size = new System.Drawing.Size(100, 28);
-            this.btnEstornar.TabIndex = 17;
+            this.btnEstornar.TabIndex = 19;
             this.btnEstornar.Text = "Excluir";
             this.btnEstornar.UseVisualStyleBackColor = true;
             this.btnEstornar.Click += new System.EventHandler(this.btnEstornar_Click);
@@ -147,7 +149,7 @@
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 28);
-            this.btnAlterar.TabIndex = 16;
+            this.btnAlterar.TabIndex = 18;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
@@ -158,7 +160,7 @@
             this.btnIncluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnIncluir.Name = "btnIncluir";
             this.btnIncluir.Size = new System.Drawing.Size(100, 28);
-            this.btnIncluir.TabIndex = 15;
+            this.btnIncluir.TabIndex = 17;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
@@ -169,7 +171,7 @@
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.MaxLength = 18;
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(140, 23);
+            this.txtValor.Size = new System.Drawing.Size(120, 23);
             this.txtValor.TabIndex = 8;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
@@ -180,7 +182,7 @@
             this.txtReferenteA.MaxLength = 100;
             this.txtReferenteA.Name = "txtReferenteA";
             this.txtReferenteA.Size = new System.Drawing.Size(381, 23);
-            this.txtReferenteA.TabIndex = 14;
+            this.txtReferenteA.TabIndex = 16;
             // 
             // dtpData
             // 
@@ -248,6 +250,7 @@
             this.dtDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dtDateDataGridViewTextBoxColumn.DataPropertyName = "dtDate";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "d";
             this.dtDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtDateDataGridViewTextBoxColumn.HeaderText = "Data";
             this.dtDateDataGridViewTextBoxColumn.Name = "dtDateDataGridViewTextBoxColumn";
@@ -328,18 +331,8 @@
             this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReferenteA.Name = "lblReferenteA";
             this.lblReferenteA.Size = new System.Drawing.Size(91, 17);
-            this.lblReferenteA.TabIndex = 13;
+            this.lblReferenteA.TabIndex = 15;
             this.lblReferenteA.Text = "Referente a: ";
-            // 
-            // txtNumCheque
-            // 
-            this.txtNumCheque.Location = new System.Drawing.Point(103, 120);
-            this.txtNumCheque.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNumCheque.MaxLength = 33;
-            this.txtNumCheque.Name = "txtNumCheque";
-            this.txtNumCheque.Size = new System.Drawing.Size(381, 23);
-            this.txtNumCheque.TabIndex = 12;
-            this.txtNumCheque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumCheque_KeyPress);
             // 
             // lblNumeroCheque
             // 
@@ -366,13 +359,39 @@
             this.lblId.TabIndex = 19;
             this.lblId.Visible = false;
             // 
+            // txtC3
+            // 
+            this.txtC3.Location = new System.Drawing.Point(362, 120);
+            this.txtC3.MaxLength = 12;
+            this.txtC3.Name = "txtC3";
+            this.txtC3.Size = new System.Drawing.Size(120, 23);
+            this.txtC3.TabIndex = 14;
+            // 
+            // txtC2
+            // 
+            this.txtC2.Location = new System.Drawing.Point(232, 120);
+            this.txtC2.MaxLength = 10;
+            this.txtC2.Name = "txtC2";
+            this.txtC2.Size = new System.Drawing.Size(120, 23);
+            this.txtC2.TabIndex = 13;
+            // 
+            // txtC1
+            // 
+            this.txtC1.Location = new System.Drawing.Point(103, 120);
+            this.txtC1.MaxLength = 8;
+            this.txtC1.Name = "txtC1";
+            this.txtC1.Size = new System.Drawing.Size(120, 23);
+            this.txtC1.TabIndex = 12;
+            // 
             // frmCashOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 425);
+            this.Controls.Add(this.txtC3);
+            this.Controls.Add(this.txtC2);
+            this.Controls.Add(this.txtC1);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.txtNumCheque);
             this.Controls.Add(this.lblNumeroCheque);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtNomeClieForn);
@@ -422,11 +441,14 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblReferenteA;
-        private System.Windows.Forms.TextBox txtNumCheque;
         private System.Windows.Forms.Label lblNumeroCheque;
         private FullDataSet fullDataSet;
         private System.Windows.Forms.BindingSource tbcashBindingSource;
         private FullDataSetTableAdapters.tb_cashTableAdapter tb_cashTableAdapter;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox txtC3;
+        private System.Windows.Forms.TextBox txtC2;
+        private System.Windows.Forms.TextBox txtC1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sIdBudgetsOSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sIdClientDataGridViewTextBoxColumn;
@@ -435,6 +457,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sReferentToDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cashTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sChequeNumber;
-        private System.Windows.Forms.Label lblId;
     }
 }
