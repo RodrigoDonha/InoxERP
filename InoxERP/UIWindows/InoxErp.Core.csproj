@@ -461,6 +461,7 @@
     <Compile Include="Views\Users\UserRegisterSearch.Designer.cs">
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\Budget.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\GerenalBudgest.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\SituationBudgets.rdlc" />
@@ -751,7 +752,9 @@
   <ItemGroup>
     <None Include="Resources\Backup.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Reports\Accounts\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_121_14145.png" />
     <None Include="Resources\Marca Dagua.png" />
