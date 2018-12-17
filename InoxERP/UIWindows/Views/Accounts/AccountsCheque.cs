@@ -59,11 +59,6 @@ namespace UIWindows
             validation.characterValidatorOnlyNumbers(sender,e);
         }
 
-        private void txtNumeroCheque_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorNumbersCheque(sender,e);
-        }
-
         private void grdCheques_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             cleanCamps();
@@ -108,7 +103,7 @@ namespace UIWindows
 
                 dtpData.Text = grdCheques[3, grdCheques.CurrentRow.Index].Value.ToString();
                 txtValor.Text = grdCheques[5, grdCheques.CurrentRow.Index].Value.ToString();
-                nudParcelas.Value = Convert.ToDecimal(grdCheques[6, grdCheques.CurrentRow.Index].Value);
+                nudParcelas.Value = Convert.ToDecimal(grdCheques[8, grdCheques.CurrentRow.Index].Value);
                 string num = grdCheques[10, grdCheques.CurrentRow.Index].Value.ToString();
                 try
                 {
@@ -399,24 +394,31 @@ namespace UIWindows
             return number;
         }
 
-        private DateTime returnDueDate(int instalments)
+        private DateTime returnDueDate(int instalments, DateTime date)
         {
-            if(instalments == 1 && nudPrazo.Value == 0 && dtpData.Value.Equals(DateTime.Now))//cheque a vista
-                return DateTime.Now;
+            DateTime due = date.Date;
+            int prazo = Convert.ToInt32(nudPrazo.Value);
 
-            if (instalments == 1 && nudPrazo.Value == 0 && !dtpData.Value.Equals(DateTime.Now))//cheque pré 1 parcela unica dia fixo
-                return dtpData.Value;
+            if(instalments == 0 && prazo == 0 && due.Equals(DateTime.Today)) //cheque a vista
+                return DateTime.Today;
 
-            if (instalments == 1 && nudPrazo.Value != 0) //cheque pré 1 parcela unica com dias especificados
-                return dtpData.Value.AddDays(Convert.ToDouble(nudPrazo.Value));
+            if (instalments == 0 && prazo == 0 && !due.Equals(DateTime.Today)) //cheque pré 1 parcela unica dia fixo
+                return due;
 
-            if (instalments > 1 && nudPrazo.Value == 0)
-                return dtpData.Value.AddMonths(instalments);
+            if (instalments == 0 && prazo != 0) //cheque pré 1 parcela unica com dias especificados
+                return due.AddDays(Convert.ToDouble(prazo));
 
-            if (instalments > 1 && nudPrazo.Value != 0)
+            if (instalments > 0 && prazo == 0) //cheque pré com varias parcelas em dias fixos nos meses
             {
-                dtpData.Value.AddDays(Convert.ToDouble(nudPrazo.Value));
-                return dtpData.Value.AddMonths(instalments);
+                due = due.AddMonths(instalments);
+                return due;
+            }
+
+            if (instalments > 0 && prazo != 0) //cheque pré com varias parcelas com calculo dos dias conforme valor informado
+            {
+                int i  = instalments + 1;
+                due = due.AddDays(Convert.ToDouble(prazo*i));
+                return due;
             }
 
             return DateTime.Now;
@@ -430,6 +432,8 @@ namespace UIWindows
                     InoxErpContext ctx = new InoxErpContext();
                     ChequesBusiness objPersist = new ChequesBusiness(ctx);
 
+                    DateTime date = dtpData.Value;
+
                     for (int i = 0; i < nudParcelas.Value; i++)
                     {
                         Cheques chequePersist = new Cheques
@@ -439,7 +443,7 @@ namespace UIWindows
                             sId_Budgets_OS = returnOS(),
                             sId_Client = returnId(),
                             dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
-                            dtDueDate = returnDueDate(i+1), // veirficar data ********
+                            dtDueDate = returnDueDate(i,date),
                             dtPayDate = DateTime.Today,
                             bChequePaid = false,
                             iInstallment = i+1,
@@ -454,14 +458,16 @@ namespace UIWindows
 
                         if (ok == null)
                             MessageBox.Show("Erro ao Lançar a Entrada no Caixa !!!");
-                        else if(i == nudParcelas.Value)
-                            MessageBox.Show("Entrada Lançada com Sucesso !!!"); ////verificar confirmação
+                        else if(i+1 == nudParcelas.Value)
+                            MessageBox.Show("Entradas Lançadas com Sucesso !!!");
 
                     }
                     
                     cleanCamps();
-                    fillGrid(); ////verificar fill
                 }
+
+            fillGrid();
+
         }
 
         private void txtC1_Leave(object sender, EventArgs e)
