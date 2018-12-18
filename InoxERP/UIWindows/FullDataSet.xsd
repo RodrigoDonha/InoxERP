@@ -1803,6 +1803,59 @@ ORDER BY tb_cash.dtDate</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_chequesReportTableAdapter" GeneratorDataComponentClassName="tb_chequesReportTableAdapter" Name="tb_chequesReport" UserDataComponentName="tb_chequesReportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ch.sID, ch.sId_Budgets_OS, ch.sId_Client, ch.dValue, ch.dtDueDate, CONVERT(CHAR(10), ch.dtDueDate, 103) AS sDueDate, ch.dtPayDate, CONVERT(CHAR(10), ch.dtPayDate, 103) AS sPayDate, ch.bChequePaid, 
+                         CASE WHEN ch.bChequePaid = 'True' THEN 'Baixado' ELSE CASE WHEN ch.bChequePaid = 'False' THEN 'Não Baixado' END END AS sSituation, ch.iInstallment, ch.iAmountInstallment, ch.sChequeNumber, ch.sReferentTo, 
+                         ch.idCash, cl.sName
+FROM            tb_cheques AS ch INNER JOIN
+                         tb_clients AS cl ON ch.sId_Client = cl.sID
+ORDER BY ch.dtDueDate</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="sID" DataSetColumn="sID" />
+              <Mapping SourceColumn="sId_Budgets_OS" DataSetColumn="sId_Budgets_OS" />
+              <Mapping SourceColumn="sId_Client" DataSetColumn="sId_Client" />
+              <Mapping SourceColumn="dValue" DataSetColumn="dValue" />
+              <Mapping SourceColumn="dtDueDate" DataSetColumn="dtDueDate" />
+              <Mapping SourceColumn="dtPayDate" DataSetColumn="dtPayDate" />
+              <Mapping SourceColumn="bChequePaid" DataSetColumn="bChequePaid" />
+              <Mapping SourceColumn="iInstallment" DataSetColumn="iInstallment" />
+              <Mapping SourceColumn="iAmountInstallment" DataSetColumn="iAmountInstallment" />
+              <Mapping SourceColumn="sChequeNumber" DataSetColumn="sChequeNumber" />
+              <Mapping SourceColumn="sReferentTo" DataSetColumn="sReferentTo" />
+              <Mapping SourceColumn="idCash" DataSetColumn="idCash" />
+              <Mapping SourceColumn="sDueDate" DataSetColumn="sDueDate" />
+              <Mapping SourceColumn="sPayDate" DataSetColumn="sPayDate" />
+              <Mapping SourceColumn="sSituation" DataSetColumn="sSituation" />
+              <Mapping SourceColumn="sName" DataSetColumn="sName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cheques" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCheque" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByCheque" GeneratorSourceName="FillByCheque" GetMethodModifier="Public" GetMethodName="GetByCheque" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByCheque" UserSourceName="FillByCheque">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT bChequePaid, dValue, dtDueDate, dtPayDate, iAmountInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cheques WHERE (bChequePaid = 0) ORDER BY dtDueDate DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cheques" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByChequesReveiced" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByChequesReveiced" GeneratorSourceName="FillByChequesReveiced" GetMethodModifier="Public" GetMethodName="GetByChequesReveiced" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByChequesReveiced" UserSourceName="FillByChequesReveiced">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT bChequePaid, dValue, dtDueDate, dtPayDate, iAmountInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cheques WHERE (bChequePaid = 1) ORDER BY dtDueDate DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -2871,6 +2924,88 @@ ORDER BY tb_cash.dtDate</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tb_chequesReport" msprop:Generator_TableClassName="tb_chequesReportDataTable" msprop:Generator_TableVarName="tabletb_chequesReport" msprop:Generator_RowChangedName="tb_chequesReportRowChanged" msprop:Generator_TablePropName="tb_chequesReport" msprop:Generator_RowDeletingName="tb_chequesReportRowDeleting" msprop:Generator_RowChangingName="tb_chequesReportRowChanging" msprop:Generator_RowEvHandlerName="tb_chequesReportRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_chequesReportRowDeleted" msprop:Generator_RowClassName="tb_chequesReportRow" msprop:Generator_UserTableName="tb_chequesReport" msprop:Generator_RowEvArgName="tb_chequesReportRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sID" msprop:Generator_ColumnVarNameInTable="columnsID" msprop:Generator_ColumnPropNameInRow="sID" msprop:Generator_ColumnPropNameInTable="sIDColumn" msprop:Generator_UserColumnName="sID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sId_Budgets_OS" msprop:Generator_ColumnVarNameInTable="columnsId_Budgets_OS" msprop:Generator_ColumnPropNameInRow="sId_Budgets_OS" msprop:Generator_ColumnPropNameInTable="sId_Budgets_OSColumn" msprop:Generator_UserColumnName="sId_Budgets_OS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sId_Client" msprop:Generator_ColumnVarNameInTable="columnsId_Client" msprop:Generator_ColumnPropNameInRow="sId_Client" msprop:Generator_ColumnPropNameInTable="sId_ClientColumn" msprop:Generator_UserColumnName="sId_Client" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dValue" msprop:Generator_ColumnVarNameInTable="columndValue" msprop:Generator_ColumnPropNameInRow="dValue" msprop:Generator_ColumnPropNameInTable="dValueColumn" msprop:Generator_UserColumnName="dValue" type="xs:decimal" />
+              <xs:element name="dtDueDate" msprop:Generator_ColumnVarNameInTable="columndtDueDate" msprop:Generator_ColumnPropNameInRow="dtDueDate" msprop:Generator_ColumnPropNameInTable="dtDueDateColumn" msprop:Generator_UserColumnName="dtDueDate" type="xs:dateTime" />
+              <xs:element name="dtPayDate" msprop:Generator_ColumnVarNameInTable="columndtPayDate" msprop:Generator_ColumnPropNameInRow="dtPayDate" msprop:Generator_ColumnPropNameInTable="dtPayDateColumn" msprop:Generator_UserColumnName="dtPayDate" type="xs:dateTime" />
+              <xs:element name="bChequePaid" msprop:Generator_ColumnVarNameInTable="columnbChequePaid" msprop:Generator_ColumnPropNameInRow="bChequePaid" msprop:Generator_ColumnPropNameInTable="bChequePaidColumn" msprop:Generator_UserColumnName="bChequePaid" type="xs:boolean" />
+              <xs:element name="iInstallment" msprop:Generator_ColumnVarNameInTable="columniInstallment" msprop:Generator_ColumnPropNameInRow="iInstallment" msprop:Generator_ColumnPropNameInTable="iInstallmentColumn" msprop:Generator_UserColumnName="iInstallment" type="xs:int" />
+              <xs:element name="iAmountInstallment" msprop:Generator_ColumnVarNameInTable="columniAmountInstallment" msprop:Generator_ColumnPropNameInRow="iAmountInstallment" msprop:Generator_ColumnPropNameInTable="iAmountInstallmentColumn" msprop:Generator_UserColumnName="iAmountInstallment" type="xs:int" />
+              <xs:element name="sChequeNumber" msprop:Generator_ColumnVarNameInTable="columnsChequeNumber" msprop:Generator_ColumnPropNameInRow="sChequeNumber" msprop:Generator_ColumnPropNameInTable="sChequeNumberColumn" msprop:Generator_UserColumnName="sChequeNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="33" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sReferentTo" msprop:Generator_ColumnVarNameInTable="columnsReferentTo" msprop:Generator_ColumnPropNameInRow="sReferentTo" msprop:Generator_ColumnPropNameInTable="sReferentToColumn" msprop:Generator_UserColumnName="sReferentTo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idCash" msprop:Generator_ColumnVarNameInTable="columnidCash" msprop:Generator_ColumnPropNameInRow="idCash" msprop:Generator_ColumnPropNameInTable="idCashColumn" msprop:Generator_UserColumnName="idCash" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sDueDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsDueDate" msprop:Generator_ColumnPropNameInRow="sDueDate" msprop:Generator_ColumnPropNameInTable="sDueDateColumn" msprop:Generator_UserColumnName="sDueDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sPayDate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsPayDate" msprop:Generator_ColumnPropNameInRow="sPayDate" msprop:Generator_ColumnPropNameInTable="sPayDateColumn" msprop:Generator_UserColumnName="sPayDate" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sSituation" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsSituation" msprop:Generator_ColumnPropNameInRow="sSituation" msprop:Generator_ColumnPropNameInTable="sSituationColumn" msprop:Generator_UserColumnName="sSituation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sName" msprop:Generator_ColumnVarNameInTable="columnsName" msprop:Generator_ColumnPropNameInRow="sName" msprop:Generator_ColumnPropNameInTable="sNameColumn" msprop:Generator_UserColumnName="sName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -2942,6 +3077,10 @@ ORDER BY tb_cash.dtDate</CommandText>
       <xs:selector xpath=".//mstns:tb_cashReport" />
       <xs:field xpath="mstns:sID" />
     </xs:unique>
+    <xs:unique name="tb_chequesReport_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tb_chequesReport" />
+      <xs:field xpath="mstns:sID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -2963,6 +3102,7 @@ ORDER BY tb_cash.dtDate</CommandText>
       <msdata:Relationship name="FK_dbo.tb_accountsToPay_dbo.tb_cash_idCash1" msdata:parent="tb_cashReport" msdata:child="tb_accountsToPay" msdata:parentkey="sID" msdata:childkey="idCash" msprop:Generator_UserChildTable="tb_accountsToPay" msprop:Generator_ChildPropName="Gettb_accountsToPayRows" msprop:Generator_UserRelationName="FK_dbo.tb_accountsToPay_dbo.tb_cash_idCash1" msprop:Generator_ParentPropName="tb_cashReportRow" msprop:Generator_RelationVarName="_relationFK_dbo_tb_accountsToPay_dbo_tb_cash_idCash1" msprop:Generator_UserParentTable="tb_cashReport" />
       <msdata:Relationship name="FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash1" msdata:parent="tb_cashReport" msdata:child="tb_accountsToReceive" msdata:parentkey="sID" msdata:childkey="idCash" msprop:Generator_UserChildTable="tb_accountsToReceive" msprop:Generator_ChildPropName="Gettb_accountsToReceiveRows" msprop:Generator_UserRelationName="FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash1" msprop:Generator_ParentPropName="tb_cashReportRow" msprop:Generator_RelationVarName="_relationFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash1" msprop:Generator_UserParentTable="tb_cashReport" />
       <msdata:Relationship name="FK_dbo.tb_cheques_dbo.tb_cash_idCash1" msdata:parent="tb_cashReport" msdata:child="tb_cheques" msdata:parentkey="sID" msdata:childkey="idCash" msprop:Generator_UserChildTable="tb_cheques" msprop:Generator_ChildPropName="Gettb_chequesRows" msprop:Generator_UserRelationName="FK_dbo.tb_cheques_dbo.tb_cash_idCash1" msprop:Generator_ParentPropName="tb_cashReportRow" msprop:Generator_RelationVarName="_relationFK_dbo_tb_cheques_dbo_tb_cash_idCash1" msprop:Generator_UserParentTable="tb_cashReport" />
+      <msdata:Relationship name="FK_dbo.tb_cheques_dbo.tb_cash_idCash2" msdata:parent="tb_cash" msdata:child="tb_chequesReport" msdata:parentkey="sID" msdata:childkey="idCash" msprop:Generator_UserChildTable="tb_chequesReport" msprop:Generator_ChildPropName="Gettb_chequesReportRows" msprop:Generator_UserRelationName="FK_dbo.tb_cheques_dbo.tb_cash_idCash2" msprop:Generator_RelationVarName="_relationFK_dbo_tb_cheques_dbo_tb_cash_idCash2" msprop:Generator_UserParentTable="tb_cash" msprop:Generator_ParentPropName="tb_cashRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

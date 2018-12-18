@@ -58,6 +58,8 @@ namespace UIWindows {
         
         private tb_cashReportDataTable tabletb_cashReport;
         
+        private tb_chequesReportDataTable tabletb_chequesReport;
+        
         private global::System.Data.DataRelation _relationFK_dbo_tb_accountsToPay_dbo_tb_cash_idCash;
         
         private global::System.Data.DataRelation _relationFK_dbo_tb_accountsToPay_dbo_tb_providers_idProviders;
@@ -93,6 +95,8 @@ namespace UIWindows {
         private global::System.Data.DataRelation _relationFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash1;
         
         private global::System.Data.DataRelation _relationFK_dbo_tb_cheques_dbo_tb_cash_idCash1;
+        
+        private global::System.Data.DataRelation _relationFK_dbo_tb_cheques_dbo_tb_cash_idCash2;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -172,6 +176,9 @@ namespace UIWindows {
                 }
                 if ((ds.Tables["tb_cashReport"] != null)) {
                     base.Tables.Add(new tb_cashReportDataTable(ds.Tables["tb_cashReport"]));
+                }
+                if ((ds.Tables["tb_chequesReport"] != null)) {
+                    base.Tables.Add(new tb_chequesReportDataTable(ds.Tables["tb_chequesReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -363,6 +370,16 @@ namespace UIWindows {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tb_chequesReportDataTable tb_chequesReport {
+            get {
+                return this.tabletb_chequesReport;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -478,6 +495,9 @@ namespace UIWindows {
                 }
                 if ((ds.Tables["tb_cashReport"] != null)) {
                     base.Tables.Add(new tb_cashReportDataTable(ds.Tables["tb_cashReport"]));
+                }
+                if ((ds.Tables["tb_chequesReport"] != null)) {
+                    base.Tables.Add(new tb_chequesReportDataTable(ds.Tables["tb_chequesReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -614,6 +634,12 @@ namespace UIWindows {
                     this.tabletb_cashReport.InitVars();
                 }
             }
+            this.tabletb_chequesReport = ((tb_chequesReportDataTable)(base.Tables["tb_chequesReport"]));
+            if ((initTable == true)) {
+                if ((this.tabletb_chequesReport != null)) {
+                    this.tabletb_chequesReport.InitVars();
+                }
+            }
             this._relationFK_dbo_tb_accountsToPay_dbo_tb_cash_idCash = this.Relations["FK_dbo.tb_accountsToPay_dbo.tb_cash_idCash"];
             this._relationFK_dbo_tb_accountsToPay_dbo_tb_providers_idProviders = this.Relations["FK_dbo.tb_accountsToPay_dbo.tb_providers_idProviders"];
             this._relationFK_dbo_tb_accountsToReceive_dbo_tb_budgets_os_idBudgets_OS = this.Relations["FK_dbo.tb_accountsToReceive_dbo.tb_budgets_os_idBudgets_OS"];
@@ -632,6 +658,7 @@ namespace UIWindows {
             this._relationFK_dbo_tb_accountsToPay_dbo_tb_cash_idCash1 = this.Relations["FK_dbo.tb_accountsToPay_dbo.tb_cash_idCash1"];
             this._relationFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash1 = this.Relations["FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash1"];
             this._relationFK_dbo_tb_cheques_dbo_tb_cash_idCash1 = this.Relations["FK_dbo.tb_cheques_dbo.tb_cash_idCash1"];
+            this._relationFK_dbo_tb_cheques_dbo_tb_cash_idCash2 = this.Relations["FK_dbo.tb_cheques_dbo.tb_cash_idCash2"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -676,6 +703,8 @@ namespace UIWindows {
             base.Tables.Add(this.tabletb_users);
             this.tabletb_cashReport = new tb_cashReportDataTable();
             base.Tables.Add(this.tabletb_cashReport);
+            this.tabletb_chequesReport = new tb_chequesReportDataTable();
+            base.Tables.Add(this.tabletb_chequesReport);
             this._relationFK_dbo_tb_accountsToPay_dbo_tb_cash_idCash = new global::System.Data.DataRelation("FK_dbo.tb_accountsToPay_dbo.tb_cash_idCash", new global::System.Data.DataColumn[] {
                         this.tabletb_cash.sIDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletb_accountsToPay.idCashColumn}, false);
@@ -748,6 +777,10 @@ namespace UIWindows {
                         this.tabletb_cashReport.sIDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletb_cheques.idCashColumn}, false);
             this.Relations.Add(this._relationFK_dbo_tb_cheques_dbo_tb_cash_idCash1);
+            this._relationFK_dbo_tb_cheques_dbo_tb_cash_idCash2 = new global::System.Data.DataRelation("FK_dbo.tb_cheques_dbo.tb_cash_idCash2", new global::System.Data.DataColumn[] {
+                        this.tabletb_cash.sIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletb_chequesReport.idCashColumn}, false);
+            this.Relations.Add(this._relationFK_dbo_tb_cheques_dbo_tb_cash_idCash2);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -849,6 +882,12 @@ namespace UIWindows {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializetb_cashReport() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializetb_chequesReport() {
             return false;
         }
         
@@ -957,6 +996,9 @@ namespace UIWindows {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void tb_cashReportRowChangeEventHandler(object sender, tb_cashReportRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void tb_chequesReportRowChangeEventHandler(object sender, tb_chequesReportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -8416,6 +8458,514 @@ namespace UIWindows {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tb_chequesReportDataTable : global::System.Data.TypedTableBase<tb_chequesReportRow> {
+            
+            private global::System.Data.DataColumn columnsID;
+            
+            private global::System.Data.DataColumn columnsId_Budgets_OS;
+            
+            private global::System.Data.DataColumn columnsId_Client;
+            
+            private global::System.Data.DataColumn columndValue;
+            
+            private global::System.Data.DataColumn columndtDueDate;
+            
+            private global::System.Data.DataColumn columndtPayDate;
+            
+            private global::System.Data.DataColumn columnbChequePaid;
+            
+            private global::System.Data.DataColumn columniInstallment;
+            
+            private global::System.Data.DataColumn columniAmountInstallment;
+            
+            private global::System.Data.DataColumn columnsChequeNumber;
+            
+            private global::System.Data.DataColumn columnsReferentTo;
+            
+            private global::System.Data.DataColumn columnidCash;
+            
+            private global::System.Data.DataColumn columnsDueDate;
+            
+            private global::System.Data.DataColumn columnsPayDate;
+            
+            private global::System.Data.DataColumn columnsSituation;
+            
+            private global::System.Data.DataColumn columnsName;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_chequesReportDataTable() {
+                this.TableName = "tb_chequesReport";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal tb_chequesReportDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected tb_chequesReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sIDColumn {
+                get {
+                    return this.columnsID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sId_Budgets_OSColumn {
+                get {
+                    return this.columnsId_Budgets_OS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sId_ClientColumn {
+                get {
+                    return this.columnsId_Client;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dValueColumn {
+                get {
+                    return this.columndValue;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtDueDateColumn {
+                get {
+                    return this.columndtDueDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtPayDateColumn {
+                get {
+                    return this.columndtPayDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn bChequePaidColumn {
+                get {
+                    return this.columnbChequePaid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn iInstallmentColumn {
+                get {
+                    return this.columniInstallment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn iAmountInstallmentColumn {
+                get {
+                    return this.columniAmountInstallment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sChequeNumberColumn {
+                get {
+                    return this.columnsChequeNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sReferentToColumn {
+                get {
+                    return this.columnsReferentTo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idCashColumn {
+                get {
+                    return this.columnidCash;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sDueDateColumn {
+                get {
+                    return this.columnsDueDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sPayDateColumn {
+                get {
+                    return this.columnsPayDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sSituationColumn {
+                get {
+                    return this.columnsSituation;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sNameColumn {
+                get {
+                    return this.columnsName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_chequesReportRow this[int index] {
+                get {
+                    return ((tb_chequesReportRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_chequesReportRowChangeEventHandler tb_chequesReportRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_chequesReportRowChangeEventHandler tb_chequesReportRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_chequesReportRowChangeEventHandler tb_chequesReportRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_chequesReportRowChangeEventHandler tb_chequesReportRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Addtb_chequesReportRow(tb_chequesReportRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_chequesReportRow Addtb_chequesReportRow(
+                        string sID, 
+                        string sId_Budgets_OS, 
+                        string sId_Client, 
+                        decimal dValue, 
+                        System.DateTime dtDueDate, 
+                        System.DateTime dtPayDate, 
+                        bool bChequePaid, 
+                        int iInstallment, 
+                        int iAmountInstallment, 
+                        string sChequeNumber, 
+                        string sReferentTo, 
+                        tb_cashRow _parenttb_cashRowByFK_dbo_tb_cheques_dbo_tb_cash_idCash2, 
+                        string sDueDate, 
+                        string sPayDate, 
+                        string sSituation, 
+                        string sName) {
+                tb_chequesReportRow rowtb_chequesReportRow = ((tb_chequesReportRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        sID,
+                        sId_Budgets_OS,
+                        sId_Client,
+                        dValue,
+                        dtDueDate,
+                        dtPayDate,
+                        bChequePaid,
+                        iInstallment,
+                        iAmountInstallment,
+                        sChequeNumber,
+                        sReferentTo,
+                        null,
+                        sDueDate,
+                        sPayDate,
+                        sSituation,
+                        sName};
+                if ((_parenttb_cashRowByFK_dbo_tb_cheques_dbo_tb_cash_idCash2 != null)) {
+                    columnValuesArray[11] = _parenttb_cashRowByFK_dbo_tb_cheques_dbo_tb_cash_idCash2[0];
+                }
+                rowtb_chequesReportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtb_chequesReportRow);
+                return rowtb_chequesReportRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_chequesReportRow FindBysID(string sID) {
+                return ((tb_chequesReportRow)(this.Rows.Find(new object[] {
+                            sID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tb_chequesReportDataTable cln = ((tb_chequesReportDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tb_chequesReportDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnsID = base.Columns["sID"];
+                this.columnsId_Budgets_OS = base.Columns["sId_Budgets_OS"];
+                this.columnsId_Client = base.Columns["sId_Client"];
+                this.columndValue = base.Columns["dValue"];
+                this.columndtDueDate = base.Columns["dtDueDate"];
+                this.columndtPayDate = base.Columns["dtPayDate"];
+                this.columnbChequePaid = base.Columns["bChequePaid"];
+                this.columniInstallment = base.Columns["iInstallment"];
+                this.columniAmountInstallment = base.Columns["iAmountInstallment"];
+                this.columnsChequeNumber = base.Columns["sChequeNumber"];
+                this.columnsReferentTo = base.Columns["sReferentTo"];
+                this.columnidCash = base.Columns["idCash"];
+                this.columnsDueDate = base.Columns["sDueDate"];
+                this.columnsPayDate = base.Columns["sPayDate"];
+                this.columnsSituation = base.Columns["sSituation"];
+                this.columnsName = base.Columns["sName"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnsID = new global::System.Data.DataColumn("sID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsID);
+                this.columnsId_Budgets_OS = new global::System.Data.DataColumn("sId_Budgets_OS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsId_Budgets_OS);
+                this.columnsId_Client = new global::System.Data.DataColumn("sId_Client", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsId_Client);
+                this.columndValue = new global::System.Data.DataColumn("dValue", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndValue);
+                this.columndtDueDate = new global::System.Data.DataColumn("dtDueDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtDueDate);
+                this.columndtPayDate = new global::System.Data.DataColumn("dtPayDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtPayDate);
+                this.columnbChequePaid = new global::System.Data.DataColumn("bChequePaid", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbChequePaid);
+                this.columniInstallment = new global::System.Data.DataColumn("iInstallment", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniInstallment);
+                this.columniAmountInstallment = new global::System.Data.DataColumn("iAmountInstallment", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniAmountInstallment);
+                this.columnsChequeNumber = new global::System.Data.DataColumn("sChequeNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsChequeNumber);
+                this.columnsReferentTo = new global::System.Data.DataColumn("sReferentTo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsReferentTo);
+                this.columnidCash = new global::System.Data.DataColumn("idCash", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidCash);
+                this.columnsDueDate = new global::System.Data.DataColumn("sDueDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsDueDate);
+                this.columnsPayDate = new global::System.Data.DataColumn("sPayDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsPayDate);
+                this.columnsSituation = new global::System.Data.DataColumn("sSituation", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsSituation);
+                this.columnsName = new global::System.Data.DataColumn("sName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsName);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnsID}, true));
+                this.columnsID.AllowDBNull = false;
+                this.columnsID.Unique = true;
+                this.columnsID.MaxLength = 40;
+                this.columnsId_Budgets_OS.MaxLength = 100;
+                this.columnsId_Client.MaxLength = 100;
+                this.columndValue.AllowDBNull = false;
+                this.columndtDueDate.AllowDBNull = false;
+                this.columndtPayDate.AllowDBNull = false;
+                this.columnbChequePaid.AllowDBNull = false;
+                this.columniInstallment.AllowDBNull = false;
+                this.columniAmountInstallment.AllowDBNull = false;
+                this.columnsChequeNumber.AllowDBNull = false;
+                this.columnsChequeNumber.MaxLength = 33;
+                this.columnsReferentTo.MaxLength = 100;
+                this.columnidCash.MaxLength = 40;
+                this.columnsDueDate.ReadOnly = true;
+                this.columnsDueDate.MaxLength = 10;
+                this.columnsPayDate.ReadOnly = true;
+                this.columnsPayDate.MaxLength = 10;
+                this.columnsSituation.ReadOnly = true;
+                this.columnsSituation.MaxLength = 11;
+                this.columnsName.AllowDBNull = false;
+                this.columnsName.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_chequesReportRow Newtb_chequesReportRow() {
+                return ((tb_chequesReportRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tb_chequesReportRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tb_chequesReportRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tb_chequesReportRowChanged != null)) {
+                    this.tb_chequesReportRowChanged(this, new tb_chequesReportRowChangeEvent(((tb_chequesReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tb_chequesReportRowChanging != null)) {
+                    this.tb_chequesReportRowChanging(this, new tb_chequesReportRowChangeEvent(((tb_chequesReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tb_chequesReportRowDeleted != null)) {
+                    this.tb_chequesReportRowDeleted(this, new tb_chequesReportRowChangeEvent(((tb_chequesReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tb_chequesReportRowDeleting != null)) {
+                    this.tb_chequesReportRowDeleting(this, new tb_chequesReportRowChangeEvent(((tb_chequesReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Removetb_chequesReportRow(tb_chequesReportRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                FullDataSet ds = new FullDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tb_chequesReportDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class @__MigrationHistoryRow : global::System.Data.DataRow {
@@ -10054,6 +10604,17 @@ namespace UIWindows {
                 }
                 else {
                     return ((tb_chequesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.tb_cheques_dbo.tb_cash_idCash"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_chequesReportRow[] Gettb_chequesReportRows() {
+                if ((this.Table.ChildRelations["FK_dbo.tb_cheques_dbo.tb_cash_idCash2"] == null)) {
+                    return new tb_chequesReportRow[0];
+                }
+                else {
+                    return ((tb_chequesReportRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.tb_cheques_dbo.tb_cash_idCash2"])));
                 }
             }
         }
@@ -12635,6 +13196,327 @@ namespace UIWindows {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tb_chequesReportRow : global::System.Data.DataRow {
+            
+            private tb_chequesReportDataTable tabletb_chequesReport;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal tb_chequesReportRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletb_chequesReport = ((tb_chequesReportDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sID {
+                get {
+                    return ((string)(this[this.tabletb_chequesReport.sIDColumn]));
+                }
+                set {
+                    this[this.tabletb_chequesReport.sIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sId_Budgets_OS {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_chequesReport.sId_Budgets_OSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sId_Budgets_OS\' na tabela \'tb_chequesReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_chequesReport.sId_Budgets_OSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sId_Client {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_chequesReport.sId_ClientColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sId_Client\' na tabela \'tb_chequesReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_chequesReport.sId_ClientColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal dValue {
+                get {
+                    return ((decimal)(this[this.tabletb_chequesReport.dValueColumn]));
+                }
+                set {
+                    this[this.tabletb_chequesReport.dValueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtDueDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletb_chequesReport.dtDueDateColumn]));
+                }
+                set {
+                    this[this.tabletb_chequesReport.dtDueDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtPayDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletb_chequesReport.dtPayDateColumn]));
+                }
+                set {
+                    this[this.tabletb_chequesReport.dtPayDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool bChequePaid {
+                get {
+                    return ((bool)(this[this.tabletb_chequesReport.bChequePaidColumn]));
+                }
+                set {
+                    this[this.tabletb_chequesReport.bChequePaidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int iInstallment {
+                get {
+                    return ((int)(this[this.tabletb_chequesReport.iInstallmentColumn]));
+                }
+                set {
+                    this[this.tabletb_chequesReport.iInstallmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int iAmountInstallment {
+                get {
+                    return ((int)(this[this.tabletb_chequesReport.iAmountInstallmentColumn]));
+                }
+                set {
+                    this[this.tabletb_chequesReport.iAmountInstallmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sChequeNumber {
+                get {
+                    return ((string)(this[this.tabletb_chequesReport.sChequeNumberColumn]));
+                }
+                set {
+                    this[this.tabletb_chequesReport.sChequeNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sReferentTo {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_chequesReport.sReferentToColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sReferentTo\' na tabela \'tb_chequesReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_chequesReport.sReferentToColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string idCash {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_chequesReport.idCashColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idCash\' na tabela \'tb_chequesReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_chequesReport.idCashColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sDueDate {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_chequesReport.sDueDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sDueDate\' na tabela \'tb_chequesReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_chequesReport.sDueDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sPayDate {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_chequesReport.sPayDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sPayDate\' na tabela \'tb_chequesReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_chequesReport.sPayDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sSituation {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_chequesReport.sSituationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sSituation\' na tabela \'tb_chequesReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_chequesReport.sSituationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sName {
+                get {
+                    return ((string)(this[this.tabletb_chequesReport.sNameColumn]));
+                }
+                set {
+                    this[this.tabletb_chequesReport.sNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_cashRow tb_cashRow {
+                get {
+                    return ((tb_cashRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.tb_cheques_dbo.tb_cash_idCash2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.tb_cheques_dbo.tb_cash_idCash2"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssId_Budgets_OSNull() {
+                return this.IsNull(this.tabletb_chequesReport.sId_Budgets_OSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsId_Budgets_OSNull() {
+                this[this.tabletb_chequesReport.sId_Budgets_OSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssId_ClientNull() {
+                return this.IsNull(this.tabletb_chequesReport.sId_ClientColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsId_ClientNull() {
+                this[this.tabletb_chequesReport.sId_ClientColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssReferentToNull() {
+                return this.IsNull(this.tabletb_chequesReport.sReferentToColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsReferentToNull() {
+                this[this.tabletb_chequesReport.sReferentToColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsidCashNull() {
+                return this.IsNull(this.tabletb_chequesReport.idCashColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetidCashNull() {
+                this[this.tabletb_chequesReport.idCashColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssDueDateNull() {
+                return this.IsNull(this.tabletb_chequesReport.sDueDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsDueDateNull() {
+                this[this.tabletb_chequesReport.sDueDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssPayDateNull() {
+                return this.IsNull(this.tabletb_chequesReport.sPayDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsPayDateNull() {
+                this[this.tabletb_chequesReport.sPayDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssSituationNull() {
+                return this.IsNull(this.tabletb_chequesReport.sSituationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsSituationNull() {
+                this[this.tabletb_chequesReport.sSituationColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -13198,6 +14080,40 @@ namespace UIWindows {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tb_cashReportRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class tb_chequesReportRowChangeEvent : global::System.EventArgs {
+            
+            private tb_chequesReportRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_chequesReportRowChangeEvent(tb_chequesReportRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_chequesReportRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -23247,6 +24163,253 @@ ORDER BY tb_cash.dtDate";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class tb_chequesReportTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public tb_chequesReportTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "tb_chequesReport";
+            tableMapping.ColumnMappings.Add("sID", "sID");
+            tableMapping.ColumnMappings.Add("sId_Budgets_OS", "sId_Budgets_OS");
+            tableMapping.ColumnMappings.Add("sId_Client", "sId_Client");
+            tableMapping.ColumnMappings.Add("dValue", "dValue");
+            tableMapping.ColumnMappings.Add("dtDueDate", "dtDueDate");
+            tableMapping.ColumnMappings.Add("dtPayDate", "dtPayDate");
+            tableMapping.ColumnMappings.Add("bChequePaid", "bChequePaid");
+            tableMapping.ColumnMappings.Add("iInstallment", "iInstallment");
+            tableMapping.ColumnMappings.Add("iAmountInstallment", "iAmountInstallment");
+            tableMapping.ColumnMappings.Add("sChequeNumber", "sChequeNumber");
+            tableMapping.ColumnMappings.Add("sReferentTo", "sReferentTo");
+            tableMapping.ColumnMappings.Add("idCash", "idCash");
+            tableMapping.ColumnMappings.Add("sDueDate", "sDueDate");
+            tableMapping.ColumnMappings.Add("sPayDate", "sPayDate");
+            tableMapping.ColumnMappings.Add("sSituation", "sSituation");
+            tableMapping.ColumnMappings.Add("sName", "sName");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::UIWindows.Properties.Settings.Default.InoxErpDBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        ch.sID, ch.sId_Budgets_OS, ch.sId_Client, ch.dValue, ch.dtDueDate, CONVERT(CHAR(10), ch.dtDueDate, 103) AS sDueDate, ch.dtPayDate, CONVERT(CHAR(10), ch.dtPayDate, 103) AS sPayDate, ch.bChequePaid, 
+                         CASE WHEN ch.bChequePaid = 'True' THEN 'Baixado' ELSE CASE WHEN ch.bChequePaid = 'False' THEN 'Não Baixado' END END AS sSituation, ch.iInstallment, ch.iAmountInstallment, ch.sChequeNumber, ch.sReferentTo, 
+                         ch.idCash, cl.sName
+FROM            tb_cheques AS ch INNER JOIN
+                         tb_clients AS cl ON ch.sId_Client = cl.sID
+ORDER BY ch.dtDueDate";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT bChequePaid, dValue, dtDueDate, dtPayDate, iAmountInstallment, iInstallmen" +
+                "t, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_c" +
+                "heques WHERE (bChequePaid = 0) ORDER BY dtDueDate DESC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT bChequePaid, dValue, dtDueDate, dtPayDate, iAmountInstallment, iInstallmen" +
+                "t, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_c" +
+                "heques WHERE (bChequePaid = 1) ORDER BY dtDueDate DESC";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(FullDataSet.tb_chequesReportDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual FullDataSet.tb_chequesReportDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            FullDataSet.tb_chequesReportDataTable dataTable = new FullDataSet.tb_chequesReportDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByCheque(FullDataSet.tb_chequesReportDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_chequesReportDataTable GetByCheque() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            FullDataSet.tb_chequesReportDataTable dataTable = new FullDataSet.tb_chequesReportDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByChequesReveiced(FullDataSet.tb_chequesReportDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_chequesReportDataTable GetByChequesReveiced() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            FullDataSet.tb_chequesReportDataTable dataTable = new FullDataSet.tb_chequesReportDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -23697,30 +24860,21 @@ ORDER BY tb_cash.dtDate";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tb_accountsToPayTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tb_accountsToPay.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_accountsToPayTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tb_itemsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_itemsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._permitionsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Permitions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._permitionsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tb_accountsToPayTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_accountsToPay.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tb_accountsToPayTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23733,12 +24887,12 @@ ORDER BY tb_cash.dtDate";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tb_chequesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tb_cheques.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tb_itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_chequesTableAdapter.Update(updatedRows));
+                    result = (result + this._tb_itemsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23748,33 +24902,6 @@ ORDER BY tb_cash.dtDate";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tb_usersTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tb_parcialPayTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tb_parcialPay.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_parcialPayTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tb_parcialReceiveTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tb_parcialReceive.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_parcialReceiveTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tb_productsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tb_products.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_productsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23793,6 +24920,42 @@ ORDER BY tb_cash.dtDate";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this.___MigrationHistoryTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tb_parcialReceiveTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_parcialReceive.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tb_parcialReceiveTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tb_parcialPayTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_parcialPay.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tb_parcialPayTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tb_chequesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_cheques.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tb_chequesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tb_productsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_products.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tb_productsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23838,27 +25001,19 @@ ORDER BY tb_cash.dtDate";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tb_accountsToPayTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tb_accountsToPay.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tb_accountsToPayTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tb_itemsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tb_itemsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._permitionsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Permitions.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._permitionsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tb_accountsToPayTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_accountsToPay.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tb_accountsToPayTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23870,11 +25025,11 @@ ORDER BY tb_cash.dtDate";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tb_chequesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tb_cheques.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tb_itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tb_chequesTableAdapter.Update(addedRows));
+                    result = (result + this._tb_itemsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23883,30 +25038,6 @@ ORDER BY tb_cash.dtDate";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tb_usersTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tb_parcialPayTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tb_parcialPay.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tb_parcialPayTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tb_parcialReceiveTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tb_parcialReceive.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tb_parcialReceiveTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tb_productsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tb_products.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tb_productsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23926,6 +25057,38 @@ ORDER BY tb_cash.dtDate";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tb_parcialReceiveTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_parcialReceive.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tb_parcialReceiveTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tb_parcialPayTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_parcialPay.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tb_parcialPayTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tb_chequesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_cheques.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tb_chequesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tb_productsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_products.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tb_productsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -23936,6 +25099,38 @@ ORDER BY tb_cash.dtDate";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(FullDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._tb_productsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tb_products.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tb_productsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tb_chequesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tb_cheques.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tb_chequesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tb_parcialPayTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tb_parcialPay.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tb_parcialPayTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tb_parcialReceiveTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tb_parcialReceive.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tb_parcialReceiveTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this.___MigrationHistoryTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.@__MigrationHistory.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -23952,59 +25147,11 @@ ORDER BY tb_cash.dtDate";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tb_productsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tb_products.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tb_productsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tb_parcialReceiveTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tb_parcialReceive.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tb_parcialReceiveTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tb_parcialPayTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tb_parcialPay.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tb_parcialPayTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tb_usersTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tb_users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tb_usersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tb_chequesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tb_cheques.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tb_chequesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tb_accountsToReceiveTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tb_accountsToReceive.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tb_accountsToReceiveTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._permitionsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Permitions.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._permitionsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -24016,11 +25163,27 @@ ORDER BY tb_cash.dtDate";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._tb_accountsToReceiveTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tb_accountsToReceive.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tb_accountsToReceiveTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._tb_accountsToPayTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tb_accountsToPay.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tb_accountsToPayTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._permitionsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Permitions.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._permitionsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
