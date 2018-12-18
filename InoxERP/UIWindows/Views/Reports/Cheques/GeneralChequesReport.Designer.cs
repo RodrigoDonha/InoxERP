@@ -72,7 +72,7 @@
             this.ClientSize = new System.Drawing.Size(632, 749);
             this.Controls.Add(this.reportViewer1);
             this.Name = "GeneralChequesReport";
-            this.Text = "GeneralChequesReport";
+            this.Text = "Impressão de Relatório";
             this.Load += new System.EventHandler(this.GeneralChequesReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesReportBindingSource)).EndInit();

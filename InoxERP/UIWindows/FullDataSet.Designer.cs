@@ -24315,7 +24315,8 @@ ORDER BY tb_cash.dtDate";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        ch.sID, ch.sId_Budgets_OS, ch.sId_Client, ch.dValue, ch.dtDueDate, CONVERT(CHAR(10), ch.dtDueDate, 103) AS sDueDate, ch.dtPayDate, CONVERT(CHAR(10), ch.dtPayDate, 103) AS sPayDate, ch.bChequePaid, 
+            this._commandCollection[0].CommandText = @"SELECT        ch.sID, ch.sId_Budgets_OS, ch.sId_Client, ch.dValue, ch.dtDueDate, CONVERT(CHAR(10), ch.dtDueDate, 103) AS sDueDate, ch.dtPayDate, CASE WHEN ch.bChequePaid = 'True' THEN CONVERT(CHAR(10), ch.dtPayDate, 103) 
+                         ELSE CASE WHEN ch.bChequePaid = 'False' THEN ' ' END END AS sPayDate, ch.bChequePaid, 
                          CASE WHEN ch.bChequePaid = 'True' THEN 'Baixado' ELSE CASE WHEN ch.bChequePaid = 'False' THEN 'Não Baixado' END END AS sSituation, ch.iInstallment, ch.iAmountInstallment, ch.sChequeNumber, ch.sReferentTo, 
                          ch.idCash, cl.sName
 FROM            tb_cheques AS ch INNER JOIN
