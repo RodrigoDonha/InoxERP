@@ -106,11 +106,11 @@
             this.picSaidas = new System.Windows.Forms.PictureBox();
             this.lblSaidas = new System.Windows.Forms.Label();
             this.gpbRelatorios = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblRelCaixaGeral = new System.Windows.Forms.Label();
             this.lblRelCheques = new System.Windows.Forms.Label();
             this.picRelCaixaGeral = new System.Windows.Forms.PictureBox();
-            this.picRelDinheiro = new System.Windows.Forms.PictureBox();
-            this.lblRelDinheiro = new System.Windows.Forms.Label();
+            this.picRelCaixa = new System.Windows.Forms.PictureBox();
             this.picRelCheques = new System.Windows.Forms.PictureBox();
             this.lblRelEntregas = new System.Windows.Forms.Label();
             this.lblRelOS = new System.Windows.Forms.Label();
@@ -149,7 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picSaidas)).BeginInit();
             this.gpbRelatorios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRelCaixaGeral)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRelDinheiro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRelCaixa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelCheques)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelEntregas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelOrcamentos)).BeginInit();
@@ -726,7 +726,7 @@
             this.gpbContas.Controls.Add(this.picaPagar);
             this.gpbContas.Controls.Add(this.lblaPagar);
             this.gpbContas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbContas.Location = new System.Drawing.Point(502, 49);
+            this.gpbContas.Location = new System.Drawing.Point(620, 49);
             this.gpbContas.Name = "gpbContas";
             this.gpbContas.Size = new System.Drawing.Size(112, 343);
             this.gpbContas.TabIndex = 15;
@@ -822,7 +822,7 @@
             this.gpbCaixa.Controls.Add(this.picSaidas);
             this.gpbCaixa.Controls.Add(this.lblSaidas);
             this.gpbCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbCaixa.Location = new System.Drawing.Point(620, 49);
+            this.gpbCaixa.Location = new System.Drawing.Point(502, 49);
             this.gpbCaixa.Name = "gpbCaixa";
             this.gpbCaixa.Size = new System.Drawing.Size(112, 255);
             this.gpbCaixa.TabIndex = 16;
@@ -891,11 +891,11 @@
             // 
             // gpbRelatorios
             // 
+            this.gpbRelatorios.Controls.Add(this.label1);
             this.gpbRelatorios.Controls.Add(this.lblRelCaixaGeral);
             this.gpbRelatorios.Controls.Add(this.lblRelCheques);
             this.gpbRelatorios.Controls.Add(this.picRelCaixaGeral);
-            this.gpbRelatorios.Controls.Add(this.picRelDinheiro);
-            this.gpbRelatorios.Controls.Add(this.lblRelDinheiro);
+            this.gpbRelatorios.Controls.Add(this.picRelCaixa);
             this.gpbRelatorios.Controls.Add(this.picRelCheques);
             this.gpbRelatorios.Controls.Add(this.lblRelEntregas);
             this.gpbRelatorios.Controls.Add(this.lblRelOS);
@@ -911,10 +911,19 @@
             this.gpbRelatorios.TabStop = false;
             this.gpbRelatorios.Text = "Relatórios";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(133, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Contas";
+            // 
             // lblRelCaixaGeral
             // 
             this.lblRelCaixaGeral.AutoSize = true;
-            this.lblRelCaixaGeral.Location = new System.Drawing.Point(117, 230);
+            this.lblRelCaixaGeral.Location = new System.Drawing.Point(117, 79);
             this.lblRelCaixaGeral.Name = "lblRelCaixaGeral";
             this.lblRelCaixaGeral.Size = new System.Drawing.Size(91, 20);
             this.lblRelCaixaGeral.TabIndex = 19;
@@ -938,27 +947,18 @@
             this.picRelCaixaGeral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picRelCaixaGeral.TabIndex = 17;
             this.picRelCaixaGeral.TabStop = false;
-            this.picRelCaixaGeral.Click += new System.EventHandler(this.picRelCaixaGeral_Click);
+            this.picRelCaixaGeral.Click += new System.EventHandler(this.picRelContas_Click);
             // 
-            // picRelDinheiro
+            // picRelCaixa
             // 
-            this.picRelDinheiro.Image = global::UIWindows.Properties.Resources.Report_Money;
-            this.picRelDinheiro.Location = new System.Drawing.Point(112, 25);
-            this.picRelDinheiro.Name = "picRelDinheiro";
-            this.picRelDinheiro.Size = new System.Drawing.Size(100, 50);
-            this.picRelDinheiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picRelDinheiro.TabIndex = 14;
-            this.picRelDinheiro.TabStop = false;
-            this.picRelDinheiro.Click += new System.EventHandler(this.picRelDinheiro_Click);
-            // 
-            // lblRelDinheiro
-            // 
-            this.lblRelDinheiro.AutoSize = true;
-            this.lblRelDinheiro.Location = new System.Drawing.Point(128, 78);
-            this.lblRelDinheiro.Name = "lblRelDinheiro";
-            this.lblRelDinheiro.Size = new System.Drawing.Size(68, 20);
-            this.lblRelDinheiro.TabIndex = 16;
-            this.lblRelDinheiro.Text = "Dinheiro";
+            this.picRelCaixa.Image = global::UIWindows.Properties.Resources.Report_Money;
+            this.picRelCaixa.Location = new System.Drawing.Point(112, 25);
+            this.picRelCaixa.Name = "picRelCaixa";
+            this.picRelCaixa.Size = new System.Drawing.Size(100, 50);
+            this.picRelCaixa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRelCaixa.TabIndex = 14;
+            this.picRelCaixa.TabStop = false;
+            this.picRelCaixa.Click += new System.EventHandler(this.picRelCaixa_Click);
             // 
             // picRelCheques
             // 
@@ -1034,7 +1034,7 @@
             // lblBackup
             // 
             this.lblBackup.AutoSize = true;
-            this.lblBackup.Location = new System.Drawing.Point(873, 431);
+            this.lblBackup.Location = new System.Drawing.Point(873, 454);
             this.lblBackup.Name = "lblBackup";
             this.lblBackup.Size = new System.Drawing.Size(63, 20);
             this.lblBackup.TabIndex = 21;
@@ -1063,7 +1063,7 @@
             // picBackup
             // 
             this.picBackup.Image = global::UIWindows.Properties.Resources.Backup;
-            this.picBackup.Location = new System.Drawing.Point(850, 378);
+            this.picBackup.Location = new System.Drawing.Point(850, 401);
             this.picBackup.Name = "picBackup";
             this.picBackup.Size = new System.Drawing.Size(100, 50);
             this.picBackup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1075,7 +1075,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 467);
+            this.ClientSize = new System.Drawing.Size(971, 488);
             this.Controls.Add(this.picRestart);
             this.Controls.Add(this.lblLogado);
             this.Controls.Add(this.lblBackup);
@@ -1131,7 +1131,7 @@
             this.gpbRelatorios.ResumeLayout(false);
             this.gpbRelatorios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picRelCaixaGeral)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRelDinheiro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRelCaixa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelCheques)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelEntregas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRelOrcamentos)).EndInit();
@@ -1225,8 +1225,7 @@
         private System.Windows.Forms.Label lblRelCaixaGeral;
         private System.Windows.Forms.Label lblRelCheques;
         private System.Windows.Forms.PictureBox picRelCaixaGeral;
-        private System.Windows.Forms.PictureBox picRelDinheiro;
-        private System.Windows.Forms.Label lblRelDinheiro;
+        private System.Windows.Forms.PictureBox picRelCaixa;
         private System.Windows.Forms.PictureBox picRelCheques;
         private System.Windows.Forms.Label lblBackup;
         private System.Windows.Forms.PictureBox picBackup;
@@ -1238,6 +1237,7 @@
         private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
         private System.Windows.Forms.Label lblLogado;
         private System.Windows.Forms.PictureBox picRestart;
+        private System.Windows.Forms.Label label1;
     }
 }
 

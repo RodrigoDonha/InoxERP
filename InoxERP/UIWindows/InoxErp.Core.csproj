@@ -195,6 +195,12 @@
     <Compile Include="Views\Backups\BackupServerDB.Designer.cs">
       <DependentUpon>BackupServerDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Accounts\GeneralAccountsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\GeneralAccountsReport.Designer.cs">
+      <DependentUpon>GeneralAccountsReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\Budgets\BudgetPrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -431,22 +437,22 @@
     <Compile Include="Views\Reports\Cheques\ReportCashCheque.Designer.cs">
       <DependentUpon>ReportCashCheque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reports\ReportCashMoney.cs">
+    <Compile Include="Views\Reports\Accounts\ReportAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Reports\ReportCashMoney.Designer.cs">
-      <DependentUpon>ReportCashMoney.cs</DependentUpon>
+    <Compile Include="Views\Reports\Accounts\ReportAccounts.Designer.cs">
+      <DependentUpon>ReportAccounts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Cash\ReportCashGeneral.cs">
+    <Compile Include="Views\Reports\Cash\ReportCashGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Cash\ReportCashGeneral.Designer.cs">
+    <Compile Include="Views\Reports\Cash\ReportCashGeneral.Designer.cs">
       <DependentUpon>ReportCashGeneral.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Delivery\ReportDelivery.cs">
+    <Compile Include="Views\Reports\Delivery\ReportDelivery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Delivery\ReportDelivery.Designer.cs">
+    <Compile Include="Views\Reports\Delivery\ReportDelivery.Designer.cs">
       <DependentUpon>ReportDelivery.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Reports\Budgets\ReportBudgets.cs">
@@ -455,10 +461,10 @@
     <Compile Include="Views\Reports\Budgets\ReportBudgets.Designer.cs">
       <DependentUpon>ReportBudgets.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ServicesOrders\ReportServiceOrders.cs">
+    <Compile Include="Views\Reports\ServicesOrders\ReportServiceOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ServicesOrders\ReportServiceOrders.Designer.cs">
+    <Compile Include="Views\Reports\ServicesOrders\ReportServiceOrders.Designer.cs">
       <DependentUpon>ReportServiceOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Budgets\PaymentForms.cs">
@@ -474,6 +480,8 @@
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\SubReportParcialPay.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\SubReportParcialReceive.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\Budget.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\GerenalBudgest.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\SituationBudgets.rdlc" />
@@ -511,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Backups\RestoreServerDB.resx">
       <DependentUpon>RestoreServerDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Accounts\GeneralAccountsReport.resx">
+      <DependentUpon>GeneralAccountsReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Budgets\BudgetPrint.resx">
       <DependentUpon>BudgetPrint.cs</DependentUpon>
@@ -639,19 +650,19 @@
     <EmbeddedResource Include="Views\Reports\Cheques\ReportCashCheque.resx">
       <DependentUpon>ReportCashCheque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reports\ReportCashMoney.resx">
-      <DependentUpon>ReportCashMoney.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Reports\Accounts\ReportAccounts.resx">
+      <DependentUpon>ReportAccounts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Cash\ReportCashGeneral.resx">
+    <EmbeddedResource Include="Views\Reports\Cash\ReportCashGeneral.resx">
       <DependentUpon>ReportCashGeneral.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Delivery\ReportDelivery.resx">
+    <EmbeddedResource Include="Views\Reports\Delivery\ReportDelivery.resx">
       <DependentUpon>ReportDelivery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Budgets\ReportBudgets.resx">
       <DependentUpon>ReportBudgets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ServicesOrders\ReportServiceOrders.resx">
+    <EmbeddedResource Include="Views\Reports\ServicesOrders\ReportServiceOrders.resx">
       <DependentUpon>ReportServiceOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Budgets\PaymentForms.resx">
@@ -772,9 +783,7 @@
   <ItemGroup>
     <None Include="Resources\Backup.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Reports\Accounts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\if_121_14145.png" />
     <None Include="Resources\Marca Dagua.png" />

@@ -60,6 +60,8 @@ namespace UIWindows {
         
         private tb_chequesReportDataTable tabletb_chequesReport;
         
+        private tb_accountsToReceiveReportDataTable tabletb_accountsToReceiveReport;
+        
         private global::System.Data.DataRelation _relationFK_dbo_tb_accountsToPay_dbo_tb_cash_idCash;
         
         private global::System.Data.DataRelation _relationFK_dbo_tb_accountsToPay_dbo_tb_providers_idProviders;
@@ -97,6 +99,10 @@ namespace UIWindows {
         private global::System.Data.DataRelation _relationFK_dbo_tb_cheques_dbo_tb_cash_idCash1;
         
         private global::System.Data.DataRelation _relationFK_dbo_tb_cheques_dbo_tb_cash_idCash2;
+        
+        private global::System.Data.DataRelation _relationFK_dbo_tb_accountsToReceive_dbo_tb_budgets_os_idBudgets_OS1;
+        
+        private global::System.Data.DataRelation _relationFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash2;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -179,6 +185,9 @@ namespace UIWindows {
                 }
                 if ((ds.Tables["tb_chequesReport"] != null)) {
                     base.Tables.Add(new tb_chequesReportDataTable(ds.Tables["tb_chequesReport"]));
+                }
+                if ((ds.Tables["tb_accountsToReceiveReport"] != null)) {
+                    base.Tables.Add(new tb_accountsToReceiveReportDataTable(ds.Tables["tb_accountsToReceiveReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -380,6 +389,16 @@ namespace UIWindows {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tb_accountsToReceiveReportDataTable tb_accountsToReceiveReport {
+            get {
+                return this.tabletb_accountsToReceiveReport;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -498,6 +517,9 @@ namespace UIWindows {
                 }
                 if ((ds.Tables["tb_chequesReport"] != null)) {
                     base.Tables.Add(new tb_chequesReportDataTable(ds.Tables["tb_chequesReport"]));
+                }
+                if ((ds.Tables["tb_accountsToReceiveReport"] != null)) {
+                    base.Tables.Add(new tb_accountsToReceiveReportDataTable(ds.Tables["tb_accountsToReceiveReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -640,6 +662,12 @@ namespace UIWindows {
                     this.tabletb_chequesReport.InitVars();
                 }
             }
+            this.tabletb_accountsToReceiveReport = ((tb_accountsToReceiveReportDataTable)(base.Tables["tb_accountsToReceiveReport"]));
+            if ((initTable == true)) {
+                if ((this.tabletb_accountsToReceiveReport != null)) {
+                    this.tabletb_accountsToReceiveReport.InitVars();
+                }
+            }
             this._relationFK_dbo_tb_accountsToPay_dbo_tb_cash_idCash = this.Relations["FK_dbo.tb_accountsToPay_dbo.tb_cash_idCash"];
             this._relationFK_dbo_tb_accountsToPay_dbo_tb_providers_idProviders = this.Relations["FK_dbo.tb_accountsToPay_dbo.tb_providers_idProviders"];
             this._relationFK_dbo_tb_accountsToReceive_dbo_tb_budgets_os_idBudgets_OS = this.Relations["FK_dbo.tb_accountsToReceive_dbo.tb_budgets_os_idBudgets_OS"];
@@ -659,6 +687,8 @@ namespace UIWindows {
             this._relationFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash1 = this.Relations["FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash1"];
             this._relationFK_dbo_tb_cheques_dbo_tb_cash_idCash1 = this.Relations["FK_dbo.tb_cheques_dbo.tb_cash_idCash1"];
             this._relationFK_dbo_tb_cheques_dbo_tb_cash_idCash2 = this.Relations["FK_dbo.tb_cheques_dbo.tb_cash_idCash2"];
+            this._relationFK_dbo_tb_accountsToReceive_dbo_tb_budgets_os_idBudgets_OS1 = this.Relations["FK_dbo.tb_accountsToReceive_dbo.tb_budgets_os_idBudgets_OS1"];
+            this._relationFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash2 = this.Relations["FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash2"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -705,6 +735,8 @@ namespace UIWindows {
             base.Tables.Add(this.tabletb_cashReport);
             this.tabletb_chequesReport = new tb_chequesReportDataTable();
             base.Tables.Add(this.tabletb_chequesReport);
+            this.tabletb_accountsToReceiveReport = new tb_accountsToReceiveReportDataTable();
+            base.Tables.Add(this.tabletb_accountsToReceiveReport);
             this._relationFK_dbo_tb_accountsToPay_dbo_tb_cash_idCash = new global::System.Data.DataRelation("FK_dbo.tb_accountsToPay_dbo.tb_cash_idCash", new global::System.Data.DataColumn[] {
                         this.tabletb_cash.sIDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletb_accountsToPay.idCashColumn}, false);
@@ -781,6 +813,14 @@ namespace UIWindows {
                         this.tabletb_cash.sIDColumn}, new global::System.Data.DataColumn[] {
                         this.tabletb_chequesReport.idCashColumn}, false);
             this.Relations.Add(this._relationFK_dbo_tb_cheques_dbo_tb_cash_idCash2);
+            this._relationFK_dbo_tb_accountsToReceive_dbo_tb_budgets_os_idBudgets_OS1 = new global::System.Data.DataRelation("FK_dbo.tb_accountsToReceive_dbo.tb_budgets_os_idBudgets_OS1", new global::System.Data.DataColumn[] {
+                        this.tabletb_budgets_os.sIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletb_accountsToReceiveReport.idBudgets_OSColumn}, false);
+            this.Relations.Add(this._relationFK_dbo_tb_accountsToReceive_dbo_tb_budgets_os_idBudgets_OS1);
+            this._relationFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash2 = new global::System.Data.DataRelation("FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash2", new global::System.Data.DataColumn[] {
+                        this.tabletb_cash.sIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletb_accountsToReceiveReport.idCashColumn}, false);
+            this.Relations.Add(this._relationFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash2);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -893,6 +933,12 @@ namespace UIWindows {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializetb_accountsToReceiveReport() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -999,6 +1045,9 @@ namespace UIWindows {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void tb_chequesReportRowChangeEventHandler(object sender, tb_chequesReportRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void tb_accountsToReceiveReportRowChangeEventHandler(object sender, tb_accountsToReceiveReportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -8966,6 +9015,436 @@ namespace UIWindows {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tb_accountsToReceiveReportDataTable : global::System.Data.TypedTableBase<tb_accountsToReceiveReportRow> {
+            
+            private global::System.Data.DataColumn columnsId_Budgets_OS;
+            
+            private global::System.Data.DataColumn columnsId_Client;
+            
+            private global::System.Data.DataColumn columndValue;
+            
+            private global::System.Data.DataColumn columndtDueDate;
+            
+            private global::System.Data.DataColumn columndtReceiveDate;
+            
+            private global::System.Data.DataColumn columnbReceivePaid;
+            
+            private global::System.Data.DataColumn columniInstallment;
+            
+            private global::System.Data.DataColumn columniAmountInstallment;
+            
+            private global::System.Data.DataColumn columnsReferentTo;
+            
+            private global::System.Data.DataColumn columnidCash;
+            
+            private global::System.Data.DataColumn columnidBudgets_OS;
+            
+            private global::System.Data.DataColumn columnsIdReceive;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_accountsToReceiveReportDataTable() {
+                this.TableName = "tb_accountsToReceiveReport";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal tb_accountsToReceiveReportDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected tb_accountsToReceiveReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sId_Budgets_OSColumn {
+                get {
+                    return this.columnsId_Budgets_OS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sId_ClientColumn {
+                get {
+                    return this.columnsId_Client;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dValueColumn {
+                get {
+                    return this.columndValue;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtDueDateColumn {
+                get {
+                    return this.columndtDueDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn dtReceiveDateColumn {
+                get {
+                    return this.columndtReceiveDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn bReceivePaidColumn {
+                get {
+                    return this.columnbReceivePaid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn iInstallmentColumn {
+                get {
+                    return this.columniInstallment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn iAmountInstallmentColumn {
+                get {
+                    return this.columniAmountInstallment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sReferentToColumn {
+                get {
+                    return this.columnsReferentTo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idCashColumn {
+                get {
+                    return this.columnidCash;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn idBudgets_OSColumn {
+                get {
+                    return this.columnidBudgets_OS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sIdReceiveColumn {
+                get {
+                    return this.columnsIdReceive;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_accountsToReceiveReportRow this[int index] {
+                get {
+                    return ((tb_accountsToReceiveReportRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_accountsToReceiveReportRowChangeEventHandler tb_accountsToReceiveReportRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_accountsToReceiveReportRowChangeEventHandler tb_accountsToReceiveReportRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_accountsToReceiveReportRowChangeEventHandler tb_accountsToReceiveReportRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event tb_accountsToReceiveReportRowChangeEventHandler tb_accountsToReceiveReportRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Addtb_accountsToReceiveReportRow(tb_accountsToReceiveReportRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_accountsToReceiveReportRow Addtb_accountsToReceiveReportRow(string sId_Budgets_OS, string sId_Client, decimal dValue, System.DateTime dtDueDate, System.DateTime dtReceiveDate, bool bReceivePaid, int iInstallment, int iAmountInstallment, string sReferentTo, tb_cashRow _parenttb_cashRowByFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash2, tb_budgets_osRow _parenttb_budgets_osRowByFK_dbo_tb_accountsToReceive_dbo_tb_budgets_os_idBudgets_OS1, string sIdReceive) {
+                tb_accountsToReceiveReportRow rowtb_accountsToReceiveReportRow = ((tb_accountsToReceiveReportRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        sId_Budgets_OS,
+                        sId_Client,
+                        dValue,
+                        dtDueDate,
+                        dtReceiveDate,
+                        bReceivePaid,
+                        iInstallment,
+                        iAmountInstallment,
+                        sReferentTo,
+                        null,
+                        null,
+                        sIdReceive};
+                if ((_parenttb_cashRowByFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash2 != null)) {
+                    columnValuesArray[9] = _parenttb_cashRowByFK_dbo_tb_accountsToReceive_dbo_tb_cash_idCash2[0];
+                }
+                if ((_parenttb_budgets_osRowByFK_dbo_tb_accountsToReceive_dbo_tb_budgets_os_idBudgets_OS1 != null)) {
+                    columnValuesArray[10] = _parenttb_budgets_osRowByFK_dbo_tb_accountsToReceive_dbo_tb_budgets_os_idBudgets_OS1[0];
+                }
+                rowtb_accountsToReceiveReportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtb_accountsToReceiveReportRow);
+                return rowtb_accountsToReceiveReportRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_accountsToReceiveReportRow FindBysIdReceive(string sIdReceive) {
+                return ((tb_accountsToReceiveReportRow)(this.Rows.Find(new object[] {
+                            sIdReceive})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tb_accountsToReceiveReportDataTable cln = ((tb_accountsToReceiveReportDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tb_accountsToReceiveReportDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnsId_Budgets_OS = base.Columns["sId_Budgets_OS"];
+                this.columnsId_Client = base.Columns["sId_Client"];
+                this.columndValue = base.Columns["dValue"];
+                this.columndtDueDate = base.Columns["dtDueDate"];
+                this.columndtReceiveDate = base.Columns["dtReceiveDate"];
+                this.columnbReceivePaid = base.Columns["bReceivePaid"];
+                this.columniInstallment = base.Columns["iInstallment"];
+                this.columniAmountInstallment = base.Columns["iAmountInstallment"];
+                this.columnsReferentTo = base.Columns["sReferentTo"];
+                this.columnidCash = base.Columns["idCash"];
+                this.columnidBudgets_OS = base.Columns["idBudgets_OS"];
+                this.columnsIdReceive = base.Columns["sIdReceive"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnsId_Budgets_OS = new global::System.Data.DataColumn("sId_Budgets_OS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsId_Budgets_OS);
+                this.columnsId_Client = new global::System.Data.DataColumn("sId_Client", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsId_Client);
+                this.columndValue = new global::System.Data.DataColumn("dValue", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndValue);
+                this.columndtDueDate = new global::System.Data.DataColumn("dtDueDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtDueDate);
+                this.columndtReceiveDate = new global::System.Data.DataColumn("dtReceiveDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndtReceiveDate);
+                this.columnbReceivePaid = new global::System.Data.DataColumn("bReceivePaid", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbReceivePaid);
+                this.columniInstallment = new global::System.Data.DataColumn("iInstallment", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniInstallment);
+                this.columniAmountInstallment = new global::System.Data.DataColumn("iAmountInstallment", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columniAmountInstallment);
+                this.columnsReferentTo = new global::System.Data.DataColumn("sReferentTo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsReferentTo);
+                this.columnidCash = new global::System.Data.DataColumn("idCash", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidCash);
+                this.columnidBudgets_OS = new global::System.Data.DataColumn("idBudgets_OS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidBudgets_OS);
+                this.columnsIdReceive = new global::System.Data.DataColumn("sIdReceive", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsIdReceive);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnsIdReceive}, true));
+                this.columnsId_Budgets_OS.MaxLength = 100;
+                this.columnsId_Client.MaxLength = 100;
+                this.columndValue.AllowDBNull = false;
+                this.columndtDueDate.AllowDBNull = false;
+                this.columndtReceiveDate.AllowDBNull = false;
+                this.columnbReceivePaid.AllowDBNull = false;
+                this.columniInstallment.AllowDBNull = false;
+                this.columniAmountInstallment.AllowDBNull = false;
+                this.columnsReferentTo.MaxLength = 100;
+                this.columnidCash.MaxLength = 40;
+                this.columnidBudgets_OS.MaxLength = 40;
+                this.columnsIdReceive.AllowDBNull = false;
+                this.columnsIdReceive.Unique = true;
+                this.columnsIdReceive.MaxLength = 40;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_accountsToReceiveReportRow Newtb_accountsToReceiveReportRow() {
+                return ((tb_accountsToReceiveReportRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tb_accountsToReceiveReportRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tb_accountsToReceiveReportRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tb_accountsToReceiveReportRowChanged != null)) {
+                    this.tb_accountsToReceiveReportRowChanged(this, new tb_accountsToReceiveReportRowChangeEvent(((tb_accountsToReceiveReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tb_accountsToReceiveReportRowChanging != null)) {
+                    this.tb_accountsToReceiveReportRowChanging(this, new tb_accountsToReceiveReportRowChangeEvent(((tb_accountsToReceiveReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tb_accountsToReceiveReportRowDeleted != null)) {
+                    this.tb_accountsToReceiveReportRowDeleted(this, new tb_accountsToReceiveReportRowChangeEvent(((tb_accountsToReceiveReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tb_accountsToReceiveReportRowDeleting != null)) {
+                    this.tb_accountsToReceiveReportRowDeleting(this, new tb_accountsToReceiveReportRowChangeEvent(((tb_accountsToReceiveReportRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Removetb_accountsToReceiveReportRow(tb_accountsToReceiveReportRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                FullDataSet ds = new FullDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tb_accountsToReceiveReportDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class @__MigrationHistoryRow : global::System.Data.DataRow {
@@ -10402,6 +10881,17 @@ namespace UIWindows {
                     return ((tb_itemsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.tb_items_dbo.tb_budgets_os_IdBudgets_OS"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_accountsToReceiveReportRow[] Gettb_accountsToReceiveReportRows() {
+                if ((this.Table.ChildRelations["FK_dbo.tb_accountsToReceive_dbo.tb_budgets_os_idBudgets_OS1"] == null)) {
+                    return new tb_accountsToReceiveReportRow[0];
+                }
+                else {
+                    return ((tb_accountsToReceiveReportRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.tb_accountsToReceive_dbo.tb_budgets_os_idBudgets_OS1"])));
+                }
+            }
         }
         
         /// <summary>
@@ -10615,6 +11105,17 @@ namespace UIWindows {
                 }
                 else {
                     return ((tb_chequesReportRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.tb_cheques_dbo.tb_cash_idCash2"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_accountsToReceiveReportRow[] Gettb_accountsToReceiveReportRows() {
+                if ((this.Table.ChildRelations["FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash2"] == null)) {
+                    return new tb_accountsToReceiveReportRow[0];
+                }
+                else {
+                    return ((tb_accountsToReceiveReportRow[])(base.GetChildRows(this.Table.ChildRelations["FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash2"])));
                 }
             }
         }
@@ -13517,6 +14018,262 @@ namespace UIWindows {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tb_accountsToReceiveReportRow : global::System.Data.DataRow {
+            
+            private tb_accountsToReceiveReportDataTable tabletb_accountsToReceiveReport;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal tb_accountsToReceiveReportRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletb_accountsToReceiveReport = ((tb_accountsToReceiveReportDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sId_Budgets_OS {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_accountsToReceiveReport.sId_Budgets_OSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sId_Budgets_OS\' na tabela \'tb_accountsToReceiveReport\' é DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.sId_Budgets_OSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sId_Client {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_accountsToReceiveReport.sId_ClientColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sId_Client\' na tabela \'tb_accountsToReceiveReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.sId_ClientColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal dValue {
+                get {
+                    return ((decimal)(this[this.tabletb_accountsToReceiveReport.dValueColumn]));
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.dValueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtDueDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletb_accountsToReceiveReport.dtDueDateColumn]));
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.dtDueDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime dtReceiveDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tabletb_accountsToReceiveReport.dtReceiveDateColumn]));
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.dtReceiveDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool bReceivePaid {
+                get {
+                    return ((bool)(this[this.tabletb_accountsToReceiveReport.bReceivePaidColumn]));
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.bReceivePaidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int iInstallment {
+                get {
+                    return ((int)(this[this.tabletb_accountsToReceiveReport.iInstallmentColumn]));
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.iInstallmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int iAmountInstallment {
+                get {
+                    return ((int)(this[this.tabletb_accountsToReceiveReport.iAmountInstallmentColumn]));
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.iAmountInstallmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sReferentTo {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_accountsToReceiveReport.sReferentToColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sReferentTo\' na tabela \'tb_accountsToReceiveReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.sReferentToColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string idCash {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_accountsToReceiveReport.idCashColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idCash\' na tabela \'tb_accountsToReceiveReport\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.idCashColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string idBudgets_OS {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_accountsToReceiveReport.idBudgets_OSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'idBudgets_OS\' na tabela \'tb_accountsToReceiveReport\' é DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.idBudgets_OSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sIdReceive {
+                get {
+                    return ((string)(this[this.tabletb_accountsToReceiveReport.sIdReceiveColumn]));
+                }
+                set {
+                    this[this.tabletb_accountsToReceiveReport.sIdReceiveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_budgets_osRow tb_budgets_osRow {
+                get {
+                    return ((tb_budgets_osRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.tb_accountsToReceive_dbo.tb_budgets_os_idBudgets_OS1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.tb_accountsToReceive_dbo.tb_budgets_os_idBudgets_OS1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_cashRow tb_cashRow {
+                get {
+                    return ((tb_cashRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_dbo.tb_accountsToReceive_dbo.tb_cash_idCash2"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssId_Budgets_OSNull() {
+                return this.IsNull(this.tabletb_accountsToReceiveReport.sId_Budgets_OSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsId_Budgets_OSNull() {
+                this[this.tabletb_accountsToReceiveReport.sId_Budgets_OSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssId_ClientNull() {
+                return this.IsNull(this.tabletb_accountsToReceiveReport.sId_ClientColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsId_ClientNull() {
+                this[this.tabletb_accountsToReceiveReport.sId_ClientColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssReferentToNull() {
+                return this.IsNull(this.tabletb_accountsToReceiveReport.sReferentToColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsReferentToNull() {
+                this[this.tabletb_accountsToReceiveReport.sReferentToColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsidCashNull() {
+                return this.IsNull(this.tabletb_accountsToReceiveReport.idCashColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetidCashNull() {
+                this[this.tabletb_accountsToReceiveReport.idCashColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsidBudgets_OSNull() {
+                return this.IsNull(this.tabletb_accountsToReceiveReport.idBudgets_OSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetidBudgets_OSNull() {
+                this[this.tabletb_accountsToReceiveReport.idBudgets_OSColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -14114,6 +14871,40 @@ namespace UIWindows {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tb_chequesReportRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class tb_accountsToReceiveReportRowChangeEvent : global::System.EventArgs {
+            
+            private tb_accountsToReceiveReportRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_accountsToReceiveReportRowChangeEvent(tb_accountsToReceiveReportRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public tb_accountsToReceiveReportRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -24411,6 +25202,668 @@ ORDER BY ch.dtDueDate";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class tb_accountsToReceiveReportTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public tb_accountsToReceiveReportTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "tb_accountsToReceiveReport";
+            tableMapping.ColumnMappings.Add("sId_Budgets_OS", "sId_Budgets_OS");
+            tableMapping.ColumnMappings.Add("sId_Client", "sId_Client");
+            tableMapping.ColumnMappings.Add("dValue", "dValue");
+            tableMapping.ColumnMappings.Add("dtDueDate", "dtDueDate");
+            tableMapping.ColumnMappings.Add("dtReceiveDate", "dtReceiveDate");
+            tableMapping.ColumnMappings.Add("bReceivePaid", "bReceivePaid");
+            tableMapping.ColumnMappings.Add("iInstallment", "iInstallment");
+            tableMapping.ColumnMappings.Add("iAmountInstallment", "iAmountInstallment");
+            tableMapping.ColumnMappings.Add("sReferentTo", "sReferentTo");
+            tableMapping.ColumnMappings.Add("idCash", "idCash");
+            tableMapping.ColumnMappings.Add("idBudgets_OS", "idBudgets_OS");
+            tableMapping.ColumnMappings.Add("sIdReceive", "sIdReceive");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tb_accountsToReceive] WHERE (([sID] = @Original_sIdReceive) AND ((@IsNull_sId_Budgets_OS = 1 AND [sId_Budgets_OS] IS NULL) OR ([sId_Budgets_OS] = @Original_sId_Budgets_OS)) AND ((@IsNull_sId_Client = 1 AND [sId_Client] IS NULL) OR ([sId_Client] = @Original_sId_Client)) AND ([dValue] = @Original_dValue) AND ([dtDueDate] = @Original_dtDueDate) AND ([dtReceiveDate] = @Original_dtReceiveDate) AND ([bReceivePaid] = @Original_bReceivePaid) AND ([iInstallment] = @Original_iInstallment) AND ([iAmountInstallment] = @Original_iAmountInstallment) AND ((@IsNull_sReferentTo = 1 AND [sReferentTo] IS NULL) OR ([sReferentTo] = @Original_sReferentTo)) AND ((@IsNull_idCash = 1 AND [idCash] IS NULL) OR ([idCash] = @Original_idCash)) AND ((@IsNull_idBudgets_OS = 1 AND [idBudgets_OS] IS NULL) OR ([idBudgets_OS] = @Original_idBudgets_OS)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sIdReceive", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sIdReceive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sId_Budgets_OS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sId_Budgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sId_Client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Client", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sId_Client", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Client", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dValue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDueDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDueDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtReceiveDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtReceiveDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bReceivePaid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bReceivePaid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iInstallment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iInstallment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iAmountInstallment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iAmountInstallment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sReferentTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sReferentTo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sReferentTo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sReferentTo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCash", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCash", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCash", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCash", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idBudgets_OS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idBudgets_OS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idBudgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idBudgets_OS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tb_accountsToReceive] ([sID], [sId_Budgets_OS], [sId_Client], [dValue], [dtDueDate], [dtReceiveDate], [bReceivePaid], [iInstallment], [iAmountInstallment], [sReferentTo], [idCash], [idBudgets_OS]) VALUES (@sIdReceive, @sId_Budgets_OS, @sId_Client, @dValue, @dtDueDate, @dtReceiveDate, @bReceivePaid, @iInstallment, @iAmountInstallment, @sReferentTo, @idCash, @idBudgets_OS);
+SELECT sID AS sIdReceive, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS FROM tb_accountsToReceive WHERE (sID = @sID)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sIdReceive", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sIdReceive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sId_Budgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sId_Client", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dValue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDueDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtReceiveDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtReceiveDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bReceivePaid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bReceivePaid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iInstallment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iInstallment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iAmountInstallment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iAmountInstallment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sReferentTo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sReferentTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCash", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idBudgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idBudgets_OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "sIdReceive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [tb_accountsToReceive] SET [sID] = @sIdReceive, [sId_Budgets_OS] = @sId_Budgets_OS, [sId_Client] = @sId_Client, [dValue] = @dValue, [dtDueDate] = @dtDueDate, [dtReceiveDate] = @dtReceiveDate, [bReceivePaid] = @bReceivePaid, [iInstallment] = @iInstallment, [iAmountInstallment] = @iAmountInstallment, [sReferentTo] = @sReferentTo, [idCash] = @idCash, [idBudgets_OS] = @idBudgets_OS WHERE (([sID] = @Original_sIdReceive) AND ((@IsNull_sId_Budgets_OS = 1 AND [sId_Budgets_OS] IS NULL) OR ([sId_Budgets_OS] = @Original_sId_Budgets_OS)) AND ((@IsNull_sId_Client = 1 AND [sId_Client] IS NULL) OR ([sId_Client] = @Original_sId_Client)) AND ([dValue] = @Original_dValue) AND ([dtDueDate] = @Original_dtDueDate) AND ([dtReceiveDate] = @Original_dtReceiveDate) AND ([bReceivePaid] = @Original_bReceivePaid) AND ([iInstallment] = @Original_iInstallment) AND ([iAmountInstallment] = @Original_iAmountInstallment) AND ((@IsNull_sReferentTo = 1 AND [sReferentTo] IS NULL) OR ([sReferentTo] = @Original_sReferentTo)) AND ((@IsNull_idCash = 1 AND [idCash] IS NULL) OR ([idCash] = @Original_idCash)) AND ((@IsNull_idBudgets_OS = 1 AND [idBudgets_OS] IS NULL) OR ([idBudgets_OS] = @Original_idBudgets_OS)));
+SELECT sID AS sIdReceive, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS FROM tb_accountsToReceive WHERE (sID = @sID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sIdReceive", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sIdReceive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sId_Budgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sId_Client", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dValue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtDueDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDueDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtReceiveDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtReceiveDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bReceivePaid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bReceivePaid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iInstallment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iInstallment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@iAmountInstallment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iAmountInstallment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sReferentTo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sReferentTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCash", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idBudgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idBudgets_OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sIdReceive", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sIdReceive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sId_Budgets_OS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sId_Budgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sId_Client", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Client", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sId_Client", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Client", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dValue", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dValue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtDueDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtDueDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtReceiveDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtReceiveDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bReceivePaid", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bReceivePaid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iInstallment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iInstallment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_iAmountInstallment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "iAmountInstallment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sReferentTo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sReferentTo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sReferentTo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sReferentTo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCash", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCash", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCash", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCash", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idBudgets_OS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idBudgets_OS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idBudgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idBudgets_OS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "sIdReceive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::UIWindows.Properties.Settings.Default.InoxErpDBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        sID AS sIdReceive, sId_Budgets_OS, sId_Client, dValue, dtDueDate, d" +
+                "tReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCas" +
+                "h, idBudgets_OS\r\nFROM            tb_accountsToReceive";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT bReceivePaid, dValue, dtDueDate, dtReceiveDate, iAmountInstallment, iInsta" +
+                "llment, idBudgets_OS, idCash, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_ac" +
+                "countsToReceive WHERE (bReceivePaid = 1) ORDER BY dtDueDate DESC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT bReceivePaid, dValue, dtDueDate, dtReceiveDate, iAmountInstallment, iInsta" +
+                "llment, idBudgets_OS, idCash, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_ac" +
+                "countsToReceive WHERE (bReceivePaid = 0) ORDER BY dtDueDate DESC";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(FullDataSet.tb_accountsToReceiveReportDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual FullDataSet.tb_accountsToReceiveReportDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            FullDataSet.tb_accountsToReceiveReportDataTable dataTable = new FullDataSet.tb_accountsToReceiveReportDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAccountReceived(FullDataSet.tb_accountsToReceiveReportDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_accountsToReceiveReportDataTable GetByAccountReceived() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            FullDataSet.tb_accountsToReceiveReportDataTable dataTable = new FullDataSet.tb_accountsToReceiveReportDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAccountsToReceive(FullDataSet.tb_accountsToReceiveReportDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual FullDataSet.tb_accountsToReceiveReportDataTable GetByAccountsToReceive() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            FullDataSet.tb_accountsToReceiveReportDataTable dataTable = new FullDataSet.tb_accountsToReceiveReportDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FullDataSet.tb_accountsToReceiveReportDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(FullDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "tb_accountsToReceiveReport");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_sIdReceive, string Original_sId_Budgets_OS, string Original_sId_Client, decimal Original_dValue, System.DateTime Original_dtDueDate, System.DateTime Original_dtReceiveDate, bool Original_bReceivePaid, int Original_iInstallment, int Original_iAmountInstallment, string Original_sReferentTo, string Original_idCash, string Original_idBudgets_OS) {
+            if ((Original_sIdReceive == null)) {
+                throw new global::System.ArgumentNullException("Original_sIdReceive");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_sIdReceive));
+            }
+            if ((Original_sId_Budgets_OS == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_sId_Budgets_OS));
+            }
+            if ((Original_sId_Client == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_sId_Client));
+            }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_dValue));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_dtDueDate));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_dtReceiveDate));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_bReceivePaid));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_iInstallment));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_iAmountInstallment));
+            if ((Original_sReferentTo == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_sReferentTo));
+            }
+            if ((Original_idCash == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_idCash));
+            }
+            if ((Original_idBudgets_OS == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_idBudgets_OS));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string sIdReceive, string sId_Budgets_OS, string sId_Client, decimal dValue, System.DateTime dtDueDate, System.DateTime dtReceiveDate, bool bReceivePaid, int iInstallment, int iAmountInstallment, string sReferentTo, string idCash, string idBudgets_OS, string sID) {
+            if ((sIdReceive == null)) {
+                throw new global::System.ArgumentNullException("sIdReceive");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(sIdReceive));
+            }
+            if ((sId_Budgets_OS == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(sId_Budgets_OS));
+            }
+            if ((sId_Client == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(sId_Client));
+            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(dValue));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(dtDueDate));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(dtReceiveDate));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(bReceivePaid));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(iInstallment));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(iAmountInstallment));
+            if ((sReferentTo == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(sReferentTo));
+            }
+            if ((idCash == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(idCash));
+            }
+            if ((idBudgets_OS == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(idBudgets_OS));
+            }
+            if ((sID == null)) {
+                throw new global::System.ArgumentNullException("sID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(sID));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string sIdReceive, 
+                    string sId_Budgets_OS, 
+                    string sId_Client, 
+                    decimal dValue, 
+                    System.DateTime dtDueDate, 
+                    System.DateTime dtReceiveDate, 
+                    bool bReceivePaid, 
+                    int iInstallment, 
+                    int iAmountInstallment, 
+                    string sReferentTo, 
+                    string idCash, 
+                    string idBudgets_OS, 
+                    string Original_sIdReceive, 
+                    string Original_sId_Budgets_OS, 
+                    string Original_sId_Client, 
+                    decimal Original_dValue, 
+                    System.DateTime Original_dtDueDate, 
+                    System.DateTime Original_dtReceiveDate, 
+                    bool Original_bReceivePaid, 
+                    int Original_iInstallment, 
+                    int Original_iAmountInstallment, 
+                    string Original_sReferentTo, 
+                    string Original_idCash, 
+                    string Original_idBudgets_OS, 
+                    string sID) {
+            if ((sIdReceive == null)) {
+                throw new global::System.ArgumentNullException("sIdReceive");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(sIdReceive));
+            }
+            if ((sId_Budgets_OS == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(sId_Budgets_OS));
+            }
+            if ((sId_Client == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(sId_Client));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(dValue));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(dtDueDate));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(dtReceiveDate));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(bReceivePaid));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(iInstallment));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(iAmountInstallment));
+            if ((sReferentTo == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(sReferentTo));
+            }
+            if ((idCash == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(idCash));
+            }
+            if ((idBudgets_OS == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(idBudgets_OS));
+            }
+            if ((Original_sIdReceive == null)) {
+                throw new global::System.ArgumentNullException("Original_sIdReceive");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_sIdReceive));
+            }
+            if ((Original_sId_Budgets_OS == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_sId_Budgets_OS));
+            }
+            if ((Original_sId_Client == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_sId_Client));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_dValue));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_dtDueDate));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_dtReceiveDate));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((bool)(Original_bReceivePaid));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_iInstallment));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_iAmountInstallment));
+            if ((Original_sReferentTo == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_sReferentTo));
+            }
+            if ((Original_idCash == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_idCash));
+            }
+            if ((Original_idBudgets_OS == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_idBudgets_OS));
+            }
+            if ((sID == null)) {
+                throw new global::System.ArgumentNullException("sID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(sID));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string sId_Budgets_OS, 
+                    string sId_Client, 
+                    decimal dValue, 
+                    System.DateTime dtDueDate, 
+                    System.DateTime dtReceiveDate, 
+                    bool bReceivePaid, 
+                    int iInstallment, 
+                    int iAmountInstallment, 
+                    string sReferentTo, 
+                    string idCash, 
+                    string idBudgets_OS, 
+                    string Original_sIdReceive, 
+                    string Original_sId_Budgets_OS, 
+                    string Original_sId_Client, 
+                    decimal Original_dValue, 
+                    System.DateTime Original_dtDueDate, 
+                    System.DateTime Original_dtReceiveDate, 
+                    bool Original_bReceivePaid, 
+                    int Original_iInstallment, 
+                    int Original_iAmountInstallment, 
+                    string Original_sReferentTo, 
+                    string Original_idCash, 
+                    string Original_idBudgets_OS) {
+            return this.Update(Original_sIdReceive, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS, Original_sIdReceive, Original_sId_Budgets_OS, Original_sId_Client, Original_dValue, Original_dtDueDate, Original_dtReceiveDate, Original_bReceivePaid, Original_iInstallment, Original_iAmountInstallment, Original_sReferentTo, Original_idCash, Original_idBudgets_OS, Original_sIdReceive);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -24451,6 +25904,8 @@ ORDER BY ch.dtDueDate";
         private tb_servicesTableAdapter _tb_servicesTableAdapter;
         
         private tb_usersTableAdapter _tb_usersTableAdapter;
+        
+        private tb_accountsToReceiveReportTableAdapter _tb_accountsToReceiveReportTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -24679,6 +26134,20 @@ ORDER BY ch.dtDueDate";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public tb_accountsToReceiveReportTableAdapter tb_accountsToReceiveReportTableAdapter {
+            get {
+                return this._tb_accountsToReceiveReportTableAdapter;
+            }
+            set {
+                this._tb_accountsToReceiveReportTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -24756,6 +26225,10 @@ ORDER BY ch.dtDueDate";
                             && (this._tb_usersTableAdapter.Connection != null))) {
                     return this._tb_usersTableAdapter.Connection;
                 }
+                if (((this._tb_accountsToReceiveReportTableAdapter != null) 
+                            && (this._tb_accountsToReceiveReportTableAdapter.Connection != null))) {
+                    return this._tb_accountsToReceiveReportTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -24814,6 +26287,9 @@ ORDER BY ch.dtDueDate";
                 if ((this._tb_usersTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._tb_accountsToReceiveReportTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -24861,6 +26337,15 @@ ORDER BY ch.dtDueDate";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tb_itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tb_itemsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._permitionsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Permitions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -24885,15 +26370,6 @@ ORDER BY ch.dtDueDate";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tb_accountsToReceiveTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tb_itemsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tb_itemsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -24960,6 +26436,15 @@ ORDER BY ch.dtDueDate";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tb_accountsToReceiveReportTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tb_accountsToReceiveReport.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tb_accountsToReceiveReportTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -25002,6 +26487,14 @@ ORDER BY ch.dtDueDate";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tb_itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tb_itemsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._permitionsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Permitions.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -25023,14 +26516,6 @@ ORDER BY ch.dtDueDate";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tb_accountsToReceiveTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tb_itemsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tb_itemsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -25090,6 +26575,14 @@ ORDER BY ch.dtDueDate";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tb_accountsToReceiveReportTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tb_accountsToReceiveReport.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tb_accountsToReceiveReportTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -25100,6 +26593,14 @@ ORDER BY ch.dtDueDate";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(FullDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._tb_accountsToReceiveReportTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tb_accountsToReceiveReport.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tb_accountsToReceiveReportTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._tb_productsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tb_products.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -25156,14 +26657,6 @@ ORDER BY ch.dtDueDate";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tb_itemsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tb_itemsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tb_accountsToReceiveTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tb_accountsToReceive.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -25185,6 +26678,14 @@ ORDER BY ch.dtDueDate";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._permitionsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tb_itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tb_items.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tb_itemsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -25331,6 +26832,11 @@ ORDER BY ch.dtDueDate";
             }
             if (((this._tb_usersTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tb_usersTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
+                        "cadeia de conexão.");
+            }
+            if (((this._tb_accountsToReceiveReportTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tb_accountsToReceiveReportTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos os TableAdapters gerenciados por um TableAdapterManager devem usar a mesma " +
                         "cadeia de conexão.");
             }
@@ -25501,6 +27007,15 @@ ORDER BY ch.dtDueDate";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tb_usersTableAdapter.Adapter);
                     }
                 }
+                if ((this._tb_accountsToReceiveReportTableAdapter != null)) {
+                    revertConnections.Add(this._tb_accountsToReceiveReportTableAdapter, this._tb_accountsToReceiveReportTableAdapter.Connection);
+                    this._tb_accountsToReceiveReportTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tb_accountsToReceiveReportTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tb_accountsToReceiveReportTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tb_accountsToReceiveReportTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tb_accountsToReceiveReportTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -25618,6 +27133,10 @@ ORDER BY ch.dtDueDate";
                 if ((this._tb_usersTableAdapter != null)) {
                     this._tb_usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_usersTableAdapter]));
                     this._tb_usersTableAdapter.Transaction = null;
+                }
+                if ((this._tb_accountsToReceiveReportTableAdapter != null)) {
+                    this._tb_accountsToReceiveReportTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tb_accountsToReceiveReportTableAdapter]));
+                    this._tb_accountsToReceiveReportTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

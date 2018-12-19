@@ -149,7 +149,7 @@ namespace InoxERP
         //menu reports ABA CASH
         private void dinheiroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmReportCashMoney().Show();
+            new frmReportAccounts().Show();
 
         }
 
@@ -308,9 +308,9 @@ namespace InoxERP
 
 
         //pic reports ABA CASH
-        private void picRelDinheiro_Click(object sender, EventArgs e)
+        private void picRelCaixa_Click(object sender, EventArgs e)
         {
-            new frmReportCashMoney().Show();
+            new frmReportCashGeneral().Show();
         }
 
         private void picRelCheques_Click(object sender, EventArgs e)
@@ -318,11 +318,10 @@ namespace InoxERP
             new frmReportCashCheque().Show();
         }
 
-        private void picRelCaixaGeral_Click(object sender, EventArgs e)
+        private void picRelContas_Click(object sender, EventArgs e)
         {
-            new frmReportCashGeneral().Show();
+            new frmReportAccounts().Show();
         }
-
 
         //PIC BACKUP
         private void picBackup_Click_1(object sender, EventArgs e)
