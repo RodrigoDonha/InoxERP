@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
+using UIWindows.Entities;
 
 namespace UIWindows
 {
@@ -60,19 +61,220 @@ namespace UIWindows
             { }
             else
             {
+                lblId.Text = grdAPagar[0, grdAPagar.CurrentRow.Index].Value.ToString();
+
+                ClientsBusiness objC = new ClientsBusiness(ctx);
+                ProviderBusiness objP = new ProviderBusiness(ctx);
+
                 string cli = grdAPagar[2, grdAPagar.CurrentRow.Index].Value.ToString();
-                txtNomeFornecedor.Text = objClient.Search
-                    .FirstOrDefault(c => c.sID == cli).sName.ToString();
+                try
+                {
+                    txtNomeFornecedor.Text = objC.Search
+                        .FirstOrDefault(c => c.sID == cli).sName;
+                }
+                catch (Exception)
+                {
+                    try
+                    {
+                        txtNomeFornecedor.Text = objP.Search
+                            .FirstOrDefault(c => c.sID == cli).sName;
+                    }
+                    catch (Exception)
+                    {
+                        txtNomeFornecedor.Text = "";
+                    }
+                }
 
                 string id = grdAPagar[1, grdAPagar.CurrentRow.Index].Value.ToString();
-                txtOS.Text = objBudget.Search
-                    .FirstOrDefault(c => c.sID == id).iCod.ToString();
+                try
+                {
+                    txtOS.Text = objBudget.Search
+                        .FirstOrDefault(c => c.sID == id).iCod.ToString();
+                }
+                catch (Exception)
+                {
+                    txtOS.Text = "";
+                }
 
                 dtpData.Text = grdAPagar[3, grdAPagar.CurrentRow.Index].Value.ToString();
                 txtValor.Text = grdAPagar[5, grdAPagar.CurrentRow.Index].Value.ToString();
                 nudParcelas.Value = Convert.ToDecimal(grdAPagar[6, grdAPagar.CurrentRow.Index].Value);
                 txtReferenteA.Text = grdAPagar[9, grdAPagar.CurrentRow.Index].Value.ToString();
             }
+        }
+
+        //DIALOG OPTIONS
+        public DialogResult messageYesNo(string type)
+        {
+            switch (type)
+            {
+                case "confirm":
+                    return MessageBox.Show("Confirma o Lançamento da Conta ?", "Concluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "alter":
+                    return MessageBox.Show("Confirma a Alteração da Conta ?", "Alterar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "delete":
+                    return MessageBox.Show("Confirma a Exclusão da Conta ?", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "cash":
+                    return MessageBox.Show("Confirma a Baixa da Conta ?", "Baixar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+
+            }
+            return DialogResult.No;
+        }
+
+        private string returnOS()
+        {
+            int os = txtOS.Text == "" ? -1 : Convert.ToInt32(txtOS.Text);
+            Budgets_OS retID = new Budgets_OS();
+            try
+            {
+                retID = objBudget.Search.FirstOrDefault(c => c.iCod == os);
+                if (retID.Equals(null))
+                    return null;
+            }
+            catch (Exception)
+            {
+                retID = new Budgets_OS();
+                retID.sID = "";
+                //msg.Show("Ordem de Serviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
+            }
+            return retID.sID;
+        }
+
+        private DateTime returnDueDate(int instalments, DateTime date)
+        {
+            DateTime due = date.Date;
+            int prazo = Convert.ToInt32(nudPrazo.Value);
+
+            if (instalments == 0 && prazo == 0 && due.Equals(DateTime.Today)) //conta a vista
+                return DateTime.Today;
+
+            if (instalments == 0 && prazo == 0 && !due.Equals(DateTime.Today)) //conta pré 1 parcela unica dia fixo
+                return due;
+
+            if (instalments == 0 && prazo != 0) //conta pré 1 parcela unica com dias especificados
+                return due.AddDays(Convert.ToDouble(prazo));
+
+            if (instalments > 0 && prazo == 0) //conta pré com varias parcelas em dias fixos nos meses
+            {
+                due = due.AddMonths(instalments);
+                return due;
+            }
+
+            if (instalments > 0 && prazo != 0) //conta pré com varias parcelas com calculo dos dias conforme valor informado
+            {
+                int i = instalments + 1;
+                due = due.AddDays(Convert.ToDouble(prazo * i));
+                return due;
+            }
+
+            return DateTime.Now;
+        }
+
+        private string returnId()
+        {
+            string id = txtNomeFornecedor.Text == "" ? "0" : txtNomeFornecedor.Text;
+            try
+            {
+                var searchP = from p in ctx.Providers where p.sName.Contains(id) select p;
+
+                if (!searchP.ToList().Count.Equals(0))
+                {
+                    List<Providers> c = new List<Providers>();
+
+                    c = searchP.ToList();
+
+                    id = c[0].sID;
+                }
+                else
+                    try
+                    {
+                        var searchC = from p in ctx.Clients where p.sName.Contains(id) select p;
+
+                        if (!searchC.ToList().Count.Equals(0))
+                        {
+                            List<Clients> c = new List<Clients>();
+
+                            c = searchC.ToList();
+
+                            id = c[0].sID;
+                        }
+                        else
+                            id = objClient.Search.FirstOrDefault(c => c.sName.Contains("CONSUMIDOR")).sID;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Antes de concluir este Lançamento Voçê tem que Cadastrar um Cliente CONSUMIDOR para continuar");
+                    }
+
+            }
+            catch (Exception)
+            { }
+            return id;
+        }
+
+        private void cleanCamps()
+        {
+            lblId.Text = "";
+            txtNomeFornecedor.Clear();
+            txtOS.Clear();
+            txtValor.Clear();
+            dtpData.Value = DateTime.Now;
+            nudParcelas.Value = 1;
+            nudPrazo.Value = 0;
+            txtReferenteA.Clear();
+        }
+
+        private void btnIncluir_Click(object sender, EventArgs e)
+        {
+            if(validationCamps())
+                if (messageYesNo("confirm") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxP = new InoxErpContext();
+                    AccountsToPayBusiness objPersist = new AccountsToPayBusiness(ctxP);
+
+                    DateTime date = dtpData.Value;
+
+                    for (int i = 0; i < nudParcelas.Value; i++)
+                    {
+                        AccountsToPay chequePersist = new AccountsToPay
+                        {
+                            sID = Guid.NewGuid().ToString(),
+
+                            sId_Budgets_OS = returnOS(),
+                            sId_Client = returnId(),
+                            dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
+                            dtDueDate = returnDueDate(i, date),
+                            dtPayDate = DateTime.Today,
+                            bReceivePaid = false,
+                            iInstallment = i + 1,
+                            iAmountInstallment = Convert.ToInt32(nudParcelas.Value),
+                            sReferentTo = txtReferenteA.Text
+                        };
+
+                        objPersist.Insert(chequePersist);
+
+                        var ok = objPersist.Search.FirstOrDefault(b => b.sID == chequePersist.sID);
+
+                        if (ok == null)
+                            MessageBox.Show("Erro ao Lançar a Conta !!!");
+                        else if (i + 1 == nudParcelas.Value)
+                            MessageBox.Show("Contas Lançadas com Sucesso !!!");
+
+                    }
+                    cleanCamps();
+                }
+            fillGrid();
+        }
+
+        private bool validationCamps()
+        {
+            if (!validation.returnCampsEmpty(txtValor,"Valor"))
+                return false;
+            if (!validation.returnCampsEmpty(txtReferenteA, "Referente"))
+                return false;
+
+            return true;
         }
     }
 }

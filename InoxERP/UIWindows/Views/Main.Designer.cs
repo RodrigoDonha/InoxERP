@@ -726,7 +726,7 @@
             this.gpbContas.Controls.Add(this.picaPagar);
             this.gpbContas.Controls.Add(this.lblaPagar);
             this.gpbContas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbContas.Location = new System.Drawing.Point(620, 49);
+            this.gpbContas.Location = new System.Drawing.Point(502, 49);
             this.gpbContas.Name = "gpbContas";
             this.gpbContas.Size = new System.Drawing.Size(112, 343);
             this.gpbContas.TabIndex = 15;
@@ -822,7 +822,7 @@
             this.gpbCaixa.Controls.Add(this.picSaidas);
             this.gpbCaixa.Controls.Add(this.lblSaidas);
             this.gpbCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbCaixa.Location = new System.Drawing.Point(502, 49);
+            this.gpbCaixa.Location = new System.Drawing.Point(620, 49);
             this.gpbCaixa.Name = "gpbCaixa";
             this.gpbCaixa.Size = new System.Drawing.Size(112, 255);
             this.gpbCaixa.TabIndex = 16;

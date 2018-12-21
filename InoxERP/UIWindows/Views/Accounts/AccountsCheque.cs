@@ -183,7 +183,7 @@ namespace UIWindows
 
         private bool validationC2()
         {
-            if (txtC2.Text.Equals("0"))
+            if (txtC2.Text.Length.Equals(0))
             {
                 MessageBox.Show("Informe um Valor para o Campo 2");
                 txtC2.Focus();
@@ -469,7 +469,6 @@ namespace UIWindows
                     
                     cleanCamps();
                 }
-
             fillGrid();
         }
 
@@ -584,18 +583,25 @@ namespace UIWindows
         private void txtC1_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorNumbersCheque(sender,e);
+
+            if (txtC1.Text.Length.Equals(8))
+                txtC2.Focus();
         }
 
         private void txtC2_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorNumbersCheque(sender,e);
+
+            if (txtC2.Text.Length.Equals(10))
+                txtC3.Focus();
         }
 
         private void txtC3_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorNumbersCheque(sender,e);
-        }
 
-        
+            if (txtC3.Text.Length.Equals(12))
+                txtReferenteA.Focus();
+        }
     }
 }

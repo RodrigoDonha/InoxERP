@@ -450,7 +450,6 @@ D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frm
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\InoxERP.frmMain.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Properties.Resources.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmReportCashCheque.resources
-D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmReportCashMoney.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmReportCashGeneral.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmReportDelivery.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmReportBudgets.resources
@@ -487,3 +486,7 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWind
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.Cheques.SituationChequesReport.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.Accounts.GeneralAccountsReport.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmReportAccounts.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.Accounts.GeneralAccountsReport.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.Cheques.GeneralChequesReport.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.Views.Reports.Cheques.SituationChequesReport.resources
+D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Debug\UIWindows.frmReportAccounts.resources

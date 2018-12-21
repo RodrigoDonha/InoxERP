@@ -10,6 +10,8 @@ namespace UIWindows.Business.Concrete
 {
     public class ValidationEntries
     {
+        MessageBoxTimer msg = new MessageBoxTimer();
+
         public void characterValidatorOnlyNumbers(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada não for número e nem backspace e nem vírgula
@@ -139,6 +141,18 @@ namespace UIWindows.Business.Concrete
                     //MessageBox.Show("incluir apenas números de 0 a 9 e vírgula");
                 }
             }
+        }
+
+        public bool returnCampsEmpty(TextBox e, string txt)
+        {
+            if (e.Text.Length.Equals(0))
+            {
+                msg.Show("Campo Vazio", "O Campo Obrigatório '" + txt + "' está vazio.", 0, 2000);
+                e.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         public Estate estate(int num)

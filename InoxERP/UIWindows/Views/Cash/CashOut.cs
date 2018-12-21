@@ -262,26 +262,25 @@ namespace UIWindows
                 {
                     InoxErpContext ctx = new InoxErpContext();
                     CashBusiness objPersist = new CashBusiness(ctx);
-                    Cash cashPersist = new Cash();
+                    Cash cashPersist = new Cash
+                    {
+                        sID = Guid.NewGuid().ToString(),
 
-                    cashPersist.sID = Guid.NewGuid().ToString();
-
-                    cashPersist.sId_Budgets_OS = returnOS();
-                    cashPersist.sId_Client = returnId();
-                    cashPersist.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
-                    cashPersist.dtDate = dtpData.Value;
-                    cashPersist.sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text;
-                    cashPersist.sReferentTo = txtReferenteA.Text;
-                    cashPersist.CashType = CashType.Out;
+                        sId_Budgets_OS = returnOS(),
+                        sId_Client = returnId(),
+                        dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
+                        dtDate = dtpData.Value,
+                        sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text,
+                        sReferentTo = txtReferenteA.Text,
+                        CashType = CashType.Out
+                    };
 
                     objPersist.Insert(cashPersist);
 
                     var ok = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
 
-                    if (ok == null)
-                        MessageBox.Show("Erro ao Lançar a Saída no Caixa !!!");
-                    else
-                        MessageBox.Show("Saída Lançada com Sucesso !!!");
+                    MessageBox.Show(
+                        ok == null ? "Erro ao Lançar a Saída no Caixa !!!" : "Saída Lançada com Sucesso !!!");
 
                     cleanCamps();
                     fillGrid();
