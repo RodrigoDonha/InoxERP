@@ -115,6 +115,7 @@
     <Compile Include="Business\Concrete\ClientsBusiness.cs" />
     <Compile Include="Business\Concrete\ContractBusiness.cs" />
     <Compile Include="Business\Concrete\ItemsBusiness.cs" />
+    <Compile Include="Business\Concrete\ParcialToPayBusiness.cs" />
     <Compile Include="Business\Concrete\ProductBusiness.cs" />
     <Compile Include="Business\Concrete\ProviderBusiness.cs" />
     <Compile Include="Business\Concrete\ServicesBusiness.cs" />

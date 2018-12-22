@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
-using UIWindows.FullDataSetTableAdapters;
+using UIWindows.Business.Concrete;
+using UIWindows.Context;
+using UIWindows.Entities;
 
 namespace UIWindows.Views.Reports.Accounts
 {
@@ -26,16 +31,46 @@ namespace UIWindows.Views.Reports.Accounts
         {
             this.tb_accountsToPayTableAdapter.Fill(this.fullDataSet.tb_accountsToPay);
             this.tb_accountsToReceiveTableAdapter.Fill(this.fullDataSet.tb_accountsToReceive);
+
+            // hook
             this.reportViewer1.LocalReport.SubreportProcessing += LocalReport_SubreportProcessing;
             this.reportViewer1.RefreshReport();
         }
 
+        // alimenta dados dos pagamentos parciais
         void LocalReport_SubreportProcessing(object sender, Microsoft.Reporting.WinForms.SubreportProcessingEventArgs e)
         {
-            e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("GeneralParcialPay",  tb_parcialPayRecieveBindingSource));
+            InoxErpContext ctx = new InoxErpContext();
+            ParcialToPayBusiness obj = new ParcialToPayBusiness(ctx);
+            
+            List<ParcialPay> list = new List<ParcialPay>();
+            list =  obj.ReturnAll().ToList();
+
+            DataTable pList = new DataTable();
+            pList = ConvertToDataTable(list);
+
+            e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("GeneralParcialPay",  (DataTable) pList));
         }
 
-    public void searchData()
+        // converter lista em datatable
+        public DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection properties =
+                TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
+        }
+
+        public void searchData()
         {
             var type = new ReportParameter();
             var issueDate = new ReportParameter();
