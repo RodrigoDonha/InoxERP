@@ -116,6 +116,7 @@
     <Compile Include="Business\Concrete\ContractBusiness.cs" />
     <Compile Include="Business\Concrete\ItemsBusiness.cs" />
     <Compile Include="Business\Concrete\ParcialToPayBusiness.cs" />
+    <Compile Include="Business\Concrete\ParcialToReceiveBusiness.cs" />
     <Compile Include="Business\Concrete\ProductBusiness.cs" />
     <Compile Include="Business\Concrete\ProviderBusiness.cs" />
     <Compile Include="Business\Concrete\ServicesBusiness.cs" />
@@ -480,9 +481,10 @@
     <Compile Include="Views\Users\UserRegisterSearch.Designer.cs">
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts.rdlc" />
-    <EmbeddedResource Include="Business\Reports\Accounts\SubReportParcialPay.rdlc" />
-    <EmbeddedResource Include="Business\Reports\Accounts\SubReportParcialReceive.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\GeneralAccounts.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\SituationPay\SituationAccountsPay.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\SubReportParcialPay.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\SubReportParcialReceive.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\Budget.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\GerenalBudgest.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\SituationBudgets.rdlc" />
@@ -784,7 +786,9 @@
   <ItemGroup>
     <None Include="Resources\Backup.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Business\Reports\Accounts\SituationReceive\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_121_14145.png" />
     <None Include="Resources\Marca Dagua.png" />

@@ -36,8 +36,8 @@
             this.grpPeriodo = new System.Windows.Forms.GroupBox();
             this.lblDe = new System.Windows.Forms.Label();
             this.grpTipo = new System.Windows.Forms.GroupBox();
-            this.radSaidas = new System.Windows.Forms.RadioButton();
-            this.radEntradas = new System.Windows.Forms.RadioButton();
+            this.radPagas = new System.Windows.Forms.RadioButton();
+            this.radAPagar = new System.Windows.Forms.RadioButton();
             this.radGeral = new System.Windows.Forms.RadioButton();
             this.radAReceber = new System.Windows.Forms.RadioButton();
             this.radRecebidos = new System.Windows.Forms.RadioButton();
@@ -107,8 +107,8 @@
             // 
             // grpTipo
             // 
-            this.grpTipo.Controls.Add(this.radSaidas);
-            this.grpTipo.Controls.Add(this.radEntradas);
+            this.grpTipo.Controls.Add(this.radPagas);
+            this.grpTipo.Controls.Add(this.radAPagar);
             this.grpTipo.Controls.Add(this.radGeral);
             this.grpTipo.Controls.Add(this.radAReceber);
             this.grpTipo.Controls.Add(this.radRecebidos);
@@ -121,29 +121,29 @@
             this.grpTipo.TabStop = false;
             this.grpTipo.Text = "Tipo";
             // 
-            // radSaidas
+            // radPagas
             // 
-            this.radSaidas.AutoSize = true;
-            this.radSaidas.Location = new System.Drawing.Point(25, 62);
-            this.radSaidas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radSaidas.Name = "radSaidas";
-            this.radSaidas.Size = new System.Drawing.Size(69, 21);
-            this.radSaidas.TabIndex = 4;
-            this.radSaidas.TabStop = true;
-            this.radSaidas.Text = "Saídas";
-            this.radSaidas.UseVisualStyleBackColor = true;
+            this.radPagas.AutoSize = true;
+            this.radPagas.Location = new System.Drawing.Point(25, 62);
+            this.radPagas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radPagas.Name = "radPagas";
+            this.radPagas.Size = new System.Drawing.Size(66, 21);
+            this.radPagas.TabIndex = 4;
+            this.radPagas.TabStop = true;
+            this.radPagas.Text = "Pagas";
+            this.radPagas.UseVisualStyleBackColor = true;
             // 
-            // radEntradas
+            // radAPagar
             // 
-            this.radEntradas.AutoSize = true;
-            this.radEntradas.Location = new System.Drawing.Point(25, 89);
-            this.radEntradas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radEntradas.Name = "radEntradas";
-            this.radEntradas.Size = new System.Drawing.Size(83, 21);
-            this.radEntradas.TabIndex = 3;
-            this.radEntradas.TabStop = true;
-            this.radEntradas.Text = "Entradas";
-            this.radEntradas.UseVisualStyleBackColor = true;
+            this.radAPagar.AutoSize = true;
+            this.radAPagar.Location = new System.Drawing.Point(25, 89);
+            this.radAPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radAPagar.Name = "radAPagar";
+            this.radAPagar.Size = new System.Drawing.Size(77, 21);
+            this.radAPagar.TabIndex = 3;
+            this.radAPagar.TabStop = true;
+            this.radAPagar.Text = "A Pagar";
+            this.radAPagar.UseVisualStyleBackColor = true;
             // 
             // radGeral
             // 
@@ -212,8 +212,8 @@
         private System.Windows.Forms.GroupBox grpPeriodo;
         private System.Windows.Forms.Label lblDe;
         private System.Windows.Forms.GroupBox grpTipo;
-        private System.Windows.Forms.RadioButton radSaidas;
-        private System.Windows.Forms.RadioButton radEntradas;
+        private System.Windows.Forms.RadioButton radPagas;
+        private System.Windows.Forms.RadioButton radAPagar;
         private System.Windows.Forms.RadioButton radGeral;
         private System.Windows.Forms.RadioButton radAReceber;
         private System.Windows.Forms.RadioButton radRecebidos;

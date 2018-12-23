@@ -34,6 +34,7 @@ namespace UIWindows.Views.Reports.Accounts
 
             // hook
             this.reportViewer1.LocalReport.SubreportProcessing += LocalReport_SubreportProcessing;
+            
             this.reportViewer1.RefreshReport();
         }
 
@@ -41,15 +42,22 @@ namespace UIWindows.Views.Reports.Accounts
         void LocalReport_SubreportProcessing(object sender, Microsoft.Reporting.WinForms.SubreportProcessingEventArgs e)
         {
             InoxErpContext ctx = new InoxErpContext();
-            ParcialToPayBusiness obj = new ParcialToPayBusiness(ctx);
-            
-            List<ParcialPay> list = new List<ParcialPay>();
-            list =  obj.ReturnAll().ToList();
 
-            DataTable pList = new DataTable();
-            pList = ConvertToDataTable(list);
+            //ParcialPay
+            ParcialToPayBusiness objPay = new ParcialToPayBusiness(ctx);
+            List<ParcialPay> listPay = new List<ParcialPay>();
+            listPay =  objPay.ReturnAll().ToList();
+            DataTable pListPay = new DataTable();
+            pListPay = ConvertToDataTable(listPay);
+            e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("GeneralParcialPay", (DataTable) pListPay));
 
-            e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("GeneralParcialPay",  (DataTable) pList));
+            // ParcialReceive
+            ParcialToReceiveBusiness objReceive = new ParcialToReceiveBusiness(ctx);
+            List<ParcialReceive> listReceive = new List<ParcialReceive>();
+            listReceive = objReceive.ReturnAll().ToList();
+            DataTable pListReceive = new DataTable();
+            pListReceive = ConvertToDataTable(listReceive);
+            e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("ParcialReceiveDataSet", (DataTable) pListReceive));
         }
 
         // converter lista em datatable
