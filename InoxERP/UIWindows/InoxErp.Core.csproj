@@ -481,7 +481,8 @@
     <Compile Include="Views\Users\UserRegisterSearch.Designer.cs">
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\GeneralAccounts.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\GeneralAccountsPay.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\GeneralAccountsReceive.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\SituationPay\SituationAccountsPay.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\SubReportParcialPay.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\SubReportParcialReceive.rdlc" />
