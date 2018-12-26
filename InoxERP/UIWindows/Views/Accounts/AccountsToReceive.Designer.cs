@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccountsToReceive));
             this.lblEntradas = new System.Windows.Forms.Label();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.lblNomeCliente = new System.Windows.Forms.Label();
             this.txtOS = new System.Windows.Forms.TextBox();
@@ -70,6 +70,7 @@
             this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
             this.nudPrazo = new System.Windows.Forms.NumericUpDown();
             this.lblPrazo = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdAReceber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbaccountsToReceiveBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
@@ -88,15 +89,16 @@
             this.lblEntradas.TabIndex = 1;
             this.lblEntradas.Text = "Contas a Receber";
             // 
-            // btnBuscarCliente
+            // btnBuscar
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(382, 45);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(100, 28);
-            this.btnBuscarCliente.TabIndex = 4;
-            this.btnBuscarCliente.Text = "Buscar";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscar.Location = new System.Drawing.Point(382, 45);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtNomeCliente
             // 
@@ -150,6 +152,7 @@
             this.btnBaixar.TabIndex = 18;
             this.btnBaixar.Text = "Baixar";
             this.btnBaixar.UseVisualStyleBackColor = true;
+            this.btnBaixar.Click += new System.EventHandler(this.btnBaixar_Click);
             // 
             // btnExcluir
             // 
@@ -161,6 +164,7 @@
             this.btnExcluir.TabIndex = 19;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -172,6 +176,7 @@
             this.btnAlterar.TabIndex = 18;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -183,6 +188,7 @@
             this.btnIncluir.TabIndex = 17;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // txtValor
             // 
@@ -450,16 +456,28 @@
             this.lblPrazo.TabIndex = 13;
             this.lblPrazo.Text = "Prazo:";
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(13, 16);
+            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 17);
+            this.lblId.TabIndex = 20;
+            this.lblId.Visible = false;
+            // 
             // frmAccountsToReceive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 471);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.nudPrazo);
             this.Controls.Add(this.lblPrazo);
             this.Controls.Add(this.lblParcelas);
             this.Controls.Add(this.nudParcelas);
-            this.Controls.Add(this.btnBuscarCliente);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtNomeCliente);
             this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.txtOS);
@@ -494,7 +512,7 @@
 
         #endregion
         private System.Windows.Forms.Label lblEntradas;
-        private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.TextBox txtOS;
@@ -529,5 +547,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sReferentToDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCashDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBudgetsOSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblId;
     }
 }

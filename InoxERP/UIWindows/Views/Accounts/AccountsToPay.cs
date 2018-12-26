@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows.Business;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 
 namespace UIWindows
 {
@@ -22,6 +24,7 @@ namespace UIWindows
         Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
 
         ValidationEntries validation = new ValidationEntries();
+        MessageBoxTimer msg = new MessageBoxTimer();
 
         public frmAccountsToPay()
         {
@@ -41,17 +44,20 @@ namespace UIWindows
 
         private void txtNomeFornecedor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorLetters(sender,e);
+            validation.characterValidatorLetters(sender, e);
+
+            if (e.KeyChar == 13)
+                searcByLike();
         }
 
         private void txtOS_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorNumbers(sender,e);
+            validation.characterValidatorNumbers(sender, e);
         }
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender,e);
+            validation.characterValidatorOnlyNumbers(sender, e);
         }
 
         private void grdAPagar_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -227,7 +233,7 @@ namespace UIWindows
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
-            if(validationCamps())
+            if (validationCamps())
                 if (messageYesNo("confirm") == DialogResult.Yes)
                 {
                     InoxErpContext ctxP = new InoxErpContext();
@@ -237,7 +243,7 @@ namespace UIWindows
 
                     for (int i = 0; i < nudParcelas.Value; i++)
                     {
-                        AccountsToPay chequePersist = new AccountsToPay
+                        AccountsToPay accPersist = new AccountsToPay
                         {
                             sID = Guid.NewGuid().ToString(),
 
@@ -252,9 +258,9 @@ namespace UIWindows
                             sReferentTo = txtReferenteA.Text
                         };
 
-                        objPersist.Insert(chequePersist);
+                        objPersist.Insert(accPersist);
 
-                        var ok = objPersist.Search.FirstOrDefault(b => b.sID == chequePersist.sID);
+                        var ok = objPersist.Search.FirstOrDefault(b => b.sID == accPersist.sID);
 
                         if (ok == null)
                             MessageBox.Show("Erro ao Lançar a Conta !!!");
@@ -267,14 +273,196 @@ namespace UIWindows
             fillGrid();
         }
 
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("alter") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxA = new InoxErpContext();
+                    AccountsToPayBusiness objAlter = new AccountsToPayBusiness(ctxA);
+                    AccountsToPay accAlter = new AccountsToPay();
+
+                    accAlter = objAlter.ReturnByID(lblId.Text);
+
+                    accAlter.sId_Budgets_OS = returnOS();
+                    accAlter.sId_Client = returnId();
+                    accAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                    accAlter.dtDueDate = dtpData.Value.Date;
+                    accAlter.sReferentTo = txtReferenteA.Text;
+
+                    objAlter.Update(accAlter);
+
+                    var ok = objAlter.Search.FirstOrDefault(b => b.sID == accAlter.sID);
+
+                    MessageBox.Show(ok == null ? "Erro ao Alterar a Conta !!!" : "Conta Alterada com Sucesso !!!");
+
+                }
+
+            cleanCamps();
+            fillGrid();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            string id = lblId.Text;
+
+            if(id.Equals(""))
+                MessageBox.Show("Selecione uma Conta para Exclusão !!!");
+            else if (messageYesNo("delete") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxD = new InoxErpContext();
+                    AccountsToPayBusiness objDel = new AccountsToPayBusiness(ctxD);
+
+                    objDel.Delete(lblId.Text);
+
+                    var ok = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+
+                    MessageBox.Show(ok != null ? "Erro ao Excluir a Conta !!!" : "Conta Excluída com Sucesso !!!");
+                }
+
+            cleanCamps();
+            fillGrid();
+        }
+
+        private void btnBaixar_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("cash") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxC = new InoxErpContext();
+                    AccountsToPayBusiness objCash = new AccountsToPayBusiness(ctxC);
+                    AccountsToPay accCash = new AccountsToPay();
+
+                    accCash = objCash.ReturnByID(lblId.Text);
+
+                    accCash.dtPayDate = DateTime.Now;
+                    accCash.bReceivePaid = true;
+
+                    objCash.Update(accCash);
+
+                    CashBusiness objPersist = new CashBusiness(ctxC);
+                    Cash cashPersist = new Cash
+                    {
+                        sID = Guid.NewGuid().ToString(),
+
+                        sId_Budgets_OS = accCash.sId_Budgets_OS,
+                        sId_Client = accCash.sId_Client,
+                        dValue = accCash.dValue,
+                        dtDate = accCash.dtPayDate,
+                        sChequeNumber = "0",
+                        sReferentTo = accCash.sReferentTo,
+                        CashType = CashType.Out
+                    };
+
+                    objPersist.Insert(cashPersist);
+
+                    var okCash = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
+
+                    var okAcc = objCash.Search.FirstOrDefault(b => b.sID == accCash.sID);
+
+                    MessageBox.Show(okCash == null || okAcc == null ? "Erro ao Baixar a Conta !!!" : "Conta Baixada com Sucesso !!!");
+                }
+
+            cleanCamps();
+            fillGrid();
+        }
+
+
         private bool validationCamps()
         {
-            if (!validation.returnCampsEmpty(txtValor,"Valor"))
+            if (!validation.returnCampsEmpty(txtValor, "Valor"))
                 return false;
             if (!validation.returnCampsEmpty(txtReferenteA, "Referente"))
                 return false;
 
             return true;
+        }
+        
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            searchByName();
+        }
+
+        private void searcByLike()
+        {
+            string name = txtNomeFornecedor.Text;
+
+            //procura contas nos fornecedores
+            var provName = from p in ctx.Providers where p.sName.Contains(name) select p.sID;
+
+            var provAcc = from p in ctx.AccountsToPay where p.sId_Client.Equals(provName.FirstOrDefault()) where p.bReceivePaid.Equals(false) select p;
+
+            //procura contas nos clientes
+            var cliName = from p in ctx.Clients where p.sName.Contains(name) select p.sID;
+
+            var cliAcc = from p in ctx.AccountsToPay where p.sId_Client.Equals(cliName.FirstOrDefault()) where p.bReceivePaid.Equals(false) select p;
+
+            if (provAcc.ToList().Count.Equals(0) && cliAcc.ToList().Count.Equals(0) && !txtNomeFornecedor.Text.Equals(""))
+            {
+                msg.Show("Lançamento Não Encontrado", "Não foi Encontrado Lançamentos para este Cliente / Fornecedor", 0, 2000);
+                //fillGrid();
+                txtNomeFornecedor.Focus();
+            }
+            else
+            {
+                List<AccountsToPay> acc = new List<AccountsToPay>();
+
+                if (!provAcc.ToList().Count.Equals(0))
+                    acc = provAcc.ToList();
+                else if (!cliAcc.ToList().Count.Equals(0))
+                {
+                    acc = cliAcc.ToList();
+                    msg.Show("Contas a Pagar", "A busca retornou somente Contas a Pagar de Clientes", 0, 2000);
+                }
+                else if (txtNomeFornecedor.Text.Equals(""))
+                {
+                    txtNomeFornecedor.Focus();
+                    var t = from p in ctx.AccountsToPay where p.bReceivePaid.Equals(false) orderby p.dtDueDate descending select p;
+                    acc = t.ToList();
+                }
+
+                grdAPagar.DataSource = acc.ToList();
+            }
+        }
+
+        private void searchByName()
+        {
+            string idProvider = "";
+            frmProviderSearch providerSearch = new frmProviderSearch();
+
+            foreach (Control proControl in providerSearch.Controls)
+            {
+                if (proControl.Name == "btnAlterar" || proControl.Name == "btnExcluir" || proControl.Name == "btnCadastrar")
+                    proControl.Enabled = false;
+            }
+
+            providerSearch.ShowDialog();
+
+            if (providerSearch.returnProviders != null)
+                idProvider = providerSearch.returnProviders.sID;
+
+            var acc = from p in ctx.AccountsToPay where p.sId_Client.Equals(idProvider) where p.bReceivePaid.Equals(false) select p;
+
+            if (acc.ToList().Count.Equals(0))
+            {
+                if (providerSearch.returnProviders == null)
+                {
+                    msg.Show("Fornecedor Não Encontrado", "Não foi Encontrado Fornecedor para este lançamento", 0, 2000);
+                }
+                else
+                {
+                    txtNomeFornecedor.Text = providerSearch.returnProviders.sName;
+                }
+
+                msg.Show("Lançamento Não Encontrado", "Não foi Encontrado Lançamentos para este Fornecedor", 0, 2000);
+                txtNomeFornecedor.Focus();
+            }
+            else
+            {
+                List<AccountsToPay> accG = acc.ToList();
+                txtNomeFornecedor.Text = providerSearch.returnProviders.sName;
+                grdAPagar.DataSource = accG.ToList();
+            }
         }
     }
 }

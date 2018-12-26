@@ -7,9 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIWindows.Business;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 
 namespace UIWindows
 {
@@ -17,11 +19,11 @@ namespace UIWindows
     {
         static InoxErpContext ctx = new InoxErpContext();
 
-        AccountsToReceiveBusiness objAcRec = new AccountsToReceiveBusiness(ctx);
         ClientsBusiness objClient = new ClientsBusiness(ctx);
         Budget_OSBusiness objBudget = new Budget_OSBusiness(ctx);
 
         ValidationEntries validation = new ValidationEntries();
+        MessageBoxTimer msg = new MessageBoxTimer();
 
         public frmAccountsToReceive()
         {
@@ -41,17 +43,12 @@ namespace UIWindows
 
         private void txtOS_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorNumbers(sender,e);
+            validation.characterValidatorNumbers(sender, e);
         }
-
-        private void txtNomeCliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorLetters(sender,e);
-        }
-
+        
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender,e);
+            validation.characterValidatorOnlyNumbers(sender, e);
         }
 
         private void grdAReceber_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -61,13 +58,33 @@ namespace UIWindows
             { }
             else
             {
+                lblId.Text = grdAReceber[0, grdAReceber.CurrentRow.Index].Value.ToString();
+
+                InoxErpContext ctxC = new InoxErpContext();
+
+                ClientsBusiness objC = new ClientsBusiness(ctxC);
+
                 string cli = grdAReceber[2, grdAReceber.CurrentRow.Index].Value.ToString();
-                txtNomeCliente.Text = objClient.Search
-                    .FirstOrDefault(c => c.sID == cli).sName.ToString();
+                try
+                {
+                    txtNomeCliente.Text = objC.Search
+                        .FirstOrDefault(c => c.sID == cli).sName;
+                }
+                catch (Exception)
+                {
+                    txtNomeCliente.Text = "";
+                }
 
                 string id = grdAReceber[1, grdAReceber.CurrentRow.Index].Value.ToString();
-                txtOS.Text = objBudget.Search
-                    .FirstOrDefault(c => c.sID == id).iCod.ToString();
+                try
+                {
+                    txtOS.Text = objBudget.Search
+                        .FirstOrDefault(c => c.sID == id).iCod.ToString();
+                }
+                catch (Exception)
+                {
+                    txtOS.Text = "";
+                }
 
                 dtpData.Text = grdAReceber[3, grdAReceber.CurrentRow.Index].Value.ToString();
                 txtValor.Text = grdAReceber[5, grdAReceber.CurrentRow.Index].Value.ToString();
@@ -75,5 +92,341 @@ namespace UIWindows
                 txtReferenteA.Text = grdAReceber[9, grdAReceber.CurrentRow.Index].Value.ToString();
             }
         }
+
+        //DIALOG OPTIONS
+        public DialogResult messageYesNo(string type)
+        {
+            switch (type)
+            {
+                case "confirm":
+                    return MessageBox.Show("Confirma o Lançamento da Conta ?", "Concluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "alter":
+                    return MessageBox.Show("Confirma a Alteração da Conta ?", "Alterar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "delete":
+                    return MessageBox.Show("Confirma a Exclusão da Conta ?", "Excluir Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "cash":
+                    return MessageBox.Show("Confirma a Baixa da Conta ?", "Baixar Lançamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+
+            }
+            return DialogResult.No;
+        }
+
+        private string returnOS()
+        {
+            int os = txtOS.Text == "" ? -1 : Convert.ToInt32(txtOS.Text);
+            Budgets_OS retID = new Budgets_OS();
+            try
+            {
+                retID = objBudget.Search.FirstOrDefault(c => c.iCod == os);
+                if (retID.Equals(null))
+                    return null;
+            }
+            catch (Exception)
+            {
+                retID = new Budgets_OS();
+                retID.sID = "";
+                //msg.Show("Ordem de Serviço", "Não foi possivel encontrar a O.S. Informada, o Sistema irá prosseguir com valores Padrões", 0, 4000);
+            }
+            return retID.sID;
+        }
+
+        private DateTime returnDueDate(int instalments, DateTime date)
+        {
+            DateTime due = date.Date;
+            int prazo = Convert.ToInt32(nudPrazo.Value);
+
+            if (instalments == 0 && prazo == 0 && due.Equals(DateTime.Today)) //conta a vista
+                return DateTime.Today;
+
+            if (instalments == 0 && prazo == 0 && !due.Equals(DateTime.Today)) //conta pré 1 parcela unica dia fixo
+                return due;
+
+            if (instalments == 0 && prazo != 0) //conta pré 1 parcela unica com dias especificados
+                return due.AddDays(Convert.ToDouble(prazo));
+
+            if (instalments > 0 && prazo == 0) //conta pré com varias parcelas em dias fixos nos meses
+            {
+                due = due.AddMonths(instalments);
+                return due;
+            }
+
+            if (instalments > 0 && prazo != 0) //conta pré com varias parcelas com calculo dos dias conforme valor informado
+            {
+                int i = instalments + 1;
+                due = due.AddDays(Convert.ToDouble(prazo * i));
+                return due;
+            }
+
+            return DateTime.Now;
+        }
+
+        private string returnId()
+        {
+            string id = txtNomeCliente.Text == "" ? "0" : txtNomeCliente.Text;
+            try
+            {
+                var search = from p in ctx.Clients where p.sName.Contains(id) select p;
+
+                if (!search.ToList().Count.Equals(0))
+                {
+                    List<Clients> c = new List<Clients>();
+
+                    c = search.ToList();
+
+                    id = c[0].sID;
+                }
+                else
+                    try
+                    {
+                        id = objClient.Search.FirstOrDefault(c => c.sName.Contains("CONSUMIDOR")).sID;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(
+                            "Antes de concluir este Lançamento Voçê tem que Cadastrar um Cliente CONSUMIDOR para continuar");
+                    }
+
+            }
+            catch (Exception)
+            { }
+            return id;
+        }
+
+        private void cleanCamps()
+        {
+            lblId.Text = "";
+            txtNomeCliente.Clear();
+            txtOS.Clear();
+            txtValor.Clear();
+            dtpData.Value = DateTime.Now;
+            nudParcelas.Value = 1;
+            nudPrazo.Value = 0;
+            txtReferenteA.Clear();
+        }
+
+        private void btnIncluir_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("confirm") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxP = new InoxErpContext();
+                    AccountsToReceiveBusiness objPersist = new AccountsToReceiveBusiness(ctxP);
+
+                    DateTime date = dtpData.Value;
+
+                    for (int i = 0; i < nudParcelas.Value; i++)
+                    {
+                        AccountsToReceive accPersist = new AccountsToReceive
+                        {
+                            sID = Guid.NewGuid().ToString(),
+
+                            sId_Budgets_OS = returnOS(),
+                            sId_Client = returnId(),
+                            dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
+                            dtDueDate = returnDueDate(i, date),
+                            dtReceiveDate = DateTime.Today,
+                            bReceivePaid = false,
+                            iInstallment = i + 1,
+                            iAmountInstallment = Convert.ToInt32(nudParcelas.Value),
+                            sReferentTo = txtReferenteA.Text
+                        };
+
+                        objPersist.Insert(accPersist);
+
+                        var ok = objPersist.Search.FirstOrDefault(b => b.sID == accPersist.sID);
+
+                        if (ok == null)
+                            MessageBox.Show("Erro ao Lançar a Conta !!!");
+                        else if (i + 1 == nudParcelas.Value)
+                            MessageBox.Show("Contas Lançadas com Sucesso !!!");
+
+                    }
+                    cleanCamps();
+                }
+            fillGrid();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("alter") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxA = new InoxErpContext();
+                    AccountsToReceiveBusiness objAlter = new AccountsToReceiveBusiness(ctxA);
+                    AccountsToReceive accAlter = new AccountsToReceive();
+
+                    accAlter = objAlter.ReturnByID(lblId.Text);
+
+                    accAlter.sId_Budgets_OS = returnOS();
+                    accAlter.sId_Client = returnId();
+                    accAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                    accAlter.dtDueDate = dtpData.Value.Date;
+                    accAlter.sReferentTo = txtReferenteA.Text;
+
+                    objAlter.Update(accAlter);
+
+                    var ok = objAlter.Search.FirstOrDefault(b => b.sID == accAlter.sID);
+
+                    MessageBox.Show(ok == null ? "Erro ao Alterar a Conta !!!" : "Conta Alterada com Sucesso !!!");
+
+                }
+
+            cleanCamps();
+            fillGrid();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            string id = lblId.Text;
+
+            if (id.Equals(""))
+                MessageBox.Show("Selecione uma Conta para Exclusão !!!");
+            else if (messageYesNo("delete") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxD = new InoxErpContext();
+                    AccountsToReceiveBusiness objDel = new AccountsToReceiveBusiness(ctxD);
+
+                    objDel.Delete(lblId.Text);
+
+                    var ok = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+
+                    MessageBox.Show(ok != null ? "Erro ao Excluir a Conta !!!" : "Conta Excluída com Sucesso !!!");
+                }
+
+            cleanCamps();
+            fillGrid();
+        }
+
+        private void btnBaixar_Click(object sender, EventArgs e)
+        {
+            if (validationCamps())
+                if (messageYesNo("cash") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxC = new InoxErpContext();
+                    AccountsToReceiveBusiness objCash = new AccountsToReceiveBusiness(ctxC);
+                    AccountsToReceive accCash = new AccountsToReceive();
+
+                    accCash = objCash.ReturnByID(lblId.Text);
+
+                    accCash.dtReceiveDate = DateTime.Now;
+                    accCash.bReceivePaid = true;
+
+                    objCash.Update(accCash);
+
+                    CashBusiness objPersist = new CashBusiness(ctxC);
+                    Cash cashPersist = new Cash
+                    {
+                        sID = Guid.NewGuid().ToString(),
+
+                        sId_Budgets_OS = accCash.sId_Budgets_OS,
+                        sId_Client = accCash.sId_Client,
+                        dValue = accCash.dValue,
+                        dtDate = accCash.dtReceiveDate,
+                        sChequeNumber = "0",
+                        sReferentTo = accCash.sReferentTo,
+                        CashType = CashType.Enter
+                    };
+
+                    objPersist.Insert(cashPersist);
+
+                    var okCash = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
+
+                    var okAcc = objCash.Search.FirstOrDefault(b => b.sID == accCash.sID);
+
+                    MessageBox.Show(okCash == null || okAcc == null ? "Erro ao Baixar a Conta !!!" : "Conta Baixada com Sucesso !!!");
+                }
+
+            cleanCamps();
+            fillGrid();
+        }
+
+
+        private bool validationCamps()
+        {
+            if (!validation.returnCampsEmpty(txtValor, "Valor"))
+                return false;
+            if (!validation.returnCampsEmpty(txtReferenteA, "Referente"))
+                return false;
+
+            return true;
+        }
+
+        private void txtNomeCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorLetters(sender, e);
+
+            if (e.KeyChar == 13)
+                searcByLike();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            searchByName();
+        }
+
+        private void searcByLike()
+        {
+            string name = txtNomeCliente.Text;
+
+            var cliName = from p in ctx.Clients where p.sName.Contains(name) select p.sID;
+
+            var cliAcc = from p in ctx.AccountsToReceive where p.sId_Client.Equals(cliName.FirstOrDefault()) where p.bReceivePaid.Equals(false) select p;
+
+            if (cliAcc.ToList().Count.Equals(0))
+            {
+                msg.Show("Lançamento Não Encontrado", "Não foi Encontrado Lançamentos para este Cliente", 0, 2000);
+                fillGrid();
+                txtNomeCliente.Focus();
+            }
+            else
+            {
+                if (txtNomeCliente.Text.Equals(""))
+                    cliAcc = from p in ctx.AccountsToReceive where p.bReceivePaid.Equals(false) orderby p.dtDueDate descending select p;
+
+                List<AccountsToReceive> acc = cliAcc.ToList();
+                grdAReceber.DataSource = acc.ToList();
+            }
+        }
+
+        private void searchByName()
+        {
+            string idClient = "";
+            frmClientsSearch clientsSearch = new frmClientsSearch();
+
+            foreach (Control cliControl in clientsSearch.Controls)
+            {
+                if (cliControl.Name == "btnAbrirAlterar" || cliControl.Name == "btnExcluir" || cliControl.Name == "btnCadastrar")
+                    cliControl.Enabled = false;
+            }
+
+            clientsSearch.ShowDialog();
+
+            if (clientsSearch.ReturnClients != null)
+                idClient = clientsSearch.ReturnClients.sID;
+
+            var acc = from p in ctx.AccountsToReceive where p.sId_Client.Equals(idClient) where p.bReceivePaid.Equals(false) select p;
+
+            if (acc.ToList().Count.Equals(0))
+            {
+                if (clientsSearch.ReturnClients == null)
+                {
+                    msg.Show("Cliente Não Encontrado", "Não foi Encontrado Cliente para este lançamento", 0, 2000);
+                }
+                else
+                {
+                    txtNomeCliente.Text = clientsSearch.ReturnClients.sName;
+                }
+
+                msg.Show("Lançamento Não Encontrado", "Não foi Encontrado Lançamentos para este Cliente", 0, 2000);
+                txtNomeCliente.Focus();
+            }
+            else
+            {
+                List<AccountsToReceive> s = acc.ToList();
+                txtNomeCliente.Text = clientsSearch.ReturnClients.sName;
+                grdAReceber.DataSource = s.ToList();
+            }
+        }
+
     }
 }

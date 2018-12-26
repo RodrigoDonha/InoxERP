@@ -88,6 +88,7 @@
             this.btnExcluir.TabIndex = 19;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -99,6 +100,7 @@
             this.btnAlterar.TabIndex = 18;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -346,6 +348,7 @@
             this.btnBaixar.TabIndex = 18;
             this.btnBaixar.Text = "Baixar";
             this.btnBaixar.UseVisualStyleBackColor = true;
+            this.btnBaixar.Click += new System.EventHandler(this.btnBaixar_Click);
             // 
             // btnBuscarFornecedor
             // 
@@ -356,6 +359,7 @@
             this.btnBuscarFornecedor.TabIndex = 4;
             this.btnBuscarFornecedor.Text = "Buscar";
             this.btnBuscarFornecedor.UseVisualStyleBackColor = true;
+            this.btnBuscarFornecedor.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtNomeFornecedor
             // 
