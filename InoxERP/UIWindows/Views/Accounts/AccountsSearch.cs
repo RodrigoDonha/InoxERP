@@ -131,6 +131,7 @@ namespace UIWindows
                         sId_Client = accRef.sId_Client,
                         dValue = accRef.dValue,
                         dtDate = DateTime.Now,
+                        dBalance = objPersist.returnBalance(accRef.dValue),
                         sChequeNumber = "0",
                         sReferentTo = "ESTORNO REFERENTE: " + accRef.sReferentTo,
                         CashType = CashType.Enter,
@@ -181,6 +182,7 @@ namespace UIWindows
                         dValue = accRef.dValue,
                         dtDate = DateTime.Now,
                         sChequeNumber = "0",
+                        dBalance = objPersist.returnBalance(-accRef.dValue),
                         sReferentTo = "ESTORNO REFERENTE: " + accRef.sReferentTo,
                         CashType = CashType.Out,
                         sID = Guid.NewGuid().ToString()
@@ -230,6 +232,7 @@ namespace UIWindows
                         sId_Client = accRef.sId_Client,
                         dValue = accRef.dValue,
                         dtDate = DateTime.Now,
+                        dBalance = objPersist.returnBalance(-accRef.dValue),
                         sChequeNumber = accRef.sChequeNumber,
                         sReferentTo = "ESTORNO REFERENTE: " + accRef.sReferentTo,
                         CashType = CashType.Out,

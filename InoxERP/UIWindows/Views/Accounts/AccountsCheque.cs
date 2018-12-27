@@ -533,7 +533,7 @@ namespace UIWindows
 
                     chequeCash = objC.ReturnByID(lblId.Text);
 
-                    chequeCash.dtPayDate = DateTime.Today;
+                    chequeCash.dtPayDate = DateTime.Now;
                     chequeCash.bChequePaid = true;
                     
                     objC.Update(chequeCash);
@@ -547,6 +547,7 @@ namespace UIWindows
                         sId_Client = chequeCash.sId_Client,
                         dValue = chequeCash.dValue,
                         dtDate = chequeCash.dtPayDate,
+                        dBalance = objPersist.returnBalance(Convert.ToDecimal(txtValor.Text.Replace(".", ","))),
                         sChequeNumber = chequeCash.sChequeNumber,
                         sReferentTo = chequeCash.sReferentTo,
                         CashType = CashType.Enter

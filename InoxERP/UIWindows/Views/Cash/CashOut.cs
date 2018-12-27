@@ -398,14 +398,8 @@ namespace UIWindows
 
                     cashDel = objDel.ReturnByID(getIdGRD());
 
-                    cashDel.sId_Budgets_OS = returnOS();
-                    cashDel.sId_Client = returnId();
-                    cashDel.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
-                    cashDel.dtDate = dtpData.Value;
-                    cashDel.sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text;
                     cashDel.sReferentTo = "LANÇAMENTO ESTORNADO: " + txtReferenteA.Text;
-                    cashDel.CashType = CashType.Out;
-
+                    
                     objDel.Update(cashDel);
 
                     Cash cashOut = new Cash
@@ -414,6 +408,7 @@ namespace UIWindows
                         sId_Client = returnId(),
                         dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
                         dtDate = DateTime.Now,
+                        dBalance = objDel.returnBalance(Convert.ToDecimal(txtValor.Text.Replace(".", ","))),
                         sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text,
                         sReferentTo = "ESTORNO REFERENTE: " + txtReferenteA.Text,
                         CashType = CashType.Enter,

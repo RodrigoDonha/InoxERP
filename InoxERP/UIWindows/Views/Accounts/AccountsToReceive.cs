@@ -323,6 +323,7 @@ namespace UIWindows
                         sId_Client = accCash.sId_Client,
                         dValue = accCash.dValue,
                         dtDate = accCash.dtReceiveDate,
+                        dBalance = objPersist.returnBalance(Convert.ToDecimal(txtValor.Text.Replace(".", ","))),
                         sChequeNumber = "0",
                         sReferentTo = accCash.sReferentTo,
                         CashType = CashType.Enter

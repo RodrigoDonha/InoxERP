@@ -32,6 +32,9 @@ namespace UIWindows
         {
             // TODO: This line of code loads data into the 'fullDataSet.tb_cash' table. You can move, or remove it, as needed.
             this.tb_cashTableAdapter.FillByGeneralCash(this.fullDataSet.tb_cash);
+
+            //ordenar direto na grid
+            //grdExtratoGeral.Sort(grdExtratoGeral.Columns[3],ListSortDirection.Descending);
         }
 
         private void returnValue()
@@ -88,7 +91,6 @@ namespace UIWindows
                     linha.DefaultCellStyle.ForeColor = Color.Red;
                 else
                     linha.DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
-
             }
         }
 

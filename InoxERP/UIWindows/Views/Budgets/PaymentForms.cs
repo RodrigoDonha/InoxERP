@@ -523,6 +523,7 @@ namespace UIWindows
                 sId_Client = b.IdClients,
                 dValue = -valueRemaing,
                 dtDate = DateTime.Now,
+                dBalance = objCash.returnBalance(-valueRemaing),
                 sReferentTo = "TROCO O.S.  " + b.iCod.ToString(),
                 CashType = CashType.Out
             };
@@ -786,6 +787,9 @@ namespace UIWindows
 
         private List<Cash> fillListCash(Budgets_OS budget, decimal eDin, decimal eCheq, decimal valueOS)
         {
+            InoxErpContext ctxP = new InoxErpContext();
+            CashBusiness objPersist = new CashBusiness(ctxP);
+            
             List<Cash> list = new List<Cash>();
 
             if (eDin > valueOS)
@@ -800,8 +804,9 @@ namespace UIWindows
                 cash1.sId_Budgets_OS = budget.sID;
                 cash1.sId_Client = budget.IdClients;
                 cash1.dValue = eDin;
+                cash1.dBalance = objPersist.returnBalance(eDin);
                 cash1.dtDate = DateTime.Now;
-                cash1.sReferentTo = "O.S.  " + budget.iCod.ToString();
+                cash1.sReferentTo = "O.S.  " + budget.iCod;
                 cash1.CashType = CashType.Enter;
 
                 list.Add(cash1);
@@ -816,8 +821,9 @@ namespace UIWindows
                 cash2.sId_Budgets_OS = budget.sID;
                 cash2.sId_Client = budget.IdClients;
                 cash2.dValue = eCheq;
+                cash2.dBalance = objPersist.returnBalance(eDin);
                 cash2.dtDate = DateTime.Now;
-                cash2.sReferentTo = "O.S.  " + budget.iCod.ToString();
+                cash2.sReferentTo = "O.S.  " + budget.iCod;
                 cash2.CashType = CashType.Enter;
 
                 list.Add(cash2);
