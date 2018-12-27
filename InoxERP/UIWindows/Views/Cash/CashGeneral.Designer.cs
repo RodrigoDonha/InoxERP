@@ -151,6 +151,7 @@
             this.grdExtratoGeral.Size = new System.Drawing.Size(469, 233);
             this.grdExtratoGeral.TabIndex = 18;
             this.grdExtratoGeral.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdExtratoGeral_CellClick);
+            this.grdExtratoGeral.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.grdExtratoGeral_DataBindingComplete);
             // 
             // sIDDataGridViewTextBoxColumn
             // 

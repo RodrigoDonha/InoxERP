@@ -91,5 +91,12 @@ namespace UIWindows
 
             }
         }
+
+        private void grdExtratoGeral_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DataGridView gridView;
+            gridView = (DataGridView)sender;
+            gridView.ClearSelection();
+        }
     }
 }

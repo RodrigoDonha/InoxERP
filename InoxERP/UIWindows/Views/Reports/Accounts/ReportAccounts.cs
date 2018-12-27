@@ -18,12 +18,12 @@ namespace UIWindows
             DateTime endDate = Convert.ToDateTime(dtpFim.Text);
             string typeLaunch = "";
 
-            if (radGeral.Checked)
-            {
-                type = "Geral";
-                typeLaunch = "";
-                new GeneralAccountsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
-            }
+            //if (radGeral.Checked)
+            //{
+            //    type = "Geral";
+            //    typeLaunch = "";
+            //    new GeneralAccountsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+            //}
             //if (radBaixados.Checked)
             //{
             //    type = "Baixados";
