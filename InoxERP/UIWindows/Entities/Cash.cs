@@ -23,6 +23,8 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "Valor é Obrigatório")]
         public decimal dValue { get; set; }
 
+        public decimal dBalance { get; set; }
+
         [Required(ErrorMessage = "Data é Obrigatório")]
         public DateTime dtDate { get; set; }
         

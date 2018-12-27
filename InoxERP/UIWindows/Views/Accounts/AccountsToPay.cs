@@ -249,6 +249,7 @@ namespace UIWindows
 
                             sId_Budgets_OS = returnOS(),
                             sId_Client = returnId(),
+                            dtIssue = DateTime.Now,
                             dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
                             dtDueDate = returnDueDate(i, date),
                             dtPayDate = DateTime.Today,

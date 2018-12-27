@@ -270,6 +270,7 @@ namespace UIWindows
                         sId_Client = returnId(),
                         dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
                         dtDate = dtpData.Value,
+                        dBalance = objPersist.returnBalance(-Convert.ToDecimal(txtValor.Text.Replace(".", ","))),
                         sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text,
                         sReferentTo = txtReferenteA.Text,
                         CashType = CashType.Out

@@ -257,10 +257,10 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePa
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_accountsToPay" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAccountsPaied" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByAccountsPaied" GeneratorSourceName="FillByAccountsPaied" GetMethodModifier="Public" GetMethodName="GetByAccountsPaied" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByAccountsPaied" UserSourceName="FillByAccountsPaied">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idProviders
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idProviders, dtIssue
 FROM            tb_accountsToPay
 WHERE        (bReceivePaid = 1)
-ORDER BY dtDueDate Desc</CommandText>
+ORDER BY dtDueDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -384,7 +384,7 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_accountsToReceive" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAccountReceived" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByAccountReceived" GeneratorSourceName="FillByAccountReceived" GetMethodModifier="Public" GetMethodName="GetByAccountReceived" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByAccountReceived" UserSourceName="FillByAccountReceived">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS, dtIssue
 FROM            tb_accountsToReceive
 WHERE        (bReceivePaid = 1)
 ORDER BY dtDueDate DESC</CommandText>
@@ -395,7 +395,7 @@ ORDER BY dtDueDate DESC</CommandText>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_accountsToReceive" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByAccountsToReceive" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByAccountsToReceive" GeneratorSourceName="FillByAccountsToReceive" GetMethodModifier="Public" GetMethodName="GetByAccountsToReceive" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByAccountsToReceive" UserSourceName="FillByAccountsToReceive">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bReceivePaid, iInstallment, iAmountInstallment, sReferentTo, idCash, idBudgets_OS, dtIssue
 FROM            tb_accountsToReceive
 WHERE        (bReceivePaid = 0)
 ORDER BY dtDueDate DESC</CommandText>
@@ -645,7 +645,7 @@ SELECT sID, iCod, ClientType, dtDate, CONVERT (CHAR(10), dtDate, 103) AS 'sDate'
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cash" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDate, sReferentTo, CashType, sChequeNumber
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDate, sReferentTo, CashType, sChequeNumber, dBalance
 FROM            tb_cash</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -661,12 +661,13 @@ FROM            tb_cash</CommandText>
               <Mapping SourceColumn="sReferentTo" DataSetColumn="sReferentTo" />
               <Mapping SourceColumn="CashType" DataSetColumn="CashType" />
               <Mapping SourceColumn="sChequeNumber" DataSetColumn="sChequeNumber" />
+              <Mapping SourceColumn="dBalance" DataSetColumn="dBalance" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cash" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCashEntry" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByCashEntry" GeneratorSourceName="FillByCashEntry" GetMethodModifier="Public" GetMethodName="GetByCashEntry" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByCashEntry" UserSourceName="FillByCashEntry">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT CashType, dValue, dtDate, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cash WHERE (CashType = 1) ORDER BY dtDate DESC</CommandText>
+                    <CommandText>SELECT CashType, dBalance, dValue, dtDate, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cash WHERE (CashType = 1) ORDER BY dtDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -674,7 +675,7 @@ FROM            tb_cash</CommandText>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cash" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCashOut" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByCashOut" GeneratorSourceName="FillByCashOut" GetMethodModifier="Public" GetMethodName="GetByCashOut" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByCashOut" UserSourceName="FillByCashOut">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT CashType, dValue, dtDate, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cash WHERE (CashType = 2) ORDER BY dtDate DESC</CommandText>
+                    <CommandText>SELECT CashType, dBalance, dValue, dtDate, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cash WHERE (CashType = 2) ORDER BY dtDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -690,7 +691,8 @@ FROM            tb_cash</CommandText>
       ,[CashType]
       ,[sChequeNumber]
 	  ,IIF ([CashType]=1,dValue,-dValue) AS dValue
-  FROM [dbo].[tb_cash]
+      ,[dBalance]  
+FROM [dbo].[tb_cash]
 ORDER BY dtDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -699,7 +701,7 @@ ORDER BY dtDate DESC</CommandText>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cash" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBySimple" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBySimple" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBySimple">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT CashType, dValue, dtDate, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cash</CommandText>
+                    <CommandText>SELECT CashType, dBalance, dValue, dtDate, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cash</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -711,11 +713,13 @@ ORDER BY dtDate DESC</CommandText>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cheques" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[tb_cheques] WHERE (([sID] = @Original_sID) AND ([sId_Budgets_OS] = @Original_sId_Budgets_OS) AND ([sId_Client] = @Original_sId_Client) AND ([dValue] = @Original_dValue) AND ([dtDueDate] = @Original_dtDueDate) AND ([dtPayDate] = @Original_dtPayDate) AND ([bChequePaid] = @Original_bChequePaid) AND ([iInstallment] = @Original_iInstallment) AND ([iAmountInstallment] = @Original_iAmountInstallment) AND ([sChequeNumber] = @Original_sChequeNumber) AND ((@IsNull_sReferentTo = 1 AND [sReferentTo] IS NULL) OR ([sReferentTo] = @Original_sReferentTo)) AND ((@IsNull_idCash = 1 AND [idCash] IS NULL) OR ([idCash] = @Original_idCash)))</CommandText>
+                    <CommandText>DELETE FROM [tb_cheques] WHERE (([sID] = @Original_sID) AND ((@IsNull_sId_Budgets_OS = 1 AND [sId_Budgets_OS] IS NULL) OR ([sId_Budgets_OS] = @Original_sId_Budgets_OS)) AND ((@IsNull_sId_Client = 1 AND [sId_Client] IS NULL) OR ([sId_Client] = @Original_sId_Client)) AND ([dValue] = @Original_dValue) AND ([dtDueDate] = @Original_dtDueDate) AND ([dtPayDate] = @Original_dtPayDate) AND ([bChequePaid] = @Original_bChequePaid) AND ([iInstallment] = @Original_iInstallment) AND ([iAmountInstallment] = @Original_iAmountInstallment) AND ([sChequeNumber] = @Original_sChequeNumber) AND ((@IsNull_sReferentTo = 1 AND [sReferentTo] IS NULL) OR ([sReferentTo] = @Original_sReferentTo)) AND ((@IsNull_idCash = 1 AND [idCash] IS NULL) OR ([idCash] = @Original_idCash)) AND ([dtIssue] = @Original_dtIssue))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sId_Budgets_OS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sId_Client" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_sId_Budgets_OS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sId_Budgets_OS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_sId_Client" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sId_Client" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_dValue" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="dValue" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_dtDueDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtDueDate" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_dtPayDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtPayDate" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -727,17 +731,18 @@ ORDER BY dtDate DESC</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sReferentTo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sReferentTo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCash" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCash" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_idCash" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="idCash" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_dtIssue" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtIssue" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[tb_cheques] ([sID], [sId_Budgets_OS], [sId_Client], [dValue], [dtDueDate], [dtPayDate], [bChequePaid], [iInstallment], [iAmountInstallment], [sChequeNumber], [sReferentTo], [idCash]) VALUES (@sID, @sId_Budgets_OS, @sId_Client, @dValue, @dtDueDate, @dtPayDate, @bChequePaid, @iInstallment, @iAmountInstallment, @sChequeNumber, @sReferentTo, @idCash);
-SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash FROM tb_cheques WHERE (sID = @sID)</CommandText>
+                    <CommandText>INSERT INTO [tb_cheques] ([sID], [sId_Budgets_OS], [sId_Client], [dValue], [dtDueDate], [dtPayDate], [bChequePaid], [iInstallment], [iAmountInstallment], [sChequeNumber], [sReferentTo], [idCash], [dtIssue]) VALUES (@sID, @sId_Budgets_OS, @sId_Client, @dValue, @dtDueDate, @dtPayDate, @bChequePaid, @iInstallment, @iAmountInstallment, @sChequeNumber, @sReferentTo, @idCash, @dtIssue);
+SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash, dtIssue FROM tb_cheques WHERE (sID = @sID)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sId_Budgets_OS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sId_Client" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sId_Budgets_OS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sId_Client" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@dValue" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="dValue" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dtDueDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtDueDate" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dtPayDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtPayDate" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -747,23 +752,25 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sChequeNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sChequeNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sReferentTo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sReferentTo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@idCash" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="idCash" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dtIssue" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtIssue" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash FROM dbo.tb_cheques</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash, dtIssue
+FROM            tb_cheques</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[tb_cheques] SET [sID] = @sID, [sId_Budgets_OS] = @sId_Budgets_OS, [sId_Client] = @sId_Client, [dValue] = @dValue, [dtDueDate] = @dtDueDate, [dtPayDate] = @dtPayDate, [bChequePaid] = @bChequePaid, [iInstallment] = @iInstallment, [iAmountInstallment] = @iAmountInstallment, [sChequeNumber] = @sChequeNumber, [sReferentTo] = @sReferentTo, [idCash] = @idCash WHERE (([sID] = @Original_sID) AND ([sId_Budgets_OS] = @Original_sId_Budgets_OS) AND ([sId_Client] = @Original_sId_Client) AND ([dValue] = @Original_dValue) AND ([dtDueDate] = @Original_dtDueDate) AND ([dtPayDate] = @Original_dtPayDate) AND ([bChequePaid] = @Original_bChequePaid) AND ([iInstallment] = @Original_iInstallment) AND ([iAmountInstallment] = @Original_iAmountInstallment) AND ([sChequeNumber] = @Original_sChequeNumber) AND ((@IsNull_sReferentTo = 1 AND [sReferentTo] IS NULL) OR ([sReferentTo] = @Original_sReferentTo)) AND ((@IsNull_idCash = 1 AND [idCash] IS NULL) OR ([idCash] = @Original_idCash)));
-SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash FROM tb_cheques WHERE (sID = @sID)</CommandText>
+                    <CommandText>UPDATE [tb_cheques] SET [sID] = @sID, [sId_Budgets_OS] = @sId_Budgets_OS, [sId_Client] = @sId_Client, [dValue] = @dValue, [dtDueDate] = @dtDueDate, [dtPayDate] = @dtPayDate, [bChequePaid] = @bChequePaid, [iInstallment] = @iInstallment, [iAmountInstallment] = @iAmountInstallment, [sChequeNumber] = @sChequeNumber, [sReferentTo] = @sReferentTo, [idCash] = @idCash, [dtIssue] = @dtIssue WHERE (([sID] = @Original_sID) AND ((@IsNull_sId_Budgets_OS = 1 AND [sId_Budgets_OS] IS NULL) OR ([sId_Budgets_OS] = @Original_sId_Budgets_OS)) AND ((@IsNull_sId_Client = 1 AND [sId_Client] IS NULL) OR ([sId_Client] = @Original_sId_Client)) AND ([dValue] = @Original_dValue) AND ([dtDueDate] = @Original_dtDueDate) AND ([dtPayDate] = @Original_dtPayDate) AND ([bChequePaid] = @Original_bChequePaid) AND ([iInstallment] = @Original_iInstallment) AND ([iAmountInstallment] = @Original_iAmountInstallment) AND ([sChequeNumber] = @Original_sChequeNumber) AND ((@IsNull_sReferentTo = 1 AND [sReferentTo] IS NULL) OR ([sReferentTo] = @Original_sReferentTo)) AND ((@IsNull_idCash = 1 AND [idCash] IS NULL) OR ([idCash] = @Original_idCash)) AND ([dtIssue] = @Original_dtIssue));
+SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash, dtIssue FROM tb_cheques WHERE (sID = @sID)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sID" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sId_Budgets_OS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sId_Client" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sId_Budgets_OS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sId_Client" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@dValue" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="dValue" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dtDueDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtDueDate" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dtPayDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtPayDate" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -773,9 +780,12 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sChequeNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sChequeNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@sReferentTo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sReferentTo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@idCash" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="idCash" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dtIssue" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtIssue" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sID" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sId_Budgets_OS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sId_Client" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_sId_Budgets_OS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sId_Budgets_OS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Budgets_OS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_sId_Client" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sId_Client" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sId_Client" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_dValue" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="dValue" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_dtDueDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtDueDate" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_dtPayDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtPayDate" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -787,6 +797,7 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_sReferentTo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="sReferentTo" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_idCash" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="idCash" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_idCash" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="idCash" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_dtIssue" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dtIssue" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -805,15 +816,13 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
               <Mapping SourceColumn="sChequeNumber" DataSetColumn="sChequeNumber" />
               <Mapping SourceColumn="sReferentTo" DataSetColumn="sReferentTo" />
               <Mapping SourceColumn="idCash" DataSetColumn="idCash" />
+              <Mapping SourceColumn="dtIssue" DataSetColumn="dtIssue" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cheques" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCheque" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByCheque" GeneratorSourceName="FillByCheque" GetMethodModifier="Public" GetMethodName="GetByCheque" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByCheque" UserSourceName="FillByCheque">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash
-FROM            tb_cheques
-WHERE        (bChequePaid = 0)
-ORDER BY dtDueDate DESC</CommandText>
+                    <CommandText>SELECT bChequePaid, dValue, dtDueDate, dtIssue, dtPayDate, iAmountInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cheques WHERE (bChequePaid = 0) ORDER BY dtDueDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -821,10 +830,7 @@ ORDER BY dtDueDate DESC</CommandText>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cheques" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByChequesReveiced" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByChequesReveiced" GeneratorSourceName="FillByChequesReveiced" GetMethodModifier="Public" GetMethodName="GetByChequesReveiced" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByChequesReveiced" UserSourceName="FillByChequesReveiced">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash
-FROM            tb_cheques
-WHERE        (bChequePaid = 1)
-ORDER BY dtDueDate Desc</CommandText>
+                    <CommandText>SELECT bChequePaid, dValue, dtDueDate, dtIssue, dtPayDate, iAmountInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cheques WHERE (bChequePaid = 1) ORDER BY dtDueDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1841,16 +1847,22 @@ ORDER BY ch.dtDueDate</CommandText>
             <Sources>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cheques" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCheque" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByCheque" GeneratorSourceName="FillByCheque" GetMethodModifier="Public" GetMethodName="GetByCheque" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByCheque" UserSourceName="FillByCheque">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT bChequePaid, dValue, dtDueDate, dtPayDate, iAmountInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cheques WHERE (bChequePaid = 0) ORDER BY dtDueDate DESC</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        bChequePaid, dValue, dtDueDate, dtPayDate, iAmountInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo, dtIssue
+FROM            tb_cheques
+WHERE        (bChequePaid = 0)
+ORDER BY dtDueDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_cheques" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByChequesReveiced" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetByChequesReveiced" GeneratorSourceName="FillByChequesReveiced" GetMethodModifier="Public" GetMethodName="GetByChequesReveiced" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetByChequesReveiced" UserSourceName="FillByChequesReveiced">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT bChequePaid, dValue, dtDueDate, dtPayDate, iAmountInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo FROM tb_cheques WHERE (bChequePaid = 1) ORDER BY dtDueDate DESC</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        bChequePaid, dValue, dtDueDate, dtPayDate, iAmountInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo, dtIssue
+FROM            tb_cheques
+WHERE        (bChequePaid = 1)
+ORDER BY dtDueDate DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2325,6 +2337,7 @@ SELECT sID AS sIdReceive, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtRecei
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="dBalance" msprop:Generator_ColumnVarNameInTable="columndBalance" msprop:Generator_ColumnPropNameInRow="dBalance" msprop:Generator_ColumnPropNameInTable="dBalanceColumn" msprop:Generator_UserColumnName="dBalance" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2338,14 +2351,14 @@ SELECT sID AS sIdReceive, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtRecei
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="sId_Budgets_OS" msprop:Generator_ColumnVarNameInTable="columnsId_Budgets_OS" msprop:Generator_ColumnPropNameInRow="sId_Budgets_OS" msprop:Generator_ColumnPropNameInTable="sId_Budgets_OSColumn" msprop:Generator_UserColumnName="sId_Budgets_OS">
+              <xs:element name="sId_Budgets_OS" msprop:Generator_ColumnVarNameInTable="columnsId_Budgets_OS" msprop:Generator_ColumnPropNameInRow="sId_Budgets_OS" msprop:Generator_ColumnPropNameInTable="sId_Budgets_OSColumn" msprop:Generator_UserColumnName="sId_Budgets_OS" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="sId_Client" msprop:Generator_ColumnVarNameInTable="columnsId_Client" msprop:Generator_ColumnPropNameInRow="sId_Client" msprop:Generator_ColumnPropNameInTable="sId_ClientColumn" msprop:Generator_UserColumnName="sId_Client">
+              <xs:element name="sId_Client" msprop:Generator_ColumnVarNameInTable="columnsId_Client" msprop:Generator_ColumnPropNameInRow="sId_Client" msprop:Generator_ColumnPropNameInTable="sId_ClientColumn" msprop:Generator_UserColumnName="sId_Client" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -2379,6 +2392,7 @@ SELECT sID AS sIdReceive, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtRecei
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="dtIssue" msprop:Generator_ColumnVarNameInTable="columndtIssue" msprop:Generator_ColumnPropNameInRow="dtIssue" msprop:Generator_ColumnPropNameInTable="dtIssueColumn" msprop:Generator_UserColumnName="dtIssue" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

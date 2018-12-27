@@ -28,6 +28,8 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "Data de Pagamento do Cheque é Obrigatório")]
         public DateTime dtPayDate { get; set; }
 
+        public DateTime dtIssue { get; set; }
+
         public bool bChequePaid { get; set; }
 
         [Required(ErrorMessage = "Parcela do Cheque é Obrigatória")]

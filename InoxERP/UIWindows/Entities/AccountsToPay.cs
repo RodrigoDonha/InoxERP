@@ -28,6 +28,8 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "Data de Pagamento da Conta é Obrigatório")]
         public DateTime dtPayDate { get; set; }
 
+        public DateTime dtIssue { get; set; }
+
         public bool bReceivePaid { get; set; }
 
         [Required(ErrorMessage = "Parcela da Conta é Obrigatória")]

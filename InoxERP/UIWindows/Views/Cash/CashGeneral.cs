@@ -70,9 +70,9 @@ namespace UIWindows
             { }
             else
             {
-                txtValor.Text = grdExtratoGeral[4, grdExtratoGeral.CurrentRow.Index].Value.ToString();
+                txtValor.Text = grdExtratoGeral[5, grdExtratoGeral.CurrentRow.Index].Value.ToString();
                 dtpData.Text = grdExtratoGeral[3, grdExtratoGeral.CurrentRow.Index].Value.ToString();
-                txtReferenteA.Text = grdExtratoGeral[6, grdExtratoGeral.CurrentRow.Index].Value.ToString();
+                txtReferenteA.Text = grdExtratoGeral[4, grdExtratoGeral.CurrentRow.Index].Value.ToString();
             }
         }
 
@@ -83,7 +83,7 @@ namespace UIWindows
 
             foreach (DataGridViewRow linha in dgv.Rows)
             {
-                decimal value = Convert.ToDecimal(linha.Cells[4].Value);
+                decimal value = Convert.ToDecimal(linha.Cells[5].Value);
                 if (value < 0)
                     linha.DefaultCellStyle.ForeColor = Color.Red;
                 else

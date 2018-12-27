@@ -155,21 +155,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811262229050_addRangeonCampsChequeNumber.cs" />
-    <Compile Include="Migrations\201811262229050_addRangeonCampsChequeNumber.Designer.cs">
-      <DependentUpon>201811262229050_addRangeonCampsChequeNumber.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811291944172_addNullCampsCashAndReceive.cs" />
-    <Compile Include="Migrations\201811291944172_addNullCampsCashAndReceive.Designer.cs">
-      <DependentUpon>201811291944172_addNullCampsCashAndReceive.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812091620596_campsContractaddremoved.cs" />
-    <Compile Include="Migrations\201812091620596_campsContractaddremoved.Designer.cs">
-      <DependentUpon>201812091620596_campsContractaddremoved.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812131958453_nullbablecampidbudgetofcheques.cs" />
-    <Compile Include="Migrations\201812131958453_nullbablecampidbudgetofcheques.Designer.cs">
-      <DependentUpon>201812131958453_nullbablecampidbudgetofcheques.cs</DependentUpon>
+    <Compile Include="Migrations\201812271709302_createcampsEmissaoSaldo.cs" />
+    <Compile Include="Migrations\201812271709302_createcampsEmissaoSaldo.Designer.cs">
+      <DependentUpon>201812271709302_createcampsEmissaoSaldo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\Accounts\ChequeNumber.cs">
@@ -500,17 +488,8 @@
     <EmbeddedResource Include="Business\Reports\ServiceOrders\GeneralServiceOrder.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\ServiceOrdersPrint.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
-    <EmbeddedResource Include="Migrations\201811262229050_addRangeonCampsChequeNumber.resx">
-      <DependentUpon>201811262229050_addRangeonCampsChequeNumber.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811291944172_addNullCampsCashAndReceive.resx">
-      <DependentUpon>201811291944172_addNullCampsCashAndReceive.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812091620596_campsContractaddremoved.resx">
-      <DependentUpon>201812091620596_campsContractaddremoved.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812131958453_nullbablecampidbudgetofcheques.resx">
-      <DependentUpon>201812131958453_nullbablecampidbudgetofcheques.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812271709302_createcampsEmissaoSaldo.resx">
+      <DependentUpon>201812271709302_createcampsEmissaoSaldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Accounts\ChequeNumber.resx">
       <DependentUpon>ChequeNumber.cs</DependentUpon>

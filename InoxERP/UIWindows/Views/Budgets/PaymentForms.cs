@@ -619,6 +619,7 @@ namespace UIWindows
 
                     receive1.sId_Budgets_OS = budget.sID;
                     receive1.sId_Client = budget.IdClients;
+                    receive1.dtIssue = DateTime.Now;
                     receive1.dtReceiveDate = DateTime.Now;
                     receive1.bReceivePaid = false;
                     receive1.sReferentTo = "O.S.  " + budget.iCod.ToString();
@@ -648,6 +649,7 @@ namespace UIWindows
 
                             receive2.sId_Budgets_OS = budget.sID;
                             receive2.sId_Client = budget.IdClients;
+                            receive2.dtIssue = DateTime.Now;
                             receive2.dtReceiveDate = DateTime.Now;
                             receive2.bReceivePaid = false;
                             receive2.sReferentTo = "O.S.  " + budget.iCod.ToString();
@@ -671,6 +673,7 @@ namespace UIWindows
 
                             receive3.sId_Budgets_OS = budget.sID;
                             receive3.sId_Client = budget.IdClients;
+                            receive3.dtIssue = DateTime.Now;
                             receive3.dtReceiveDate = DateTime.Now;
                             receive3.bReceivePaid = false;
                             receive3.sReferentTo = "O.S.  " + budget.iCod.ToString();
@@ -705,6 +708,7 @@ namespace UIWindows
 
                     cheque1.sId_Budgets_OS = budget.sID;
                     cheque1.sId_Client = budget.IdClients;
+                    cheque1.dtIssue = DateTime.Now;
                     cheque1.dtPayDate = DateTime.Now;
                     cheque1.bChequePaid = false;
                     cheque1.sChequeNumber = "0";
@@ -735,6 +739,7 @@ namespace UIWindows
 
                             cheque2.sId_Budgets_OS = budget.sID;
                             cheque2.sId_Client = budget.IdClients;
+                            cheque2.dtIssue = DateTime.Now;
                             cheque2.dtPayDate = DateTime.Now;
                             cheque2.bChequePaid = false;
                             cheque2.sChequeNumber = "0";
@@ -758,6 +763,7 @@ namespace UIWindows
 
                             cheque3.sId_Budgets_OS = budget.sID;
                             cheque3.sId_Client = budget.IdClients;
+                            cheque3.dtIssue = DateTime.Now;
                             cheque3.dtPayDate = DateTime.Now;
                             cheque3.bChequePaid = false;
                             cheque3.sChequeNumber = "0";
