@@ -287,12 +287,15 @@ namespace UIWindows
 
                         cashAlter.sId_Budgets_OS = returnOS();
                         cashAlter.sId_Client = returnId();
-                        cashAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
                         cashAlter.dtDate = dtpData.Value;
                         cashAlter.sChequeNumber = txtC1.Text + "-" + txtC2.Text + "-" + txtC3.Text;
                         cashAlter.sReferentTo = txtReferenteA.Text;
-                        cashAlter.CashType = CashType.Enter;
-                    
+
+                        decimal txtValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+
+                        if (!cashAlter.dValue.Equals(txtValue))
+                            if (!checkRefund())
+                                doAlterCash(cashAlter, txtValue);
                         
                         objALter.Update(cashAlter);
 
@@ -309,12 +312,53 @@ namespace UIWindows
         }
 
 
+        private void doAlterCash(Cash entitie, decimal valueNew)
+        {
+            decimal diff = entitie.dValue - valueNew;
+
+            InoxErpContext ctx = new InoxErpContext();
+            CashBusiness objPersist = new CashBusiness(ctx);
+            Cash cashPersist = new Cash();
+
+            cashPersist.sID = Guid.NewGuid().ToString();
+
+            cashPersist.sId_Budgets_OS = entitie.sId_Budgets_OS;
+            cashPersist.sId_Client = entitie.sId_Client;
+            cashPersist.dtDate = DateTime.Now;
+            cashPersist.sChequeNumber = entitie.sChequeNumber;
+            cashPersist.sReferentTo = "Alteração da Entrada: " + entitie.sReferentTo;
+            cashPersist.dValue = diff < 0 ? diff * -1 : diff;
+            
+            if (diff > 0)
+            {
+                cashPersist.CashType = CashType.Out;
+                cashPersist.dBalance = objPersist.returnBalance(-diff);
+            }
+            else
+            {
+                cashPersist.CashType = CashType.Enter;
+                cashPersist.dBalance = objPersist.returnBalance(diff * -1);
+            }
+            
+            objPersist.Insert(cashPersist);
+
+            var ok = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
+
+            if (ok == null)
+                MessageBox.Show("Erro ao Atualizar o Saldo no Caixa !!!");
+        }
+
         private bool checkRefund()
         {
             string text = grdEntradas[5, grdEntradas.CurrentRow.Index].Value.ToString();
             if (text.Contains("ESTORNADO") || text.Contains("ESTORNO"))
             {
                 msg.Show("Exclusão de Estorno", "Não é possível Alterar ou Excluir um ESTORNO DE LANÇAMENTO", 0, 2000);
+                return true;
+            }
+            if (text.Contains("Alteração do Lançamento:"))
+            {
+                msg.Show("Alteração de Lançamento", "Não é possível Mudar uma Alteração do Lançamento", 0, 2000);
                 return true;
             }
             return false;
