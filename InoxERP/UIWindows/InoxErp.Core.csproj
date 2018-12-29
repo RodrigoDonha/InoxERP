@@ -155,9 +155,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812271709302_createcampsEmissaoSaldo.cs" />
-    <Compile Include="Migrations\201812271709302_createcampsEmissaoSaldo.Designer.cs">
-      <DependentUpon>201812271709302_createcampsEmissaoSaldo.cs</DependentUpon>
+    <Compile Include="Migrations\201812281932522_addcampsdpaiddremaing.cs" />
+    <Compile Include="Migrations\201812281932522_addcampsdpaiddremaing.Designer.cs">
+      <DependentUpon>201812281932522_addcampsdpaiddremaing.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\Accounts\ChequeNumber.cs">
@@ -488,8 +488,8 @@
     <EmbeddedResource Include="Business\Reports\ServiceOrders\GeneralServiceOrder.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\ServiceOrdersPrint.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
-    <EmbeddedResource Include="Migrations\201812271709302_createcampsEmissaoSaldo.resx">
-      <DependentUpon>201812271709302_createcampsEmissaoSaldo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812281932522_addcampsdpaiddremaing.resx">
+      <DependentUpon>201812281932522_addcampsdpaiddremaing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Accounts\ChequeNumber.resx">
       <DependentUpon>ChequeNumber.cs</DependentUpon>

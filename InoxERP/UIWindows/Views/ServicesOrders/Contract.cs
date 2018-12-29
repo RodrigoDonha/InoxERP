@@ -203,11 +203,11 @@ namespace UIWindows
 
         private void btnAlterarContratado_Click(object sender, EventArgs e)
         {
-            if (txtNomeContratado.Text == "LUCAS BEIRIGO REGGIANI")
+            if (txtNomeContratado.Text == "LUCAS BEIRIGO REGGIANI 09396759945")
             {
-                txtNomeContratado.Text = "RICHARD CARLOS REGGIANI";
+                txtNomeContratado.Text = "RICHARD CARLOS REGGIANI 16479617851";
                 txtCpfCnpjContratado.Text = "31.210.732/0001-30";
-                txtRgContratado.Text = "";
+                txtRgContratado.Text = "562.439.989.118";
                 txtCepContratado.Text = "19045-333";
                 txtEnderecoContratado.Text = "RUA ROTARY CLUBE DE PRESIDENTE PRUDENTE-ALVOR";
                 txtNumeroContratado.Text = "25";
@@ -217,9 +217,9 @@ namespace UIWindows
             }
             else
             {
-                txtNomeContratado.Text = "LUCAS BEIRIGO REGGIANI";
+                txtNomeContratado.Text = "LUCAS BEIRIGO REGGIANI 09396759945";
                 txtCpfCnpjContratado.Text = "30.286.217/0001-70";
-                txtRgContratado.Text = "093967599-45";
+                txtRgContratado.Text = "562.431.339.111"; //"093967599-45";
                 txtCepContratado.Text = "19065-510";
                 txtEnderecoContratado.Text = "AV. DAS FLORES";
                 txtNumeroContratado.Text = "210";

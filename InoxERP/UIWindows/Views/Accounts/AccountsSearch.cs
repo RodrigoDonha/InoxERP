@@ -120,6 +120,8 @@ namespace UIWindows
                     accRef = objRef.ReturnByID(id);
 
                     accRef.bReceivePaid = false;
+                    accRef.dRemaing = accRef.dValue;
+                    accRef.dPaid = 0;
 
                     objRef.Update(accRef);
 
@@ -170,6 +172,8 @@ namespace UIWindows
                     accRef = objRef.ReturnByID(id);
 
                     accRef.bReceivePaid = false;
+                    accRef.dRemaing = accRef.dValue;
+                    accRef.dPaid = 0;
 
                     objRef.Update(accRef);
 

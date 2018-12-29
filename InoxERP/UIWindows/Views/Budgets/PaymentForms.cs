@@ -623,10 +623,12 @@ namespace UIWindows
                     receive1.dtIssue = DateTime.Now;
                     receive1.dtReceiveDate = DateTime.Now;
                     receive1.bReceivePaid = false;
-                    receive1.sReferentTo = "O.S.  " + budget.iCod.ToString();
+                    receive1.sReferentTo = "O.S.  " + budget.iCod;
                     receive1.Budgets_OS = budget;
 
                     receive1.dValue = vDin;
+                    receive1.dRemaing = vDin;
+                    receive1.dPaid = 0;
                     receive1.dtDueDate = DateTime.Today.AddDays(Convert.ToDouble(pDin));
                     receive1.iInstallment = Convert.ToInt32(iDin);
                     receive1.iAmountInstallment = Convert.ToInt32(iDin);
@@ -653,10 +655,12 @@ namespace UIWindows
                             receive2.dtIssue = DateTime.Now;
                             receive2.dtReceiveDate = DateTime.Now;
                             receive2.bReceivePaid = false;
-                            receive2.sReferentTo = "O.S.  " + budget.iCod.ToString();
+                            receive2.sReferentTo = "O.S.  " + budget.iCod;
                             receive2.Budgets_OS = budget;
 
                             receive2.dValue = ppDin;
+                            receive2.dRemaing = ppDin;
+                            receive2.dPaid = 0;
                             due = due.AddDays(Convert.ToDouble(pDin));
                             receive2.dtDueDate = due;
                             receive2.iInstallment = i;
@@ -677,10 +681,12 @@ namespace UIWindows
                             receive3.dtIssue = DateTime.Now;
                             receive3.dtReceiveDate = DateTime.Now;
                             receive3.bReceivePaid = false;
-                            receive3.sReferentTo = "O.S.  " + budget.iCod.ToString();
+                            receive3.sReferentTo = "O.S.  " + budget.iCod;
                             receive3.Budgets_OS = budget;
 
                             receive3.dValue = (vDin - ppDin) / iDin;
+                            receive3.dRemaing = (vDin - ppDin) / iDin;
+                            receive3.dPaid = 0;
                             due = due.AddDays(Convert.ToDouble(pDin));
                             receive3.dtDueDate = due;
                             receive3.iInstallment = i;

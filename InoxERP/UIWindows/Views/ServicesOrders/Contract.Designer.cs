@@ -198,7 +198,7 @@
             this.txtRgContratado.Name = "txtRgContratado";
             this.txtRgContratado.Size = new System.Drawing.Size(200, 22);
             this.txtRgContratado.TabIndex = 13;
-            this.txtRgContratado.Text = "093967599-45";
+            this.txtRgContratado.Text = "562.431.339.111";
             // 
             // label3
             // 
@@ -382,7 +382,7 @@
             this.txtNomeContratado.Name = "txtNomeContratado";
             this.txtNomeContratado.Size = new System.Drawing.Size(710, 22);
             this.txtNomeContratado.TabIndex = 11;
-            this.txtNomeContratado.Text = "LUCAS BEIRIGO REGGIANI";
+            this.txtNomeContratado.Text = "LUCAS BEIRIGO REGGIANI 09396759945";
             // 
             // label10
             // 

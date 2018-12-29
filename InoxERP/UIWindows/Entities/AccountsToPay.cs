@@ -22,6 +22,10 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "Valor da Conta é Obrigatório")]
         public decimal dValue { get; set; }
 
+        public decimal dPaid { get; set; }
+
+        public decimal dRemaing { get; set; }
+
         [Required(ErrorMessage = "Data de Vencimento da Conta é Obrigatório")]
         public DateTime dtDueDate { get; set; }
 

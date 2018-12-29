@@ -87,9 +87,9 @@ namespace UIWindows
                 }
 
                 dtpData.Text = grdAReceber[3, grdAReceber.CurrentRow.Index].Value.ToString();
-                txtValor.Text = grdAReceber[5, grdAReceber.CurrentRow.Index].Value.ToString();
-                nudParcelas.Value = Convert.ToDecimal(grdAReceber[6, grdAReceber.CurrentRow.Index].Value);
-                txtReferenteA.Text = grdAReceber[9, grdAReceber.CurrentRow.Index].Value.ToString();
+                txtValor.Text = grdAReceber[13, grdAReceber.CurrentRow.Index].Value.ToString();
+                nudParcelas.Value = Convert.ToDecimal(grdAReceber[7, grdAReceber.CurrentRow.Index].Value);
+                txtReferenteA.Text = grdAReceber[10, grdAReceber.CurrentRow.Index].Value.ToString();
             }
         }
 
@@ -224,8 +224,10 @@ namespace UIWindows
                             sId_Client = returnId(),
                             dtIssue = DateTime.Now,
                             dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
+                            dRemaing = Convert.ToDecimal(txtValor.Text.Replace(".", ",")),
+                            dPaid = 0,
                             dtDueDate = returnDueDate(i, date),
-                            dtReceiveDate = DateTime.Today,
+                            dtReceiveDate = DateTime.Now,
                             bReceivePaid = false,
                             iInstallment = i + 1,
                             iAmountInstallment = Convert.ToInt32(nudParcelas.Value),
@@ -309,10 +311,7 @@ namespace UIWindows
 
                     accCash = objCash.ReturnByID(lblId.Text);
 
-                    accCash.dtReceiveDate = DateTime.Now;
-                    accCash.bReceivePaid = true;
-
-                    objCash.Update(accCash);
+                    accCash = calcPayment(accCash, Convert.ToDecimal(txtValor.Text.Replace(".", ",")));
 
                     CashBusiness objPersist = new CashBusiness(ctxC);
                     Cash cashPersist = new Cash
@@ -321,13 +320,28 @@ namespace UIWindows
 
                         sId_Budgets_OS = accCash.sId_Budgets_OS,
                         sId_Client = accCash.sId_Client,
-                        dValue = accCash.dValue,
-                        dtDate = accCash.dtReceiveDate,
-                        dBalance = objPersist.returnBalance(Convert.ToDecimal(txtValor.Text.Replace(".", ","))),
+                        dtDate = DateTime.Now,
                         sChequeNumber = "0",
                         sReferentTo = accCash.sReferentTo,
                         CashType = CashType.Enter
                     };
+
+                    decimal valueP = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+
+                    cashPersist.dValue = valueP;
+                    cashPersist.sReferentTo = "Baixa Parcial: " + accCash.sReferentTo;
+
+                    if (valueP >= accCash.dRemaing && accCash.dPaid == accCash.dValue) //quando paga valor maior que o q falta o saldo recebe o valor faltante
+                    {
+                        valueP = accCash.dRemaing;
+                        cashPersist.dValue = valueP;
+                        cashPersist.sReferentTo = "Conta Fechada: " + accCash.sReferentTo;
+                        accCash.dRemaing = 0;
+                    }
+
+                    cashPersist.dBalance = objPersist.returnBalance(valueP);
+
+                    objCash.Update(accCash);
 
                     objPersist.Insert(cashPersist);
 
@@ -342,6 +356,24 @@ namespace UIWindows
             fillGrid();
         }
 
+        private AccountsToReceive calcPayment(AccountsToReceive acc, decimal txtValue)
+        {
+            if (acc.dRemaing > txtValue)
+            {
+                acc.dRemaing = acc.dRemaing - txtValue;
+                acc.dPaid = acc.dPaid + txtValue;
+            }
+            else if (acc.dRemaing <= txtValue)
+            {
+                acc.dPaid = acc.dValue;
+                acc.dtReceiveDate = DateTime.Now;
+                acc.bReceivePaid = true;
+                if ((txtValue - acc.dRemaing) != 0)
+                    msg.Show("Troco de Pagamento", "Troco: " + (txtValue - acc.dRemaing), 0, 3000);
+            }
+
+            return acc;
+        }
 
         private bool validationCamps()
         {

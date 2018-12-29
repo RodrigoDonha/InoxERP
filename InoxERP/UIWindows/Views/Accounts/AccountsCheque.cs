@@ -106,8 +106,8 @@ namespace UIWindows
 
                 dtpData.Text = grdCheques[3, grdCheques.CurrentRow.Index].Value.ToString();
                 txtValor.Text = grdCheques[5, grdCheques.CurrentRow.Index].Value.ToString();
-                nudParcelas.Value = Convert.ToDecimal(grdCheques[8, grdCheques.CurrentRow.Index].Value);
-                string num = grdCheques[10, grdCheques.CurrentRow.Index].Value.ToString();
+                nudParcelas.Value = Convert.ToDecimal(grdCheques[9, grdCheques.CurrentRow.Index].Value);
+                string num = grdCheques[11, grdCheques.CurrentRow.Index].Value.ToString();
                 try
                 {
                     string[] parts = num.Split('-');
@@ -124,7 +124,7 @@ namespace UIWindows
                     msg.Show("Cheque", "Número do Cheque Não Encontrado", 0, 1000);
                 }
 
-                txtReferenteA.Text = grdCheques[9, grdCheques.CurrentRow.Index].Value.ToString();
+                txtReferenteA.Text = grdCheques[10, grdCheques.CurrentRow.Index].Value.ToString();
             }
         }
 

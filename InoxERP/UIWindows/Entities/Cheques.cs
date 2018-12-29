@@ -21,6 +21,11 @@ namespace UIWindows.Entities
 
         [Required(ErrorMessage = "Valor do Cheque é Obrigatório")]
         public decimal dValue { get; set; }
+        
+        public decimal dPaid { get; set; }
+
+        public decimal dRemaing { get; set; }
+
 
         [Required(ErrorMessage = "Data de Vencimento do Cheque é Obrigatório")]
         public DateTime dtDueDate { get; set; }
