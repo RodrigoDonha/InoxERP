@@ -36,15 +36,15 @@
             this.grpPeriodo = new System.Windows.Forms.GroupBox();
             this.lblDe = new System.Windows.Forms.Label();
             this.grpTipo = new System.Windows.Forms.GroupBox();
+            this.radPagosParcialmente = new System.Windows.Forms.RadioButton();
+            this.radRecebidosParcialemnte = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radContasGeraisAReceber = new System.Windows.Forms.RadioButton();
+            this.radContasGeraisAPagar = new System.Windows.Forms.RadioButton();
             this.radPagas = new System.Windows.Forms.RadioButton();
             this.radAPagar = new System.Windows.Forms.RadioButton();
             this.radAReceber = new System.Windows.Forms.RadioButton();
             this.radRecebidos = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.grpPeriodo.SuspendLayout();
             this.grpTipo.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -112,8 +112,8 @@
             // 
             // grpTipo
             // 
-            this.grpTipo.Controls.Add(this.radioButton4);
-            this.grpTipo.Controls.Add(this.radioButton3);
+            this.grpTipo.Controls.Add(this.radPagosParcialmente);
+            this.grpTipo.Controls.Add(this.radRecebidosParcialemnte);
             this.grpTipo.Controls.Add(this.groupBox1);
             this.grpTipo.Controls.Add(this.radPagas);
             this.grpTipo.Controls.Add(this.radAPagar);
@@ -127,6 +127,65 @@
             this.grpTipo.TabIndex = 12;
             this.grpTipo.TabStop = false;
             this.grpTipo.Text = "Tipo";
+            // 
+            // radPagosParcialmente
+            // 
+            this.radPagosParcialmente.AutoSize = true;
+            this.radPagosParcialmente.Location = new System.Drawing.Point(23, 211);
+            this.radPagosParcialmente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radPagosParcialmente.Name = "radPagosParcialmente";
+            this.radPagosParcialmente.Size = new System.Drawing.Size(152, 21);
+            this.radPagosParcialmente.TabIndex = 7;
+            this.radPagosParcialmente.TabStop = true;
+            this.radPagosParcialmente.Text = "Pagos Parcialmente";
+            this.radPagosParcialmente.UseVisualStyleBackColor = true;
+            // 
+            // radRecebidosParcialemnte
+            // 
+            this.radRecebidosParcialemnte.AutoSize = true;
+            this.radRecebidosParcialemnte.Location = new System.Drawing.Point(23, 236);
+            this.radRecebidosParcialemnte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radRecebidosParcialemnte.Name = "radRecebidosParcialemnte";
+            this.radRecebidosParcialemnte.Size = new System.Drawing.Size(179, 21);
+            this.radRecebidosParcialemnte.TabIndex = 6;
+            this.radRecebidosParcialemnte.TabStop = true;
+            this.radRecebidosParcialemnte.Text = "Recebidos Parcialmente";
+            this.radRecebidosParcialemnte.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radContasGeraisAReceber);
+            this.groupBox1.Controls.Add(this.radContasGeraisAPagar);
+            this.groupBox1.Location = new System.Drawing.Point(15, 24);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(155, 82);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Geral";
+            // 
+            // radContasGeraisAReceber
+            // 
+            this.radContasGeraisAReceber.AutoSize = true;
+            this.radContasGeraisAReceber.Location = new System.Drawing.Point(9, 46);
+            this.radContasGeraisAReceber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radContasGeraisAReceber.Name = "radContasGeraisAReceber";
+            this.radContasGeraisAReceber.Size = new System.Drawing.Size(140, 21);
+            this.radContasGeraisAReceber.TabIndex = 4;
+            this.radContasGeraisAReceber.TabStop = true;
+            this.radContasGeraisAReceber.Text = "Contas a Receber";
+            this.radContasGeraisAReceber.UseVisualStyleBackColor = true;
+            // 
+            // radContasGeraisAPagar
+            // 
+            this.radContasGeraisAPagar.AutoSize = true;
+            this.radContasGeraisAPagar.Location = new System.Drawing.Point(10, 21);
+            this.radContasGeraisAPagar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radContasGeraisAPagar.Name = "radContasGeraisAPagar";
+            this.radContasGeraisAPagar.Size = new System.Drawing.Size(124, 21);
+            this.radContasGeraisAPagar.TabIndex = 3;
+            this.radContasGeraisAPagar.TabStop = true;
+            this.radContasGeraisAPagar.Text = "Contas a Pagar";
+            this.radContasGeraisAPagar.UseVisualStyleBackColor = true;
             // 
             // radPagas
             // 
@@ -176,65 +235,6 @@
             this.radRecebidos.Text = "Recebidos";
             this.radRecebidos.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(15, 24);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(155, 82);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Geral";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(10, 21);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(124, 21);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Contas a Pagar";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(9, 46);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(140, 21);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Contas a Receber";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(23, 236);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(179, 21);
-            this.radioButton3.TabIndex = 6;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Recebidos Parcialmente";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(23, 211);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(152, 21);
-            this.radioButton4.TabIndex = 7;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Pagos Parcialmente";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
             // frmReportAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -273,9 +273,9 @@
         private System.Windows.Forms.RadioButton radAReceber;
         private System.Windows.Forms.RadioButton radRecebidos;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radContasGeraisAPagar;
+        private System.Windows.Forms.RadioButton radPagosParcialmente;
+        private System.Windows.Forms.RadioButton radRecebidosParcialemnte;
+        private System.Windows.Forms.RadioButton radContasGeraisAReceber;
     }
 }

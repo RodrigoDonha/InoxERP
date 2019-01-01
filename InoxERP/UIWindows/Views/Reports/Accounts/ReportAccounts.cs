@@ -18,6 +18,12 @@ namespace UIWindows
             DateTime endDate = Convert.ToDateTime(dtpFim.Text);
             string typeLaunch = "";
 
+            if (radContasGeraisAPagar.Checked)
+            {
+                type = "Gerais A Pagar, Pagas Parcial ou Total";
+                typeLaunch = "";
+                new GeneralAccountsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+            }
             //if (radGeral.Checked)
             //{
             //    type = "Geral";

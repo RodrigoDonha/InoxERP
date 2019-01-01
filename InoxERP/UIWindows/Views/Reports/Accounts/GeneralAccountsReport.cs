@@ -32,51 +32,53 @@ namespace UIWindows.Views.Reports.Accounts
             this.tb_accountsToPayTableAdapter.Fill(this.fullDataSet.tb_accountsToPay);
             this.tb_accountsToReceiveTableAdapter.Fill(this.fullDataSet.tb_accountsToReceive);
 
-            // hook
-            this.reportViewer1.LocalReport.SubreportProcessing += LocalReport_SubreportProcessing;
+            // SUB REPORT EXAMPLE
+            //// hook
+            //this.reportViewer1.LocalReport.SubreportProcessing += LocalReport_SubreportProcessing;
             
             this.reportViewer1.RefreshReport();
         }
 
+        // SUB REPORT EXAMPLE
         // alimenta dados dos pagamentos parciais
-        void LocalReport_SubreportProcessing(object sender, Microsoft.Reporting.WinForms.SubreportProcessingEventArgs e)
-        {
-            InoxErpContext ctx = new InoxErpContext();
+        //void LocalReport_SubreportProcessing(object sender, Microsoft.Reporting.WinForms.SubreportProcessingEventArgs e)
+        //{
+        //    InoxErpContext ctx = new InoxErpContext();
 
-            //ParcialPay
-            ParcialToPayBusiness objPay = new ParcialToPayBusiness(ctx);
-            List<ParcialPay> listPay = new List<ParcialPay>();
-            listPay =  objPay.ReturnAll().ToList();
-            DataTable pListPay = new DataTable();
-            pListPay = ConvertToDataTable(listPay);
-            e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("GeneralParcialPay", (DataTable) pListPay));
+        //    //ParcialPay
+        //    ParcialToPayBusiness objPay = new ParcialToPayBusiness(ctx);
+        //    List<ParcialPay> listPay = new List<ParcialPay>();
+        //    listPay =  objPay.ReturnAll().ToList();
+        //    DataTable pListPay = new DataTable();
+        //    pListPay = ConvertToDataTable(listPay);
+        //    e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("GeneralParcialPay", (DataTable) pListPay));
 
-            // ParcialReceive
-            ParcialToReceiveBusiness objReceive = new ParcialToReceiveBusiness(ctx);
-            List<ParcialReceive> listReceive = new List<ParcialReceive>();
-            listReceive = objReceive.ReturnAll().ToList();
-            DataTable pListReceive = new DataTable();
-            pListReceive = ConvertToDataTable(listReceive);
-            e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("ParcialReceiveDataSet", (DataTable) pListReceive));
-        }
+        //    // ParcialReceive
+        //    ParcialToReceiveBusiness objReceive = new ParcialToReceiveBusiness(ctx);
+        //    List<ParcialReceive> listReceive = new List<ParcialReceive>();
+        //    listReceive = objReceive.ReturnAll().ToList();
+        //    DataTable pListReceive = new DataTable();
+        //    pListReceive = ConvertToDataTable(listReceive);
+        //    e.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("ParcialReceiveDataSet", (DataTable) pListReceive));
+        //}
 
-        // converter lista em datatable
-        public DataTable ConvertToDataTable<T>(IList<T> data)
-        {
-            PropertyDescriptorCollection properties =
-                TypeDescriptor.GetProperties(typeof(T));
-            DataTable table = new DataTable();
-            foreach (PropertyDescriptor prop in properties)
-                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
-            foreach (T item in data)
-            {
-                DataRow row = table.NewRow();
-                foreach (PropertyDescriptor prop in properties)
-                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
-                table.Rows.Add(row);
-            }
-            return table;
-        }
+        //// converter lista em datatable
+        //public DataTable ConvertToDataTable<T>(IList<T> data)
+        //{
+        //    PropertyDescriptorCollection properties =
+        //        TypeDescriptor.GetProperties(typeof(T));
+        //    DataTable table = new DataTable();
+        //    foreach (PropertyDescriptor prop in properties)
+        //        table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+        //    foreach (T item in data)
+        //    {
+        //        DataRow row = table.NewRow();
+        //        foreach (PropertyDescriptor prop in properties)
+        //            row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+        //        table.Rows.Add(row);
+        //    }
+        //    return table;
+        //}
 
         public void searchData()
         {

@@ -4,6 +4,7 @@ using Microsoft.Reporting.WinForms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 
 namespace UIWindows.Views.ServicesOrders
 {
@@ -39,7 +40,12 @@ namespace UIWindows.Views.ServicesOrders
             Budgets_OS searchBudget = new Budgets_OS();
             Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
 
+            Contracts searchContract = new Contracts();
+            ContractBusiness objContracts = new ContractBusiness(ctx);
+
+
             searchBudget = obj.ReturnByID(id);
+            searchContract = objContracts.returnByBudgetOSId(id);
 
             var sID = new ReportParameter();
             var Cod = new ReportParameter();
@@ -50,6 +56,7 @@ namespace UIWindows.Views.ServicesOrders
             var FinalPrevision = new ReportParameter();
             var PrevisionOfExecute = new ReportParameter();
             var Observation = new ReportParameter();
+            var PayementForm = new ReportParameter();
             
             sID.Name = "sID";
             Cod.Name = "Cod";
@@ -60,6 +67,7 @@ namespace UIWindows.Views.ServicesOrders
             FinalPrevision.Name = "FinalPrevision";
             PrevisionOfExecute.Name = "PrevisionOfExecute";
             Observation.Name = "Observation";
+            PayementForm.Name = "PayementForm";
 
             DateTime dateApproved = Convert.ToDateTime(searchBudget.dtDateServiceOrderApproved);
             DateTime dateStartPrevision = Convert.ToDateTime(searchBudget.dtStartPrevision);
@@ -79,7 +87,30 @@ namespace UIWindows.Views.ServicesOrders
             StartPrevision.Values.Add(dateStartPrevisionString);
             FinalPrevision.Values.Add(dateFinalPrevisionString);
             Observation.Values.Add(searchBudget.sObservation);
+
+            string payement = "";
+
+            if (searchContract != null)
+                PayementForm.Values.Add(searchContract.sPaymentForm);
+            else
+            {
+                payement = paymentForm(searchBudget.PaymentMethods) + " - Parcelamento: " + searchBudget.iPaymentInstallments;
+                PayementForm.Values.Add(payement);
+            }
             
+            string paymentForm(PaymentMethods payment)
+            {
+                if (payment == PaymentMethods.chequeMoney)
+                    return "Dinheiro e Cheque";
+                if (payment == PaymentMethods.money)
+                    return "Dinheiro";
+                if (payment == PaymentMethods.cheque)
+                    return "Cheque";
+                if (payment == PaymentMethods.toMatch)
+                    return "À Combinar";
+                return "";
+            }
+
             reportViewer1.LocalReport.SetParameters(sID);
             reportViewer1.LocalReport.SetParameters(Cod);
             reportViewer1.LocalReport.SetParameters(DateApproved);
@@ -89,6 +120,7 @@ namespace UIWindows.Views.ServicesOrders
             reportViewer1.LocalReport.SetParameters(StartPrevision);
             reportViewer1.LocalReport.SetParameters(FinalPrevision);
             reportViewer1.LocalReport.SetParameters(Observation);
+            reportViewer1.LocalReport.SetParameters(PayementForm);
 
             reportViewer1.RefreshReport();
         }
