@@ -121,7 +121,7 @@ namespace UIWindows
                     txtC1.Text = "0";
                     txtC2.Text = "0";
                     txtC3.Text = "0";
-                    msg.Show("Cheque", "Número do Cheque Não Encontrado", 0, 1000);
+                    //msg.Show("Cheque", "Número do Cheque Não Encontrado", 0, 1000);
                 }
 
                 txtReferenteA.Text = grdCheques[10, grdCheques.CurrentRow.Index].Value.ToString();
@@ -302,6 +302,7 @@ namespace UIWindows
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             searchByName();
+            txtNomeCliente.Focus();
         }
 
         private string returnOS()
@@ -471,6 +472,7 @@ namespace UIWindows
                     cleanCamps();
                 }
             fillGrid();
+            txtNomeCliente.Focus();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -498,10 +500,11 @@ namespace UIWindows
 
 
                     MessageBox.Show(ok == null ? "Erro ao Alterar o Cheque !!!" : "Cheques Alterado com Sucesso !!!");
+                    cleanCamps();
                 }
 
-            cleanCamps();
             fillGrid();
+            txtNomeCliente.Focus();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -516,10 +519,11 @@ namespace UIWindows
                 var ok = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
 
                 MessageBox.Show(ok != null ? "Erro ao Excluir o Cheque !!!" : "Cheques Excluído com Sucesso !!!");
+                cleanCamps();
             }
 
-            cleanCamps();
             fillGrid();
+            txtNomeCliente.Focus();
         }
 
         private void btnBaixar_Click(object sender, EventArgs e)
@@ -532,6 +536,17 @@ namespace UIWindows
                     Cheques chequeCash = new Cheques();
 
                     chequeCash = objC.ReturnByID(lblId.Text);
+
+                    if(Convert.ToDecimal(txtValor.Text) < chequeCash.dValue)
+                        msg.Show("Baixa de Cheques com Valor Menor", " Não é permitido fazer Baixa Parcial de um Cheque !!! \n\n " +
+                                                 "O sistema prossegirá com a Baixa do Valor Integral do Cheque !!!", 0,
+                        20000);
+
+                    if (Convert.ToDecimal(txtValor.Text) > chequeCash.dValue)
+                        msg.Show("Baixa de Cheques com Valor Maior", " Não é permitido fazer Baixa de um Cheque com um Valor Maior !!! \n\n " +
+                                                     "O sistema prossegirá com a Baixa do Valor Informado Inicialmente !!!", 0,
+                            20000);
+
 
                     chequeCash.dtPayDate = DateTime.Now;
                     chequeCash.bChequePaid = true;
@@ -547,7 +562,7 @@ namespace UIWindows
                         sId_Client = chequeCash.sId_Client,
                         dValue = chequeCash.dValue,
                         dtDate = chequeCash.dtPayDate,
-                        dBalance = objPersist.returnBalance(Convert.ToDecimal(txtValor.Text.Replace(".", ","))),
+                        dBalance = objPersist.returnBalance(chequeCash.dValue),
                         sChequeNumber = chequeCash.sChequeNumber,
                         sReferentTo = chequeCash.sReferentTo,
                         CashType = CashType.Enter
@@ -561,25 +576,29 @@ namespace UIWindows
                     var okCheq = objC.Search.FirstOrDefault(b => b.sID == chequeCash.sID);
                     
                     MessageBox.Show(okCash == null || okCheq == null ? "Erro ao Baixar o Cheque !!!" : "Cheques Baixado com Sucesso !!!");
+                    cleanCamps();
                 }
 
-            cleanCamps();
             fillGrid();
+            txtNomeCliente.Focus();
         }
 
         private void txtC1_Leave(object sender, EventArgs e)
         {
-            validationC1();
+            if(!txtValor.Text.Equals(""))
+                validationC1();
         }
 
         private void txtC2_Leave(object sender, EventArgs e)
         {
-            validationC2();
+            if(!txtValor.Text.Equals(""))
+                validationC2();
         }
 
         private void txtC3_Leave(object sender, EventArgs e)
         {
-            validationC3();
+            if(!txtValor.Text.Equals(""))
+                validationC3();
         }
 
         private void txtC1_KeyPress(object sender, KeyPressEventArgs e)
@@ -602,8 +621,8 @@ namespace UIWindows
         {
             validation.characterValidatorNumbersCheque(sender,e);
 
-            if (txtC3.Text.Length.Equals(12))
-                txtReferenteA.Focus();
+            //if (txtC3.Text.Length.Equals(12))
+            //    txtReferenteA.Focus();
         }
     }
 }
