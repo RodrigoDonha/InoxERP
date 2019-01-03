@@ -9,6 +9,7 @@ namespace UIWindows
         public frmReportAccounts()
         {
             InitializeComponent();
+            radContasGeraisAPagar.Focus();
         }
 
         private void btnGerar_Click(object sender, EventArgs e)
@@ -22,26 +23,29 @@ namespace UIWindows
             {
                 type = "Gerais A Pagar, Pagas Parcial ou Total";
                 typeLaunch = "";
-                new GeneralAccountsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+                new GeneralAccountsPayReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
             }
-            //if (radGeral.Checked)
-            //{
-            //    type = "Geral";
-            //    typeLaunch = "";
-            //    new GeneralAccountsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
-            //}
-            //if (radBaixados.Checked)
-            //{
-            //    type = "Baixados";
-            //    situation = "True";
-            //    new SituationChequesReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
-            //}
-            //if (radNaoBaixados.Checked)
-            //{
-            //    type = "Não Baixados";
-            //    situation = "False";
-            //    new SituationChequesReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), situation).Show();
-            //}
+
+            if (radContasGeraisAReceber.Checked)
+            {
+                type = "Gerais A Receber, Recebidas Parcial ou Total";
+                typeLaunch = "";
+                new GeneralAccountsReceiveReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+            }
+
+            if (radPagosParcialmente.Checked)
+            {
+                type = "Pagas Parcialmente";
+                typeLaunch = "";
+                new ParcialPayReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+            }
+
+            if (radPagas.Checked)
+            {
+                type = "Pagas Totalmente";
+                typeLaunch = "";
+                new AccountsPaymentsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+            }
         }
     }
 }

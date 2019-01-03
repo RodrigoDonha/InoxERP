@@ -185,11 +185,23 @@
     <Compile Include="Views\Backups\BackupServerDB.Designer.cs">
       <DependentUpon>BackupServerDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reports\Accounts\GeneralAccountsReport.cs">
+    <Compile Include="Views\Reports\Accounts\AccountsPaymentsReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Reports\Accounts\GeneralAccountsReport.Designer.cs">
-      <DependentUpon>GeneralAccountsReport.cs</DependentUpon>
+    <Compile Include="Views\Reports\Accounts\AccountsPaymentsReport.Designer.cs">
+      <DependentUpon>AccountsPaymentsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\GeneralAccountsPayReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\GeneralAccountsPayReport.Designer.cs">
+      <DependentUpon>GeneralAccountsPayReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\GeneralAccountsReceiveReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\GeneralAccountsReceiveReport.Designer.cs">
+      <DependentUpon>GeneralAccountsReceiveReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Reports\Accounts\ParcialPayReport.cs">
       <SubType>Form</SubType>
@@ -475,11 +487,11 @@
     <Compile Include="Views\Users\UserRegisterSearch.Designer.cs">
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\AccountsPayments.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\GeneralAccountsPay.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\GeneralAccountsReceive.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\SituationPay\SituationAccountsPay.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\ParcialPay.rdlc" />
-    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\SubReportParcialReceive.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\Budget.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\GerenalBudgest.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\SituationBudgets.rdlc" />
@@ -509,8 +521,14 @@
     <EmbeddedResource Include="Views\Backups\RestoreServerDB.resx">
       <DependentUpon>RestoreServerDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reports\Accounts\GeneralAccountsReport.resx">
-      <DependentUpon>GeneralAccountsReport.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Reports\Accounts\AccountsPaymentsReport.resx">
+      <DependentUpon>AccountsPaymentsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Accounts\GeneralAccountsPayReport.resx">
+      <DependentUpon>GeneralAccountsPayReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Accounts\GeneralAccountsReceiveReport.resx">
+      <DependentUpon>GeneralAccountsReceiveReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Accounts\ParcialPayReport.resx">
       <DependentUpon>ParcialPayReport.cs</DependentUpon>

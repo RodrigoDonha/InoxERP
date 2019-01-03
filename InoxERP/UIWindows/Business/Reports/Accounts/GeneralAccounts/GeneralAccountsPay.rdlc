@@ -87,70 +87,6 @@
         <rd:TableAdapterName>tb_accountsToPayTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="AccountsToReceive">
-      <Query>
-        <DataSourceName>FullDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="sId_Budgets_OS">
-          <DataField>sId_Budgets_OS</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="sId_Client">
-          <DataField>sId_Client</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="dValue">
-          <DataField>dValue</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
-        <Field Name="dtDueDate">
-          <DataField>dtDueDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="dtReceiveDate">
-          <DataField>dtReceiveDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="bReceivePaid">
-          <DataField>bReceivePaid</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="iInstallment">
-          <DataField>iInstallment</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="iAmountInstallment">
-          <DataField>iAmountInstallment</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="sReferentTo">
-          <DataField>sReferentTo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="idCash">
-          <DataField>idCash</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="idBudgets_OS">
-          <DataField>idBudgets_OS</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="sIdReceive">
-          <DataField>sIdReceive</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>FullDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\FullDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>tb_accountsToReceiveReport</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>tb_accountsToReceiveReportTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -1079,38 +1015,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="type">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Parameters!type.Value</Value>
-                      <Style>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>type</rd:DefaultName>
-              <Top>0.86865cm</Top>
-              <Left>6.90393cm</Left>
-              <Height>0.6cm</Height>
-              <Width>3.60026cm</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
             <Textbox Name="Textbox28">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
@@ -1134,7 +1038,7 @@
               <Left>0.21844cm</Left>
               <Height>0.6cm</Height>
               <Width>27.5cm</Width>
-              <ZIndex>4</ZIndex>
+              <ZIndex>3</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1168,7 +1072,7 @@
               <Left>0.21844cm</Left>
               <Height>0.6cm</Height>
               <Width>6.33328cm</Width>
-              <ZIndex>5</ZIndex>
+              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1200,7 +1104,7 @@
               <Left>6.90393cm</Left>
               <Height>0.6cm</Height>
               <Width>3.60026cm</Width>
-              <ZIndex>6</ZIndex>
+              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1230,7 +1134,7 @@
               <Left>11.27485cm</Left>
               <Height>0.6cm</Height>
               <Width>1.44359cm</Width>
-              <ZIndex>7</ZIndex>
+              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1262,6 +1166,38 @@
               <Left>13.28633cm</Left>
               <Height>0.6cm</Height>
               <Width>3.60026cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="type4">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Parameters!type.Value</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>type</rd:DefaultName>
+              <Top>0.86865cm</Top>
+              <Left>6.90393cm</Left>
+              <Height>0.6cm</Height>
+              <Width>13.31451cm</Width>
               <ZIndex>8</ZIndex>
               <Style>
                 <Border>
