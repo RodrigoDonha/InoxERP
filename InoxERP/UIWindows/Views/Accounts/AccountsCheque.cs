@@ -472,7 +472,6 @@ namespace UIWindows
                     cleanCamps();
                 }
             fillGrid();
-            txtNomeCliente.Focus();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -486,44 +485,52 @@ namespace UIWindows
                     
                     chequeAlter = objAlter.ReturnByID(lblId.Text);
 
-                    chequeAlter.sId_Budgets_OS = returnOS();
-                    chequeAlter.sId_Client = returnId();
-                    chequeAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
-                    chequeAlter.dtDueDate = dtpData.Value.Date;
-                    chequeAlter.sChequeNumber = returnChequeNumber(1);
-                    chequeAlter.sReferentTo = txtReferenteA.Text;
-                   
+                    if (!chequeAlter.sChequeNumber.Equals("0") || !chequeAlter.sChequeNumber.Equals("0-0-0"))
+                        MessageBox.Show(" ***   Não é possível Alterar o Valor de um Cheque já foi Preenchido !!!");
+                    else
+                    {
+                        chequeAlter.sId_Budgets_OS = returnOS();
+                        chequeAlter.sId_Client = returnId();
+                        chequeAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                        chequeAlter.dtDueDate = dtpData.Value.Date;
+                        chequeAlter.sChequeNumber = returnChequeNumber(1);
+                        chequeAlter.sReferentTo = txtReferenteA.Text;
 
-                    objAlter.Update(chequeAlter);
+                        objAlter.Update(chequeAlter);
 
-                    var ok = objAlter.Search.FirstOrDefault(b => b.sID == chequeAlter.sID);
+                        var ok = objAlter.Search.FirstOrDefault(b => b.sID == chequeAlter.sID);
 
-
-                    MessageBox.Show(ok == null ? "Erro ao Alterar o Cheque !!!" : "Cheques Alterado com Sucesso !!!");
-                    cleanCamps();
+                        MessageBox.Show(ok == null ? "Erro ao Alterar o Cheque !!!" : "Cheque Alterado com Sucesso !!!");
+                        cleanCamps();
+                    }
                 }
 
             fillGrid();
-            txtNomeCliente.Focus();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (messageYesNo("delete") == DialogResult.Yes)
+            frmConfirmationDelete confirmation = new frmConfirmationDelete();
+
+            confirmation.ShowDialog();
+
+            if (!confirmation.user)
             {
-                InoxErpContext ctxD = new InoxErpContext();
-                ChequesBusiness objDel = new ChequesBusiness(ctxD);
+                MessageBox.Show("Login de Administrador NÃO foi confirmado, Exclusão Cancelada !!!");
+            }else if (messageYesNo("delete") == DialogResult.Yes)
+                {
+                    InoxErpContext ctxD = new InoxErpContext();
+                    ChequesBusiness objDel = new ChequesBusiness(ctxD);
 
-                objDel.Delete(lblId.Text);
+                    objDel.Delete(lblId.Text);
 
-                var ok = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+                    var ok = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
 
-                MessageBox.Show(ok != null ? "Erro ao Excluir o Cheque !!!" : "Cheques Excluído com Sucesso !!!");
-                cleanCamps();
-            }
+                    MessageBox.Show(ok != null ? "Erro ao Excluir o Cheque !!!" : "Cheque Excluído com Sucesso !!!");
+                    cleanCamps();
+                }
 
             fillGrid();
-            txtNomeCliente.Focus();
         }
 
         private void btnBaixar_Click(object sender, EventArgs e)
@@ -575,12 +582,11 @@ namespace UIWindows
 
                     var okCheq = objC.Search.FirstOrDefault(b => b.sID == chequeCash.sID);
                     
-                    MessageBox.Show(okCash == null || okCheq == null ? "Erro ao Baixar o Cheque !!!" : "Cheques Baixado com Sucesso !!!");
+                    MessageBox.Show(okCash == null || okCheq == null ? "Erro ao Baixar o Cheque !!!" : "Cheque Baixado com Sucesso !!!");
                     cleanCamps();
                 }
 
             fillGrid();
-            txtNomeCliente.Focus();
         }
 
         private void txtC1_Leave(object sender, EventArgs e)

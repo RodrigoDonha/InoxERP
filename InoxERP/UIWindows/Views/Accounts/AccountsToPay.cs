@@ -12,6 +12,7 @@ using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
 using UIWindows.Entities.Enum;
+using UIWindows.Views.Accounts;
 
 namespace UIWindows
 {
@@ -392,19 +393,30 @@ namespace UIWindows
 
             if(id.Equals(""))
                 MessageBox.Show("Selecione uma Conta para Exclusão !!!");
-            else if (messageYesNo("delete") == DialogResult.Yes)
-                {
-                    InoxErpContext ctxD = new InoxErpContext();
-                    AccountsToPayBusiness objDel = new AccountsToPayBusiness(ctxD);
+            else{
+                frmConfirmationDelete confirmation = new frmConfirmationDelete();
 
-                    objDel.Delete(lblId.Text);
+                confirmation.ShowDialog();
 
-                    var ok = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+                if (!confirmation.user)
+                    {
+                        MessageBox.Show("Login de Administrador NÃO foi confirmado, Exclusão Cancelada !!!");
+                    }
+                    else if(messageYesNo("delete") == DialogResult.Yes)
+                        {
+                            InoxErpContext ctxD = new InoxErpContext();
+                            AccountsToPayBusiness objDel = new AccountsToPayBusiness(ctxD);
 
-                    MessageBox.Show(ok != null ? "Erro ao Excluir a Conta !!!" : "Conta Excluída com Sucesso !!!");
+                            objDel.Delete(lblId.Text);
+
+                            var ok = objDel.Search.FirstOrDefault(b => b.sID == lblId.Text);
+
+                            MessageBox.Show(ok != null ? "Erro ao Excluir a Conta !!!" : "Conta Excluída com Sucesso !!!");
+
+                            cleanCamps();
+                        }
                 }
 
-            cleanCamps();
             fillGrid();
         }
 

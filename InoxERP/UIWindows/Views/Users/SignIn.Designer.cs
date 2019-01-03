@@ -39,8 +39,10 @@ namespace UIWindows
             this.grpSenha = new System.Windows.Forms.GroupBox();
             this.btnVisualizarSenha = new System.Windows.Forms.Button();
             this.txtSenha = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpUsuario.SuspendLayout();
             this.grpSenha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAcessar
@@ -48,7 +50,7 @@ namespace UIWindows
             this.btnAcessar.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAcessar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcessar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAcessar.Location = new System.Drawing.Point(63, 284);
+            this.btnAcessar.Location = new System.Drawing.Point(72, 320);
             this.btnAcessar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAcessar.Name = "btnAcessar";
             this.btnAcessar.Size = new System.Drawing.Size(80, 30);
@@ -62,7 +64,7 @@ namespace UIWindows
             this.btnLimpar.BackColor = System.Drawing.Color.Gold;
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLimpar.Location = new System.Drawing.Point(197, 284);
+            this.btnLimpar.Location = new System.Drawing.Point(206, 320);
             this.btnLimpar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(80, 30);
@@ -76,7 +78,7 @@ namespace UIWindows
             this.btnFechar.BackColor = System.Drawing.Color.Red;
             this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFechar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFechar.Location = new System.Drawing.Point(333, 284);
+            this.btnFechar.Location = new System.Drawing.Point(342, 320);
             this.btnFechar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(80, 30);
@@ -88,7 +90,7 @@ namespace UIWindows
             // grpUsuario
             // 
             this.grpUsuario.Controls.Add(this.txtLogin);
-            this.grpUsuario.Location = new System.Drawing.Point(63, 50);
+            this.grpUsuario.Location = new System.Drawing.Point(72, 78);
             this.grpUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpUsuario.Name = "grpUsuario";
             this.grpUsuario.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -112,7 +114,7 @@ namespace UIWindows
             // 
             this.grpSenha.Controls.Add(this.btnVisualizarSenha);
             this.grpSenha.Controls.Add(this.txtSenha);
-            this.grpSenha.Location = new System.Drawing.Point(63, 151);
+            this.grpSenha.Location = new System.Drawing.Point(72, 187);
             this.grpSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpSenha.Name = "grpSenha";
             this.grpSenha.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -151,11 +153,22 @@ namespace UIWindows
             this.txtSenha.UseSystemPasswordChar = true;
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::UIWindows.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(150, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 61);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmSignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 362);
+            this.ClientSize = new System.Drawing.Size(484, 372);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpSenha);
             this.Controls.Add(this.grpUsuario);
             this.Controls.Add(this.btnFechar);
@@ -171,6 +184,7 @@ namespace UIWindows
             this.grpUsuario.PerformLayout();
             this.grpSenha.ResumeLayout(false);
             this.grpSenha.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,5 +199,6 @@ namespace UIWindows
         private System.Windows.Forms.GroupBox grpSenha;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnVisualizarSenha;
+        private PictureBox pictureBox1;
     }
 }

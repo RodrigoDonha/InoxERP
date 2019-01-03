@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIWindows.Context;
 using UIWindows.Entities;
+using UIWindows.Entities.Enum;
 
 namespace UIWindows.Business.Concrete
 {
@@ -43,6 +44,22 @@ namespace UIWindows.Business.Concrete
                     MessageBox.Show(e.InnerException.InnerException.ToString());
 
                 return null;
+            }
+        }
+
+        public bool returnUserAdmin(Users user)
+        {
+            try
+            {
+                Users userAdm = context.Users.FirstOrDefault(u => u.sLogin == user.sLogin && u.sKey == user.sKey && u.Type == UserType.Admin);
+                if (userAdm != null)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception e)
+            { 
+                return false;
             }
         }
 

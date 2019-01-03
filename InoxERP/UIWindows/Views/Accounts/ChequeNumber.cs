@@ -123,11 +123,17 @@ namespace UIWindows.Views.Accounts
         private void txtC1_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorNumbersCheque(sender,e);
+
+            if (txtC1.Text.Length.Equals(8))
+                txtC2.Focus();
         }
 
         private void txtC2_KeyPress(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorNumbersCheque(sender,e);
+
+            if (txtC2.Text.Length.Equals(10))
+                txtC3.Focus();
         }
 
         private void txtC3_KeyPress(object sender, KeyPressEventArgs e)
