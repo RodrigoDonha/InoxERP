@@ -260,8 +260,8 @@ namespace UIWindows
             {
                 cleanCamps();
                 lblID.Text = dgvUsuarios[0, dgvUsuarios.CurrentRow.Index].Value.ToString();
-                txtLogin.Text = dgvUsuarios[2, dgvUsuarios.CurrentRow.Index].Value.ToString();
-                txtNome.Text = dgvUsuarios[1, dgvUsuarios.CurrentRow.Index].Value.ToString();
+                txtLogin.Text = dgvUsuarios[1, dgvUsuarios.CurrentRow.Index].Value.ToString();
+                txtNome.Text = dgvUsuarios[2, dgvUsuarios.CurrentRow.Index].Value.ToString();
                 fillType();
             }
         }

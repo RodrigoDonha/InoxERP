@@ -103,7 +103,8 @@ namespace UIWindows
                 }
 
                 dtpData.Text = grdAPagar[3, grdAPagar.CurrentRow.Index].Value.ToString();
-                txtValor.Text = grdAPagar[13, grdAPagar.CurrentRow.Index].Value.ToString();
+                txtValor.Text = grdAPagar[5, grdAPagar.CurrentRow.Index].Value.ToString();
+                lblValorAPagar.Text = grdAPagar[13, grdAPagar.CurrentRow.Index].Value.ToString();
                 nudParcelas.Value = Convert.ToDecimal(grdAPagar[7, grdAPagar.CurrentRow.Index].Value);
                 txtReferenteA.Text = grdAPagar[10, grdAPagar.CurrentRow.Index].Value.ToString();
             }
@@ -229,6 +230,8 @@ namespace UIWindows
             nudParcelas.Value = 1;
             nudPrazo.Value = 0;
             txtReferenteA.Clear();
+            lblValorAPagar.Text = "";
+            txtValorBaixa.Clear();
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
@@ -305,12 +308,12 @@ namespace UIWindows
 
                     if (ok.bReceivePaid)
                         MessageBox.Show("A Conta foi Baixada Automaticamente");
+                    else
+                        MessageBox.Show(ok == null ? "Erro ao Alterar a Conta !!!" : "Conta Alterada com Sucesso !!!");
 
-                    MessageBox.Show(ok == null ? "Erro ao Alterar a Conta !!!" : "Conta Alterada com Sucesso !!!");
-
+                    cleanCamps();
                 }
 
-            cleanCamps();
             fillGrid();
         }
 
@@ -327,19 +330,27 @@ namespace UIWindows
             {
                 diff = diff * -1;
 
-                if ((acc.dPaid + diff) > acc.dValue)// se o q foi pago + a diferença menor for maior que valor da conta
-                {                                   // gera uma devolução no caixa (saída)
+                if (txtValue == acc.dPaid)
+                {
                     acc.dValue = txtValue;
                     acc.dPaid = txtValue;
                     acc.dtPayDate = DateTime.Now;
                     acc.bReceivePaid = true;
                     acc.dRemaing = 0;
-
+                }
+                else if ((acc.dPaid + diff - acc.dValue) > 0)// se o q foi pago + a diferença menor for maior que valor da conta
+                {                                   // gera uma devolução no caixa (entrada)
                     decimal refund = (acc.dPaid + diff) - acc.dValue;
 
+                    acc.dValue = txtValue;
+                    acc.dPaid = txtValue;
+                    acc.dtPayDate = DateTime.Now;
+                    acc.bReceivePaid = true;
+                    acc.dRemaing = 0;
+                    
                     if (refund > 0)
                     {
-                        MessageBox.Show("A Alteração de Conta gerou uma Devolução, será incluída uma Saída no Caixa !!!");
+                        MessageBox.Show("A Alteração de Conta gerou uma Devolução, será incluída uma Entrada no Caixa !!!");
 
                         InoxErpContext ctxC = new InoxErpContext();
                         CashBusiness objPersist = new CashBusiness(ctxC);
@@ -351,10 +362,10 @@ namespace UIWindows
                             sId_Client = acc.sId_Client,
                             dValue = refund,
                             dtDate = DateTime.Now,
-                            dBalance = objPersist.returnBalance(-refund),
+                            dBalance = objPersist.returnBalance(refund),
                             sChequeNumber = "0-0-0",
                             sReferentTo = "Devolução: " + acc.sReferentTo,
-                            CashType = CashType.Out
+                            CashType = CashType.Enter
                         };
 
                         objPersist.Insert(cashPersist);
@@ -400,56 +411,58 @@ namespace UIWindows
         private void btnBaixar_Click(object sender, EventArgs e)
         {
             if (validationCamps())
-                if (messageYesNo("cash") == DialogResult.Yes)
-                {
-                    InoxErpContext ctxC = new InoxErpContext();
-                    AccountsToPayBusiness objCash = new AccountsToPayBusiness(ctxC);
-                    AccountsToPay accCash = new AccountsToPay();
-
-                    accCash = objCash.ReturnByID(lblId.Text);
-
-                    accCash = calcPayment(accCash, Convert.ToDecimal(txtValor.Text.Replace(".", ",")));
-                    
-                    CashBusiness objPersist = new CashBusiness(ctxC);
-                    Cash cashPersist = new Cash
+                if(!txtValorBaixa.Text.Equals("") && !txtValorBaixa.Text.Equals("0"))
+                    if (messageYesNo("cash") == DialogResult.Yes)
                     {
-                        sID = Guid.NewGuid().ToString(),
+                        InoxErpContext ctxC = new InoxErpContext();
+                        AccountsToPayBusiness objCash = new AccountsToPayBusiness(ctxC);
+                        AccountsToPay accCash = new AccountsToPay();
 
-                        sId_Budgets_OS = accCash.sId_Budgets_OS,
-                        sId_Client = accCash.sId_Client,
-                        dtDate = DateTime.Now,
-                        sChequeNumber = "0",
-                        sReferentTo = accCash.sReferentTo,
-                        CashType = CashType.Out
-                    };
+                        accCash = objCash.ReturnByID(lblId.Text);
 
-                    decimal valueP = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
+                        accCash = calcPayment(accCash, Convert.ToDecimal(txtValorBaixa.Text.Replace(".", ",")));
+                        
+                        CashBusiness objPersist = new CashBusiness(ctxC);
+                        Cash cashPersist = new Cash
+                        {
+                            sID = Guid.NewGuid().ToString(),
 
-                    cashPersist.dValue = valueP;
-                    cashPersist.sReferentTo = "Baixa Parcial: " + accCash.sReferentTo;
+                            sId_Budgets_OS = accCash.sId_Budgets_OS,
+                            sId_Client = accCash.sId_Client,
+                            dtDate = DateTime.Now,
+                            sChequeNumber = "0",
+                            sReferentTo = accCash.sReferentTo,
+                            CashType = CashType.Out
+                        };
 
-                    if (valueP >= accCash.dRemaing && accCash.dPaid == accCash.dValue)
-                    {
-                        valueP = accCash.dRemaing;
+                        decimal valueP = Convert.ToDecimal(txtValorBaixa.Text.Replace(".", ","));
+
                         cashPersist.dValue = valueP;
-                        cashPersist.sReferentTo = "Conta Fechada: " + accCash.sReferentTo;
-                        accCash.dRemaing = 0;
+                        cashPersist.sReferentTo = "Baixa Parcial: " + accCash.sReferentTo;
+
+                        if (valueP >= accCash.dRemaing && accCash.dPaid == accCash.dValue)
+                        {
+                            valueP = accCash.dRemaing;
+                            cashPersist.dValue = valueP;
+                            cashPersist.sReferentTo = "Conta Fechada: " + accCash.sReferentTo;
+                            accCash.dRemaing = 0;
+                        }
+
+                        cashPersist.dBalance = objPersist.returnBalance(-valueP);
+
+                        objCash.Update(accCash);
+
+                        objPersist.Insert(cashPersist);
+
+                        var okCash = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
+
+                        var okAcc = objCash.Search.FirstOrDefault(b => b.sID == accCash.sID);
+
+                        MessageBox.Show(okCash == null || okAcc == null ? "Erro ao Baixar a Conta !!!" : "Conta Baixada com Sucesso !!!");
+
+                        cleanCamps();
                     }
 
-                    cashPersist.dBalance = objPersist.returnBalance(-valueP);
-
-                    objCash.Update(accCash);
-
-                    objPersist.Insert(cashPersist);
-
-                    var okCash = objPersist.Search.FirstOrDefault(b => b.sID == cashPersist.sID);
-
-                    var okAcc = objCash.Search.FirstOrDefault(b => b.sID == accCash.sID);
-
-                    MessageBox.Show(okCash == null || okAcc == null ? "Erro ao Baixar a Conta !!!" : "Conta Baixada com Sucesso !!!");
-                }
-
-            cleanCamps();
             fillGrid();
         }
 
@@ -567,6 +580,11 @@ namespace UIWindows
                 txtNomeFornecedor.Text = providerSearch.returnProviders.sName;
                 grdAPagar.DataSource = accG.ToList();
             }
+        }
+
+        private void txtValorBaixa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbers(sender, e);
         }
     }
 }

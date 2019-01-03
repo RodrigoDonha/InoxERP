@@ -236,6 +236,8 @@ namespace InoxERP.UI_Windows_Forms
                             //colocar impressao aqui
                             string Cod = ok.sID.ToString();
 
+                            this.Dispose();
+
                             PrintingBudget(budgetPersist.sID);
                         }
                         else
@@ -769,8 +771,8 @@ namespace InoxERP.UI_Windows_Forms
             if (productsSearch.ReturnProducts != null)
             {
                 product = productsSearch;
-                if (messageYesNo("product") == DialogResult.Yes)
-                {
+                //if (messageYesNo("product") == DialogResult.Yes)
+                //{
                     getIdProduct = "";
                     getIdProduct = product.ReturnProducts.sID;
                     txtQuantidade.Text = "1";
@@ -784,7 +786,7 @@ namespace InoxERP.UI_Windows_Forms
                     //{
                     txtValorUnitario.Text = product.ReturnProducts.dPrice.ToString();
                     //}
-                }
+                //}
             }
         }
 

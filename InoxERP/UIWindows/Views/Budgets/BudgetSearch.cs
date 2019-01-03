@@ -100,7 +100,7 @@ namespace UIWindows
         {            
             if(getId == null)
             {
-                MessageBox.Show("Selecione um orçmento na lista acima.");
+                MessageBox.Show("Selecione um orçamento na lista acima.");
             }
             else
             {
@@ -140,7 +140,7 @@ namespace UIWindows
         {
             if (getId == null)
             {
-                MessageBox.Show("Selecione um orçmento na lista acima.");
+                MessageBox.Show("Selecione um orçamento na lista acima.");
             }
             else
             {
@@ -187,7 +187,7 @@ namespace UIWindows
             switch (type)
             {
                 case "Exclude":
-                    return MessageBox.Show("Confirma excluisão?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma exclusão?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Approve":
                     return MessageBox.Show("Confirma aprovação deste orçamento?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Price":

@@ -343,7 +343,7 @@
             // 
             this.lblValorTotalPago.AutoSize = true;
             this.lblValorTotalPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorTotalPago.Location = new System.Drawing.Point(283, 450);
+            this.lblValorTotalPago.Location = new System.Drawing.Point(273, 450);
             this.lblValorTotalPago.Name = "lblValorTotalPago";
             this.lblValorTotalPago.Size = new System.Drawing.Size(19, 20);
             this.lblValorTotalPago.TabIndex = 43;
@@ -466,7 +466,7 @@
             // 
             this.lblExibeValorOS.AutoSize = true;
             this.lblExibeValorOS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExibeValorOS.Location = new System.Drawing.Point(283, 20);
+            this.lblExibeValorOS.Location = new System.Drawing.Point(273, 20);
             this.lblExibeValorOS.Name = "lblExibeValorOS";
             this.lblExibeValorOS.Size = new System.Drawing.Size(19, 20);
             this.lblExibeValorOS.TabIndex = 2;
@@ -517,7 +517,7 @@
             // 
             this.lblValorRestante.AutoSize = true;
             this.lblValorRestante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorRestante.Location = new System.Drawing.Point(283, 204);
+            this.lblValorRestante.Location = new System.Drawing.Point(273, 204);
             this.lblValorRestante.Name = "lblValorRestante";
             this.lblValorRestante.Size = new System.Drawing.Size(19, 20);
             this.lblValorRestante.TabIndex = 17;

@@ -351,7 +351,7 @@
             // 
             this.lblSubTotalValor.AutoSize = true;
             this.lblSubTotalValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotalValor.Location = new System.Drawing.Point(495, 359);
+            this.lblSubTotalValor.Location = new System.Drawing.Point(457, 360);
             this.lblSubTotalValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubTotalValor.Name = "lblSubTotalValor";
             this.lblSubTotalValor.Size = new System.Drawing.Size(19, 20);
@@ -364,7 +364,7 @@
             // 
             this.lblSubTotal.AutoSize = true;
             this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.Location = new System.Drawing.Point(372, 359);
+            this.lblSubTotal.Location = new System.Drawing.Point(356, 359);
             this.lblSubTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(97, 20);

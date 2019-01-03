@@ -29,9 +29,6 @@ namespace UIWindows
         }
 
         // Events
-
-        
-
         private void btnAbrirAlterar_Click(object sender, EventArgs e)
         {
             getIdGrigView();
@@ -54,38 +51,8 @@ namespace UIWindows
                 bud.BudgetData();
                 bud.Show();
             }
-            
         }
-
-        private void btnReabrirOS_Click(object sender, EventArgs e)
-        {
-            //getIdGrigView();
-            //if (messageYesNo("ReopenOS") == DialogResult.Yes)
-            //{
-            //    Budgets_OS budgetAlter = new Budgets_OS();
-
-            //    //procura o orçamento para alteração
-            //    budgetAlter = obj.ReturnByID(getId);
-
-            //    budgetAlter.bRegisterFinished = false;
-            //    budgetAlter.dtDateRegisterFinished = DateTime.Now;
-
-            //    obj.Update(budgetAlter);
-
-            //    //verifica se o orçamento foi atualizado com sucesso
-            //    var ok = obj.Search.FirstOrDefault(b => b.sID == budgetAlter.sID);
-
-            //    if (ok == null)
-            //        MessageBox.Show("Erro ao Reabrir a Ordem de Serviço !!!");
-            //    else
-            //    {
-            //        MessageBox.Show("Ordem de Serviço Reaberta!");
-            //    }
-
-            //    fillDataSet();
-            //}
-        }
-
+        
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             getIdGrigView();
@@ -118,12 +85,7 @@ namespace UIWindows
             }
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            // Jefter, inserir excluir aqui
-        }
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
+       private void btnPesquisar_Click(object sender, EventArgs e)
         {
             if (radNome.Checked)
                 searchByName();
@@ -138,12 +100,10 @@ namespace UIWindows
             MessageBox.Show("Informe a data no formato dd/mm/aaaa, exemplo: 01/09/2018");
         }
 
-
         private void grdEntregas_Click(object sender, EventArgs e)
         {
             getIdGrigView();
         }
-
 
         // Parameters Ready, Validations and Verifications down
 
@@ -177,6 +137,8 @@ namespace UIWindows
         public void fillDataSet()
         {
             this.tb_budgets_osTableAdapter.FillByDeliveryFollow(this.fullDataSet.tb_budgets_os);
+            //ordenar direto na grid
+            dgvEntregas.Sort(dgvEntregas.Columns[1],ListSortDirection.Descending);
         }
 
         // SEARCH BY NAME CLIENT

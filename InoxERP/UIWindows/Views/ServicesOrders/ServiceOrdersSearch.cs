@@ -269,7 +269,9 @@ namespace UIWindows
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            new ServiceOrdersPrint(getId).Show();
+            getIdGrigView();
+            if (!getId.Equals(""))
+                new ServiceOrdersPrint(getId).Show();
         }
     }
 }

@@ -41,7 +41,6 @@
             this.lblNomeCliente = new System.Windows.Forms.Label();
             this.txtOS = new System.Windows.Forms.TextBox();
             this.lblOS = new System.Windows.Forms.Label();
-            this.btnBaixar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
@@ -49,17 +48,6 @@
             this.txtReferenteA = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.grdAReceber = new System.Windows.Forms.DataGridView();
-            this.tbaccountsToReceiveBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.lblValor = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.lblReferenteA = new System.Windows.Forms.Label();
-            this.lblParcelas = new System.Windows.Forms.Label();
-            this.nudParcelas = new System.Windows.Forms.NumericUpDown();
-            this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
-            this.nudPrazo = new System.Windows.Forms.NumericUpDown();
-            this.lblPrazo = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +62,22 @@
             this.idCashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dRemaing = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbaccountsToReceiveBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblReferenteA = new System.Windows.Forms.Label();
+            this.lblParcelas = new System.Windows.Forms.Label();
+            this.nudParcelas = new System.Windows.Forms.NumericUpDown();
+            this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
+            this.nudPrazo = new System.Windows.Forms.NumericUpDown();
+            this.lblPrazo = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblValorBaixa = new System.Windows.Forms.Label();
+            this.txtValorBaixa = new System.Windows.Forms.TextBox();
+            this.lblValorAReceber = new System.Windows.Forms.Label();
+            this.lblAReceber = new System.Windows.Forms.Label();
+            this.btnBaixar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdAReceber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbaccountsToReceiveBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
@@ -144,18 +148,6 @@
             this.lblOS.Size = new System.Drawing.Size(40, 17);
             this.lblOS.TabIndex = 5;
             this.lblOS.Text = "O.S.:";
-            // 
-            // btnBaixar
-            // 
-            this.btnBaixar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaixar.Location = new System.Drawing.Point(201, 432);
-            this.btnBaixar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBaixar.Name = "btnBaixar";
-            this.btnBaixar.Size = new System.Drawing.Size(100, 28);
-            this.btnBaixar.TabIndex = 18;
-            this.btnBaixar.Text = "Baixar";
-            this.btnBaixar.UseVisualStyleBackColor = true;
-            this.btnBaixar.Click += new System.EventHandler(this.btnBaixar_Click);
             // 
             // btnExcluir
             // 
@@ -256,113 +248,6 @@
             this.grdAReceber.TabIndex = 19;
             this.grdAReceber.TabStop = false;
             this.grdAReceber.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdAReceber_CellClick);
-            // 
-            // tbaccountsToReceiveBindingSource
-            // 
-            this.tbaccountsToReceiveBindingSource.DataMember = "tb_accountsToReceive";
-            this.tbaccountsToReceiveBindingSource.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblValor
-            // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(13, 118);
-            this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(49, 17);
-            this.lblValor.TabIndex = 9;
-            this.lblValor.Text = "Valor: ";
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(238, 79);
-            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(90, 17);
-            this.lblData.TabIndex = 7;
-            this.lblData.Text = "Vencimento: ";
-            // 
-            // lblReferenteA
-            // 
-            this.lblReferenteA.AutoSize = true;
-            this.lblReferenteA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReferenteA.Location = new System.Drawing.Point(13, 153);
-            this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblReferenteA.Name = "lblReferenteA";
-            this.lblReferenteA.Size = new System.Drawing.Size(91, 17);
-            this.lblReferenteA.TabIndex = 15;
-            this.lblReferenteA.Text = "Referente a: ";
-            // 
-            // lblParcelas
-            // 
-            this.lblParcelas.AutoSize = true;
-            this.lblParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParcelas.Location = new System.Drawing.Point(238, 118);
-            this.lblParcelas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblParcelas.Name = "lblParcelas";
-            this.lblParcelas.Size = new System.Drawing.Size(71, 17);
-            this.lblParcelas.TabIndex = 11;
-            this.lblParcelas.Text = "Parcelas: ";
-            // 
-            // nudParcelas
-            // 
-            this.nudParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudParcelas.Location = new System.Drawing.Point(336, 116);
-            this.nudParcelas.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudParcelas.Name = "nudParcelas";
-            this.nudParcelas.Size = new System.Drawing.Size(47, 23);
-            this.nudParcelas.TabIndex = 12;
-            this.nudParcelas.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // tb_accountsToReceiveTableAdapter
-            // 
-            this.tb_accountsToReceiveTableAdapter.ClearBeforeFill = true;
-            // 
-            // nudPrazo
-            // 
-            this.nudPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPrazo.Location = new System.Drawing.Point(434, 116);
-            this.nudPrazo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.nudPrazo.Name = "nudPrazo";
-            this.nudPrazo.Size = new System.Drawing.Size(47, 23);
-            this.nudPrazo.TabIndex = 14;
-            // 
-            // lblPrazo
-            // 
-            this.lblPrazo.AutoSize = true;
-            this.lblPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrazo.Location = new System.Drawing.Point(389, 118);
-            this.lblPrazo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblPrazo.Name = "lblPrazo";
-            this.lblPrazo.Size = new System.Drawing.Size(49, 17);
-            this.lblPrazo.TabIndex = 13;
-            this.lblPrazo.Text = "Prazo:";
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(13, 16);
-            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(0, 17);
-            this.lblId.TabIndex = 20;
-            this.lblId.Visible = false;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -491,11 +376,178 @@
             this.dRemaing.ReadOnly = true;
             this.dRemaing.Visible = false;
             // 
+            // tbaccountsToReceiveBindingSource
+            // 
+            this.tbaccountsToReceiveBindingSource.DataMember = "tb_accountsToReceive";
+            this.tbaccountsToReceiveBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(13, 118);
+            this.lblValor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(49, 17);
+            this.lblValor.TabIndex = 9;
+            this.lblValor.Text = "Valor: ";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.Location = new System.Drawing.Point(238, 79);
+            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(90, 17);
+            this.lblData.TabIndex = 7;
+            this.lblData.Text = "Vencimento: ";
+            // 
+            // lblReferenteA
+            // 
+            this.lblReferenteA.AutoSize = true;
+            this.lblReferenteA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReferenteA.Location = new System.Drawing.Point(13, 153);
+            this.lblReferenteA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReferenteA.Name = "lblReferenteA";
+            this.lblReferenteA.Size = new System.Drawing.Size(91, 17);
+            this.lblReferenteA.TabIndex = 15;
+            this.lblReferenteA.Text = "Referente a: ";
+            // 
+            // lblParcelas
+            // 
+            this.lblParcelas.AutoSize = true;
+            this.lblParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParcelas.Location = new System.Drawing.Point(238, 118);
+            this.lblParcelas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblParcelas.Name = "lblParcelas";
+            this.lblParcelas.Size = new System.Drawing.Size(71, 17);
+            this.lblParcelas.TabIndex = 11;
+            this.lblParcelas.Text = "Parcelas: ";
+            // 
+            // nudParcelas
+            // 
+            this.nudParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudParcelas.Location = new System.Drawing.Point(336, 116);
+            this.nudParcelas.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudParcelas.Name = "nudParcelas";
+            this.nudParcelas.Size = new System.Drawing.Size(47, 23);
+            this.nudParcelas.TabIndex = 12;
+            this.nudParcelas.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // tb_accountsToReceiveTableAdapter
+            // 
+            this.tb_accountsToReceiveTableAdapter.ClearBeforeFill = true;
+            // 
+            // nudPrazo
+            // 
+            this.nudPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudPrazo.Location = new System.Drawing.Point(434, 116);
+            this.nudPrazo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudPrazo.Name = "nudPrazo";
+            this.nudPrazo.Size = new System.Drawing.Size(47, 23);
+            this.nudPrazo.TabIndex = 14;
+            // 
+            // lblPrazo
+            // 
+            this.lblPrazo.AutoSize = true;
+            this.lblPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrazo.Location = new System.Drawing.Point(389, 118);
+            this.lblPrazo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblPrazo.Name = "lblPrazo";
+            this.lblPrazo.Size = new System.Drawing.Size(49, 17);
+            this.lblPrazo.TabIndex = 13;
+            this.lblPrazo.Text = "Prazo:";
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(13, 16);
+            this.lblId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 17);
+            this.lblId.TabIndex = 20;
+            this.lblId.Visible = false;
+            // 
+            // lblValorBaixa
+            // 
+            this.lblValorBaixa.AutoSize = true;
+            this.lblValorBaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorBaixa.Location = new System.Drawing.Point(225, 436);
+            this.lblValorBaixa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblValorBaixa.Name = "lblValorBaixa";
+            this.lblValorBaixa.Size = new System.Drawing.Size(49, 17);
+            this.lblValorBaixa.TabIndex = 29;
+            this.lblValorBaixa.Text = "Valor: ";
+            // 
+            // txtValorBaixa
+            // 
+            this.txtValorBaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorBaixa.Location = new System.Drawing.Point(282, 433);
+            this.txtValorBaixa.Margin = new System.Windows.Forms.Padding(4);
+            this.txtValorBaixa.MaxLength = 18;
+            this.txtValorBaixa.Name = "txtValorBaixa";
+            this.txtValorBaixa.Size = new System.Drawing.Size(92, 22);
+            this.txtValorBaixa.TabIndex = 28;
+            this.txtValorBaixa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorBaixa_KeyPress);
+            // 
+            // lblValorAReceber
+            // 
+            this.lblValorAReceber.AutoSize = true;
+            this.lblValorAReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorAReceber.Location = new System.Drawing.Point(108, 436);
+            this.lblValorAReceber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblValorAReceber.Name = "lblValorAReceber";
+            this.lblValorAReceber.Size = new System.Drawing.Size(0, 17);
+            this.lblValorAReceber.TabIndex = 27;
+            // 
+            // lblAReceber
+            // 
+            this.lblAReceber.AutoSize = true;
+            this.lblAReceber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAReceber.Location = new System.Drawing.Point(13, 436);
+            this.lblAReceber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAReceber.Name = "lblAReceber";
+            this.lblAReceber.Size = new System.Drawing.Size(87, 17);
+            this.lblAReceber.TabIndex = 26;
+            this.lblAReceber.Text = "A Receber:  ";
+            // 
+            // btnBaixar
+            // 
+            this.btnBaixar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaixar.Location = new System.Drawing.Point(382, 430);
+            this.btnBaixar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBaixar.Name = "btnBaixar";
+            this.btnBaixar.Size = new System.Drawing.Size(100, 28);
+            this.btnBaixar.TabIndex = 25;
+            this.btnBaixar.Text = "Baixar";
+            this.btnBaixar.UseVisualStyleBackColor = true;
+            this.btnBaixar.Click += new System.EventHandler(this.btnBaixar_Click);
+            // 
             // frmAccountsToReceive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 471);
+            this.Controls.Add(this.lblValorBaixa);
+            this.Controls.Add(this.txtValorBaixa);
+            this.Controls.Add(this.lblValorAReceber);
+            this.Controls.Add(this.lblAReceber);
+            this.Controls.Add(this.btnBaixar);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.nudPrazo);
             this.Controls.Add(this.lblPrazo);
@@ -506,7 +558,6 @@
             this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.txtOS);
             this.Controls.Add(this.lblOS);
-            this.Controls.Add(this.btnBaixar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
@@ -541,7 +592,6 @@
         private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.TextBox txtOS;
         private System.Windows.Forms.Label lblOS;
-        private System.Windows.Forms.Button btnBaixar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIncluir;
@@ -574,5 +624,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idCashDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBudgetsOSDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dRemaing;
+        private System.Windows.Forms.Label lblValorBaixa;
+        private System.Windows.Forms.TextBox txtValorBaixa;
+        private System.Windows.Forms.Label lblValorAReceber;
+        private System.Windows.Forms.Label lblAReceber;
+        private System.Windows.Forms.Button btnBaixar;
     }
 }
