@@ -56,7 +56,7 @@ namespace UIWindows.Views.Reports.Cash
             reportViewer1.LocalReport.SetParameters(issueDate);
             reportViewer1.LocalReport.SetParameters(startDate);
             reportViewer1.LocalReport.SetParameters(endDate);
-            reportViewer1.LocalReport.SetParameters(typeLaunch);
+            //reportViewer1.LocalReport.SetParameters(typeLaunch);
             reportViewer1.LocalReport.SetParameters(startDateString);
             reportViewer1.LocalReport.SetParameters(endDateString);
 

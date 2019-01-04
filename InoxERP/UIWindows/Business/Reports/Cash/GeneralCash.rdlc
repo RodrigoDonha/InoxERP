@@ -49,10 +49,6 @@
           <DataField>sChequeNumber</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="sDate">
-          <DataField>sDate</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="sCashType">
           <DataField>sCashType</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -65,9 +61,9 @@
           <DataField>sName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Saldo">
-          <DataField>Saldo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="dBalance">
+          <DataField>dBalance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
@@ -97,13 +93,16 @@
                   <Width>3.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>7.25cm</Width>
+                  <Width>5.75cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>7.25cm</Width>
+                  <Width>5.75cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -362,6 +361,48 @@
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox23">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Saldo</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -369,16 +410,17 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="sDate">
+                        <Textbox Name="dtDate">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!sDate.Value</Value>
+                                  <Value>=Fields!dtDate.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
+                                    <Format>dd/MM/yy</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -388,7 +430,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>sDate</rd:DefaultName>
+                          <rd:DefaultName>dtDate</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -549,16 +591,17 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Saldo">
+                        <Textbox Name="dValue">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Saldo.Value</Value>
+                                  <Value>=Fields!dValue.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
+                                    <Format>#,0.00;- #,0.00</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -568,7 +611,44 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Saldo</rd:DefaultName>
+                          <rd:DefaultName>dValue</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="dBalance">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!dBalance.Value</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>#,0.00;- #,0.00</Format>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>dBalance</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -589,6 +669,7 @@
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -629,8 +710,8 @@
                 <Value>=Fields!dtDate.Value</Value>
               </SortExpression>
             </SortExpressions>
-            <Top>0.1905cm</Top>
-            <Left>0.19991cm</Left>
+            <Top>0.21669cm</Top>
+            <Left>0.21844cm</Left>
             <Height>2cm</Height>
             <Width>27.5cm</Width>
             <Style>
@@ -1040,9 +1121,8 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="typeLaunch">
-      <DataType>String</DataType>
+      <DataType>Integer</DataType>
       <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="startDateString">
