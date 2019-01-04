@@ -191,11 +191,29 @@
     <Compile Include="Views\Backups\BackupServerDB.Designer.cs">
       <DependentUpon>BackupServerDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Accounts\AccountsPayableReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\AccountsPayableReport.Designer.cs">
+      <DependentUpon>AccountsPayableReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\Accounts\AccountsPaymentsReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Reports\Accounts\AccountsPaymentsReport.Designer.cs">
       <DependentUpon>AccountsPaymentsReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\AccountsReceivableReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\AccountsReceivableReport.Designer.cs">
+      <DependentUpon>AccountsReceivableReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\AccountsReceivedReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\AccountsReceivedReport.Designer.cs">
+      <DependentUpon>AccountsReceivedReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Reports\Accounts\GeneralAccountsPayReport.cs">
       <SubType>Form</SubType>
@@ -214,6 +232,12 @@
     </Compile>
     <Compile Include="Views\Reports\Accounts\ParcialPayReport.Designer.cs">
       <DependentUpon>ParcialPayReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\ParcialReceiveReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Accounts\ParcialReceiveReport.Designer.cs">
+      <DependentUpon>ParcialReceiveReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Reports\Budgets\BudgetPrint.cs">
       <SubType>Form</SubType>
@@ -493,9 +517,13 @@
     <Compile Include="Views\Users\UserRegisterSearch.Designer.cs">
       <DependentUpon>UserRegisterSearch.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\AccountsPayable.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\AccountsPayments.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\AccountsReceivable.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\GeneralAccountsPay.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\GeneralAccountsReceive.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\AccountsReceived.rdlc" />
+    <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\ParcialReceive.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\SituationPay\SituationAccountsPay.rdlc" />
     <EmbeddedResource Include="Business\Reports\Accounts\GeneralAccounts\ParcialPay.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\Budget.rdlc" />
@@ -530,8 +558,17 @@
     <EmbeddedResource Include="Views\Backups\RestoreServerDB.resx">
       <DependentUpon>RestoreServerDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Accounts\AccountsPayableReport.resx">
+      <DependentUpon>AccountsPayableReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Accounts\AccountsPaymentsReport.resx">
       <DependentUpon>AccountsPaymentsReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Accounts\AccountsReceivableReport.resx">
+      <DependentUpon>AccountsReceivableReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Accounts\AccountsReceivedReport.resx">
+      <DependentUpon>AccountsReceivedReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Accounts\GeneralAccountsPayReport.resx">
       <DependentUpon>GeneralAccountsPayReport.cs</DependentUpon>
@@ -541,6 +578,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Accounts\ParcialPayReport.resx">
       <DependentUpon>ParcialPayReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Accounts\ParcialReceiveReport.resx">
+      <DependentUpon>ParcialReceiveReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Budgets\BudgetPrint.resx">
       <DependentUpon>BudgetPrint.cs</DependentUpon>

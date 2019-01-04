@@ -21,30 +21,58 @@ namespace UIWindows
 
             if (radContasGeraisAPagar.Checked)
             {
-                type = "Gerais A Pagar, Pagas Parcial ou Total";
+                type = "Contas Gerais A Pagar, Pagas Parcial ou Total";
                 typeLaunch = "";
                 new GeneralAccountsPayReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
             }
 
             if (radContasGeraisAReceber.Checked)
             {
-                type = "Gerais A Receber, Recebidas Parcial ou Total";
+                type = "Contas Gerais A Receber, Recebidas Parcial ou Total";
                 typeLaunch = "";
                 new GeneralAccountsReceiveReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
             }
 
+            if (radPagas.Checked)
+            {
+                type = "Contas Pagas Totalmente";
+                typeLaunch = "";
+                new AccountsPaymentsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+            }
+
+            if (radAPagar.Checked)
+            {
+                type = "Contas A Pagar ";
+                typeLaunch = "";
+                new AccountsPayableReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+            }
+
+            if (radRecebidos.Checked)
+            {
+                type = "Contas Recebidas ";
+                typeLaunch = "";
+                new AccountsReceivedReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+            }
+
+            if (radAReceber.Checked)
+            {
+                type = "Contas A Receber ";
+                typeLaunch = "";
+                new AccountsReceivableReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+            }
+
             if (radPagosParcialmente.Checked)
             {
-                type = "Pagas Parcialmente";
+                type = "Contas Pagas Parcialmente";
                 typeLaunch = "";
                 new ParcialPayReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
             }
 
-            if (radPagas.Checked)
+            if (radRecebidosParcialemnte.Checked)
             {
-                type = "Pagas Totalmente";
+                type = "Contas Pagas Parcialmente";
                 typeLaunch = "";
-                new AccountsPaymentsReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
+                new ParcialReceiveReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
             }
         }
     }

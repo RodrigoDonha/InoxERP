@@ -262,7 +262,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Valor Pago</Value>
+                                  <Value>Valor Recebido</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -295,7 +295,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Pagamento</Value>
+                                  <Value>Recebimento</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -328,7 +328,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>A Pagar Parcial</Value>
+                                  <Value>A Receber Parcial</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
