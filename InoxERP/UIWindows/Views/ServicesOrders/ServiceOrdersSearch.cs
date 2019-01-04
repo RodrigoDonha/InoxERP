@@ -89,8 +89,8 @@ namespace UIWindows
                 {
                     searchBudget.bRegisterFinished = true;
                     searchBudget.dtDateRegisterFinished = DateTime.Now;
-                    searchBudget.bServiceOrderDelivered = true;
-                    searchBudget.dtDateServiceOrderDelivered = DateTime.Now;
+                    //searchBudget.bServiceOrderDelivered = true;
+                    //searchBudget.dtDateServiceOrderDelivered = DateTime.Now;
 
                     obj.Update(searchBudget);
                     MessageBox.Show("Serviço Finalizado");
@@ -111,10 +111,20 @@ namespace UIWindows
             {
                 if (!checkContract(getId))
                 {
-                    if (messageYesNo("CreateContract") == DialogResult.Yes)
-                    {
-                        new frmContract(getId).Show();
-                    }
+                    Clients cli = new Clients();
+                    ClientsBusiness clients = new ClientsBusiness(ctx);
+
+                    searchBudget = obj.ReturnByID(getId);
+                    
+                    cli = clients.ReturnByID(searchBudget.IdClients);
+                    
+                    if (cli == null || cli.sName.Contains("CONSUMIDOR"))
+                        MessageBox.Show(
+                            " É necessário o Cadastro do Cliente antes de Gerar um Contrato \n\n Impossível continuar sem Cadastro prévio no Sistema !!!");
+                    else if (messageYesNo("CreateContract") == DialogResult.Yes)
+                        {
+                            new frmContract(getId).Show();
+                        }
                 }
                 else
                     MessageBox.Show("Já foi Gerado Contrato para esta Ordem de Serviço, Impossível gerar outro");

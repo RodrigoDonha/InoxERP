@@ -38,26 +38,6 @@ namespace UIWindows
             searchBudget = obj.ReturnByID(getId);
         }
 
-        public void validationEntriesCPFandCNPJ(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyCPFandCNPJ(sender, e);
-        }
-
-        public void validationEntriesCEP(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyCEP(sender, e);
-        }
-
-        public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyNumbers(sender, e);
-        }
-
-        public void validationEntriesPhones(object sender, KeyPressEventArgs e)
-        {
-            validation.characterValidatorOnlyPhones(sender, e);
-        }
-
         public void fillContractOfObject()
         {
             if (searchBudget.IdClients != null)
@@ -133,6 +113,8 @@ namespace UIWindows
             }
             else if (tabControl1.SelectedTab == tabPage3)
             {
+                txtObrigacoesContratante1.Text = txtObrigacoesContratante.Text;
+                txtValores1.Text = txtValores.Text;
                 btnProximo.Text = "Gravar";
                 tabControl1.SelectedTab = tabPage4;
                 btnVoltar.Visible = true;

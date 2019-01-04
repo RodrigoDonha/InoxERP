@@ -343,7 +343,10 @@ namespace InoxERP
         // CALL FORM REPORT USERS IN MENU
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //new frmReportUsers().Show();
+            if (user.Type == UserType.Admin)
+                new frmUserRegisterSearch(user).Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
     }
 }

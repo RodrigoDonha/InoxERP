@@ -717,7 +717,7 @@
             this.txtObrigacoesContratante.Name = "txtObrigacoesContratante";
             this.txtObrigacoesContratante.Size = new System.Drawing.Size(839, 180);
             this.txtObrigacoesContratante.TabIndex = 19;
-            this.txtObrigacoesContratante.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
+            this.txtObrigacoesContratante.Text = "Forma de Pagamento: ";
             // 
             // label12
             // 
@@ -784,7 +784,7 @@
             this.txtObrigacoesContratante1.Name = "txtObrigacoesContratante1";
             this.txtObrigacoesContratante1.Size = new System.Drawing.Size(839, 84);
             this.txtObrigacoesContratante1.TabIndex = 15;
-            this.txtObrigacoesContratante1.Text = "depósito bancário, sendo 50% de entrada e o restante ao término do serviço.";
+            this.txtObrigacoesContratante1.Text = "Forma de Pagamento: ";
             // 
             // txtValores1
             // 

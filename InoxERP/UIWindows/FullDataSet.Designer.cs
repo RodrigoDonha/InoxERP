@@ -17942,7 +17942,11 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtReceiveDate, bRecei
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateRegisterFinished, dtDateServiceOrderApproved, dtDateServiceOrderDelivered, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'false')";
+            this._commandCollection[3].CommandText = @"SELECT        ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateRegisterFinished, 
+                         dtDateServiceOrderApproved, dtDateServiceOrderDelivered, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, 
+                         sTelephone
+FROM            tb_budgets_os
+WHERE        (bServiceOrderDelivered = 'false')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;

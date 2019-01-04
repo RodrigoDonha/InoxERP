@@ -11,19 +11,19 @@ CONSULTA DE ORÇAMENTO: msg.show de selecao de "orçamento"---------------------
 FORMA DE PAGTO: lblSubtotal colocar mais a ESQUERDA----------------------------------------OK
 ORDEM DE SERVIÇO: erro ao tentar imprimir sem selecionar ninguem---------------------------OK
 				  não esta trazendo a forma de pgto certo qdo já tem contrato gerado
-CONTRATOS:  trazer os dados do cliente CONSUMIDOR conforme o que esta na ORÇAMENTO
+CONTRATOS:  trazer os dados do cliente CONSUMIDOR conforme o que esta na ORÇAMENTO---------OK
 			verufucar ENUM estados /// CTX, OBJ
 			limitar a TAB objeto a 3999 caracteres-----------------------------------------OK
 			verificar se ao limitar nao corta dados do orçamento
-			QDO 'proximo' na FORMA DE PGTO copiar o txt da aba 3 pra aba 4
-			QDO 'proximo' na PRAZO copiar o txt da aba 3 pra aba 4
-			verificar salvamento com forma de pagto diferente do default
+			QDO 'proximo' na FORMA DE PGTO copiar o txt da aba 3 pra aba 4-----------------OK
+			QDO 'proximo' na PRAZO copiar o txt da aba 3 pra aba 4-------------------------OK
+			verificar salvamento com forma de pagto diferente do default-------------------OK
 ENTREGAS EM ANDAMENTo: ordenar por 'data grid'---------------------------------------------OK
-						qdo finalizar O.S. entrega deve continuar em aberto
+						qdo finalizar O.S. entrega deve continuar em aberto----------------OK
 CHEQUES: quando qq ação finalizar colocar FOCUS no txt nome--------------------------------OK
 		 tratar com aviso a baixa integral do valor do chq---------------------------------OK
 CTAS A PAGAR/RECBER: tratamento de alteração do REMAING------------------------------------OK
 RELATORIOS: Focus do RADGERAL
 			if data igual colocar .AddDays na data final
 			cheques verificar
-MAIN: verificar orentação dos botoes
+MAIN: verificar orentação dos botoes-------------------------------------------------------OK

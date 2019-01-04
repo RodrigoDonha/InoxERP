@@ -32,6 +32,8 @@ namespace UIWindows
         public void fillDataSet()
         {
             this.tb_contractsTableAdapter.Fill(this.fullDataSet.tb_contracts);
+            grdContratos.Sort(grdContratos.Columns[1], ListSortDirection.Descending);
+
         }
 
         private void frmContractSearch_Load(object sender, EventArgs e)

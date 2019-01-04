@@ -29,33 +29,34 @@ namespace UIWindows
             //user.sKey = txtSenha.Text; // ___JR@2018***
 
             //if (user.sLogin == "test" && user.sKey == "___JR@2018***")
-            if (user.sLogin == "test" && user.sKey == "EA44959B528B2DE4D143BEABB30970BE")
-            {
-                MessageBox.Show("Logged as TEST");
-
-                user.sName = "test";
-                user.sLogin = "test";
-                user.sKey = "EA44959B528B2DE4D143BEABB30970BE";
-                //user.sKey = "____JR@2018***";
-                user.Type = UserType.Admin;
-                log = true;
-                this.Dispose();
-            }
-            else
-            {
-                user = UserBusiness.signIn(user);
-
-                if (user == null)
+            if (!txtLogin.Text.Equals("") && !txtSenha.Text.Equals(""))
+                if (user.sLogin == "test" && user.sKey == "EA44959B528B2DE4D143BEABB30970BE")
                 {
-                    MessageBox.Show("Usuário Inválido");
-                    Application.Restart();
-                }
-                else
-                {
+                    MessageBox.Show("Logged as TEST");
+
+                    user.sName = "test";
+                    user.sLogin = "test";
+                    user.sKey = "EA44959B528B2DE4D143BEABB30970BE";
+                    //user.sKey = "____JR@2018***";
+                    user.Type = UserType.Admin;
                     log = true;
                     this.Dispose();
                 }
-            }
+                else
+                {
+                    user = UserBusiness.signIn(user);
+
+                    if (user == null)
+                    {
+                        MessageBox.Show("Usuário Inválido");
+                        Application.Restart();
+                    }
+                    else
+                    {
+                        log = true;
+                        this.Dispose();
+                    }
+                }
         }
 
         private void btnFechar_Click(object sender, EventArgs e)

@@ -653,7 +653,11 @@ SELECT sID, iCod, ClientType, dtDate, CONVERT (CHAR(10), dtDate, 103) AS 'sDate'
               <DbSource ConnectionRef="InoxErpDBConnectionString (Settings)" DbObjectName="InoxErpDB.dbo.tb_budgets_os" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByDeliveryFollow" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDeliveryFollow" GeneratorSourceName="FillByDeliveryFollow" GetMethodModifier="Public" GetMethodName="GetDataByDeliveryFollow" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDeliveryFollow" UserSourceName="FillByDeliveryFollow">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateRegisterFinished, dtDateServiceOrderApproved, dtDateServiceOrderDelivered, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, sTelephone FROM tb_budgets_os WHERE (bServiceOrderApproved = 'true') AND (bServiceOrderDelivered = 'false')</CommandText>
+                    <CommandText>SELECT        ClientType, IdClients, PaymentMethods, bInterestRate, bPaymentToMatch, bRegisterFinished, bServiceOrderApproved, bServiceOrderDelivered, dPercentDiscount, dTotal, dWithInterest, dtDate, dtDateRegisterFinished, 
+                         dtDateServiceOrderApproved, dtDateServiceOrderDelivered, dtFinalPrevision, dtStartPrevision, iCod, iPaymentInstallments, iPrevisionOfExecute, iWarrantyTime, sAdress, sID, sName, sObservation, sOccupation, 
+                         sTelephone
+FROM            tb_budgets_os
+WHERE        (bServiceOrderDelivered = 'false')</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
