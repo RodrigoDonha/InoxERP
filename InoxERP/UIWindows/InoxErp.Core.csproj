@@ -269,12 +269,6 @@
     <Compile Include="Views\Reports\Budgets\SituationBudgetsReport.Designer.cs">
       <DependentUpon>SituationBudgetsReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reports\Cash\CashReceivedReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Reports\Cash\CashReceivedReport.Designer.cs">
-      <DependentUpon>CashReceivedReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Reports\Cash\GeneralCashReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -602,9 +596,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Budgets\SituationBudgetsReport.resx">
       <DependentUpon>SituationBudgetsReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reports\Cash\CashReceivedReport.resx">
-      <DependentUpon>CashReceivedReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Cash\GeneralCashReport.resx">
       <DependentUpon>GeneralCashReport.cs</DependentUpon>

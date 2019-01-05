@@ -15,7 +15,7 @@ namespace UIWindows.Views.Reports.ServicesOrders
             endDateReport = endDate;
             situationReport = situation;
 
-            InitializeComponent();            
+            InitializeComponent();
 
             searchData();
         }
@@ -44,10 +44,13 @@ namespace UIWindows.Views.Reports.ServicesOrders
             startDateString.Name = "startDateString";
             endDateString.Name = "endDateString";
 
+            DateTime start = Convert.ToDateTime(startDateReport).AddDays(-1);
+            DateTime end = Convert.ToDateTime(endDateReport).AddDays(+1);
+
             type.Values.Add(typeReport.ToString());
             issueDate.Values.Add(DateTime.Today.Date.ToShortDateString());
-            startDate.Values.Add(startDateReport);
-            endDate.Values.Add(endDateReport);
+            startDate.Values.Add(start.ToString());
+            endDate.Values.Add(end.ToString());
             situation.Values.Add(situationReport.ToString());
             startDateString.Values.Add(startDateReport);
             endDateString.Values.Add(endDateReport);

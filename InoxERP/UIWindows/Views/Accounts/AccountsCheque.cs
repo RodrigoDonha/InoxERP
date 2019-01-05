@@ -470,8 +470,8 @@ namespace UIWindows
                     }
                     
                     cleanCamps();
+                    fillGrid();
                 }
-            fillGrid();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
