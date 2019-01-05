@@ -49,7 +49,6 @@ namespace InoxERP.UI_Windows_Forms
                     {
                         InoxErpContext ctxAlter = new InoxErpContext();
                         Budget_OSBusiness objAlter = new Budget_OSBusiness(ctxAlter);
-
                         Budgets_OS budgetAlter = new Budgets_OS();
                         
                         //procura o orçamento para alteração
@@ -67,7 +66,6 @@ namespace InoxERP.UI_Windows_Forms
                         //checkToAlter(budgetAlter.Items.ToList());
                         //budgetAlter.Items = fillItemsOnBudgets_OS();
                         budgetAlter.Items = checkToAlter(budgetAlter.Items.ToList());
-
 
                         budgetAlter.PaymentMethods = paymentMethods();
                         budgetAlter.bPaymentToMatch = checkPaymentForm("combine");
@@ -834,8 +832,8 @@ namespace InoxERP.UI_Windows_Forms
             if (clientsSearch.ReturnClients != null)
             {
                 client = clientsSearch;
-                if (messageYesNo("client") == DialogResult.Yes)
-                {
+                //if (messageYesNo("client") == DialogResult.Yes)
+                //{
                     getIdClient = "";
                     getIdClient = client.ReturnClients.sID;
                     if (client.ReturnClients.ClientType == ClientType.Residencial)
@@ -856,7 +854,7 @@ namespace InoxERP.UI_Windows_Forms
                     txtTelefone.Text = client.ReturnClients.sPhoneCelularOne.Replace(" ","");
                     txtCargo.Text = client.ReturnClients.sOccupation;
                     txtQuantidade.Focus();
-                }
+                //}
             }
                 
         }

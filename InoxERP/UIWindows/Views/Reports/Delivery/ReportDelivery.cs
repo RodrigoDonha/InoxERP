@@ -17,6 +17,7 @@ namespace UIWindows
         public frmReportDelivery()
         {
             InitializeComponent();
+            radGeral.Focus();
         }
 
         private void btnGerar_Click(object sender, EventArgs e)

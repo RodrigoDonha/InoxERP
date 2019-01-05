@@ -60,12 +60,20 @@ namespace UIWindows
                 txtNomeC.Text = searchBudget.sName.ToUpper();
                 txtEnderecoC.Text = searchBudget.sAdress.ToUpper();
             }
-            txtDescription.Text += "ITEMS:\r\n\r\n";
+
+            string description = "";
+            description += "ITEMS:\r\n\r\n";
             foreach (var line in searchBudget.Items.ToList()) // math.round(var,2)
             {
-                txtDescription.Text += line.dAmount + " - " + line.sDescription + " - " + line.dPrice + " - " + line.dTotal + " \r\n ";
+                description += line.dAmount + " - " + line.sDescription + " - " + line.dPrice + " - " + line.dTotal + " \r\n ";
             }
-            txtDescription.Text += "\r\nDESCRIÇÃO DO SERVIÇO:\r\n" + "\r\n" + searchBudget.sObservation;
+            description += "\r\nDESCRIÇÃO DO SERVIÇO:\r\n" + "\r\n" + searchBudget.sObservation;
+            txtDescription.Text = description;
+            if (description.Length > 3500)
+            {
+                MessageBox.Show("A Descrição atingiu o limite máximo de caracteres, verifique e resuma a descrição.");
+            }
+
             txtValores.Text = searchBudget.dTotal.ToString();
             txtValores1.Text = searchBudget.dTotal.ToString();
             string obligations = "Forma de pagamento: " + paymentForm(searchBudget.PaymentMethods) + " - Parcelamento: " + searchBudget.iPaymentInstallments;

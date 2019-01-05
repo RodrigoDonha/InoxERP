@@ -24,7 +24,7 @@ namespace UIWindows.Business.Concrete
 
         public Contracts returnByBudgetOSId(string id)
         {
-            return context.Contracts.FirstOrDefault(r => r.sID == id.ToString());
+            return context.Contracts.FirstOrDefault(r => r.sIdBudget_OS == id.ToString());
         }
 
         //public override void Delete(string id)

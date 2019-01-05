@@ -90,8 +90,11 @@ namespace UIWindows.Views.ServicesOrders
 
             string payement = "";
 
-            if (searchContract != null)
-                PayementForm.Values.Add(searchContract.sPaymentForm);
+            if (searchBudget.bContractRegistred)
+            {
+                payement = searchContract.sPaymentForm;
+                PayementForm.Values.Add(payement);
+            }
             else
             {
                 payement = paymentForm(searchBudget.PaymentMethods) + " - Parcelamento: " + searchBudget.iPaymentInstallments;

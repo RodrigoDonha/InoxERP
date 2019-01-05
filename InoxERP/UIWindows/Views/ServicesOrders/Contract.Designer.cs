@@ -671,7 +671,7 @@
             // txtDescription
             // 
             this.txtDescription.Location = new System.Drawing.Point(6, 29);
-            this.txtDescription.MaxLength = 3990;
+            this.txtDescription.MaxLength = 3500;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(839, 466);

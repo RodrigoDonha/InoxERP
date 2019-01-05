@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIWindows;
 using UIWindows.Business.Concrete;
@@ -45,8 +38,6 @@ namespace InoxERP.UI_Windows_Forms
             // implementar validadação de campos preenchidos e caso esteja algum campo preenchido, perguntar se tem certeza de cancelar
         }
 
-        
-
         private void btnGravar_Click(object sender, EventArgs e)
         {
             if (!validationCamps())
@@ -78,7 +69,11 @@ namespace InoxERP.UI_Windows_Forms
                             clientsAlter.sComplement = txtComplemento.Text;
                             clientsAlter.sCity = txtCidade.Text;
                             //clientsAlter.Estate = estate();
-                            clientsAlter.Estate = validation.estate(cmbEstate.SelectedIndex+1);
+                            string estate = cmbEstate.Text.ToUpper();
+                            if (cmbEstate.SelectedIndex == -1)
+                                clientsAlter.Estate = validation.estate(validation.estatePerString(estate));
+                            else
+                                clientsAlter.Estate = validation.estate(cmbEstate.SelectedIndex);
                             clientsAlter.sCEP = txtCEP.Text;
                             clientsAlter.sPhoneResidencial = txtContatosResiCom.Text;
                             clientsAlter.sEmail = txtContatosEmail.Text;
@@ -127,7 +122,11 @@ namespace InoxERP.UI_Windows_Forms
                     clientsPersist.sComplement = txtComplemento.Text;
                     clientsPersist.sCity = txtCidade.Text;
                     //clientsPersist.Estate = estate(cmbEstate.SelectedIndex);
-                    clientsPersist.Estate = validation.estate(cmbEstate.SelectedIndex);
+                    string estate = cmbEstate.Text.ToUpper();
+                    if (cmbEstate.SelectedIndex == -1)
+                        clientsPersist.Estate = validation.estate(validation.estatePerString(estate));
+                    else
+                        clientsPersist.Estate = validation.estate(cmbEstate.SelectedIndex);
                     clientsPersist.sCEP = txtCEP.Text;
                     clientsPersist.sPhoneResidencial = txtContatosResiCom.Text;
                     clientsPersist.sEmail = txtContatosEmail.Text;

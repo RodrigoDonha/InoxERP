@@ -48,8 +48,10 @@ namespace UIWindows
                     productPersist.Type = UnityType();
                     productPersist.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
                     productPersist.dTotal = Convert.ToDecimal(txtValorTotal.Text);
+
                     if (provider.returnProviders != null)
                         productPersist.IdProviders = provider.returnProviders.sID;
+
                     productPersist.sObservation = txtObservacao.Text;
 
                     if (messageYesNo("insert") == DialogResult.Yes)
@@ -84,8 +86,16 @@ namespace UIWindows
                 productsAlter.Type = UnityType();
                 productsAlter.dPrice = Convert.ToDecimal(txtValorUnitario.Text);
                 productsAlter.dTotal = Convert.ToDecimal(txtValorTotal.Text);
-                if(provider.returnProviders != null)
-                    productsAlter.IdProviders = provider.returnProviders.sID;
+                if (txtFornecedor.Text == "")
+                {
+                    productsAlter.IdProviders = null;
+                }
+                else
+                {
+                    if (provider.returnProviders != null)
+                        productsAlter.IdProviders = provider.returnProviders.sID;
+                }
+
                 productsAlter.sObservation = txtObservacao.Text;
 
                 if (messageYesNo("update") == DialogResult.Yes)
@@ -237,11 +247,11 @@ namespace UIWindows
                 return false;
             }
 
-            if (txtFornecedor.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe um Fornecedor para o Produto / Peça");
-                return false;
-            }
+            //if (txtFornecedor.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe um Fornecedor para o Produto / Peça");
+            //    return false;
+            //}
 
             return true;
         }

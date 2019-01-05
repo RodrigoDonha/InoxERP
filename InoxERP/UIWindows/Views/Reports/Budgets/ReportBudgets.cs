@@ -9,6 +9,7 @@ namespace UIWindows
         public frmReportBudgets()
         {
             InitializeComponent();
+            radGeral.Focus();
         }
 
         private void btnGerar_Click(object sender, EventArgs e)
