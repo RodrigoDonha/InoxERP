@@ -120,6 +120,7 @@
             // radGeral
             // 
             this.radGeral.AutoSize = true;
+            this.radGeral.Checked = true;
             this.radGeral.Location = new System.Drawing.Point(25, 34);
             this.radGeral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radGeral.Name = "radGeral";
@@ -137,7 +138,6 @@
             this.radEntregues.Name = "radEntregues";
             this.radEntregues.Size = new System.Drawing.Size(91, 21);
             this.radEntregues.TabIndex = 1;
-            this.radEntregues.TabStop = true;
             this.radEntregues.Text = "Entregues";
             this.radEntregues.UseVisualStyleBackColor = true;
             // 
@@ -149,7 +149,6 @@
             this.radEmAberto.Name = "radEmAberto";
             this.radEmAberto.Size = new System.Drawing.Size(92, 21);
             this.radEmAberto.TabIndex = 0;
-            this.radEmAberto.TabStop = true;
             this.radEmAberto.Text = "Em Aberto";
             this.radEmAberto.UseVisualStyleBackColor = true;
             // 

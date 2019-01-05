@@ -120,6 +120,7 @@
             // radGeral
             // 
             this.radGeral.AutoSize = true;
+            this.radGeral.Checked = true;
             this.radGeral.Location = new System.Drawing.Point(25, 34);
             this.radGeral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radGeral.Name = "radGeral";
@@ -137,7 +138,6 @@
             this.radFinalizadas.Name = "radFinalizadas";
             this.radFinalizadas.Size = new System.Drawing.Size(97, 21);
             this.radFinalizadas.TabIndex = 1;
-            this.radFinalizadas.TabStop = true;
             this.radFinalizadas.Text = "Finalizadas";
             this.radFinalizadas.UseVisualStyleBackColor = true;
             // 
@@ -149,7 +149,6 @@
             this.radEmAndamento.Name = "radEmAndamento";
             this.radEmAndamento.Size = new System.Drawing.Size(122, 21);
             this.radEmAndamento.TabIndex = 0;
-            this.radEmAndamento.TabStop = true;
             this.radEmAndamento.Text = "Em Andamento";
             this.radEmAndamento.UseVisualStyleBackColor = true;
             // 

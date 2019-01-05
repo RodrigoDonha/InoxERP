@@ -144,6 +144,7 @@ namespace UIWindows
         public void fillDataSet()
         {
             this.tb_budgets_osTableAdapter.FillByDeliveryFinished(this.fullDataSet.tb_budgets_os);
+            dgvEntregasFinalizadas.Sort(dgvEntregasFinalizadas.Columns[1], ListSortDirection.Descending);
         }
 
         // SEARCH BY NAME CLIENT
@@ -224,6 +225,7 @@ namespace UIWindows
         {
             // TODO: This line of code loads data into the 'fullDataSet.tb_budgets_os' table. You can move, or remove it, as needed.
             this.tb_budgets_osTableAdapter.FillByDeliveryFinished(this.fullDataSet.tb_budgets_os);
+            dgvEntregasFinalizadas.Sort(dgvEntregasFinalizadas.Columns[1], ListSortDirection.Descending);
 
         }
     }

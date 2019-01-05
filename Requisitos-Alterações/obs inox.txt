@@ -2,7 +2,7 @@
 CAD PEÇA: id fornecedor qdo tirar deixar null, liberar para cadastro sem fornecedor -------OK
 CAD LOGIN: evidenciar o login--------------------------------------------------------------OK
 		   ocultar ID----------------------------------------------------------------------OK
-CAD ORÇAMENTO: verificar o ID do cliente, quando vazio limpar (NÃO ENTENDI ESSE, EM QUAL MOMENTO DEVE LIMPAR)?
+CAD ORÇAMENTO: verificar o ID do cliente, quando vazio limpar -----------------------------OK
 				tirar confirmação de peças-------------------------------------------------OK
 				tirar confirmação de cliente ----------------------------------------------OK
 				dispose na tela de orçamento quando GRAVAR---------------------------------OK
@@ -10,7 +10,7 @@ CAD ORÇAMENTO: verificar o ID do cliente, quando vazio limpar (NÃO ENTENDI ESS
 CONSULTA DE ORÇAMENTO: msg.show de selecao de "orçamento"----------------------------------OK
 FORMA DE PAGTO: lblSubtotal colocar mais a ESQUERDA----------------------------------------OK
 ORDEM DE SERVIÇO: erro ao tentar imprimir sem selecionar ninguem---------------------------OK
-				  não esta trazendo a forma de pgto certo qdo já tem contrato gerado --OK
+				  não esta trazendo a forma de pgto certo qdo já tem contrato gerado ------OK
 CONTRATOS:  trazer os dados do cliente CONSUMIDOR conforme o que esta na ORÇAMENTO---------OK
 			verifucar ENUM estados /// CTX, OBJ -------------------------------------------OK
 			limitar a TAB objeto a 3999 caracteres-----------------------------------------OK
@@ -23,9 +23,9 @@ ENTREGAS EM ANDAMENTo: ordenar por 'data grid'----------------------------------
 CHEQUES: quando qq ação finalizar colocar FOCUS no txt nome--------------------------------OK
 		 tratar com aviso a baixa integral do valor do chq---------------------------------OK
 CTAS A PAGAR/RECBER: tratamento de alteração do REMAING------------------------------------OK
-RELATORIOS: Focus do RADGERAL -------------------------------------------------------------OK
-			if data igual colocar .AddDays na data final
-			cheques verificar
+RELATORIOS: if data igual colocar .AddDays na data final
+			relatorio de cheques nao traz dados
+			Focus do RADGERAL -------------------------------------------------------------OK
 MAIN: verificar orentação dos botoes-------------------------------------------------------OK
 
 

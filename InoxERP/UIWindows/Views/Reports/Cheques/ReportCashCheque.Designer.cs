@@ -125,7 +125,6 @@
             this.radBaixados.Name = "radBaixados";
             this.radBaixados.Size = new System.Drawing.Size(83, 21);
             this.radBaixados.TabIndex = 4;
-            this.radBaixados.TabStop = true;
             this.radBaixados.Text = "Baixados";
             this.radBaixados.UseVisualStyleBackColor = true;
             // 
@@ -137,13 +136,13 @@
             this.radNaoBaixados.Name = "radNaoBaixados";
             this.radNaoBaixados.Size = new System.Drawing.Size(113, 21);
             this.radNaoBaixados.TabIndex = 3;
-            this.radNaoBaixados.TabStop = true;
             this.radNaoBaixados.Text = "Não Baixados";
             this.radNaoBaixados.UseVisualStyleBackColor = true;
             // 
             // radGeral
             // 
             this.radGeral.AutoSize = true;
+            this.radGeral.Checked = true;
             this.radGeral.Location = new System.Drawing.Point(25, 34);
             this.radGeral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radGeral.Name = "radGeral";

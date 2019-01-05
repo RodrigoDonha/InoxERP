@@ -72,18 +72,20 @@ namespace UIWindows
 
         private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
-            {
-                txtSenha.Focus();
-            }
+            if (!txtLogin.Text.Equals(""))
+                if (e.KeyChar == 13)
+                {
+                    txtSenha.Focus();
+                }
         }
 
         private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
-            {
-                btnAcessar_Click(sender,e);
-            }
+            if(!txtSenha.Text.Equals(""))
+                if (e.KeyChar == 13)
+                {
+                    btnAcessar_Click(sender,e);
+                }
         }
 
         private void btnVisualizarSenha_Click(object sender, EventArgs e)
