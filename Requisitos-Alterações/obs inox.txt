@@ -29,5 +29,4 @@ RELATORIOS: Focus do RADGERAL --------------------------------------------------
 MAIN: verificar orentação dos botoes-------------------------------------------------------OK
 
 
-teste de forma de pagamento para sair na ordem de serviço conforme informado no contrato
-263a1d12-5cb8-4e12-b0a1-ff6adf7da7cd
+
