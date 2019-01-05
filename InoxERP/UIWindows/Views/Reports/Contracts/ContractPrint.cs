@@ -35,7 +35,7 @@ namespace UIWindows.Views.Reports.Contracts
             Entities.Contracts searchContracts = new Entities.Contracts();
             ContractBusiness obj = new ContractBusiness(ctx);
 
-            searchContracts = obj.returnByBudgetOSId(id);
+            searchContracts = obj.ReturnByID(id);
             string pulaLinha = "\r\n";
 
             string contratanteString = "Nome: " + searchContracts.sClientName +

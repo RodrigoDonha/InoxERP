@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using InoxERP.UI_Windows_Forms;
@@ -200,6 +201,7 @@ namespace UIWindows
         public void fillDataSet()
         {
             this.tb_budgets_osTableAdapter.FillByBudgetUnapproved(this.fullDataSet.tb_budgets_os);
+            dgvOrcamentos.Sort(dgvOrcamentos.Columns[1], ListSortDirection.Descending);
         }
 
         private void btnAprovar_Click(object sender, EventArgs e)
@@ -234,7 +236,7 @@ namespace UIWindows
         {
             // TODO: This line of code loads data into the 'fullDataSet.tb_budgets_os' table. You can move, or remove it, as needed.
             this.tb_budgets_osTableAdapter.FillByBudgetUnapproved(this.fullDataSet.tb_budgets_os);
-
+            dgvOrcamentos.Sort(dgvOrcamentos.Columns[1], ListSortDirection.Descending);
         }
     }
 }

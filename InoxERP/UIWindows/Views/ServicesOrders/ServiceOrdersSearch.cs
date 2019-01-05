@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using InoxERP.UI_Windows_Forms;
 using Microsoft.ReportingServices.Interfaces;
+using UIWindows.Business;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
@@ -23,6 +24,8 @@ namespace UIWindows
         Budgets_OS searchBudget = new Budgets_OS();
         Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
         
+        MessageBoxTimer msg = new MessageBoxTimer();
+
         String getId;
 
         public frmServiceOrderSearch()
@@ -114,13 +117,59 @@ namespace UIWindows
                     Clients cli = new Clients();
                     ClientsBusiness clients = new ClientsBusiness(ctx);
 
-                    searchBudget = obj.ReturnByID(getId);
+                    InoxErpContext c = new InoxErpContext();
+                    Budget_OSBusiness objSearch = new Budget_OSBusiness(c);
+                    Budgets_OS bud = new Budgets_OS();
+
+                    bud = objSearch.ReturnByID(getId);
                     
-                    cli = clients.ReturnByID(searchBudget.IdClients);
-                    
+                    cli = clients.ReturnByID(bud.IdClients);
+
                     if (cli == null || cli.sName.Contains("CONSUMIDOR"))
-                        MessageBox.Show(
-                            " É necessário o Cadastro do Cliente antes de Gerar um Contrato \n\n Impossível continuar sem Cadastro prévio no Sistema !!!");
+                    {
+                        msg.Show("Escolher Cliente",
+                            " É necessário o Cadastro do Cliente antes de Gerar um Contrato \n\n Impossível continuar sem Cadastro prévio no Sistema !!!",
+                            0, 10000);
+                        if (messageYesNo("client") == DialogResult.Yes)
+                        {
+                            frmClientsSearch clientsSearch = new frmClientsSearch();
+
+                            foreach (Control cliControl in clientsSearch.Controls)
+                            {
+                                if (cliControl.Name == "btnAbrirAlterar" || cliControl.Name == "btnExcluir" ||
+                                    cliControl.Name == "btnCadastrar")
+                                    cliControl.Enabled = false;
+                            }
+                            
+                            clientsSearch.ShowDialog();
+
+                            if (clientsSearch.ReturnClients != null)
+                            {
+                                InoxErpContext ctxS = new InoxErpContext();
+                                Budget_OSBusiness objS = new Budget_OSBusiness(ctxS);
+                                Budgets_OS b = new Budgets_OS();
+
+                                b = objS.ReturnByID(getId);
+
+                                b.IdClients = clientsSearch.ReturnClients.sID;
+                                b.sName = clientsSearch.ReturnClients.sName;
+                                b.sAdress = clientsSearch.ReturnClients.sAdress;
+                                b.sTelephone = clientsSearch.ReturnClients.sPhoneCelularOne;
+                                b.sOccupation = clientsSearch.ReturnClients.sOccupation;
+
+                                objS.Update(b);
+
+                                var ok = objS.Search.FirstOrDefault(t => t.sID == b.sID);
+
+                                MessageBox.Show(ok == null
+                                    ? "Erro ao Atualizar o Orçamento !!!"
+                                    : "Orçamento Atualizado com Sucesso !!!");
+
+                                checkContract(getId);
+                                btnGerarContrato_Click(sender, e);
+                            }
+                        }
+                    }
                     else if (messageYesNo("CreateContract") == DialogResult.Yes)
                         {
                             new frmContract(getId).Show();
@@ -138,7 +187,10 @@ namespace UIWindows
 
         private bool checkContract(string id)
         {
-            bool contract = obj.ReturnByID(id).bContractRegistred;
+            InoxErpContext c = new InoxErpContext();
+            Budget_OSBusiness objS = new Budget_OSBusiness(c);
+
+            bool contract = objS.ReturnByID(id).bContractRegistred;
 
             return contract;
         }
@@ -260,6 +312,8 @@ namespace UIWindows
                     return MessageBox.Show("Confirma a Desaprovação deste orçamento?", "Ordem de Serviço", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Finished":
                     return MessageBox.Show("Confirma a Finalização do Serviço?", "Finalizar Serviço", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                case "client":
+                    return MessageBox.Show("Deseja Selecionar um Cliente para esta Ordem de Serviço e continuar com a emissão de contrato", "Escolher Cliente", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 case "CreateContract":
                     return MessageBox.Show("Confirma a Geração do Contrato?", "Gerar Contrato", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
@@ -270,11 +324,14 @@ namespace UIWindows
         public void fillDataSet()
         {
             this.tb_budgets_osTableAdapter.FillByOrderServiceApproved(this.fullDataSet.tb_budgets_os);
+            dgvOrdemServico.Sort(dgvOrdemServico.Columns[1], ListSortDirection.Descending);
         }
 
         private void frmServiceOrderSearch_Load(object sender, EventArgs e)
         {
             this.tb_budgets_osTableAdapter.FillByOrderServiceApproved(this.fullDataSet.tb_budgets_os);
+            dgvOrdemServico.Sort(dgvOrdemServico.Columns[1], ListSortDirection.Descending);
+
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)

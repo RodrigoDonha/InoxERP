@@ -45,7 +45,7 @@
             this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(100, 28);
-            this.btnConfirmar.TabIndex = 0;
+            this.btnConfirmar.TabIndex = 3;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnAccept_Click);
@@ -68,7 +68,7 @@
             this.txtPorcentagem.MaxLength = 18;
             this.txtPorcentagem.Name = "txtPorcentagem";
             this.txtPorcentagem.Size = new System.Drawing.Size(121, 23);
-            this.txtPorcentagem.TabIndex = 2;
+            this.txtPorcentagem.TabIndex = 1;
             this.txtPorcentagem.TextChanged += new System.EventHandler(this.txtPorcent_TextChanged);
             this.txtPorcentagem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
@@ -121,7 +121,7 @@
             this.txtTotal.MaxLength = 18;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(121, 23);
-            this.txtTotal.TabIndex = 7;
+            this.txtTotal.TabIndex = 2;
             this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // frmServiceCalc

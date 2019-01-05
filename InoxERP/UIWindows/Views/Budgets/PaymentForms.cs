@@ -336,21 +336,31 @@ namespace UIWindows
             
             decimal valueDin = Convert.ToDecimal(txtValorDin.Text.Replace(".", ",")); //valor informado em dinheiro
 
-            //if(valueDin > totalRest) //compara se nao é maior que o restante
-            //    if (messageYesNo("valueMax") == DialogResult.No)
-            //        valueDin = 0;
-
             decimal paied = valuePaied; // pega valor já pago
 
             decimal installments = nudParcelasDin.Value; // quantidade de parcelas
             
             decimal firstInstallment = Convert.ToDecimal(txtPrimParcDin.Text.Replace(".", ",")); // valor da 1º parcela
 
-            //if (firstInstallment > valueDin) //compara se nao é maior que o valor em dinheiro informado
-            //    if (messageYesNo("valueMax") == DialogResult.No)
-            //        firstInstallment = 0;
+            decimal valueByInstallments = 0; // valor por parcela
 
-            decimal valueByInstallments = Math.Round((valueDin - firstInstallment) / installments, 2); // valor por parcela
+            if (firstInstallment != 0 && installments == 2)
+                valueByInstallments = Math.Round(valueDin - firstInstallment);
+            else if (firstInstallment != 0)
+            {
+                if (installments == 1)
+                {
+                    txtPrimParcDin.Text = "0";
+                    valueByInstallments = valueDin;
+                }
+                else
+                {
+                    installments = installments - 1;
+                    valueByInstallments = Math.Round((valueDin - firstInstallment) / installments, 2); // valor por parcela
+                }
+            }
+            else
+                valueByInstallments = Math.Round((valueDin - firstInstallment) / installments, 2); // valor por parcela
 
             lblValorPorParcelaDin.Text = valueByInstallments.ToString(); //exibe valor por parcela
 
@@ -368,11 +378,7 @@ namespace UIWindows
         {
             decimal totalRest = valueRemaing; //valor restante
 
-            decimal valueCheq = Convert.ToDecimal(txtValorCheq.Text.Replace(".", ",")); //valor informado em dinheiro
-
-            //if (valueCheq > totalRest) //compara se nao é maior que o restante
-            //    if (messageYesNo("valueMax") == DialogResult.No)
-            //        valueCheq = 0;
+            decimal valueCheq = Convert.ToDecimal(txtValorCheq.Text.Replace(".", ",")); 
 
             decimal paied = valuePaied; // pega valor já pago
 
@@ -380,11 +386,23 @@ namespace UIWindows
 
             decimal firstInstallment = Convert.ToDecimal(txtPrimParcCheq.Text.Replace(".", ",")); // valor da 1º parcela
 
-            //if (firstInstallment > valueCheq) //compara se nao é maior que o valor em dinheiro informado
-            //    if (messageYesNo("valueMax") == DialogResult.No)
-            //        firstInstallment = 0;
+            decimal valueByInstallments = 0;
 
-            decimal valueByInstallments = Math.Round((valueCheq - firstInstallment) / installments, 2); // valor por parcela
+            if (firstInstallment != 0 && installments == 2)
+                valueByInstallments = Math.Round(valueCheq - firstInstallment);
+            else if (firstInstallment != 0)
+                {
+                    if (installments == 1)
+                    {
+                        txtPrimParcCheq.Text = "0";
+                        valueByInstallments = valueCheq;
+                    }else
+                    {
+                        installments = installments - 1;
+                        valueByInstallments = Math.Round((valueCheq - firstInstallment) / installments, 2); // valor por parcela
+                    }
+                }else
+                    valueByInstallments =  Math.Round((valueCheq - firstInstallment) / installments, 2); // valor por parcela
 
             lblValorPorParcelaCheq.Text = valueByInstallments.ToString(); //exibe valor por parcela
 
@@ -683,14 +701,29 @@ namespace UIWindows
                             receive3.bReceivePaid = false;
                             receive3.sReferentTo = "O.S.  " + budget.iCod;
                             receive3.Budgets_OS = budget;
-
-                            receive3.dValue = (vDin - ppDin) / iDin;
-                            receive3.dRemaing = (vDin - ppDin) / iDin;
                             receive3.dPaid = 0;
                             due = due.AddDays(Convert.ToDouble(pDin));
                             receive3.dtDueDate = due;
                             receive3.iInstallment = i;
                             receive3.iAmountInstallment = Convert.ToInt32(iDin);
+
+                            
+
+                            if (ppDin != 0 && iDin == 2)
+                            {
+                                receive3.dValue = vDin - ppDin;
+                            }
+                            else if (iDin != 0)
+                            {
+                                decimal j = iDin - 1;
+                                receive3.dValue = (vDin - ppDin) / j;
+                                receive3.dRemaing = (vDin - ppDin) / j;
+                            }
+                            else
+                            {
+                                receive3.dValue = (vDin - ppDin) / iDin;
+                                receive3.dRemaing = (vDin - ppDin) / iDin;
+                            }
 
                             list.Add(receive3);
                         }
@@ -775,12 +808,20 @@ namespace UIWindows
                             cheque3.bChequePaid = false;
                             cheque3.sChequeNumber = "0";
                             cheque3.sReferentTo = "O.S.  " + budget.iCod.ToString();
-
-                            cheque3.dValue = (vCheq - ppCheq) / iCheq;
                             due = due.AddDays(Convert.ToDouble(pCheq));
                             cheque3.dtDueDate = due;
                             cheque3.iInstallment = i;
                             cheque3.iAmountInstallment = Convert.ToInt32(iCheq);
+
+                            if (ppCheq != 0 && iCheq == 2)
+                                cheque3.dValue = vCheq - ppCheq;
+                            else if (iCheq != 0)
+                            {
+                                decimal j = iCheq - 1;
+                                cheque3.dValue = (vCheq - ppCheq) / j; // valor por parcela
+                            }
+                            else
+                                cheque3.dValue = (vCheq - ppCheq) / iCheq; // valor por parcela
 
                             list.Add(cheque3);
                         }

@@ -485,7 +485,7 @@ namespace UIWindows
                     
                     chequeAlter = objAlter.ReturnByID(lblId.Text);
 
-                    if (!chequeAlter.sChequeNumber.Equals("0") || !chequeAlter.sChequeNumber.Equals("0-0-0"))
+                    if (!chequeAlter.dValue.ToString().Equals(txtValor.Text))
                         MessageBox.Show(" ***   Não é possível Alterar o Valor de um Cheque já foi Preenchido !!!");
                     else
                     {

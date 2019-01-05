@@ -70,6 +70,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.lblCPF_CNPJ = new System.Windows.Forms.Label();
+            this.lblAsterisco = new System.Windows.Forms.Label();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -175,9 +176,9 @@
             this.lblContatosCelular1.AutoSize = true;
             this.lblContatosCelular1.Location = new System.Drawing.Point(5, 91);
             this.lblContatosCelular1.Name = "lblContatosCelular1";
-            this.lblContatosCelular1.Size = new System.Drawing.Size(56, 17);
+            this.lblContatosCelular1.Size = new System.Drawing.Size(69, 17);
             this.lblContatosCelular1.TabIndex = 26;
-            this.lblContatosCelular1.Text = "Celular:";
+            this.lblContatosCelular1.Text = "Celular:  *";
             // 
             // txtContatosEmail
             // 
@@ -367,54 +368,54 @@
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Location = new System.Drawing.Point(5, 43);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(73, 17);
+            this.lblEndereco.Size = new System.Drawing.Size(82, 17);
             this.lblEndereco.TabIndex = 7;
-            this.lblEndereco.Text = "Endereço:";
+            this.lblEndereco.Text = "Endereço: *";
             // 
             // lblNumEndereco
             // 
             this.lblNumEndereco.AutoSize = true;
             this.lblNumEndereco.Location = new System.Drawing.Point(5, 87);
             this.lblNumEndereco.Name = "lblNumEndereco";
-            this.lblNumEndereco.Size = new System.Drawing.Size(27, 17);
+            this.lblNumEndereco.Size = new System.Drawing.Size(36, 17);
             this.lblNumEndereco.TabIndex = 8;
-            this.lblNumEndereco.Text = "Nº:";
+            this.lblNumEndereco.Text = "Nº: *";
             // 
             // lblCEP
             // 
             this.lblCEP.AutoSize = true;
             this.lblCEP.Location = new System.Drawing.Point(820, 133);
             this.lblCEP.Name = "lblCEP";
-            this.lblCEP.Size = new System.Drawing.Size(39, 17);
+            this.lblCEP.Size = new System.Drawing.Size(48, 17);
             this.lblCEP.TabIndex = 12;
-            this.lblCEP.Text = "CEP:";
+            this.lblCEP.Text = "CEP: *";
             // 
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
             this.lblBairro.Location = new System.Drawing.Point(267, 87);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(50, 17);
+            this.lblBairro.Size = new System.Drawing.Size(59, 17);
             this.lblBairro.TabIndex = 9;
-            this.lblBairro.Text = "Bairro:";
+            this.lblBairro.Text = "Bairro: *";
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Location = new System.Drawing.Point(668, 134);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(56, 17);
+            this.lblEstado.Size = new System.Drawing.Size(65, 17);
             this.lblEstado.TabIndex = 11;
-            this.lblEstado.Text = "Estado:";
+            this.lblEstado.Text = "Estado: *";
             // 
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
             this.lblCidade.Location = new System.Drawing.Point(5, 133);
             this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(56, 17);
+            this.lblCidade.Size = new System.Drawing.Size(65, 17);
             this.lblCidade.TabIndex = 10;
-            this.lblCidade.Text = "Cidade:";
+            this.lblCidade.Text = "Cidade: *";
             // 
             // grpDadosPessoais
             // 
@@ -452,11 +453,11 @@
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(753, 37);
+            this.lblRg.Location = new System.Drawing.Point(747, 37);
             this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(107, 17);
+            this.lblRg.Size = new System.Drawing.Size(116, 17);
             this.lblRg.TabIndex = 36;
-            this.lblRg.Text = "R.G./Inscr. Est.:";
+            this.lblRg.Text = "R.G./Inscr. Est.: *";
             // 
             // txtCargo
             // 
@@ -533,24 +534,34 @@
             this.lblNomeCompleto.AutoSize = true;
             this.lblNomeCompleto.Location = new System.Drawing.Point(5, 41);
             this.lblNomeCompleto.Name = "lblNomeCompleto";
-            this.lblNomeCompleto.Size = new System.Drawing.Size(110, 17);
+            this.lblNomeCompleto.Size = new System.Drawing.Size(119, 17);
             this.lblNomeCompleto.TabIndex = 0;
-            this.lblNomeCompleto.Text = "Nome completo:";
+            this.lblNomeCompleto.Text = "Nome completo: *";
             // 
             // lblCPF_CNPJ
             // 
             this.lblCPF_CNPJ.AutoSize = true;
             this.lblCPF_CNPJ.Location = new System.Drawing.Point(5, 81);
             this.lblCPF_CNPJ.Name = "lblCPF_CNPJ";
-            this.lblCPF_CNPJ.Size = new System.Drawing.Size(113, 17);
+            this.lblCPF_CNPJ.Size = new System.Drawing.Size(122, 17);
             this.lblCPF_CNPJ.TabIndex = 1;
-            this.lblCPF_CNPJ.Text = "C.P.F. / C.N.P.J.:";
+            this.lblCPF_CNPJ.Text = "C.P.F. / C.N.P.J.: *";
+            // 
+            // lblAsterisco
+            // 
+            this.lblAsterisco.AutoSize = true;
+            this.lblAsterisco.Location = new System.Drawing.Point(16, 604);
+            this.lblAsterisco.Name = "lblAsterisco";
+            this.lblAsterisco.Size = new System.Drawing.Size(427, 17);
+            this.lblAsterisco.TabIndex = 27;
+            this.lblAsterisco.Text = "* Campos Obrigatórios para Geração de Contratos Posteriormente";
             // 
             // frmClientsRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 646);
+            this.Controls.Add(this.lblAsterisco);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGravar);
@@ -573,6 +584,7 @@
             this.grpDadosPessoais.ResumeLayout(false);
             this.grpDadosPessoais.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -619,5 +631,6 @@
         private System.Windows.Forms.Label lblCargoProfissao;
         private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Label lblRg;
+        private System.Windows.Forms.Label lblAsterisco;
     }
 }

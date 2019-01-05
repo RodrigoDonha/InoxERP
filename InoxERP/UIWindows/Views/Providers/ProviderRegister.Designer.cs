@@ -76,6 +76,7 @@
             this.lblBanco = new System.Windows.Forms.Label();
             this.txtAgencia = new System.Windows.Forms.TextBox();
             this.lblAgencia = new System.Windows.Forms.Label();
+            this.lblAsterisco = new System.Windows.Forms.Label();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -182,9 +183,9 @@
             this.lblContatosCelular1.AutoSize = true;
             this.lblContatosCelular1.Location = new System.Drawing.Point(5, 81);
             this.lblContatosCelular1.Name = "lblContatosCelular1";
-            this.lblContatosCelular1.Size = new System.Drawing.Size(56, 17);
+            this.lblContatosCelular1.Size = new System.Drawing.Size(69, 17);
             this.lblContatosCelular1.TabIndex = 26;
-            this.lblContatosCelular1.Text = "Celular:";
+            this.lblContatosCelular1.Text = "Celular:  *";
             // 
             // txtContatosEmail
             // 
@@ -374,18 +375,18 @@
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Location = new System.Drawing.Point(5, 26);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(73, 17);
+            this.lblEndereco.Size = new System.Drawing.Size(82, 17);
             this.lblEndereco.TabIndex = 7;
-            this.lblEndereco.Text = "Endereço:";
+            this.lblEndereco.Text = "Endereço: *";
             // 
             // lblNumEndereco
             // 
             this.lblNumEndereco.AutoSize = true;
             this.lblNumEndereco.Location = new System.Drawing.Point(8, 64);
             this.lblNumEndereco.Name = "lblNumEndereco";
-            this.lblNumEndereco.Size = new System.Drawing.Size(27, 17);
+            this.lblNumEndereco.Size = new System.Drawing.Size(36, 17);
             this.lblNumEndereco.TabIndex = 8;
-            this.lblNumEndereco.Text = "Nº:";
+            this.lblNumEndereco.Text = "Nº: *";
             // 
             // lblCEP
             // 
@@ -401,27 +402,27 @@
             this.lblBairro.AutoSize = true;
             this.lblBairro.Location = new System.Drawing.Point(267, 63);
             this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(50, 17);
+            this.lblBairro.Size = new System.Drawing.Size(59, 17);
             this.lblBairro.TabIndex = 9;
-            this.lblBairro.Text = "Bairro:";
+            this.lblBairro.Text = "Bairro: *";
             // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Location = new System.Drawing.Point(668, 102);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(56, 17);
+            this.lblEstado.Size = new System.Drawing.Size(65, 17);
             this.lblEstado.TabIndex = 11;
-            this.lblEstado.Text = "Estado:";
+            this.lblEstado.Text = "Estado: *";
             // 
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
             this.lblCidade.Location = new System.Drawing.Point(5, 101);
             this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(56, 17);
+            this.lblCidade.Size = new System.Drawing.Size(65, 17);
             this.lblCidade.TabIndex = 10;
-            this.lblCidade.Text = "Cidade:";
+            this.lblCidade.Text = "Cidade: *";
             // 
             // grpDadosPessoais
             // 
@@ -463,18 +464,18 @@
             this.lblNome.AutoSize = true;
             this.lblNome.Location = new System.Drawing.Point(5, 30);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(110, 17);
+            this.lblNome.Size = new System.Drawing.Size(119, 17);
             this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome completo:";
+            this.lblNome.Text = "Nome completo: *";
             // 
             // lblCPF_CNPJ
             // 
             this.lblCPF_CNPJ.AutoSize = true;
             this.lblCPF_CNPJ.Location = new System.Drawing.Point(5, 70);
             this.lblCPF_CNPJ.Name = "lblCPF_CNPJ";
-            this.lblCPF_CNPJ.Size = new System.Drawing.Size(113, 17);
+            this.lblCPF_CNPJ.Size = new System.Drawing.Size(122, 17);
             this.lblCPF_CNPJ.TabIndex = 1;
-            this.lblCPF_CNPJ.Text = "C.P.F. / C.N.P.J.:";
+            this.lblCPF_CNPJ.Text = "C.P.F. / C.N.P.J.: *";
             // 
             // grpDadosBancarios
             // 
@@ -613,11 +614,21 @@
             this.lblAgencia.TabIndex = 28;
             this.lblAgencia.Text = "Agência:";
             // 
+            // lblAsterisco
+            // 
+            this.lblAsterisco.AutoSize = true;
+            this.lblAsterisco.Location = new System.Drawing.Point(17, 611);
+            this.lblAsterisco.Name = "lblAsterisco";
+            this.lblAsterisco.Size = new System.Drawing.Size(150, 17);
+            this.lblAsterisco.TabIndex = 28;
+            this.lblAsterisco.Text = "* Campos Obrigatórios";
+            // 
             // frmProviderRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 646);
+            this.Controls.Add(this.lblAsterisco);
             this.Controls.Add(this.grpDadosBancarios);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnCancelar);
@@ -643,6 +654,7 @@
             this.grpDadosBancarios.ResumeLayout(false);
             this.grpDadosBancarios.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -695,5 +707,6 @@
         private System.Windows.Forms.TextBox txtAgencia;
         private System.Windows.Forms.Label lblAgencia;
         private System.Windows.Forms.ComboBox cmbEstate;
+        private System.Windows.Forms.Label lblAsterisco;
     }
 }
