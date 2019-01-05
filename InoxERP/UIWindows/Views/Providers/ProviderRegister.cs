@@ -164,6 +164,7 @@ namespace InoxERP.UI_Windows_Forms
                                             " Cadastrado com Sucesso !!!");
 
                         afterAction();
+                        Dispose();
                     }
                 }
             }

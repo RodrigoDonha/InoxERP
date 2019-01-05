@@ -306,28 +306,28 @@
             // aReceberToolStripMenuItem1
             // 
             this.aReceberToolStripMenuItem1.Name = "aReceberToolStripMenuItem1";
-            this.aReceberToolStripMenuItem1.Size = new System.Drawing.Size(150, 26);
+            this.aReceberToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.aReceberToolStripMenuItem1.Text = "A Receber";
             this.aReceberToolStripMenuItem1.Click += new System.EventHandler(this.aReceberToolStripMenuItem1_Click);
             // 
             // aPagarToolStripMenuItem
             // 
             this.aPagarToolStripMenuItem.Name = "aPagarToolStripMenuItem";
-            this.aPagarToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.aPagarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.aPagarToolStripMenuItem.Text = "A Pagar";
             this.aPagarToolStripMenuItem.Click += new System.EventHandler(this.aPagarToolStripMenuItem_Click);
             // 
             // chequesToolStripMenuItem
             // 
             this.chequesToolStripMenuItem.Name = "chequesToolStripMenuItem";
-            this.chequesToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.chequesToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.chequesToolStripMenuItem.Text = "Cheques";
             this.chequesToolStripMenuItem.Click += new System.EventHandler(this.chequesToolStripMenuItem_Click_1);
             // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.consultasToolStripMenuItem.Text = "Consultas";
             this.consultasToolStripMenuItem.Click += new System.EventHandler(this.consultasToolStripMenuItem_Click);
             // 
@@ -344,21 +344,21 @@
             // tipEntradaCaixa
             // 
             this.tipEntradaCaixa.Name = "tipEntradaCaixa";
-            this.tipEntradaCaixa.Size = new System.Drawing.Size(140, 26);
+            this.tipEntradaCaixa.Size = new System.Drawing.Size(180, 26);
             this.tipEntradaCaixa.Text = "Entradas";
             this.tipEntradaCaixa.Click += new System.EventHandler(this.entradasToolStripMenuItem1_Click);
             // 
             // tipSaidaCaixa
             // 
             this.tipSaidaCaixa.Name = "tipSaidaCaixa";
-            this.tipSaidaCaixa.Size = new System.Drawing.Size(140, 26);
+            this.tipSaidaCaixa.Size = new System.Drawing.Size(180, 26);
             this.tipSaidaCaixa.Text = "Saídas";
             this.tipSaidaCaixa.Click += new System.EventHandler(this.saídasToolStripMenuItem1_Click);
             // 
             // tipGeralCaixa
             // 
             this.tipGeralCaixa.Name = "tipGeralCaixa";
-            this.tipGeralCaixa.Size = new System.Drawing.Size(140, 26);
+            this.tipGeralCaixa.Size = new System.Drawing.Size(180, 26);
             this.tipGeralCaixa.Text = "Geral";
             this.tipGeralCaixa.Click += new System.EventHandler(this.tipGeralCaixa_Click);
             // 

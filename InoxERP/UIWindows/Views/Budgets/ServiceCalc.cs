@@ -29,6 +29,7 @@ namespace UIWindows.Views.Budgets
             InitializeComponent();
             lblValordosProdutos.Text = Convert.ToString(lblProducts);
             txtTotal.Text = Convert.ToString(lblProducts);
+            txtPorcentagem.Focus();
         }
 
         private void txtPorcent_TextChanged(object sender, EventArgs e)

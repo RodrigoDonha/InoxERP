@@ -146,6 +146,7 @@ namespace InoxERP.UI_Windows_Forms
                             MessageBox.Show("Cliente: " + clientsPersist.sName.ToString() + " Cadastrado com Sucesso !!!");
 
                         afterAction();
+                        Dispose();
                     }
                 }
             }

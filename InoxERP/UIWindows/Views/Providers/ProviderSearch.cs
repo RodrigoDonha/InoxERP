@@ -178,6 +178,8 @@ namespace UIWindows
         public void fillDataSet()
         {
             this.tb_providersTableAdapter.Fill(this.fullDataSet.tb_providers);
+            dgvFornecedores.Columns[0].Visible = false;
+
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)

@@ -94,74 +94,111 @@ namespace InoxERP
         //MENU ACCOUNTS
         private void aPagarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmAccountsToPay().Show();
+            if (user.Type == UserType.Admin)
+                new frmAccountsToPay().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void aReceberToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new frmAccountsToReceive().Show();
+            if (user.Type == UserType.Admin)
+                new frmAccountsToReceive().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
        private void chequesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            new frmAccountsCheque().Show();
+            if (user.Type == UserType.Admin)
+                new frmAccountsCheque().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmAccountsSearch().Show();
+            if (user.Type == UserType.Admin)
+                new frmAccountsSearch().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
 
         //MENU CASH
         private void entradasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new frmCashEntry().Show();
+            if (user.Type == UserType.Admin)
+                new frmCashEntry().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void saídasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new frmCashOut().Show();
+            if (user.Type == UserType.Admin)
+                new frmCashOut().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void tipGeralCaixa_Click(object sender, EventArgs e)
         {
-            new frmCashGeneral().Show();
+            if (user.Type == UserType.Admin)
+                new frmCashGeneral().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
 
         //MENU REPORTS
         private void orçamentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmReportBudgets().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportBudgets().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void ordensDeServiçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmReportServicesOrder().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportServicesOrder().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void entregasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmReportDelivery().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportDelivery().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         //menu reports ABA CASH
         private void dinheiroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmReportAccounts().Show();
-
+            if (user.Type == UserType.Admin)
+                new frmReportAccounts().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void chequeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new frmReportCashCheque().Show();
-
+            if (user.Type == UserType.Admin)
+                new frmReportCashCheque().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
         
         private void geralToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            new frmReportCashGeneral().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportCashGeneral().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
         
         //BACKUP AUTOMATIC WHEN PRINCIPAL FORM IS CLOSED
@@ -253,74 +290,112 @@ namespace InoxERP
         //PIC ACCOUNTS
         private void picaReceber_Click(object sender, EventArgs e)
         {
-            new frmAccountsToReceive().Show();
+            if (user.Type == UserType.Admin)
+                new frmAccountsToReceive().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void picaPagar_Click(object sender, EventArgs e)
         {
-            new frmAccountsToPay().Show();
-
+            if (user.Type == UserType.Admin)
+                new frmAccountsToPay().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void picCheque_Click(object sender, EventArgs e)
         {
-            new frmAccountsCheque().Show();
+            if (user.Type == UserType.Admin)
+                new frmAccountsCheque().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void picConsultaContas_Click(object sender, EventArgs e)
         {
-            new frmAccountsSearch().Show();
+            if (user.Type == UserType.Admin)
+                new frmAccountsSearch().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
 
         //PIC CASH
         private void picEntradas_Click(object sender, EventArgs e)
         {
-            new frmCashEntry().Show();
+            if (user.Type == UserType.Admin)
+                new frmCashEntry().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void picSaidas_Click(object sender, EventArgs e)
         {
-            new frmCashOut().Show();
+            if (user.Type == UserType.Admin)
+                new frmCashOut().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void picGeral_Click(object sender, EventArgs e)
         {
-            new frmCashGeneral().Show();
+            if (user.Type == UserType.Admin)
+                new frmCashGeneral().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
 
         //PIC REPORTS
         private void picRelOrcamentos_Click(object sender, EventArgs e)
         {
-            new frmReportBudgets().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportBudgets().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void picRelOS_Click(object sender, EventArgs e)
         {
-            new frmReportServicesOrder().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportServicesOrder().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void picRelEntregas_Click(object sender, EventArgs e)
         {
-            new frmReportDelivery().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportDelivery().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
 
         //pic reports ABA CASH
         private void picRelCaixa_Click(object sender, EventArgs e)
         {
-            new frmReportCashGeneral().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportCashGeneral().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void picRelCheques_Click(object sender, EventArgs e)
         {
-            new frmReportCashCheque().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportCashCheque().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         private void picRelContas_Click(object sender, EventArgs e)
         {
-            new frmReportAccounts().Show();
+            if (user.Type == UserType.Admin)
+                new frmReportAccounts().Show();
+            else
+                MessageBox.Show("Acesso Restrito");
         }
 
         //PIC BACKUP
