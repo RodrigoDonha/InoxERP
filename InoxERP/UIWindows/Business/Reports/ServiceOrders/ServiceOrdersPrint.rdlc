@@ -72,24 +72,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Nome: </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!Name.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Left>0.42016cm</Left>
+            <Top>0.1905cm</Top>
+            <Left>0.10266cm</Left>
             <Height>0.75875cm</Height>
-            <Width>17.09369cm</Width>
+            <Width>12.61966cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -112,24 +109,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Telefone: </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!Telephone.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Left>17.93638cm</Left>
+            <Top>0.1905cm</Top>
+            <Left>13.05746cm</Left>
             <Height>0.75875cm</Height>
-            <Width>9.31414cm</Width>
+            <Width>4.6416cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -153,19 +147,17 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Itens:</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>0.77321cm</Top>
-            <Left>0.42016cm</Left>
+            <Top>0.96371cm</Top>
+            <Left>0.10266cm</Left>
             <Height>0.75875cm</Height>
-            <Width>26.83036cm</Width>
+            <Width>17.5964cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -197,25 +189,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Descrição: </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!Observation.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>2.91159cm</Top>
-            <Left>0.42016cm</Left>
+            <Top>3.10209cm</Top>
+            <Left>0.10266cm</Left>
             <Height>5.49479cm</Height>
-            <Width>26.83036cm</Width>
+            <Width>17.5964cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -234,32 +222,26 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Prazo de Execução: </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Value>Prazo: </Value>
+                    <Style />
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!PrevisionOfExecute.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                   <TextRun>
                     <Value> Dia(s)</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.40439cm</Top>
-            <Left>9.72291cm</Left>
+            <Top>8.78539cm</Top>
+            <Left>5.69066cm</Left>
             <Height>0.75875cm</Height>
-            <Width>9.31414cm</Width>
+            <Width>5.90102cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -279,26 +261,22 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Data Finalização/Entrega: </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Value>Finalização/Entrega: </Value>
+                    <Style />
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!FinalPrevision.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.40439cm</Top>
-            <Left>19.04683cm</Left>
+            <Top>8.78539cm</Top>
+            <Left>11.58558cm</Left>
             <Height>0.75875cm</Height>
-            <Width>8.20369cm</Width>
+            <Width>6.11348cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -325,9 +303,7 @@
                             <TextRuns>
                               <TextRun>
                                 <Value>Quantidade</Value>
-                                <Style>
-                                  <FontSize>12pt</FontSize>
-                                </Style>
+                                <Style />
                               </TextRun>
                             </TextRuns>
                             <Style>
@@ -355,7 +331,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>23.15145cm</Width>
+                  <Width>13.91749cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -372,9 +348,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!sDescription.Value</Value>
-                                  <Style>
-                                    <FontSize>12pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -417,9 +391,7 @@
                             <TextRuns>
                               <TextRun>
                                 <Value>Descrição</Value>
-                                <Style>
-                                  <FontSize>12pt</FontSize>
-                                </Style>
+                                <Style />
                               </TextRun>
                             </TextRuns>
                             <Style>
@@ -468,9 +440,7 @@
                             <TextRuns>
                               <TextRun>
                                 <Value>=Fields!dAmount.Value</Value>
-                                <Style>
-                                  <FontSize>12pt</FontSize>
-                                </Style>
+                                <Style />
                               </TextRun>
                             </TextRuns>
                             <Style>
@@ -505,10 +475,10 @@
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>1.53141cm</Top>
-            <Left>0.42097cm</Left>
+            <Top>1.72191cm</Top>
+            <Left>0.10347cm</Left>
             <Height>1.4cm</Height>
-            <Width>26.82955cm</Width>
+            <Width>17.59559cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -523,26 +493,22 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Data de Início/Aprovação: </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Value>Início/Aprovação: </Value>
+                    <Style />
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!StartPrevision.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.40113cm</Top>
-            <Left>0.41688cm</Left>
-            <Height>0.75875cm</Height>
-            <Width>9.31253cm</Width>
+            <Top>8.78539cm</Top>
+            <Left>0.09938cm</Left>
+            <Height>0.75549cm</Height>
+            <Width>5.58191cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -555,14 +521,52 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox14">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Forma de Pagamento: </Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!PayementForm.Value</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox8</rd:DefaultName>
+            <Top>9.70553cm</Top>
+            <Left>0.15678cm</Left>
+            <Height>1.63188cm</Height>
+            <Width>17.54228cm</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>3.61379in</Height>
+        <Height>4.60337in</Height>
         <Style />
       </Body>
-      <Width>10.8946in</Width>
+      <Width>7.0821in</Width>
       <Page>
         <PageHeader>
-          <Height>1.17313cm</Height>
+          <Height>1.49063cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -575,7 +579,7 @@
                     <TextRun>
                       <Value>Ordem de Serviço:</Value>
                       <Style>
-                        <FontSize>20pt</FontSize>
+                        <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -584,10 +588,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.09688cm</Top>
-              <Left>0.42097cm</Left>
+              <Top>0.16038cm</Top>
+              <Left>0.10347cm</Left>
               <Height>1.07625cm</Height>
-              <Width>6.985cm</Width>
+              <Width>5.26521cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -607,7 +611,7 @@
                     <TextRun>
                       <Value>=Parameters!Cod.Value</Value>
                       <Style>
-                        <FontSize>20pt</FontSize>
+                        <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -618,10 +622,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.09688cm</Top>
-              <Left>7.77799cm</Left>
+              <Top>0.16038cm</Top>
+              <Left>5.55549cm</Left>
               <Height>1.07625cm</Height>
-              <Width>5.79438cm</Width>
+              <Width>4.756cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -642,14 +646,14 @@
                     <TextRun>
                       <Value>Data: </Value>
                       <Style>
-                        <FontSize>20pt</FontSize>
+                        <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                     <TextRun>
                       <Value>=Parameters!DateServiceOrderApproved.Value</Value>
                       <Style>
-                        <FontSize>20pt</FontSize>
+                        <FontSize>16pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -660,10 +664,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.09688cm</Top>
-              <Left>14.24617cm</Left>
+              <Top>0.16038cm</Top>
+              <Left>10.61079cm</Left>
               <Height>1.07625cm</Height>
-              <Width>12.9734cm</Width>
+              <Width>7.05652cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -682,55 +686,6 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageFooter>
-          <Height>2.58438cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox14">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Forma de Pagamento: </Value>
-                      <Style>
-                        <FontSize>12pt</FontSize>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>=Parameters!PayementForm.Value</Value>
-                      <Style>
-                        <FontSize>12pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox8</rd:DefaultName>
-              <Top>0.9525cm</Top>
-              <Left>0.42096cm</Left>
-              <Height>1.63188cm</Height>
-              <Width>26.83036cm</Width>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>

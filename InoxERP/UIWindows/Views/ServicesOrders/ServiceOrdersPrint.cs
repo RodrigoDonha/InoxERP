@@ -30,6 +30,7 @@ namespace UIWindows.Views.ServicesOrders
         private void ServiceOrdersPrint_Load(object sender, EventArgs e)
         {
             this.tb_itemsTableAdapter.Fill(this.fullDataSet.tb_items);
+            this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
 
