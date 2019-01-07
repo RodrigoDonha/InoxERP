@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 using Microsoft.Reporting.WinForms;
 using UIWindows.Business.Concrete;
@@ -31,6 +32,7 @@ namespace UIWindows.Views.ServicesOrders
         {
             this.tb_itemsTableAdapter.Fill(this.fullDataSet.tb_items);
             this.reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+            //this.reportViewer1.PrinterSettings.DefaultPageSettings.PrinterSettings.DefaultPageSettings.Margins = new Margins(0,0,0,0);
             this.reportViewer1.RefreshReport();
         }
 

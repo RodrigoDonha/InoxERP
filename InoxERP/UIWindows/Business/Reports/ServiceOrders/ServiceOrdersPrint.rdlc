@@ -86,7 +86,7 @@
             <Top>0.1905cm</Top>
             <Left>0.10266cm</Left>
             <Height>0.75875cm</Height>
-            <Width>12.61966cm</Width>
+            <Width>11.27029cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -121,7 +121,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
             <Top>0.1905cm</Top>
-            <Left>13.05746cm</Left>
+            <Left>11.54934cm</Left>
             <Height>0.75875cm</Height>
             <Width>4.6416cm</Width>
             <ZIndex>1</ZIndex>
@@ -154,10 +154,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>0.96371cm</Top>
-            <Left>0.10266cm</Left>
+            <Top>1.10659cm</Top>
+            <Left>0.10347cm</Left>
             <Height>0.75875cm</Height>
-            <Width>17.5964cm</Width>
+            <Width>16.08747cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -200,10 +200,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>3.10209cm</Top>
-            <Left>0.10266cm</Left>
+            <Top>3.61811cm</Top>
+            <Left>0.09938cm</Left>
             <Height>5.49479cm</Height>
-            <Width>17.5964cm</Width>
+            <Width>16.09156cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border>
@@ -238,10 +238,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.78539cm</Top>
-            <Left>5.69066cm</Left>
+            <Top>9.28929cm</Top>
+            <Left>5.85768cm</Left>
             <Height>0.75875cm</Height>
-            <Width>5.90102cm</Width>
+            <Width>4.04339cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -273,8 +273,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.78539cm</Top>
-            <Left>11.58558cm</Left>
+            <Top>9.28929cm</Top>
+            <Left>10.07745cm</Left>
             <Height>0.75875cm</Height>
             <Width>6.11348cm</Width>
             <ZIndex>5</ZIndex>
@@ -331,7 +331,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>13.91749cm</Width>
+                  <Width>12.40937cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -475,10 +475,10 @@
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>1.72191cm</Top>
+            <Top>2.04172cm</Top>
             <Left>0.10347cm</Left>
             <Height>1.4cm</Height>
-            <Width>17.59559cm</Width>
+            <Width>16.08747cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -505,7 +505,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>8.78539cm</Top>
+            <Top>9.28929cm</Top>
             <Left>0.09938cm</Left>
             <Height>0.75549cm</Height>
             <Width>5.58191cm</Width>
@@ -529,25 +529,21 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Forma de Pagamento: </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!PayementForm.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <Style />
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>9.70553cm</Top>
-            <Left>0.15678cm</Left>
+            <Top>10.22443cm</Top>
+            <Left>0.09938cm</Left>
             <Height>1.63188cm</Height>
-            <Width>17.54228cm</Width>
+            <Width>16.09156cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -560,13 +556,13 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>4.60337in</Height>
+        <Height>4.7492in</Height>
         <Style />
       </Body>
-      <Width>7.0821in</Width>
+      <Width>6.42585in</Width>
       <Page>
         <PageHeader>
-          <Height>1.49063cm</Height>
+          <Height>1.51709cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -579,7 +575,7 @@
                     <TextRun>
                       <Value>Ordem de Serviço:</Value>
                       <Style>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>13pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -596,6 +592,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -611,7 +608,7 @@
                     <TextRun>
                       <Value>=Parameters!Cod.Value</Value>
                       <Style>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>13pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -631,6 +628,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -646,14 +644,14 @@
                     <TextRun>
                       <Value>Data: </Value>
                       <Style>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>13pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                     <TextRun>
                       <Value>=Parameters!DateServiceOrderApproved.Value</Value>
                       <Style>
-                        <FontSize>16pt</FontSize>
+                        <FontSize>13pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -667,12 +665,13 @@
               <Top>0.16038cm</Top>
               <Left>10.61079cm</Left>
               <Height>1.07625cm</Height>
-              <Width>7.05652cm</Width>
+              <Width>5.58014cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>

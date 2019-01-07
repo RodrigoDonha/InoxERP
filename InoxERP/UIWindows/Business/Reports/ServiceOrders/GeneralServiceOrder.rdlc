@@ -179,7 +179,10 @@
                   <Width>1.7cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.88068cm</Width>
+                  <Width>3.08068cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.7cm</Width>
@@ -188,13 +191,10 @@
                   <Width>1.7cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.7cm</Width>
+                  <Width>2.1cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.7cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.7cm</Width>
+                  <Width>1.8cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.7cm</Width>
@@ -907,7 +907,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>17cm</Height>
+        <Height>14.96271cm</Height>
         <Style />
       </Body>
       <Width>16.22458cm</Width>
