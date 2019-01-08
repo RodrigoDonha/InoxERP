@@ -23,6 +23,7 @@ namespace UIWindows.Views.Reports.Budgets
         private void GeneralBudgetReport_Load(object sender, EventArgs e)
         {
             this.tb_budgets_osTableAdapter.Fill(this.fullDataSet.tb_budgets_os);
+            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
 
