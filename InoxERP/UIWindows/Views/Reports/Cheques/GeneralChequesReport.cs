@@ -23,6 +23,7 @@ namespace UIWindows.Views.Reports.Cheques
         private void GeneralChequesReport_Load(object sender, EventArgs e)
         {
             this.tb_chequesReportTableAdapter.Fill(this.fullDataSet.tb_chequesReport);
+            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
 

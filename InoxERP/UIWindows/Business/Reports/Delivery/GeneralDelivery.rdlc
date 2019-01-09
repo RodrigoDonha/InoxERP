@@ -184,25 +184,25 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.7cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.7cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>7.52794cm</Width>
+                  <Width>3.08068cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>7.5cm</Width>
+                  <Width>3.40911cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.1cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.8cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -220,7 +220,7 @@
                                 <TextRun>
                                   <Value>Data</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -261,7 +261,7 @@
                                 <TextRun>
                                   <Value>Código</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -302,7 +302,7 @@
                                 <TextRun>
                                   <Value>Nome</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -343,7 +343,7 @@
                                 <TextRun>
                                   <Value>Endereço</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -384,7 +384,7 @@
                                 <TextRun>
                                   <Value>Contato</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -425,7 +425,7 @@
                                 <TextRun>
                                   <Value>Situação</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -466,7 +466,7 @@
                                 <TextRun>
                                   <Value>Entrega</Value>
                                   <Style>
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -510,9 +510,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!sDate.Value</Value>
+                                  <Value>=Fields!dtDate.Value</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
+                                    <Format>dd/MM/yy</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -547,7 +549,9 @@
                                 <TextRun>
                                   <Value>=Fields!iCod.Value</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
+                                    <Format>#,0;- #,0</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -582,6 +586,7 @@
                                 <TextRun>
                                   <Value>=Fields!sName.Value</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -617,6 +622,7 @@
                                 <TextRun>
                                   <Value>=Fields!sAdress.Value</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -652,6 +658,7 @@
                                 <TextRun>
                                   <Value>=Fields!sTelephone.Value</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -687,6 +694,7 @@
                                 <TextRun>
                                   <Value>=Fields!sDelivered.Value</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -713,16 +721,18 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="sDateServiceOrderDelivered1">
+                        <Textbox Name="dtDateServiceOrderDelivered">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!sDateServiceOrderDelivered.Value</Value>
+                                  <Value>=Fields!dtDateServiceOrderDelivered.Value</Value>
                                   <Style>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
+                                    <Format>dd/MM/yy</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -731,7 +741,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>sDateServiceOrderDelivered1</rd:DefaultName>
+                          <rd:DefaultName>dtDateServiceOrderDelivered</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -794,9 +804,9 @@
               </SortExpression>
             </SortExpressions>
             <Top>0.17639cm</Top>
-            <Left>0.22755cm</Left>
+            <Left>0.1323cm</Left>
             <Height>2cm</Height>
-            <Width>27.52794cm</Width>
+            <Width>15.78979cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -804,17 +814,17 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>8.95802in</Height>
+        <Height>5.52052in</Height>
         <Style />
       </Body>
-      <Width>10.99877in</Width>
+      <Width>6.37377in</Width>
       <Page>
         <PageHeader>
           <Height>2.38125cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
-            <Textbox Name="Textbox24">
+            <Textbox Name="Textbox34">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -823,6 +833,7 @@
                     <TextRun>
                       <Value>Relatório de Entregas do tipo:</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -834,9 +845,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>0.86865cm</Top>
-              <Left>0.21844cm</Left>
+              <Left>0.1323cm</Left>
               <Height>0.6cm</Height>
-              <Width>6.33328cm</Width>
+              <Width>6.09094cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -847,7 +858,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox25">
+            <Textbox Name="Textbox35">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -856,6 +867,7 @@
                     <TextRun>
                       <Value>Emissão:</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -867,9 +879,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox22</rd:DefaultName>
               <Top>0.86865cm</Top>
-              <Left>21.33959cm</Left>
+              <Left>10.19621cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.15438cm</Width>
+              <Width>1.72588cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -881,7 +893,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox27">
+            <Textbox Name="Textbox36">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -890,18 +902,21 @@
                     <TextRun>
                       <Value>=Parameters!issueDate.Value</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox23</rd:DefaultName>
               <Top>0.86865cm</Top>
-              <Left>23.6785cm</Left>
+              <Left>12.09062cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.07699cm</Width>
+              <Width>3.83147cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -913,7 +928,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="type">
+            <Textbox Name="type4">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -922,6 +937,7 @@
                     <TextRun>
                       <Value>=Parameters!type.Value</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -931,7 +947,7 @@
               </Paragraphs>
               <rd:DefaultName>type</rd:DefaultName>
               <Top>0.86865cm</Top>
-              <Left>6.90393cm</Left>
+              <Left>6.40504cm</Left>
               <Height>0.6cm</Height>
               <Width>3.60026cm</Width>
               <ZIndex>3</ZIndex>
@@ -945,7 +961,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox28">
+            <Textbox Name="Textbox37">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -954,6 +970,7 @@
                     <TextRun>
                       <Value>InoxERP - Relatório Gerencial</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -965,9 +982,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox25</rd:DefaultName>
               <Top>0.13649cm</Top>
-              <Left>0.21844cm</Left>
+              <Left>0.1323cm</Left>
               <Height>0.6cm</Height>
-              <Width>27.5cm</Width>
+              <Width>15.78979cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -979,7 +996,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox29">
+            <Textbox Name="Textbox38">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -988,6 +1005,7 @@
                     <TextRun>
                       <Value>Data de Referencia:</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -999,9 +1017,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>1.64476cm</Top>
-              <Left>0.21844cm</Left>
+              <Left>0.1323cm</Left>
               <Height>0.6cm</Height>
-              <Width>6.33328cm</Width>
+              <Width>6.09094cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>
@@ -1013,7 +1031,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="type2">
+            <Textbox Name="type5">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1022,6 +1040,7 @@
                     <TextRun>
                       <Value>=Parameters!startDateString.Value</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1031,7 +1050,7 @@
               </Paragraphs>
               <rd:DefaultName>type</rd:DefaultName>
               <Top>1.64476cm</Top>
-              <Left>6.90393cm</Left>
+              <Left>6.40504cm</Left>
               <Height>0.6cm</Height>
               <Width>3.60026cm</Width>
               <ZIndex>6</ZIndex>
@@ -1045,7 +1064,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox6">
+            <Textbox Name="Textbox8">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1061,9 +1080,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox6</rd:DefaultName>
               <Top>1.64476cm</Top>
-              <Left>11.27485cm</Left>
+              <Left>10.19621cm</Left>
               <Height>0.6cm</Height>
-              <Width>1.44359cm</Width>
+              <Width>0.83505cm</Width>
               <ZIndex>7</ZIndex>
               <Style>
                 <Border>
@@ -1075,7 +1094,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="type3">
+            <Textbox Name="type6">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1084,6 +1103,7 @@
                     <TextRun>
                       <Value>=Parameters!endDateString.Value</Value>
                       <Style>
+                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1092,8 +1112,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>type</rd:DefaultName>
-              <Top>1.64476cm</Top>
-              <Left>13.28633cm</Left>
+              <Top>1.64367cm</Top>
+              <Left>11.22cm</Left>
               <Height>0.6cm</Height>
               <Width>3.60026cm</Width>
               <ZIndex>8</ZIndex>
@@ -1148,10 +1168,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox26</rd:DefaultName>
-              <Top>0.2cm</Top>
-              <Left>0.22755cm</Left>
+              <Top>0.17639cm</Top>
+              <Left>0.1323cm</Left>
               <Height>0.6cm</Height>
-              <Width>27.48178cm</Width>
+              <Width>15.78979cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>

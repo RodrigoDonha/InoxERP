@@ -369,3 +369,4 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWi
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.frmPaymentForms.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxERP.Core.exe
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxERP.Core.pdb
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csprojAssemblyReference.cache
