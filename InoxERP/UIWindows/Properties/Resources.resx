@@ -121,8 +121,8 @@
   <data name="Report OS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Report OS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Contract1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Contract1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="system" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\system.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Enter Money" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Enter Money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,6 +139,9 @@
   <data name="General1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\General1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="modules2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modules2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -154,8 +157,14 @@
   <data name="Provider" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Provider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="system2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\system2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Contract" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Contract.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="net2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\net2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delivery" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delivery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +184,8 @@
   <data name="if_121_14145" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\if_121_14145.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="system" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\system.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Client" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Client.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Client2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Client2.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,16 +223,10 @@
   <data name="Cheque1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cheque1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Client" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Client.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Contract1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Contract1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="modules2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modules2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="net2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\net2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="system2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\system2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -865,6 +865,7 @@
     <None Include="Resources\modules2.png" />
     <None Include="Resources\net2.png" />
     <None Include="Resources\system2.png" />
+    <None Include="Resources\error.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -116,6 +116,8 @@ namespace UIWindows.Views.Users
                 t3.Stop();
                 t4.Stop();
 
+                picNet.Image = Properties.Resources.error;
+
                 MessageBox.Show("Usuário Inválido");
 
                 Application.Restart();
