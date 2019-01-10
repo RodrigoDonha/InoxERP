@@ -145,28 +145,32 @@ namespace UIWindows
 
                             if (clientsSearch.ReturnClients != null)
                             {
-                                InoxErpContext ctxS = new InoxErpContext();
-                                Budget_OSBusiness objS = new Budget_OSBusiness(ctxS);
-                                Budgets_OS b = new Budgets_OS();
+                                if (messageYesNo("changeClient") == DialogResult.Yes)
+                                {
+                                    InoxErpContext ctxS = new InoxErpContext();
+                                    Budget_OSBusiness objS = new Budget_OSBusiness(ctxS);
+                                    Budgets_OS b = new Budgets_OS();
 
-                                b = objS.ReturnByID(getId);
+                                    b = objS.ReturnByID(getId);
 
-                                b.IdClients = clientsSearch.ReturnClients.sID;
-                                b.sName = clientsSearch.ReturnClients.sName;
-                                b.sAdress = clientsSearch.ReturnClients.sAdress;
-                                b.sTelephone = clientsSearch.ReturnClients.sPhoneCelularOne;
-                                b.sOccupation = clientsSearch.ReturnClients.sOccupation;
+                                    b.IdClients = clientsSearch.ReturnClients.sID;
+                                    b.sName = clientsSearch.ReturnClients.sName;
+                                    b.sAdress = clientsSearch.ReturnClients.sAdress;
+                                    b.sTelephone = clientsSearch.ReturnClients.sPhoneCelularOne;
+                                    b.sOccupation = clientsSearch.ReturnClients.sOccupation;
 
-                                objS.Update(b);
+                                    objS.Update(b);
 
-                                var ok = objS.Search.FirstOrDefault(t => t.sID == b.sID);
+                                    var ok = objS.Search.FirstOrDefault(t => t.sID == b.sID);
 
-                                MessageBox.Show(ok == null
-                                    ? "Erro ao Atualizar o Orçamento !!!"
-                                    : "Orçamento Atualizado com Sucesso !!!");
+                                    MessageBox.Show(ok == null
+                                        ? "Erro ao Atualizar o Orçamento !!!"
+                                        : "Orçamento Atualizado com Sucesso !!!");
 
-                                checkContract(getId);
-                                btnGerarContrato_Click(sender, e);
+                                    fillDataSet();
+                                    checkContract(getId);
+                                    btnGerarContrato_Click(sender, e);
+                                }
                             }
                         }
                     }
@@ -307,15 +311,17 @@ namespace UIWindows
             switch (type)
             {
                 case "Exclude":
-                    return MessageBox.Show("Confirma excluisão?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma excluisão ?", "Orçamento", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Desapprove":
-                    return MessageBox.Show("Confirma a Desaprovação deste orçamento?", "Ordem de Serviço", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma a Desaprovação deste orçamento ?", "Ordem de Serviço", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "Finished":
-                    return MessageBox.Show("Confirma a Finalização do Serviço?", "Finalizar Serviço", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma a Finalização do Serviço ?", "Finalizar Serviço", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "client":
-                    return MessageBox.Show("Deseja Selecionar um Cliente para esta Ordem de Serviço e continuar com a emissão de contrato", "Escolher Cliente", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    return MessageBox.Show("Deseja Selecionar um Cliente para esta Ordem de Serviço e continuar com a emissão de contrato ?", "Escolher Cliente", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                case "changeClient":
+                    return MessageBox.Show("Confirma o Cliente Escolhido para Troca ?", "Mudança de Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "CreateContract":
-                    return MessageBox.Show("Confirma a Geração do Contrato?", "Gerar Contrato", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                    return MessageBox.Show("Confirma a Geração do Contrato ?", "Gerar Contrato", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             }
             return DialogResult.No;
         }

@@ -108,7 +108,7 @@ namespace UIWindows.Views
             switch (DateTime.Today.Month)
             {
                 case 1:
-                    return "Janeiro"  + DateTime.Today.Year + "\\" + DateTime.Today.ToShortDateString().Replace("/", "-");
+                    return "Janeiro "  + DateTime.Today.Year + "\\" + DateTime.Today.ToShortDateString().Replace("/", "-");
                 case 2:
                     return "Fevereiro " + DateTime.Today.Year + "\\" + DateTime.Today.ToShortDateString().Replace("/", "-");
                 case 3:
