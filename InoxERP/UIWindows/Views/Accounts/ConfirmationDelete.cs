@@ -39,7 +39,7 @@ namespace UIWindows.Views.Accounts
         {
             InoxErpContext ctx = new InoxErpContext();
             UsersBusiness objUser = new UsersBusiness(ctx);
-            Users u = new Users
+            Entities.Users u = new Entities.Users
             {
                 sLogin = txtLogin.Text,
                 sKey = objUser.getMD5Hash(txtSenha.Text)

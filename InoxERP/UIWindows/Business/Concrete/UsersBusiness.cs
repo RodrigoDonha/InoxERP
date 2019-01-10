@@ -36,7 +36,7 @@ namespace UIWindows.Business.Concrete
         {
             try
             {
-                return context.Users.FirstOrDefault(u => u.sLogin == user.sLogin && u.sKey == user.sKey);
+                return context.Users.AsNoTracking().FirstOrDefault(u => u.sLogin == user.sLogin && u.sKey == user.sKey);
             }
             catch (Exception e)
             {

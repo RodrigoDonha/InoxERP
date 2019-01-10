@@ -329,6 +329,12 @@
     <Compile Include="Views\ServicesOrders\ServiceOrdersPrint.Designer.cs">
       <DependentUpon>ServiceOrdersPrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Users\frmChargingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Users\frmChargingScreen.Designer.cs">
+      <DependentUpon>frmChargingScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Users\SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -627,6 +633,9 @@
     <EmbeddedResource Include="Views\ServicesOrders\ServiceOrdersPrint.resx">
       <DependentUpon>ServiceOrdersPrint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Users\frmChargingScreen.resx">
+      <DependentUpon>frmChargingScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Users\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -850,6 +859,12 @@
     <None Include="Resources\esc1.jpeg" />
     <None Include="Resources\esc2.jpeg" />
     <None Include="Resources\esc2menor.png" />
+    <None Include="Resources\net.png" />
+    <None Include="Resources\modules.png" />
+    <None Include="Resources\system.png" />
+    <None Include="Resources\modules2.png" />
+    <None Include="Resources\net2.png" />
+    <None Include="Resources\system2.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

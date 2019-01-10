@@ -7,6 +7,7 @@ using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
 using UIWindows.Entities.Enum;
+using UIWindows.Views.Users;
 
 namespace UIWindows
 {
@@ -15,7 +16,7 @@ namespace UIWindows
         static InoxErpContext context = new InoxErpContext();
         UsersBusiness UserBusiness = new UsersBusiness(context);
         public Users user = new Users();
-        public bool log = false;
+        public bool log { get; set; } = false;
 
         public frmSignIn()
         {
@@ -44,18 +45,16 @@ namespace UIWindows
                 }
                 else
                 {
-                    user = UserBusiness.signIn(user);
+                    this.Hide();
+                    
+                    frmChargingScreen login = new frmChargingScreen(user);
 
-                    if (user == null)
-                    {
-                        MessageBox.Show("Usuário Inválido");
-                        Application.Restart();
-                    }
-                    else
-                    {
-                        log = true;
-                        this.Dispose();
-                    }
+                    login.ShowDialog();
+
+                    user = login.u;
+                    log = login.log;
+
+                    Dispose();
                 }
         }
 
