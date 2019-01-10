@@ -23,6 +23,7 @@ namespace UIWindows.Views.Reports.Accounts
         private void AccountsPayableReport_Load(object sender, EventArgs e)
         {
             this.tb_accountsToPayTableAdapter.Fill(this.fullDataSet.tb_accountsToPay);
+            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
 

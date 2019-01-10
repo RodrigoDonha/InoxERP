@@ -119,6 +119,7 @@ namespace UIWindows.Views.Reports.Contracts
         private void ContractPrint_Load(object sender, EventArgs e)
         {
             this.tb_contractsTableAdapter.Fill(this.fullDataSet.tb_contracts);
+            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
         }
     }
 }

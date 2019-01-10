@@ -24,6 +24,7 @@ namespace UIWindows.Views.Reports.Cash
         private void TypeLaunchCashReport_Load(object sender, EventArgs e)
         {
             this.tb_cashReportTableAdapter.Fill(this.fullDataSet.tb_cashReport);
+            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
 

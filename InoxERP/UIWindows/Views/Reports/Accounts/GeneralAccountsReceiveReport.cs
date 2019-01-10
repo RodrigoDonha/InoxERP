@@ -23,6 +23,7 @@ namespace UIWindows.Views.Reports.Accounts
         private void GeneralAccountsReceiveReport_Load(object sender, EventArgs e)
         {
             this.tb_accountsToReceiveTableAdapter.Fill(this.fullDataSet.tb_accountsToReceive);
+            reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             this.reportViewer1.RefreshReport();
         }
 
