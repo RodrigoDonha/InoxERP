@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.fullDataSet = new UIWindows.FullDataSet();
             this.tb_accountsToPayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tb_accountsToPayTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToPayTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_accountsToPayBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tb_accountsToPayBindingSource
+            // 
+            this.tb_accountsToPayBindingSource.DataMember = "tb_accountsToPay";
+            this.tb_accountsToPayBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,23 +56,17 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Accounts.GeneralAccounts.ParcialPay.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(632, 749);
             this.reportViewer1.TabIndex = 0;
             // 
-            // fullDataSet
+            // tb_accountsToPayTableAdapter
             // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-
+            this.tb_accountsToPayTableAdapter.ClearBeforeFill = true;
             // 
-            // tbAccountsToPayBindingSource
-            // 
-            this.tb_accountsToPayBindingSource.DataMember = "tb_accountsToPay";
-            this.tb_accountsToPayBindingSource.DataSource = this.fullDataSet;
-            // 
-            // GeneralAccountsReport
+            // ParcialPayReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -71,9 +75,10 @@
             this.Name = "ParcialPayReport";
             this.Text = "Impressão de Relatório";
             this.Load += new System.EventHandler(this.ParcialPayReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_accountsToPayBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

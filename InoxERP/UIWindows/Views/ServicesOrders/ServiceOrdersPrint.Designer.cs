@@ -64,7 +64,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(632, 749);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
-            
             // 
             // tb_itemsTableAdapter
             // 

@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.fullDataSet = new UIWindows.FullDataSet();
             this.tb_accountsToRecieveBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_accountsToRecieveBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tb_accountsToRecieveBindingSource
+            // 
+            this.tb_accountsToRecieveBindingSource.DataMember = "tb_accountstoReceive";
+            this.tb_accountsToRecieveBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,22 +56,17 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "UIWindows.Business.Reports.Accounts.GeneralAccounts.AccountsReceived.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(632, 749);
             this.reportViewer1.TabIndex = 0;
             // 
-            // fullDataSet
+            // tb_accountsToReceiveTableAdapter
             // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tb_accountsToReceiveTableAdapter.ClearBeforeFill = true;
             // 
-            // tbAccountsToRecieveBindingSource
-            // 
-            this.tb_accountsToRecieveBindingSource.DataMember = "tb_accountstoReceive";
-            this.tb_accountsToRecieveBindingSource.DataSource = this.fullDataSet;
-            // 
-            // GeneralAccountsReceiveReport
+            // AccountsReceivedReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,10 +75,10 @@
             this.Name = "AccountsReceivedReport";
             this.Text = "Impressão de Relatório";
             this.Load += new System.EventHandler(this.AccountsReceivedReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tb_accountsToRecieveBindingSource)).EndInit();
-
+            ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -535,7 +535,6 @@
     <EmbeddedResource Include="Business\Reports\Budgets\GerenalBudgest.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\SituationBudgets.rdlc" />
     <EmbeddedResource Include="Business\Reports\Budgets\BudgetWithPrice.rdlc" />
-    <EmbeddedResource Include="Business\Reports\Cash\CashReceived.rdlc" />
     <EmbeddedResource Include="Business\Reports\Cash\GeneralCash.rdlc" />
     <EmbeddedResource Include="Business\Reports\Cash\TypeLaunchCash.rdlc" />
     <EmbeddedResource Include="Business\Reports\Cheques\GeneralCheques.rdlc" />
@@ -866,6 +865,14 @@
     <None Include="Resources\net2.png" />
     <None Include="Resources\system2.png" />
     <None Include="Resources\error.png" />
+    <None Include="Resources\LogoMarcaDagua1.jpeg" />
+    <None Include="Resources\transparent.png" />
+    <None Include="Resources\Transparent.bmp" />
+    <None Include="Resources\transparent.jpeg" />
+    <None Include="Resources\Transparent1.png" />
+    <None Include="Resources\Payable.png" />
+    <None Include="Resources\LogoTransparent80Percent.jpeg" />
+    <None Include="Resources\LogoTransparent70Percent.jpeg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

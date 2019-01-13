@@ -100,31 +100,31 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.9cm</Width>
+                  <Width>2.30863cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.8cm</Width>
+                  <Width>2.20863cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>2.40863cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.08979cm</Width>
+                  <Width>2.49842cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.2cm</Width>
+                  <Width>1.60863cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.4cm</Width>
+                  <Width>1.80863cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.8cm</Width>
+                  <Width>2.20863cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.8cm</Width>
+                  <Width>2.20863cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.8cm</Width>
+                  <Width>2.20863cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -142,7 +142,6 @@
                                 <TextRun>
                                   <Value>Vencimento</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -177,7 +176,6 @@
                                 <TextRun>
                                   <Value>Número Cheque</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -212,7 +210,6 @@
                                 <TextRun>
                                   <Value>Cliente</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -247,7 +244,6 @@
                                 <TextRun>
                                   <Value>Referente a</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -282,7 +278,6 @@
                                 <TextRun>
                                   <Value>Parcela</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -317,7 +312,6 @@
                                 <TextRun>
                                   <Value>Quant Parcelas</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -352,7 +346,6 @@
                                 <TextRun>
                                   <Value>Situação</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -387,7 +380,6 @@
                                 <TextRun>
                                   <Value>Pagamento</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -422,7 +414,6 @@
                                 <TextRun>
                                   <Value>Valor</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -461,9 +452,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!sDueDate.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -495,9 +484,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!sChequeNumber.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -529,9 +516,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!sName.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -563,9 +548,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!sReferentTo.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -597,9 +580,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!iInstallment.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -631,9 +612,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!iAmountInstallment.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -665,9 +644,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!sSituation.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -699,9 +676,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!sPayDate.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -733,9 +708,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!dValue.Value</Value>
-                                  <Style>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -773,7 +746,6 @@
                                 <TextRun>
                                   <Value>Quantidade:</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -808,7 +780,6 @@
                                 <TextRun>
                                   <Value>=Count(Fields!dValue.Value)</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1003,7 +974,6 @@
                                 <TextRun>
                                   <Value>Total:</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1038,7 +1008,6 @@
                                 <TextRun>
                                   <Value>=Sum(Fields!dValue.Value)</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1122,9 +1091,9 @@
               </SortExpression>
             </SortExpressions>
             <Top>0.1905cm</Top>
-            <Left>0.13629cm</Left>
+            <Left>0.21625cm</Left>
             <Height>3cm</Height>
-            <Width>15.78979cm</Width>
+            <Width>19.46746cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1132,13 +1101,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>5.8226in</Height>
+        <Height>20cm</Height>
         <Style />
       </Body>
-      <Width>6.31127in</Width>
+      <Width>19.9cm</Width>
       <Page>
         <PageHeader>
-          <Height>2.38125cm</Height>
+          <Height>2.5cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1151,7 +1120,6 @@
                     <TextRun>
                       <Value>Relatório de Cheques do tipo:</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1162,10 +1130,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
-              <Top>0.86865cm</Top>
-              <Left>0.13629cm</Left>
+              <Top>0.9127cm</Top>
+              <Left>0.21625cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.50344cm</Width>
+              <Width>5.50885cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1185,7 +1153,6 @@
                     <TextRun>
                       <Value>Emissão:</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1196,8 +1163,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox22</rd:DefaultName>
-              <Top>0.86865cm</Top>
-              <Left>10.2002cm</Left>
+              <Top>0.9127cm</Top>
+              <Left>13.92326cm</Left>
               <Height>0.6cm</Height>
               <Width>1.72588cm</Width>
               <ZIndex>1</ZIndex>
@@ -1220,7 +1187,6 @@
                     <TextRun>
                       <Value>=Parameters!issueDate.Value</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1231,10 +1197,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox23</rd:DefaultName>
-              <Top>0.86865cm</Top>
-              <Left>12.09461cm</Left>
+              <Top>0.9127cm</Top>
+              <Left>15.82553cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.83147cm</Width>
+              <Width>3.85821cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -1246,7 +1212,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="type4">
+            <Textbox Name="type5">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1255,7 +1221,6 @@
                     <TextRun>
                       <Value>=Parameters!type.Value</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1264,10 +1229,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>type</rd:DefaultName>
-              <Top>0.86865cm</Top>
-              <Left>4.81612cm</Left>
+              <Top>0.9127cm</Top>
+              <Left>5.90149cm</Left>
               <Height>0.6cm</Height>
-              <Width>5.19317cm</Width>
+              <Width>7.84538cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -1288,7 +1253,6 @@
                     <TextRun>
                       <Value>InoxERP - Relatório Gerencial</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1299,10 +1263,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox25</rd:DefaultName>
-              <Top>0.13649cm</Top>
-              <Left>0.13629cm</Left>
+              <Top>0.18054cm</Top>
+              <Left>0.21625cm</Left>
               <Height>0.6cm</Height>
-              <Width>15.78979cm</Width>
+              <Width>19.46749cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -1323,7 +1287,6 @@
                     <TextRun>
                       <Value>Data de Referencia:</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
@@ -1334,10 +1297,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
-              <Top>1.64476cm</Top>
-              <Left>0.13629cm</Left>
+              <Top>1.6888cm</Top>
+              <Left>0.21625cm</Left>
               <Height>0.6cm</Height>
-              <Width>6.09094cm</Width>
+              <Width>3.5774cm</Width>
               <ZIndex>5</ZIndex>
               <Style>
                 <Border>
@@ -1349,7 +1312,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="type5">
+            <Textbox Name="type6">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1358,19 +1321,21 @@
                     <TextRun>
                       <Value>=Parameters!startDateString.Value</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <TextDecoration>None</TextDecoration>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>type</rd:DefaultName>
-              <Top>1.64476cm</Top>
-              <Left>6.40903cm</Left>
+              <Top>1.6888cm</Top>
+              <Left>5.42524cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.60026cm</Width>
+              <Width>3.5cm</Width>
               <ZIndex>6</ZIndex>
               <Style>
                 <Border>
@@ -1393,12 +1358,14 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox6</rd:DefaultName>
-              <Top>1.64476cm</Top>
-              <Left>10.2002cm</Left>
+              <Top>1.71946cm</Top>
+              <Left>9.10163cm</Left>
               <Height>0.6cm</Height>
               <Width>0.83505cm</Width>
               <ZIndex>7</ZIndex>
@@ -1412,7 +1379,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="type6">
+            <Textbox Name="type7">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1421,19 +1388,21 @@
                     <TextRun>
                       <Value>=Parameters!endDateString.Value</Value>
                       <Style>
-                        <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
+                        <TextDecoration>None</TextDecoration>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>type</rd:DefaultName>
-              <Top>1.64367cm</Top>
-              <Left>11.22399cm</Left>
+              <Top>1.71946cm</Top>
+              <Left>10.11308cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.60026cm</Width>
+              <Width>3.5cm</Width>
               <ZIndex>8</ZIndex>
               <Style>
                 <Border>
@@ -1487,9 +1456,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox26</rd:DefaultName>
               <Top>0.2cm</Top>
-              <Left>0.13629cm</Left>
+              <Left>0.21625cm</Left>
               <Height>0.6cm</Height>
-              <Width>15.78979cm</Width>
+              <Width>19.46749cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1509,10 +1478,10 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>0.50cm</LeftMargin>
-        <RightMargin>0.50cm</RightMargin>
-        <TopMargin>0.50cm</TopMargin>
-        <BottomMargin>0.50cm</BottomMargin>
+        <LeftMargin>0.5cm</LeftMargin>
+        <RightMargin>0.5cm</RightMargin>
+        <TopMargin>0.5cm</TopMargin>
+        <BottomMargin>0.5cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
