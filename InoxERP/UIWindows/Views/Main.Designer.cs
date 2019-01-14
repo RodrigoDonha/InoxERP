@@ -260,14 +260,14 @@ namespace InoxERP
             // tipConsultaOS
             // 
             this.tipConsultaOS.Name = "tipConsultaOS";
-            this.tipConsultaOS.Size = new System.Drawing.Size(148, 26);
+            this.tipConsultaOS.Size = new System.Drawing.Size(180, 26);
             this.tipConsultaOS.Text = "Consulta";
             this.tipConsultaOS.Click += new System.EventHandler(this.tipConsultaOS_Click);
             // 
             // contratosToolStripMenuItem
             // 
             this.contratosToolStripMenuItem.Name = "contratosToolStripMenuItem";
-            this.contratosToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.contratosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.contratosToolStripMenuItem.Text = "Contratos";
             this.contratosToolStripMenuItem.Click += new System.EventHandler(this.contratosToolStripMenuItem_Click);
             // 
@@ -464,11 +464,11 @@ namespace InoxERP
             // lblConsultaOS
             // 
             this.lblConsultaOS.AutoSize = true;
-            this.lblConsultaOS.Location = new System.Drawing.Point(26, 78);
+            this.lblConsultaOS.Location = new System.Drawing.Point(6, 78);
             this.lblConsultaOS.Name = "lblConsultaOS";
-            this.lblConsultaOS.Size = new System.Drawing.Size(79, 17);
+            this.lblConsultaOS.Size = new System.Drawing.Size(115, 17);
             this.lblConsultaOS.TabIndex = 10;
-            this.lblConsultaOS.Text = "Consultas";
+            this.lblConsultaOS.Text = "Ordem Serviço";
             // 
             // picContratos
             // 
@@ -501,7 +501,7 @@ namespace InoxERP
             this.gpbEntregas.Location = new System.Drawing.Point(384, 35);
             this.gpbEntregas.Name = "gpbEntregas";
             this.gpbEntregas.Size = new System.Drawing.Size(112, 182);
-            this.gpbEntregas.TabIndex = 14;
+            this.gpbEntregas.TabIndex = 15;
             this.gpbEntregas.TabStop = false;
             this.gpbEntregas.Text = "Entregas";
             // 
@@ -560,7 +560,7 @@ namespace InoxERP
             this.gpbContas.Location = new System.Drawing.Point(502, 35);
             this.gpbContas.Name = "gpbContas";
             this.gpbContas.Size = new System.Drawing.Size(112, 343);
-            this.gpbContas.TabIndex = 15;
+            this.gpbContas.TabIndex = 16;
             this.gpbContas.TabStop = false;
             this.gpbContas.Text = "Contas";
             // 
@@ -657,7 +657,7 @@ namespace InoxERP
             this.gpbCaixa.Location = new System.Drawing.Point(620, 35);
             this.gpbCaixa.Name = "gpbCaixa";
             this.gpbCaixa.Size = new System.Drawing.Size(112, 255);
-            this.gpbCaixa.TabIndex = 16;
+            this.gpbCaixa.TabIndex = 17;
             this.gpbCaixa.TabStop = false;
             this.gpbCaixa.Text = "Caixa";
             // 
@@ -740,7 +740,7 @@ namespace InoxERP
             this.gpbRelatorios.Location = new System.Drawing.Point(738, 35);
             this.gpbRelatorios.Name = "gpbRelatorios";
             this.gpbRelatorios.Size = new System.Drawing.Size(218, 255);
-            this.gpbRelatorios.TabIndex = 14;
+            this.gpbRelatorios.TabIndex = 18;
             this.gpbRelatorios.TabStop = false;
             this.gpbRelatorios.Text = "Relatórios";
             // 
@@ -868,9 +868,10 @@ namespace InoxERP
             // 
             this.lblBackup.AutoSize = true;
             this.lblBackup.BackColor = System.Drawing.Color.Transparent;
-            this.lblBackup.Location = new System.Drawing.Point(873, 427);
+            this.lblBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBackup.Location = new System.Drawing.Point(871, 427);
             this.lblBackup.Name = "lblBackup";
-            this.lblBackup.Size = new System.Drawing.Size(63, 20);
+            this.lblBackup.Size = new System.Drawing.Size(61, 17);
             this.lblBackup.TabIndex = 21;
             this.lblBackup.Text = "Backup";
             // 
@@ -1087,7 +1088,7 @@ namespace InoxERP
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = global::UIWindows.Properties.Resources.LogoTransparent70Percent;
+            this.BackgroundImage = global::UIWindows.Properties.Resources.LogoTransparent80Percent;
             this.ClientSize = new System.Drawing.Size(966, 463);
             this.Controls.Add(this.picRestart);
             this.Controls.Add(this.lblLogado);
@@ -1105,6 +1106,7 @@ namespace InoxERP
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnsMenu;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InoxERP - Principal";
