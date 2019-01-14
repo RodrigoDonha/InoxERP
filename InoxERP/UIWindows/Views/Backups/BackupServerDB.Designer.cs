@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBackupServerDB));
             this.gpbBackup = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.lblLocal = new System.Windows.Forms.Label();
             this.txtDestino = new System.Windows.Forms.TextBox();
             this.prbCopiando = new System.Windows.Forms.ProgressBar();
@@ -40,12 +41,16 @@
             this.lblBanco = new System.Windows.Forms.Label();
             this.lblServidor = new System.Windows.Forms.Label();
             this.ttBackup = new System.Windows.Forms.ToolTip(this.components);
+            this.fbdSearch = new System.Windows.Forms.FolderBrowserDialog();
+            this.lblProgress = new System.Windows.Forms.Label();
             this.gpbBackup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackup)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbBackup
             // 
+            this.gpbBackup.Controls.Add(this.lblProgress);
+            this.gpbBackup.Controls.Add(this.btnSearch);
             this.gpbBackup.Controls.Add(this.lblLocal);
             this.gpbBackup.Controls.Add(this.txtDestino);
             this.gpbBackup.Controls.Add(this.prbCopiando);
@@ -64,10 +69,21 @@
             this.gpbBackup.TabStop = false;
             this.gpbBackup.Text = "Backup";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::UIWindows.Properties.Resources.search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Location = new System.Drawing.Point(401, 119);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(48, 42);
+            this.btnSearch.TabIndex = 22;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // lblLocal
             // 
             this.lblLocal.AutoSize = true;
-            this.lblLocal.Location = new System.Drawing.Point(209, 96);
+            this.lblLocal.Location = new System.Drawing.Point(209, 98);
             this.lblLocal.Margin = new System.Windows.Forms.Padding(7);
             this.lblLocal.Name = "lblLocal";
             this.lblLocal.Size = new System.Drawing.Size(56, 17);
@@ -79,7 +95,7 @@
             this.txtDestino.Location = new System.Drawing.Point(15, 129);
             this.txtDestino.Margin = new System.Windows.Forms.Padding(7);
             this.txtDestino.Name = "txtDestino";
-            this.txtDestino.Size = new System.Drawing.Size(434, 23);
+            this.txtDestino.Size = new System.Drawing.Size(376, 23);
             this.txtDestino.TabIndex = 20;
             this.txtDestino.Text = "C:\\Users\\Lucas\\OneDrive";
             this.txtDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -87,7 +103,7 @@
             // prbCopiando
             // 
             this.prbCopiando.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.prbCopiando.Location = new System.Drawing.Point(15, 196);
+            this.prbCopiando.Location = new System.Drawing.Point(15, 205);
             this.prbCopiando.Margin = new System.Windows.Forms.Padding(7);
             this.prbCopiando.Name = "prbCopiando";
             this.prbCopiando.Size = new System.Drawing.Size(434, 34);
@@ -157,6 +173,16 @@
             this.ttBackup.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttBackup.ToolTipTitle = "Backup";
             // 
+            // lblProgress
+            // 
+            this.lblProgress.AutoSize = true;
+            this.lblProgress.Location = new System.Drawing.Point(204, 176);
+            this.lblProgress.Margin = new System.Windows.Forms.Padding(7);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(73, 17);
+            this.lblProgress.TabIndex = 23;
+            this.lblProgress.Text = "Progresso";
+            // 
             // frmBackupServerDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,5 +214,8 @@
         private System.Windows.Forms.TextBox txtDestino;
         private System.Windows.Forms.Label lblLocal;
         private System.Windows.Forms.ToolTip ttBackup;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.FolderBrowserDialog fbdSearch;
+        private System.Windows.Forms.Label lblProgress;
     }
 }

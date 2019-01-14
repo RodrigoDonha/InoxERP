@@ -208,7 +208,7 @@ namespace InoxERP
             string server = "(localdb)\\MSSQLLocalDB";
             string DB = "InoxErpDB";
             string destiny = "C:\\Users\\Lucas\\OneDrive";
-            //string destiny = "C:\\Users\\jefte\\OneDrive\\Backup";
+            //string destiny = "C:\\Users\\jefte\\OneDrive";
 
             try
             {

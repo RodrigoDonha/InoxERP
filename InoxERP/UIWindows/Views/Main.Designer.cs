@@ -260,14 +260,14 @@ namespace InoxERP
             // tipConsultaOS
             // 
             this.tipConsultaOS.Name = "tipConsultaOS";
-            this.tipConsultaOS.Size = new System.Drawing.Size(180, 26);
+            this.tipConsultaOS.Size = new System.Drawing.Size(148, 26);
             this.tipConsultaOS.Text = "Consulta";
             this.tipConsultaOS.Click += new System.EventHandler(this.tipConsultaOS_Click);
             // 
             // contratosToolStripMenuItem
             // 
             this.contratosToolStripMenuItem.Name = "contratosToolStripMenuItem";
-            this.contratosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.contratosToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.contratosToolStripMenuItem.Text = "Contratos";
             this.contratosToolStripMenuItem.Click += new System.EventHandler(this.contratosToolStripMenuItem_Click);
             // 
@@ -1089,6 +1089,7 @@ namespace InoxERP
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::UIWindows.Properties.Resources.LogoTransparent80Percent;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(966, 463);
             this.Controls.Add(this.picRestart);
             this.Controls.Add(this.lblLogado);
@@ -1102,6 +1103,7 @@ namespace InoxERP
             this.Controls.Add(this.gpbOrcamentos);
             this.Controls.Add(this.gpbCadastros);
             this.Controls.Add(this.mnsMenu);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnsMenu;

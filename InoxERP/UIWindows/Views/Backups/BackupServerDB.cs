@@ -72,6 +72,8 @@ namespace UIWindows.Views
             string destinyB = "";
             prbCopiando.Value = 0;
 
+            string user = "C:\\Users\\" + Environment.UserName + "\\OneDrive";
+
             try
             {
                 Server dbServer = new Server(new ServerConnection(server));
@@ -84,7 +86,8 @@ namespace UIWindows.Views
                 if (txtDestino.Text == "")
                     destinyB = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\Backup\\InoxErpDB\\" + returnDate();
                 else
-                    destinyB = @"" + destiny + "\\Backup\\InoxErpDB\\" + returnDate();
+                    destinyB = @"" + user + "\\Backup\\InoxErpDB\\" + returnDate();
+                    //destinyB = @"" + destiny + "\\Backup\\InoxErpDB\\" + returnDate();
 
                 if (!Directory.Exists(destinyB))
                 {
@@ -143,6 +146,22 @@ namespace UIWindows.Views
                 prbCopiando.Value = e.Percent;
                 prbCopiando.Update();
             });
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fbdSearch.SelectedPath = txtDestino.Text;
+                if (fbdSearch.ShowDialog() == DialogResult.OK)
+                {
+                    txtDestino.Text = fbdSearch.SelectedPath;
+                }
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

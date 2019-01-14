@@ -873,6 +873,9 @@
     <None Include="Resources\Payable.png" />
     <None Include="Resources\LogoTransparent80Percent.jpeg" />
     <None Include="Resources\LogoTransparent70Percent.jpeg" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\search2.png" />
+    <None Include="Resources\logo.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
