@@ -159,6 +159,10 @@
     <Compile Include="Migrations\201812281932522_addcampsdpaiddremaing.Designer.cs">
       <DependentUpon>201812281932522_addcampsdpaiddremaing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901202315570_alter_properties_notnull_camps_sPhones_providers.cs" />
+    <Compile Include="Migrations\201901202315570_alter_properties_notnull_camps_sPhones_providers.Designer.cs">
+      <DependentUpon>201901202315570_alter_properties_notnull_camps_sPhones_providers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Views\Accounts\ChequeNumber.cs">
       <SubType>Form</SubType>
@@ -547,6 +551,9 @@
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
     <EmbeddedResource Include="Migrations\201812281932522_addcampsdpaiddremaing.resx">
       <DependentUpon>201812281932522_addcampsdpaiddremaing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901202315570_alter_properties_notnull_camps_sPhones_providers.resx">
+      <DependentUpon>201901202315570_alter_properties_notnull_camps_sPhones_providers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Accounts\ChequeNumber.resx">
       <DependentUpon>ChequeNumber.cs</DependentUpon>

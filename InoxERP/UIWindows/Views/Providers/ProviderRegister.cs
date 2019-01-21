@@ -283,11 +283,17 @@ namespace InoxERP.UI_Windows_Forms
                 return false;
             }
 
-            if (txtContatosComercial.Text.Length.Equals(0) & txtContatosCelular1.Text.Length.Equals(0) & txtContatosCelular2.Text.Length.Equals(0))
+            if (txtContatosComercial.Text.Length.Equals(0))
             {
-                MessageBox.Show("Informe um Telefone");
+                MessageBox.Show("Informe um Telefone Comercial");
                 return false;
             }
+
+            //if (txtContatosComercial.Text.Length.Equals(0) & txtContatosCelular1.Text.Length.Equals(0) & txtContatosCelular2.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe um Telefone");
+            //    return false;
+            //}
 
             //if (txtContatosEmail.Text.Length.Equals(0))
             //{
@@ -383,6 +389,12 @@ namespace InoxERP.UI_Windows_Forms
         public void validationEntriesPhones(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyPhones(sender, e);
+        }
+
+        private void btnCopiarDadosEmpresa_Click(object sender, EventArgs e)
+        {
+            txtFavorecido.Text = txtNome.Text;
+            txtCpfCnpj.Text = txtCPF_CNPJ.Text;
         }
     }
 }

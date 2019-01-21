@@ -77,6 +77,8 @@
             this.txtAgencia = new System.Windows.Forms.TextBox();
             this.lblAgencia = new System.Windows.Forms.Label();
             this.lblAsterisco = new System.Windows.Forms.Label();
+            this.btnCopiarDadosEmpresa = new System.Windows.Forms.Button();
+            this.lblCopiarDadosEmpresa = new System.Windows.Forms.Label();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -183,9 +185,9 @@
             this.lblContatosCelular1.AutoSize = true;
             this.lblContatosCelular1.Location = new System.Drawing.Point(5, 81);
             this.lblContatosCelular1.Name = "lblContatosCelular1";
-            this.lblContatosCelular1.Size = new System.Drawing.Size(69, 17);
+            this.lblContatosCelular1.Size = new System.Drawing.Size(56, 17);
             this.lblContatosCelular1.TabIndex = 26;
-            this.lblContatosCelular1.Text = "Celular:  *";
+            this.lblContatosCelular1.Text = "Celular:";
             // 
             // txtContatosEmail
             // 
@@ -230,9 +232,9 @@
             this.lblContatosResidencial.AutoSize = true;
             this.lblContatosResidencial.Location = new System.Drawing.Point(5, 29);
             this.lblContatosResidencial.Name = "lblContatosResidencial";
-            this.lblContatosResidencial.Size = new System.Drawing.Size(78, 17);
+            this.lblContatosResidencial.Size = new System.Drawing.Size(87, 17);
             this.lblContatosResidencial.TabIndex = 4;
-            this.lblContatosResidencial.Text = "Comercial.:";
+            this.lblContatosResidencial.Text = "Comercial.: *";
             // 
             // lblContatosCelular2
             // 
@@ -479,6 +481,8 @@
             // 
             // grpDadosBancarios
             // 
+            this.grpDadosBancarios.Controls.Add(this.lblCopiarDadosEmpresa);
+            this.grpDadosBancarios.Controls.Add(this.btnCopiarDadosEmpresa);
             this.grpDadosBancarios.Controls.Add(this.txtCompraMinima);
             this.grpDadosBancarios.Controls.Add(this.lblCompraMinima);
             this.grpDadosBancarios.Controls.Add(this.txtFavorecido);
@@ -623,6 +627,26 @@
             this.lblAsterisco.TabIndex = 28;
             this.lblAsterisco.Text = "* Campos Obrigatórios";
             // 
+            // btnCopiarDadosEmpresa
+            // 
+            this.btnCopiarDadosEmpresa.Location = new System.Drawing.Point(891, 89);
+            this.btnCopiarDadosEmpresa.Name = "btnCopiarDadosEmpresa";
+            this.btnCopiarDadosEmpresa.Size = new System.Drawing.Size(120, 31);
+            this.btnCopiarDadosEmpresa.TabIndex = 39;
+            this.btnCopiarDadosEmpresa.Text = "Copiar Dados";
+            this.btnCopiarDadosEmpresa.UseVisualStyleBackColor = true;
+            this.btnCopiarDadosEmpresa.Click += new System.EventHandler(this.btnCopiarDadosEmpresa_Click);
+            // 
+            // lblCopiarDadosEmpresa
+            // 
+            this.lblCopiarDadosEmpresa.AutoSize = true;
+            this.lblCopiarDadosEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopiarDadosEmpresa.Location = new System.Drawing.Point(852, 62);
+            this.lblCopiarDadosEmpresa.Name = "lblCopiarDadosEmpresa";
+            this.lblCopiarDadosEmpresa.Size = new System.Drawing.Size(197, 17);
+            this.lblCopiarDadosEmpresa.TabIndex = 40;
+            this.lblCopiarDadosEmpresa.Text = "Copiar Dados da Empresa";
+            // 
             // frmProviderRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -708,5 +732,7 @@
         private System.Windows.Forms.Label lblAgencia;
         private System.Windows.Forms.ComboBox cmbEstate;
         private System.Windows.Forms.Label lblAsterisco;
+        private System.Windows.Forms.Label lblCopiarDadosEmpresa;
+        private System.Windows.Forms.Button btnCopiarDadosEmpresa;
     }
 }

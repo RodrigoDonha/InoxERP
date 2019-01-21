@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UIWindows.Entities;
 using UIWindows.Entities.Enum;
 
 namespace UIWindows.Entities
@@ -46,10 +41,11 @@ namespace UIWindows.Entities
         //[Required(ErrorMessage = "CEP é obrigatório")]
         public string sCEP { get; set; }
 
+        [Required(ErrorMessage = "Telefone Comercial é obrigatório")]
         [StringLength(14)]
         public string sPhoneComercial { get; set; }
 
-        [Required(ErrorMessage = "Celular é obrigatório")]
+        //[Required(ErrorMessage = "Celular é obrigatório")]
         [StringLength(15)]
         public string sPhoneCelularOne { get; set; }
 
