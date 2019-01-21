@@ -155,10 +155,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812281932522_addcampsdpaiddremaing.cs" />
-    <Compile Include="Migrations\201812281932522_addcampsdpaiddremaing.Designer.cs">
-      <DependentUpon>201812281932522_addcampsdpaiddremaing.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201901202315570_alter_properties_notnull_camps_sPhones_providers.cs" />
     <Compile Include="Migrations\201901202315570_alter_properties_notnull_camps_sPhones_providers.Designer.cs">
       <DependentUpon>201901202315570_alter_properties_notnull_camps_sPhones_providers.cs</DependentUpon>
@@ -549,9 +545,6 @@
     <EmbeddedResource Include="Business\Reports\ServiceOrders\GeneralServiceOrder.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\ServiceOrdersPrint.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
-    <EmbeddedResource Include="Migrations\201812281932522_addcampsdpaiddremaing.resx">
-      <DependentUpon>201812281932522_addcampsdpaiddremaing.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901202315570_alter_properties_notnull_camps_sPhones_providers.resx">
       <DependentUpon>201901202315570_alter_properties_notnull_camps_sPhones_providers.cs</DependentUpon>
     </EmbeddedResource>
