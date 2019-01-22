@@ -143,10 +143,11 @@ namespace InoxERP.UI_Windows_Forms
                         if (ok == null)
                             MessageBox.Show("Erro ao Cadastrar o Cliente !!!");
                         else
-                            MessageBox.Show("Cliente: " + clientsPersist.sName.ToString() + " Cadastrado com Sucesso !!!");
-
-                        afterAction();
-                        Dispose();
+                        {
+                            MessageBox.Show("Cliente: " + clientsPersist.sName + " Cadastrado com Sucesso !!!");
+                            afterAction();
+                            Dispose();
+                        }
                     }
                 }
             }
@@ -360,7 +361,7 @@ namespace InoxERP.UI_Windows_Forms
 
         public void validationEntriesRG(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidationOnlyNumberAndLetters(sender, e);
+            validation.characterValidatorNumbers(sender, e);
         }
 
         public void validationEntriesCPFandCNPJ(object sender, KeyPressEventArgs e)
