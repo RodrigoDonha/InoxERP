@@ -64,6 +64,8 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblCPF_CNPJ = new System.Windows.Forms.Label();
             this.grpDadosBancarios = new System.Windows.Forms.GroupBox();
+            this.lblCopiarDadosEmpresa = new System.Windows.Forms.Label();
+            this.btnCopiarDadosEmpresa = new System.Windows.Forms.Button();
             this.txtCompraMinima = new System.Windows.Forms.TextBox();
             this.lblCompraMinima = new System.Windows.Forms.Label();
             this.txtFavorecido = new System.Windows.Forms.TextBox();
@@ -77,8 +79,6 @@
             this.txtAgencia = new System.Windows.Forms.TextBox();
             this.lblAgencia = new System.Windows.Forms.Label();
             this.lblAsterisco = new System.Windows.Forms.Label();
-            this.btnCopiarDadosEmpresa = new System.Windows.Forms.Button();
-            this.lblCopiarDadosEmpresa = new System.Windows.Forms.Label();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -395,9 +395,9 @@
             this.lblCEP.AutoSize = true;
             this.lblCEP.Location = new System.Drawing.Point(820, 101);
             this.lblCEP.Name = "lblCEP";
-            this.lblCEP.Size = new System.Drawing.Size(39, 17);
+            this.lblCEP.Size = new System.Drawing.Size(48, 17);
             this.lblCEP.TabIndex = 12;
-            this.lblCEP.Text = "CEP:";
+            this.lblCEP.Text = "CEP: *";
             // 
             // lblBairro
             // 
@@ -504,6 +504,26 @@
             this.grpDadosBancarios.TabIndex = 4;
             this.grpDadosBancarios.TabStop = false;
             this.grpDadosBancarios.Text = "Dados Bancários";
+            // 
+            // lblCopiarDadosEmpresa
+            // 
+            this.lblCopiarDadosEmpresa.AutoSize = true;
+            this.lblCopiarDadosEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCopiarDadosEmpresa.Location = new System.Drawing.Point(852, 62);
+            this.lblCopiarDadosEmpresa.Name = "lblCopiarDadosEmpresa";
+            this.lblCopiarDadosEmpresa.Size = new System.Drawing.Size(197, 17);
+            this.lblCopiarDadosEmpresa.TabIndex = 40;
+            this.lblCopiarDadosEmpresa.Text = "Copiar Dados da Empresa";
+            // 
+            // btnCopiarDadosEmpresa
+            // 
+            this.btnCopiarDadosEmpresa.Location = new System.Drawing.Point(891, 89);
+            this.btnCopiarDadosEmpresa.Name = "btnCopiarDadosEmpresa";
+            this.btnCopiarDadosEmpresa.Size = new System.Drawing.Size(120, 31);
+            this.btnCopiarDadosEmpresa.TabIndex = 39;
+            this.btnCopiarDadosEmpresa.Text = "Copiar Dados";
+            this.btnCopiarDadosEmpresa.UseVisualStyleBackColor = true;
+            this.btnCopiarDadosEmpresa.Click += new System.EventHandler(this.btnCopiarDadosEmpresa_Click);
             // 
             // txtCompraMinima
             // 
@@ -626,26 +646,6 @@
             this.lblAsterisco.Size = new System.Drawing.Size(150, 17);
             this.lblAsterisco.TabIndex = 28;
             this.lblAsterisco.Text = "* Campos Obrigatórios";
-            // 
-            // btnCopiarDadosEmpresa
-            // 
-            this.btnCopiarDadosEmpresa.Location = new System.Drawing.Point(891, 89);
-            this.btnCopiarDadosEmpresa.Name = "btnCopiarDadosEmpresa";
-            this.btnCopiarDadosEmpresa.Size = new System.Drawing.Size(120, 31);
-            this.btnCopiarDadosEmpresa.TabIndex = 39;
-            this.btnCopiarDadosEmpresa.Text = "Copiar Dados";
-            this.btnCopiarDadosEmpresa.UseVisualStyleBackColor = true;
-            this.btnCopiarDadosEmpresa.Click += new System.EventHandler(this.btnCopiarDadosEmpresa_Click);
-            // 
-            // lblCopiarDadosEmpresa
-            // 
-            this.lblCopiarDadosEmpresa.AutoSize = true;
-            this.lblCopiarDadosEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCopiarDadosEmpresa.Location = new System.Drawing.Point(852, 62);
-            this.lblCopiarDadosEmpresa.Name = "lblCopiarDadosEmpresa";
-            this.lblCopiarDadosEmpresa.Size = new System.Drawing.Size(197, 17);
-            this.lblCopiarDadosEmpresa.TabIndex = 40;
-            this.lblCopiarDadosEmpresa.Text = "Copiar Dados da Empresa";
             // 
             // frmProviderRegister
             // 
