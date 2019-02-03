@@ -167,6 +167,7 @@ namespace UIWindows.Views.Budgets
         {
             // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_items'. Você pode movê-la ou removê-la conforme necessário.
             this.tb_itemsTableAdapter.Fill(this.fullDataSet.tb_items);
+            rptPrint.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
             //this.rptPrint.RefreshReport();
         }
     }

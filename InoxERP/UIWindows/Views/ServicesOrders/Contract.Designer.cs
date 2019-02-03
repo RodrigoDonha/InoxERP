@@ -194,7 +194,7 @@
             // 
             this.txtRgContratado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRgContratado.Location = new System.Drawing.Point(404, 378);
-            this.txtRgContratado.MaxLength = 100;
+            this.txtRgContratado.MaxLength = 16;
             this.txtRgContratado.Name = "txtRgContratado";
             this.txtRgContratado.Size = new System.Drawing.Size(200, 22);
             this.txtRgContratado.TabIndex = 13;
@@ -415,7 +415,7 @@
             // 
             this.txtRgC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRgC.Location = new System.Drawing.Point(404, 213);
-            this.txtRgC.MaxLength = 100;
+            this.txtRgC.MaxLength = 16;
             this.txtRgC.Name = "txtRgC";
             this.txtRgC.Size = new System.Drawing.Size(200, 22);
             this.txtRgC.TabIndex = 3;

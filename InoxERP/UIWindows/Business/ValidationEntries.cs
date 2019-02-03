@@ -53,6 +53,20 @@ namespace UIWindows.Business.Concrete
             }
         }
 
+        public void characterValidatorNumbersRGandInscrEst(object sender, KeyPressEventArgs e)
+        {
+            //Se a tecla digitada não for número (08 = backspace); (45 = traço); (46 = ponto)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 46)
+            {
+                //Atribui True no Handled para cancelar o evento
+                e.Handled = true;
+                if (e.Handled)
+                {
+                    //MessageBox.Show("incluir apenas números de 0 a 9");
+                }
+            }
+        }
+
         public void characterValidatorLetters(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada for letras
@@ -71,7 +85,8 @@ namespace UIWindows.Business.Concrete
         {
             //Se a tecla digitada nao for numeros espaço ou traço
             //if (!char.IsDigit(e.KeyChar) && e.KeyChar != 45 && e.KeyChar != 08)
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            // (08 Backspace; 45 traço; 46 ponto)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 46)
             {
                 //Atribui True no Handled para cancelar o evento
                 e.Handled = true;

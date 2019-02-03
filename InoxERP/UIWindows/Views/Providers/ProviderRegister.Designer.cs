@@ -79,6 +79,8 @@
             this.txtAgencia = new System.Windows.Forms.TextBox();
             this.lblAgencia = new System.Windows.Forms.Label();
             this.lblAsterisco = new System.Windows.Forms.Label();
+            this.txtInscrEst = new System.Windows.Forms.TextBox();
+            this.lblInscrEst = new System.Windows.Forms.Label();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -94,7 +96,7 @@
             this.btnSair.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(124, 31);
-            this.btnSair.TabIndex = 23;
+            this.btnSair.TabIndex = 25;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -108,7 +110,7 @@
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(124, 31);
-            this.btnCancelar.TabIndex = 22;
+            this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -122,7 +124,7 @@
             this.btnGravar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(124, 31);
-            this.btnGravar.TabIndex = 21;
+            this.btnGravar.TabIndex = 23;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = false;
             this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
@@ -148,7 +150,7 @@
             this.txtObservacoes.Multiline = true;
             this.txtObservacoes.Name = "txtObservacoes";
             this.txtObservacoes.Size = new System.Drawing.Size(1047, 35);
-            this.txtObservacoes.TabIndex = 20;
+            this.txtObservacoes.TabIndex = 22;
             // 
             // grpContatos
             // 
@@ -177,7 +179,7 @@
             this.txtContatosCelular1.MaxLength = 15;
             this.txtContatosCelular1.Name = "txtContatosCelular1";
             this.txtContatosCelular1.Size = new System.Drawing.Size(252, 23);
-            this.txtContatosCelular1.TabIndex = 12;
+            this.txtContatosCelular1.TabIndex = 13;
             this.txtContatosCelular1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // lblContatosCelular1
@@ -196,7 +198,7 @@
             this.txtContatosEmail.MaxLength = 100;
             this.txtContatosEmail.Name = "txtContatosEmail";
             this.txtContatosEmail.Size = new System.Drawing.Size(485, 23);
-            this.txtContatosEmail.TabIndex = 11;
+            this.txtContatosEmail.TabIndex = 12;
             // 
             // txtContatosCelular2
             // 
@@ -205,7 +207,7 @@
             this.txtContatosCelular2.MaxLength = 15;
             this.txtContatosCelular2.Name = "txtContatosCelular2";
             this.txtContatosCelular2.Size = new System.Drawing.Size(257, 23);
-            this.txtContatosCelular2.TabIndex = 13;
+            this.txtContatosCelular2.TabIndex = 14;
             this.txtContatosCelular2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // txtContatosComercial
@@ -215,7 +217,7 @@
             this.txtContatosComercial.MaxLength = 14;
             this.txtContatosComercial.Name = "txtContatosComercial";
             this.txtContatosComercial.Size = new System.Drawing.Size(252, 23);
-            this.txtContatosComercial.TabIndex = 10;
+            this.txtContatosComercial.TabIndex = 11;
             this.txtContatosComercial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesPhones);
             // 
             // lblContatosEmail
@@ -273,6 +275,7 @@
             // 
             // cmbEstate
             // 
+            this.cmbEstate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstate.FormattingEnabled = true;
             this.cmbEstate.Items.AddRange(new object[] {
             "AC",
@@ -305,7 +308,7 @@
             this.cmbEstate.Location = new System.Drawing.Point(733, 98);
             this.cmbEstate.Name = "cmbEstate";
             this.cmbEstate.Size = new System.Drawing.Size(74, 25);
-            this.cmbEstate.TabIndex = 8;
+            this.cmbEstate.TabIndex = 9;
             // 
             // txtCEP
             // 
@@ -314,7 +317,7 @@
             this.txtCEP.MaxLength = 9;
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(185, 23);
-            this.txtCEP.TabIndex = 9;
+            this.txtCEP.TabIndex = 10;
             this.txtCEP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // txtCidade
@@ -324,7 +327,7 @@
             this.txtCidade.MaxLength = 100;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(495, 23);
-            this.txtCidade.TabIndex = 7;
+            this.txtCidade.TabIndex = 8;
             // 
             // txtComplemento
             // 
@@ -333,7 +336,7 @@
             this.txtComplemento.MaxLength = 50;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(249, 23);
-            this.txtComplemento.TabIndex = 6;
+            this.txtComplemento.TabIndex = 7;
             // 
             // txtBairro
             // 
@@ -342,7 +345,7 @@
             this.txtBairro.MaxLength = 100;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(305, 23);
-            this.txtBairro.TabIndex = 5;
+            this.txtBairro.TabIndex = 6;
             // 
             // txtNumEndereco
             // 
@@ -351,7 +354,7 @@
             this.txtNumEndereco.MaxLength = 10;
             this.txtNumEndereco.Name = "txtNumEndereco";
             this.txtNumEndereco.Size = new System.Drawing.Size(97, 23);
-            this.txtNumEndereco.TabIndex = 4;
+            this.txtNumEndereco.TabIndex = 5;
             this.txtNumEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // txtEndereco
@@ -361,7 +364,7 @@
             this.txtEndereco.MaxLength = 100;
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(900, 23);
-            this.txtEndereco.TabIndex = 3;
+            this.txtEndereco.TabIndex = 4;
             // 
             // lblComplemento
             // 
@@ -428,6 +431,8 @@
             // 
             // grpDadosPessoais
             // 
+            this.grpDadosPessoais.Controls.Add(this.txtInscrEst);
+            this.grpDadosPessoais.Controls.Add(this.lblInscrEst);
             this.grpDadosPessoais.Controls.Add(this.txtCPF_CNPJ);
             this.grpDadosPessoais.Controls.Add(this.txtNome);
             this.grpDadosPessoais.Controls.Add(this.lblNome);
@@ -520,7 +525,7 @@
             this.btnCopiarDadosEmpresa.Location = new System.Drawing.Point(891, 89);
             this.btnCopiarDadosEmpresa.Name = "btnCopiarDadosEmpresa";
             this.btnCopiarDadosEmpresa.Size = new System.Drawing.Size(120, 31);
-            this.btnCopiarDadosEmpresa.TabIndex = 39;
+            this.btnCopiarDadosEmpresa.TabIndex = 16;
             this.btnCopiarDadosEmpresa.Text = "Copiar Dados";
             this.btnCopiarDadosEmpresa.UseVisualStyleBackColor = true;
             this.btnCopiarDadosEmpresa.Click += new System.EventHandler(this.btnCopiarDadosEmpresa_Click);
@@ -532,7 +537,7 @@
             this.txtCompraMinima.MaxLength = 18;
             this.txtCompraMinima.Name = "txtCompraMinima";
             this.txtCompraMinima.Size = new System.Drawing.Size(252, 23);
-            this.txtCompraMinima.TabIndex = 19;
+            this.txtCompraMinima.TabIndex = 21;
             this.txtCompraMinima.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumerics);
             // 
             // lblCompraMinima
@@ -552,7 +557,7 @@
             this.txtFavorecido.MaxLength = 100;
             this.txtFavorecido.Name = "txtFavorecido";
             this.txtFavorecido.Size = new System.Drawing.Size(485, 23);
-            this.txtFavorecido.TabIndex = 17;
+            this.txtFavorecido.TabIndex = 19;
             // 
             // lblFavorecido
             // 
@@ -570,7 +575,7 @@
             this.txtCpfCnpj.MaxLength = 18;
             this.txtCpfCnpj.Name = "txtCpfCnpj";
             this.txtCpfCnpj.Size = new System.Drawing.Size(252, 23);
-            this.txtCpfCnpj.TabIndex = 18;
+            this.txtCpfCnpj.TabIndex = 20;
             this.txtCpfCnpj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandCNPJ);
             // 
             // lblCpfCnpj
@@ -589,7 +594,7 @@
             this.txtConta.MaxLength = 20;
             this.txtConta.Name = "txtConta";
             this.txtConta.Size = new System.Drawing.Size(252, 23);
-            this.txtConta.TabIndex = 16;
+            this.txtConta.TabIndex = 18;
             this.txtConta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // lblConta
@@ -608,7 +613,7 @@
             this.txtBanco.MaxLength = 50;
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(252, 23);
-            this.txtBanco.TabIndex = 14;
+            this.txtBanco.TabIndex = 15;
             // 
             // lblBanco
             // 
@@ -626,7 +631,7 @@
             this.txtAgencia.MaxLength = 20;
             this.txtAgencia.Name = "txtAgencia";
             this.txtAgencia.Size = new System.Drawing.Size(252, 23);
-            this.txtAgencia.TabIndex = 15;
+            this.txtAgencia.TabIndex = 17;
             this.txtAgencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // lblAgencia
@@ -646,6 +651,25 @@
             this.lblAsterisco.Size = new System.Drawing.Size(150, 17);
             this.lblAsterisco.TabIndex = 28;
             this.lblAsterisco.Text = "* Campos Obrigatórios";
+            // 
+            // txtInscrEst
+            // 
+            this.txtInscrEst.Location = new System.Drawing.Point(763, 67);
+            this.txtInscrEst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtInscrEst.MaxLength = 16;
+            this.txtInscrEst.Name = "txtInscrEst";
+            this.txtInscrEst.Size = new System.Drawing.Size(295, 23);
+            this.txtInscrEst.TabIndex = 3;
+            this.txtInscrEst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesInscrEst);
+            // 
+            // lblInscrEst
+            // 
+            this.lblInscrEst.AutoSize = true;
+            this.lblInscrEst.Location = new System.Drawing.Point(668, 70);
+            this.lblInscrEst.Name = "lblInscrEst";
+            this.lblInscrEst.Size = new System.Drawing.Size(83, 17);
+            this.lblInscrEst.TabIndex = 3;
+            this.lblInscrEst.Text = "Inscr. Est.: *";
             // 
             // frmProviderRegister
             // 
@@ -734,5 +758,7 @@
         private System.Windows.Forms.Label lblAsterisco;
         private System.Windows.Forms.Label lblCopiarDadosEmpresa;
         private System.Windows.Forms.Button btnCopiarDadosEmpresa;
+        private System.Windows.Forms.TextBox txtInscrEst;
+        private System.Windows.Forms.Label lblInscrEst;
     }
 }

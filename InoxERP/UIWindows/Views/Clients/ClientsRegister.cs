@@ -361,7 +361,7 @@ namespace InoxERP.UI_Windows_Forms
 
         public void validationEntriesRG(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorNumbers(sender, e);
+            validation.characterValidatorNumbersRGandInscrEst(sender, e);
         }
 
         public void validationEntriesCPFandCNPJ(object sender, KeyPressEventArgs e)

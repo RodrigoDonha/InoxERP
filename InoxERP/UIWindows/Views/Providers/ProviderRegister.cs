@@ -65,6 +65,7 @@ namespace InoxERP.UI_Windows_Forms
                             //preenche os dados do orçamento
                             providersAlter.sName = txtNome.Text;
                             providersAlter.sCpfCnpj = txtCPF_CNPJ.Text;
+                            //providersAlter.sInscrEst = txtInscrEst.Text;
                             providersAlter.sAdress = txtEndereco.Text;
                             providersAlter.iNumber = Convert.ToInt32(txtNumEndereco.Text);
                             providersAlter.sDistrict = txtBairro.Text;
@@ -124,6 +125,7 @@ namespace InoxERP.UI_Windows_Forms
 
                     ProvidersPersist.sName = txtNome.Text;
                     ProvidersPersist.sCpfCnpj = txtCPF_CNPJ.Text;
+                    //providersAlter.sInscrEst = txtInscrEst.Text;
                     ProvidersPersist.sAdress = txtEndereco.Text;
                     ProvidersPersist.iNumber = Convert.ToInt32(txtNumEndereco.Text);
                     ProvidersPersist.sDistrict = txtBairro.Text;
@@ -374,6 +376,11 @@ namespace InoxERP.UI_Windows_Forms
         public void validationEntriesCPFandCNPJ(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyCPFandCNPJ(sender, e);
+        }
+
+        public void validationEntriesInscrEst(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorNumbersRGandInscrEst(sender, e);
         }
 
         public void validationEntriesCEP(object sender, KeyPressEventArgs e)

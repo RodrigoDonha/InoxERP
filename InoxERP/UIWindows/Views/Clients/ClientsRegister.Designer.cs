@@ -264,6 +264,7 @@
             // 
             // cmbEstate
             // 
+            this.cmbEstate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstate.FormattingEnabled = true;
             this.cmbEstate.Items.AddRange(new object[] {
             "AC",
@@ -444,7 +445,7 @@
             // 
             this.txtRg.Location = new System.Drawing.Point(864, 34);
             this.txtRg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtRg.MaxLength = 14;
+            this.txtRg.MaxLength = 16;
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(192, 23);
             this.txtRg.TabIndex = 2;
