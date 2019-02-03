@@ -502,5 +502,31 @@ namespace UIWindows
 
             return true;
         }
+
+        // valida numeros e virgula, só permite lançar 1 vez a vírgula
+        public void validationEntriesNumericsAndComma(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
+        }
+
+        public void validationEntriesPhones(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyPhones(sender, e);
+        }
+
+        public void validationEntriesCPFandRG(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyCPFandCNPJ(sender, e);
+        }
+
+        public void validationEntriesCEP(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorOnlyCEP(sender, e);
+        }
+
+        public void validationOnlyNumbers(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorNumbers(sender, e);
+        }
     }
 }

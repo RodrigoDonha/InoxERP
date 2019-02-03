@@ -58,7 +58,7 @@ namespace UIWindows
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
         }
 
         private void grdAPagar_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -596,7 +596,7 @@ namespace UIWindows
 
         private void txtValorBaixa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
         }
     }
 }

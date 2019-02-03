@@ -11,7 +11,6 @@ namespace UIWindows.Views.ServicesOrders
 {
     public partial class ServiceOrdersPrint : Form
     {
-        private string idOS;
         public ServiceOrdersPrint(string id)
         {
             InitializeComponent();

@@ -199,6 +199,7 @@
             this.txtRgContratado.Size = new System.Drawing.Size(200, 22);
             this.txtRgContratado.TabIndex = 13;
             this.txtRgContratado.Text = "562.431.339.111";
+            this.txtRgContratado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandRG);
             // 
             // label3
             // 
@@ -213,6 +214,7 @@
             // 
             // cbxEstateContratado
             // 
+            this.cbxEstateContratado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstateContratado.FormattingEnabled = true;
             this.cbxEstateContratado.Items.AddRange(new object[] {
             "AC",
@@ -243,10 +245,10 @@
             "SE",
             "TO"});
             this.cbxEstateContratado.Location = new System.Drawing.Point(667, 448);
+            this.cbxEstateContratado.MaxLength = 2;
             this.cbxEstateContratado.Name = "cbxEstateContratado";
             this.cbxEstateContratado.Size = new System.Drawing.Size(130, 24);
             this.cbxEstateContratado.TabIndex = 19;
-            this.cbxEstateContratado.Text = "SP";
             // 
             // label4
             // 
@@ -289,6 +291,7 @@
             this.txtCepContratado.Size = new System.Drawing.Size(131, 22);
             this.txtCepContratado.TabIndex = 14;
             this.txtCepContratado.Text = "19065-510";
+            this.txtCepContratado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // label6
             // 
@@ -331,6 +334,7 @@
             this.txtNumeroContratado.Size = new System.Drawing.Size(131, 22);
             this.txtNumeroContratado.TabIndex = 16;
             this.txtNumeroContratado.Text = "210";
+            this.txtNumeroContratado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationOnlyNumbers);
             // 
             // label8
             // 
@@ -373,6 +377,7 @@
             this.txtCpfCnpjContratado.Size = new System.Drawing.Size(200, 22);
             this.txtCpfCnpjContratado.TabIndex = 12;
             this.txtCpfCnpjContratado.Text = "30.286.217/0001-70";
+            this.txtCpfCnpjContratado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandRG);
             // 
             // txtNomeContratado
             // 
@@ -414,6 +419,7 @@
             this.txtRgC.Name = "txtRgC";
             this.txtRgC.Size = new System.Drawing.Size(200, 22);
             this.txtRgC.TabIndex = 3;
+            this.txtRgC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandRG);
             // 
             // label2
             // 
@@ -438,6 +444,7 @@
             // 
             // cbxEstate
             // 
+            this.cbxEstate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstate.FormattingEnabled = true;
             this.cbxEstate.Items.AddRange(new object[] {
             "AC",
@@ -468,6 +475,7 @@
             "SE",
             "TO"});
             this.cbxEstate.Location = new System.Drawing.Point(667, 281);
+            this.cbxEstate.MaxLength = 2;
             this.cbxEstate.Name = "cbxEstate";
             this.cbxEstate.Size = new System.Drawing.Size(130, 24);
             this.cbxEstate.TabIndex = 9;
@@ -522,6 +530,7 @@
             this.txtCepC.Name = "txtCepC";
             this.txtCepC.Size = new System.Drawing.Size(131, 22);
             this.txtCepC.TabIndex = 4;
+            this.txtCepC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // lblCepC
             // 
@@ -562,6 +571,7 @@
             this.txtNumeroC.Name = "txtNumeroC";
             this.txtNumeroC.Size = new System.Drawing.Size(131, 22);
             this.txtNumeroC.TabIndex = 6;
+            this.txtNumeroC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationOnlyNumbers);
             // 
             // lblNumeroC
             // 
@@ -602,6 +612,7 @@
             this.txtCpfCnpjC.Name = "txtCpfCnpjC";
             this.txtCpfCnpjC.Size = new System.Drawing.Size(200, 22);
             this.txtCpfCnpjC.TabIndex = 2;
+            this.txtCpfCnpjC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandRG);
             // 
             // txtNomeC
             // 
@@ -705,14 +716,17 @@
             // 
             this.txtValores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValores.Location = new System.Drawing.Point(155, 265);
+            this.txtValores.MaxLength = 18;
             this.txtValores.Name = "txtValores";
             this.txtValores.Size = new System.Drawing.Size(141, 23);
             this.txtValores.TabIndex = 18;
+            this.txtValores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumericsAndComma);
             // 
             // txtObrigacoesContratante
             // 
             this.txtObrigacoesContratante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObrigacoesContratante.Location = new System.Drawing.Point(6, 315);
+            this.txtObrigacoesContratante.MaxLength = 30000;
             this.txtObrigacoesContratante.Multiline = true;
             this.txtObrigacoesContratante.Name = "txtObrigacoesContratante";
             this.txtObrigacoesContratante.Size = new System.Drawing.Size(839, 180);
@@ -753,6 +767,7 @@
             // 
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidade.Location = new System.Drawing.Point(137, 455);
+            this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(362, 26);
             this.txtCidade.TabIndex = 18;
@@ -762,24 +777,29 @@
             // 
             this.txtPrazoGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrazoGarantia.Location = new System.Drawing.Point(99, 400);
+            this.txtPrazoGarantia.MaxLength = 2;
             this.txtPrazoGarantia.Name = "txtPrazoGarantia";
-            this.txtPrazoGarantia.Size = new System.Drawing.Size(86, 26);
+            this.txtPrazoGarantia.Size = new System.Drawing.Size(35, 26);
             this.txtPrazoGarantia.TabIndex = 17;
-            this.txtPrazoGarantia.Text = "5 anos";
+            this.txtPrazoGarantia.Text = "5";
+            this.txtPrazoGarantia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationOnlyNumbers);
             // 
             // txtPrazo2
             // 
             this.txtPrazo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrazo2.Location = new System.Drawing.Point(258, 361);
+            this.txtPrazo2.MaxLength = 3;
             this.txtPrazo2.Name = "txtPrazo2";
-            this.txtPrazo2.Size = new System.Drawing.Size(86, 26);
+            this.txtPrazo2.Size = new System.Drawing.Size(44, 26);
             this.txtPrazo2.TabIndex = 16;
-            this.txtPrazo2.Text = "30 dias";
+            this.txtPrazo2.Text = "30";
+            this.txtPrazo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationOnlyNumbers);
             // 
             // txtObrigacoesContratante1
             // 
             this.txtObrigacoesContratante1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObrigacoesContratante1.Location = new System.Drawing.Point(6, 266);
+            this.txtObrigacoesContratante1.MaxLength = 30000;
             this.txtObrigacoesContratante1.Multiline = true;
             this.txtObrigacoesContratante1.Name = "txtObrigacoesContratante1";
             this.txtObrigacoesContratante1.Size = new System.Drawing.Size(839, 84);
@@ -790,18 +810,22 @@
             // 
             this.txtValores1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValores1.Location = new System.Drawing.Point(256, 220);
+            this.txtValores1.MaxLength = 18;
             this.txtValores1.Name = "txtValores1";
             this.txtValores1.Size = new System.Drawing.Size(139, 26);
             this.txtValores1.TabIndex = 14;
+            this.txtValores1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumericsAndComma);
             // 
             // txtPrazo1
             // 
             this.txtPrazo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrazo1.Location = new System.Drawing.Point(521, 22);
+            this.txtPrazo1.MaxLength = 3;
             this.txtPrazo1.Name = "txtPrazo1";
-            this.txtPrazo1.Size = new System.Drawing.Size(86, 26);
+            this.txtPrazo1.Size = new System.Drawing.Size(44, 26);
             this.txtPrazo1.TabIndex = 13;
-            this.txtPrazo1.Text = "30 dias";
+            this.txtPrazo1.Text = "30";
+            this.txtPrazo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationOnlyNumbers);
             // 
             // label14
             // 
@@ -809,7 +833,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(3, 3);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(792, 440);
+            this.label14.Size = new System.Drawing.Size(785, 440);
             this.label14.TabIndex = 0;
             this.label14.Text = resources.GetString("label14.Text");
             // 

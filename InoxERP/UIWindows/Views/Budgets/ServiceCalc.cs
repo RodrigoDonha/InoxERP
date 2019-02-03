@@ -86,7 +86,7 @@ namespace UIWindows.Views.Budgets
 
         public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
         }
     }
 }

@@ -462,7 +462,7 @@ namespace UIWindows
 
         public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
         }
     }
 }

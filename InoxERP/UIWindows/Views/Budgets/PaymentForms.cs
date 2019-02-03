@@ -964,19 +964,19 @@ namespace UIWindows
         //WHEN KEY IS PRESS ON txtPorcentDescAVista
         private void txtPorcentDescAVista_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
         }
 
         //WHEN KEY IS PRESS ON txtPorcentJuros
         private void txtPorcentJuros_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
         }
 
         //WHEN KEY IS PRESS ON txtValorArredondamento
         private void txtValorArredondamento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
 
             if ((Keys) e.KeyChar == Keys.Enter)
             {
@@ -993,7 +993,7 @@ namespace UIWindows
         //WHEN KEY IS PRESS ON txtEntradaDin
         private void txtEntradaDin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
 
             if ((Keys) e.KeyChar == Keys.Enter)
             {
@@ -1009,7 +1009,7 @@ namespace UIWindows
         //WHEN KEY IS PRESS ON txtEntradaCheq
         private void txtEntradaCheq_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
 
             if ((Keys) e.KeyChar == Keys.Enter)
             {
@@ -1025,7 +1025,7 @@ namespace UIWindows
         //WHEN KEY IS PRESS ON txtValorDin
         private void txtValorDin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
 
             if ((Keys)e.KeyChar == Keys.Enter)
                 call("din");
@@ -1034,7 +1034,7 @@ namespace UIWindows
         //WHEN KEY IS PRESS ON txtPrimParcDin
         private void txtPrimParcDin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
 
             if ((Keys)e.KeyChar == Keys.Enter)
                 call("din");
@@ -1043,7 +1043,7 @@ namespace UIWindows
         //WHEN KEY IS PRESS ON txtValorCheq
         private void txtValorCheq_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
 
             if ((Keys)e.KeyChar == Keys.Enter)
                 call("cheq");
@@ -1052,7 +1052,7 @@ namespace UIWindows
         //WHEN KEY IS PRESS ON txtPrimParcCheq
         private void txtPrimParcCheq_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
 
             if ((Keys)e.KeyChar == Keys.Enter)
                 call("cheq");

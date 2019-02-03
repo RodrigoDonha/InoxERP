@@ -1175,7 +1175,7 @@ namespace InoxERP.UI_Windows_Forms
 
         public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
         }
 
         public void validationEntriesPhones(object sender, KeyPressEventArgs e)

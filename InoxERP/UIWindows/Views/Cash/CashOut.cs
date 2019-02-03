@@ -34,7 +34,7 @@ namespace UIWindows
 
         public void validationEntriesNumerics(object sender, KeyPressEventArgs e)
         {
-            validation.characterValidatorOnlyNumbers(sender, e);
+            validation.characterValidatorOnlyNumbersAndComma(sender, e);
         }
 
         private void frmCashOut_Load(object sender, EventArgs e)

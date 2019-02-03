@@ -36,7 +36,7 @@ namespace UIWindows.Views.Reports.Contracts
             ContractBusiness obj = new ContractBusiness(ctx);
 
             searchContracts = obj.ReturnByID(id);
-            string pulaLinha = "\r\n";
+            //string pulaLinha = "\r\n";
 
             string contratanteString = "Nome: " + searchContracts.sClientName +
                                        ", CPF/CNPJ: " + searchContracts.sClientCpfCnpj +
