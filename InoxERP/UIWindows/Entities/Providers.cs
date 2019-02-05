@@ -15,7 +15,11 @@ namespace UIWindows.Entities
         [StringLength(18)]
         [Required(ErrorMessage = "CPF/CNPJ é obrigatório")]
         public string sCpfCnpj { get; set; }
-        
+
+        [StringLength(16)]
+        [Required(ErrorMessage = "IE/RG é obrigatório")]
+        public string sInscrEst { get; set; }
+
         [StringLength(100)]
         //[Required(ErrorMessage = "Endereço é obrigatório")]
         public string sAdress { get; set; }

@@ -799,7 +799,7 @@
             // 
             this.txtObrigacoesContratante1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObrigacoesContratante1.Location = new System.Drawing.Point(6, 266);
-            this.txtObrigacoesContratante1.MaxLength = 30000;
+            this.txtObrigacoesContratante1.MaxLength = 3900;
             this.txtObrigacoesContratante1.Multiline = true;
             this.txtObrigacoesContratante1.Name = "txtObrigacoesContratante1";
             this.txtObrigacoesContratante1.Size = new System.Drawing.Size(839, 84);

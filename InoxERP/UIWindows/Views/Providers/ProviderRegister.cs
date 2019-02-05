@@ -65,7 +65,7 @@ namespace InoxERP.UI_Windows_Forms
                             //preenche os dados do orçamento
                             providersAlter.sName = txtNome.Text;
                             providersAlter.sCpfCnpj = txtCPF_CNPJ.Text;
-                            //providersAlter.sInscrEst = txtInscrEst.Text;
+                            providersAlter.sInscrEst = txtInscrEst.Text;
                             providersAlter.sAdress = txtEndereco.Text;
                             providersAlter.iNumber = Convert.ToInt32(txtNumEndereco.Text);
                             providersAlter.sDistrict = txtBairro.Text;
@@ -125,7 +125,7 @@ namespace InoxERP.UI_Windows_Forms
 
                     ProvidersPersist.sName = txtNome.Text;
                     ProvidersPersist.sCpfCnpj = txtCPF_CNPJ.Text;
-                    //providersAlter.sInscrEst = txtInscrEst.Text;
+                    ProvidersPersist.sInscrEst = txtInscrEst.Text;
                     ProvidersPersist.sAdress = txtEndereco.Text;
                     ProvidersPersist.iNumber = Convert.ToInt32(txtNumEndereco.Text);
                     ProvidersPersist.sDistrict = txtBairro.Text;
@@ -182,6 +182,7 @@ namespace InoxERP.UI_Windows_Forms
         {
             txtNome.Clear();
             txtCPF_CNPJ.Clear();
+            txtInscrEst.Clear();
             txtEndereco.Clear();
             txtNumEndereco.Clear();
             txtBairro.Clear();
@@ -351,6 +352,7 @@ namespace InoxERP.UI_Windows_Forms
             prov = obj.returnById(id);
             txtNome.Text = prov.sName;
             txtCPF_CNPJ.Text = prov.sCpfCnpj;
+            txtInscrEst.Text = prov.sInscrEst;
             txtEndereco.Text = prov.sAdress;
             txtNumEndereco.Text = prov.iNumber.ToString();
             txtBairro.Text = prov.sDistrict;
