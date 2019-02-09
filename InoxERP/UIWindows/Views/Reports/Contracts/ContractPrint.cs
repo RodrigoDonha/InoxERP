@@ -55,6 +55,18 @@ namespace UIWindows.Views.Reports.Contracts
                                       ", Cidade: " + searchContracts.sProviderCity + 
                                       "/" + searchContracts.ProviderEstate;
 
+            string EstadoContratado = searchContracts.ProviderEstate.ToString();
+
+            string rodapeContratado = searchContracts.sProviderName + "\r\n CNPJ: " +
+                                      searchContracts.sProviderCpfCnpj +
+                                      " RG/Inscr. Est. " + searchContracts.sRegistStateRg + "\r\n " +
+                                      searchContracts.sProviderAdress + ", " +
+                                      searchContracts.sProviderNumberAdress + ", " +
+                                      searchContracts.sProviderDistrict + ", " + searchContracts.sProviderCity + "/" +
+                                      searchContracts.ProviderEstate +
+                                      " - CEP " + searchContracts.sProviderCep;
+                
+
             string objetoString = searchContracts.sClientObjectContract;
             string valorString = searchContracts.dTotalValue.ToString();
             string formaString = searchContracts.sPaymentForm;
@@ -76,6 +88,8 @@ namespace UIWindows.Views.Reports.Contracts
             var cidade = new ReportParameter();
             var data = new ReportParameter();
             var proprietario = new ReportParameter();
+            var rodapeContrato = new ReportParameter();
+            var estadoContratado = new ReportParameter();
 
             contratante.Name = "contratante";
             contratado.Name = "contratado";
@@ -88,6 +102,8 @@ namespace UIWindows.Views.Reports.Contracts
             cidade.Name = "cidade";
             data.Name = "data";
             proprietario.Name = "proprietario";
+            rodapeContrato.Name = "rodapeContratado";
+            estadoContratado.Name = "estadoContratado";
 
             contratante.Values.Add(contratanteString);
             contratado.Values.Add(contratadoString);
@@ -100,6 +116,8 @@ namespace UIWindows.Views.Reports.Contracts
             cidade.Values.Add(cidadeString);
             data.Values.Add(dataString);
             proprietario.Values.Add(proprietarioString);
+            rodapeContrato.Values.Add(rodapeContratado);
+            estadoContratado.Values.Add(EstadoContratado);
 
             reportViewer1.LocalReport.SetParameters(contratante);
             reportViewer1.LocalReport.SetParameters(contratado);
@@ -112,6 +130,8 @@ namespace UIWindows.Views.Reports.Contracts
             reportViewer1.LocalReport.SetParameters(cidade);
             reportViewer1.LocalReport.SetParameters(data);
             reportViewer1.LocalReport.SetParameters(proprietario);
+            reportViewer1.LocalReport.SetParameters(estadoContratado);
+            reportViewer1.LocalReport.SetParameters(rodapeContrato);
 
             reportViewer1.RefreshReport();
         }

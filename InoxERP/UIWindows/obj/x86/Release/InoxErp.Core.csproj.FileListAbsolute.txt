@@ -340,7 +340,6 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\pt-B
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\pt-BR\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\pt-BR\Microsoft.VisualStudio.GraphModel.resources.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxERP.Core.exe.config
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Migrations.addcampsdpaiddremaing.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Accounts.frmChequeNumber.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Accounts.frmConfirmationDelete.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Accounts.AccountsPayableReport.resources
@@ -370,3 +369,5 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\Inox
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csprojAssemblyReference.cache
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Users.frmChargingScreen.resources
 D:\Jefter\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Migrations.addIEprovider.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Migrations.addIEprovider.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Users.frmChargingScreen.resources
