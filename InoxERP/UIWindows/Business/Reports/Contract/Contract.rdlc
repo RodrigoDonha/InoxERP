@@ -897,10 +897,81 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <RightIndent>0cm</RightIndent>
+                <Style>
+                  <TextAlign>General</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>CLÁUSULA 7ª:</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value> Caso o serviço prestado não seja entregue na data pactuada pelas partes acordadas o CONTRATADO poderá ser protestado e será tomado as medidas cabíveis , arcando com as eventuais despesas.</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <RightIndent>0cm</RightIndent>
+                <Style>
+                  <TextAlign>General</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <RightIndent>0cm</RightIndent>
+                <Style>
+                  <TextAlign>General</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
                     <Value>Valor total do serviço prestado: R$ </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
+                      <FontFamily>Cambria</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                       <TextDecoration>None</TextDecoration>
@@ -911,7 +982,7 @@
                     <Value>=Parameters!valor.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
+                      <FontFamily>Cambria</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                       <TextDecoration>None</TextDecoration>
@@ -922,7 +993,7 @@
                     <Value>, sendo: </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
+                      <FontFamily>Cambria</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                       <TextDecoration>None</TextDecoration>
@@ -933,7 +1004,7 @@
                     <Value>=Parameters!forma.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
+                      <FontFamily>Cambria</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                       <TextDecoration>None</TextDecoration>
@@ -944,7 +1015,7 @@
                     <Value>.</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
+                      <FontFamily>Cambria</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                       <TextDecoration>None</TextDecoration>
@@ -1164,48 +1235,6 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>____________________________________</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <LeftIndent>0cm</LeftIndent>
-                <RightIndent>0cm</RightIndent>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                  <LineHeight>14pt</LineHeight>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Assinatura do contratante</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <LeftIndent>0cm</LeftIndent>
-                <RightIndent>0cm</RightIndent>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                  <LineHeight>14pt</LineHeight>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
                     <Value />
                     <Style>
                       <FontStyle>Normal</FontStyle>
@@ -1220,33 +1249,75 @@
                 <LeftIndent>0cm</LeftIndent>
                 <RightIndent>0cm</RightIndent>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>General</TextAlign>
+                  <LineHeight>14pt</LineHeight>
                 </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox15</rd:DefaultName>
+            <Top>0.22929cm</Top>
+            <Left>0.08618cm</Left>
+            <Height>25.61969cm</Height>
+            <Width>17.72095cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
               </Paragraph>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
                     <Value />
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
+                    <Style />
                   </TextRun>
                 </TextRuns>
                 <LeftIndent>0cm</LeftIndent>
                 <RightIndent>0cm</RightIndent>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>General</TextAlign>
+                  <LineHeight>14pt</LineHeight>
                 </Style>
               </Paragraph>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>_____________________________________________________</Value>
+                    <Value>_____________________________________________________   _____________________________________________________</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>cambria</FontFamily>
@@ -1260,11 +1331,23 @@
                 <LeftIndent>0cm</LeftIndent>
                 <RightIndent>0cm</RightIndent>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>General</TextAlign>
+                  <LineHeight>14pt</LineHeight>
                 </Style>
               </Paragraph>
               <Paragraph>
                 <TextRuns>
+                  <TextRun>
+                    <Value>                Assinatura do contratante                         </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
                   <TextRun>
                     <Value>=Parameters!proprietario.Value</Value>
                     <Style>
@@ -1280,7 +1363,8 @@
                 <LeftIndent>0cm</LeftIndent>
                 <RightIndent>0cm</RightIndent>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>General</TextAlign>
+                  <LineHeight>14pt</LineHeight>
                 </Style>
               </Paragraph>
               <Paragraph>
@@ -1307,46 +1391,6 @@
                 <TextRuns>
                   <TextRun>
                     <Value />
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <LeftIndent>0cm</LeftIndent>
-                <RightIndent>0cm</RightIndent>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>_________________________                                           _________________________</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <LeftIndent>0cm</LeftIndent>
-                <RightIndent>0cm</RightIndent>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Testemunha 1                                                       Testemunha 2</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>cambria</FontFamily>
@@ -1364,11 +1408,12 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox15</rd:DefaultName>
-            <Top>0.22929cm</Top>
+            <rd:DefaultName>Textbox3</rd:DefaultName>
+            <Top>26.02537cm</Top>
             <Left>0.08618cm</Left>
-            <Height>28.06269cm</Height>
+            <Height>3.00743cm</Height>
             <Width>17.72095cm</Width>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1380,7 +1425,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>11.14899in</Height>
+        <Height>11.48927in</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1490,13 +1535,54 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!rodapeContratado.Value</Value>
+                      <Value>LUCK AÇO INOX</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Open Sans</FontFamily>
-                        <FontSize>9pt</FontSize>
+                        <FontFamily>Cambria</FontFamily>
                         <FontWeight>Bold</FontWeight>
                         <TextDecoration>None</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>CNPJ: </Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontFamily>Cambria</FontFamily>
+                        <FontWeight>Normal</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Parameters!cnpjProvider.Value</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontFamily>Cambria</FontFamily>
+                        <FontWeight>Normal</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Rua Mendes de Moraes, 1871 | Vila Paulo Roberto | Presidente Prudente – São Paulo | CEP 19046-070</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontFamily>Cambria</FontFamily>
+                        <FontWeight>Normal</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1510,18 +1596,15 @@
                       <Value />
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Open Sans</FontFamily>
-                        <FontSize>9pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
+                        <FontFamily>Cambria</FontFamily>
+                        <FontWeight>Normal</FontWeight>
                         <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <LeftIndent>0cm</LeftIndent>
-                  <RightIndent>0cm</RightIndent>
                   <Style>
                     <TextAlign>Center</TextAlign>
-                    <LineHeight>14pt</LineHeight>
                   </Style>
                 </Paragraph>
                 <Paragraph>
@@ -1530,8 +1613,7 @@
                       <Value>=Globals!PageNumber</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Open Sans</FontFamily>
-                        <FontSize>9pt</FontSize>
+                        <FontFamily>Cambria</FontFamily>
                         <FontWeight>Bold</FontWeight>
                         <TextDecoration>None</TextDecoration>
                       </Style>
@@ -1540,8 +1622,7 @@
                       <Value> / </Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Open Sans</FontFamily>
-                        <FontSize>9pt</FontSize>
+                        <FontFamily>Cambria</FontFamily>
                         <FontWeight>Bold</FontWeight>
                         <TextDecoration>None</TextDecoration>
                       </Style>
@@ -1550,8 +1631,7 @@
                       <Value>=Globals!TotalPages</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
-                        <FontFamily>Open Sans</FontFamily>
-                        <FontSize>9pt</FontSize>
+                        <FontFamily>Cambria</FontFamily>
                         <FontWeight>Bold</FontWeight>
                         <TextDecoration>None</TextDecoration>
                       </Style>
@@ -1669,13 +1749,7 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="estadoContratado">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="rodapeContratado">
+    <ReportParameter Name="cnpjProvider">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
@@ -1745,12 +1819,7 @@
         <CellDefinition>
           <ColumnIndex>3</ColumnIndex>
           <RowIndex>2</RowIndex>
-          <ParameterName>estadoContratado</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>3</RowIndex>
-          <ParameterName>rodapeContratado</ParameterName>
+          <ParameterName>cnpjProvider</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
