@@ -81,9 +81,14 @@ namespace UIWindows.Views.Users
         private void Timer_Tick(object Sender, EventArgs e)
         {
             prbConnection();
-            login();
-            picNet.Image = Properties.Resources.net2;
-            InitializeTimer2();
+            if (!login())
+                Application.Restart();
+            else
+            {
+                log = true;
+                picNet.Image = Properties.Resources.net2;
+                InitializeTimer2();
+            }
         }
 
         private void Timer2_Tick(object Sender, EventArgs e)
@@ -105,13 +110,14 @@ namespace UIWindows.Views.Users
             this.Close();
         }
 
-        private void login()
+        private bool login()
         {
+            t.Stop();
             u = objLogin.signIn(u);
-
-            if (u == null)
+            if(u != null)
+              return true;
+            else
             {
-                t.Stop();
                 t2.Stop();
                 t3.Stop();
                 t4.Stop();
@@ -120,11 +126,8 @@ namespace UIWindows.Views.Users
 
                 MessageBox.Show("Usuário Inválido");
 
-                Application.Restart();
-            }
-            else
-            {
-                log = true;
+                return false;
+                //Application.Restart();
             }
         }
 

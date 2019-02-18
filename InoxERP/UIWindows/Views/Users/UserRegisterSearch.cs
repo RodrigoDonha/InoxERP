@@ -231,7 +231,7 @@ namespace UIWindows
                 else
                     this.tb_usersTableAdapter.FillByBasicType(this.fullDataSet.tb_users);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Tabela de Usuários não foi Encontrada, Certifique-se de ter criado o seu Banco de Dados !!!");
             }

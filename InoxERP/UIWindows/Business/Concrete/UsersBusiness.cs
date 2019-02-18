@@ -23,11 +23,10 @@ namespace UIWindows.Business.Concrete
             {
                 return context.Users.FirstOrDefault(u => u.sLogin == user.sLogin);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 if (errorMessage("equal") == DialogResult.Yes)
-                    MessageBox.Show(e.InnerException.InnerException.ToString());
-
+                    MessageBox.Show("Você está tentando cadastrar um nome de LOGIN que já existe, por favor escolha outro !!!");
                 return null;
             }
         }
@@ -38,11 +37,10 @@ namespace UIWindows.Business.Concrete
             {
                 return context.Users.AsNoTracking().FirstOrDefault(u => u.sLogin == user.sLogin && u.sKey == user.sKey);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 if (errorMessage("login") == DialogResult.Yes)
-                    MessageBox.Show(e.InnerException.InnerException.ToString());
-
+                    MessageBox.Show("Erro ao Encontrar o Banco de Dados");
                 return null;
             }
         }
@@ -57,7 +55,7 @@ namespace UIWindows.Business.Concrete
                 else
                     return false;
             }
-            catch (Exception e)
+            catch (Exception)
             { 
                 return false;
             }
