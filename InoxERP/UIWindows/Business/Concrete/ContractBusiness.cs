@@ -27,6 +27,11 @@ namespace UIWindows.Business.Concrete
             return context.Contracts.FirstOrDefault(r => r.sIdBudget_OS == id.ToString());
         }
 
+        public Contracts returnById(string id)
+        {
+            return context.Contracts.FirstOrDefault(r => r.sID == id.ToString());
+        }
+
         //public override void Delete(string id)
         //{
         //    var linq = from q in context.Budgets_OS.Include("Items").Where(c => c.sID == id).ToList() select q;

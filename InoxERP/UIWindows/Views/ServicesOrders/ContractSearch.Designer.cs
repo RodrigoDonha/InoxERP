@@ -96,17 +96,19 @@
             this.btnVisualizar.TabIndex = 24;
             this.btnVisualizar.Text = "Visualizar";
             this.btnVisualizar.UseVisualStyleBackColor = true;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(708, 406);
+            this.btnExcluir.Location = new System.Drawing.Point(628, 406);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(80, 30);
+            this.btnExcluir.Size = new System.Drawing.Size(160, 30);
             this.btnExcluir.TabIndex = 23;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // grpContratos
             // 

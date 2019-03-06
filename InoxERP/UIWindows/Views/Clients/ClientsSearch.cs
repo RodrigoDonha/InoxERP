@@ -27,7 +27,7 @@ namespace UIWindows
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            frmClientsRegister obj = new frmClientsRegister(selectClients());
+            frmClientsRegister obj = new frmClientsRegister(selectClients(), "Clients", "");
             this.Dispose(true);
             obj.Show();
         }
@@ -41,7 +41,7 @@ namespace UIWindows
         {
             try
             {
-                frmClientsRegister client = new frmClientsRegister(selectClients());
+                frmClientsRegister client = new frmClientsRegister(selectClients(), "Clients", "");
                 client.completeRegister(selectClients());
                 Dispose();
                 client.Show();

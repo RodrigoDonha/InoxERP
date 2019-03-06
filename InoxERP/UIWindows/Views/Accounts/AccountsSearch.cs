@@ -26,6 +26,8 @@ namespace UIWindows
 
         private void frmAccountsSearch_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'fullDataSet.tb_cheques_and_Clients'. Você pode movê-la ou removê-la conforme necessário.
+            this.tb_cheques_and_ClientsTableAdapter.Fill(this.fullDataSet.tb_cheques_and_Clients);
             fillByReceived();
             fillByPaied();
             fillByCheque();
@@ -41,7 +43,8 @@ namespace UIWindows
         private void fillByPaied()
         {
             // TODO: This line of code loads data into the 'fullDataSet.tb_accountsToPay' table. You can move, or remove it, as needed.
-            this.tb_accountsToPayTableAdapter.FillByAccountsPaied(this.fullDataSet.tb_accountsToPay);
+            //this.tb_accountsToPayTableAdapter.FillByAccountsPaied(this.fullDataSet.tb_accountsToPay);
+            this.tb_cheques_and_ClientsTableAdapter.Fill(this.fullDataSet.tb_cheques_and_Clients);
             dgvPagos.Columns[0].Visible = false;
         }
 

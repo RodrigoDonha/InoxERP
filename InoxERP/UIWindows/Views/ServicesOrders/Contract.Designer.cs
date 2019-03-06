@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContract));
-            this.lblPpte = new System.Windows.Forms.Label();
-            this.dtpDataAtual = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnAlterarContratado = new System.Windows.Forms.Button();
@@ -82,39 +80,28 @@
             this.txtObrigacoesContratante = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.txtCidade = new System.Windows.Forms.TextBox();
-            this.txtPrazoGarantia = new System.Windows.Forms.TextBox();
-            this.txtPrazo2 = new System.Windows.Forms.TextBox();
             this.txtObrigacoesContratante1 = new System.Windows.Forms.TextBox();
             this.txtValores1 = new System.Windows.Forms.TextBox();
             this.txtPrazo1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.lblPpte = new System.Windows.Forms.Label();
+            this.txtPrazoGarantia = new System.Windows.Forms.TextBox();
+            this.txtPrazo2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.dtpDataAtual = new System.Windows.Forms.DateTimePicker();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtIdContract = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblPpte
-            // 
-            this.lblPpte.AutoSize = true;
-            this.lblPpte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPpte.Location = new System.Drawing.Point(506, 461);
-            this.lblPpte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPpte.Name = "lblPpte";
-            this.lblPpte.Size = new System.Drawing.Size(16, 17);
-            this.lblPpte.TabIndex = 50;
-            this.lblPpte.Text = ", ";
-            // 
-            // dtpDataAtual
-            // 
-            this.dtpDataAtual.Location = new System.Drawing.Point(520, 456);
-            this.dtpDataAtual.Name = "dtpDataAtual";
-            this.dtpDataAtual.Size = new System.Drawing.Size(325, 23);
-            this.dtpDataAtual.TabIndex = 19;
             // 
             // tabControl1
             // 
@@ -122,6 +109,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -132,6 +120,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.txtIdContract);
+            this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.btnAlterarContratado);
             this.tabPage1.Controls.Add(this.txtRgContratado);
             this.tabPage1.Controls.Add(this.label3);
@@ -747,12 +737,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage4.Controls.Add(this.txtCidade);
-            this.tabPage4.Controls.Add(this.txtPrazoGarantia);
-            this.tabPage4.Controls.Add(this.txtPrazo2);
-            this.tabPage4.Controls.Add(this.dtpDataAtual);
             this.tabPage4.Controls.Add(this.txtObrigacoesContratante1);
-            this.tabPage4.Controls.Add(this.lblPpte);
             this.tabPage4.Controls.Add(this.txtValores1);
             this.tabPage4.Controls.Add(this.txtPrazo1);
             this.tabPage4.Controls.Add(this.label14);
@@ -763,42 +748,10 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "4 - Do Prazo";
             // 
-            // txtCidade
-            // 
-            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(137, 455);
-            this.txtCidade.MaxLength = 50;
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(362, 26);
-            this.txtCidade.TabIndex = 18;
-            this.txtCidade.Text = "Presidente Prudente";
-            // 
-            // txtPrazoGarantia
-            // 
-            this.txtPrazoGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrazoGarantia.Location = new System.Drawing.Point(99, 400);
-            this.txtPrazoGarantia.MaxLength = 2;
-            this.txtPrazoGarantia.Name = "txtPrazoGarantia";
-            this.txtPrazoGarantia.Size = new System.Drawing.Size(35, 26);
-            this.txtPrazoGarantia.TabIndex = 17;
-            this.txtPrazoGarantia.Text = "5";
-            this.txtPrazoGarantia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationOnlyNumbers);
-            // 
-            // txtPrazo2
-            // 
-            this.txtPrazo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrazo2.Location = new System.Drawing.Point(258, 361);
-            this.txtPrazo2.MaxLength = 3;
-            this.txtPrazo2.Name = "txtPrazo2";
-            this.txtPrazo2.Size = new System.Drawing.Size(44, 26);
-            this.txtPrazo2.TabIndex = 16;
-            this.txtPrazo2.Text = "30";
-            this.txtPrazo2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationOnlyNumbers);
-            // 
             // txtObrigacoesContratante1
             // 
             this.txtObrigacoesContratante1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObrigacoesContratante1.Location = new System.Drawing.Point(6, 266);
+            this.txtObrigacoesContratante1.Location = new System.Drawing.Point(6, 366);
             this.txtObrigacoesContratante1.MaxLength = 3900;
             this.txtObrigacoesContratante1.Multiline = true;
             this.txtObrigacoesContratante1.Name = "txtObrigacoesContratante1";
@@ -809,7 +762,7 @@
             // txtValores1
             // 
             this.txtValores1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValores1.Location = new System.Drawing.Point(256, 220);
+            this.txtValores1.Location = new System.Drawing.Point(231, 319);
             this.txtValores1.MaxLength = 18;
             this.txtValores1.Name = "txtValores1";
             this.txtValores1.Size = new System.Drawing.Size(139, 26);
@@ -819,7 +772,7 @@
             // txtPrazo1
             // 
             this.txtPrazo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrazo1.Location = new System.Drawing.Point(521, 22);
+            this.txtPrazo1.Location = new System.Drawing.Point(523, 19);
             this.txtPrazo1.MaxLength = 3;
             this.txtPrazo1.Name = "txtPrazo1";
             this.txtPrazo1.Size = new System.Drawing.Size(44, 26);
@@ -831,11 +784,85 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 3);
+            this.label14.Location = new System.Drawing.Point(5, 2);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(785, 440);
+            this.label14.Size = new System.Drawing.Size(785, 360);
             this.label14.TabIndex = 0;
             this.label14.Text = resources.GetString("label14.Text");
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage5.Controls.Add(this.lblPpte);
+            this.tabPage5.Controls.Add(this.txtPrazoGarantia);
+            this.tabPage5.Controls.Add(this.txtPrazo2);
+            this.tabPage5.Controls.Add(this.label13);
+            this.tabPage5.Controls.Add(this.txtCidade);
+            this.tabPage5.Controls.Add(this.dtpDataAtual);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(851, 501);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "5 - Finalização";
+            // 
+            // lblPpte
+            // 
+            this.lblPpte.AutoSize = true;
+            this.lblPpte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPpte.Location = new System.Drawing.Point(400, 122);
+            this.lblPpte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPpte.Name = "lblPpte";
+            this.lblPpte.Size = new System.Drawing.Size(16, 17);
+            this.lblPpte.TabIndex = 51;
+            this.lblPpte.Text = ", ";
+            // 
+            // txtPrazoGarantia
+            // 
+            this.txtPrazoGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrazoGarantia.Location = new System.Drawing.Point(129, 56);
+            this.txtPrazoGarantia.MaxLength = 2;
+            this.txtPrazoGarantia.Name = "txtPrazoGarantia";
+            this.txtPrazoGarantia.Size = new System.Drawing.Size(35, 26);
+            this.txtPrazoGarantia.TabIndex = 21;
+            this.txtPrazoGarantia.Text = "5";
+            // 
+            // txtPrazo2
+            // 
+            this.txtPrazo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrazo2.Location = new System.Drawing.Point(287, 17);
+            this.txtPrazo2.MaxLength = 3;
+            this.txtPrazo2.Name = "txtPrazo2";
+            this.txtPrazo2.Size = new System.Drawing.Size(44, 26);
+            this.txtPrazo2.TabIndex = 20;
+            this.txtPrazo2.Text = "30";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(33, -20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(775, 120);
+            this.label13.TabIndex = 24;
+            this.label13.Text = resources.GetString("label13.Text");
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidade.Location = new System.Drawing.Point(37, 116);
+            this.txtCidade.MaxLength = 50;
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(362, 26);
+            this.txtCidade.TabIndex = 22;
+            this.txtCidade.Text = "Presidente Prudente";
+            // 
+            // dtpDataAtual
+            // 
+            this.dtpDataAtual.Location = new System.Drawing.Point(420, 117);
+            this.dtpDataAtual.Name = "dtpDataAtual";
+            this.dtpDataAtual.Size = new System.Drawing.Size(325, 23);
+            this.dtpDataAtual.TabIndex = 23;
             // 
             // btnProximo
             // 
@@ -856,6 +883,23 @@
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(503, 128);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 17);
+            this.label15.TabIndex = 115;
+            this.label15.Text = "Código:";
+            // 
+            // txtIdContract
+            // 
+            this.txtIdContract.Location = new System.Drawing.Point(565, 125);
+            this.txtIdContract.Name = "txtIdContract";
+            this.txtIdContract.ReadOnly = true;
+            this.txtIdContract.Size = new System.Drawing.Size(232, 23);
+            this.txtIdContract.TabIndex = 116;
             // 
             // frmContract
             // 
@@ -881,13 +925,13 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblPpte;
-        private System.Windows.Forms.DateTimePicker dtpDataAtual;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox txtRgContratado;
@@ -942,11 +986,17 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtValores1;
         private System.Windows.Forms.TextBox txtPrazo1;
-        private System.Windows.Forms.TextBox txtPrazoGarantia;
-        private System.Windows.Forms.TextBox txtPrazo2;
         private System.Windows.Forms.TextBox txtObrigacoesContratante1;
         private System.Windows.Forms.Button btnAlterarContratado;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox txtPrazoGarantia;
+        private System.Windows.Forms.TextBox txtPrazo2;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.DateTimePicker dtpDataAtual;
+        private System.Windows.Forms.Label lblPpte;
+        private System.Windows.Forms.TextBox txtIdContract;
+        private System.Windows.Forms.Label label15;
     }
 }

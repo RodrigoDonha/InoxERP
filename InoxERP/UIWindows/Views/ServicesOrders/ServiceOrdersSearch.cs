@@ -176,7 +176,8 @@ namespace UIWindows
                     }
                     else if (messageYesNo("CreateContract") == DialogResult.Yes)
                         {
-                            new frmContract(getId).Show();
+                            this.Dispose();
+                            new frmContract(getId, "Budget").Show();
                         }
                 }
                 else

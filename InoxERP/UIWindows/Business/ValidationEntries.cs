@@ -67,6 +67,33 @@ namespace UIWindows.Business.Concrete
             }
         }
 
+        public void characterValidatorNumbersAndLettersIncrEst(object sender, KeyPressEventArgs e)
+        {
+            TextBox txtbox = sender as TextBox;
+            string value = txtbox.Text;
+            if (value.Contains("ISENTO"))
+            {
+
+            }
+            else
+            {
+                //Se a tecla digitada não for número (08 = backspace); (45 = traço); (46 = ponto);
+                //(73 = I); (83 = S); (69 = E); (78 = N); (84 = T); (79 = O) = ISENTO
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 46
+                    && e.KeyChar != 73 && e.KeyChar != 83 && e.KeyChar != 69 && e.KeyChar != 78 && e.KeyChar != 84
+                    && e.KeyChar != 79)
+                {
+                    //Atribui True no Handled para cancelar o evento
+                    e.Handled = true;
+                    if (e.Handled)
+                    {
+                        //MessageBox.Show("incluir apenas números de 0 a 9");
+                    }
+                }
+            }
+                
+        }
+
         public void characterValidatorLetters(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada for letras

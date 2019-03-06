@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIWindows;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
-using UIWindows.Entities.Enum;
 
 namespace InoxERP.UI_Windows_Forms
 {
@@ -104,7 +97,7 @@ namespace InoxERP.UI_Windows_Forms
                                 MessageBox.Show("Erro ao Atualizar o Orçamento !!!");
                             else
                             {
-                                MessageBox.Show("Orçamento Atualizado com Sucesso !!!");
+                                MessageBox.Show("Fornecedor: " + providersAlter.sName + " Atualizado com Sucesso !!!");
                                 btnGravar.Text = "Gravar";
 
                                 cleanCamps();

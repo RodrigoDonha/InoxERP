@@ -71,6 +71,7 @@
             this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.lblCPF_CNPJ = new System.Windows.Forms.Label();
             this.lblAsterisco = new System.Windows.Forms.Label();
+            this.chkIsento = new System.Windows.Forms.CheckBox();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -420,6 +421,7 @@
             // 
             // grpDadosPessoais
             // 
+            this.grpDadosPessoais.Controls.Add(this.chkIsento);
             this.grpDadosPessoais.Controls.Add(this.txtRg);
             this.grpDadosPessoais.Controls.Add(this.lblRg);
             this.grpDadosPessoais.Controls.Add(this.txtCargo);
@@ -443,18 +445,18 @@
             // 
             // txtRg
             // 
-            this.txtRg.Location = new System.Drawing.Point(864, 34);
+            this.txtRg.Location = new System.Drawing.Point(863, 34);
             this.txtRg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRg.MaxLength = 16;
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(192, 23);
             this.txtRg.TabIndex = 2;
-            this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesRG);
+            this.txtRg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesRGandInscEst);
             // 
             // lblRg
             // 
             this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(747, 37);
+            this.lblRg.Location = new System.Drawing.Point(657, 36);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(116, 17);
             this.lblRg.TabIndex = 36;
@@ -527,7 +529,7 @@
             this.txtNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(583, 23);
+            this.txtNome.Size = new System.Drawing.Size(495, 23);
             this.txtNome.TabIndex = 1;
             // 
             // lblNomeCompleto
@@ -556,6 +558,17 @@
             this.lblAsterisco.Size = new System.Drawing.Size(427, 17);
             this.lblAsterisco.TabIndex = 27;
             this.lblAsterisco.Text = "* Campos Obrigatórios para Geração de Contratos Posteriormente";
+            // 
+            // chkIsento
+            // 
+            this.chkIsento.AutoSize = true;
+            this.chkIsento.Location = new System.Drawing.Point(779, 35);
+            this.chkIsento.Name = "chkIsento";
+            this.chkIsento.Size = new System.Drawing.Size(78, 21);
+            this.chkIsento.TabIndex = 37;
+            this.chkIsento.Text = "ISENTO";
+            this.chkIsento.UseVisualStyleBackColor = true;
+            this.chkIsento.Click += new System.EventHandler(this.IsentoChecked);
             // 
             // frmClientsRegister
             // 
@@ -633,5 +646,6 @@
         private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblAsterisco;
+        private System.Windows.Forms.CheckBox chkIsento;
     }
 }

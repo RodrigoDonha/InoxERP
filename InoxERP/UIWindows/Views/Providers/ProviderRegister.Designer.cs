@@ -59,6 +59,8 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.grpDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.txtInscrEst = new System.Windows.Forms.TextBox();
+            this.lblInscrEst = new System.Windows.Forms.Label();
             this.txtCPF_CNPJ = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
@@ -79,8 +81,6 @@
             this.txtAgencia = new System.Windows.Forms.TextBox();
             this.lblAgencia = new System.Windows.Forms.Label();
             this.lblAsterisco = new System.Windows.Forms.Label();
-            this.txtInscrEst = new System.Windows.Forms.TextBox();
-            this.lblInscrEst = new System.Windows.Forms.Label();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -447,6 +447,25 @@
             this.grpDadosPessoais.TabStop = false;
             this.grpDadosPessoais.Text = "Dados da Empresa";
             // 
+            // txtInscrEst
+            // 
+            this.txtInscrEst.Location = new System.Drawing.Point(763, 67);
+            this.txtInscrEst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtInscrEst.MaxLength = 16;
+            this.txtInscrEst.Name = "txtInscrEst";
+            this.txtInscrEst.Size = new System.Drawing.Size(295, 23);
+            this.txtInscrEst.TabIndex = 3;
+            this.txtInscrEst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesInscrEst);
+            // 
+            // lblInscrEst
+            // 
+            this.lblInscrEst.AutoSize = true;
+            this.lblInscrEst.Location = new System.Drawing.Point(668, 70);
+            this.lblInscrEst.Name = "lblInscrEst";
+            this.lblInscrEst.Size = new System.Drawing.Size(83, 17);
+            this.lblInscrEst.TabIndex = 3;
+            this.lblInscrEst.Text = "Inscr. Est.: *";
+            // 
             // txtCPF_CNPJ
             // 
             this.txtCPF_CNPJ.Location = new System.Drawing.Point(156, 67);
@@ -651,25 +670,6 @@
             this.lblAsterisco.Size = new System.Drawing.Size(150, 17);
             this.lblAsterisco.TabIndex = 28;
             this.lblAsterisco.Text = "* Campos Obrigatórios";
-            // 
-            // txtInscrEst
-            // 
-            this.txtInscrEst.Location = new System.Drawing.Point(763, 67);
-            this.txtInscrEst.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtInscrEst.MaxLength = 16;
-            this.txtInscrEst.Name = "txtInscrEst";
-            this.txtInscrEst.Size = new System.Drawing.Size(295, 23);
-            this.txtInscrEst.TabIndex = 3;
-            this.txtInscrEst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesInscrEst);
-            // 
-            // lblInscrEst
-            // 
-            this.lblInscrEst.AutoSize = true;
-            this.lblInscrEst.Location = new System.Drawing.Point(668, 70);
-            this.lblInscrEst.Name = "lblInscrEst";
-            this.lblInscrEst.Size = new System.Drawing.Size(83, 17);
-            this.lblInscrEst.TabIndex = 3;
-            this.lblInscrEst.Text = "Inscr. Est.: *";
             // 
             // frmProviderRegister
             // 

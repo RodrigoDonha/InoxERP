@@ -16,16 +16,12 @@ namespace UIWindows
 {
     public partial class frmContractSearch : Form
     {
-        static InoxErpContext ctx = new InoxErpContext();
-        
+        InoxErpContext ctx = new InoxErpContext();
+
         private string getId;
         public frmContractSearch()
         {
             InitializeComponent();
-
-            // botoes que não serão implementados no momento
-            btnExcluir.Visible = false;
-            btnVisualizar.Visible = false;
         }
 
         //overrid FILL DATASET
@@ -33,7 +29,6 @@ namespace UIWindows
         {
             this.tb_contractsTableAdapter.Fill(this.fullDataSet.tb_contracts);
             grdContratos.Sort(grdContratos.Columns[1], ListSortDirection.Descending);
-
         }
 
         private void frmContractSearch_Load(object sender, EventArgs e)
@@ -58,8 +53,11 @@ namespace UIWindows
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            getIdGrigView();
-            new ContractPrint(getId).Show();
+            if (GetIdIsNull())
+            {
+                new ContractPrint(getId).Show();
+                getId = null;
+            }
         }
 
         private void grdContratos_Click(object sender, EventArgs e)
@@ -113,6 +111,71 @@ namespace UIWindows
                 txtPesquisa.Clear();
                 grdContratos.DataSource = b.ToList();
             }
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            if (GetIdIsNull())
+            {
+                frmContract contract = new frmContract(getId, "Contract");
+
+                contract.ContractData(getId);
+                contract.Show();
+                getId = null;
+                this.Dispose();
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (GetIdIsNull())
+            {
+                if (messageYesNo("Exclude") == DialogResult.Yes)
+                {
+                    InoxErpContext ctx = new InoxErpContext();
+                    ContractBusiness obj = new ContractBusiness(ctx);
+                    Contracts contracts = new Contracts();
+                    contracts = obj.returnById(getId);
+
+                    Budget_OSBusiness objBud = new Budget_OSBusiness(ctx);
+                    Budgets_OS bud = new Budgets_OS();
+                    bud = objBud.ReturnByID(contracts.sIdBudget_OS);
+                    bud.bContractRegistred = false;
+                    objBud.Update(bud);
+
+                    obj.Delete(getId);
+
+                    var ok = obj.Search.FirstOrDefault(b => b.sID == contracts.sID);
+
+                    if (ok != null)
+                        MessageBox.Show("Erro ao Excluir o Contrato !!!");
+                    else
+                        MessageBox.Show("Contrato Excluido com Susseço !!!");
+                }
+            }
+            fillDataSet();
+            getId = null;
+        }
+
+        //validator YesNo
+        public DialogResult messageYesNo(string type)
+        {
+            switch (type)
+            {
+                case "Exclude":
+                    return MessageBox.Show("Confirma exclusão?", "Contrato", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            }
+            return DialogResult.No;
+        }
+
+        private bool GetIdIsNull()
+        {
+            if (getId == null)
+            {
+                MessageBox.Show("Você precisa selecionar um contrato na lista");
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -6,6 +6,7 @@ using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
 using UIWindows.Entities.Enum;
+using UIWindows.Views.ServicesOrders;
 
 namespace InoxERP.UI_Windows_Forms
 {
@@ -14,12 +15,19 @@ namespace InoxERP.UI_Windows_Forms
         static InoxErpContext ctx = new InoxErpContext();
         ClientsBusiness obj = new ClientsBusiness(ctx);
         ValidationEntries validation = new ValidationEntries();
-        string getID;
 
-        public frmClientsRegister(String id)
+        string getID;
+        private string typeTransaction;
+        private string idBudgetAlterContract;
+
+        public frmClientsRegister(String id, string type, string idBudget)
         {
             getID = "";
             getID = id;
+            typeTransaction = "";
+            typeTransaction = type;
+            idBudgetAlterContract = "";
+            idBudgetAlterContract = idBudget;
             InitializeComponent();
             txtNome.Focus();
         }
@@ -89,10 +97,10 @@ namespace InoxERP.UI_Windows_Forms
                             var ok = obj.Search.FirstOrDefault(b => b.sID == clientsAlter.sID);
 
                             if (ok == null)
-                                MessageBox.Show("Erro ao Atualizar o Orçamento !!!");
+                                MessageBox.Show("Erro ao Atualizar o Cadastro !!!");
                             else
                             {
-                                MessageBox.Show("Orçamento Atualizado com Sucesso !!!");
+                                MessageBox.Show("Cliente: " + clientsAlter.sName + " Atualizado com Sucesso !!!");
                                 btnGravar.Text = "Gravar";
 
                                 cleanCamps();
@@ -100,8 +108,15 @@ namespace InoxERP.UI_Windows_Forms
                                 //fecha a tela de alteração
                                 Dispose();
 
-                                //abre tela de consulta novamente
-                                new frmClientsSearch().Show();
+                                if(typeTransaction == "Clients")
+                                    //abre tela de consulta novamente
+                                    new frmClientsSearch().Show();
+                                if (typeTransaction == "Contract")
+                                {
+                                    frmContract contractAltered = new frmContract(idBudgetAlterContract, "Contract");
+                                    contractAltered.fillContractOfObjectClientAltered(idBudgetAlterContract);
+                                    contractAltered.Show();
+                                }
                             }
                         }
                     }
@@ -364,6 +379,11 @@ namespace InoxERP.UI_Windows_Forms
             validation.characterValidatorNumbersRGandInscrEst(sender, e);
         }
 
+        public void validationEntriesRGandInscEst(object sender, KeyPressEventArgs e)
+        {
+            validation.characterValidatorNumbersAndLettersIncrEst(sender, e);
+        }
+
         public void validationEntriesCPFandCNPJ(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyCPFandCNPJ(sender, e);
@@ -382,6 +402,21 @@ namespace InoxERP.UI_Windows_Forms
         public void validationEntriesPhones(object sender, KeyPressEventArgs e)
         {
             validation.characterValidatorOnlyPhones(sender, e);
+        }
+
+        private void IsentoChecked(object sender, EventArgs e)
+        {
+            if (chkIsento.Checked)
+            {
+                txtRg.Text = "ISENTO";
+                txtRg.ReadOnly = true;
+            }
+            else
+            {
+                txtRg.Clear();
+                txtRg.ReadOnly = false;
+            }
+                
         }
     }
 }
