@@ -36,15 +36,16 @@ namespace UIWindows
         private void fillByCheque()
         {
             // TODO: This line of code loads data into the 'fullDataSet.tb_cheques' table. You can move, or remove it, as needed.
-            this.tb_chequesTableAdapter.FillByChequesReveiced(this.fullDataSet.tb_cheques);
+            //this.tb_chequesTableAdapter.FillByChequesReveiced(this.fullDataSet.tb_cheques);
+            this.tb_chequesTableAdapter.Fill(this.fullDataSet.tb_cheques);
             dgvCheques.Columns[0].Visible = false;
         }
 
         private void fillByPaied()
         {
             // TODO: This line of code loads data into the 'fullDataSet.tb_accountsToPay' table. You can move, or remove it, as needed.
-            //this.tb_accountsToPayTableAdapter.FillByAccountsPaied(this.fullDataSet.tb_accountsToPay);
-            this.tb_cheques_and_ClientsTableAdapter.Fill(this.fullDataSet.tb_cheques_and_Clients);
+            this.tb_accountsToPayTableAdapter.FillByAccountsPaied(this.fullDataSet.tb_accountsToPay);
+            //this.tb_cheques_and_ClientsTableAdapter.Fill(this.fullDataSet.tb_cheques_and_Clients);
             dgvPagos.Columns[0].Visible = false;
         }
 

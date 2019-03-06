@@ -154,6 +154,10 @@
     <Compile Include="Migrations\201902051309017_addIEprovider.Designer.cs">
       <DependentUpon>201902051309017_addIEprovider.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903060305534_AlterationsChequesAndClientsEntities.cs" />
+    <Compile Include="Migrations\201903060305534_AlterationsChequesAndClientsEntities.Designer.cs">
+      <DependentUpon>201903060305534_AlterationsChequesAndClientsEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Views\Accounts\ChequeNumber.cs">
@@ -542,6 +546,9 @@
     <EmbeddedResource Include="Business\Reports\ServiceOrders\SituationServiceOrders.rdlc" />
     <EmbeddedResource Include="Migrations\201902051309017_addIEprovider.resx">
       <DependentUpon>201902051309017_addIEprovider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903060305534_AlterationsChequesAndClientsEntities.resx">
+      <DependentUpon>201903060305534_AlterationsChequesAndClientsEntities.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Accounts\ChequeNumber.resx">
       <DependentUpon>ChequeNumber.cs</DependentUpon>

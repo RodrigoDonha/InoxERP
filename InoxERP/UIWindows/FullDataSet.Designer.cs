@@ -4009,6 +4009,8 @@ namespace UIWindows {
             
             private global::System.Data.DataColumn columndRemaing;
             
+            private global::System.Data.DataColumn columnsClientName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tb_chequesDataTable() {
@@ -4164,6 +4166,14 @@ namespace UIWindows {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sClientNameColumn {
+                get {
+                    return this.columnsClientName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4199,7 +4209,23 @@ namespace UIWindows {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tb_chequesRow Addtb_chequesRow(string sID, string sId_Budgets_OS, string sId_Client, decimal dValue, System.DateTime dtDueDate, System.DateTime dtPayDate, bool bChequePaid, int iInstallment, int iAmountInstallment, string sChequeNumber, string sReferentTo, tb_cashRow _parenttb_cashRowByFK_dbo_tb_cheques_dbo_tb_cash_idCash, System.DateTime dtIssue, decimal dPaid, decimal dRemaing) {
+            public tb_chequesRow Addtb_chequesRow(
+                        string sID, 
+                        string sId_Budgets_OS, 
+                        string sId_Client, 
+                        decimal dValue, 
+                        System.DateTime dtDueDate, 
+                        System.DateTime dtPayDate, 
+                        bool bChequePaid, 
+                        int iInstallment, 
+                        int iAmountInstallment, 
+                        string sChequeNumber, 
+                        string sReferentTo, 
+                        tb_cashRow _parenttb_cashRowByFK_dbo_tb_cheques_dbo_tb_cash_idCash, 
+                        System.DateTime dtIssue, 
+                        decimal dPaid, 
+                        decimal dRemaing, 
+                        string sClientName) {
                 tb_chequesRow rowtb_chequesRow = ((tb_chequesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         sID,
@@ -4216,7 +4242,8 @@ namespace UIWindows {
                         null,
                         dtIssue,
                         dPaid,
-                        dRemaing};
+                        dRemaing,
+                        sClientName};
                 if ((_parenttb_cashRowByFK_dbo_tb_cheques_dbo_tb_cash_idCash != null)) {
                     columnValuesArray[11] = _parenttb_cashRowByFK_dbo_tb_cheques_dbo_tb_cash_idCash[0];
                 }
@@ -4264,6 +4291,7 @@ namespace UIWindows {
                 this.columndtIssue = base.Columns["dtIssue"];
                 this.columndPaid = base.Columns["dPaid"];
                 this.columndRemaing = base.Columns["dRemaing"];
+                this.columnsClientName = base.Columns["sClientName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4299,6 +4327,8 @@ namespace UIWindows {
                 base.Columns.Add(this.columndPaid);
                 this.columndRemaing = new global::System.Data.DataColumn("dRemaing", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndRemaing);
+                this.columnsClientName = new global::System.Data.DataColumn("sClientName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsClientName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnsID}, true));
                 this.columnsID.AllowDBNull = false;
@@ -4319,6 +4349,7 @@ namespace UIWindows {
                 this.columndtIssue.AllowDBNull = false;
                 this.columndPaid.AllowDBNull = false;
                 this.columndRemaing.AllowDBNull = false;
+                this.columnsClientName.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12158,6 +12189,22 @@ namespace UIWindows {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sClientName {
+                get {
+                    try {
+                        return ((string)(this[this.tabletb_cheques.sClientNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'sClientName\' na tabela \'tb_cheques\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletb_cheques.sClientNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public tb_cashRow tb_cashRow {
                 get {
                     return ((tb_cashRow)(this.GetParentRow(this.Table.ParentRelations["FK_dbo.tb_cheques_dbo.tb_cash_idCash"])));
@@ -12224,6 +12271,18 @@ namespace UIWindows {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetidCashNull() {
                 this[this.tabletb_cheques.idCashColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssClientNameNull() {
+                return this.IsNull(this.tabletb_cheques.sClientNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsClientNameNull() {
+                this[this.tabletb_cheques.sClientNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19913,10 +19972,11 @@ WHERE        (bServiceOrderDelivered = 'false')";
             tableMapping.ColumnMappings.Add("dtIssue", "dtIssue");
             tableMapping.ColumnMappings.Add("dPaid", "dPaid");
             tableMapping.ColumnMappings.Add("dRemaing", "dRemaing");
+            tableMapping.ColumnMappings.Add("sClientName", "sClientName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tb_cheques] WHERE (([sID] = @Original_sID) AND ((@IsNull_sId_Budgets_OS = 1 AND [sId_Budgets_OS] IS NULL) OR ([sId_Budgets_OS] = @Original_sId_Budgets_OS)) AND ((@IsNull_sId_Client = 1 AND [sId_Client] IS NULL) OR ([sId_Client] = @Original_sId_Client)) AND ([dValue] = @Original_dValue) AND ([dtDueDate] = @Original_dtDueDate) AND ([dtPayDate] = @Original_dtPayDate) AND ([bChequePaid] = @Original_bChequePaid) AND ([iInstallment] = @Original_iInstallment) AND ([iAmountInstallment] = @Original_iAmountInstallment) AND ([sChequeNumber] = @Original_sChequeNumber) AND ((@IsNull_sReferentTo = 1 AND [sReferentTo] IS NULL) OR ([sReferentTo] = @Original_sReferentTo)) AND ((@IsNull_idCash = 1 AND [idCash] IS NULL) OR ([idCash] = @Original_idCash)) AND ([dtIssue] = @Original_dtIssue) AND ([dPaid] = @Original_dPaid) AND ([dRemaing] = @Original_dRemaing))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tb_cheques] WHERE (([sID] = @Original_sID) AND ((@IsNull_sId_Budgets_OS = 1 AND [sId_Budgets_OS] IS NULL) OR ([sId_Budgets_OS] = @Original_sId_Budgets_OS)) AND ((@IsNull_sId_Client = 1 AND [sId_Client] IS NULL) OR ([sId_Client] = @Original_sId_Client)) AND ([dValue] = @Original_dValue) AND ([dtDueDate] = @Original_dtDueDate) AND ([dtPayDate] = @Original_dtPayDate) AND ([bChequePaid] = @Original_bChequePaid) AND ([iInstallment] = @Original_iInstallment) AND ([iAmountInstallment] = @Original_iAmountInstallment) AND ([sChequeNumber] = @Original_sChequeNumber) AND ((@IsNull_sReferentTo = 1 AND [sReferentTo] IS NULL) OR ([sReferentTo] = @Original_sReferentTo)) AND ((@IsNull_idCash = 1 AND [idCash] IS NULL) OR ([idCash] = @Original_idCash)) AND ([dtIssue] = @Original_dtIssue) AND ([dPaid] = @Original_dPaid) AND ([dRemaing] = @Original_dRemaing) AND ((@IsNull_sClientName = 1 AND [sClientName] IS NULL) OR ([sClientName] = @Original_sClientName)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sId_Budgets_OS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -19937,10 +19997,12 @@ WHERE        (bServiceOrderDelivered = 'false')";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtIssue", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtIssue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dPaid", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPaid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dRemaing", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dRemaing", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sClientName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sClientName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sClientName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sClientName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tb_cheques] ([sID], [sId_Budgets_OS], [sId_Client], [dValue], [dtDueDate], [dtPayDate], [bChequePaid], [iInstallment], [iAmountInstallment], [sChequeNumber], [sReferentTo], [idCash], [dtIssue], [dPaid], [dRemaing]) VALUES (@sID, @sId_Budgets_OS, @sId_Client, @dValue, @dtDueDate, @dtPayDate, @bChequePaid, @iInstallment, @iAmountInstallment, @sChequeNumber, @sReferentTo, @idCash, @dtIssue, @dPaid, @dRemaing);
-SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash, dtIssue, dPaid, dRemaing FROM tb_cheques WHERE (sID = @sID) ORDER BY dtDueDate DESC";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tb_cheques] ([sID], [sId_Budgets_OS], [sId_Client], [dValue], [dtDueDate], [dtPayDate], [bChequePaid], [iInstallment], [iAmountInstallment], [sChequeNumber], [sReferentTo], [idCash], [dtIssue], [dPaid], [dRemaing], [sClientName]) VALUES (@sID, @sId_Budgets_OS, @sId_Client, @dValue, @dtDueDate, @dtPayDate, @bChequePaid, @iInstallment, @iAmountInstallment, @sChequeNumber, @sReferentTo, @idCash, @dtIssue, @dPaid, @dRemaing, @sClientName);
+SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash, dtIssue, dPaid, dRemaing, sClientName FROM tb_cheques WHERE (sID = @sID) ORDER BY dtDueDate DESC";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sId_Budgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -19957,6 +20019,7 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtIssue", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtIssue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dPaid", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPaid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dRemaing", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dRemaing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sClientName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [tb_cheques] SET [sID] = @sID, [sId_Budgets_OS] = @sId_Budgets_OS, [sId_Cl" +
@@ -19964,20 +20027,22 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
                 " @dtPayDate, [bChequePaid] = @bChequePaid, [iInstallment] = @iInstallment, [iAmo" +
                 "untInstallment] = @iAmountInstallment, [sChequeNumber] = @sChequeNumber, [sRefer" +
                 "entTo] = @sReferentTo, [idCash] = @idCash, [dtIssue] = @dtIssue, [dPaid] = @dPai" +
-                "d, [dRemaing] = @dRemaing WHERE (([sID] = @Original_sID) AND ((@IsNull_sId_Budge" +
-                "ts_OS = 1 AND [sId_Budgets_OS] IS NULL) OR ([sId_Budgets_OS] = @Original_sId_Bud" +
-                "gets_OS)) AND ((@IsNull_sId_Client = 1 AND [sId_Client] IS NULL) OR ([sId_Client" +
-                "] = @Original_sId_Client)) AND ([dValue] = @Original_dValue) AND ([dtDueDate] = " +
-                "@Original_dtDueDate) AND ([dtPayDate] = @Original_dtPayDate) AND ([bChequePaid] " +
-                "= @Original_bChequePaid) AND ([iInstallment] = @Original_iInstallment) AND ([iAm" +
-                "ountInstallment] = @Original_iAmountInstallment) AND ([sChequeNumber] = @Origina" +
-                "l_sChequeNumber) AND ((@IsNull_sReferentTo = 1 AND [sReferentTo] IS NULL) OR ([s" +
-                "ReferentTo] = @Original_sReferentTo)) AND ((@IsNull_idCash = 1 AND [idCash] IS N" +
-                "ULL) OR ([idCash] = @Original_idCash)) AND ([dtIssue] = @Original_dtIssue) AND (" +
-                "[dPaid] = @Original_dPaid) AND ([dRemaing] = @Original_dRemaing));\r\nSELECT sID, " +
-                "sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallm" +
-                "ent, iAmountInstallment, sChequeNumber, sReferentTo, idCash, dtIssue, dPaid, dRe" +
-                "maing FROM tb_cheques WHERE (sID = @sID) ORDER BY dtDueDate DESC";
+                "d, [dRemaing] = @dRemaing, [sClientName] = @sClientName WHERE (([sID] = @Origina" +
+                "l_sID) AND ((@IsNull_sId_Budgets_OS = 1 AND [sId_Budgets_OS] IS NULL) OR ([sId_B" +
+                "udgets_OS] = @Original_sId_Budgets_OS)) AND ((@IsNull_sId_Client = 1 AND [sId_Cl" +
+                "ient] IS NULL) OR ([sId_Client] = @Original_sId_Client)) AND ([dValue] = @Origin" +
+                "al_dValue) AND ([dtDueDate] = @Original_dtDueDate) AND ([dtPayDate] = @Original_" +
+                "dtPayDate) AND ([bChequePaid] = @Original_bChequePaid) AND ([iInstallment] = @Or" +
+                "iginal_iInstallment) AND ([iAmountInstallment] = @Original_iAmountInstallment) A" +
+                "ND ([sChequeNumber] = @Original_sChequeNumber) AND ((@IsNull_sReferentTo = 1 AND" +
+                " [sReferentTo] IS NULL) OR ([sReferentTo] = @Original_sReferentTo)) AND ((@IsNul" +
+                "l_idCash = 1 AND [idCash] IS NULL) OR ([idCash] = @Original_idCash)) AND ([dtIss" +
+                "ue] = @Original_dtIssue) AND ([dPaid] = @Original_dPaid) AND ([dRemaing] = @Orig" +
+                "inal_dRemaing) AND ((@IsNull_sClientName = 1 AND [sClientName] IS NULL) OR ([sCl" +
+                "ientName] = @Original_sClientName)));\r\nSELECT sID, sId_Budgets_OS, sId_Client, d" +
+                "Value, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChe" +
+                "queNumber, sReferentTo, idCash, dtIssue, dPaid, dRemaing, sClientName FROM tb_ch" +
+                "eques WHERE (sID = @sID) ORDER BY dtDueDate DESC";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sId_Budgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -19994,6 +20059,7 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dtIssue", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtIssue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dPaid", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPaid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dRemaing", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dRemaing", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sClientName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sClientName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sID", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sId_Budgets_OS", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sId_Budgets_OS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sId_Budgets_OS", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20013,6 +20079,8 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dtIssue", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dtIssue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dPaid", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dPaid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_dRemaing", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "dRemaing", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_sClientName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sClientName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_sClientName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "sClientName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20030,21 +20098,22 @@ SELECT sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePai
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChe" +
                 "quePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash, d" +
-                "tIssue, dPaid, dRemaing\r\nFROM            tb_cheques\r\nORDER BY dtDueDate DESC";
+                "tIssue, dPaid, dRemaing, sClientName\r\nFROM            tb_cheques\r\nORDER BY dtDue" +
+                "Date DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        bChequePaid, dPaid, dRemaing, dValue, dtDueDate, dtIssue, dtPayDate, iAmountInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Client, sReferentTo
-FROM            tb_cheques
-WHERE        (bChequePaid = 0)
-ORDER BY dtDueDate DESC";
+            this._commandCollection[1].CommandText = "SELECT bChequePaid, dPaid, dRemaing, dValue, dtDueDate, dtIssue, dtPayDate, iAmou" +
+                "ntInstallment, iInstallment, idCash, sChequeNumber, sClientName, sID, sId_Budget" +
+                "s_OS, sId_Client, sReferentTo FROM tb_cheques WHERE (bChequePaid = 0) ORDER BY d" +
+                "tDueDate DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT bChequePaid, dPaid, dRemaing, dValue, dtDueDate, dtIssue, dtPayDate, iAmou" +
-                "ntInstallment, iInstallment, idCash, sChequeNumber, sID, sId_Budgets_OS, sId_Cli" +
-                "ent, sReferentTo FROM tb_cheques WHERE (bChequePaid = 1) ORDER BY dtDueDate DESC" +
-                "";
+                "ntInstallment, iInstallment, idCash, sChequeNumber, sClientName, sID, sId_Budget" +
+                "s_OS, sId_Client, sReferentTo FROM tb_cheques WHERE (bChequePaid = 1) ORDER BY d" +
+                "tDueDate DESC";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20153,7 +20222,23 @@ ORDER BY dtDueDate DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_sID, string Original_sId_Budgets_OS, string Original_sId_Client, decimal Original_dValue, System.DateTime Original_dtDueDate, System.DateTime Original_dtPayDate, bool Original_bChequePaid, int Original_iInstallment, int Original_iAmountInstallment, string Original_sChequeNumber, string Original_sReferentTo, string Original_idCash, System.DateTime Original_dtIssue, decimal Original_dPaid, decimal Original_dRemaing) {
+        public virtual int Delete(
+                    string Original_sID, 
+                    string Original_sId_Budgets_OS, 
+                    string Original_sId_Client, 
+                    decimal Original_dValue, 
+                    System.DateTime Original_dtDueDate, 
+                    System.DateTime Original_dtPayDate, 
+                    bool Original_bChequePaid, 
+                    int Original_iInstallment, 
+                    int Original_iAmountInstallment, 
+                    string Original_sChequeNumber, 
+                    string Original_sReferentTo, 
+                    string Original_idCash, 
+                    System.DateTime Original_dtIssue, 
+                    decimal Original_dPaid, 
+                    decimal Original_dRemaing, 
+                    string Original_sClientName) {
             if ((Original_sID == null)) {
                 throw new global::System.ArgumentNullException("Original_sID");
             }
@@ -20207,6 +20292,14 @@ ORDER BY dtDueDate DESC";
             this.Adapter.DeleteCommand.Parameters[16].Value = ((System.DateTime)(Original_dtIssue));
             this.Adapter.DeleteCommand.Parameters[17].Value = ((decimal)(Original_dPaid));
             this.Adapter.DeleteCommand.Parameters[18].Value = ((decimal)(Original_dRemaing));
+            if ((Original_sClientName == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_sClientName));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20227,7 +20320,23 @@ ORDER BY dtDueDate DESC";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string sID, string sId_Budgets_OS, string sId_Client, decimal dValue, System.DateTime dtDueDate, System.DateTime dtPayDate, bool bChequePaid, int iInstallment, int iAmountInstallment, string sChequeNumber, string sReferentTo, string idCash, System.DateTime dtIssue, decimal dPaid, decimal dRemaing) {
+        public virtual int Insert(
+                    string sID, 
+                    string sId_Budgets_OS, 
+                    string sId_Client, 
+                    decimal dValue, 
+                    System.DateTime dtDueDate, 
+                    System.DateTime dtPayDate, 
+                    bool bChequePaid, 
+                    int iInstallment, 
+                    int iAmountInstallment, 
+                    string sChequeNumber, 
+                    string sReferentTo, 
+                    string idCash, 
+                    System.DateTime dtIssue, 
+                    decimal dPaid, 
+                    decimal dRemaing, 
+                    string sClientName) {
             if ((sID == null)) {
                 throw new global::System.ArgumentNullException("sID");
             }
@@ -20273,6 +20382,12 @@ ORDER BY dtDueDate DESC";
             this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(dtIssue));
             this.Adapter.InsertCommand.Parameters[13].Value = ((decimal)(dPaid));
             this.Adapter.InsertCommand.Parameters[14].Value = ((decimal)(dRemaing));
+            if ((sClientName == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(sClientName));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20309,6 +20424,7 @@ ORDER BY dtDueDate DESC";
                     System.DateTime dtIssue, 
                     decimal dPaid, 
                     decimal dRemaing, 
+                    string sClientName, 
                     string Original_sID, 
                     string Original_sId_Budgets_OS, 
                     string Original_sId_Client, 
@@ -20323,7 +20439,8 @@ ORDER BY dtDueDate DESC";
                     string Original_idCash, 
                     System.DateTime Original_dtIssue, 
                     decimal Original_dPaid, 
-                    decimal Original_dRemaing) {
+                    decimal Original_dRemaing, 
+                    string Original_sClientName) {
             if ((sID == null)) {
                 throw new global::System.ArgumentNullException("sID");
             }
@@ -20369,59 +20486,73 @@ ORDER BY dtDueDate DESC";
             this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(dtIssue));
             this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(dPaid));
             this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(dRemaing));
+            if ((sClientName == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(sClientName));
+            }
             if ((Original_sID == null)) {
                 throw new global::System.ArgumentNullException("Original_sID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_sID));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_sID));
             }
             if ((Original_sId_Budgets_OS == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_sId_Budgets_OS));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_sId_Budgets_OS));
             }
             if ((Original_sId_Client == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_sId_Client));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_sId_Client));
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(Original_dValue));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_dtDueDate));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_dtPayDate));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((bool)(Original_bChequePaid));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_iInstallment));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_iAmountInstallment));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_dValue));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_dtDueDate));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_dtPayDate));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((bool)(Original_bChequePaid));
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_iInstallment));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_iAmountInstallment));
             if ((Original_sChequeNumber == null)) {
                 throw new global::System.ArgumentNullException("Original_sChequeNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_sChequeNumber));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_sChequeNumber));
             }
             if ((Original_sReferentTo == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_sReferentTo));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_sReferentTo));
             }
             if ((Original_idCash == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_idCash));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_idCash));
             }
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_dtIssue));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_dPaid));
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((decimal)(Original_dRemaing));
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(Original_dtIssue));
+            this.Adapter.UpdateCommand.Parameters[33].Value = ((decimal)(Original_dPaid));
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((decimal)(Original_dRemaing));
+            if ((Original_sClientName == null)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_sClientName));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20457,6 +20588,7 @@ ORDER BY dtDueDate DESC";
                     System.DateTime dtIssue, 
                     decimal dPaid, 
                     decimal dRemaing, 
+                    string sClientName, 
                     string Original_sID, 
                     string Original_sId_Budgets_OS, 
                     string Original_sId_Client, 
@@ -20471,8 +20603,9 @@ ORDER BY dtDueDate DESC";
                     string Original_idCash, 
                     System.DateTime Original_dtIssue, 
                     decimal Original_dPaid, 
-                    decimal Original_dRemaing) {
-            return this.Update(Original_sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash, dtIssue, dPaid, dRemaing, Original_sID, Original_sId_Budgets_OS, Original_sId_Client, Original_dValue, Original_dtDueDate, Original_dtPayDate, Original_bChequePaid, Original_iInstallment, Original_iAmountInstallment, Original_sChequeNumber, Original_sReferentTo, Original_idCash, Original_dtIssue, Original_dPaid, Original_dRemaing);
+                    decimal Original_dRemaing, 
+                    string Original_sClientName) {
+            return this.Update(Original_sID, sId_Budgets_OS, sId_Client, dValue, dtDueDate, dtPayDate, bChequePaid, iInstallment, iAmountInstallment, sChequeNumber, sReferentTo, idCash, dtIssue, dPaid, dRemaing, sClientName, Original_sID, Original_sId_Budgets_OS, Original_sId_Client, Original_dValue, Original_dtDueDate, Original_dtPayDate, Original_bChequePaid, Original_iInstallment, Original_iAmountInstallment, Original_sChequeNumber, Original_sReferentTo, Original_idCash, Original_dtIssue, Original_dPaid, Original_dRemaing, Original_sClientName);
         }
     }
     

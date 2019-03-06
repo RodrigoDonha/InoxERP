@@ -455,7 +455,8 @@ namespace UIWindows
                             iInstallment = i+1,
                             iAmountInstallment = Convert.ToInt32(nudParcelas.Value),
                             sChequeNumber = returnChequeNumber(i+1),
-                            sReferentTo = txtReferenteA.Text
+                            sReferentTo = txtReferenteA.Text,
+                            sClientName = txtNomeCliente.Text
                         };
 
                         objPersist.Insert(chequePersist);

@@ -17,13 +17,13 @@ namespace UIWindows.Entities
         public string sName { get; set; }
 
         [StringLength(18)]
-        [Required(ErrorMessage = "CPF/CNPJ é obrigatório")]
+        //[Required(ErrorMessage = "CPF/CNPJ é obrigatório")]
         public string sCpfCnpj { get; set; }
 
         [StringLength(14)]
         public string sRg { get; set; }
         
-        [Range(1, 3, ErrorMessage = "Tipo é obrigatório")]
+        //[Range(1, 3, ErrorMessage = "Tipo é obrigatório")]
         public ClientType ClientType { get; set; }
 
         [StringLength(100)]
@@ -55,7 +55,7 @@ namespace UIWindows.Entities
         public string sPhoneResidencial { get; set; }
 
         [StringLength(15)]
-        [Required(ErrorMessage = "Celular é obrigatório")]
+        //[Required(ErrorMessage = "Celular é obrigatório")]
         public string sPhoneCelularOne { get; set; }
 
         [StringLength(15)]

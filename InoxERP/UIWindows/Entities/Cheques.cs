@@ -50,6 +50,9 @@ namespace UIWindows.Entities
         [StringLength(100)]
         public string sReferentTo { get; set; }
 
+        [StringLength(100)]
+        public string sClientName { get; set; }
+
 
         //ForengKey
 
