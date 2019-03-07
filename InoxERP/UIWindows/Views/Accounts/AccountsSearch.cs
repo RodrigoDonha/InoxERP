@@ -37,7 +37,7 @@ namespace UIWindows
         {
             // TODO: This line of code loads data into the 'fullDataSet.tb_cheques' table. You can move, or remove it, as needed.
             //this.tb_chequesTableAdapter.FillByChequesReveiced(this.fullDataSet.tb_cheques);
-            this.tb_chequesTableAdapter.Fill(this.fullDataSet.tb_cheques);
+            this.tb_chequesTableAdapter.FillByChequesReveiced(this.fullDataSet.tb_cheques);
             dgvCheques.Columns[0].Visible = false;
         }
 

@@ -26,6 +26,8 @@ namespace UIWindows
         ValidationEntries validation = new ValidationEntries();
         MessageBoxTimer msg = new MessageBoxTimer();
 
+        string idClientGlobal = "";
+
         public frmAccountsCheque()
         {
             InitializeComponent();
@@ -34,6 +36,38 @@ namespace UIWindows
         private void frmAccountsCheque_Load(object sender, EventArgs e)
         {
             fillGrid();
+        }
+
+        private void fillGridClient()
+        {
+            InoxErpContext ctxCli = new InoxErpContext();
+            Clients cli = new Clients();
+            ClientsBusiness objCli = new ClientsBusiness(ctxCli);
+
+            var chq = from p in ctx.Cheques where p.sId_Client.Equals(idClientGlobal) where p.bChequePaid.Equals(false) orderby p.dtDueDate descending select p;
+
+            if (chq.ToList().Count.Equals(0))
+            {
+                if (idClientGlobal == "")
+                {
+                    msg.Show("Cliente Não Encontrado", "Não foi Encontrado Cliente para este lançamento", 0, 2000);
+                }
+                else
+                {
+                    cli = objCli.ReturnByID(idClientGlobal);
+
+                    txtNomeCliente.Text = cli.sName;
+                }
+
+                msg.Show("Lançamento Não Encontrado", "Não foi Encontrado Lançamentos para este Fornecedor", 0, 2000);
+                txtNomeCliente.Focus();
+            }
+            else
+            {
+                List<Cheques> s = chq.ToList();
+                txtNomeCliente.Text = cli.sName;
+                grdCheques.DataSource = s.ToList();
+            }
         }
 
         private void fillGrid()
@@ -252,9 +286,12 @@ namespace UIWindows
             clientsSearch.ShowDialog();
 
             if (clientsSearch.ReturnClients != null)
+            {
                 idClient = clientsSearch.ReturnClients.sID;
-
-            var chq = from p in ctx.Cheques where p.sId_Client.Equals(idClient) where p.bChequePaid.Equals(false) select p;
+                idClientGlobal = idClient;
+            }
+                
+        var chq = from p in ctx.Cheques where p.sId_Client.Equals(idClient) where p.bChequePaid.Equals(false) orderby p.dtDueDate descending select p;
 
             if (chq.ToList().Count.Equals(0))
             {
@@ -471,7 +508,13 @@ namespace UIWindows
                     }
                     
                     cleanCamps();
-                    fillGrid();
+
+                    if (idClientGlobal == "")
+                        fillGrid();
+                    else
+                        fillGridClient();
+
+                    idClientGlobal = "";
                 }
         }
 
