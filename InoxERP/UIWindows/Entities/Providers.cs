@@ -38,7 +38,7 @@ namespace UIWindows.Entities
         //[Required(ErrorMessage = "Cidade é obrigatória")]
         public string sCity { get; set; }
 
-        //[Range(1, 27, ErrorMessage = "Estado é obrigatório")]
+        //[Range(0, 27, ErrorMessage = "Estado é obrigatório")]
         public Estate Estate { get; set; }
 
         [StringLength(9)]

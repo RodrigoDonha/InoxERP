@@ -45,7 +45,7 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "Cidade do Contratante é Obrigatório")]
         public string sProviderCity { get; set; }
         
-        [Range(1,27, ErrorMessage = "Estado do Contratante é Obrigatório")]
+        [Range(0,27, ErrorMessage = "Estado do Contratante é Obrigatório")]
         public Estate ProviderEstate { get; set; }
 
         [StringLength(100)]
@@ -80,7 +80,7 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "Cidade do Cliente é Obrigatório")]
         public string sClientCity { get; set; }
 
-        [Range(1, 27, ErrorMessage = "Estado do Cliente é Obrigatório")]
+        [Range(0, 27, ErrorMessage = "Estado do Cliente é Obrigatório")]
         public Estate ClientEstate { get; set; }
 
         [Required(ErrorMessage = "Valor Total é Obrigatório")]

@@ -131,7 +131,6 @@ namespace UIWindows
                 txtBairroC.Text = cliAltered.sDistrict.ToUpper();
                 txtCidadeC.Text = cliAltered.sCity.ToUpper();
                 cbxEstate.Text = cliAltered.Estate.ToString();
-                cbxEstateContratado.SelectedIndex = 24;
             }
             else
             {
@@ -387,13 +386,16 @@ namespace UIWindows
                             new ContractPrint(contractAlter.sID).Show();
                         }
                         else
-                            MessageBox.Show("Erro ao Salvar o Contrato !!!");
+                            MessageBox.Show("Erro ao Alterar o Contrato !!!");
                     }
                     else
                     {
                         InoxErpContext ctxPersist = new InoxErpContext();
                         ContractBusiness objPersist = new ContractBusiness(ctxPersist);
                         Contracts contractPersist = new Contracts();
+
+                        Budgets_OS searchBud = new Budgets_OS();
+                        Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
 
                         //gera id unico para o orçamento
                         contractPersist.sID = Guid.NewGuid().ToString();
@@ -433,7 +435,7 @@ namespace UIWindows
                         contractPersist.sCity = txtCidade.Text;
 
                         contractPersist.sIdBudget_OS = searchBudget.sID;
-
+                        
                         //salva
                         objPersist.Insert(contractPersist);
 
@@ -442,11 +444,13 @@ namespace UIWindows
 
                         if (ok != null)
                         {
-                            MessageBox.Show("Contrato Alterado com Sucesso !!!");
+                            MessageBox.Show("Contrato Salvo com Sucesso !!!");
 
-                            searchBudget.bContractRegistred = true;
+                            searchBud = obj.ReturnByID(contractPersist.sIdBudget_OS);
 
-                            obj.Update(searchBudget);
+                            searchBud.bContractRegistred = true;
+
+                            obj.Update(searchBud);
 
                             this.Dispose();
 
@@ -454,7 +458,7 @@ namespace UIWindows
                             new ContractPrint(contractPersist.sID).Show();
                         }
                         else
-                            MessageBox.Show("Erro ao Alterar o Contrato !!!");
+                            MessageBox.Show("Erro ao Salvar o Contrato !!!");
                     }
                 }
             }
