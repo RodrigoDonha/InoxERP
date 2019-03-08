@@ -52,18 +52,18 @@
             this.txtOS = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.grdCheques = new System.Windows.Forms.DataGridView();
-            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fullDataSet = new UIWindows.FullDataSet();
             this.lblVecto = new System.Windows.Forms.Label();
             this.lblOrcamento = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
             this.lblId = new System.Windows.Forms.Label();
             this.nudPrazo = new System.Windows.Forms.NumericUpDown();
             this.lblPrazo = new System.Windows.Forms.Label();
             this.txtC3 = new System.Windows.Forms.TextBox();
             this.txtC2 = new System.Windows.Forms.TextBox();
             this.txtC1 = new System.Windows.Forms.TextBox();
+            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,11 +77,12 @@
             this.sReferentToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sChequeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodCliente
@@ -274,7 +275,8 @@
             this.iAmountInstallmentDataGridViewTextBoxColumn,
             this.sReferentToDataGridViewTextBoxColumn,
             this.sChequeNumberDataGridViewTextBoxColumn,
-            this.idCashDataGridViewTextBoxColumn});
+            this.idCashDataGridViewTextBoxColumn,
+            this.sClientName});
             this.grdCheques.DataSource = this.tbchequesBindingSource;
             this.grdCheques.Location = new System.Drawing.Point(17, 294);
             this.grdCheques.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -286,16 +288,6 @@
             this.grdCheques.TabIndex = 21;
             this.grdCheques.TabStop = false;
             this.grdCheques.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCheques_CellClick);
-            // 
-            // tbchequesBindingSource
-            // 
-            this.tbchequesBindingSource.DataMember = "tb_cheques";
-            this.tbchequesBindingSource.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblVecto
             // 
@@ -327,10 +319,6 @@
             this.label1.Size = new System.Drawing.Size(94, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cheques";
-            // 
-            // tb_chequesTableAdapter
-            // 
-            this.tb_chequesTableAdapter.ClearBeforeFill = true;
             // 
             // lblId
             // 
@@ -389,6 +377,20 @@
             this.txtC1.TabIndex = 16;
             this.txtC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC1_KeyPress);
             this.txtC1.Leave += new System.EventHandler(this.txtC1_Leave);
+            // 
+            // tbchequesBindingSource
+            // 
+            this.tbchequesBindingSource.DataMember = "tb_cheques";
+            this.tbchequesBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tb_chequesTableAdapter
+            // 
+            this.tb_chequesTableAdapter.ClearBeforeFill = true;
             // 
             // sIDDataGridViewTextBoxColumn
             // 
@@ -511,6 +513,14 @@
             this.idCashDataGridViewTextBoxColumn.ReadOnly = true;
             this.idCashDataGridViewTextBoxColumn.Visible = false;
             // 
+            // sClientName
+            // 
+            this.sClientName.DataPropertyName = "sClientName";
+            this.sClientName.HeaderText = "sClientName";
+            this.sClientName.Name = "sClientName";
+            this.sClientName.ReadOnly = true;
+            this.sClientName.Visible = false;
+            // 
             // frmAccountsCheque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -551,9 +561,9 @@
             this.Load += new System.EventHandler(this.frmAccountsCheque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +612,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sReferentToDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sChequeNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCashDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sClientName;
     }
 }

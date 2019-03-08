@@ -107,24 +107,27 @@ namespace UIWindows
                 ClientsBusiness objC = new ClientsBusiness(ctx);
                 ProviderBusiness objP = new ProviderBusiness(ctx);
 
-                string cli = grdCheques[2, grdCheques.CurrentRow.Index].Value.ToString();
-                try
-                {
-                    txtNomeCliente.Text = objC.Search
-                        .FirstOrDefault(c => c.sID == cli).sName;
-                }
-                catch (Exception)
-                {
-                    try
-                    {
-                        txtNomeCliente.Text = objP.Search
-                            .FirstOrDefault(c => c.sID == cli).sName;
-                    }
-                    catch (Exception)
-                    {
-                        txtNomeCliente.Text = "";
-                    }
-                }
+                //string cli = grdCheques[2, grdCheques.CurrentRow.Index].Value.ToString();
+                //try
+                //{
+                //    txtNomeCliente.Text = objC.Search
+                //        .FirstOrDefault(c => c.sID == cli).sName;
+                //}
+                //catch (Exception)
+                //{
+                //    try
+                //    {
+                //        txtNomeCliente.Text = objP.Search
+                //            .FirstOrDefault(c => c.sID == cli).sName;
+                //    }
+                //    catch (Exception)
+                //    {
+                //        txtNomeCliente.Text = "";
+                //    }
+                //}
+
+                txtNomeCliente.Text = grdCheques[13, grdCheques.CurrentRow.Index].Value.ToString();
+
 
                 string id = grdCheques[1, grdCheques.CurrentRow.Index].Value.ToString();
 
@@ -535,6 +538,7 @@ namespace UIWindows
                     {
                         chequeAlter.sId_Budgets_OS = returnOS();
                         chequeAlter.sId_Client = returnId();
+                        chequeAlter.sClientName = txtNomeCliente.Text;
                         chequeAlter.dValue = Convert.ToDecimal(txtValor.Text.Replace(".", ","));
                         chequeAlter.dtDueDate = dtpData.Value.Date;
                         chequeAlter.sChequeNumber = returnChequeNumber(1);

@@ -48,75 +48,64 @@ namespace InoxERP.UI_Windows_Forms
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            if (!validationCamps())
-                MessageBox.Show("Por Favor preencha as informações Corretamente");
-            else
+            if (validationCamps())
             {
                 if (btnGravar.Text == "Alterar")
                 {
                     if (messageYesNo("Alter") == DialogResult.Yes)
                     {
-                        if (!validationCamps())
-                            MessageBox.Show("Por Favor preencha as informações Corretamente");
+                        Clients clientsAlter = new Clients();
+
+                        //procura o orçamento para alteração
+                        clientsAlter = obj.ReturnByID(getID);
+
+                        //preenche os dados do orçamento
+                        clientsAlter.sName = txtNome.Text;
+                        clientsAlter.sRg = txtRg.Text;
+                        clientsAlter.sCpfCnpj = txtCPF_CNPJ.Text;
+                        clientsAlter.ClientType = clientType();
+                        clientsAlter.sOccupation = txtCargo.Text;
+                        clientsAlter.sAdress = txtEndereco.Text;
+                        clientsAlter.iNumber = txtNumEndereco.Text == "" ? 0 : Convert.ToInt32(txtNumEndereco.Text);
+                        clientsAlter.sDistrict = txtBairro.Text;
+                        clientsAlter.sComplement = txtComplemento.Text;
+                        clientsAlter.sCity = txtCidade.Text;
+                        string estate = cmbEstate.Text.ToUpper();
+                        clientsAlter.Estate = validation.estate(cmbEstate.SelectedIndex == 0 ? validation.estatePerString(estate) : cmbEstate.SelectedIndex);
+                        clientsAlter.sCEP = txtCEP.Text;
+                        clientsAlter.sPhoneResidencial = txtContatosResiCom.Text;
+                        clientsAlter.sEmail = txtContatosEmail.Text;
+                        clientsAlter.sPhoneCelularOne = txtContatosCelular1.Text;
+                        clientsAlter.sPhoneCelularTwo = txtContatosCelular2.Text;
+                        clientsAlter.sObservation = txtObservacoes.Text;
+
+
+                        //atualiza
+                        obj.Update(clientsAlter);
+
+                        //verifica se o orçamento foi atualizado com sucesso
+                        var ok = obj.Search.FirstOrDefault(b => b.sID == clientsAlter.sID);
+
+                        if (ok == null)
+                            MessageBox.Show("Erro ao Atualizar o Cadastro !!!");
                         else
                         {
-                            Clients clientsAlter = new Clients();
+                            MessageBox.Show("Cliente: " + clientsAlter.sName + " Atualizado com Sucesso !!!");
+                            btnGravar.Text = "Gravar";
 
-                            //procura o orçamento para alteração
-                            clientsAlter = obj.ReturnByID(getID);
+                            cleanCamps();
 
-                            //preenche os dados do orçamento
-                            clientsAlter.sName = txtNome.Text;
-                            clientsAlter.sRg = txtRg.Text;
-                            clientsAlter.sCpfCnpj = txtCPF_CNPJ.Text;
-                            clientsAlter.ClientType = clientType();
-                            clientsAlter.sOccupation = txtCargo.Text;
-                            clientsAlter.sAdress = txtEndereco.Text;
-                            clientsAlter.iNumber = Convert.ToInt32(txtNumEndereco.Text);
-                            clientsAlter.sDistrict = txtBairro.Text;
-                            clientsAlter.sComplement = txtComplemento.Text;
-                            clientsAlter.sCity = txtCidade.Text;
-                            //clientsAlter.Estate = estate();
-                            string estate = cmbEstate.Text.ToUpper();
-                            if (cmbEstate.SelectedIndex == -1)
-                                clientsAlter.Estate = validation.estate(validation.estatePerString(estate));
-                            else
-                                clientsAlter.Estate = validation.estate(cmbEstate.SelectedIndex);
-                            clientsAlter.sCEP = txtCEP.Text;
-                            clientsAlter.sPhoneResidencial = txtContatosResiCom.Text;
-                            clientsAlter.sEmail = txtContatosEmail.Text;
-                            clientsAlter.sPhoneCelularOne = txtContatosCelular1.Text;
-                            clientsAlter.sPhoneCelularTwo = txtContatosCelular2.Text;
-                            clientsAlter.sObservation = txtObservacoes.Text;
+                            //fecha a tela de alteração
+                            Dispose();
 
-
-                            //atualiza
-                            obj.Update(clientsAlter);
-
-                            //verifica se o orçamento foi atualizado com sucesso
-                            var ok = obj.Search.FirstOrDefault(b => b.sID == clientsAlter.sID);
-
-                            if (ok == null)
-                                MessageBox.Show("Erro ao Atualizar o Cadastro !!!");
-                            else
+                            if(typeTransaction == "Clients")
+                                //abre tela de consulta novamente
+                                new frmClientsSearch().Show();
+                            if (typeTransaction == "Contract")
                             {
-                                MessageBox.Show("Cliente: " + clientsAlter.sName + " Atualizado com Sucesso !!!");
-                                btnGravar.Text = "Gravar";
-
-                                cleanCamps();
-
-                                //fecha a tela de alteração
-                                Dispose();
-
-                                if(typeTransaction == "Clients")
-                                    //abre tela de consulta novamente
-                                    new frmClientsSearch().Show();
-                                if (typeTransaction == "Contract")
-                                {
-                                    frmContract contractAltered = new frmContract(idBudgetAlterContract, "Contract");
-                                    contractAltered.fillContractOfObjectClientAltered(idBudgetAlterContract);
-                                    contractAltered.Show();
-                                }
+                                frmContract contractAltered = new frmContract(idBudgetAlterContract, "Contract");
+                                contractAltered.fillContractOfObjectClientAltered(idBudgetAlterContract);
+                                contractAltered.Show();
                             }
                         }
                     }
@@ -132,16 +121,12 @@ namespace InoxERP.UI_Windows_Forms
                     clientsPersist.ClientType = clientType();
                     clientsPersist.sOccupation = txtCargo.Text;
                     clientsPersist.sAdress = txtEndereco.Text;
-                    clientsPersist.iNumber = Convert.ToInt32(txtNumEndereco.Text);
+                    clientsPersist.iNumber = txtNumEndereco.Text == "" ? 0 : Convert.ToInt32(txtNumEndereco.Text);
                     clientsPersist.sDistrict = txtBairro.Text;
                     clientsPersist.sComplement = txtComplemento.Text;
                     clientsPersist.sCity = txtCidade.Text;
-                    //clientsPersist.Estate = estate(cmbEstate.SelectedIndex);
                     string estate = cmbEstate.Text.ToUpper();
-                    if (cmbEstate.SelectedIndex == -1)
-                        clientsPersist.Estate = validation.estate(validation.estatePerString(estate));
-                    else
-                        clientsPersist.Estate = validation.estate(cmbEstate.SelectedIndex);
+                    clientsPersist.Estate = validation.estate(cmbEstate.SelectedIndex == 0 ? validation.estatePerString(estate) : cmbEstate.SelectedIndex);
                     clientsPersist.sCEP = txtCEP.Text;
                     clientsPersist.sPhoneResidencial = txtContatosResiCom.Text;
                     clientsPersist.sEmail = txtContatosEmail.Text;
@@ -162,6 +147,7 @@ namespace InoxERP.UI_Windows_Forms
                             MessageBox.Show("Cliente: " + clientsPersist.sName + " Cadastrado com Sucesso !!!");
                             afterAction();
                             Dispose();
+                            new frmClientsSearch().Show();
                         }
                     }
                 }
@@ -239,39 +225,39 @@ namespace InoxERP.UI_Windows_Forms
                 return false;
             }
 
-            if (txtRg.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe um RG para o Cliente");
-                txtRg.Focus();
-                return false;
-            }
+            //if (txtRg.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe um RG para o Cliente");
+            //    txtRg.Focus();
+            //    return false;
+            //}
 
-            if (txtCPF_CNPJ.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe o CPF / CNPJ para o Cliente");
-                txtCPF_CNPJ.Focus();
-                return false;
-            }
+            //if (txtCPF_CNPJ.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe o CPF / CNPJ para o Cliente");
+            //    txtCPF_CNPJ.Focus();
+            //    return false;
+            //}
 
-            if (txtEndereco.Text == "0")
-            {
-                MessageBox.Show("Informe um Endereço");
-                txtEndereco.Focus();
-            }
+            //if (txtEndereco.Text == "0")
+            //{
+            //    MessageBox.Show("Informe um Endereço");
+            //    txtEndereco.Focus();
+            //}
 
-            if (txtNumEndereco.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe um número para o endereço");
-                txtNumEndereco.Focus();
-                return false;
-            }
+            //if (txtNumEndereco.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe um número para o endereço");
+            //    txtNumEndereco.Focus();
+            //    return false;
+            //}
 
-            if (txtBairro.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe o Bairro");
-                txtBairro.Focus();
-                return false;
-            }
+            //if (txtBairro.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe o Bairro");
+            //    txtBairro.Focus();
+            //    return false;
+            //}
 
             // not obrigatory item
             //if (txtComplemento.Text.Length.Equals(0))
@@ -280,30 +266,30 @@ namespace InoxERP.UI_Windows_Forms
             //    return false;
             //}
 
-            if (txtCidade.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe uma Cidade");
-                return false;
-            }
+            //if (txtCidade.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe uma Cidade");
+            //    return false;
+            //}
 
-            if (cmbEstate.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe um Estado");
-                return false;
-            }
+            //if (cmbEstate.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe um Estado");
+            //    return false;
+            //}
 
-            if (txtCEP.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe uma CEP");
-                return false;
-            }
+            //if (txtCEP.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe uma CEP");
+            //    return false;
+            //}
 
-            if (txtContatosResiCom.Text.Length.Equals(0) & txtContatosCelular1.Text.Length.Equals(0) &
-                txtContatosCelular2.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe um Telefone");
-                return false;
-            }
+            //if (txtContatosResiCom.Text.Length.Equals(0) & txtContatosCelular1.Text.Length.Equals(0) &
+            //    txtContatosCelular2.Text.Length.Equals(0))
+            //{
+            //    MessageBox.Show("Informe um Telefone");
+            //    return false;
+            //}
 
             // not obrigatory item
             //if (txtContatosEmail.Text.Length.Equals(0))

@@ -38,76 +38,62 @@ namespace InoxERP.UI_Windows_Forms
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            if (!validationCamps())
-                MessageBox.Show("Por Favor preencha as informações Corretamente");
-            else
+            if (validationCamps())
             {
                 if (btnGravar.Text == "Alterar")
                 {
                     if (messageYesNo("alter") == DialogResult.Yes)
                     {
-                        if (!validationCamps())
-                            MessageBox.Show("Por Favor preencha as informações Corretamente");
+                        Providers providersAlter = new Providers();
+                        
+                        //procura o orçamento para alteração
+                        providersAlter = obj.returnById(id);
+
+                        //preenche os dados do orçamento
+                        providersAlter.sName = txtNome.Text;
+                        providersAlter.sCpfCnpj = txtCPF_CNPJ.Text;
+                        providersAlter.sInscrEst = txtInscrEst.Text;
+                        providersAlter.sAdress = txtEndereco.Text;
+                        providersAlter.iNumber = Convert.ToInt32(txtNumEndereco.Text);
+                        providersAlter.sDistrict = txtBairro.Text;
+                        providersAlter.sComplement = txtComplemento.Text;
+                        providersAlter.sCity = txtCidade.Text;
+                        providersAlter.Estate = validation.estate(cmbEstate.SelectedIndex);
+                        providersAlter.sCEP = txtCEP.Text;
+                        providersAlter.sPhoneComercial = txtContatosComercial.Text;
+                        providersAlter.sEmail = txtContatosEmail.Text;
+                        providersAlter.sPhoneCelularOne = txtContatosCelular1.Text;
+                        providersAlter.sPhoneCelularTwo = txtContatosCelular2.Text;
+                        providersAlter.sBank = txtBanco.Text;
+                        providersAlter.sAgency = txtAgencia.Text;
+                        providersAlter.sAccount = txtConta.Text;
+                        providersAlter.sFavored = txtFavorecido.Text;
+                        providersAlter.sCpfCnpjFavored = txtCpfCnpj.Text;
+                        providersAlter.dMinimumPurchase = Convert.ToDecimal(txtCompraMinima.Text == "" ? "0.00" : txtCompraMinima.Text);
+
+                        providersAlter.sObservation = txtObservacoes.Text;
+
+
+                        //atualiza
+                        obj.Update(providersAlter);
+
+                        //verifica se o orçamento foi atualizado com sucesso
+                        var ok = obj.Search.FirstOrDefault(b => b.sID == providersAlter.sID);
+
+                        if (ok == null)
+                            MessageBox.Show("Erro ao Atualizar o Orçamento !!!");
                         else
                         {
-                            Providers providersAlter = new Providers();
-                            
-                            //procura o orçamento para alteração
-                            providersAlter = obj.returnById(id);
+                            MessageBox.Show("Fornecedor: " + providersAlter.sName + " Atualizado com Sucesso !!!");
+                            btnGravar.Text = "Gravar";
 
-                            //preenche os dados do orçamento
-                            providersAlter.sName = txtNome.Text;
-                            providersAlter.sCpfCnpj = txtCPF_CNPJ.Text;
-                            providersAlter.sInscrEst = txtInscrEst.Text;
-                            providersAlter.sAdress = txtEndereco.Text;
-                            providersAlter.iNumber = Convert.ToInt32(txtNumEndereco.Text);
-                            providersAlter.sDistrict = txtBairro.Text;
-                            providersAlter.sComplement = txtComplemento.Text;
-                            providersAlter.sCity = txtCidade.Text;
-                            providersAlter.Estate = validation.estate(cmbEstate.SelectedIndex);
-                            providersAlter.sCEP = txtCEP.Text;
-                            providersAlter.sPhoneComercial = txtContatosComercial.Text;
-                            providersAlter.sEmail = txtContatosEmail.Text;
-                            providersAlter.sPhoneCelularOne = txtContatosCelular1.Text;
-                            providersAlter.sPhoneCelularTwo = txtContatosCelular2.Text;
-                            providersAlter.sBank = txtBanco.Text;
-                            providersAlter.sAgency = txtAgencia.Text;
-                            providersAlter.sAccount = txtConta.Text;
-                            providersAlter.sFavored = txtFavorecido.Text;
-                            providersAlter.sCpfCnpjFavored = txtCpfCnpj.Text;
-                            if (txtCompraMinima.Text == "")
-                            {
-                                providersAlter.dMinimumPurchase = Convert.ToDecimal("0.00");
-                            }
-                            else
-                            {
-                                providersAlter.dMinimumPurchase = Convert.ToDecimal(txtCompraMinima.Text);
-                            }
+                            cleanCamps();
 
-                            providersAlter.sObservation = txtObservacoes.Text;
+                            //fecha a tela de alteração
+                            Dispose();
 
-
-                            //atualiza
-                            obj.Update(providersAlter);
-
-                            //verifica se o orçamento foi atualizado com sucesso
-                            var ok = obj.Search.FirstOrDefault(b => b.sID == providersAlter.sID);
-
-                            if (ok == null)
-                                MessageBox.Show("Erro ao Atualizar o Orçamento !!!");
-                            else
-                            {
-                                MessageBox.Show("Fornecedor: " + providersAlter.sName + " Atualizado com Sucesso !!!");
-                                btnGravar.Text = "Gravar";
-
-                                cleanCamps();
-
-                                //fecha a tela de alteração
-                                Dispose();
-
-                                //abre tela de consulta novamente
-                                new frmProviderSearch().Show();
-                            }
+                            //abre tela de consulta novamente
+                            new frmProviderSearch().Show();
                         }
                     }
                 }
@@ -135,14 +121,7 @@ namespace InoxERP.UI_Windows_Forms
                     ProvidersPersist.sAccount = txtConta.Text;
                     ProvidersPersist.sFavored = txtFavorecido.Text;
                     ProvidersPersist.sCpfCnpjFavored = txtCpfCnpj.Text;
-                    if (txtCompraMinima.Text == "")
-                    {
-                        ProvidersPersist.dMinimumPurchase = Convert.ToDecimal("0.00");
-                    }
-                    else
-                    {
-                        ProvidersPersist.dMinimumPurchase = Convert.ToDecimal(txtCompraMinima.Text);
-                    }
+                    ProvidersPersist.dMinimumPurchase = Convert.ToDecimal(txtCompraMinima.Text == "" ? "0.00" : txtCompraMinima.Text);
 
                     ProvidersPersist.sObservation = txtObservacoes.Text;
 
@@ -155,11 +134,13 @@ namespace InoxERP.UI_Windows_Forms
                         if (ok == null)
                             MessageBox.Show("Erro ao Cadastrar o Fornecedor !!!");
                         else
+                        {
                             MessageBox.Show("Fornecedor: " + ProvidersPersist.sName.ToString() +
                                             " Cadastrado com Sucesso !!!");
 
-                        afterAction();
-                        Dispose();
+                            afterAction();
+                            Dispose();
+                        }
                     }
                 }
             }
@@ -181,7 +162,7 @@ namespace InoxERP.UI_Windows_Forms
             txtBairro.Clear();
             txtComplemento.Clear();
             txtCidade.Clear();
-            cmbEstate.SelectedIndex = -1;
+            cmbEstate.SelectedIndex = 0;
             txtCEP.Clear();
             txtContatosComercial.Clear();
             txtContatosEmail.Clear();
@@ -229,10 +210,18 @@ namespace InoxERP.UI_Windows_Forms
                 return false;
             }
 
-            if (txtEndereco.Text == "0")
+            if (txtInscrEst.Text.Length.Equals(0))
+            {
+                MessageBox.Show("Informe a Inscrição Estadual para o Fornecedor");
+                txtInscrEst.Focus();
+                return false;
+            }
+
+            if (txtEndereco.Text.Length.Equals(0))
             {
                 MessageBox.Show("Informe um Endereço");
                 txtEndereco.Focus();
+                return false;
             }
 
             if (txtNumEndereco.Text.Length.Equals(0))
@@ -258,30 +247,28 @@ namespace InoxERP.UI_Windows_Forms
             if (txtCidade.Text.Length.Equals(0))
             {
                 MessageBox.Show("Informe uma Cidade");
+                txtCidade.Focus();
                 return false;
             }
 
             if (cmbEstate.Text.Length.Equals(0))
             {
                 MessageBox.Show("Informe um Estado");
+                cmbEstate.Focus();
                 return false;
             }
 
             if (txtCEP.Text.Length.Equals(0))
             {
                 MessageBox.Show("Informe uma CEP");
-                return false;
-            }
-
-            if (txtCidade.Text.Length.Equals(0))
-            {
-                MessageBox.Show("Informe uma Cidade");
+                txtCEP.Focus();
                 return false;
             }
 
             if (txtContatosComercial.Text.Length.Equals(0))
             {
                 MessageBox.Show("Informe um Telefone Comercial");
+                txtContatosComercial.Focus();
                 return false;
             }
 

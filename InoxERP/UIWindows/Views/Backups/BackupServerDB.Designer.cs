@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBackupServerDB));
             this.gpbBackup = new System.Windows.Forms.GroupBox();
+            this.lblProgress = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblLocal = new System.Windows.Forms.Label();
             this.txtDestino = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.lblServidor = new System.Windows.Forms.Label();
             this.ttBackup = new System.Windows.Forms.ToolTip(this.components);
             this.fbdSearch = new System.Windows.Forms.FolderBrowserDialog();
-            this.lblProgress = new System.Windows.Forms.Label();
             this.gpbBackup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackup)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,16 @@
             this.gpbBackup.TabIndex = 2;
             this.gpbBackup.TabStop = false;
             this.gpbBackup.Text = "Backup";
+            // 
+            // lblProgress
+            // 
+            this.lblProgress.AutoSize = true;
+            this.lblProgress.Location = new System.Drawing.Point(204, 176);
+            this.lblProgress.Margin = new System.Windows.Forms.Padding(7);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(73, 17);
+            this.lblProgress.TabIndex = 23;
+            this.lblProgress.Text = "Progresso";
             // 
             // btnSearch
             // 
@@ -97,7 +107,7 @@
             this.txtDestino.Name = "txtDestino";
             this.txtDestino.Size = new System.Drawing.Size(376, 23);
             this.txtDestino.TabIndex = 20;
-            this.txtDestino.Text = "C:\\Users\\Lucas\\OneDrive";
+            this.txtDestino.Text = "C:\\Users\\LUCK Aço Inox\\OneDrive";
             this.txtDestino.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // prbCopiando
@@ -172,16 +182,6 @@
             this.ttBackup.ShowAlways = true;
             this.ttBackup.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttBackup.ToolTipTitle = "Backup";
-            // 
-            // lblProgress
-            // 
-            this.lblProgress.AutoSize = true;
-            this.lblProgress.Location = new System.Drawing.Point(204, 176);
-            this.lblProgress.Margin = new System.Windows.Forms.Padding(7);
-            this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(73, 17);
-            this.lblProgress.TabIndex = 23;
-            this.lblProgress.Text = "Progresso";
             // 
             // frmBackupServerDB
             // 
