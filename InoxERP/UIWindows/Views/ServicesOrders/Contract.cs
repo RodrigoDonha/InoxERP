@@ -181,68 +181,76 @@ namespace UIWindows
 
         public void ConfirmPositionTabToNext()
         {
-            if (tabControl1.SelectedTab == tabPage1)
+            if (validationCampsClient())
             {
-                btnProximo.Text = "Próximo";
-                tabControl1.SelectedTab = tabPage2;
-                btnVoltar.Visible = true;
+                if (tabControl1.SelectedTab == tabPage1)
+                {
+                    btnProximo.Text = "Próximo";
+                    tabControl1.SelectedTab = tabPage2;
+                    btnVoltar.Visible = true;
 
+                }
+                else if (tabControl1.SelectedTab == tabPage2)
+                {
+                    btnProximo.Text = "Próximo";
+                    tabControl1.SelectedTab = tabPage3;
+                    btnVoltar.Visible = true;
+                }
+                else if (tabControl1.SelectedTab == tabPage3)
+                {
+                    txtObrigacoesContratante1.Text = txtObrigacoesContratante.Text;
+                    txtValores1.Text = txtValores.Text;
+                    btnProximo.Text = "Próximo";
+                    tabControl1.SelectedTab = tabPage4;
+                    btnVoltar.Visible = true;
+                }
+                else if (tabControl1.SelectedTab == tabPage4)
+                {
+                    btnProximo.Text = "Gravar";
+                    tabControl1.SelectedTab = tabPage5;
+                    btnVoltar.Visible = true;
+                }
+                else if (tabControl1.SelectedTab == tabPage5)
+                {
+                    btnVoltar.Visible = true;
+                    // implementar aqui o gravar contrato
+                    gravarContrato();
+                }
             }
-            else if (tabControl1.SelectedTab == tabPage2)
-            {
-                btnProximo.Text = "Próximo";
-                tabControl1.SelectedTab = tabPage3;
-                btnVoltar.Visible = true;
-            }
-            else if (tabControl1.SelectedTab == tabPage3)
-            {
-                txtObrigacoesContratante1.Text = txtObrigacoesContratante.Text;
-                txtValores1.Text = txtValores.Text;
-                btnProximo.Text = "Próximo";
-                tabControl1.SelectedTab = tabPage4;
-                btnVoltar.Visible = true;
-            }
-            else if (tabControl1.SelectedTab == tabPage4)
-            {
-                btnProximo.Text = "Gravar";
-                tabControl1.SelectedTab = tabPage5;
-                btnVoltar.Visible = true;
-            }
-            else if (tabControl1.SelectedTab == tabPage5)
-            {
-                btnVoltar.Visible = true;
-                // implementar aqui o gravar contrato
-                gravarContrato();
-            }
+                
         }
 
         private void tabControl1_Click(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedTab == tabPage1)
+            if (validationCampsClient())
             {
-                btnProximo.Text = "Próximo";
-                btnVoltar.Visible = false;
+                if (tabControl1.SelectedTab == tabPage1)
+                {
+                    btnProximo.Text = "Próximo";
+                    btnVoltar.Visible = false;
+                }
+                if (tabControl1.SelectedTab == tabPage2)
+                {
+                    btnProximo.Text = "Próximo";
+                    btnVoltar.Visible = true;
+                }
+                if (tabControl1.SelectedTab == tabPage3)
+                {
+                    btnProximo.Text = "Próximo";
+                    btnVoltar.Visible = true;
+                }
+                if (tabControl1.SelectedTab == tabPage4)
+                {
+                    btnProximo.Text = "Próximo";
+                    btnVoltar.Visible = true;
+                }
+                if (tabControl1.SelectedTab == tabPage5)
+                {
+                    btnProximo.Text = "Gravar";
+                    btnVoltar.Visible = true;
+                }
             }
-            if (tabControl1.SelectedTab == tabPage2)
-            {
-                btnProximo.Text = "Próximo";
-                btnVoltar.Visible = true;
-            }
-            if (tabControl1.SelectedTab == tabPage3)
-            {
-                btnProximo.Text = "Próximo";
-                btnVoltar.Visible = true;
-            }
-            if (tabControl1.SelectedTab == tabPage4)
-            {
-                btnProximo.Text = "Próximo";
-                btnVoltar.Visible = true;
-            }
-            if (tabControl1.SelectedTab == tabPage5)
-            {
-                btnProximo.Text = "Gravar";
-                btnVoltar.Visible = true;
-            }
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -427,6 +427,7 @@
             this.Controls.Add(this.grpFornecedor);
             this.Controls.Add(this.grpPesquisa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmProviderSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Fornecedores";

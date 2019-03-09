@@ -52,18 +52,6 @@
             this.txtOS = new System.Windows.Forms.TextBox();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.grdCheques = new System.Windows.Forms.DataGridView();
-            this.lblVecto = new System.Windows.Forms.Label();
-            this.lblOrcamento = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
-            this.nudPrazo = new System.Windows.Forms.NumericUpDown();
-            this.lblPrazo = new System.Windows.Forms.Label();
-            this.txtC3 = new System.Windows.Forms.TextBox();
-            this.txtC2 = new System.Windows.Forms.TextBox();
-            this.txtC1 = new System.Windows.Forms.TextBox();
-            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,11 +66,23 @@
             this.sChequeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCashDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.lblVecto = new System.Windows.Forms.Label();
+            this.lblOrcamento = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.nudPrazo = new System.Windows.Forms.NumericUpDown();
+            this.lblPrazo = new System.Windows.Forms.Label();
+            this.txtC3 = new System.Windows.Forms.TextBox();
+            this.txtC2 = new System.Windows.Forms.TextBox();
+            this.txtC1 = new System.Windows.Forms.TextBox();
+            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodCliente
@@ -289,6 +289,144 @@
             this.grdCheques.TabStop = false;
             this.grdCheques.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCheques_CellClick);
             // 
+            // sIDDataGridViewTextBoxColumn
+            // 
+            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
+            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
+            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
+            this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sIdBudgetsOSDataGridViewTextBoxColumn
+            // 
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.DataPropertyName = "sId_Budgets_OS";
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.HeaderText = "sId_Budgets_OS";
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.Name = "sIdBudgetsOSDataGridViewTextBoxColumn";
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIdBudgetsOSDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sIdClientDataGridViewTextBoxColumn
+            // 
+            this.sIdClientDataGridViewTextBoxColumn.DataPropertyName = "sId_Client";
+            this.sIdClientDataGridViewTextBoxColumn.HeaderText = "sId_Client";
+            this.sIdClientDataGridViewTextBoxColumn.Name = "sIdClientDataGridViewTextBoxColumn";
+            this.sIdClientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sIdClientDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dtDueDateDataGridViewTextBoxColumn
+            // 
+            this.dtDueDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dtDueDateDataGridViewTextBoxColumn.DataPropertyName = "dtDueDate";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dtDueDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dtDueDateDataGridViewTextBoxColumn.HeaderText = "Vecimento";
+            this.dtDueDateDataGridViewTextBoxColumn.Name = "dtDueDateDataGridViewTextBoxColumn";
+            this.dtDueDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dtDueDateDataGridViewTextBoxColumn.Width = 97;
+            // 
+            // dtPayDateDataGridViewTextBoxColumn
+            // 
+            this.dtPayDateDataGridViewTextBoxColumn.DataPropertyName = "dtPayDate";
+            this.dtPayDateDataGridViewTextBoxColumn.HeaderText = "dtPayDate";
+            this.dtPayDateDataGridViewTextBoxColumn.Name = "dtPayDateDataGridViewTextBoxColumn";
+            this.dtPayDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dtPayDateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dValueDataGridViewTextBoxColumn
+            // 
+            this.dValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dValueDataGridViewTextBoxColumn.DataPropertyName = "dValue";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dValueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dValueDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.dValueDataGridViewTextBoxColumn.Name = "dValueDataGridViewTextBoxColumn";
+            this.dValueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dValueDataGridViewTextBoxColumn.Width = 65;
+            // 
+            // dPaid
+            // 
+            this.dPaid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dPaid.DataPropertyName = "dPaid";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dPaid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dPaid.HeaderText = "Pago";
+            this.dPaid.Name = "dPaid";
+            this.dPaid.ReadOnly = true;
+            this.dPaid.Visible = false;
+            // 
+            // iInstallmentDataGridViewTextBoxColumn
+            // 
+            this.iInstallmentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.iInstallmentDataGridViewTextBoxColumn.DataPropertyName = "iInstallment";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iInstallmentDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.iInstallmentDataGridViewTextBoxColumn.HeaderText = "Parcela";
+            this.iInstallmentDataGridViewTextBoxColumn.Name = "iInstallmentDataGridViewTextBoxColumn";
+            this.iInstallmentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iInstallmentDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // bChequePaidDataGridViewCheckBoxColumn
+            // 
+            this.bChequePaidDataGridViewCheckBoxColumn.DataPropertyName = "bChequePaid";
+            this.bChequePaidDataGridViewCheckBoxColumn.HeaderText = "bChequePaid";
+            this.bChequePaidDataGridViewCheckBoxColumn.Name = "bChequePaidDataGridViewCheckBoxColumn";
+            this.bChequePaidDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.bChequePaidDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // iAmountInstallmentDataGridViewTextBoxColumn
+            // 
+            this.iAmountInstallmentDataGridViewTextBoxColumn.DataPropertyName = "iAmountInstallment";
+            this.iAmountInstallmentDataGridViewTextBoxColumn.HeaderText = "iAmountInstallment";
+            this.iAmountInstallmentDataGridViewTextBoxColumn.Name = "iAmountInstallmentDataGridViewTextBoxColumn";
+            this.iAmountInstallmentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iAmountInstallmentDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sReferentToDataGridViewTextBoxColumn
+            // 
+            this.sReferentToDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sReferentToDataGridViewTextBoxColumn.DataPropertyName = "sReferentTo";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.sReferentToDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.sReferentToDataGridViewTextBoxColumn.HeaderText = "Referente";
+            this.sReferentToDataGridViewTextBoxColumn.Name = "sReferentToDataGridViewTextBoxColumn";
+            this.sReferentToDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sChequeNumberDataGridViewTextBoxColumn
+            // 
+            this.sChequeNumberDataGridViewTextBoxColumn.DataPropertyName = "sChequeNumber";
+            this.sChequeNumberDataGridViewTextBoxColumn.HeaderText = "sChequeNumber";
+            this.sChequeNumberDataGridViewTextBoxColumn.Name = "sChequeNumberDataGridViewTextBoxColumn";
+            this.sChequeNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sChequeNumberDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idCashDataGridViewTextBoxColumn
+            // 
+            this.idCashDataGridViewTextBoxColumn.DataPropertyName = "idCash";
+            this.idCashDataGridViewTextBoxColumn.HeaderText = "idCash";
+            this.idCashDataGridViewTextBoxColumn.Name = "idCashDataGridViewTextBoxColumn";
+            this.idCashDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCashDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sClientName
+            // 
+            this.sClientName.DataPropertyName = "sClientName";
+            this.sClientName.HeaderText = "sClientName";
+            this.sClientName.Name = "sClientName";
+            this.sClientName.ReadOnly = true;
+            this.sClientName.Visible = false;
+            // 
+            // tbchequesBindingSource
+            // 
+            this.tbchequesBindingSource.DataMember = "tb_cheques";
+            this.tbchequesBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lblVecto
             // 
             this.lblVecto.AutoSize = true;
@@ -378,148 +516,9 @@
             this.txtC1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtC1_KeyPress);
             this.txtC1.Leave += new System.EventHandler(this.txtC1_Leave);
             // 
-            // tbchequesBindingSource
-            // 
-            this.tbchequesBindingSource.DataMember = "tb_cheques";
-            this.tbchequesBindingSource.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tb_chequesTableAdapter
             // 
             this.tb_chequesTableAdapter.ClearBeforeFill = true;
-            // 
-            // sIDDataGridViewTextBoxColumn
-            // 
-            this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
-            this.sIDDataGridViewTextBoxColumn.HeaderText = "sID";
-            this.sIDDataGridViewTextBoxColumn.Name = "sIDDataGridViewTextBoxColumn";
-            this.sIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sIdBudgetsOSDataGridViewTextBoxColumn
-            // 
-            this.sIdBudgetsOSDataGridViewTextBoxColumn.DataPropertyName = "sId_Budgets_OS";
-            this.sIdBudgetsOSDataGridViewTextBoxColumn.HeaderText = "sId_Budgets_OS";
-            this.sIdBudgetsOSDataGridViewTextBoxColumn.Name = "sIdBudgetsOSDataGridViewTextBoxColumn";
-            this.sIdBudgetsOSDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sIdBudgetsOSDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sIdClientDataGridViewTextBoxColumn
-            // 
-            this.sIdClientDataGridViewTextBoxColumn.DataPropertyName = "sId_Client";
-            this.sIdClientDataGridViewTextBoxColumn.HeaderText = "sId_Client";
-            this.sIdClientDataGridViewTextBoxColumn.Name = "sIdClientDataGridViewTextBoxColumn";
-            this.sIdClientDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sIdClientDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dtDueDateDataGridViewTextBoxColumn
-            // 
-            this.dtDueDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dtDueDateDataGridViewTextBoxColumn.DataPropertyName = "dtDueDate";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dtDueDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dtDueDateDataGridViewTextBoxColumn.HeaderText = "Vecimento";
-            this.dtDueDateDataGridViewTextBoxColumn.Name = "dtDueDateDataGridViewTextBoxColumn";
-            this.dtDueDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dtDueDateDataGridViewTextBoxColumn.Width = 97;
-            // 
-            // dtPayDateDataGridViewTextBoxColumn
-            // 
-            this.dtPayDateDataGridViewTextBoxColumn.DataPropertyName = "dtPayDate";
-            this.dtPayDateDataGridViewTextBoxColumn.HeaderText = "dtPayDate";
-            this.dtPayDateDataGridViewTextBoxColumn.Name = "dtPayDateDataGridViewTextBoxColumn";
-            this.dtPayDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dtPayDateDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dValueDataGridViewTextBoxColumn
-            // 
-            this.dValueDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dValueDataGridViewTextBoxColumn.DataPropertyName = "dValue";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dValueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dValueDataGridViewTextBoxColumn.HeaderText = "Valor";
-            this.dValueDataGridViewTextBoxColumn.Name = "dValueDataGridViewTextBoxColumn";
-            this.dValueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dValueDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // dPaid
-            // 
-            this.dPaid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dPaid.DataPropertyName = "dPaid";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dPaid.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dPaid.HeaderText = "Pago";
-            this.dPaid.Name = "dPaid";
-            this.dPaid.ReadOnly = true;
-            this.dPaid.Visible = false;
-            this.dPaid.Width = 66;
-            // 
-            // iInstallmentDataGridViewTextBoxColumn
-            // 
-            this.iInstallmentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.iInstallmentDataGridViewTextBoxColumn.DataPropertyName = "iInstallment";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.iInstallmentDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.iInstallmentDataGridViewTextBoxColumn.HeaderText = "Parcela";
-            this.iInstallmentDataGridViewTextBoxColumn.Name = "iInstallmentDataGridViewTextBoxColumn";
-            this.iInstallmentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iInstallmentDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // bChequePaidDataGridViewCheckBoxColumn
-            // 
-            this.bChequePaidDataGridViewCheckBoxColumn.DataPropertyName = "bChequePaid";
-            this.bChequePaidDataGridViewCheckBoxColumn.HeaderText = "bChequePaid";
-            this.bChequePaidDataGridViewCheckBoxColumn.Name = "bChequePaidDataGridViewCheckBoxColumn";
-            this.bChequePaidDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.bChequePaidDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // iAmountInstallmentDataGridViewTextBoxColumn
-            // 
-            this.iAmountInstallmentDataGridViewTextBoxColumn.DataPropertyName = "iAmountInstallment";
-            this.iAmountInstallmentDataGridViewTextBoxColumn.HeaderText = "iAmountInstallment";
-            this.iAmountInstallmentDataGridViewTextBoxColumn.Name = "iAmountInstallmentDataGridViewTextBoxColumn";
-            this.iAmountInstallmentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iAmountInstallmentDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sReferentToDataGridViewTextBoxColumn
-            // 
-            this.sReferentToDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sReferentToDataGridViewTextBoxColumn.DataPropertyName = "sReferentTo";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.sReferentToDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.sReferentToDataGridViewTextBoxColumn.HeaderText = "Referente";
-            this.sReferentToDataGridViewTextBoxColumn.Name = "sReferentToDataGridViewTextBoxColumn";
-            this.sReferentToDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sChequeNumberDataGridViewTextBoxColumn
-            // 
-            this.sChequeNumberDataGridViewTextBoxColumn.DataPropertyName = "sChequeNumber";
-            this.sChequeNumberDataGridViewTextBoxColumn.HeaderText = "sChequeNumber";
-            this.sChequeNumberDataGridViewTextBoxColumn.Name = "sChequeNumberDataGridViewTextBoxColumn";
-            this.sChequeNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sChequeNumberDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idCashDataGridViewTextBoxColumn
-            // 
-            this.idCashDataGridViewTextBoxColumn.DataPropertyName = "idCash";
-            this.idCashDataGridViewTextBoxColumn.HeaderText = "idCash";
-            this.idCashDataGridViewTextBoxColumn.Name = "idCashDataGridViewTextBoxColumn";
-            this.idCashDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCashDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sClientName
-            // 
-            this.sClientName.DataPropertyName = "sClientName";
-            this.sClientName.HeaderText = "sClientName";
-            this.sClientName.Name = "sClientName";
-            this.sClientName.ReadOnly = true;
-            this.sClientName.Visible = false;
             // 
             // frmAccountsCheque
             // 
@@ -555,15 +554,16 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.MaximizeBox = false;
             this.Name = "frmAccountsCheque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa Cheques";
             this.Load += new System.EventHandler(this.frmAccountsCheque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudParcelas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdCheques)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrazo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

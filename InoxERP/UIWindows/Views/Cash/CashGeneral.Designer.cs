@@ -46,9 +46,6 @@
             this.lblSaldoFinal = new System.Windows.Forms.Label();
             this.lblExibeSaldoFinal = new System.Windows.Forms.Label();
             this.grdExtratoGeral = new System.Windows.Forms.DataGridView();
-            this.tbcashBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.tb_cashTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cashTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdBudgetsOSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sIdClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +55,9 @@
             this.dBalanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cashTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sChequeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbcashBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.tb_cashTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cashTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grdExtratoGeral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbcashBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullDataSet)).BeginInit();
@@ -216,20 +216,6 @@
             this.grdExtratoGeral.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdExtratoGeral_CellClick);
             this.grdExtratoGeral.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.grdExtratoGeral_DataBindingComplete);
             // 
-            // tbcashBindingSource
-            // 
-            this.tbcashBindingSource.DataMember = "tb_cash";
-            this.tbcashBindingSource.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tb_cashTableAdapter
-            // 
-            this.tb_cashTableAdapter.ClearBeforeFill = true;
-            // 
             // sIDDataGridViewTextBoxColumn
             // 
             this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
@@ -310,6 +296,20 @@
             this.sChequeNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.sChequeNumberDataGridViewTextBoxColumn.Visible = false;
             // 
+            // tbcashBindingSource
+            // 
+            this.tbcashBindingSource.DataMember = "tb_cash";
+            this.tbcashBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tb_cashTableAdapter
+            // 
+            this.tb_cashTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCashGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -328,6 +328,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "frmCashGeneral";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Caixa Geral";

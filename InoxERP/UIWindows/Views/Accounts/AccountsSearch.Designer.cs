@@ -81,13 +81,6 @@
             this.gpbCheques = new System.Windows.Forms.GroupBox();
             this.btnEstornarCheque = new System.Windows.Forms.Button();
             this.dgvCheques = new System.Windows.Forms.DataGridView();
-            this.tbchequesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbchequesandClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
-            this.tb_accountsToPayTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToPayTableAdapter();
-            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
-            this.tb_cheques_and_ClientsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cheques_and_ClientsTableAdapter();
             this.bChequePaidDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dValueDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtPayDateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,6 +98,13 @@
             this.sReferentToDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbchequesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbchequesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbchequesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbchequesandClientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_accountsToReceiveTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToReceiveTableAdapter();
+            this.tb_accountsToPayTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_accountsToPayTableAdapter();
+            this.tb_chequesTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_chequesTableAdapter();
+            this.tb_cheques_and_ClientsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_cheques_and_ClientsTableAdapter();
             this.tbpRecebidos.SuspendLayout();
             this.gpbConsultarRecebidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecebidos)).BeginInit();
@@ -118,10 +118,10 @@
             this.tbpCheques.SuspendLayout();
             this.gpbCheques.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesandClientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // tbpRecebidos
@@ -578,37 +578,6 @@
             this.dgvCheques.Size = new System.Drawing.Size(517, 362);
             this.dgvCheques.TabIndex = 8;
             // 
-            // tbchequesBindingSource1
-            // 
-            this.tbchequesBindingSource1.DataMember = "tb_cheques";
-            this.tbchequesBindingSource1.DataSource = this.fullDataSet;
-            // 
-            // tbchequesBindingSource
-            // 
-            this.tbchequesBindingSource.DataMember = "tb_cheques";
-            this.tbchequesBindingSource.DataSource = this.fullDataSet;
-            // 
-            // tbchequesandClientsBindingSource
-            // 
-            this.tbchequesandClientsBindingSource.DataMember = "tb_cheques_and_Clients";
-            this.tbchequesandClientsBindingSource.DataSource = this.fullDataSet;
-            // 
-            // tb_accountsToReceiveTableAdapter
-            // 
-            this.tb_accountsToReceiveTableAdapter.ClearBeforeFill = true;
-            // 
-            // tb_accountsToPayTableAdapter
-            // 
-            this.tb_accountsToPayTableAdapter.ClearBeforeFill = true;
-            // 
-            // tb_chequesTableAdapter
-            // 
-            this.tb_chequesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tb_cheques_and_ClientsTableAdapter
-            // 
-            this.tb_cheques_and_ClientsTableAdapter.ClearBeforeFill = true;
-            // 
             // bChequePaidDataGridViewCheckBoxColumn
             // 
             this.bChequePaidDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -635,7 +604,6 @@
             this.dtPayDateDataGridViewTextBoxColumn1.Name = "dtPayDateDataGridViewTextBoxColumn1";
             this.dtPayDateDataGridViewTextBoxColumn1.ReadOnly = true;
             this.dtPayDateDataGridViewTextBoxColumn1.Visible = false;
-            this.dtPayDateDataGridViewTextBoxColumn1.Width = 74;
             // 
             // dPaidDataGridViewTextBoxColumn
             // 
@@ -645,7 +613,6 @@
             this.dPaidDataGridViewTextBoxColumn.Name = "dPaidDataGridViewTextBoxColumn";
             this.dPaidDataGridViewTextBoxColumn.ReadOnly = true;
             this.dPaidDataGridViewTextBoxColumn.Visible = false;
-            this.dPaidDataGridViewTextBoxColumn.Width = 66;
             // 
             // dRemaingDataGridViewTextBoxColumn
             // 
@@ -655,7 +622,6 @@
             this.dRemaingDataGridViewTextBoxColumn.Name = "dRemaingDataGridViewTextBoxColumn";
             this.dRemaingDataGridViewTextBoxColumn.ReadOnly = true;
             this.dRemaingDataGridViewTextBoxColumn.Visible = false;
-            this.dRemaingDataGridViewTextBoxColumn.Width = 97;
             // 
             // dtDueDateDataGridViewTextBoxColumn2
             // 
@@ -752,6 +718,37 @@
             this.tbchequesBindingSource2.DataMember = "tb_cheques";
             this.tbchequesBindingSource2.DataSource = this.fullDataSet;
             // 
+            // tbchequesBindingSource1
+            // 
+            this.tbchequesBindingSource1.DataMember = "tb_cheques";
+            this.tbchequesBindingSource1.DataSource = this.fullDataSet;
+            // 
+            // tbchequesBindingSource
+            // 
+            this.tbchequesBindingSource.DataMember = "tb_cheques";
+            this.tbchequesBindingSource.DataSource = this.fullDataSet;
+            // 
+            // tbchequesandClientsBindingSource
+            // 
+            this.tbchequesandClientsBindingSource.DataMember = "tb_cheques_and_Clients";
+            this.tbchequesandClientsBindingSource.DataSource = this.fullDataSet;
+            // 
+            // tb_accountsToReceiveTableAdapter
+            // 
+            this.tb_accountsToReceiveTableAdapter.ClearBeforeFill = true;
+            // 
+            // tb_accountsToPayTableAdapter
+            // 
+            this.tb_accountsToPayTableAdapter.ClearBeforeFill = true;
+            // 
+            // tb_chequesTableAdapter
+            // 
+            this.tb_chequesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tb_cheques_and_ClientsTableAdapter
+            // 
+            this.tb_cheques_and_ClientsTableAdapter.ClearBeforeFill = true;
+            // 
             // frmAccountsSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -761,6 +758,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "frmAccountsSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Contas";
@@ -778,10 +776,10 @@
             this.tbpCheques.ResumeLayout(false);
             this.gpbCheques.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbchequesandClientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbchequesBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }

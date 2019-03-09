@@ -59,6 +59,7 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.grpDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.chkIsento = new System.Windows.Forms.CheckBox();
             this.txtRg = new System.Windows.Forms.TextBox();
             this.lblRg = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.lblCPF_CNPJ = new System.Windows.Forms.Label();
             this.lblAsterisco = new System.Windows.Forms.Label();
-            this.chkIsento = new System.Windows.Forms.CheckBox();
             this.grpObservacoes.SuspendLayout();
             this.grpContatos.SuspendLayout();
             this.grpEndereco.SuspendLayout();
@@ -443,6 +443,17 @@
             this.grpDadosPessoais.TabStop = false;
             this.grpDadosPessoais.Text = "Dados Pessoais";
             // 
+            // chkIsento
+            // 
+            this.chkIsento.AutoSize = true;
+            this.chkIsento.Location = new System.Drawing.Point(779, 35);
+            this.chkIsento.Name = "chkIsento";
+            this.chkIsento.Size = new System.Drawing.Size(78, 21);
+            this.chkIsento.TabIndex = 37;
+            this.chkIsento.Text = "ISENTO";
+            this.chkIsento.UseVisualStyleBackColor = true;
+            this.chkIsento.Click += new System.EventHandler(this.IsentoChecked);
+            // 
             // txtRg
             // 
             this.txtRg.Location = new System.Drawing.Point(863, 34);
@@ -559,17 +570,6 @@
             this.lblAsterisco.TabIndex = 27;
             this.lblAsterisco.Text = "* Campos Obrigatórios para Geração de Contratos Posteriormente";
             // 
-            // chkIsento
-            // 
-            this.chkIsento.AutoSize = true;
-            this.chkIsento.Location = new System.Drawing.Point(779, 35);
-            this.chkIsento.Name = "chkIsento";
-            this.chkIsento.Size = new System.Drawing.Size(78, 21);
-            this.chkIsento.TabIndex = 37;
-            this.chkIsento.Text = "ISENTO";
-            this.chkIsento.UseVisualStyleBackColor = true;
-            this.chkIsento.Click += new System.EventHandler(this.IsentoChecked);
-            // 
             // frmClientsRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -586,6 +586,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "frmClientsRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";

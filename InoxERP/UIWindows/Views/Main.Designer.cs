@@ -1109,6 +1109,7 @@ namespace InoxERP
             this.MainMenuStrip = this.mnsMenu;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InoxERP - Principal";
