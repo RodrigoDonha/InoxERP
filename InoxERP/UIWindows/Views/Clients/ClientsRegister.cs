@@ -104,7 +104,7 @@ namespace InoxERP.UI_Windows_Forms
                             if (typeTransaction == "Contract")
                             {
                                 frmContract contractAltered = new frmContract(idBudgetAlterContract, "Contract");
-                                contractAltered.fillContractOfObjectClientAltered(idBudgetAlterContract);
+                                contractAltered.fillContractOfObjectClientAltered(idBudgetAlterContract, clientsAlter);
                                 contractAltered.Show();
                             }
                         }

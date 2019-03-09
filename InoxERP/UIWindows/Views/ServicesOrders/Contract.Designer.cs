@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmContract));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtIdContract = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnAlterarContratado = new System.Windows.Forms.Button();
             this.txtRgContratado = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -93,8 +95,6 @@
             this.dtpDataAtual = new System.Windows.Forms.DateTimePicker();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtIdContract = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -170,6 +170,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1 - Identificação das Partes";
             // 
+            // txtIdContract
+            // 
+            this.txtIdContract.Location = new System.Drawing.Point(565, 125);
+            this.txtIdContract.Name = "txtIdContract";
+            this.txtIdContract.ReadOnly = true;
+            this.txtIdContract.Size = new System.Drawing.Size(232, 23);
+            this.txtIdContract.TabIndex = 116;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(503, 128);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 17);
+            this.label15.TabIndex = 115;
+            this.label15.Text = "Código:";
+            // 
             // btnAlterarContratado
             // 
             this.btnAlterarContratado.Location = new System.Drawing.Point(652, 311);
@@ -188,7 +205,6 @@
             this.txtRgContratado.Name = "txtRgContratado";
             this.txtRgContratado.Size = new System.Drawing.Size(200, 22);
             this.txtRgContratado.TabIndex = 13;
-            this.txtRgContratado.Text = "562.431.339.111";
             this.txtRgContratado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandRG);
             // 
             // label3
@@ -259,7 +275,6 @@
             this.txtCidadeContratado.Name = "txtCidadeContratado";
             this.txtCidadeContratado.Size = new System.Drawing.Size(264, 22);
             this.txtCidadeContratado.TabIndex = 18;
-            this.txtCidadeContratado.Text = "PRESIDENTE PRUDENTE";
             // 
             // label5
             // 
@@ -280,7 +295,6 @@
             this.txtCepContratado.Name = "txtCepContratado";
             this.txtCepContratado.Size = new System.Drawing.Size(131, 22);
             this.txtCepContratado.TabIndex = 14;
-            this.txtCepContratado.Text = "19065-510";
             this.txtCepContratado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCEP);
             // 
             // label6
@@ -302,7 +316,6 @@
             this.txtBairroContratado.Name = "txtBairroContratado";
             this.txtBairroContratado.Size = new System.Drawing.Size(185, 22);
             this.txtBairroContratado.TabIndex = 17;
-            this.txtBairroContratado.Text = "CECAP";
             // 
             // label7
             // 
@@ -323,7 +336,6 @@
             this.txtNumeroContratado.Name = "txtNumeroContratado";
             this.txtNumeroContratado.Size = new System.Drawing.Size(131, 22);
             this.txtNumeroContratado.TabIndex = 16;
-            this.txtNumeroContratado.Text = "210";
             this.txtNumeroContratado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationOnlyNumbers);
             // 
             // label8
@@ -345,7 +357,6 @@
             this.txtEnderecoContratado.Name = "txtEnderecoContratado";
             this.txtEnderecoContratado.Size = new System.Drawing.Size(517, 22);
             this.txtEnderecoContratado.TabIndex = 15;
-            this.txtEnderecoContratado.Text = "AV. DAS FLORES";
             // 
             // label9
             // 
@@ -366,7 +377,6 @@
             this.txtCpfCnpjContratado.Name = "txtCpfCnpjContratado";
             this.txtCpfCnpjContratado.Size = new System.Drawing.Size(200, 22);
             this.txtCpfCnpjContratado.TabIndex = 12;
-            this.txtCpfCnpjContratado.Text = "30.286.217/0001-70";
             this.txtCpfCnpjContratado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesCPFandRG);
             // 
             // txtNomeContratado
@@ -377,7 +387,7 @@
             this.txtNomeContratado.Name = "txtNomeContratado";
             this.txtNomeContratado.Size = new System.Drawing.Size(710, 22);
             this.txtNomeContratado.TabIndex = 11;
-            this.txtNomeContratado.Text = "LUCAS BEIRIGO REGGIANI 09396759945";
+            this.txtNomeContratado.Text = "RICHARD CARLOS REGGIANI 16479617851";
             // 
             // label10
             // 
@@ -883,23 +893,6 @@
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(503, 128);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 17);
-            this.label15.TabIndex = 115;
-            this.label15.Text = "Código:";
-            // 
-            // txtIdContract
-            // 
-            this.txtIdContract.Location = new System.Drawing.Point(565, 125);
-            this.txtIdContract.Name = "txtIdContract";
-            this.txtIdContract.ReadOnly = true;
-            this.txtIdContract.Size = new System.Drawing.Size(232, 23);
-            this.txtIdContract.TabIndex = 116;
             // 
             // frmContract
             // 

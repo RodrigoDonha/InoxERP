@@ -42,6 +42,8 @@ namespace UIWindows
 
             btnProximo.Text = "Próximo";
             btnVoltar.Visible = false;
+            FillDataHired();
+            cbxEstateContratado.SelectedIndex = 24;
         }
 
         public void getData()
@@ -106,11 +108,8 @@ namespace UIWindows
             //txtCidade.Text = cidade;
         }
 
-        public void fillContractOfObjectClientAltered(string idBudget)
+        public void fillContractOfObjectClientAltered(string idBudget, Clients cli)
         {
-            Clients cliAltered = new Clients();
-            ClientsBusiness clientAltered = new ClientsBusiness(ctx);
-
             Budgets_OS searchBudgetAltered = new Budgets_OS();
             Budget_OSBusiness objAltered = new Budget_OSBusiness(ctx);
 
@@ -119,18 +118,16 @@ namespace UIWindows
                 searchBudgetAltered = objAltered.ReturnByID(idBudget);
 
                 string idClient = searchBudgetAltered.IdClients;
-                cliAltered = clientAltered.ReturnByID(idClient);
                 
-
-                txtNomeC.Text = cliAltered.sName.ToUpper();
-                txtCpfCnpjC.Text = cliAltered.sCpfCnpj;
-                txtRgC.Text = cliAltered.sRg;
-                txtCepC.Text = cliAltered.sCEP;
-                txtEnderecoC.Text = cliAltered.sAdress.ToUpper();
-                txtNumeroC.Text = cliAltered.iNumber.ToString();
-                txtBairroC.Text = cliAltered.sDistrict.ToUpper();
-                txtCidadeC.Text = cliAltered.sCity.ToUpper();
-                cbxEstate.Text = cliAltered.Estate.ToString();
+                txtNomeC.Text = cli.sName.ToUpper();
+                txtCpfCnpjC.Text = cli.sCpfCnpj;
+                txtRgC.Text = cli.sRg;
+                txtCepC.Text = cli.sCEP;
+                txtEnderecoC.Text = cli.sAdress.ToUpper();
+                txtNumeroC.Text = cli.iNumber.ToString();
+                txtBairroC.Text = cli.sDistrict.ToUpper();
+                txtCidadeC.Text = cli.sCity.ToUpper();
+                cbxEstate.Text = cli.Estate.ToString();
             }
             else
             {
@@ -288,6 +285,11 @@ namespace UIWindows
 
         private void btnAlterarContratado_Click(object sender, EventArgs e)
         {
+            FillDataHired();
+        }
+
+        private void FillDataHired()
+        {
             if (txtNomeContratado.Text == "LUCAS BEIRIGO REGGIANI 09396759945")
             {
                 txtNomeContratado.Text = "RICHARD CARLOS REGGIANI 16479617851";
@@ -298,7 +300,7 @@ namespace UIWindows
                 txtNumeroContratado.Text = "25";
                 txtBairroContratado.Text = "VILA ROTARIA \"ARCH C. KLUMPH\"";
                 txtCidadeContratado.Text = "PRESIDENTE PRUDENTE";
-                cbxEstateContratado.Text = "SP";
+                cbxEstateContratado.SelectedIndex = 24; // SP
             }
             else
             {
@@ -310,7 +312,7 @@ namespace UIWindows
                 txtNumeroContratado.Text = "210";
                 txtBairroContratado.Text = "CECAP";
                 txtCidadeContratado.Text = "PRESIDENTE PRUDENTE";
-                cbxEstateContratado.Text = "SP";
+                cbxEstateContratado.SelectedIndex = 24; // SP
             }
         }
 
@@ -367,7 +369,7 @@ namespace UIWindows
                         contractAlter.iWarrantyTime = Convert.ToInt32(txtPrazoGarantia.Text);
                         contractAlter.sCity = txtCidade.Text;
 
-                        //contractAlter.sIdBudget_OS = contractBudgetId.sID;
+                        contractAlter.sIdBudget_OS = contractBudgetId.sID;
                         //contractAlter.Budgets_OS = contractBudgetId;
 
                         //salva
@@ -434,8 +436,11 @@ namespace UIWindows
                         contractPersist.iWarrantyTime = Convert.ToInt32(txtPrazoGarantia.Text);
                         contractPersist.sCity = txtCidade.Text;
 
-                        contractPersist.sIdBudget_OS = searchBudget.sID;
-                        
+
+                        //contractPersist.sIdBudget_OS = searchBudget.sID;
+                        contractPersist.sIdBudget_OS = getId;
+                        getId = "";
+
                         //salva
                         objPersist.Insert(contractPersist);
 
