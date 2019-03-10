@@ -5,6 +5,7 @@ using Microsoft.Reporting.WinForms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
+using Report = Microsoft.Reporting.WebForms.Report;
 
 namespace UIWindows.Views.Budgets
 {
@@ -168,6 +169,8 @@ namespace UIWindows.Views.Budgets
             reportViewer1.LocalReport.SetParameters(DeliveryPrevision);
             reportViewer1.LocalReport.SetParameters(Observation);
             reportViewer1.LocalReport.SetParameters(LiquidValue);
+
+            reportViewer1.LocalReport.DisplayName = "ORCAMENTO - CLIENTE " + searchBudget.sName + " - " + DateTime.Now.Date.ToShortDateString().Replace("/", "-");
 
             reportViewer1.RefreshReport();
 

@@ -64,6 +64,13 @@ namespace UIWindows.Views.Reports.ServicesOrders
             reportViewer1.LocalReport.SetParameters(startDateString);
             reportViewer1.LocalReport.SetParameters(endDateString);
 
+            reportViewer1.LocalReport.DisplayName = "Relatorio de Ordens de Serviço - Situação " +
+                                                    typeReport +
+                                                    " - " +
+                                                    DateTime.Now.Date.ToShortDateString()
+                                                        .Replace("/",
+                                                            "-");
+
             reportViewer1.RefreshReport();
         }
     }

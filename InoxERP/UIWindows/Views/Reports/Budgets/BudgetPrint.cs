@@ -160,6 +160,7 @@ namespace UIWindows.Views.Budgets
             rptPrint.LocalReport.SetParameters(Observation);
             rptPrint.LocalReport.SetParameters(LiquidValue);
 
+            rptPrint.LocalReport.DisplayName = "ORCAMENTO - CLIENTE " + searchBudget.sName + " - " + DateTime.Now.Date.ToShortDateString().Replace("/","-");
             rptPrint.RefreshReport();
         }
 

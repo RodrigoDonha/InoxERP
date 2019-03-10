@@ -70,7 +70,7 @@ namespace UIWindows
 
             if (radRecebidosParcialemnte.Checked)
             {
-                type = "Contas Pagas Parcialmente";
+                type = "Contas Recebidas Parcialmente";
                 typeLaunch = "";
                 new ParcialReceiveReport(type, startDate.ToShortDateString(), endDate.ToShortDateString(), typeLaunch).Show();
             }

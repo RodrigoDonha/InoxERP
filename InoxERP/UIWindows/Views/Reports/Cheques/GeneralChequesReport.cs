@@ -64,6 +64,13 @@ namespace UIWindows.Views.Reports.Cheques
             reportViewer1.LocalReport.SetParameters(startDateString);
             reportViewer1.LocalReport.SetParameters(endDateString);
 
+            reportViewer1.LocalReport.DisplayName = "Relatorio de Cheques " +
+                                                    typeReport +
+                                                    " - " +
+                                                    DateTime.Now.Date.ToShortDateString()
+                                                        .Replace("/",
+                                                            "-");
+
             reportViewer1.RefreshReport();
         }
     }

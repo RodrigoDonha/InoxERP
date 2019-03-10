@@ -64,6 +64,8 @@ namespace UIWindows.Views.Reports.Budgets
             reportViewer1.LocalReport.SetParameters(startDateString);
             reportViewer1.LocalReport.SetParameters(endDateString);
 
+            reportViewer1.LocalReport.DisplayName = "Relatorio de Orcamentos " + typeReport + " - " + DateTime.Now.Date.ToShortDateString().Replace("/", "-");
+
             reportViewer1.RefreshReport();
         }
     }

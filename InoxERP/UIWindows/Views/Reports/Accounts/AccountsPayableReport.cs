@@ -64,6 +64,8 @@ namespace UIWindows.Views.Reports.Accounts
             reportViewer1.LocalReport.SetParameters(startDateString);
             reportViewer1.LocalReport.SetParameters(endDateString);
 
+            reportViewer1.LocalReport.DisplayName = "Relatorio de " + typeReport + " - " + DateTime.Now.Date.ToShortDateString().Replace("/","-");
+
             reportViewer1.RefreshReport();
         }
     }

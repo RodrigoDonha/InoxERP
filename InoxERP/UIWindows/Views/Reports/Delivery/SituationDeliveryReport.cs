@@ -71,6 +71,13 @@ namespace UIWindows.Views.Reports.Delivery
             reportViewer1.LocalReport.SetParameters(startDateString);
             reportViewer1.LocalReport.SetParameters(endDateString);
 
+            reportViewer1.LocalReport.DisplayName = "Relatorio de Entregas - Situação " +
+                                                    typeReport +
+                                                    " - " +
+                                                    DateTime.Now.Date.ToShortDateString()
+                                                        .Replace("/",
+                                                            "-");
+
             reportViewer1.RefreshReport();
         }
     }
