@@ -95,6 +95,8 @@
             this.dtpDataAtual = new System.Windows.Forms.DateTimePicker();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -803,6 +805,8 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage5.Controls.Add(this.label17);
+            this.tabPage5.Controls.Add(this.label16);
             this.tabPage5.Controls.Add(this.lblPpte);
             this.tabPage5.Controls.Add(this.txtPrazoGarantia);
             this.tabPage5.Controls.Add(this.txtPrazo2);
@@ -830,17 +834,18 @@
             // txtPrazoGarantia
             // 
             this.txtPrazoGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrazoGarantia.Location = new System.Drawing.Point(129, 56);
+            this.txtPrazoGarantia.Location = new System.Drawing.Point(114, 209);
             this.txtPrazoGarantia.MaxLength = 2;
             this.txtPrazoGarantia.Name = "txtPrazoGarantia";
             this.txtPrazoGarantia.Size = new System.Drawing.Size(35, 26);
             this.txtPrazoGarantia.TabIndex = 21;
             this.txtPrazoGarantia.Text = "5";
+            this.txtPrazoGarantia.Visible = false;
             // 
             // txtPrazo2
             // 
             this.txtPrazo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrazo2.Location = new System.Drawing.Point(287, 17);
+            this.txtPrazo2.Location = new System.Drawing.Point(290, 40);
             this.txtPrazo2.MaxLength = 3;
             this.txtPrazo2.Name = "txtPrazo2";
             this.txtPrazo2.Size = new System.Drawing.Size(44, 26);
@@ -851,11 +856,12 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(33, -20);
+            this.label13.Location = new System.Drawing.Point(33, 3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(775, 120);
+            this.label13.Size = new System.Drawing.Size(565, 80);
             this.label13.TabIndex = 24;
-            this.label13.Text = resources.GetString("label13.Text");
+            this.label13.Text = "\r\n\r\nReferente ao prazo de entrega de:              dias, a partir da data deste c" +
+    "ontrato.\r\n\r\n";
             // 
             // txtCidade
             // 
@@ -893,6 +899,27 @@
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(17, 215);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(91, 17);
+            this.label16.TabIndex = 52;
+            this.label16.Text = "Garantia de: ";
+            this.label16.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(160, 215);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(684, 17);
+            this.label17.TabIndex = 53;
+            this.label17.Text = "anos contra defeito de fabricação. Devidamente comprovados, não havendo interferê" +
+    "ncia de má utilização.";
+            this.label17.Visible = false;
             // 
             // frmContract
             // 
@@ -992,5 +1019,7 @@
         private System.Windows.Forms.Label lblPpte;
         private System.Windows.Forms.TextBox txtIdContract;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }

@@ -824,6 +824,11 @@
             // nudDias
             // 
             this.nudDias.Location = new System.Drawing.Point(158, 24);
+            this.nudDias.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.nudDias.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1015,7 +1020,7 @@
             // 
             this.lblTotalGeralValor.AutoSize = true;
             this.lblTotalGeralValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGeralValor.Location = new System.Drawing.Point(436, 35);
+            this.lblTotalGeralValor.Location = new System.Drawing.Point(112, 30);
             this.lblTotalGeralValor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalGeralValor.Name = "lblTotalGeralValor";
             this.lblTotalGeralValor.Size = new System.Drawing.Size(16, 17);
@@ -1026,7 +1031,7 @@
             // 
             this.lblTotalGeral.AutoSize = true;
             this.lblTotalGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalGeral.Location = new System.Drawing.Point(334, 35);
+            this.lblTotalGeral.Location = new System.Drawing.Point(10, 30);
             this.lblTotalGeral.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalGeral.Name = "lblTotalGeral";
             this.lblTotalGeral.Size = new System.Drawing.Size(100, 17);
@@ -1055,7 +1060,12 @@
             // 
             // nudAnos
             // 
-            this.nudAnos.Location = new System.Drawing.Point(160, 31);
+            this.nudAnos.Location = new System.Drawing.Point(312, 26);
+            this.nudAnos.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.nudAnos.Minimum = new decimal(new int[] {
             1,
             0,
@@ -1069,28 +1079,31 @@
             0,
             0,
             0});
+            this.nudAnos.Visible = false;
             // 
             // lblAnos
             // 
             this.lblAnos.AutoSize = true;
             this.lblAnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnos.Location = new System.Drawing.Point(242, 35);
+            this.lblAnos.Location = new System.Drawing.Point(394, 30);
             this.lblAnos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnos.Name = "lblAnos";
             this.lblAnos.Size = new System.Drawing.Size(40, 17);
             this.lblAnos.TabIndex = 20;
             this.lblAnos.Text = "Anos";
+            this.lblAnos.Visible = false;
             // 
             // lblTempoGarantia
             // 
             this.lblTempoGarantia.AutoSize = true;
             this.lblTempoGarantia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTempoGarantia.Location = new System.Drawing.Point(8, 35);
+            this.lblTempoGarantia.Location = new System.Drawing.Point(160, 30);
             this.lblTempoGarantia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTempoGarantia.Name = "lblTempoGarantia";
             this.lblTempoGarantia.Size = new System.Drawing.Size(139, 17);
             this.lblTempoGarantia.TabIndex = 19;
             this.lblTempoGarantia.Text = "Tempo de Garantia: ";
+            this.lblTempoGarantia.Visible = false;
             // 
             // frmBudgetsRegister
             // 

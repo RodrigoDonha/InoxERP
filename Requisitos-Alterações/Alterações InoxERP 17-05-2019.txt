@@ -1,0 +1,7 @@
+Alterações do InoxERP
+
+-Orçamento com erro para alteração
+-Mudar endereço do Orçamento para Rua Mendes... (igual contrato)
+-Arrumado Alinhamento e bordas do Layout de Orçamento e Contrato
+-Retirar Garantia do Orçamento
+-Retirar Garantia do Contrato

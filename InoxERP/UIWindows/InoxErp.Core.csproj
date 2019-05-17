@@ -119,7 +119,6 @@
     <Compile Include="Business\ValidationEntries.cs" />
     <Compile Include="Business\MessageBoxTimer.cs" />
     <Compile Include="Context\InoxErpContext.cs" />
-    <Compile Include="DTO\DTOPaymentForm.cs" />
     <Compile Include="Entities\AccountsToPay.cs" />
     <Compile Include="Entities\AccountsToReceive.cs" />
     <Compile Include="Entities\BaseEntity.cs" />

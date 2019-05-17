@@ -1096,70 +1096,6 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Garantia de: </Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Parameters!garantia.Value</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value> anos contra defeito de fabricação. Devidamente </Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <LeftIndent>0cm</LeftIndent>
-                <RightIndent>0cm</RightIndent>
-                <Style>
-                  <TextAlign>General</TextAlign>
-                  <LineHeight>14pt</LineHeight>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>comprovados, não havendo interferência de má utilização.</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <LeftIndent>0cm</LeftIndent>
-                <RightIndent>0cm</RightIndent>
-                <Style>
-                  <TextAlign>General</TextAlign>
-                  <LineHeight>14pt</LineHeight>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
                     <Value />
                     <Style>
                       <FontStyle>Normal</FontStyle>
@@ -1447,9 +1383,8 @@
               <Source>Embedded</Source>
               <Value>logo</Value>
               <Sizing>FitProportional</Sizing>
-              <Left>0.08618cm</Left>
               <Height>3.09026cm</Height>
-              <Width>5.75437cm</Width>
+              <Width>5.84055cm</Width>
               <Style>
                 <Border>
                   <Style>Solid</Style>

@@ -548,9 +548,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
             <Top>12.29609cm</Top>
-            <Left>9.19089cm</Left>
+            <Left>0.32772cm</Left>
             <Height>0.6cm</Height>
-            <Width>8.82285cm</Width>
+            <Width>8.4753cm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -916,7 +916,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Prazos de Garantia e Validade</Value>
+                    <Value>Validade do Orçamento</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -963,10 +963,13 @@
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
             <Top>12.29609cm</Top>
-            <Left>0.29768cm</Left>
+            <Left>9.2163cm</Left>
             <Height>0.6cm</Height>
-            <Width>8.51138cm</Width>
+            <Width>8.79744cm</Width>
             <ZIndex>21</ZIndex>
+            <Visibility>
+              <Hidden>true</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -990,7 +993,7 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Right</TextAlign>
+                  <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -1397,7 +1400,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>C.N.P.J. 30.286.217/0001-70 - Lucas Beirigo Reggiani     </Value>
+                      <Value>C.N.P.J. 30.286.217/0001-70 - Lucas Beirigo Reggiani</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -1408,8 +1411,13 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Rua das Flores, 210 Cecap - Presidente Prudente/SP - CEP 19065-510</Value>
-                      <Style />
+                      <Value>Rua Mendes de Moraes, 1871 | Vila Paulo Roberto | Presidente Prudente – São Paulo | CEP 19046-070</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>Normal</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -1419,9 +1427,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox29</rd:DefaultName>
               <Top>0.25732cm</Top>
-              <Left>0.23952cm</Left>
+              <Left>0.32772cm</Left>
               <Height>1.15562cm</Height>
-              <Width>17.77422cm</Width>
+              <Width>17.68602cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1433,26 +1441,24 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line10">
-              <Top>0.11377cm</Top>
-              <Left>0.32772cm</Left>
-              <Height>0cm</Height>
-              <Width>17.68602cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
           </ReportItems>
           <Style>
             <Border>
               <Style>Solid</Style>
+              <Width>2pt</Width>
             </Border>
             <TopBorder>
-              <Style>None</Style>
+              <Style>Solid</Style>
             </TopBorder>
+            <BottomBorder>
+              <Style>Solid</Style>
+            </BottomBorder>
+            <LeftBorder>
+              <Style>Solid</Style>
+            </LeftBorder>
+            <RightBorder>
+              <Style>Solid</Style>
+            </RightBorder>
             <BackgroundColor>WhiteSmoke</BackgroundColor>
           </Style>
         </PageFooter>
