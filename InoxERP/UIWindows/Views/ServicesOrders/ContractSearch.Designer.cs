@@ -35,6 +35,15 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.grpContratos = new System.Windows.Forms.GroupBox();
             this.grdContratos = new System.Windows.Forms.DataGridView();
+            this.tbcontractsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fullDataSet = new UIWindows.FullDataSet();
+            this.grpPesquisa = new System.Windows.Forms.GroupBox();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.radCPF_CNPJ = new System.Windows.Forms.RadioButton();
+            this.radNome = new System.Windows.Forms.RadioButton();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.tb_contractsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_contractsTableAdapter();
             this.sIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtContractDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sClientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,15 +67,6 @@
             this.dtStartExecutionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iWarrantyTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.budgetsOSsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbcontractsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fullDataSet = new UIWindows.FullDataSet();
-            this.grpPesquisa = new System.Windows.Forms.GroupBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.radCPF_CNPJ = new System.Windows.Forms.RadioButton();
-            this.radNome = new System.Windows.Forms.RadioButton();
-            this.lblTipo = new System.Windows.Forms.Label();
-            this.tb_contractsTableAdapter = new UIWindows.FullDataSetTableAdapters.tb_contractsTableAdapter();
             this.grpContratos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdContratos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbcontractsBindingSource)).BeginInit();
@@ -164,6 +164,90 @@
             this.grdContratos.TabIndex = 0;
             this.grdContratos.Click += new System.EventHandler(this.grdContratos_Click);
             // 
+            // tbcontractsBindingSource
+            // 
+            this.tbcontractsBindingSource.DataMember = "tb_contracts";
+            this.tbcontractsBindingSource.DataSource = this.fullDataSet;
+            // 
+            // fullDataSet
+            // 
+            this.fullDataSet.DataSetName = "FullDataSet";
+            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // grpPesquisa
+            // 
+            this.grpPesquisa.Controls.Add(this.btnPesquisar);
+            this.grpPesquisa.Controls.Add(this.txtPesquisa);
+            this.grpPesquisa.Controls.Add(this.radCPF_CNPJ);
+            this.grpPesquisa.Controls.Add(this.radNome);
+            this.grpPesquisa.Controls.Add(this.lblTipo);
+            this.grpPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpPesquisa.Location = new System.Drawing.Point(12, 15);
+            this.grpPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpPesquisa.Name = "grpPesquisa";
+            this.grpPesquisa.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpPesquisa.Size = new System.Drawing.Size(776, 74);
+            this.grpPesquisa.TabIndex = 20;
+            this.grpPesquisa.TabStop = false;
+            this.grpPesquisa.Text = "Pesquisa";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(691, 21);
+            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(80, 30);
+            this.btnPesquisar.TabIndex = 5;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(347, 25);
+            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPesquisa.MaxLength = 100;
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(331, 23);
+            this.txtPesquisa.TabIndex = 4;
+            // 
+            // radCPF_CNPJ
+            // 
+            this.radCPF_CNPJ.AutoSize = true;
+            this.radCPF_CNPJ.Location = new System.Drawing.Point(190, 25);
+            this.radCPF_CNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radCPF_CNPJ.Name = "radCPF_CNPJ";
+            this.radCPF_CNPJ.Size = new System.Drawing.Size(91, 21);
+            this.radCPF_CNPJ.TabIndex = 2;
+            this.radCPF_CNPJ.Text = "CPF/CNPJ";
+            this.radCPF_CNPJ.UseVisualStyleBackColor = true;
+            // 
+            // radNome
+            // 
+            this.radNome.AutoSize = true;
+            this.radNome.Checked = true;
+            this.radNome.Location = new System.Drawing.Point(97, 25);
+            this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radNome.Name = "radNome";
+            this.radNome.Size = new System.Drawing.Size(63, 21);
+            this.radNome.TabIndex = 1;
+            this.radNome.TabStop = true;
+            this.radNome.Text = "Nome";
+            this.radNome.UseVisualStyleBackColor = true;
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(5, 27);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(40, 17);
+            this.lblTipo.TabIndex = 0;
+            this.lblTipo.Text = "Tipo:";
+            // 
+            // tb_contractsTableAdapter
+            // 
+            this.tb_contractsTableAdapter.ClearBeforeFill = true;
+            // 
             // sIDDataGridViewTextBoxColumn
             // 
             this.sIDDataGridViewTextBoxColumn.DataPropertyName = "sID";
@@ -174,12 +258,12 @@
             // 
             // dtContractDateDataGridViewTextBoxColumn
             // 
-            this.dtContractDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dtContractDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dtContractDateDataGridViewTextBoxColumn.DataPropertyName = "dtContractDate";
-            this.dtContractDateDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dtContractDateDataGridViewTextBoxColumn.HeaderText = "    Data    ";
             this.dtContractDateDataGridViewTextBoxColumn.Name = "dtContractDateDataGridViewTextBoxColumn";
             this.dtContractDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dtContractDateDataGridViewTextBoxColumn.Width = 63;
+            this.dtContractDateDataGridViewTextBoxColumn.Width = 95;
             // 
             // sClientNameDataGridViewTextBoxColumn
             // 
@@ -276,6 +360,7 @@
             this.sClientNumberAdressDataGridViewTextBoxColumn.HeaderText = "Nº";
             this.sClientNumberAdressDataGridViewTextBoxColumn.Name = "sClientNumberAdressDataGridViewTextBoxColumn";
             this.sClientNumberAdressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sClientNumberAdressDataGridViewTextBoxColumn.Visible = false;
             this.sClientNumberAdressDataGridViewTextBoxColumn.Width = 48;
             // 
             // sClientDistrictDataGridViewTextBoxColumn
@@ -285,6 +370,7 @@
             this.sClientDistrictDataGridViewTextBoxColumn.HeaderText = "Bairro";
             this.sClientDistrictDataGridViewTextBoxColumn.Name = "sClientDistrictDataGridViewTextBoxColumn";
             this.sClientDistrictDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sClientDistrictDataGridViewTextBoxColumn.Visible = false;
             this.sClientDistrictDataGridViewTextBoxColumn.Width = 71;
             // 
             // sClientCepDataGridViewTextBoxColumn
@@ -352,90 +438,6 @@
             this.budgetsOSsIDDataGridViewTextBoxColumn.Name = "budgetsOSsIDDataGridViewTextBoxColumn";
             this.budgetsOSsIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.budgetsOSsIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tbcontractsBindingSource
-            // 
-            this.tbcontractsBindingSource.DataMember = "tb_contracts";
-            this.tbcontractsBindingSource.DataSource = this.fullDataSet;
-            // 
-            // fullDataSet
-            // 
-            this.fullDataSet.DataSetName = "FullDataSet";
-            this.fullDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // grpPesquisa
-            // 
-            this.grpPesquisa.Controls.Add(this.btnPesquisar);
-            this.grpPesquisa.Controls.Add(this.txtPesquisa);
-            this.grpPesquisa.Controls.Add(this.radCPF_CNPJ);
-            this.grpPesquisa.Controls.Add(this.radNome);
-            this.grpPesquisa.Controls.Add(this.lblTipo);
-            this.grpPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpPesquisa.Location = new System.Drawing.Point(12, 15);
-            this.grpPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpPesquisa.Name = "grpPesquisa";
-            this.grpPesquisa.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpPesquisa.Size = new System.Drawing.Size(776, 74);
-            this.grpPesquisa.TabIndex = 20;
-            this.grpPesquisa.TabStop = false;
-            this.grpPesquisa.Text = "Pesquisa";
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.Location = new System.Drawing.Point(691, 21);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(80, 30);
-            this.btnPesquisar.TabIndex = 5;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Location = new System.Drawing.Point(347, 25);
-            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPesquisa.MaxLength = 100;
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(331, 23);
-            this.txtPesquisa.TabIndex = 4;
-            // 
-            // radCPF_CNPJ
-            // 
-            this.radCPF_CNPJ.AutoSize = true;
-            this.radCPF_CNPJ.Location = new System.Drawing.Point(190, 25);
-            this.radCPF_CNPJ.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radCPF_CNPJ.Name = "radCPF_CNPJ";
-            this.radCPF_CNPJ.Size = new System.Drawing.Size(91, 21);
-            this.radCPF_CNPJ.TabIndex = 2;
-            this.radCPF_CNPJ.Text = "CPF/CNPJ";
-            this.radCPF_CNPJ.UseVisualStyleBackColor = true;
-            // 
-            // radNome
-            // 
-            this.radNome.AutoSize = true;
-            this.radNome.Checked = true;
-            this.radNome.Location = new System.Drawing.Point(97, 25);
-            this.radNome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radNome.Name = "radNome";
-            this.radNome.Size = new System.Drawing.Size(63, 21);
-            this.radNome.TabIndex = 1;
-            this.radNome.TabStop = true;
-            this.radNome.Text = "Nome";
-            this.radNome.UseVisualStyleBackColor = true;
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(5, 27);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(40, 17);
-            this.lblTipo.TabIndex = 0;
-            this.lblTipo.Text = "Tipo:";
-            // 
-            // tb_contractsTableAdapter
-            // 
-            this.tb_contractsTableAdapter.ClearBeforeFill = true;
             // 
             // frmContractSearch
             // 

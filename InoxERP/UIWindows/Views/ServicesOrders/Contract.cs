@@ -378,7 +378,9 @@ namespace UIWindows
                         contractAlter.sCity = txtCidade.Text;
 
                         contractAlter.sIdBudget_OS = contractBudgetId.sID;
+                        contractAlter.sIdBudget_OS = getId;
                         //contractAlter.Budgets_OS = contractBudgetId;
+                        getId = "";
 
                         //salva
                         objAlter.Update(contractAlter);
@@ -399,7 +401,7 @@ namespace UIWindows
                             MessageBox.Show("Erro ao Alterar o Contrato !!!");
                     }
                     else
-                    {
+                    {   // Gravar
                         InoxErpContext ctxPersist = new InoxErpContext();
                         ContractBusiness objPersist = new ContractBusiness(ctxPersist);
                         Contracts contractPersist = new Contracts();
