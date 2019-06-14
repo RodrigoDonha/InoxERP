@@ -87,6 +87,8 @@
             this.txtPrazo1 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.lblPpte = new System.Windows.Forms.Label();
             this.txtPrazoGarantia = new System.Windows.Forms.TextBox();
             this.txtPrazo2 = new System.Windows.Forms.TextBox();
@@ -95,8 +97,6 @@
             this.dtpDataAtual = new System.Windows.Forms.DateTimePicker();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -716,12 +716,13 @@
             // 
             // txtValores
             // 
-            this.txtValores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValores.Location = new System.Drawing.Point(155, 265);
-            this.txtValores.MaxLength = 18;
+            this.txtValores.MaxLength = 10;
             this.txtValores.Name = "txtValores";
-            this.txtValores.Size = new System.Drawing.Size(141, 23);
+            this.txtValores.Size = new System.Drawing.Size(141, 26);
             this.txtValores.TabIndex = 18;
+            this.txtValores.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtValores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumericsAndComma);
             // 
             // txtObrigacoesContratante
@@ -737,12 +738,11 @@
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(2, 6);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(830, 280);
+            this.label12.Size = new System.Drawing.Size(842, 306);
             this.label12.TabIndex = 42;
             this.label12.Text = resources.GetString("label12.Text");
             // 
@@ -763,42 +763,42 @@
             // txtObrigacoesContratante1
             // 
             this.txtObrigacoesContratante1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObrigacoesContratante1.Location = new System.Drawing.Point(6, 366);
+            this.txtObrigacoesContratante1.Location = new System.Drawing.Point(6, 352);
             this.txtObrigacoesContratante1.MaxLength = 3900;
             this.txtObrigacoesContratante1.Multiline = true;
             this.txtObrigacoesContratante1.Name = "txtObrigacoesContratante1";
-            this.txtObrigacoesContratante1.Size = new System.Drawing.Size(839, 84);
+            this.txtObrigacoesContratante1.Size = new System.Drawing.Size(839, 143);
             this.txtObrigacoesContratante1.TabIndex = 15;
             this.txtObrigacoesContratante1.Text = "Forma de Pagamento: ";
             // 
             // txtValores1
             // 
             this.txtValores1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValores1.Location = new System.Drawing.Point(231, 319);
-            this.txtValores1.MaxLength = 18;
+            this.txtValores1.Location = new System.Drawing.Point(268, 320);
+            this.txtValores1.MaxLength = 10;
             this.txtValores1.Name = "txtValores1";
             this.txtValores1.Size = new System.Drawing.Size(139, 26);
             this.txtValores1.TabIndex = 14;
+            this.txtValores1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtValores1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationEntriesNumericsAndComma);
             // 
             // txtPrazo1
             // 
             this.txtPrazo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrazo1.Location = new System.Drawing.Point(523, 19);
+            this.txtPrazo1.Location = new System.Drawing.Point(598, 19);
             this.txtPrazo1.MaxLength = 3;
             this.txtPrazo1.Name = "txtPrazo1";
-            this.txtPrazo1.Size = new System.Drawing.Size(44, 26);
+            this.txtPrazo1.Size = new System.Drawing.Size(52, 26);
             this.txtPrazo1.TabIndex = 13;
-            this.txtPrazo1.Text = "30";
+            this.txtPrazo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrazo1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validationOnlyNumbers);
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(5, 2);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(785, 360);
+            this.label14.Size = new System.Drawing.Size(840, 360);
             this.label14.TabIndex = 0;
             this.label14.Text = resources.GetString("label14.Text");
             // 
@@ -820,11 +820,32 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "5 - Finalização";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(160, 215);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(684, 17);
+            this.label17.TabIndex = 53;
+            this.label17.Text = "anos contra defeito de fabricação. Devidamente comprovados, não havendo interferê" +
+    "ncia de má utilização.";
+            this.label17.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(17, 215);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(91, 17);
+            this.label16.TabIndex = 52;
+            this.label16.Text = "Garantia de: ";
+            this.label16.Visible = false;
+            // 
             // lblPpte
             // 
             this.lblPpte.AutoSize = true;
             this.lblPpte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPpte.Location = new System.Drawing.Point(400, 122);
+            this.lblPpte.Location = new System.Drawing.Point(373, 120);
             this.lblPpte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPpte.Name = "lblPpte";
             this.lblPpte.Size = new System.Drawing.Size(16, 17);
@@ -845,28 +866,28 @@
             // txtPrazo2
             // 
             this.txtPrazo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrazo2.Location = new System.Drawing.Point(290, 40);
+            this.txtPrazo2.Location = new System.Drawing.Point(294, 20);
             this.txtPrazo2.MaxLength = 3;
             this.txtPrazo2.Name = "txtPrazo2";
-            this.txtPrazo2.Size = new System.Drawing.Size(44, 26);
+            this.txtPrazo2.Size = new System.Drawing.Size(49, 26);
             this.txtPrazo2.TabIndex = 20;
             this.txtPrazo2.Text = "30";
+            this.txtPrazo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(33, 3);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(565, 80);
+            this.label13.Size = new System.Drawing.Size(839, 80);
             this.label13.TabIndex = 24;
-            this.label13.Text = "\r\n\r\nReferente ao prazo de entrega de:              dias, a partir da data deste c" +
-    "ontrato.\r\n\r\n";
+            this.label13.Text = "\r\nReferente ao prazo de entrega de              dias úteis, a partir da data dest" +
+    "e contrato.";
             // 
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(37, 116);
+            this.txtCidade.Location = new System.Drawing.Point(10, 114);
             this.txtCidade.MaxLength = 50;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(362, 26);
@@ -875,7 +896,7 @@
             // 
             // dtpDataAtual
             // 
-            this.dtpDataAtual.Location = new System.Drawing.Point(420, 117);
+            this.dtpDataAtual.Location = new System.Drawing.Point(393, 115);
             this.dtpDataAtual.Name = "dtpDataAtual";
             this.dtpDataAtual.Size = new System.Drawing.Size(325, 23);
             this.dtpDataAtual.TabIndex = 23;
@@ -899,27 +920,6 @@
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 215);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(91, 17);
-            this.label16.TabIndex = 52;
-            this.label16.Text = "Garantia de: ";
-            this.label16.Visible = false;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(160, 215);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(684, 17);
-            this.label17.TabIndex = 53;
-            this.label17.Text = "anos contra defeito de fabricação. Devidamente comprovados, não havendo interferê" +
-    "ncia de má utilização.";
-            this.label17.Visible = false;
             // 
             // frmContract
             // 

@@ -177,5 +177,13 @@ namespace UIWindows
             }
             return true;
         }
+
+        private void BtnEmpytContract_Click(object sender, EventArgs e)
+        {
+            frmPrintContractEmpyt empyt = new frmPrintContractEmpyt();
+
+            empyt.ShowDialog();
+
+        }
     }
 }

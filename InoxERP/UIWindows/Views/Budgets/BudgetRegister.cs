@@ -941,14 +941,14 @@ namespace InoxERP.UI_Windows_Forms
         //WHEN FINAL DATE IS CHANGED
         private void dtpDataPrevistaEntrega_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpDataPrevistaEntrega.Value >= DateTime.Today) // se a data final escolhida for maior que data atual
-            {
-                var days = dtpDataPrevistaEntrega.Value.Date - dtpDataPrevistaInicio.Value.Date; // calcula diferença de dias
-                if (days.Days >= 0)
-                    nudDias.Value = days.Days; //preenche o nuddias
-            }
-            else
-                dtpDataPrevistaEntrega.Value = DateTime.Today; // senao ele ignora a data anterior e coloca a data atual
+            //if (dtpDataPrevistaEntrega.Value >= DateTime.Today) // se a data final escolhida for maior que data atual
+            //{
+            //    var days = dtpDataPrevistaEntrega.Value.Date - dtpDataPrevistaInicio.Value.Date; // calcula diferença de dias
+            //    if (days.Days >= 0)
+            //        nudDias.Value = days.Days; //preenche o nuddias
+            //}
+            //else
+            //    dtpDataPrevistaEntrega.Value = DateTime.Today; // senao ele ignora a data anterior e coloca a data atual
         }
 
         //WHEN SET DATE TO DELIVERY

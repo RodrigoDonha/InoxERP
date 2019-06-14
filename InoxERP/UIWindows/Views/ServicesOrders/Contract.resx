@@ -124,35 +124,27 @@ CLÁUSULA 2ª:
 O CONTRATANTE deve fornecer ao CONTRATADO as condições essenciais à realização do serviço.
 
 CLÁUSULA 3ª: 
-O CONTRATANTE efetuará ao CONTRATADO o pagamento pelo serviço realizado nos valores, 
-no prazo, na forma e nas condições estabelecidas na cláusula 5ª.
+O CONTRATANTE efetuará ao CONTRATADO o pagamento pelo serviço realizado nos valores, no prazo, na forma e nas condições estabelecidas na cláusula 5ª.
 
 DOS VALORES E CONDIÇÕES DE PAGAMENTO
 
 CLÁUSULA 4ª: 
-Pela realização dos serviços descritos neste contrato, o CONTRATANTE remunerará o CONTRATADO 
-com o valor de R$                              a serem pagos via:
+Pela realização dos serviços descritos neste contrato, o CONTRATANTE remunerará o CONTRATADO com o valor de R$                              a serem pagos via:
 </value>
   </data>
   <data name="label14.Text" xml:space="preserve">
-    <value>CLÁUSULA 5ª: 
-O presente contrato de prestação de serviços terá vigência por prazo de              dias, podendo ser prorrogado 
-por condições climáticas inadequadas, má condições do ambiente onde será executado o 
-serviço ou motivo de força maior por mais 10 dias, por solicitação do CONTRATADO e mediante comunicação 
-ao CONTRATANTE.
+    <value>CLÁUSULA 5ª:
+O presente contrato de prestação de serviços terá vigência por prazo de              dias úteis, podendo ser prorrogadopor condições climáticas inadequadas, má condições do ambiente onde será executado o serviço ou motivo de força maior por mais 10 dias úteis, por solicitação do CONTRATADO e mediante comunicação ao CONTRATANTE.
 
 DA MULTA
 
-CLÁUSULA 6ª:  Caso não ocorra o pagamento na data pactuada pelas partes acordadas o CONTRATANTE 
-poderá ser protestado e será tomadas as medidas cabíveis para recebimento arcando com todas as 
-despesas. 
+CLÁUSULA 6ª:
+Caso não ocorra o pagamento na data pactuada pelas partes acordadas o CONTRATANTE poderá ser protestado e será tomadas as medidas cabíveis para recebimento arcando com todas as despesas. 
 
-CLÁUSULA 7ª: Caso o serviço prestado não seja entregue na data pactuada pelas partes acordadas o 
-CONTRATADO poderá ser protestado e será tomado as medidas cabíveis , arcando com as eventuais 
-despesas.
+CLÁUSULA 7ª:
+Caso o serviço prestado não seja entregue na data pactuada pelas partes acordadas o CONTRATADO poderá ser protestado e será tomado as medidas cabíveis , arcando com as eventuais despesas.
 
-Valor total do serviço prestado:
-Sendo: </value>
+Valor total do serviço prestado:</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

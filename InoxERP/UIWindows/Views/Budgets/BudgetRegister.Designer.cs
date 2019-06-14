@@ -905,9 +905,9 @@
             this.lblDiasPrevistosParaExecucao.Location = new System.Drawing.Point(242, 33);
             this.lblDiasPrevistosParaExecucao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiasPrevistosParaExecucao.Name = "lblDiasPrevistosParaExecucao";
-            this.lblDiasPrevistosParaExecucao.Size = new System.Drawing.Size(38, 17);
+            this.lblDiasPrevistosParaExecucao.Size = new System.Drawing.Size(68, 17);
             this.lblDiasPrevistosParaExecucao.TabIndex = 3;
-            this.lblDiasPrevistosParaExecucao.Text = "dias.";
+            this.lblDiasPrevistosParaExecucao.Text = "dias úteis";
             // 
             // label8
             // 

@@ -170,7 +170,7 @@ namespace UIWindows.Views.Budgets
             reportViewer1.LocalReport.SetParameters(Observation);
             reportViewer1.LocalReport.SetParameters(LiquidValue);
 
-            reportViewer1.LocalReport.DisplayName = "ORCAMENTO - CLIENTE " + searchBudget.sName + " - " + DateTime.Now.Date.ToShortDateString().Replace("/", "-");
+            reportViewer1.LocalReport.DisplayName = searchBudget.sName + " - " + DateTime.Now.Date.ToShortDateString().Replace("/", "-");
 
             reportViewer1.RefreshReport();
 

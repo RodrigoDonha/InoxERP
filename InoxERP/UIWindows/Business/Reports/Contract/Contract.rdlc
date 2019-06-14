@@ -1075,7 +1075,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> dias, a partir da data deste contrato.</Value>
+                    <Value> dias úteis, a partir da data de pagamento da Entrada.</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>cambria</FontFamily>

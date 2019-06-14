@@ -118,8 +118,7 @@ namespace UIWindows.Views.Reports.Contracts
             reportViewer1.LocalReport.SetParameters(proprietario);
             reportViewer1.LocalReport.SetParameters(cnpjProviderRodape);
 
-            reportViewer1.LocalReport.DisplayName = "CONTRATO - CLIENTE " +
-                                                    searchContracts.sClientName +
+            reportViewer1.LocalReport.DisplayName = searchContracts.sClientName +
                                                     " - " +
                                                     DateTime.Now.Date.ToShortDateString()
                                                         .Replace("/",
