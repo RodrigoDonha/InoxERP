@@ -1,12 +1,12 @@
-OK - Descrições dos pdf's salvos tirar o TIPO, exemplo: Contrato Jefter Allan. Deixar só o nome: Jefter Allan (porque ele ja salva em pastas separadas);
+﻿OK - Descrições dos pdf's salvos tirar o TIPO, exemplo: Contrato Jefter Allan. Deixar só o nome: Jefter Allan (porque ele ja salva em pastas separadas);
 
-OK - Previsão de dias no orçamento deixar fixo. Esta calculando automatico o dias quando passa da previsao, exemplo: colocou 10 dias no dia 01/06/2019, se eu abir o orçamento hoje (12/06/2019) ele recalcula para 12 dias, isso nao deve ocorrer;
+OK - Previsão de dias no orçamento deixar fixo. Esta calculando automatico o dias quando passa da previsao, exemplo: colocou 10 dias no dia 01/06/2019, 
+se eu abir o orçamento hoje (12/06/2019) ele recalcula para 12 dias, isso nao deve ocorrer;
+
 
 OK - Orçamento na impressão nao esta saindo telefone de contato da empresa. Colocar: RICHARD - (18) 99635-0510;
 
 OK - Orçamento e Contrato onde estiver previsao de dias inserir a palavra UTEIS (dias uteis);
-
-Criar um botao na tela de CONTRATOS e quando clicar aparecer LUCAS ou RICHARD -> Imprimir o CONTRATO COMPLETO em branco só com os dados da empresa escolhida;
 
 OK - Verificar o contrato na aba de descrição, NÃO esta trazendo a descrição do serviço, só traz os itens;
 
@@ -16,6 +16,11 @@ OK - Contrato, tela 3 campo de numero esta com PONTO, tela 4 campo de numero est
 
 OK - Contrato, tela 3 texto com negrito, tela 4 texto sem negrito;
 
-***Quando muda de consumidor para cliente traz o contrato errado, seleciona o primeiro da lista VERIFICAR
+***Quando muda de consumidor para cliente traz o contrato errado, seleciona o primeiro da lista VERIFICAR - não esta pegando o id na abertura do contrato.
 
 ***DESEJÁVEL criar uma tela com as clausulas editaveis para o contrato;
+
+OK - Criar um botao na tela de CONTRATOS e quando clicar aparecer LUCAS ou RICHARD -> Imprimir o CONTRATO COMPLETO em branco só com os dados da empresa escolhida;
+
+
+

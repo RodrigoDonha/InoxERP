@@ -305,7 +305,6 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\pt\M
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\pt-BR\Microsoft.VisualStudio.Data.Services.resources.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\pt-BR\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\pt-BR\Microsoft.VisualStudio.GraphModel.resources.dll
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxERP.Core.exe.config
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Migrations.addIEprovider.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Migrations.AlterationsChequesAndClientsEntities.resources
@@ -331,11 +330,13 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWi
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Cash.TypeLaunchCashReport.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Cheques.GeneralChequesReport.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Cheques.SituationChequesReport.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Contracts.ContractEmptyPrint.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Contracts.ContractPrint.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Delivery.GeneralDeliveryReport.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Delivery.SituationDeliveryReport.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.ServicesOrders.GeneralServiceOrdersReport.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.ServicesOrders.SituationServiceOrdersReport.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.frmPrintContractEmpyt.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.ServicesOrders.ServiceOrdersPrint.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Users.frmChargingScreen.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.frmSignIn.resources

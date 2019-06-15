@@ -854,5 +854,10 @@ namespace UIWindows
                 MessageBox.Show("Não foi possível selecionar o Cliente, tente selecionar novamente.");
             }
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

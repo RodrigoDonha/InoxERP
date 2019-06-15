@@ -171,6 +171,7 @@
             this.tabPage1.Size = new System.Drawing.Size(851, 501);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1 - Identificação das Partes";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // txtIdContract
             // 
