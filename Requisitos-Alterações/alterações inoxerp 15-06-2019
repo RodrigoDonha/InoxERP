@@ -16,11 +16,15 @@ OK - Contrato, tela 3 campo de numero esta com PONTO, tela 4 campo de numero est
 
 OK - Contrato, tela 3 texto com negrito, tela 4 texto sem negrito;
 
+OK - Criar um botao na tela de CONTRATOS e quando clicar aparecer LUCAS ou RICHARD -> Imprimir o CONTRATO COMPLETO em branco só com os dados da empresa 
+escolhida;
+
 ***Quando muda de consumidor para cliente traz o contrato errado, seleciona o primeiro da lista VERIFICAR - não esta pegando o id na abertura do contrato.
+DEFEITO NÃO ENCONTRADO, FORAM REALIZADOS TESTES QUE NÃO IDENTIFICARAM OS PROBLEMAS RELATADOS ACIMA.
 
 ***DESEJÁVEL criar uma tela com as clausulas editaveis para o contrato;
 
-OK - Criar um botao na tela de CONTRATOS e quando clicar aparecer LUCAS ou RICHARD -> Imprimir o CONTRATO COMPLETO em branco só com os dados da empresa escolhida;
+
 
 
 
