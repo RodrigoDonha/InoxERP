@@ -786,27 +786,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>, podendo ser prorrogado por condições climáticas inadequadas, má condições do ambiente onde será executado o serviço ou motivo de força maior por mais 10 dias, por solicitação do CONTRATADO </Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Normal</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <LeftIndent>0cm</LeftIndent>
-                <RightIndent>0cm</RightIndent>
-                <Style>
-                  <TextAlign>General</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>e mediante comunicação ao CONTRATANTE.</Value>
+                    <Value>, podendo ser prorrogado por condições climáticas inadequadas, má condições do ambiente onde será executado o serviço ou motivo de força maior por mais 10 dias úteis, por solicitação do CONTRATADO e mediante comunicação ao CONTRATANTE.</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>cambria</FontFamily>
@@ -877,7 +857,27 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>:  Caso não ocorra o pagamento na data pactuada pelas partes acordadas o CONTRATANTE poderá ser protestado e será tomadas as medidas cabíveis para recebimento arcando com todas as despesas.</Value>
+                    <Value>: </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <RightIndent>0cm</RightIndent>
+                <Style>
+                  <TextAlign>General</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Caso não ocorra o pagamento na data pactuada pelas partes acordadas o CONTRATANTE poderá ser protestado e será tomadas as medidas cabíveis para recebimento arcando com todas as despesas.</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>cambria</FontFamily>
@@ -927,8 +927,17 @@
                       <Color>#000000</Color>
                     </Style>
                   </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <RightIndent>0cm</RightIndent>
+                <Style>
+                  <TextAlign>General</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
                   <TextRun>
-                    <Value> Caso o serviço prestado não seja entregue na data pactuada pelas partes acordadas o CONTRATADO poderá ser protestado e será tomado as medidas cabíveis , arcando com as eventuais despesas.</Value>
+                    <Value>Caso o serviço prestado não seja entregue na data pactuada pelas partes acordadas o CONTRATADO poderá ser protestado e será tomado as medidas cabíveis , arcando com as eventuais despesas.</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Cambria</FontFamily>
@@ -1176,7 +1185,7 @@
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>cambria</FontFamily>
                       <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
+                      <FontWeight>Normal</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
                     </Style>
@@ -1189,58 +1198,18 @@
                   <LineHeight>14pt</LineHeight>
                 </Style>
               </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox15</rd:DefaultName>
-            <Top>0.22929cm</Top>
-            <Left>0.08618cm</Left>
-            <Height>25.61969cm</Height>
-            <Width>17.72095cm</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox3">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
                     <Value />
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style />
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>cambria</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <LeftIndent>0cm</LeftIndent>
@@ -1320,36 +1289,16 @@
                 <LeftIndent>0cm</LeftIndent>
                 <RightIndent>0cm</RightIndent>
                 <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontFamily>cambria</FontFamily>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <LeftIndent>0cm</LeftIndent>
-                <RightIndent>0cm</RightIndent>
-                <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>General</TextAlign>
+                  <LineHeight>14pt</LineHeight>
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>26.02537cm</Top>
+            <rd:DefaultName>Textbox15</rd:DefaultName>
+            <Top>0.22929cm</Top>
             <Left>0.08618cm</Left>
-            <Height>3.00743cm</Height>
+            <Height>26.81032cm</Height>
             <Width>17.72095cm</Width>
-            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>

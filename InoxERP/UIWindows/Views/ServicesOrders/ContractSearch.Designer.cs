@@ -157,6 +157,7 @@
             this.grdContratos.DataSource = this.tbcontractsBindingSource;
             this.grdContratos.Location = new System.Drawing.Point(11, 21);
             this.grdContratos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grdContratos.MultiSelect = false;
             this.grdContratos.Name = "grdContratos";
             this.grdContratos.ReadOnly = true;
             this.grdContratos.RowTemplate.Height = 24;
