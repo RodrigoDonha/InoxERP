@@ -169,6 +169,9 @@ namespace UIWindows
 
                                     fillDataSet();
                                     checkContract(getId);
+                                    
+                                    txtPesquisa.Text = b.sName.ToString();
+                                    btnPesquisar_Click(sender, e);
                                     btnGerarContrato_Click(sender, e);
                                 }
                             }
