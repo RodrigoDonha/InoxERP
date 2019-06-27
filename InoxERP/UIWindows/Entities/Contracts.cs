@@ -101,6 +101,8 @@ namespace UIWindows.Entities
         [Required(ErrorMessage = "O Objeto do Contrato é Obrigatório")]
         public string sClientObjectContract { get; set; }
 
+        public string sEditableContract { get; set; }
+
         public string sPaymentForm { get; set; }
 
         public string sCity { get; set; }

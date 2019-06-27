@@ -428,6 +428,12 @@
     <Compile Include="Views\Reports\Contracts\ContractPrint.Designer.cs">
       <DependentUpon>ContractPrint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reports\Contracts\EditableContractPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Reports\Contracts\EditableContractPrint.Designer.cs">
+      <DependentUpon>EditableContractPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reports\Delivery\GeneralDeliveryReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -451,6 +457,12 @@
     </Compile>
     <Compile Include="Views\Reports\ServicesOrders\SituationServiceOrdersReport.Designer.cs">
       <DependentUpon>SituationServiceOrdersReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServicesOrders\EditableContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ServicesOrders\EditableContract.Designer.cs">
+      <DependentUpon>EditableContract.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ServicesOrders\PrintContractEmpyt.cs">
       <SubType>Form</SubType>
@@ -680,6 +692,7 @@
     <EmbeddedResource Include="Business\Reports\Contract\Contract.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Business\Reports\Contract\EditableContract.rdlc" />
     <EmbeddedResource Include="Business\Reports\Delivery\GeneralDelivery.rdlc" />
     <EmbeddedResource Include="Business\Reports\Delivery\SituationDelivery.rdlc" />
     <EmbeddedResource Include="Business\Reports\ServiceOrders\GeneralServiceOrder.rdlc" />
@@ -763,6 +776,9 @@
     <EmbeddedResource Include="Views\Reports\Contracts\ContractPrint.resx">
       <DependentUpon>ContractPrint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Reports\Contracts\EditableContractPrint.resx">
+      <DependentUpon>EditableContractPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\Delivery\GeneralDeliveryReport.resx">
       <DependentUpon>GeneralDeliveryReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -774,6 +790,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reports\ServicesOrders\SituationServiceOrdersReport.resx">
       <DependentUpon>SituationServiceOrdersReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ServicesOrders\EditableContract.resx">
+      <DependentUpon>EditableContract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ServicesOrders\PrintContractEmpyt.resx">
       <DependentUpon>PrintContractEmpyt.cs</DependentUpon>
