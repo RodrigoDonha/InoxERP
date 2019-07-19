@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using InoxERP.UI_Windows_Forms;
-using Microsoft.ReportingServices.Interfaces;
 using UIWindows.Business;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
@@ -26,11 +22,16 @@ namespace UIWindows
         
         MessageBoxTimer msg = new MessageBoxTimer();
 
+        Hired hrd = new Hired();
+
         String getId;
 
         public frmServiceOrderSearch()
         {
             InitializeComponent();
+            // Display a message box. The Help button opens the Mspaint.chm Help file, 
+            // shows index with the "ovals" keyword selected, and displays the
+            // associated topic.
         }
 
 
@@ -110,86 +111,187 @@ namespace UIWindows
         private void btnGerarContrato_Click(object sender, EventArgs e)
         {
             getIdGrigView();
-            if (dgvOrdemServico.CurrentRow != null)
+            DialogResult dr = MessageBox.Show("Deseja gerar o contrato com Cláusulas Totalmente Editáveis?",
+                "Tipo de Contrato", MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button1,
+                0);
+            if (dr == DialogResult.Yes)
             {
-                if (!checkContract(getId))
+                // gerar tela de contrato editavel
+                if (dgvOrdemServico.CurrentRow != null)
                 {
-                    Clients cli = new Clients();
-                    ClientsBusiness clients = new ClientsBusiness(ctx);
-
-                    InoxErpContext c = new InoxErpContext();
-                    Budget_OSBusiness objSearch = new Budget_OSBusiness(c);
-                    Budgets_OS bud = new Budgets_OS();
-
-                    bud = objSearch.ReturnByID(getId);
-                    
-                    cli = clients.ReturnByID(bud.IdClients);
-
-                    if (cli == null || cli.sName.Contains("CONSUMIDOR"))
+                    if (!checkContract(getId))
                     {
-                        msg.Show("Escolher Cliente",
-                            " É necessário o Cadastro do Cliente antes de Gerar um Contrato \n\n Impossível continuar sem Cadastro prévio no Sistema !!!",
-                            0, 10000);
-                        if (messageYesNo("client") == DialogResult.Yes)
+                        Clients cli = new Clients();
+                        ClientsBusiness clients = new ClientsBusiness(ctx);
+
+                        InoxErpContext c = new InoxErpContext();
+                        Budget_OSBusiness objSearch = new Budget_OSBusiness(c);
+                        Budgets_OS bud = new Budgets_OS();
+
+                        bud = objSearch.ReturnByID(getId);
+
+                        cli = clients.ReturnByID(bud.IdClients);
+
+                        if (cli == null || cli.sName.Contains("CONSUMIDOR"))
                         {
-                            frmClientsSearch clientsSearch = new frmClientsSearch();
-
-                            foreach (Control cliControl in clientsSearch.Controls)
+                            msg.Show("Escolher Cliente",
+                                " É necessário o Cadastro do Cliente antes de Gerar um Contrato \n\n Impossível continuar sem Cadastro prévio no Sistema !!!",
+                                0, 10000);
+                            if (messageYesNo("client") == DialogResult.Yes)
                             {
-                                if (cliControl.Name == "btnAbrirAlterar" || cliControl.Name == "btnExcluir" ||
-                                    cliControl.Name == "btnCadastrar")
-                                    cliControl.Enabled = false;
-                            }
-                            
-                            clientsSearch.ShowDialog();
+                                frmClientsSearch clientsSearch = new frmClientsSearch();
 
-                            if (clientsSearch.ReturnClients != null)
-                            {
-                                if (messageYesNo("changeClient") == DialogResult.Yes)
+                                foreach (Control cliControl in clientsSearch.Controls)
                                 {
-                                    InoxErpContext ctxS = new InoxErpContext();
-                                    Budget_OSBusiness objS = new Budget_OSBusiness(ctxS);
-                                    Budgets_OS b = new Budgets_OS();
+                                    if (cliControl.Name == "btnAbrirAlterar" || cliControl.Name == "btnExcluir" ||
+                                        cliControl.Name == "btnCadastrar")
+                                        cliControl.Enabled = false;
+                                }
 
-                                    b = objS.ReturnByID(getId);
+                                clientsSearch.ShowDialog();
 
-                                    b.IdClients = clientsSearch.ReturnClients.sID;
-                                    b.sName = clientsSearch.ReturnClients.sName;
-                                    b.sAdress = clientsSearch.ReturnClients.sAdress;
-                                    b.sTelephone = clientsSearch.ReturnClients.sPhoneCelularOne;
-                                    b.sOccupation = clientsSearch.ReturnClients.sOccupation;
+                                if (clientsSearch.ReturnClients != null)
+                                {
+                                    if (messageYesNo("changeClient") == DialogResult.Yes)
+                                    {
+                                        InoxErpContext ctxS = new InoxErpContext();
+                                        Budget_OSBusiness objS = new Budget_OSBusiness(ctxS);
+                                        Budgets_OS b = new Budgets_OS();
 
-                                    objS.Update(b);
+                                        b = objS.ReturnByID(getId);
 
-                                    var ok = objS.Search.FirstOrDefault(t => t.sID == b.sID);
+                                        b.IdClients = clientsSearch.ReturnClients.sID;
+                                        b.sName = clientsSearch.ReturnClients.sName;
+                                        b.sAdress = clientsSearch.ReturnClients.sAdress;
+                                        b.sTelephone = clientsSearch.ReturnClients.sPhoneCelularOne;
+                                        b.sOccupation = clientsSearch.ReturnClients.sOccupation;
 
-                                    MessageBox.Show(ok == null
-                                        ? "Erro ao Atualizar o Orçamento !!!"
-                                        : "Orçamento Atualizado com Sucesso !!!");
+                                        objS.Update(b);
 
-                                    fillDataSet();
-                                    checkContract(getId);
-                                    
-                                    txtPesquisa.Text = b.sName.ToString();
-                                    btnPesquisar_Click(sender, e);
-                                    btnGerarContrato_Click(sender, e);
+                                        var ok = objS.Search.FirstOrDefault(t => t.sID == b.sID);
+
+                                        MessageBox.Show(ok == null
+                                            ? "Erro ao Atualizar o Orçamento !!!"
+                                            : "Orçamento Atualizado com Sucesso !!!");
+
+                                        fillDataSet();
+                                        checkContract(getId);
+
+                                        txtPesquisa.Text = b.sName.ToString();
+                                        btnPesquisar_Click(sender, e);
+                                        btnGerarContrato_Click(sender, e);
+                                    }
                                 }
                             }
                         }
+                        else if (messageYesNo("CreateContract") == DialogResult.Yes)
+                        {
+                            this.Dispose();
+
+                            new frmEditableContract(getId, "Budget").Show();
+                        }
                     }
-                    else if (messageYesNo("CreateContract") == DialogResult.Yes)
+                    else
+                        MessageBox.Show("Já foi Gerado Contrato para esta Ordem de Serviço, Impossível gerar outro");
+
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível selecionar a Ordem de Serviço, tente selecionar novamente.");
+                }
+            }
+
+            if (dr == DialogResult.No)
+            {
+                // gerar tela de contrato estático
+                if (dgvOrdemServico.CurrentRow != null)
+                {
+                    if (!checkContract(getId))
+                    {
+                        Clients cli = new Clients();
+                        ClientsBusiness clients = new ClientsBusiness(ctx);
+
+                        InoxErpContext c = new InoxErpContext();
+                        Budget_OSBusiness objSearch = new Budget_OSBusiness(c);
+                        Budgets_OS bud = new Budgets_OS();
+
+                        bud = objSearch.ReturnByID(getId);
+
+                        cli = clients.ReturnByID(bud.IdClients);
+
+                        if (cli == null || cli.sName.Contains("CONSUMIDOR"))
+                        {
+                            msg.Show("Escolher Cliente",
+                                " É necessário o Cadastro do Cliente antes de Gerar um Contrato \n\n Impossível continuar sem Cadastro prévio no Sistema !!!",
+                                0, 10000);
+                            if (messageYesNo("client") == DialogResult.Yes)
+                            {
+                                frmClientsSearch clientsSearch = new frmClientsSearch();
+
+                                foreach (Control cliControl in clientsSearch.Controls)
+                                {
+                                    if (cliControl.Name == "btnAbrirAlterar" || cliControl.Name == "btnExcluir" ||
+                                        cliControl.Name == "btnCadastrar")
+                                        cliControl.Enabled = false;
+                                }
+
+                                clientsSearch.ShowDialog();
+
+                                if (clientsSearch.ReturnClients != null)
+                                {
+                                    if (messageYesNo("changeClient") == DialogResult.Yes)
+                                    {
+                                        InoxErpContext ctxS = new InoxErpContext();
+                                        Budget_OSBusiness objS = new Budget_OSBusiness(ctxS);
+                                        Budgets_OS b = new Budgets_OS();
+
+                                        b = objS.ReturnByID(getId);
+
+                                        b.IdClients = clientsSearch.ReturnClients.sID;
+                                        b.sName = clientsSearch.ReturnClients.sName;
+                                        b.sAdress = clientsSearch.ReturnClients.sAdress;
+                                        b.sTelephone = clientsSearch.ReturnClients.sPhoneCelularOne;
+                                        b.sOccupation = clientsSearch.ReturnClients.sOccupation;
+
+                                        objS.Update(b);
+
+                                        var ok = objS.Search.FirstOrDefault(t => t.sID == b.sID);
+
+                                        MessageBox.Show(ok == null
+                                            ? "Erro ao Atualizar o Orçamento !!!"
+                                            : "Orçamento Atualizado com Sucesso !!!");
+
+                                        fillDataSet();
+                                        checkContract(getId);
+
+                                        txtPesquisa.Text = b.sName.ToString();
+                                        btnPesquisar_Click(sender, e);
+                                        btnGerarContrato_Click(sender, e);
+                                    }
+                                }
+                            }
+                        }
+                        else if (messageYesNo("CreateContract") == DialogResult.Yes)
                         {
                             this.Dispose();
                             new frmContract(getId, "Budget").Show();
                         }
+                    }
+                    else
+                        MessageBox.Show("Já foi Gerado Contrato para esta Ordem de Serviço, Impossível gerar outro");
+
                 }
                 else
-                    MessageBox.Show("Já foi Gerado Contrato para esta Ordem de Serviço, Impossível gerar outro");
-
+                {
+                    MessageBox.Show("Não foi possível selecionar a Ordem de Serviço, tente selecionar novamente.");
+                }
             }
-            else
+
+            if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Não foi possível selecionar a Ordem de Serviço, tente selecionar novamente.");
+                // se cancelar a operação, sair da tela de diálogo
             }
         }
 

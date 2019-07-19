@@ -139,6 +139,7 @@
                       <FontWeight>Normal</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
+                      <Language>pt-BR</Language>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -148,7 +149,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox15</rd:DefaultName>
-            <Top>1.18621cm</Top>
+            <Top>0.1905cm</Top>
             <Left>0.12246cm</Left>
             <Height>26.81032cm</Height>
             <Width>17.72095cm</Width>
@@ -163,7 +164,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>11.48927in</Height>
+        <Height>10.73927in</Height>
         <Style>
           <Border>
             <Style>None</Style>
@@ -403,10 +404,10 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>0cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>

@@ -180,7 +180,7 @@ namespace UIWindows
 
         private void BtnEmpytContract_Click(object sender, EventArgs e)
         {
-            frmPrintContractEmpyt empyt = new frmPrintContractEmpyt();
+            frmSelectProvider empyt = new frmSelectProvider("");
 
             empyt.ShowDialog();
 

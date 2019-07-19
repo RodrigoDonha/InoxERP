@@ -257,6 +257,7 @@
     <Compile Include="Entities\Enum\PaymentMethods.cs" />
     <Compile Include="Entities\Enum\UnityType.cs" />
     <Compile Include="Entities\Enum\UserType.cs" />
+    <Compile Include="Entities\Hired.cs" />
     <Compile Include="Entities\Items.cs" />
     <Compile Include="Entities\ParcialPay.cs" />
     <Compile Include="Entities\Permitions.cs" />
@@ -464,11 +465,11 @@
     <Compile Include="Views\ServicesOrders\EditableContract.Designer.cs">
       <DependentUpon>EditableContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ServicesOrders\PrintContractEmpyt.cs">
+    <Compile Include="Views\ServicesOrders\SelectProvider.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ServicesOrders\PrintContractEmpyt.Designer.cs">
-      <DependentUpon>PrintContractEmpyt.cs</DependentUpon>
+    <Compile Include="Views\ServicesOrders\SelectProvider.Designer.cs">
+      <DependentUpon>SelectProvider.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ServicesOrders\ServiceOrdersPrint.cs">
       <SubType>Form</SubType>
@@ -794,8 +795,8 @@
     <EmbeddedResource Include="Views\ServicesOrders\EditableContract.resx">
       <DependentUpon>EditableContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ServicesOrders\PrintContractEmpyt.resx">
-      <DependentUpon>PrintContractEmpyt.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ServicesOrders\SelectProvider.resx">
+      <DependentUpon>SelectProvider.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ServicesOrders\ServiceOrdersPrint.resx">
       <DependentUpon>ServiceOrdersPrint.cs</DependentUpon>
