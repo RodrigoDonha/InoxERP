@@ -379,6 +379,7 @@ namespace UIWindows
 
                         contractAlter.sIdBudget_OS = contractBudgetId.sID;
                         contractAlter.sIdBudget_OS = getId;
+                        contractAlter.bEditableContract = false;
                         //contractAlter.Budgets_OS = contractBudgetId;
                         getId = "";
 
@@ -449,6 +450,7 @@ namespace UIWindows
 
                         //contractPersist.sIdBudget_OS = searchBudget.sID;
                         contractPersist.sIdBudget_OS = getId;
+                        contractPersist.bEditableContract = false;
                         getId = "";
 
                         //salva

@@ -103,6 +103,8 @@ namespace UIWindows.Entities
 
         public string sEditableContract { get; set; }
 
+        public bool bEditableContract { get; set; }
+
         public string sPaymentForm { get; set; }
 
         public string sCity { get; set; }

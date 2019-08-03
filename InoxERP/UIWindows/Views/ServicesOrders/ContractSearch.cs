@@ -11,6 +11,7 @@ using UIWindows.Business.Concrete;
 using UIWindows.Context;
 using UIWindows.Entities;
 using UIWindows.Views.Reports.Contracts;
+using UIWindows.Views.ServicesOrders;
 
 namespace UIWindows
 {
@@ -18,7 +19,10 @@ namespace UIWindows
     {
         InoxErpContext ctx = new InoxErpContext();
 
+        Contracts ctr = new Contracts();
+
         private string getId;
+
         public frmContractSearch()
         {
             InitializeComponent();
@@ -115,14 +119,27 @@ namespace UIWindows
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
+            getIdGrigView();
+            InoxErpContext c = new InoxErpContext();
+            ContractBusiness ct = new ContractBusiness(c);
+            ctr = ct.returnById(getId);
+
             if (GetIdIsNull())
             {
-                frmContract contract = new frmContract(getId, "Contract");
+                if (ctr.bEditableContract == false)
+                {
+                    frmContract contract = new frmContract(getId, "Contract");
 
-                contract.ContractData(getId);
-                contract.Show();
-                getId = null;
-                this.Dispose();
+                    contract.ContractData(getId);
+                    contract.Show();
+                    getId = null;
+                    this.Dispose();
+                }
+                else
+                {
+                    new frmEditableContract(getId, "Contract").Show();
+                    this.Dispose();
+                }
             }
         }
 

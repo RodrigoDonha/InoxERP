@@ -94,6 +94,7 @@
             this.imprimirToolStripButton.Name = "imprimirToolStripButton";
             this.imprimirToolStripButton.Size = new System.Drawing.Size(23, 43);
             this.imprimirToolStripButton.Text = "&Imprimir";
+            this.imprimirToolStripButton.Click += new System.EventHandler(this.imprimirToolStripButton_Click);
             // 
             // toolStripSeparator
             // 
@@ -108,6 +109,7 @@
             this.recortarToolStripButton.Name = "recortarToolStripButton";
             this.recortarToolStripButton.Size = new System.Drawing.Size(23, 43);
             this.recortarToolStripButton.Text = "Recor&tar";
+            this.recortarToolStripButton.Click += new System.EventHandler(this.recortarToolStripButton_Click);
             // 
             // copiarToolStripButton
             // 
@@ -117,6 +119,7 @@
             this.copiarToolStripButton.Name = "copiarToolStripButton";
             this.copiarToolStripButton.Size = new System.Drawing.Size(23, 43);
             this.copiarToolStripButton.Text = "&Copiar";
+            this.copiarToolStripButton.Click += new System.EventHandler(this.copiarToolStripButton_Click);
             // 
             // colarToolStripButton
             // 
@@ -126,6 +129,7 @@
             this.colarToolStripButton.Name = "colarToolStripButton";
             this.colarToolStripButton.Size = new System.Drawing.Size(23, 43);
             this.colarToolStripButton.Text = "C&olar";
+            this.colarToolStripButton.Click += new System.EventHandler(this.colarToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -162,6 +166,7 @@
             this.Name = "frmEditableContract";
             this.Text = "EditableContract";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEditableContract_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
