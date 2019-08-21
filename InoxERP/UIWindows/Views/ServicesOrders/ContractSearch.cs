@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UIWindows.Business.Concrete;
 using UIWindows.Context;
@@ -62,6 +58,7 @@ namespace UIWindows
                 new ContractPrint(getId).Show();
                 getId = null;
             }
+            
         }
 
         private void grdContratos_Click(object sender, EventArgs e)

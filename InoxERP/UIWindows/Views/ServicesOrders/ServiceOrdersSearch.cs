@@ -111,6 +111,7 @@ namespace UIWindows
         private void btnGerarContrato_Click(object sender, EventArgs e)
         {
             getIdGrigView();
+
             DialogResult dr = MessageBox.Show("Deseja gerar o contrato com Cláusulas Totalmente Editáveis?",
                 "Tipo de Contrato", MessageBoxButtons.YesNoCancel,
                 MessageBoxIcon.Question,

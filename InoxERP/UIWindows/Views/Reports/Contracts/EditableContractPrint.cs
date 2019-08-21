@@ -12,7 +12,7 @@ namespace UIWindows.Views.Reports.Contracts
 {
     public partial class EditableContractPrint : Form
     {
-        public EditableContractPrint(string id)
+        public EditableContractPrint(string id, string body, string cnpjProv)
         {
             InitializeComponent();
 
@@ -24,21 +24,39 @@ namespace UIWindows.Views.Reports.Contracts
             }
             else
             {
-                searchData(id);
+                searchData(id, body, cnpjProv);
             }
         }
 
-        public void searchData(string id)
+        public void searchData(string id, string p_body, string cnpjProv)
         {
             InoxErpContext ctx = new InoxErpContext();
             Entities.Contracts searchContracts = new Entities.Contracts();
             ContractBusiness obj = new ContractBusiness(ctx);
 
-            searchContracts = obj.ReturnByID(id);
-            //string pulaLinha = "\r\n";
+            string bodyText;
+            string cnpjProvider;
 
-            string bodyText = searchContracts.sEditableContract;
-            string cnpjProvider = searchContracts.sProviderCpfCnpj;
+            if (id == "cnpj")
+            {
+                cnpjProvider = cnpjProv;
+            }
+            else
+            {
+                searchContracts = obj.ReturnByID(id);
+                cnpjProvider = searchContracts.sProviderCpfCnpj;
+            }
+
+            if (p_body != "")
+            {
+                bodyText = p_body;
+            }
+            else
+            {
+                bodyText = searchContracts.sEditableContract;
+            }
+            
+            
 
             var body = new ReportParameter();
             var cnpjProviderFooter = new ReportParameter();

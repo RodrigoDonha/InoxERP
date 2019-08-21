@@ -108,7 +108,7 @@ namespace UIWindows.Views.ServicesOrders
                 enderecoC = searchBudget.sAdress.ToUpper();
             }
 
-            description += "ITEMS:\r\n\r\n";
+            description += "\r\n\r\n";
             foreach (var line in searchBudget.Items.ToList()) // math.round(var,2)
             {
                 description += line.dAmount + " - " + line.sDescription + " - " + line.dPrice + " - " + line.dTotal + " \r\n ";
@@ -123,7 +123,7 @@ namespace UIWindows.Views.ServicesOrders
 
             prize = Convert.ToString(searchBudget.iPrevisionOfExecute);
             
-            contractStandard = "IDENTIFICAÇÃO DAS PARTES CONTRATADAS" + "\r\n" +
+            contractStandard = "IDENTIFICAÇÃO DAS PARTES CONTRATADAS" + "\r\n" + "\r\n" +
                                 "CONTRATANTE: Nome: " + nomeC + ", CPF/CNPJ: " + cpfCnpjC + ", RG/Inscr. Est.: " + rgIncrEstC + ", Endereço: " + enderecoC + " Nº. " + numeroEnderecoC + ", Bairro: " +
                                 bairroEnderecoC + ", Cidade: " + cidadeEnderecoC + "/" + estadoEnderecoC + "." + "\r\n" + "\r\n" +
 
@@ -161,7 +161,7 @@ namespace UIWindows.Views.ServicesOrders
                                 "Valor total do serviço prestado: R$ " + valores + ", sendo: Forma de pagamento: " + obligations + "." + "\r\n" +
                                  "\r\n" +
                                 "Referente ao prazo de entrega de: " + prize + " dia(s) útil(úteis), a partir da data de pagamento da Entrada." +
-                                "\r\n" + "(Informe a Cidade Local Aqui)";
+                                "\r\n" + "(INFORME A CIDADE LOCAL AQUI E SEM PONTO NO FINAL)";
             rtfContract.Text = contractStandard;
         }
 
@@ -249,7 +249,7 @@ namespace UIWindows.Views.ServicesOrders
                     //contractAlter.sCity = cidadeContratado;
                     
                     contractAlter.sEditableContract = rtfContract.Text + ", " + dtpDate.Text;
-                    contract.bEditableContract = true;
+                    contractAlter.bEditableContract = true;
 
                     getId = "";
 
@@ -267,7 +267,7 @@ namespace UIWindows.Views.ServicesOrders
                         this.Dispose();
 
                         // impressao
-                        new EditableContractPrint(contractAlter.sID).Show();
+                        new EditableContractPrint(contractAlter.sID, "", hrd.CpfCnpj).Show();
                     }
                     else
                         MessageBox.Show("Erro ao Alterar o Contrato !!!");
@@ -321,7 +321,7 @@ namespace UIWindows.Views.ServicesOrders
                     contractPersist.sCity = "";
 
                     contractPersist.sEditableContract = rtfContract.Text + ", " + dtpDate.Text;
-                    contract.bEditableContract = true;
+                    contractPersist.bEditableContract = true;
 
                         //contractPersist.sIdBudget_OS = searchBudget.sID;
                     contractPersist.sIdBudget_OS = getId;
@@ -346,7 +346,7 @@ namespace UIWindows.Views.ServicesOrders
                         this.Dispose();
 
                         // impressao
-                        new EditableContractPrint(contractPersist.sID).Show();
+                        new EditableContractPrint(contractPersist.sID, "", hrd.CpfCnpj).Show();
                     }
                     else
                         MessageBox.Show("Erro ao Salvar o Contrato !!!");
@@ -398,7 +398,7 @@ namespace UIWindows.Views.ServicesOrders
 
         private void imprimirToolStripButton_Click(object sender, EventArgs e)
         {
-            new EditableContractPrint(getId).Show();
+            new EditableContractPrint("cnpj", rtfContract.Text + ", " + dtpDate.Text, hrd.CpfCnpj).Show();
         }
 
         private void copiarToolStripButton_Click(object sender, EventArgs e)
