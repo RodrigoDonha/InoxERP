@@ -32,6 +32,11 @@ namespace UIWindows.Business.Concrete
             return context.Contracts.FirstOrDefault(r => r.sID == id.ToString());
         }
 
+        public bool returnbEditable(string id)
+        {
+            return context.Contracts.FirstOrDefault(r => r.sID == id.ToString()).bEditableContract;
+        }
+
         //public override void Delete(string id)
         //{
         //    var linq = from q in context.Budgets_OS.Include("Items").Where(c => c.sID == id).ToList() select q;

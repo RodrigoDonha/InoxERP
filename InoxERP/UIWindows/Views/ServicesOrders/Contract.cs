@@ -17,7 +17,6 @@ namespace UIWindows
 
         static InoxErpContext ctx = new InoxErpContext();
         Budgets_OS searchBudget = new Budgets_OS();
-        Budget_OSBusiness obj = new Budget_OSBusiness(ctx);
 
         //Clients cli = new Clients();
         //ClientsBusiness clients = new ClientsBusiness(ctx);
@@ -380,6 +379,7 @@ namespace UIWindows
                         contractAlter.sIdBudget_OS = contractBudgetId.sID;
                         contractAlter.sIdBudget_OS = getId;
                         contractAlter.bEditableContract = false;
+                        contractAlter.sEditableContract = ".";
                         //contractAlter.Budgets_OS = contractBudgetId;
                         getId = "";
 
@@ -451,6 +451,7 @@ namespace UIWindows
                         //contractPersist.sIdBudget_OS = searchBudget.sID;
                         contractPersist.sIdBudget_OS = getId;
                         contractPersist.bEditableContract = false;
+                        contractPersist.sEditableContract = ".";
                         getId = "";
 
                         //salva

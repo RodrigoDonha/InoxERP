@@ -25,7 +25,7 @@ namespace UIWindows.Views.Reports.Contracts
             }
             else
             {
-                searchData(id);
+                searchData(id); //erro esta aqui
             }
         }
 

@@ -433,7 +433,6 @@ C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Delivery.SituationDeliveryReport.resources
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.ServicesOrders.GeneralServiceOrdersReport.resources
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.ServicesOrders.SituationServiceOrdersReport.resources
-C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.frmPrintContractEmpyt.resources
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.ServicesOrders.ServiceOrdersPrint.resources
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Users.frmChargingScreen.resources
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.frmSignIn.resources
@@ -890,3 +889,6 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\Inox
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxERP.Core.pdb
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.ServicesOrders.frmEditableContract.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.frmSelectProvider.resources
+C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Contracts.EditableContractPrint.resources
+C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.ServicesOrders.frmEditableContract.resources
+C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.frmSelectProvider.resources

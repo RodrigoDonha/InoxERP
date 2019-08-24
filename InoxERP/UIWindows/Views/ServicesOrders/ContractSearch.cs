@@ -13,8 +13,8 @@ namespace UIWindows
 {
     public partial class frmContractSearch : Form
     {
-        InoxErpContext ctx = new InoxErpContext();
-
+        static InoxErpContext ctx = new InoxErpContext();
+        ContractBusiness objCtr = new ContractBusiness(ctx);
         Contracts ctr = new Contracts();
 
         private string getId;
@@ -52,13 +52,16 @@ namespace UIWindows
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
-        {
+        {           
             if (GetIdIsNull())
             {
-                new ContractPrint(getId).Show();
+                bool bedit = objCtr.returnbEditable(getId);
+                if(bedit)
+                    new frmEditableContract(getId, "Contract").Show();
+                else
+                    new ContractPrint(getId).Show();
                 getId = null;
-            }
-            
+            }            
         }
 
         private void grdContratos_Click(object sender, EventArgs e)
@@ -116,9 +119,11 @@ namespace UIWindows
 
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
+
             getIdGrigView();
             InoxErpContext c = new InoxErpContext();
             ContractBusiness ct = new ContractBusiness(c);
+            
             ctr = ct.returnById(getId);
 
             if (GetIdIsNull())
