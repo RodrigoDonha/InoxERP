@@ -87,17 +87,28 @@ namespace UIWindows
             {
                 getId = Convert.ToString(grdClientes[0, grdClientes.CurrentRow.Index].Value.ToString());
 
-                if (messageYesNo("Exclude") == DialogResult.Yes)
+                client = obj.ReturnByID(getId);
+
+                if (client.sName == "CONSUMIDOR")
                 {
-                    obj.Delete(getId);
 
-                    var ok = obj.Search.FirstOrDefault(b => b.sID == client.sID);
-
-                    if (ok != null)
-                        MessageBox.Show("Erro ao Excluir o Orçamento !!!");
-                    else
-                        MessageBox.Show("Orçamento Excluido com Susseço !!!");
+                    MessageBox.Show("O cliente CONSUMIDOR não pode ser excluído.");
                 }
+                else
+                {
+                    if (messageYesNo("Exclude") == DialogResult.Yes)
+                    {
+                        obj.Delete(getId);
+
+                        var ok = obj.Search.FirstOrDefault(b => b.sID == client.sID);
+
+                        if (ok != null)
+                            MessageBox.Show("Erro ao Excluir o Orçamento !!!");
+                        else
+                            MessageBox.Show("Orçamento Excluido com Susseço !!!");
+                    }
+                }
+                
                 fillDataSet();
             }
             else

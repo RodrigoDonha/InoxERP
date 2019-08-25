@@ -25,7 +25,7 @@ namespace UIWindows.Views.Reports.Contracts
             }
             else
             {
-                searchData(id); //erro esta aqui
+                searchData(id);
             }
         }
 
@@ -123,7 +123,6 @@ namespace UIWindows.Views.Reports.Contracts
                                                     DateTime.Now.Date.ToShortDateString()
                                                         .Replace("/",
                                                             "-");
-
             reportViewer1.RefreshReport();
         }
 

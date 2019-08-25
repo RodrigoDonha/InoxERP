@@ -103,8 +103,9 @@ namespace UIWindows
             txtPrazoGarantia.Text = searchBudget.iWarrantyTime.ToString();
             txtPrazo1.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
             txtPrazo2.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
-            //string cidade = searchBudget.Clients.sCity;
-            //txtCidade.Text = cidade;
+            string cidade = searchBudget.Clients.sCity;
+            txtCidade.Text = cidade;
+            
         }
 
         public void fillContractOfObjectClientAltered(string idBudget, Clients cli)
@@ -155,8 +156,8 @@ namespace UIWindows
             txtPrazoGarantia.Text = searchBudgetAltered.iWarrantyTime.ToString();
             txtPrazo1.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
             txtPrazo2.Text = Convert.ToString(searchBudget.iPrevisionOfExecute);
-            //string cidade = searchBudget.Clients.sCity;
-            //txtCidade.Text = cidade;
+            string cidade = searchBudget.Clients.sCity;
+            txtCidade.Text = cidade;
         }
 
         private string paymentForm(PaymentMethods payment)

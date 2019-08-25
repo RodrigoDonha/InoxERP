@@ -56,8 +56,10 @@ namespace UIWindows
             if (GetIdIsNull())
             {
                 bool bedit = objCtr.returnbEditable(getId);
+                ctr = objCtr.returnById(getId);
+
                 if(bedit)
-                    new frmEditableContract(getId, "Contract").Show();
+                    new EditableContractPrint(getId, ctr.sEditableContract, ctr.sProviderCpfCnpj).Show();
                 else
                     new ContractPrint(getId).Show();
                 getId = null;

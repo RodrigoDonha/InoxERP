@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using UIWindows.Entities.Enum;
+using static System.Windows.Forms.SendKeys;
 
 namespace UIWindows.Business.Concrete
 {
@@ -13,8 +14,10 @@ namespace UIWindows.Business.Concrete
             string value = txtbox.Text;
             if (value.Contains(","))
             {
-                //Se a tecla digitada não for número e nem backspace (08 = backspace)
-                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+                //Se a tecla digitada não for número e nem backspace (08 = backspace),
+                // 003 Ctrl+C, 022 Ctrl+V, 024 Ctrl+X, 026 Ctrl+Z
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 
+                    && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
                 {
                     //Atribui True no Handled para cancelar o evento
                     e.Handled = true;
@@ -26,8 +29,10 @@ namespace UIWindows.Business.Concrete
             }
             else
             {
-                //Se a tecla digitada não for número e nem backspace e nem vírgula (08 = backspace / 44 = vírgula)
-                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 44)
+                //Se a tecla digitada não for número e nem backspace e nem vírgula (08 = backspace / 44 = vírgula),
+                // 003 Ctrl+C, 022 Ctrl+V, 024 Ctrl+X, 026 Ctrl+Z
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 44
+                    && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
                 {
                     //Atribui True no Handled para cancelar o evento
                     e.Handled = true;
@@ -42,7 +47,8 @@ namespace UIWindows.Business.Concrete
         public void characterValidatorNumbers(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada não for número (08 = backspace)
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08
+                && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
             {
                 //Atribui True no Handled para cancelar o evento
                 e.Handled = true;
@@ -55,8 +61,10 @@ namespace UIWindows.Business.Concrete
 
         public void characterValidatorNumbersRGandInscrEst(object sender, KeyPressEventArgs e)
         {
-            //Se a tecla digitada não for número (08 = backspace); (45 = traço); (46 = ponto)
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 46)
+            //Se a tecla digitada não for número (08 = backspace); (45 = traço); (46 = ponto),
+            // 003 Ctrl+C, 022 Ctrl+V, 024 Ctrl+X, 026 Ctrl+Z
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 46 
+                && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
             {
                 //Atribui True no Handled para cancelar o evento
                 e.Handled = true;
@@ -78,10 +86,11 @@ namespace UIWindows.Business.Concrete
             else
             {
                 //Se a tecla digitada não for número (08 = backspace); (45 = traço); (46 = ponto);
-                //(73 = I); (83 = S); (69 = E); (78 = N); (84 = T); (79 = O) = ISENTO
+                //(73 = I); (83 = S); (69 = E); (78 = N); (84 = T); (79 = O) = ISENTO;
+                // 003 Ctrl+C, 022 Ctrl+V, 024 Ctrl+X, 026 Ctrl+Z
                 if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 46
                     && e.KeyChar != 73 && e.KeyChar != 83 && e.KeyChar != 69 && e.KeyChar != 78 && e.KeyChar != 84
-                    && e.KeyChar != 79)
+                    && e.KeyChar != 79 && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
                 {
                     //Atribui True no Handled para cancelar o evento
                     e.Handled = true;
@@ -111,9 +120,10 @@ namespace UIWindows.Business.Concrete
         public void characterValidatorNumbersCheque(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada nao for numeros espaço ou traço
-            //if (!char.IsDigit(e.KeyChar) && e.KeyChar != 45 && e.KeyChar != 08)
             // (08 Backspace; 45 traço; 46 ponto)
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 46)
+            // 003 Ctrl+C, 022 Ctrl+V, 024 Ctrl+X, 026 Ctrl+Z
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 46 
+                && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
             {
                 //Atribui True no Handled para cancelar o evento
                 e.Handled = true;
@@ -127,7 +137,8 @@ namespace UIWindows.Business.Concrete
         public void characterValidationOnlyNumberAndLetters(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada não for número ou letras
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar >= 65 && e.KeyChar <= 90)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar >= 65 && e.KeyChar <= 90 
+                && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
             {
                 e.Handled = true;
                 if (e.Handled)
@@ -141,8 +152,9 @@ namespace UIWindows.Business.Concrete
         public void characterValidatorOnlyPhones(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada não for número e nem backspace e nem traço e nem parenteses
-            // 08 backspace, 45 traço, 40 e 41 parenteses, 32 espaco
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 40 && e.KeyChar != 41 && e.KeyChar != 32)
+            // 08 backspace, 45 traço, 40 e 41 parenteses, 32 espaco, 003 Ctrl+C, 022 Ctrl+V, 024 Ctrl+X, 026 Ctrl+Z
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 && e.KeyChar != 40 && e.KeyChar != 41 && e.KeyChar != 32 
+                && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
             {
                 //Atribui True no Handled para cancelar o evento
                 e.Handled = true;
@@ -156,8 +168,9 @@ namespace UIWindows.Business.Concrete
         public void characterValidatorOnlyCPFandCNPJ(object sender, KeyPressEventArgs e)
         {
             //Se a tecla digitada não for número e nem backspace e nem ponto, nem barra diagonal e nem traço
-            // 08 backspace, 46 ponto, 47 barra diagonal, 45 traço
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 46 && e.KeyChar != 47 && e.KeyChar != 45)
+            // 08 backspace, 46 ponto, 47 barra diagonal, 45 traço, 003 Ctrl+C, 022 Ctrl+V, 024 Ctrl+X, 026 Ctrl+Z
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 46 && e.KeyChar != 47 && e.KeyChar != 45 
+                && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
             {
                 //Atribui True no Handled para cancelar o evento
                 e.Handled = true;
@@ -175,7 +188,8 @@ namespace UIWindows.Business.Concrete
             if (value.Contains("-"))
             {
                 //Se a tecla digitada não for número e nem backspace e nem traço
-                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 
+                    && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
                 {
                     //Atribui True no Handled para cancelar o evento
                     e.Handled = true;
@@ -188,7 +202,8 @@ namespace UIWindows.Business.Concrete
             else
             {
                 //Se a tecla digitada não for número e nem backspace e nem traço
-                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45)
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 45 
+                    && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
                 {
                     //Atribui True no Handled para cancelar o evento
                     e.Handled = true;
@@ -208,7 +223,8 @@ namespace UIWindows.Business.Concrete
             if (value.Contains(":"))
             {
                 //Se a tecla digitada não for número e nem backspace (08 backspace)
-                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08)
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 
+                && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
                 {
                     //Atribui True no Handled para cancelar o evento
                     e.Handled = true;
@@ -222,7 +238,8 @@ namespace UIWindows.Business.Concrete
             {
                 //Se a tecla digitada não for número e nem backspace e nem dois pontos
                 // 08 backspace, 58 dois pontos
-                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 58)
+                if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 58 
+                    && e.KeyChar != 003 && e.KeyChar != 022 && e.KeyChar != 024 && e.KeyChar != 026)
                 {
                     //Atribui True no Handled para cancelar o evento
                     e.Handled = true;

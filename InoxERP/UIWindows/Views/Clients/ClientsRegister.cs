@@ -402,7 +402,6 @@ namespace InoxERP.UI_Windows_Forms
                 txtRg.Clear();
                 txtRg.ReadOnly = false;
             }
-                
         }
     }
 }

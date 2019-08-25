@@ -531,7 +531,6 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\Inox
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Properties.Resources.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\ja\Microsoft.VisualStudio.Validation.resources.dll
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\bin\x86\Release\pt-BR\Microsoft.VisualStudio.Data.Services.resources.dll
-C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Migrations.addIEprovider.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Migrations.AlterationsChequesAndClientsEntities.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Accounts.frmChequeNumber.resources
@@ -892,3 +891,4 @@ C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWi
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.Reports.Contracts.EditableContractPrint.resources
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.ServicesOrders.frmEditableContract.resources
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.frmSelectProvider.resources
+C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csprojAssemblyReference.cache
