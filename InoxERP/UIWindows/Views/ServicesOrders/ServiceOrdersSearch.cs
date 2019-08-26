@@ -133,6 +133,8 @@ namespace UIWindows
 
                     if (cli == null || cli.sName.Contains("CONSUMIDOR"))
                     {
+                        bool answer = true;
+
                         msg.Show("Escolher Cliente",
                             " É necessário o Cadastro do Cliente antes de Gerar um Contrato \n\n Impossível continuar sem Cadastro prévio no Sistema !!!",
                             0, 10000);
@@ -175,9 +177,15 @@ namespace UIWindows
 
                                     //txtPesquisa.Text = b.sName.ToString();
                                 }
-                            }                            
+                                else
+                                    answer = false;
+                            }
                         }
-                        btnGerarContrato_Click(sender, e);
+                        else
+                            answer = false;
+
+                        if(answer)
+                            btnGerarContrato_Click(sender, e);
                     }
                     else if (messageYesNo("CreateContract") == DialogResult.Yes)
                     {
@@ -330,7 +338,7 @@ namespace UIWindows
                 case "Finished":
                     return MessageBox.Show("Confirma a Finalização do Serviço ?", "Finalizar Serviço", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "client":
-                    return MessageBox.Show("Deseja Selecionar um Cliente para esta Ordem de Serviço e continuar com a emissão de contrato ?", "Escolher Cliente", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    return MessageBox.Show("Deseja Selecionar um Cliente para esta Ordem de Serviço e continuar com a emissão de contrato ?", "Escolher Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 case "changeClient":
                     return MessageBox.Show("Confirma o Cliente Escolhido para Troca ?", "Mudança de Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
                 case "CreateContract":
