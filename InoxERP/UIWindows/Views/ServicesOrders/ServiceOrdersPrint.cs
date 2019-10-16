@@ -92,17 +92,9 @@ namespace UIWindows.Views.ServicesOrders
 
             string payement = "";
 
-            if (searchBudget.bContractRegistred)
-            {
-                payement = searchContract.sPaymentForm;
-                PayementForm.Values.Add(payement);
-            }
-            else
-            {
-                payement = paymentForm(searchBudget.PaymentMethods) + " - Parcelamento: " + searchBudget.iPaymentInstallments;
-                PayementForm.Values.Add(payement);
-            }
-            
+            payement = paymentForm(searchBudget.PaymentMethods) + " - Parcelamento: " + searchBudget.iPaymentInstallments;
+            PayementForm.Values.Add(payement);
+                        
             string paymentForm(PaymentMethods payment)
             {
                 if (payment == PaymentMethods.chequeMoney)
