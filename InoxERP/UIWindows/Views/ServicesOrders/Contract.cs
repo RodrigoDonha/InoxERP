@@ -303,10 +303,10 @@ namespace UIWindows
                 txtNomeContratado.Text = "RICHARD CARLOS REGGIANI 16479617851";
                 txtCpfCnpjContratado.Text = "31.210.732/0001-30";
                 txtRgContratado.Text = "562.439.989.118";
-                txtCepContratado.Text = "19045-333";
-                txtEnderecoContratado.Text = "RUA ROTARY CLUBE DE PRESIDENTE PRUDENTE-ALVOR";
-                txtNumeroContratado.Text = "25";
-                txtBairroContratado.Text = "VILA ROTARIA \"ARCH C. KLUMPH\"";
+                txtCepContratado.Text = "19046-070";
+                txtEnderecoContratado.Text = "RUA MENDES DE MORAIS";
+                txtNumeroContratado.Text = "1871";
+                txtBairroContratado.Text = "VILA PAULO ROBERTO";
                 txtCidadeContratado.Text = "PRESIDENTE PRUDENTE";
                 cbxEstateContratado.SelectedIndex = 24; // SP
             }
@@ -315,10 +315,10 @@ namespace UIWindows
                 txtNomeContratado.Text = "LUCAS BEIRIGO REGGIANI 09396759945";
                 txtCpfCnpjContratado.Text = "30.286.217/0001-70";
                 txtRgContratado.Text = "562.431.339.111"; //"093967599-45";
-                txtCepContratado.Text = "19065-510";
-                txtEnderecoContratado.Text = "AV. DAS FLORES";
-                txtNumeroContratado.Text = "210";
-                txtBairroContratado.Text = "CECAP";
+                txtCepContratado.Text = "19046-070";
+                txtEnderecoContratado.Text = "RUA MENDES DE MORAIS";
+                txtNumeroContratado.Text = "1871";
+                txtBairroContratado.Text = "VILA PAULO ROBERTO";
                 txtCidadeContratado.Text = "PRESIDENTE PRUDENTE";
                 cbxEstateContratado.SelectedIndex = 24; // SP
             }
