@@ -892,3 +892,4 @@ C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.Views.ServicesOrders.frmEditableContract.resources
 C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\UIWindows.frmSelectProvider.resources
 C:\Users\Rodrigo\Documents\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csprojAssemblyReference.cache
+C:\Users\jefte\GitHub\InoxERP\InoxERP\UIWindows\obj\x86\Release\InoxErp.Core.csprojAssemblyReference.cache
